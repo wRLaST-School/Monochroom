@@ -7,6 +7,8 @@
 #include <InspectorWindow.h>
 #pragma warning (pop)
 
+#include <SpImGui.h>
+
 using namespace nlohmann;
 
 IComponent* IComponent::AddComponent(const std::string& key, eastl::unique_ptr<IComponent> component)
@@ -133,6 +135,26 @@ bool IComponent::CheckDelete()
 	return false;
 }
 
+DLLExport bool IComponent::IsActive()
+{
+	return active;
+}
+
+DLLExport void IComponent::Activate()
+{
+	active = true;
+}
+
+DLLExport void IComponent::Deactivate()
+{
+	active = false;
+}
+
+DLLExport void IComponent::ToggleActive()
+{
+	active = !active;
+}
+
 void IComponent::InitAllChildComponents(IComponent* parent)
 {
 	parent->Init();
@@ -149,6 +171,8 @@ void IComponent::InitAllChildComponents(IComponent* parent)
 void IComponent::UpdateAllChildComponents(IComponent* parent)
 {
 	parent->childRemovedNewItr_.reset();
+
+	if (!parent->active) { return; }
 
 	if (parent->components_.size())
 	{
@@ -172,6 +196,8 @@ void IComponent::UpdateAllChildComponents(IComponent* parent)
 
 void IComponent::DrawAllChildComponents(IComponent* parent)
 {
+	if (!parent->active) { return; }
+
 	parent->Draw();
 
 	if (parent->components_.size())
@@ -185,6 +211,11 @@ void IComponent::DrawAllChildComponents(IComponent* parent)
 
 void IComponent::OnInspectorWindowDraw()
 {
+}
+
+void IComponent::CommonInspectorWindowDraw()
+{
+	ImGui::Checkbox("Active", &active);
 }
 
 

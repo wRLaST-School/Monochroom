@@ -91,6 +91,11 @@ public:
 	DLLExport void PrepDelete();
 	bool CheckDelete();
 
+	DLLExport bool IsActive();
+	DLLExport void Activate();
+	DLLExport void Deactivate();
+	DLLExport void ToggleActive();
+
 	static void InitAllChildComponents(IComponent* parent);
 	static void UpdateAllChildComponents(IComponent* parent);
 	static void DrawAllChildComponents(IComponent* parent);
@@ -113,6 +118,7 @@ public:
 
 	//Inspector Windowに描画する内容。継承先で何も定義しなくてもOK(なにも表示されないだけ)
 	virtual DLLExport void OnInspectorWindowDraw();
+	void CommonInspectorWindowDraw();
 
 	template <class Type>
 	Type* CastTo();
@@ -126,6 +132,8 @@ protected:
 	std::string name_ = "";
 
 	eastl::multimap<std::string, eastl::unique_ptr<IComponent>> components_;
+
+	bool active = true;
 
 private:
 	IComponent* parent_ = nullptr;
