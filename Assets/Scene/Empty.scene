@@ -1,0 +1,20 @@
+[
+    {
+        "EfkEffects": [
+            {}
+        ],
+        "Models": [
+            {
+                "cube.obj": "Assets\\Models\\cube\\cube.obj"
+            }
+        ],
+        "Sounds": [
+            {}
+        ],
+        "Textures": [
+            {
+            }
+        ],
+        "Type": "IScene"
+    }
+]
