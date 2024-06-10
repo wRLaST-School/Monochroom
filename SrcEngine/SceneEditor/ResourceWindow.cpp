@@ -9,51 +9,72 @@
 
 void ResourceWindow::Draw()
 {
-    SpImGui::Command([&] {
-        ImGui::Begin("Resource Window");
+	SpImGui::Command([&] {
+		ImGuiWindowFlags windowFlags = ImGuiWindowFlags_None;
+		windowFlags |= ImGuiWindowFlags_MenuBar;
+		ImGui::Begin("Resource Window", nullptr, windowFlags);
+
+		ImVec2 dummySize = ImGui::GetContentRegionAvail();
+
+		ImGui::BeginMenuBar();
+
+		//タブ
+		if (ImGui::BeginTabBar("##ResWindowTabs", ImGuiTabBarFlags_None))
+		{
+			if (ImGui::BeginTabItem("Texture"))
+			{
+				drawListState = DrawListState::Texture;
+				ImGui::EndTabItem();
+			}
+			if (ImGui::BeginTabItem("Model"))
+			{
+				drawListState = DrawListState::Model;
+				ImGui::EndTabItem();
+			}
+			ImGui::EndTabBar();
+		}
+
+		ImGui::Spacing();
+
+		//サムネイル画像サイズ調整用スライダー
+		ImGui::SliderFloat("Thumbnail Size", &thumbnailSize, 16.f, 512.f);
+
+		ImGui::EndMenuBar();
 
 		//ウィンドウを覆うダミーを作る
 		ImVec2 pos = ImGui::GetCursorPos();
 
-		ImGui::Dummy(ImGui::GetContentRegionAvail());
-		
+		ImGui::Dummy(dummySize);
+
 		//ダミーにD&D受け入れを適用
 		DragDropTarget();
 
 		//左上にアイテムの位置を戻す
 		ImGui::SetCursorPos(pos);
 
-		if (ImGui::BeginTabBar("##ResWindowTabs", ImGuiTabBarFlags_None))
+		switch (drawListState)
 		{
-			if (ImGui::BeginTabItem("Texture"))
-			{	
-				AdjustLayout();
+		case DrawListState::Texture:
 
-				DrawTextureList();
+			AdjustLayout();
 
-				ImGui::Columns(1);
+			DrawTextureList();
 
-				ImGui::EndTabItem();
-			}
-			if (ImGui::BeginTabItem("Model"))
-			{
-				AdjustLayout();
+			ImGui::Columns(1);
+			break;
 
-				DrawModelList();
+		case DrawListState::Model:
 
-				ImGui::Columns(1);
+			AdjustLayout();
 
-				ImGui::EndTabItem();
-			}
-			ImGui::EndTabBar();
+			DrawModelList();
+
+			ImGui::Columns(1);
+			break;
 		}
 
-
-		//サムネイル画像サイズ調整用スライダー
-		ImGui::SliderFloat("Thumbnail Size", &thumbnailSize, 16.f, 512.f);
-
-        ImGui::End();
-    });
+		ImGui::End();
+		});
 }
 
 void ResourceWindow::DrawTextureList()
@@ -106,9 +127,9 @@ void ResourceWindow::DrawModelList()
 		for (auto& c : map) {
 			ImGui::PushID(i++);
 			if (SpImGui::DoubleClickImageButton(reinterpret_cast<ImTextureID>(
-					SpTextureManager::GetGPUDescHandle("Engine_3DFileIcon").ptr
+				SpTextureManager::GetGPUDescHandle("Engine_3DFileIcon").ptr
 				),
-				{thumbnailSize, thumbnailSize}))
+				{ thumbnailSize, thumbnailSize }))
 			{
 				//ダブルクリック時の処理
 			};
@@ -180,16 +201,15 @@ void ResourceWindow::AdjustLayout()
 	}
 
 	ImGui::Columns(columnCount, 0, false);
-
 }
 
 void ResourceWindow::SDraw()
 {
-    GetInstance()->Draw();
+	GetInstance()->Draw();
 }
 
 ResourceWindow* ResourceWindow::GetInstance()
 {
-    static ResourceWindow ins;
-    return &ins;
+	static ResourceWindow ins;
+	return &ins;
 }

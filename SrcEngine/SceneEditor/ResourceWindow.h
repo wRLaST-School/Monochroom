@@ -6,6 +6,12 @@
  * @author Wrelf
  *********************************************************************/
 
+enum class DrawListState
+{
+	Texture,
+	Model
+};
+
 /**
  * @brief ResourceWindowのクラス
  */
@@ -51,6 +57,7 @@ public:
 private:
 	float thumbnailSize = 128.f;
 	float padding = 16.f;
+	DrawListState drawListState = DrawListState::Texture;
 
 public://singleton
 	ResourceWindow(const ResourceWindow&) = delete;

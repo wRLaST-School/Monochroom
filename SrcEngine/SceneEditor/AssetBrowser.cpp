@@ -29,7 +29,14 @@ void AssetBrowser::OnImGuiRender()
 	//非同期系で投げるだけのモノをしまっておく場所
 	static eastl::list<std::future<void>> ftrs;
 
-	ImGui::Begin("Asset Browser");
+	ImGuiWindowFlags windowFlags = ImGuiWindowFlags_None;
+	windowFlags |= ImGuiWindowFlags_MenuBar;
+	ImGui::Begin("Asset Browser", nullptr, windowFlags);
+
+	//サムネイル画像サイズ調整用スライダー
+	ImGui::BeginMenuBar();
+	ImGui::SliderFloat("Thumbnail Size", &thumbnailSize, 16.f, 512.f);
+	ImGui::EndMenuBar();
 
 	ImGui::Text("%s\\", currentDirectory_.string().c_str());
 
@@ -111,8 +118,8 @@ void AssetBrowser::OnImGuiRender()
 
 				if (hasTexLoaded)
 				{
-					ImGui::ImageButton("buttonTag", 
-						(ImTextureID)SpTextureManager::GetGPUDescHandle(filePath).ptr, 
+					ImGui::ImageButton("buttonTag",
+						(ImTextureID)SpTextureManager::GetGPUDescHandle(filePath).ptr,
 						{ thumbnailSize, thumbnailSize });
 				}
 				else
@@ -152,9 +159,6 @@ void AssetBrowser::OnImGuiRender()
 	}
 
 	ImGui::Columns(1);
-
-	//サムネイル画像サイズ調整用スライダー
-	ImGui::SliderFloat("Thumbnail Size", &thumbnailSize, 16.f, 512.f);
 
 	ImGui::End();
 
