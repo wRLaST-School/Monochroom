@@ -891,7 +891,10 @@ D3D12_CPU_DESCRIPTOR_HANDLE SpTextureManager::GetCPUDescHandle(const TextureKey&
 	heapHandle = SpTextureManager::GetInstance().srvHeap->GetCPUDescriptorHandleForHeapStart();
 	GetInstance().textureMap_.Access(
 		[&](auto& map) {
-			heapHandle.ptr += GetSpDX()->dev->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV) * map[key];
+			auto p = map.find(key);
+			uint32_t index = 0;
+			if (p != map.end()) index = (uint32_t)p->second;
+			heapHandle.ptr += GetSpDX()->dev->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV) * index;
 
 		}
 	);
@@ -904,7 +907,10 @@ D3D12_GPU_DESCRIPTOR_HANDLE SpTextureManager::GetGPUDescHandle(const TextureKey&
 	heapHandle = SpTextureManager::GetInstance().srvHeap->GetGPUDescriptorHandleForHeapStart();
 	GetInstance().textureMap_.Access(
 		[&](auto& map) {
-			heapHandle.ptr += GetSpDX()->dev->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV) * map[key];
+			auto p = map.find(key);
+			uint32_t index = 0;
+			if(p != map.end()) index = (uint32_t)p->second;
+			heapHandle.ptr += GetSpDX()->dev->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV) * index;
 
 		}
 	);
@@ -916,7 +922,9 @@ TexMetadata SpTextureManager::GetTextureMetadata(const TextureKey& key)
 	TexMetadata meta;
 	GetInstance().texDataMap_.Access(
 		[&](auto& map) {
-			meta = map[key].meta;
+			auto p = map.find(key);
+			if (p != map.end())
+				meta = p->second.meta;
 		}
 	);
 	return meta;
@@ -927,7 +935,9 @@ SpTextureManager::TexData SpTextureManager::GetTextureData(const TextureKey& key
 	TexData data = {};
 	GetInstance().texDataMap_.Access(
 		[&](auto& map) {
-			data = map[key];
+			auto p = map.find(key);
+			if (p != map.end())
+				data = p->second;
 		}
 	);
 	return data;
@@ -938,7 +948,9 @@ ID3D12Resource* SpTextureManager::GetTextureBuff(const TextureKey& key)
 	SRVHeapIndex index = 114514;
 	GetInstance().textureMap_.Access(
 		[&](auto& map) {
-			index = map[key];
+			auto p = map.find(key);
+			if (p != map.end())
+				index = p->second;
 		}
 	);
 	return SpTextureManager::GetInstance().texBuffs[index].Get();
