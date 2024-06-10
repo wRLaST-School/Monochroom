@@ -9,6 +9,9 @@
 #include <SceneRW.h>
 #include <SceneFromFile.h>
 #include <SpriteObject.h>
+#include <Input.h>
+
+std::string lastSavePath = "";
 
 void DockPanel::EnableScreenDock()
 {
@@ -57,6 +60,16 @@ void DockPanel::EnableScreenDock()
 			ImGui::EndMenuBar();
 		}
 
+		if (Input::Key::Down(DIK_LCONTROL) || Input::Key::Down(DIK_RCONTROL))
+		{
+			if (Input::Key::Triggered(DIK_S))
+			{
+				if (lastSavePath == "") showSaveDialog = true;
+				else {
+					SceneRW::SaveScene(SceneManager::currentScene.get(), lastSavePath);
+				}
+			}
+		}
 
 		ImGuiIO& io = ImGui::GetIO();
 		if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
@@ -185,6 +198,7 @@ void DockPanel::DrawSaveDialog()
 
 		if (ImGui::Button("Save"))
 		{
+			lastSavePath = std::string("Assets/Scene/") + std::string(path) + std::string(".scene");
 			SceneRW::SaveScene(SceneManager::currentScene.get(), std::string("Assets/Scene/") + std::string(path) + std::string(".scene"));
 			showSaveDialog = false;
 		}
