@@ -24,8 +24,8 @@ public:
 
     void ReadParamJson(const nlohmann::json& jsonObject) override;
 
+    TextureKey tex;
 private:
     Float2 position = { (float)Util::GetWinWidth() / 2, (float)Util::GetWinHeight() / 2 };
     Float3 scale = { 1.f, 1.f };
-    TextureKey tex;
 };

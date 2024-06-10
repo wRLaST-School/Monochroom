@@ -6,6 +6,7 @@
 #include <InspectorWindow.h>
 #include <Object3D.h>
 #include <Input.h>
+#include <SpriteObject.h>
 
 void HierarchyPanel::Draw()
 {
@@ -93,6 +94,13 @@ void HierarchyPanel::DDTargetTexture(IComponent* current)
         if (obj)
         {
             obj->texture = texKey;
+        }
+
+        SpriteObject* spr = dynamic_cast<SpriteObject*>(current);
+
+        if (spr)
+        {
+            spr->tex = texKey;
         }
     }
 }
