@@ -79,7 +79,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\DirectXTex;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(ProjectDir)..\..\SrcExternal\EASTL\test\packages\EABase\include\Common;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\Effekseer;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\EffekseerRendererDX12;$(ProjectDir)..\..\SrcExternal\Cereal\include</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -101,7 +101,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\DirectXTex;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(ProjectDir)..\..\SrcExternal\EASTL\test\packages\EABase\include\Common;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\Effekseer;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\EffekseerRendererDX12;$(ProjectDir)..\..\SrcExternal\Cereal\include</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
