@@ -82,6 +82,9 @@ namespace Input {
 		//マウスの座標
 		static Float2 GetPos();
 
+		//ホイールの移動量
+		static float GetWheelVel();
+
 		static Mouse* GetInstance();
 
 	private:

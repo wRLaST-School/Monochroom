@@ -17,6 +17,16 @@ class Vec2;
 class DLLExport Vec3
 {
 public:
+	// 静的メンバ
+	const static Vec3 left;    // Vec3(-1,0,0) または単位ベクトル
+	const static Vec3 right;   // Vec3(1,0,0) または単位ベクトル
+	const static Vec3 up;      // Vec3(0,1,0) または単位ベクトル
+	const static Vec3 down;    // Vec3(0,-1,0) または単位ベクトル
+	const static Vec3 front;   // Vec3(0,0,1) または単位ベクトル
+	const static Vec3 back;    // Vec3(0,0,-1) または単位ベクトル
+	const static Vec3 one;     // Vec3(1,1,1) または単位ベクトル
+	const static Vec3 zero;    // Vec3(0,0,0) または単位ベクトル
+
 	float x;
 	float y;
 	float z;
@@ -69,6 +79,7 @@ public:
 
 	static Vec3 Lerp(const Vec3& start, const Vec3& end, const float t);
 	static Vec3 Spline(const std::vector<Vec3>& points, float t);
+	static float Distance(const Vec3 v1, const Vec3 v2);   // 二つのベクトル間の距離
 
 	operator Float3() const;
 	operator Vec2() const;
