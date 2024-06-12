@@ -27,7 +27,7 @@ void TestPlayer::Update()
 
 		move = (float)(Input::Key::Down(DIK_RIGHT) - Input::Key::Down(DIK_LEFT));
 
-		move *= 0.1f;
+		move *= 0.2f;
 		
 		obj->position.y += move;
 	}

@@ -126,12 +126,6 @@
             {
                 "Boss": "Assets/Models/Boss/boss.glb",
                 "Cube": "Assets/Models/cube/cube.obj",
-                "PlayerIdle": "Assets/Models/Player/Idle.gltf",
-                "PlayerRoll": "Assets/Models/Player/Roll.gltf",
-                "PlayerRun": "Assets/Models/Player/Run.gltf",
-                "PlayerSlash1": "Assets/Models/Player/Slash1.gltf",
-                "PlayerSlash2": "Assets/Models/Player/Slash2.gltf",
-                "PlayerSlash3": "Assets/Models/Player/Slash3.gltf",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
@@ -142,14 +136,6 @@
         ],
         "Sounds": [
             {
-                "LineAttack": "Assets/Sounds/LineAttack.wav",
-                "RushImpact": "Assets/Sounds/RushImpact.wav",
-                "Slash12": "Assets/Sounds/Slash12.wav",
-                "Slash3": "Assets/Sounds/Slash3.wav",
-                "counterSuccess": "Assets/Sounds/counterSuccess.wav",
-                "dodge": "Assets/Sounds/dodge.wav",
-                "marker": "Assets/Sounds/marker.wav",
-                "takeDamage": "Assets/Sounds/takeDamage.wav"
             }
         ],
         "Textures": [
