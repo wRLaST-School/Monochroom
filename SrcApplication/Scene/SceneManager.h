@@ -5,6 +5,8 @@
 #include <thread>
 #include <SoundManager.h>
 #include <SpEffekseer.h>
+#include <DebugCamera.h>
+
 class SceneManager final
 {
 public:
@@ -66,6 +68,7 @@ private:
 	static bool loadFinished;
 	static void UpdateLoadState();
 	static bool transitionQueued;
+	static std::unique_ptr<DebugCamera> debugCamera;
 
 	//以下基本使用禁止
 public:

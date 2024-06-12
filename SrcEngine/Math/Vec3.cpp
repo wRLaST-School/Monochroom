@@ -4,6 +4,15 @@
 #include "Float3.h"
 #include <Util.h>
 
+const Vec3 Vec3::left(-1.f, 0.f, 0.f);
+const Vec3 Vec3::right(1.f, 0.f, 0.f);
+const Vec3 Vec3::up(0.f, 1.f, 0.f);
+const Vec3 Vec3::down(0.f, -1.f, 0.f);
+const Vec3 Vec3::front(0.f, 0.f, 1.f);
+const Vec3 Vec3::back(0.f, 0.f, -1.f);
+const Vec3 Vec3::one(1.f, 1.f, 1.f);
+const Vec3 Vec3::zero(0.f, 0.f, 0.f);
+
 Vec3::Vec3() :x(0), y(0), z(0)
 {
 }
@@ -186,6 +195,14 @@ Vec3 Vec3::Spline(const std::vector<Vec3>& points, float t)
 	return (p1 * 2 + (-p0 + p2) * t +
 		(p0 * 2 - p1 * 5 + p2 * 4 - p3) * t * t +
 		(-p0 + p1 * 3 - p2 * 3 + p3) * t * t * t) * 0.5f;
+}
+
+float Vec3::Distance(const Vec3 v1, const Vec3 v2)
+{
+	return sqrtf(
+		(v2.x - v1.x) * (v2.x - v1.x) +
+		(v2.y - v1.y) * (v2.y - v1.y) +
+		(v2.z - v1.z) * (v2.z - v1.z));
 }
 
 float Vec3::GetLength() const
