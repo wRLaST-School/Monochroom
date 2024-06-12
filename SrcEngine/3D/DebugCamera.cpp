@@ -18,8 +18,6 @@ void DebugCamera::Update()
 	{
 		Mouse::GetVel().x,
 		Mouse::GetVel().y
-		//ClampReverse(Mouse::GetVel().x, -2.f, 2.f),
-		//ClampReverse(Mouse::GetVel().y, -2.f, 2.f),
 	};
 
 	// 回転
