@@ -50,10 +50,16 @@ private:
 	 */
 	void FileOpenAction(const std::filesystem::directory_entry& ditr);
 
+	// ポップ画面
+	void PopWindow();
+	void PopModalWindow();
+
 	std::filesystem::path currentDirectory_;
 
 	float thumbnailSize = 128.f;
 	float padding = 16.f;
+	bool openPopModal = false;
+	std::string shaderName;
 
 	std::string selectedItemPath = "ERROR";
 

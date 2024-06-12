@@ -43,7 +43,7 @@ void DockPanel::EnableScreenDock()
 		{
 			if (ImGui::BeginMenu("File"))
 			{
-				if (ImGui::MenuItem("Save"))
+				if (ImGui::MenuItem("Save","Ctrl + S"))
 				{
 					showSaveDialog = true;
 				}
@@ -53,6 +53,11 @@ void DockPanel::EnableScreenDock()
 				{
 					showLoadDialog = true;
 					//SceneRW::LoadScene(SceneManager::currentScene.get(), "Assets/Scene/TestSceneSave.scene");
+				}
+
+				if (ImGui::MenuItem("ImGui Demo"))
+				{
+					showImGuiDemo = true;
 				}
 
 				ImGui::EndMenu();
@@ -89,6 +94,11 @@ void DockPanel::EnableScreenDock()
 		if (showLoadDialog)
 		{
 			DrawLoadDialog();
+		}
+
+		if (showImGuiDemo)
+		{
+			ImGui::ShowDemoWindow(&showImGuiDemo);
 		}
 
 		});
