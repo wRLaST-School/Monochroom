@@ -26,7 +26,7 @@ void ShaderCreater::CreateDefaultShader(const std::string& path, const std::stri
 	// VertexShader作成
 	{
 		// デフォルトのhlsliファイルのデータをstring型に格納
-		srcPath = defaultShaderFolderPath + "BasicVS.hlsli";
+		srcPath = defaultShaderFolderPath + "BasicVS.hlsl";
 		fileData = CopyFileData(srcPath);
 
 		// 作成
@@ -36,7 +36,7 @@ void ShaderCreater::CreateDefaultShader(const std::string& path, const std::stri
 	// PixelShader作成
 	{
 		// デフォルトのhlsliファイルのデータをstring型に格納
-		srcPath = defaultShaderFolderPath + "BasicPS.hlsli";
+		srcPath = defaultShaderFolderPath + "BasicPS.hlsl";
 		fileData = CopyFileData(srcPath);
 
 		// 作成
@@ -46,7 +46,7 @@ void ShaderCreater::CreateDefaultShader(const std::string& path, const std::stri
 
 void ShaderCreater::CreateShaderHeader(const std::string& path, const std::string& name, std::string* fileData)
 {
-	const std::string fullPath = path + name + sourceExt;
+	const std::string fullPath = path + name + headerExt;
 	std::ofstream file(fullPath);
 
 	// ファイルが正しく開かれたかを確認します
@@ -92,7 +92,7 @@ void ShaderCreater::CreateVertexShader(const std::string& path, const std::strin
 
 void ShaderCreater::CreatePixelShader(const std::string& path, const std::string& name, std::string* fileData)
 {
-	const std::string fullPath = path + name + "PS" + headerExt;
+	const std::string fullPath = path + name + "PS" + sourceExt;
 
 	std::ofstream file(fullPath);
 
