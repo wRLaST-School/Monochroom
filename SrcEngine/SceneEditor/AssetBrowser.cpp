@@ -21,6 +21,8 @@
 
 #include <format>
 
+#include <ShaderCreater.h>
+
 constexpr char* sAssetsDirectory = "Assets";
 const static std::filesystem::path sAssetPath = "Assets";
 
@@ -32,6 +34,9 @@ void AssetBrowser::OnImGuiRender()
 	ImGuiWindowFlags windowFlags = ImGuiWindowFlags_None;
 	windowFlags |= ImGuiWindowFlags_MenuBar;
 	ImGui::Begin("Asset Browser", nullptr, windowFlags);
+
+	PopWindow();
+	PopModalWindow();
 
 	//サムネイル画像サイズ調整用スライダー
 	ImGui::BeginMenuBar();
@@ -202,6 +207,66 @@ void AssetBrowser::FileOpenAction(const std::filesystem::directory_entry& ditr)
 		ShellExecuteA(0, 0, path.c_str(), 0, 0, SW_SHOW);
 	}
 
+}
+
+void AssetBrowser::PopWindow()
+{
+	// ウィンドウ内でのマウス右クリックの判定
+	if (ImGui::IsWindowHovered() &&
+		ImGui::IsMouseReleased(ImGuiMouseButton_Right))
+	{
+		ImGui::OpenPopup("Create AssetBrowser Pop");
+	}
+
+	if (ImGui::BeginPopup("Create AssetBrowser Pop"))
+	{
+		if (ImGui::MenuItem("Default Shader"))
+		{
+			openPopModal = true;
+			shaderName.clear();
+		}
+
+		ImGui::EndPopup();
+	}
+}
+
+void AssetBrowser::PopModalWindow()
+{
+	if (openPopModal)
+	{
+		ImGui::OpenPopup("Create Shader");
+	}
+
+	ImVec2 center = ImGui::GetMainViewport()->GetCenter();
+	ImGui::SetNextWindowPos(center, ImGuiCond_None, ImVec2(0.5f, 0.5f));
+	ImVec2 size = ImVec2(384, 128);
+	ImGui::SetNextWindowSize(size);
+
+	int windowFlag = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize;
+	if (ImGui::BeginPopupModal("Create Shader", nullptr, windowFlag))
+	{
+		char* cstr = const_cast<char*>(shaderName.c_str());
+		ImGui::InputText("Shader Name", cstr, 30);
+		shaderName = cstr;
+
+		bool isConfirm = ImGui::Button("Confirm",ImVec2(128,32));	ImGui::SameLine();
+		bool isClicked = isConfirm || ImGui::Button("Cancel", ImVec2(128, 32));
+
+		if (isClicked)
+		{
+			if (isConfirm)
+			{
+				std::string shadersFolderPath = "Assets/Shaders/";
+				ShaderCreater::CreateDefaultShader(shadersFolderPath, shaderName);
+			}
+
+			shaderName.clear();
+			openPopModal = false;
+			ImGui::CloseCurrentPopup();
+		}
+
+		ImGui::EndPopup();
+	}
 }
 
 void AssetBrowser::SDraw()

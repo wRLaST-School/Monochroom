@@ -59,5 +59,6 @@ private:
 
 	inline static bool showSaveDialog = false;
 	inline static bool showLoadDialog = false;
+	inline static bool showImGuiDemo = false;
 };
 

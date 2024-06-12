@@ -43,7 +43,6 @@ void ResourceWindow::Draw()
 
 		//ウィンドウを覆うダミーを作る
 		ImVec2 pos = ImGui::GetCursorPos();
-
 		ImGui::Dummy(dummySize);
 
 		//ダミーにD&D受け入れを適用
