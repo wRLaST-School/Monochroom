@@ -220,10 +220,27 @@ void AssetBrowser::PopWindow()
 
 	if (ImGui::BeginPopup("Create AssetBrowser Pop"))
 	{
+		if (ImGui::MenuItem("Folder"))
+		{
+			popID = "Create Folder";
+			openPopModal = true;
+			inputName.clear();
+		}
+
 		if (ImGui::MenuItem("Default Shader"))
 		{
+			popID = "Create Shader";
 			openPopModal = true;
-			shaderName.clear();
+			inputName.clear();
+		}
+
+		ImGui::Separator();
+
+		if (ImGui::MenuItem("Open File Explorer"))
+		{
+			std::string path = currentDirectory_.string();
+			std::wstring wpath = std::wstring(path.begin(), path.end());
+			ShellExecute(NULL, L"open", wpath.c_str(), NULL, NULL, SW_SHOWDEFAULT);
 		}
 
 		ImGui::EndPopup();
@@ -234,7 +251,7 @@ void AssetBrowser::PopModalWindow()
 {
 	if (openPopModal)
 	{
-		ImGui::OpenPopup("Create Shader");
+		ImGui::OpenPopup(popID.c_str());
 	}
 
 	ImVec2 center = ImGui::GetMainViewport()->GetCenter();
@@ -243,24 +260,36 @@ void AssetBrowser::PopModalWindow()
 	ImGui::SetNextWindowSize(size);
 
 	int windowFlag = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize;
-	if (ImGui::BeginPopupModal("Create Shader", nullptr, windowFlag))
+	if (ImGui::BeginPopupModal(popID.c_str(), nullptr, windowFlag))
 	{
-		char* cstr = const_cast<char*>(shaderName.c_str());
-		ImGui::InputText("Shader Name", cstr, 30);
-		shaderName = cstr;
+		char* cstr = const_cast<char*>(inputName.c_str());
+		ImGui::InputText("Name", cstr, 30);
+		inputName = cstr;
 
-		bool isConfirm = ImGui::Button("Confirm",ImVec2(128,32));	ImGui::SameLine();
+		bool isConfirm = ImGui::Button("Confirm", ImVec2(128, 32));	ImGui::SameLine();
 		bool isClicked = isConfirm || ImGui::Button("Cancel", ImVec2(128, 32));
 
 		if (isClicked)
 		{
 			if (isConfirm)
 			{
-				std::string shadersFolderPath = "Assets/Shaders/";
-				ShaderCreater::CreateDefaultShader(shadersFolderPath, shaderName);
+				// フォルダー作成なら
+				if (popID == "Create Folder")
+				{
+					std::string path = currentDirectory_.string() + "/" + inputName;
+					std::wstring wpath = std::wstring(path.begin(), path.end());
+					CreateDirectory(wpath.c_str(), NULL);
+				}
+
+				// シェーダー作成なら
+				if (popID == "Create Shader")
+				{
+					std::string shadersFolderPath = "Assets/Shaders/";
+					ShaderCreater::CreateDefaultShader(shadersFolderPath, inputName);
+				}
 			}
 
-			shaderName.clear();
+			inputName.clear();
 			openPopModal = false;
 			ImGui::CloseCurrentPopup();
 		}

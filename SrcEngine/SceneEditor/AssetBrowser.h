@@ -59,7 +59,8 @@ private:
 	float thumbnailSize = 128.f;
 	float padding = 16.f;
 	bool openPopModal = false;
-	std::string shaderName;
+	std::string inputName;
+	std::string popID;
 
 	std::string selectedItemPath = "ERROR";
 
