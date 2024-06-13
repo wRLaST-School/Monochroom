@@ -144,11 +144,6 @@ void GPipelineManager::CreateAll()
 	toonModelDesc.Shader.pShader = GetShader("ToonModel");
 	toonModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
 
-	toonModelDesc.Render.NumRenderTargets = 1;
-	toonModelDesc.Render.RTVFormat[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
-
-	toonModelDesc.Blend[0].Desc = PipelineUtil::Blend::GetBlendMode(PipelineUtil::BlendMode::Alpha);
-
 	GPipeline::Create(toonModelDesc, "ToonModel");
 #pragma endregion
 }

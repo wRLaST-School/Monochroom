@@ -109,6 +109,15 @@ void Object3D::Draw()
 			return DrawAlpha();
 		}
 		break;
+	case Object3D::BlendMode::Toon:
+		if (hasTexture) {
+			return DrawToon(texture);
+		}
+		else
+		{
+			return DrawToon();
+		}
+		break;
 	default:
 		break;
 	}
@@ -259,6 +268,43 @@ void Object3D::DrawAlpha(const TextureKey& key)
 	SpRenderer::RegisterAlphaObj(this);
 }
 
+void Object3D::DrawToon()
+{
+	if (model->material.size())
+	{
+		DrawAdd(model->material.front().textureKey);
+	}
+	else
+	{
+		DrawAdd("notexture");
+	}
+}
+
+void Object3D::DrawToon(const TextureKey& key)
+{
+	transformCB.contents->mat = matWorld;
+	SpRenderer::DrawCommand([&] {
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
+
+		if (model->materialCBs.size())
+			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, model->materialCBs.front().buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(2, transformCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(4, brightnessCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, model->bMatrixCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
+
+		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
+
+		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
+		}, SpRenderer::Stage::Toon);
+}
+
 void Object3D::OnInspectorWindowDraw()
 {
 	ImGui::InputFloat3("Translation", &position.x);
@@ -269,13 +315,14 @@ void Object3D::OnInspectorWindowDraw()
 	}
 	else
 	{
-		ImGui::Text("vvv Gizmo Does Not Work Currently vvv");
 		ImGui::InputFloat4("Rotation", &rotation.w);
+		ImGui::Text("vvv Gizmo Does Not Work Currently vvv");
 	}
+	ImGui::Checkbox("Use Quaternion Rotation", reinterpret_cast<bool*>(&rotMode));
 
 	ImGui::InputFloat3("Scale", &scale.x);
 
-	ImGui::Checkbox("Use Quaternion Rotation", reinterpret_cast<bool*>(&rotMode));
+	ImGui::Separator();
 
 	ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));
 
@@ -288,6 +335,18 @@ void Object3D::OnInspectorWindowDraw()
 	{
 		texture = buf;
 	};
+
+	if (ImGui::CollapsingHeader("Blend Mode"))
+	{
+		int blendeModeInt = (int)blendMode;
+		ImGui::RadioButton("Opaque", &blendeModeInt, (int)BlendMode::Opaque);	ImGui::SameLine();
+		ImGui::RadioButton("Add", &blendeModeInt, (int)BlendMode::Add);			ImGui::SameLine();
+		ImGui::RadioButton("Alpha", &blendeModeInt, (int)BlendMode::Alpha);		ImGui::SameLine();
+		ImGui::RadioButton("Toon", &blendeModeInt, (int)BlendMode::Toon);
+		blendMode = (BlendMode)blendeModeInt;
+	}
+	ImGui::Separator();
+
 
 	UpdateMatrix();
 }
@@ -386,6 +445,10 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	texture = jsonObject["Texture"];
 	std::string modelStr = jsonObject.At("Model");
 
+	if (jsonObject.contains("BlendMode"))
+	{
+		blendMode = (BlendMode)jsonObject["BlendMode"];
+	}
 	model = ModelManager::GetModel(modelStr);
 }
 
@@ -415,5 +478,5 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	else
 		jsonObject["Model"] = "";
 
-
+	jsonObject["BlendMode"] = (int)blendMode;
 }

@@ -27,6 +27,7 @@
                 "UseQuaternionRot": 1
             },
             {
+                "BlendMode": 3,
                 "Children": [
                     {
                         "Type": "ScriptComponent",
@@ -59,6 +60,7 @@
                 "Type": "Object3D"
             },
             {
+                "BlendMode": 0,
                 "Children": [
                     {
                         "Type": "ScriptComponent",
@@ -135,8 +137,7 @@
             }
         ],
         "Sounds": [
-            {
-            }
+            {}
         ],
         "Textures": [
             {
@@ -147,10 +148,6 @@
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "black": "Assets/Images/black.png",
-                "hexagon": "Assets/Images/hexagonPattern.jpg",
-                "scoreBase": "Assets/Images/ScoreBase.png",
-                "scoreOverlay": "Assets/Images/ScoreTierOverlay.png",
-                "titleText": "Assets/Images/title.png",
                 "white.png": "Assets\\Images\\white.png"
             }
         ],

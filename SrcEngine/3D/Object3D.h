@@ -36,12 +36,15 @@ public:
 
 	//加算合成
 	void DrawAdd();
-	//加算合成
 	void DrawAdd(const TextureKey& key);
 
 	//透過表示用
 	void DrawAlpha();
 	void DrawAlpha(const TextureKey& key);
+
+	//Toon用
+	void DrawToon();
+	void DrawToon(const TextureKey& key);
 
 	//Inspector Window用
 	void OnInspectorWindowDraw();
@@ -65,7 +68,8 @@ public:
 	enum class BlendMode {
 		Opaque,
 		Add,
-		Alpha
+		Alpha,
+		Toon,
 	} blendMode = BlendMode::Opaque;
 
 	Float3 position = { 0, 0, 0 };
