@@ -58,6 +58,44 @@ bool Key::Triggered(int32_t key)
 	return (bool)(GetInstance()->keys_[key] && !GetInstance()->prevKeys_[key]);
 }
 
+bool Input::Key::DoubleTriggered(int32_t key)
+{
+	if (key >= 256 || key < 0) return false;
+
+	// 一回押したら
+	if (Triggered(key))
+	{
+		GetInstance()->doubleKeys_[key].isPush = true;
+		GetInstance()->doubleKeys_[key].pushKey = key;
+	}
+
+	if (GetInstance()->doubleKeys_[key].isPush)
+	{
+		// フレーム内に押してないなら
+		if (GetInstance()->doubleKeys_[key].frame >= GetInstance()->doubleKeys_[key].maxFrame)
+		{
+			// 初期値に戻しfalseを返す
+			GetInstance()->doubleKeys_[key] = Double();
+			return false;
+		}
+		// 1フレーム以上の時に判定取る(同じフレームだと100%trueになる)
+		else if (GetInstance()->doubleKeys_[key].frame >= 1)
+		{
+			// もう一回押したら
+			if (Triggered(GetInstance()->doubleKeys_[key].pushKey))
+			{
+				// 初期値に戻しtrueを返す
+				GetInstance()->doubleKeys_[key] = Double();
+				return true;
+			}
+		}
+
+		GetInstance()->doubleKeys_[key].frame++;
+	}
+
+	return false;
+}
+
 Key* Key::GetInstance()
 {
 	static Key obj;

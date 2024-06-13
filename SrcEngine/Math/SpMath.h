@@ -22,6 +22,10 @@
 
 //ラジアンから角度
 float DLLExport ConvertRadianToAngle(float radian);
+Vec2 DLLExport ConvertRadianToAngle(Vec2 radian);
+Vec3 DLLExport ConvertRadianToAngle(Vec3 radian);
 
 //角度からラジアン
 float DLLExport ConvertAngleToRadian(float angle);
+Vec2 DLLExport ConvertAngleToRadian(Vec2 angle);
+Vec3 DLLExport ConvertAngleToRadian(Vec3 angle);
