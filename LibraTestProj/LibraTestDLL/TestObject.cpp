@@ -14,7 +14,7 @@ void TestObject::Update()
 	if (obj)
 	{
 		float move = (float)Input::Key::Down(DIK_UP) - (float)Input::Key::Down(DIK_DOWN);
-		move *= 0.05f;
+		move *= 0.1f;
 
 		obj->position.y += move;
 

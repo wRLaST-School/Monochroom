@@ -64,6 +64,7 @@
     <LibraryPath>$(SolutionDir)/assimp/lib/Debug;$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <ReferencePath>$(ProjectDir)assimp/code;$(ProjectDir)assimp;$(ReferencePath)</ReferencePath>
     <OutDir>$(SolutionDir)Resources\Compiled\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">
     <LinkIncremental>true</LinkIncremental>

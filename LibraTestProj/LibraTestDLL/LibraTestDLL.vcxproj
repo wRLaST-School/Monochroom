@@ -59,7 +59,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)..\..\Resources\Compiled\</OutDir>
     <IncludePath>$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(IncludePath)</IncludePath>
-    <TargetName>Scripts</TargetName>
+    <TargetName>ScriptsD</TargetName>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)..\..\Resources\Compiled\$(Configuration)\</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -78,7 +78,8 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\DirectXTex;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(ProjectDir)..\..\SrcExternal\EASTL\test\packages\EABase\include\Common;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\Effekseer;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\EffekseerRendererDX12;$(ProjectDir)..\..\SrcExternal\Cereal\include</AdditionalIncludeDirectories>
-      <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -99,7 +100,8 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\DirectXTex;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(ProjectDir)..\..\SrcExternal\EASTL\test\packages\EABase\include\Common;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\Effekseer;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\EffekseerRendererDX12;$(ProjectDir)..\..\SrcExternal\Cereal\include</AdditionalIncludeDirectories>
-      <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -7,9 +7,12 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
     //何か登録されてたら解放
     if (hModule_) { Free(); }
 
+#ifdef _DEBUG
     //DLL読み込み
+    hModule_ = LoadLibraryA("Resources/Compiled/ScriptsD.dll");
+#else
     hModule_ = LoadLibraryA("Resources/Compiled/Scripts.dll");
-
+#endif
     if (hModule_ == nullptr) { return hModule_; }
 
     //Create関数でインスタンス生成するのでその関数ポインタを取得
@@ -24,13 +27,7 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
     if (instantiateFunc == nullptr) { return hModule_; }
 
     //生成済みの場合はリセット
-    if (component_)
-    {
-        delete component_;
-    }
-
-    //生成を行う
-    component_ = instantiateFunc();
+    component_.reset(instantiateFunc());
 
     return hModule_;
 }
@@ -42,7 +39,7 @@ const HMODULE& Libra::DLLObject::GetModule()
 
 IScriptObject* Libra::DLLObject::GetComponent()
 {
-    return component_;
+    return component_.get();
 }
 
 Libra::DLLObject::~DLLObject()
