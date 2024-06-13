@@ -236,7 +236,7 @@ void AssetBrowser::PopWindow()
 
 		ImGui::Separator();
 
-		if (ImGui::MenuItem("Open File Explorer"))
+		if (ImGui::MenuItem("Show in Explorer"))
 		{
 			std::string path = currentDirectory_.string();
 			std::wstring wpath = std::wstring(path.begin(), path.end());

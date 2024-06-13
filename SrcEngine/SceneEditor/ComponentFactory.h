@@ -2,12 +2,14 @@
 #include <Essentials.h>
 
 class InspectorWindow;
+class HierarchyPanel;
 
 class ComponentFactory
 {
 public:
 	//コンポーネント追加機能で追加可能コンポーネント一覧を表示したいため
 	friend InspectorWindow;
+	friend HierarchyPanel;
 
 	static IComponent* AddChildComponent(IComponent* parent, std::string key, std::string newComponentTypeStr);
 	static DLLExport void Register(std::string type, std::function<eastl::unique_ptr<IComponent>(void)> createFunc);

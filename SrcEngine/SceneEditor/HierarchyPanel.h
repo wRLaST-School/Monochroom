@@ -60,9 +60,13 @@ public:
 	 */
 	static void SDraw();
 
+	// ポップ画面
+	void PopWindow();
+
 private:
 
 	int32_t itemIndex = 0;
+	IComponent* selected;
 
 public://singleton
 	HierarchyPanel(const HierarchyPanel&) = delete;
