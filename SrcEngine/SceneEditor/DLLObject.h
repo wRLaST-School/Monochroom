@@ -19,7 +19,7 @@ namespace Libra {
 	private:
 		HMODULE hModule_;
 
-		std::unique_ptr<IScriptObject> component_;
+		IScriptObject* component_;
 	};
 }
 

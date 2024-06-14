@@ -11,6 +11,7 @@ public:
     void Update();
     void Draw();
 
+    DefDel;
 private:
     int count = 0;
 };

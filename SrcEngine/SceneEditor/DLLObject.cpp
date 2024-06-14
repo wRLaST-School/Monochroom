@@ -27,7 +27,7 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
     if (instantiateFunc == nullptr) { return hModule_; }
 
     //生成済みの場合はリセット
-    component_.reset(instantiateFunc());
+    component_ = instantiateFunc();
 
     return hModule_;
 }
@@ -39,7 +39,7 @@ const HMODULE& Libra::DLLObject::GetModule()
 
 IScriptObject* Libra::DLLObject::GetComponent()
 {
-    return component_.get();
+    return component_;
 }
 
 Libra::DLLObject::~DLLObject()
@@ -50,5 +50,10 @@ Libra::DLLObject::~DLLObject()
 
 void Libra::DLLObject::Free()
 {
+    if (component_) {
+        component_->Del();
+        component_ = nullptr;
+    }
+    
     FreeLibrary(hModule_);
 }
