@@ -163,6 +163,16 @@ Vec3 Vec3::GetNorm(float length) const
 		return Vec3();
 }
 
+float Vec3::GetMaxElement()
+{
+	return std::max(x, std::max(y, z));
+}
+
+float Vec3::GetMinElement()
+{
+	return std::min(x, std::min(y, z));
+}
+
 Vec3 Vec3::Lerp(const Vec3& start, const Vec3& end, const float t)
 {
 	Vec3 diff = end - start;
@@ -171,7 +181,7 @@ Vec3 Vec3::Lerp(const Vec3& start, const Vec3& end, const float t)
 
 Vec3 Vec3::Spline(const std::vector<Vec3>& points, float t)
 {
-	if (points.size() <= 2) { return Vec3(0,0,0); }
+	if (points.size() <= 2) { return Vec3(0, 0, 0); }
 	t = Util::Clamp(t, 0.f, 1.f);
 
 	float perSegment = 1.f / (points.size() - 1);
@@ -205,6 +215,16 @@ float Vec3::Distance(const Vec3 v1, const Vec3 v2)
 		(v2.z - v1.z) * (v2.z - v1.z));
 }
 
+float Vec3::Dot(const Vec3 v1, const Vec3 v2)
+{
+	return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
+}
+
+Vec3 Vec3::Cross(const Vec3 v1, const Vec3 v2)
+{
+	return Vec3(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x);
+}
+
 float Vec3::GetLength() const
 {
 	return sqrtf(this->GetSquaredLength());
@@ -217,12 +237,12 @@ float Vec3::GetSquaredLength() const
 
 float Vec3::Dot(const Vec3& v2) const
 {
-	return x*v2.x + y*v2.y + z*v2.z;
+	return x * v2.x + y * v2.y + z * v2.z;
 }
 
 Vec3 Vec3::Cross(const Vec3& v2) const
 {
-	return Vec3(y*v2.z - z*v2.y, z*v2.x - x*v2.z, x*v2.y - y*v2.x);
+	return Vec3(y * v2.z - z * v2.y, z * v2.x - x * v2.z, x * v2.y - y * v2.x);
 }
 
 Vec3::operator Float3() const

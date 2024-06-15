@@ -2,71 +2,94 @@
 #include "Object3D.h"
 
 struct ConstBufferDataVProj {
-    Matrix vproj;
-    Matrix billboardMat;
-    Float3 cameraPos;
+	Matrix vproj;
+	Matrix billboardMat;
+	Float3 cameraPos;
 };
 
 enum class CameraTargetMode {
-    LookAt,
-    LookTo
+	LookAt,
+	LookTo
 };
 
 enum class ProjectionMode {
-    Orthographic,
-    Perspective
+	Orthographic,
+	Perspective
+};
+
+enum class FrustumPlane {
+	Left, Right, Top, Bottom, Front, Back, Max
+};
+
+class Camera;
+
+struct Frustum
+{
+	bool isInCamera;
+
+	std::array<Vec3, (int)FrustumPlane::Max> vec;
+	std::array<Vec3, (int)FrustumPlane::Max> normal;
+	float horizontalFov = 0;    //　水平Fov
+	float verticalFov = 0;      //　垂直Fov
+
+	void CalcFrustum(Camera* cam);
 };
 
 class Camera :
-    public Object3D
+	public Object3D
 {
 public:
-    ComponentFactoryRegister(Camera)
+	ComponentFactoryRegister(Camera)
 
-    DLLExport Camera();
-    DLLExport void SetRenderSize(float w, float h);
-    void UseDefaultParams();
+		DLLExport Camera();
+	DLLExport void SetRenderSize(float w, float h);
+	void UseDefaultParams();
 
-    DLLExport Float3 GetWorldPosFromScreen(const Float2& screen, float depth);
-    DLLExport Ray GetScreenPosRay(const Float2& screen);
+	DLLExport Float3 GetWorldPosFromScreen(const Float2& screen, float depth);
+	DLLExport Ray GetScreenPosRay(const Float2& screen);
 
-    //UseCurrentより後に呼ばれる場合のみ動作保証
-    Matrix GetViewMat();
-    //UseCurrentより後に呼ばれる場合のみ動作保証
-    Matrix GetProjMat();
+	//UseCurrentより後に呼ばれる場合のみ動作保証
+	Matrix GetViewMat();
+	//UseCurrentより後に呼ばれる場合のみ動作保証
+	Matrix GetProjMat();
 
-    Matrix GetBillboardMat();
+	Matrix GetBillboardMat();
 
-    void OnInspectorWindowDraw();
+	bool CheckisInCameraInside(Vec3 pos, float r = 1);
 
-    Float3 target = { 0.0f, 0.0f, 0.0f };
+	void OnInspectorWindowDraw();
 
-    //レンダーサイズ
-    float renderWidth;
-    float renderHeight;
+	void FrustumCulling();
 
-    bool useWindowSize = false;
+	Float3 target = { 0.0f, 0.0f, 0.0f };
 
-    float nearZ;
-    float farZ;
-    float fov;
+	//レンダーサイズ
+	float renderWidth;
+	float renderHeight;
 
-    SpConstBuffer<ConstBufferDataVProj> cameraViewProjMatrixCB;
+	bool useWindowSize = false;
 
-    CameraTargetMode targetMode = CameraTargetMode::LookTo;
+	float nearZ;
+	float farZ;
+	float fov;
 
-    static DLLExport void Set(Camera& camera);
-    static Camera* sCurrent;
-    static void UseCurrent();
+	SpConstBuffer<ConstBufferDataVProj> cameraViewProjMatrixCB;
 
-    static DLLExport Matrix GetCurrentCameraBillboardMat();
+	CameraTargetMode targetMode = CameraTargetMode::LookTo;
 
-    ProjectionMode projectionMode = ProjectionMode::Perspective;
+	static DLLExport void Set(Camera& camera);
+	static Camera* sCurrent;
+	static void UseCurrent();
 
-    void ReadParamJson([[maybe_unused]] const nlohmann::json& jsonObject) override;
-    void WriteParamJson([[maybe_unused]] nlohmann::json& jsonObject) override;
+	static DLLExport Matrix GetCurrentCameraBillboardMat();
+
+	ProjectionMode projectionMode = ProjectionMode::Perspective;
+
+	void ReadParamJson([[maybe_unused]] const nlohmann::json& jsonObject) override;
+	void WriteParamJson([[maybe_unused]] nlohmann::json& jsonObject) override;
 
 private:
-    Matrix view;
-    Matrix proj;
+	Matrix view;
+	Matrix proj;
+	std::unique_ptr<Frustum> frustum;
 };

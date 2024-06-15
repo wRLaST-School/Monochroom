@@ -8,6 +8,11 @@ Quaternion::Quaternion()
 	v = Vec3(0.f, 0.f, 0.f);
 }
 
+Quaternion::Quaternion(float w, float x, float y, float z) : w(w)
+{
+	v = Vec3(x, y, z);
+}
+
 Quaternion::Quaternion(Vec3 axis, float rad)
 {
 	w = cosf(rad / 2.f);
@@ -87,7 +92,7 @@ Quaternion Quaternion::Slerp(const Quaternion& zero, const Quaternion& one, cons
 	{
 		return zero;
 	}
-	
+
 	if (!theta)
 	{
 		return zero;
@@ -103,7 +108,7 @@ Quaternion Quaternion::Slerp(const Quaternion& zero, const Quaternion& one, cons
 	Quaternion zerot = o * (sinf((1.f - t) * theta) / sinf(theta));
 	Quaternion onet = (one * (sinf(t * theta) / sinf(theta)));
 	Quaternion result;
-	
+
 	result.w = zerot.w + onet.w;
 	result.v = zerot.v + onet.v;
 
@@ -125,7 +130,7 @@ Quaternion Quaternion::DirToDir(const Vec3& from, const Vec3& to)
 
 	if (cross.GetSquaredLength() == 0)
 	{
-		Vec3 axis(0.f,1.f,0.f);
+		Vec3 axis(0.f, 1.f, 0.f);
 
 		float theta = 0.f;
 
@@ -152,7 +157,7 @@ Quaternion Quaternion::DirToDir(const Vec3& from, const Vec3& to, const float ma
 
 	Vec3 cross = f.Cross(t);
 
-	if (cross.GetSquaredLength() == 0 || (f-t).GetSquaredLength() == 0)
+	if (cross.GetSquaredLength() == 0 || (f - t).GetSquaredLength() == 0)
 	{
 		Vec3 axis(0.f, 1.f, 0.f);
 
@@ -189,6 +194,20 @@ Quaternion Quaternion::EulerToQuaternion(const Float3& xyz)
 			rollCos * pitchSin * yawCos + rollSin * pitchCos * yawSin,
 			rollCos * pitchCos * yawSin - rollSin * pitchSin * yawCos
 		)
+	);
+}
+
+Quaternion Quaternion::AngleAxis(const Vec3 axis, float angle)
+{
+	Vec3 normAxis = axis.GetNorm();
+	float halfAngle = ConvertAngleToRadian(angle) / 2.0f;
+	float s = sinf(halfAngle);
+
+	return Quaternion(
+		cosf(halfAngle),
+		normAxis.x * s,
+		normAxis.y * s,
+		normAxis.z * s
 	);
 }
 
