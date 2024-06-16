@@ -1,6 +1,8 @@
 #pragma once
 #include <IComponent.h>
 
+#define DefDel void Del() override {delete this;}
+
 class ScriptComponent;
 
 class IScriptObject : public IComponent
@@ -10,6 +12,8 @@ public:
 	virtual void Update() {};
 	virtual void Draw() {};
 	virtual void OnInspectorWindowDraw() {};
+
+	virtual void Del() { delete this; };
 
 	ScriptComponent* This();
 

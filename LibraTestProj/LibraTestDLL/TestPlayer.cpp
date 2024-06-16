@@ -8,10 +8,12 @@
 #include <Object3D.h>
 #include <Input.h>
 #include <ScriptComponent.h>
+#include <format>
 
 void TestPlayer::Init()
 {
-	OutputDebugStringA("TestPlayer Initialize\n");
+	OutputDebugStringA(std::format("TestPlayer Initialize, size: {}\n", sizeof(TestPlayer)).c_str());
+	name_ = "TestPlayer";
 }
 
 void TestPlayer::Update()
@@ -21,13 +23,13 @@ void TestPlayer::Update()
 	if (obj)
 	{
 		float move = (float)Input::Key::Down(DIK_UP) - (float)Input::Key::Down(DIK_DOWN);
-		move *= 0.1f;
+		move *= 0.4f;
 
 		obj->position.z += move;
 
 		move = (float)(Input::Key::Down(DIK_RIGHT) - Input::Key::Down(DIK_LEFT));
 
-		move *= 0.2f;
+		move *= 0.8f;
 		
 		obj->position.y += move;
 	}
