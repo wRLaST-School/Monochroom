@@ -422,7 +422,7 @@ void Object3D::DrawGizmo()
 	if (ImGuizmo::IsUsing())
 	{
 		Float3 rot;
-		matWorld.DecomposeTransform(&position, &rotationE, &scale);
+		matWorld.DecomposeTransform(&position, &rot, &scale);
 
 		//Float3 rot;
 		//ImGuizmo::DecomposeMatrixToComponents(&matWorld[0][0] ,&position.x, &rot.x, &scale.x);

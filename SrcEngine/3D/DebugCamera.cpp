@@ -58,7 +58,7 @@ void DebugCamera::Update()
 	// 平行移動
 	if (Mouse::Down(Click::Middle) && Key::Down(DIK_LSHIFT))
 	{
-		const float moveSpeed = 0.25f;
+		const float moveSpeed = 0.1f;
 		Vec3 frontVec = (target - debugCamera->position).Norm();
 		Vec3 rightVec = frontVec.Cross(Vec3::up);
 		Vec3 upVec = rightVec.Cross(frontVec);
