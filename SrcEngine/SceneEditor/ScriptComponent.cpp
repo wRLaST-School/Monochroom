@@ -50,6 +50,12 @@ void ScriptComponent::ReadParamJson(const nlohmann::json& jsonObj)
 	className = jsonObj["filePath"];
 }
 
+void ScriptComponent::CopyComponent(IComponent* src)
+{
+	ScriptComponent* cast = dynamic_cast<ScriptComponent*>(src);
+	className = cast->className;
+}
+
 void ScriptComponent::CompileScript()
 {
 	//スクリプトコンポーネントを全て保持してdllobjをfree

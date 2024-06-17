@@ -17,6 +17,9 @@ public:
 	void WriteParamJson(nlohmann::json& jsonObj);
 
 	void ReadParamJson(const nlohmann::json& paramsObject);
+
+    void CopyComponent(IComponent* src) override { src; };
+
 private:
     std::string str_;
     Float2 pos_ = { (float)Util::GetWinWidth() / 2, (float)Util::GetWinHeight() / 2 };

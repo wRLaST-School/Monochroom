@@ -30,6 +30,20 @@ void HierarchyPanel::OnImGuiRender()
 			return;
 		}
 
+		if (Input::Key::Down(DIK_LCONTROL))
+		{
+			if (Input::Key::Triggered(DIK_V))
+			{
+				IComponent* parent = selected->parent_;
+				std::string selectedName = selected->name_;
+
+				if (parent)
+				{
+					ComponentFactory::CopyComponent(selected, parent);
+				}
+			}
+		}
+
 		if (Input::Key::Triggered(DIK_DELETE))
 		{
 			if (!(InspectorWindow::GetSelected<IScene>()))

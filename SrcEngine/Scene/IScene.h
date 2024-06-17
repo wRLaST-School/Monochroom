@@ -27,6 +27,7 @@ public:
 
 	void UpdateAllComponents();
 	void DrawAllComponents();
+	void CopyComponent(IComponent* src) override { src; };
 
 	virtual ~IScene() { 
 	};

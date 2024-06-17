@@ -19,8 +19,6 @@ Camera::Camera()
 	fov = PIf / 2;
 	nearZ = 0.1f;
 	farZ = 1000.0f;
-
-	frustum = std::make_unique<Frustum>();
 }
 
 void Camera::SetRenderSize(float w, float h)
@@ -59,7 +57,7 @@ bool Camera::CheckisInCameraInside(Vec3 pos, float r)
 	bool isInside = true;
 	for (int i = 0; i < 4; i++)
 	{
-		float dot = Vec3::Dot(frustum->normal[i], toPlaneNorm);
+		float dot = Vec3::Dot(frustum.normal[i], toPlaneNorm);
 		if (dot > r)
 		{
 			isInside = false;
@@ -82,7 +80,7 @@ void Camera::OnInspectorWindowDraw()
 
 void Camera::FrustumCulling()
 {
-	frustum->CalcFrustum(this);
+	frustum.CalcFrustum(this);
 }
 
 void Camera::Set(Camera& camera)
@@ -207,6 +205,23 @@ void Camera::WriteParamJson(nlohmann::json& jsonObject)
 	jsonObject["RotationEuler"]["Z"] = rotationE.z;
 
 	jsonObject["UseQuaternionRot"] = rotMode;
+}
+
+void Camera::CopyComponent(IComponent* src)
+{
+	Camera* cast = dynamic_cast<Camera*>(src);
+	target = cast->target;
+	renderWidth = cast->renderWidth;
+	renderHeight = cast->renderHeight;
+	useWindowSize = cast->useWindowSize;
+	nearZ = cast->nearZ;
+	farZ = cast->farZ;
+	fov = cast->fov;
+	view = cast->view;
+	proj = cast->proj;
+	farZ = cast->farZ;
+	frustum = cast->frustum;
+	Object3D::CopyComponent(src);
 }
 
 Float3 Camera::GetWorldPosFromScreen(const Float2& screen, float depth)

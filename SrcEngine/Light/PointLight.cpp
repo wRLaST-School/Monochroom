@@ -4,7 +4,7 @@
 #include <Light.h>
 #include <Camera.h>
 
-PointLight::PointLight():pos({ 0,0,0 }), color({ 0,0,0 }), att({ 0,0,0 }) {
+PointLight::PointLight() :pos({ 0,0,0 }), color({ 0,0,0 }), att({ 0,0,0 }) {
 	isActive = false;
 	Light::RegisterPointLight(this);
 }
@@ -20,7 +20,7 @@ PointLight::~PointLight()
 
 void PointLight::DrawFrame()
 {
-	if(showFrame_)
+	if (showFrame_)
 		LineDrawer::DrawCube(pos, { .25f, .25f, .25f }, color);
 }
 
@@ -63,4 +63,15 @@ void PointLight::DrawGizmo()
 		pos.y = matWorld[3][1];
 		pos.z = matWorld[3][2];
 	}
+}
+
+void PointLight::CopyComponent(IComponent* src)
+{
+	PointLight* cast = dynamic_cast<PointLight*>(src);
+	name = cast->name;
+	pos = cast->pos;
+	color = cast->color;
+	att = cast->att;
+	isActive = cast->isActive;
+	showFrame_ = cast->showFrame_;
 }

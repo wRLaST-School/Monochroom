@@ -219,3 +219,8 @@ void BT::BehaviorTree::SaveJson(std::string path)
 
 	file.close();
 }
+
+void BT::BehaviorTree::CopyComponent(IComponent* src)
+{
+	src;
+}

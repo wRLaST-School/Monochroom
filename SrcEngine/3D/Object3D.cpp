@@ -488,3 +488,21 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 
 	jsonObject["BlendMode"] = (int)blendMode;
 }
+
+void Object3D::CopyComponent(IComponent* src)
+{
+	Object3D* cast = dynamic_cast<Object3D*>(src);
+	scale = cast->scale;
+	rotation = cast->rotation;
+	rotationE = cast->rotationE;
+	rotMode = cast->rotMode;
+	blendMode = cast->blendMode;
+	position = cast->position;
+	parent = cast->parent;
+	texture = cast->texture;
+	model = cast->model;
+	distanceToCam = cast->distanceToCam;
+	alphaTexKey = cast->alphaTexKey;
+
+	UpdateMatrix();
+}

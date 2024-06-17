@@ -12,9 +12,10 @@ public:
 	friend HierarchyPanel;
 
 	static IComponent* AddChildComponent(IComponent* parent, std::string key, std::string newComponentTypeStr);
+	static void CopyComponent(IComponent* src, IComponent* parent);
 	static DLLExport void Register(std::string type, std::function<eastl::unique_ptr<IComponent>(void)> createFunc);
 
-private:
+public:
 	eastl::unordered_map<std::string, std::function<eastl::unique_ptr<IComponent>()>> factory;
 
 public://singleton

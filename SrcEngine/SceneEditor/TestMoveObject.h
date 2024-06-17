@@ -12,6 +12,8 @@ public:
     void Draw()override;
 
     void OnInspectorWindowDraw() override;
+    void CopyComponent(IComponent* src) override { src; };
+
 
 private:
     float spd = 0.2f;

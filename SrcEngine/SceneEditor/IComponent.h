@@ -96,6 +96,8 @@ public:
 	DLLExport void Deactivate();
 	DLLExport void ToggleActive();
 
+	virtual void CopyComponent(IComponent* src) = 0;
+
 	static void InitAllChildComponents(IComponent* parent);
 	static void UpdateAllChildComponents(IComponent* parent);
 	static void DrawAllChildComponents(IComponent* parent);

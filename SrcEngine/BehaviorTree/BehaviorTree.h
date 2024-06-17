@@ -28,6 +28,8 @@ namespace BT {
 		void LoadJson(std::string path);
 		void SaveJson(std::string path);
 
+		void CopyComponent(IComponent* src) override;
+
 	private:
 		BehaviorTreeFactory funcFactory_;
 	};

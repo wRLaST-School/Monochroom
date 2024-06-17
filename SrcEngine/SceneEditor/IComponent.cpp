@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "IComponent.h"
+#include "ComponentFactory.h"
 
 #pragma warning (push)
 #pragma warning (disable:26800)
@@ -19,6 +20,22 @@ IComponent* IComponent::AddComponent(const std::string& key, eastl::unique_ptr<I
 
 	return itr->second.get();
 }
+
+//void IComponent::CopyComponent(IComponent* src)
+//{
+//	name_ = src->name_;
+//
+//	for (auto& comp : src->components_)
+//	{
+//		// コンポネントを追加
+//		std::string classString = comp.second->GetClassString();
+//		std::string key = ComponentFactory::GetInstance()->factory.find(classString)->first;
+//		ComponentFactory::AddChildComponent(this, key, key);
+//	}
+//
+//	active = src->active;
+//	parent_ = src->parent_;
+//}
 
 void IComponent::ChangeParent(IComponent* newParent)
 {

@@ -17,6 +17,8 @@ public:
     void WriteParamJson(nlohmann::json& jsonObj) override;
     void ReadParamJson(const nlohmann::json& jsonObj) override;
 
+    void CopyComponent(IComponent* src) override;
+
 private:
     void CompileScript();
     void LoadDLL();

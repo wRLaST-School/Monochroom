@@ -18,6 +18,7 @@ public:
 	void DrawFrame();
 	void OnInspectorWindowDraw();
 	void DrawGizmo();
+	void CopyComponent(IComponent* src) override;
 
 	bool isActive = false;
 

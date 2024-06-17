@@ -81,3 +81,11 @@ void SpriteObject::ReadParamJson(const nlohmann::json& jsonObj)
 	scale.x = jsonObj["scaleX"];
 	scale.y = jsonObj["scaleY"];
 }
+
+void SpriteObject::CopyComponent(IComponent* src)
+{
+	SpriteObject* cast = dynamic_cast<SpriteObject*>(src);
+	tex = cast->tex;
+	position = cast->position;
+	scale = cast->scale;
+}

@@ -53,6 +53,8 @@ public:
 	void ReadParamJson([[maybe_unused]]const nlohmann::json& jsonObject) override;
 	void WriteParamJson([[maybe_unused]] nlohmann::json& jsonObject) override;
 
+	void CopyComponent(IComponent* src) override;
+
 	SpConstBuffer<ConstBufferDataTransform> transformCB;
 	SpConstBuffer<Float4> brightnessCB;
 	SpConstBuffer<ConstBufferDataMisc> miscCB;
