@@ -210,6 +210,13 @@ void DockPanel::DrawSaveDialog()
 			SceneRW::SaveScene(SceneManager::currentScene.get(), std::string("Assets/Scene/") + std::string(path) + std::string(".scene"));
 			showSaveDialog = false;
 		}
+
+		ImGui::SameLine();
+		
+		if (ImGui::Button("Cancel"))
+		{
+			showSaveDialog = false;
+		}
 	}
 	ImGui::End();
 }
