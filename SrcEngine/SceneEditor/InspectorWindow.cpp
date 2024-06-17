@@ -16,6 +16,8 @@ void InspectorWindow::DrawWindow()
 		ImGui::Begin("Inspector Window", &open, ImGuiWindowFlags_MenuBar);
 		if (selected_)
 		{
+			SpImGui::InputText("Name", &selected_->name_, ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
+
 			selected_->OnInspectorWindowDraw();
 			selected_->CommonInspectorWindowDraw();
 

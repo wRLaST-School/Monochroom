@@ -30,6 +30,7 @@ std::string GetClassString() override {\
 }\
 
 class HierarchyPanel;
+class InspectorWindow;
 
 class IComponent
 {
@@ -130,6 +131,7 @@ public:
 
 	//components_の中身をHierarchy Panelからのみ直接操作したいため
 	friend HierarchyPanel;
+	friend InspectorWindow;
 protected:
 	std::string name_ = "";
 
