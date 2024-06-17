@@ -1,5 +1,6 @@
 #pragma once
 #include <IComponent.h>
+#include "Bases.h"
 
 #define DefDel void Del() override {delete this;}
 

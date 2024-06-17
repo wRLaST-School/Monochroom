@@ -30,3 +30,7 @@ void TestObject::Update()
 void TestObject::Draw()
 {
 }
+
+void TestObject::CopyComponent(IComponent* src)
+{
+}

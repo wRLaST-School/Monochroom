@@ -1,9 +1,7 @@
 #pragma once
 #include "IScriptObject.h"
-#include <string>
-#include "Bases.h"
 
-class TestPlayer :
+class Default :
     public IScriptObject
 {
 public:
@@ -13,8 +11,6 @@ public:
     void CopyComponent(IComponent* src);
 
     DefDel;
-private:
-    int count = 0;
 };
 
-RegisterScript(TestPlayer);
+RegisterScript(Default);

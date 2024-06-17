@@ -1,5 +1,4 @@
 #include "IScriptObject.h"
-#include "IScriptObject.h"
 
 ScriptComponent* IScriptObject::This()
 {

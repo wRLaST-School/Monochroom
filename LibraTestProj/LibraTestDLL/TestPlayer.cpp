@@ -38,3 +38,7 @@ void TestPlayer::Update()
 void TestPlayer::Draw()
 {
 }
+
+void TestPlayer::CopyComponent(IComponent* src)
+{
+}
