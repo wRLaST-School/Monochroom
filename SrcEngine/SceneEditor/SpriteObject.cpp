@@ -20,8 +20,8 @@ void SpriteObject::Draw()
 
 void SpriteObject::OnInspectorWindowDraw()
 {
-	ImGui::InputFloat2("Pos", &position.x);
-	ImGui::InputFloat2("Scale", &scale.x);
+	ImGui::DragFloat2("Pos", &position.x);
+	ImGui::DragFloat2("Scale", &scale.x);
 
 	SpImGui::InputText("Texture", &tex, NULL);
 

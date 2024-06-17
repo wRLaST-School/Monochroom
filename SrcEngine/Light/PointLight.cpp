@@ -26,9 +26,9 @@ void PointLight::DrawFrame()
 
 void PointLight::OnInspectorWindowDraw()
 {
-	ImGui::SliderFloat3("Position", &pos.x, -10.f, 10.f);
-	ImGui::SliderFloat3("Color", &color.x, 0.f, 3.f);
-	ImGui::SliderFloat3("Attenuation", &att.x, 0.f, .2f);
+	ImGui::DragFloat3("Position", &pos.x, -10.f, 10.f);
+	ImGui::DragFloat3("Color", &color.x, 0.f, 3.f);
+	ImGui::DragFloat3("Attenuation", &att.x, 0.f, .2f);
 	ImGui::Checkbox("Active", &isActive);
 	ImGui::Checkbox("ShowFrame", &showFrame_);
 }

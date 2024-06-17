@@ -315,7 +315,7 @@ void Object3D::DrawToon(const TextureKey& key)
 
 void Object3D::OnInspectorWindowDraw()
 {
-	ImGui::InputFloat3("Translation", &position.x);
+	ImGui::DragFloat3("Translation", & position.x);
 
 	if (rotMode == RotMode::Euler)
 	{
@@ -329,12 +329,12 @@ void Object3D::OnInspectorWindowDraw()
 	}
 	else
 	{
-		ImGui::InputFloat4("Rotation", &rotation.w);
+		ImGui::DragFloat4("Rotation", &rotation.w);
 		ImGui::Text("vvv Gizmo Does Not Work Currently vvv");
 	}
 	ImGui::Checkbox("Use Quaternion Rotation", reinterpret_cast<bool*>(&rotMode));
 
-	ImGui::InputFloat3("Scale", &scale.x);
+	ImGui::DragFloat3("Scale", &scale.x);
 
 	ImGui::Separator();
 
