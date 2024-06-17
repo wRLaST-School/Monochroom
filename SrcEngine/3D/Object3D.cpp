@@ -379,36 +379,39 @@ void Object3D::DrawGizmo()
 
 	ImGuizmo::Enable(true);
 
-	if (Input::Key::Triggered(DIK_T))
+	if (!Input::Key::Down(DIK_LCONTROL) && !Input::Key::Down(DIK_RCONTROL))
 	{
-		mCurrentGizmoOperation = ImGuizmo::TRANSLATE;
-		mCurrentGizmoMode = ImGuizmo::WORLD;
-	}
-	else if (Input::Key::Triggered(DIK_R))
-	{
-		mCurrentGizmoOperation = ImGuizmo::ROTATE;
-		mCurrentGizmoMode = ImGuizmo::WORLD;
-	}
-	else if (Input::Key::Triggered(DIK_S))
-	{
-		mCurrentGizmoOperation = ImGuizmo::SCALE;
-		mCurrentGizmoMode = ImGuizmo::WORLD;
-	}
+		if (Input::Key::Triggered(DIK_T))
+		{
+			mCurrentGizmoOperation = ImGuizmo::TRANSLATE;
+			mCurrentGizmoMode = ImGuizmo::WORLD;
+		}
+		else if (Input::Key::Triggered(DIK_R))
+		{
+			mCurrentGizmoOperation = ImGuizmo::ROTATE;
+			mCurrentGizmoMode = ImGuizmo::WORLD;
+		}
+		else if (Input::Key::Triggered(DIK_S))
+		{
+			mCurrentGizmoOperation = ImGuizmo::SCALE;
+			mCurrentGizmoMode = ImGuizmo::WORLD;
+		}
 
-	if (Input::Key::DoubleTriggered(DIK_T))
-	{
-		mCurrentGizmoOperation = ImGuizmo::TRANSLATE;
-		mCurrentGizmoMode = ImGuizmo::LOCAL;
-	}
-	else if (Input::Key::DoubleTriggered(DIK_R))
-	{
-		mCurrentGizmoOperation = ImGuizmo::ROTATE;
-		mCurrentGizmoMode = ImGuizmo::LOCAL;
-	}
-	else if (Input::Key::DoubleTriggered(DIK_S))
-	{
-		mCurrentGizmoOperation = ImGuizmo::SCALE;
-		mCurrentGizmoMode = ImGuizmo::LOCAL;
+		if (Input::Key::DoubleTriggered(DIK_T))
+		{
+			mCurrentGizmoOperation = ImGuizmo::TRANSLATE;
+			mCurrentGizmoMode = ImGuizmo::LOCAL;
+		}
+		else if (Input::Key::DoubleTriggered(DIK_R))
+		{
+			mCurrentGizmoOperation = ImGuizmo::ROTATE;
+			mCurrentGizmoMode = ImGuizmo::LOCAL;
+		}
+		else if (Input::Key::DoubleTriggered(DIK_S))
+		{
+			mCurrentGizmoOperation = ImGuizmo::SCALE;
+			mCurrentGizmoMode = ImGuizmo::LOCAL;
+		}
 	}
 
 	Matrix view = Camera::sCurrent->GetViewMat();
