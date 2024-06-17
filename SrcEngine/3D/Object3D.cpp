@@ -320,11 +320,11 @@ void Object3D::OnInspectorWindowDraw()
 	if (rotMode == RotMode::Euler)
 	{
 		ImGui::PushItemWidth(80.0f);
-		ImGui::SliderAngle("##rotEX", &rotationE.x);
+		SpImGui::DragAngle("##rotEX", &rotationE.x);
 		ImGui::SameLine();
-		ImGui::SliderAngle("##rotEY", &rotationE.y);
+		SpImGui::DragAngle("##rotEY", &rotationE.y);
 		ImGui::SameLine();
-		ImGui::SliderAngle("Rotation", &rotationE.z);
+		SpImGui::DragAngle("Rotation", &rotationE.z);
 		ImGui::PopItemWidth();
 	}
 	else

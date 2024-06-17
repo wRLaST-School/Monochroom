@@ -119,6 +119,17 @@ bool SpImGui::InputText(const char* label, std::string* str, ImGuiInputTextFlags
 	return ImGui::InputText(label, (char*)str->c_str(), str->capacity() + 1, flags, InputTextCallback, &cb_user_data);
 }
 
+DLLExport bool SpImGui::DragAngle(const char* label, float* prad)
+{
+	std::string format;
+	if (format == "")
+		format = "%.0f deg";
+	float v_deg = (*prad) * 360.0f / (2 * IM_PI);
+	bool value_changed = ImGui::DragFloat(label, &v_deg, 0.5f, -360.f, 360.f, format.c_str());
+	*prad = v_deg * (2 * IM_PI) / 360.0f;
+	return value_changed;
+}
+
 int SpImGui::InputTextCallback(ImGuiInputTextCallbackData* data)
 {
 	InputTextCallback_UserData* user_data = (InputTextCallback_UserData*)data->UserData;
