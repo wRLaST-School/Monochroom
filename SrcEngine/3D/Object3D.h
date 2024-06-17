@@ -63,7 +63,7 @@ public:
 	enum class RotMode{
 		Euler,
 		Quaternion
-	} rotMode = RotMode::Quaternion;
+	} rotMode = RotMode::Euler;
 
 	enum class BlendMode {
 		Opaque,
