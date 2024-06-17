@@ -88,7 +88,7 @@ public:
 
 	static void ReleaseAllSounds();
 	static void ReleasePerSceneSounds();
-	static void PreLoadNewScene();
+	static DLLExport void PreLoadNewScene();
 
 private:
 	static Microsoft::WRL::ComPtr<IXAudio2> sXAudio2;

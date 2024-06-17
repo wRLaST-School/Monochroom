@@ -46,7 +46,7 @@ public:
 
 	static void ReleasePerSceneEffects();
 
-	static void PreLoadNewScene();
+	static DLLExport void PreLoadNewScene();
 
 	static Effekseer::Manager* Manager();
 

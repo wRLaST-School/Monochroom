@@ -196,7 +196,7 @@ public:
 
 	static void ReleaseAllModels();
 
-	static void PreLoadNewScene();
+	static DLLExport void PreLoadNewScene();
 
 private:
 	static exc_unordered_map<ModelKey, Model> sModels;

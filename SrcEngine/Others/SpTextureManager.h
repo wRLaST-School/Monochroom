@@ -133,7 +133,7 @@ public:
 	static void Release(const TextureKey& key);
 	//前のシーンで使われていて今のシーンで使われていないテクスチャをリリース
 	static void ReleasePerSceneTexture();
-	static void PreLoadNewScene();
+	static DLLExport void PreLoadNewScene();
 
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
 	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvHeap = nullptr;
