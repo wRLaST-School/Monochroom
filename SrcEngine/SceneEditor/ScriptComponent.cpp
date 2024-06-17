@@ -36,7 +36,6 @@ void ScriptComponent::OnInspectorWindowDraw()
 	if (ImGui::Button("Compile"))
 	{
 		CompileScript();
-		LoadDLL();
 	}
 }
 
@@ -81,7 +80,7 @@ void ScriptComponent::CompileScript()
 	GetAllScriptCompsRecursive(scriptcomps, SceneManager::currentScene.get());
 
 	for (auto& c : scriptcomps) {
-		if(c->dllobj_.GetModule())
+		if (c->dllobj_.GetModule())
 			c->dllobj_.Free();
 	}
 

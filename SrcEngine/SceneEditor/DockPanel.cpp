@@ -11,8 +11,6 @@
 #include <SpriteObject.h>
 #include <Input.h>
 
-std::string lastSavePath = "";
-
 void DockPanel::EnableScreenDock()
 {
 	SpImGui::Command([&] {

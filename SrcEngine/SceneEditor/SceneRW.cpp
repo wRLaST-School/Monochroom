@@ -9,6 +9,7 @@
 #include <Model.h>
 #include <SoundManager.h>
 #include <SpEffekseer.h>
+#include <Object3D.h>
 
 using namespace std;
 using namespace nlohmann;
@@ -143,6 +144,9 @@ void SceneRW::LoadScene(IScene* scene, std::string filePath)
 
 		auto child = ComponentFactory::AddChildComponent(current, componentType, componentType);
 		child->ReadParamJson(object);
+		if (componentType == "Object3D" || componentType == "Camera") {
+			child->CastTo<Object3D>()->UpdateMatrix();
+		}
 
 		//子ノードの読み込み
 		if (object.contains("Children"))

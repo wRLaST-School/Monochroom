@@ -319,7 +319,13 @@ void Object3D::OnInspectorWindowDraw()
 
 	if (rotMode == RotMode::Euler)
 	{
-		ImGui::DragFloat3("Rotation", &rotationE.x, PIf / 360.f);
+		ImGui::PushItemWidth(80.0f);
+		SpImGui::DragAngle("##rotEX", &rotationE.x);
+		ImGui::SameLine();
+		SpImGui::DragAngle("##rotEY", &rotationE.y);
+		ImGui::SameLine();
+		SpImGui::DragAngle("Rotation", &rotationE.z);
+		ImGui::PopItemWidth();
 	}
 	else
 	{
@@ -416,7 +422,7 @@ void Object3D::DrawGizmo()
 	if (ImGuizmo::IsUsing())
 	{
 		Float3 rot;
-		matWorld.DecomposeTransform(&position, &rotationE, &scale);
+		matWorld.DecomposeTransform(&position, &rot, &scale);
 
 		//Float3 rot;
 		//ImGuizmo::DecomposeMatrixToComponents(&matWorld[0][0] ,&position.x, &rot.x, &scale.x);

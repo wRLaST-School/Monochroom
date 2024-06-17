@@ -5,6 +5,7 @@
 
 void TestObject::Init()
 {
+	name_ = "TestObject";
 }
 
 void TestObject::Update()

@@ -10,11 +10,11 @@
 class SceneManager final
 {
 public:
-	static void Init();
-	static void Update();
-	static void Draw3D();
-	static void DrawSprite();
-	static void DrawBack();
+	static DLLExport void Init();
+	static DLLExport void Update();
+	static DLLExport void Draw3D();
+	static DLLExport void DrawSprite();
+	static DLLExport void DrawBack();
 
 	//非同期で次のシーンの読み込みを開始する
 	template <class NextScene, class... Args> static void LoadScene(Args... args)
@@ -39,14 +39,14 @@ public:
 	};
 
 	//読み込みが終わっていたらシーンを切り替え、終わっていないなら何もしない
-	static void Transition();
+	static DLLExport void Transition();
 
 	//読み込みが終わるまで処理を止めて待機してからシーンを切り替え
-	static void WaitForLoadAndTransition();
+	static DLLExport void WaitForLoadAndTransition();
 
-	static void ConfirmTransition();
+	static DLLExport void ConfirmTransition();
 
-	static void ReleaseScene();
+	static DLLExport void ReleaseScene();
 
 	enum class LoadState {
 		NotInProgress,
@@ -54,9 +54,9 @@ public:
 		Loaded
 	};
 	//現在のシーン読み込みの状態を取得
-	static LoadState GetLoadState();
+	static DLLExport LoadState GetLoadState();
 
-	static IScene* GetScene();
+	static DLLExport IScene* GetScene();
 
 	static std::unique_ptr<IScene> currentScene;
 	static std::unique_ptr<IScene> nextScene;
@@ -66,7 +66,7 @@ private:
 	static LoadState loadState;
 	//こっちはリアルタイム更新、次フレームの最初にリセット
 	static bool loadFinished;
-	static void UpdateLoadState();
+	static DLLExport void UpdateLoadState();
 	static bool transitionQueued;
 	static std::unique_ptr<DebugCamera> debugCamera;
 

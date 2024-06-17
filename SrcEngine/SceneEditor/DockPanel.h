@@ -54,6 +54,9 @@ public:
 	 * @return ImGuiWindow*型
 	 */
 	static ImGuiWindow* GetViewPortWindow();
+
+	inline static std::string lastSavePath = "";
+
 private:
 	inline static ImGuiWindow* sViewPortWindow;
 

@@ -1,10 +1,15 @@
 #include "stdafx.h"
 #include "SceneFromFile.h"
 #include <SceneRW.h>
+#include <DockPanel.h>
 
 SceneFromFile::SceneFromFile(std::string filePath)
 {
 	filePath_ = filePath;
+
+	DockPanel::lastSavePath = filePath;
+
+	if (filePath == "Assets/Scene/Empty.scene") DockPanel::lastSavePath = "";
 }
 
 void SceneFromFile::LoadResources()

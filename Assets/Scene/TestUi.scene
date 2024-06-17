@@ -1,0 +1,51 @@
+[
+    {
+        "Children": [
+            {
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": -10.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Type": "Camera",
+                "UseQuaternionRot": 1
+            },
+            {
+                "Type": "ScriptComponent",
+                "filePath": "TestUi"
+            }
+        ],
+        "EfkEffects": [
+            {}
+        ],
+        "Models": [
+            {}
+        ],
+        "Sounds": [
+            {}
+        ],
+        "Textures": [
+            {
+                "Black": "Assets/Images/black.png",
+                "circleParticle.png": "Assets\\Images\\circleParticle.png"
+            }
+        ],
+        "Type": "IScene"
+    }
+]
