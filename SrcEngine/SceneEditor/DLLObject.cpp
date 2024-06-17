@@ -1,15 +1,19 @@
 #include "stdafx.h"
 #include "DLLObject.h"
 #include <SpDS.h>
+#include <format>
 
 const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
 {
     //何か登録されてたら解放
     if (hModule_) { Free(); }
 
+#ifdef _DEBUG
     //DLL読み込み
+    hModule_ = LoadLibraryA("Resources/Compiled/ScriptsD.dll");
+#else
     hModule_ = LoadLibraryA("Resources/Compiled/Scripts.dll");
-
+#endif
     if (hModule_ == nullptr) { return hModule_; }
 
     //Create関数でインスタンス生成するのでその関数ポインタを取得
@@ -24,13 +28,9 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
     if (instantiateFunc == nullptr) { return hModule_; }
 
     //生成済みの場合はリセット
-    if (component_)
-    {
-        delete component_;
-    }
-
-    //生成を行う
     component_ = instantiateFunc();
+
+    OutputDebugStringA(std::format("Attaching Class {}, size: {}", className, sizeof(*component_)).c_str());
 
     return hModule_;
 }
@@ -53,5 +53,9 @@ Libra::DLLObject::~DLLObject()
 
 void Libra::DLLObject::Free()
 {
+    if (component_) {
+        component_ = nullptr;
+    }
+    
     FreeLibrary(hModule_);
 }

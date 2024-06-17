@@ -34,6 +34,19 @@ enum class Trigger {
 };
 
 namespace Input {
+	class DLLExport Double
+	{
+	public:
+		int32_t frame;
+		int32_t maxFrame;
+
+		bool isPush;
+		int32_t pushKey;
+
+	public:
+		Double() :frame(0), maxFrame(10), isPush(false), pushKey(0) {}
+	};
+
 	class DLLExport Key
 	{
 	public:
@@ -50,6 +63,8 @@ namespace Input {
 		//キーが押された瞬間か
 		static bool Triggered(int32_t key);
 
+		static bool DoubleTriggered(int32_t key);
+
 		static Key* GetInstance();
 	private:
 		IDirectInput8* dinput_ = nullptr;
@@ -57,6 +72,7 @@ namespace Input {
 
 		BYTE keys_[256] = {};
 		BYTE prevKeys_[256] = {};
+		Double doubleKeys_[256] = {};
 
 		friend IDirectInput8* GetDInput();
 	};
@@ -81,6 +97,9 @@ namespace Input {
 
 		//マウスの座標
 		static Float2 GetPos();
+
+		//ホイールの移動量
+		static float GetWheelVel();
 
 		static Mouse* GetInstance();
 

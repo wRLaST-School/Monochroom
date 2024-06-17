@@ -75,6 +75,14 @@ void Object3D::Update()
 
 void Object3D::Draw()
 {
+	Camera::sCurrent->FrustumCulling();
+	float radius = Vec3(scale).GetMaxElement();
+	bool isInside = Camera::sCurrent->CheckisInCameraInside(position, radius);
+	if (!isInside)
+	{
+		return;
+	}
+
 	//モデルが設定されていないならなにもしない
 	if (!model)
 	{
@@ -82,7 +90,7 @@ void Object3D::Draw()
 	}
 
 	bool hasTexture = texture != "";
-	
+
 	//ブレンドモード・テクスチャ指定によって描画関数を変更
 	switch (blendMode)
 	{
@@ -107,6 +115,15 @@ void Object3D::Draw()
 		else
 		{
 			return DrawAlpha();
+		}
+		break;
+	case Object3D::BlendMode::Toon:
+		if (hasTexture) {
+			return DrawToon(texture);
+		}
+		else
+		{
+			return DrawToon();
 		}
 		break;
 	default:
@@ -143,7 +160,7 @@ void Object3D::Draw()
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-	}, SpRenderer::Stage::Opaque);
+		}, SpRenderer::Stage::Opaque);
 }
 
 void Object3D::Draw(const TextureKey& key)
@@ -158,13 +175,13 @@ void Object3D::Draw(const TextureKey& key)
 	SpRenderer::DrawCommand([&, key] {
 		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
 
-		if(model->materialCBs.size())
+		if (model->materialCBs.size())
 			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, model->materialCBs.front().buffer->GetGPUVirtualAddress());
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(2, transformCB.buffer->GetGPUVirtualAddress());
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(4, brightnessCB.buffer->GetGPUVirtualAddress());
-		
+
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, model->bMatrixCB.buffer->GetGPUVirtualAddress());
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
@@ -188,7 +205,7 @@ void Object3D::DrawCommands(const TextureKey& key)
 	GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(2, transformCB.buffer->GetGPUVirtualAddress());
 
 	GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(4, brightnessCB.buffer->GetGPUVirtualAddress());
-	
+
 	GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(5, model->bMatrixCB.buffer->GetGPUVirtualAddress());
 
 	GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, miscCB.buffer->GetGPUVirtualAddress());
@@ -225,7 +242,7 @@ void Object3D::DrawAdd(const TextureKey& key)
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(2, transformCB.buffer->GetGPUVirtualAddress());
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(4, brightnessCB.buffer->GetGPUVirtualAddress());
-		
+
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(5, model->bMatrixCB.buffer->GetGPUVirtualAddress());
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, miscCB.buffer->GetGPUVirtualAddress());
@@ -259,6 +276,43 @@ void Object3D::DrawAlpha(const TextureKey& key)
 	SpRenderer::RegisterAlphaObj(this);
 }
 
+void Object3D::DrawToon()
+{
+	if (model->material.size())
+	{
+		DrawAdd(model->material.front().textureKey);
+	}
+	else
+	{
+		DrawAdd("notexture");
+	}
+}
+
+void Object3D::DrawToon(const TextureKey& key)
+{
+	transformCB.contents->mat = matWorld;
+	SpRenderer::DrawCommand([&] {
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
+
+		if (model->materialCBs.size())
+			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, model->materialCBs.front().buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(2, transformCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(4, brightnessCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, model->bMatrixCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
+
+		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
+
+		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
+		}, SpRenderer::Stage::Toon);
+}
+
 void Object3D::OnInspectorWindowDraw()
 {
 	ImGui::InputFloat3("Translation", &position.x);
@@ -269,13 +323,14 @@ void Object3D::OnInspectorWindowDraw()
 	}
 	else
 	{
-		ImGui::Text("vvv Gizmo Does Not Work Currently vvv");
 		ImGui::InputFloat4("Rotation", &rotation.w);
+		ImGui::Text("vvv Gizmo Does Not Work Currently vvv");
 	}
+	ImGui::Checkbox("Use Quaternion Rotation", reinterpret_cast<bool*>(&rotMode));
 
 	ImGui::InputFloat3("Scale", &scale.x);
 
-	ImGui::Checkbox("Use Quaternion Rotation", reinterpret_cast<bool*>(&rotMode));
+	ImGui::Separator();
 
 	ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));
 
@@ -289,27 +344,66 @@ void Object3D::OnInspectorWindowDraw()
 		texture = buf;
 	};
 
+	if (ImGui::CollapsingHeader("Blend Mode"))
+	{
+		int blendeModeInt = (int)blendMode;
+		ImGui::RadioButton("Opaque", &blendeModeInt, (int)BlendMode::Opaque);	ImGui::SameLine();
+		ImGui::RadioButton("Add", &blendeModeInt, (int)BlendMode::Add);			ImGui::SameLine();
+		ImGui::RadioButton("Alpha", &blendeModeInt, (int)BlendMode::Alpha);		ImGui::SameLine();
+		ImGui::RadioButton("Toon", &blendeModeInt, (int)BlendMode::Toon);
+		blendMode = (BlendMode)blendeModeInt;
+	}
+	ImGui::Separator();
+
+
 	UpdateMatrix();
 }
 
 void Object3D::DrawGizmo()
 {
 	ImGuizmo::SetDrawlist();
-	ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y, 
+	ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y,
 		ImGui::GetWindowWidth(), ImGui::GetWindowHeight());
 
 	ImGuizmo::AllowAxisFlip(true);
 
 	static ImGuizmo::OPERATION mCurrentGizmoOperation(ImGuizmo::TRANSLATE);
 
+	static ImGuizmo::MODE mCurrentGizmoMode(ImGuizmo::WORLD);
+
 	ImGuizmo::Enable(true);
 
-	if (Input::Key::Down(DIK_T))
+	if (Input::Key::Triggered(DIK_T))
+	{
 		mCurrentGizmoOperation = ImGuizmo::TRANSLATE;
-	if (Input::Key::Down(DIK_R))
+		mCurrentGizmoMode = ImGuizmo::WORLD;
+	}
+	else if (Input::Key::Triggered(DIK_R))
+	{
 		mCurrentGizmoOperation = ImGuizmo::ROTATE;
-	if (Input::Key::Down(DIK_S)) 
+		mCurrentGizmoMode = ImGuizmo::WORLD;
+	}
+	else if (Input::Key::Triggered(DIK_S))
+	{
 		mCurrentGizmoOperation = ImGuizmo::SCALE;
+		mCurrentGizmoMode = ImGuizmo::WORLD;
+	}
+
+	if (Input::Key::DoubleTriggered(DIK_T))
+	{
+		mCurrentGizmoOperation = ImGuizmo::TRANSLATE;
+		mCurrentGizmoMode = ImGuizmo::LOCAL;
+	}
+	else if (Input::Key::DoubleTriggered(DIK_R))
+	{
+		mCurrentGizmoOperation = ImGuizmo::ROTATE;
+		mCurrentGizmoMode = ImGuizmo::LOCAL;
+	}
+	else if (Input::Key::DoubleTriggered(DIK_S))
+	{
+		mCurrentGizmoOperation = ImGuizmo::SCALE;
+		mCurrentGizmoMode = ImGuizmo::LOCAL;
+	}
 
 	Matrix view = Camera::sCurrent->GetViewMat();
 	Matrix proj = Camera::sCurrent->GetProjMat();
@@ -317,12 +411,17 @@ void Object3D::DrawGizmo()
 	UpdateMatrix();
 
 	ImGuizmo::Manipulate(reinterpret_cast<float*>(&view),
-		reinterpret_cast<float*>(&proj), mCurrentGizmoOperation, ImGuizmo::WORLD, &matWorld[0][0], NULL, NULL);
+		reinterpret_cast<float*>(&proj), mCurrentGizmoOperation, mCurrentGizmoMode, &matWorld[0][0], NULL, NULL);
 
 	if (ImGuizmo::IsUsing())
 	{
 		Float3 rot;
-		matWorld.DecomposeTransform(&position, &rot, &scale);
+		matWorld.DecomposeTransform(&position, &rotationE, &scale);
+
+		//Float3 rot;
+		//ImGuizmo::DecomposeMatrixToComponents(&matWorld[0][0] ,&position.x, &rot.x, &scale.x);
+		//ImGuizmo::RecomposeMatrixFromComponents(&position.x, &rot.x, &scale.x, &matWorld[0][0]);
+		//rotationE = ConvertRadianToAngle(rot);
 
 		Vec3 deltaRot = static_cast<Vec3>(rot) - rotationE;
 
@@ -340,12 +439,12 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 
 	scale.x = jsonObject["Scale"]["X"];
 	scale.y = jsonObject["Scale"]["Y"];
-	scale.z = jsonObject["Scale"]["Z"] ;
+	scale.z = jsonObject["Scale"]["Z"];
 
 	rotation.v.x = jsonObject["Rotation"]["X"];
 	rotation.v.y = jsonObject["Rotation"]["Y"];
 	rotation.v.z = jsonObject["Rotation"]["Z"];
-	rotation.w   = jsonObject["Rotation"]["W"];
+	rotation.w = jsonObject["Rotation"]["W"];
 
 	rotationE.x = jsonObject["RotationEuler"]["X"];
 	rotationE.y = jsonObject["RotationEuler"]["Y"];
@@ -354,6 +453,10 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	texture = jsonObject["Texture"];
 	std::string modelStr = jsonObject.At("Model");
 
+	if (jsonObject.contains("BlendMode"))
+	{
+		blendMode = (BlendMode)jsonObject["BlendMode"];
+	}
 	model = ModelManager::GetModel(modelStr);
 }
 
@@ -383,5 +486,5 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	else
 		jsonObject["Model"] = "";
 
-
+	jsonObject["BlendMode"] = (int)blendMode;
 }

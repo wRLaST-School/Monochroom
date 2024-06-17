@@ -141,6 +141,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		}
 	case WM_DROPFILES:
 		{
+			if (IsIconic(hwnd)) return 0;
 			auto hdrop = (HDROP)wParam;
 			//ドロップされたFile数
 			int32_t num = DragQueryFile(hdrop, (UINT)(-1), NULL, 0);

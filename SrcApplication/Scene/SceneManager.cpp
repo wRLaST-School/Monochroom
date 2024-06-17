@@ -14,9 +14,11 @@
 
 std::future<void> SceneManager::ftr;
 bool SceneManager::transitionQueued = false;
+std::unique_ptr<DebugCamera> SceneManager::debugCamera;
 
 void SceneManager::Init()
 {
+	debugCamera = std::make_unique<DebugCamera>();
 	Transition::Load();
 	InstantTransition<TestScene>();
 }
@@ -41,6 +43,10 @@ void SceneManager::Update()
 	if (!GameManager::sDebugTimeStop)
 	{
 		IComponent::UpdateAllChildComponents(currentScene.get());
+	}
+	else
+	{
+		debugCamera->Update();
 	}
 }
 
@@ -119,7 +125,7 @@ IScene* SceneManager::GetScene()
 	return currentScene.get();
 }
 
-template <class NextScene,  class... Args> void SceneManager::InstantTransition(Args... args)
+template <class NextScene, class... Args> void SceneManager::InstantTransition(Args... args)
 {
 	currentScene.release();
 	currentScene = nullptr;

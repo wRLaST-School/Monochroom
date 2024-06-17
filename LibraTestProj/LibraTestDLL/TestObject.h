@@ -8,6 +8,7 @@ public:
     void Init();
     void Update();
     void Draw();
+    DefDel;
 };
 
 RegisterScript(TestObject);

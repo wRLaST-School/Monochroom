@@ -19,6 +19,8 @@ Camera::Camera()
 	fov = PIf / 2;
 	nearZ = 0.1f;
 	farZ = 1000.0f;
+
+	frustum = std::make_unique<Frustum>();
 }
 
 void Camera::SetRenderSize(float w, float h)
@@ -51,6 +53,23 @@ Matrix Camera::GetBillboardMat()
 	return -camRot;
 }
 
+bool Camera::CheckisInCameraInside(Vec3 pos, float r)
+{
+	Vec3 toPlaneNorm = (pos - position)/*.GetNorm()*/;
+	bool isInside = true;
+	for (int i = 0; i < 4; i++)
+	{
+		float dot = Vec3::Dot(frustum->normal[i], toPlaneNorm);
+		if (dot > r)
+		{
+			isInside = false;
+			break;
+		}
+	}
+
+	return isInside;
+}
+
 void Camera::OnInspectorWindowDraw()
 {
 	Object3D::OnInspectorWindowDraw();
@@ -59,6 +78,11 @@ void Camera::OnInspectorWindowDraw()
 	{
 		Camera::Set(*this);
 	}
+}
+
+void Camera::FrustumCulling()
+{
+	frustum->CalcFrustum(this);
 }
 
 void Camera::Set(Camera& camera)
@@ -315,3 +339,60 @@ Matrix Camera::GetProjMat()
 }
 
 Camera* Camera::sCurrent = nullptr;
+
+void Frustum::CalcFrustum(Camera* cam)
+{
+	// カメラの情報
+	float aspectRatio = 1920.f / 1080.f;
+	float tanHalfFov = tanf(cam->fov / 2);
+
+	//float farZ = cam->farZ;
+
+	// 水平Fovと垂直Fovを計算
+	horizontalFov = atanf(tanHalfFov * aspectRatio);
+	verticalFov = tanHalfFov;
+
+	// 向いてる方向
+	vec[(int)FrustumPlane::Left] = Vec3(-sinf(horizontalFov), 0, cosf(horizontalFov));
+	vec[(int)FrustumPlane::Right] = Vec3(sinf(horizontalFov), 0, cosf(horizontalFov));
+	vec[(int)FrustumPlane::Top] = Vec3(0, sinf(verticalFov), cosf(verticalFov));
+	vec[(int)FrustumPlane::Bottom] = Vec3(0, -sinf(verticalFov), cosf(verticalFov));
+
+	// カメラのy軸回転を考慮し回転後のベクトルを作成
+	float camAngeX = cam->rotationE.x;
+	float camAngeY = cam->rotationE.y;
+
+	// y軸周りの回転行列を作成
+	Quaternion xRotation = Quaternion::AngleAxis(Vec3::right, camAngeX);
+	Quaternion yRotation = Quaternion::AngleAxis(Vec3::up, camAngeY);
+
+	Vec3 frontVec = Vec3::zero;
+	Vec3 rightVec = Vec3::zero;
+	Vec3 upVec = Vec3::zero;
+
+	// 左の面の法線ベクトルの計算
+	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Left]).v;
+	rightVec = Vec3::Cross(frontVec, Vec3::up);
+	upVec = Vec3::Cross(rightVec, frontVec);
+	rightVec = Vec3::Cross(frontVec, upVec);
+	normal[(int)FrustumPlane::Left] = rightVec;
+
+	// 右の面の法線ベクトルの計算
+	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Right]).v;
+	rightVec = Vec3::Cross(frontVec, Vec3::down);
+	upVec = Vec3::Cross(rightVec, frontVec);
+	rightVec = Vec3::Cross(frontVec, upVec);
+	normal[(int)FrustumPlane::Right] = rightVec;
+
+	// 上の面の法線ベクトルの計算
+	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Top]).v;
+	rightVec = Vec3::Cross(frontVec, Vec3::up);
+	upVec = Vec3::Cross(rightVec, frontVec);
+	normal[(int)FrustumPlane::Top] = upVec;
+
+	// 下の面の法線ベクトルの計算
+	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Bottom]).v;
+	rightVec = Vec3::Cross(frontVec, Vec3::down);
+	upVec = Vec3::Cross(rightVec, frontVec);
+	normal[(int)FrustumPlane::Bottom] = upVec;
+}
