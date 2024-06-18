@@ -12,6 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="FirstPersonCamera.h" />
+    <ClInclude Include="PlayerControl.h" />
     <ClInclude Include="TestDayo.h" />
     <ClInclude Include="Bases.h" />
     <ClInclude Include="IScriptObject.h" />
@@ -20,6 +22,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="FirstPersonCamera.cpp" />
+    <ClCompile Include="PlayerControl.cpp" />
     <ClCompile Include="TestDayo.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />

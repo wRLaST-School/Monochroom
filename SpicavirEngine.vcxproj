@@ -293,7 +293,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClCompile Include="SrcEngine\Renderer\SrSpriteStage.cpp" />
     <ClCompile Include="SrcEngine\Scene\FrameRate.cpp" />
     <ClCompile Include="SrcEngine\Scene\IScene.cpp" />
-    <ClCompile Include="SrcEngine\ShaderCreater.cpp" />
+    <ClCompile Include="SrcEngine\FileCreater.cpp" />
     <ClCompile Include="SrcEngine\Sound\SoundManager.cpp" />
     <ClCompile Include="SrcEngine\Windows\SpWindow.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\StringObject.cpp" />
@@ -407,7 +407,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClInclude Include="SrcEngine\Renderer\SrSpriteStage.h" />
     <ClInclude Include="SrcEngine\Scene\FrameRate.h" />
     <ClInclude Include="SrcEngine\Scene\IScene.h" />
-    <ClInclude Include="SrcEngine\ShaderCreater.h" />
+    <ClInclude Include="SrcEngine\FileCreater.h" />
     <ClInclude Include="SrcEngine\Sound\SoundManager.h" />
     <ClInclude Include="SrcEngine\Windows\SpWindow.h" />
     <ClInclude Include="SrcExternal\json.hpp" />

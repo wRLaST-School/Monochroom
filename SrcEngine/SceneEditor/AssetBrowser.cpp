@@ -21,7 +21,7 @@
 
 #include <format>
 
-#include <ShaderCreater.h>
+#include <FileCreater.h>
 
 constexpr char* sAssetsDirectory = "Assets";
 const static std::filesystem::path sAssetPath = "Assets";
@@ -293,14 +293,14 @@ void AssetBrowser::PopModalWindow()
 				if (popID == "Create C++ Class")
 				{
 					std::string projectPath = "LibraTestProj/LibraTestDLL/";
-					ShaderCreater::CreateCppClass(projectPath, inputName);
+					FileCreater::CreateCppClass(projectPath, inputName);
 				}
 
 				// シェーダー作成なら
 				if (popID == "Create Shader")
 				{
 					std::string shadersFolderPath = "Assets/Shaders/";
-					ShaderCreater::CreateDefaultShader(shadersFolderPath, inputName);
+					FileCreater::CreateDefaultShader(shadersFolderPath, inputName);
 				}
 			}
 

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "ShaderCreater.h"
+#include "FileCreater.h"
 #include <fstream>
 #include <sstream>
 #include <format>
@@ -13,7 +13,7 @@ const std::string shaderSourceExt = ".hlsl";
 const std::string shaderHeaderExt = ".hlsli";
 const std::string defaultShaderFolderPath = "Assets/Shaders/";
 
-void ShaderCreater::CreateCppClass(const std::string& path, const std::string& name)
+void FileCreater::CreateCppClass(const std::string& path, const std::string& name)
 {
 	std::string fileData;
 	std::string srcPath;
@@ -41,7 +41,7 @@ void ShaderCreater::CreateCppClass(const std::string& path, const std::string& n
 	//EditVCXProj(name);
 }
 
-void ShaderCreater::CreateCppSourceFile(const std::string& path, const std::string& name, std::string* fileData)
+void FileCreater::CreateCppSourceFile(const std::string& path, const std::string& name, std::string* fileData)
 {
 	const std::string fullPath = path + name + cppSourceExt;
 	std::ofstream file(fullPath);
@@ -64,7 +64,7 @@ void ShaderCreater::CreateCppSourceFile(const std::string& path, const std::stri
 	file.close();
 }
 
-void ShaderCreater::CreateCppHeaderFile(const std::string& path, const std::string& name, std::string* fileData)
+void FileCreater::CreateCppHeaderFile(const std::string& path, const std::string& name, std::string* fileData)
 {
 	const std::string fullPath = path + name + cppHeaderExt;
 	std::ofstream file(fullPath);
@@ -87,7 +87,7 @@ void ShaderCreater::CreateCppHeaderFile(const std::string& path, const std::stri
 	file.close();
 }
 
-void ShaderCreater::EditVCXProj(const std::string& name)
+void FileCreater::EditVCXProj(const std::string& name)
 {
 	// ファイルを読み込みString型に保存
 	std::string fileData = CopyFileData(vcxprojPath);
@@ -129,7 +129,7 @@ void ShaderCreater::EditVCXProj(const std::string& name)
 	outFile.close();
 }
 
-void ShaderCreater::CreateDefaultShader(const std::string& path, const std::string& name)
+void FileCreater::CreateDefaultShader(const std::string& path, const std::string& name)
 {
 	std::string fileData;
 	std::string srcPath;
@@ -165,7 +165,7 @@ void ShaderCreater::CreateDefaultShader(const std::string& path, const std::stri
 	}
 }
 
-void ShaderCreater::CreateShaderHeader(const std::string& path, const std::string& name, std::string* fileData)
+void FileCreater::CreateShaderHeader(const std::string& path, const std::string& name, std::string* fileData)
 {
 	const std::string fullPath = path + name + shaderHeaderExt;
 	std::ofstream file(fullPath);
@@ -187,7 +187,7 @@ void ShaderCreater::CreateShaderHeader(const std::string& path, const std::strin
 	file.close();
 }
 
-void ShaderCreater::CreateVertexShader(const std::string& path, const std::string& name, std::string* fileData)
+void FileCreater::CreateVertexShader(const std::string& path, const std::string& name, std::string* fileData)
 {
 	const std::string fullPath = path + name + "VS" + shaderSourceExt;
 
@@ -211,7 +211,7 @@ void ShaderCreater::CreateVertexShader(const std::string& path, const std::strin
 	file.close();
 }
 
-void ShaderCreater::CreatePixelShader(const std::string& path, const std::string& name, std::string* fileData)
+void FileCreater::CreatePixelShader(const std::string& path, const std::string& name, std::string* fileData)
 {
 	const std::string fullPath = path + name + "PS" + shaderSourceExt;
 
@@ -235,7 +235,7 @@ void ShaderCreater::CreatePixelShader(const std::string& path, const std::string
 	file.close();
 }
 
-std::string ShaderCreater::CopyFileData(const std::string srcPath)
+std::string FileCreater::CopyFileData(const std::string srcPath)
 {
 	std::ifstream file(srcPath);
 	if (file.is_open())
@@ -249,7 +249,7 @@ std::string ShaderCreater::CopyFileData(const std::string srcPath)
 	return std::string();
 }
 
-void ShaderCreater::ConvertStringData(std::string* str, const std::string& search, const std::string& replace)
+void FileCreater::ConvertStringData(std::string* str, const std::string& search, const std::string& replace)
 {
 	// 文字列Aを探し、見つかった位置を記録する
 	size_t pos = str->find(search);

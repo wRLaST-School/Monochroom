@@ -1,7 +1,7 @@
 #pragma once
 #include <string.h>
 
-namespace ShaderCreater
+namespace FileCreater
 {
 #pragma region C++関連
 
@@ -11,7 +11,6 @@ namespace ShaderCreater
 	void EditVCXProj(const std::string& name);
 
 #pragma endregion
-
 
 #pragma region シェーダー関連
 
