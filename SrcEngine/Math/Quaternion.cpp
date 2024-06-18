@@ -211,6 +211,25 @@ Quaternion Quaternion::AngleAxis(const Vec3 axis, float angle)
 	);
 }
 
+Vec3 Quaternion::AnyAxisRotation(const Vec3 vec, const Vec3 axis, const float radian)
+{
+	Quaternion result = Quaternion(0, vec);
+
+	Vec3 normAxis = axis.GetNorm();
+
+	// 軸を正規化
+	Quaternion q = Quaternion(cosf(radian / 2), normAxis * sinf(radian / 2));
+
+	// 軸回転がクォータニオンの逆クォータニオンを作成
+	Quaternion qc = Quaternion::Conjugate(q);
+
+	// 軸回転を適用
+	result = q * result;
+	result = result * qc;
+
+	return result.v;
+}
+
 float Quaternion::GetNorm() const
 {
 	return sqrtf(w * w + v.x * v.x + v.y * v.y + v.z * v.z);

@@ -76,8 +76,7 @@ void Object3D::Update()
 void Object3D::Draw()
 {
 	Camera::sCurrent->FrustumCulling();
-	float radius = Vec3(scale).GetMaxElement();
-	bool isInside = Camera::sCurrent->CheckisInCameraInside(position, radius);
+	bool isInside = Camera::sCurrent->CheckisInCameraInside(position);
 	if (!isInside)
 	{
 		return;

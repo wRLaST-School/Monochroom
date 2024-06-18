@@ -154,6 +154,16 @@ public:
 	* @return 回転後のクォータニオン
 	*/
 	static Quaternion AngleAxis(const Vec3 axis, float angle);
+
+	/**
+	* @brief axisを基にvecを回転した後のベクトルを作成
+	*
+	* @param vec 回転するベクトル
+	* @param axis 回転基となるのベクトル
+	* @param radian 回転量
+	* @return vecを回転した後のベクトル
+	*/
+	static Vec3 AnyAxisRotation(const Vec3 vec, const Vec3 axis, const float radian);
 };
 
 Vec3 operator *(Vec3 v, Quaternion q);

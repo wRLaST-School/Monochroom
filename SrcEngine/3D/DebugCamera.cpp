@@ -8,6 +8,8 @@ DebugCamera::DebugCamera() :
 	debugCamera(std::make_unique<Camera>())
 {
 	debugCamera->rotMode = Object3D::RotMode::Euler;
+	yawAngle = 0;
+	pitchAngle = 0;
 }
 
 void DebugCamera::Update()
@@ -24,8 +26,6 @@ void DebugCamera::Update()
 	if (Mouse::Down(Click::Middle) && !Key::Down(DIK_LSHIFT))
 	{
 		const float moveSpeed = 0.1f;
-		static float yawAngle = 0;
-		static float pitchAngle = 0;
 
 		if (mouseMove.x != 0 || mouseMove.y != 0)
 		{
@@ -97,6 +97,23 @@ void DebugCamera::Update()
 		Matrix viewMat = debugCamera->GetViewMat();
 		Vec3 vec = Vec3(-viewMat.ExtractAxisZ().x, -viewMat.ExtractAxisZ().y, viewMat.ExtractAxisZ().z);
 		debugCamera->position += vec * Mouse::GetWheelVel() * moveSpeed;
+	}
+
+	if (Key::Down(DIK_LSHIFT) && Key::Down(DIK_C))
+	{
+		target = Vec3::zero;
+		debugCamera->position = Vec3(0, 0, -10);
+		debugCamera->rotationE = Vec3(0, 0, 0);
+		yawAngle = 0;
+		pitchAngle = 0;
+	}
+	if (Key::Down(DIK_LSHIFT) && Key::Down(DIK_T))
+	{
+		target = Vec3::zero;
+		debugCamera->position = Vec3(0, 0, -10);
+		debugCamera->rotationE = Vec3(ConvertAngleToRadian(45), 0, 0);
+		yawAngle = 0;
+		pitchAngle = 0;
 	}
 
 	debugCamera->UpdateMatrix();

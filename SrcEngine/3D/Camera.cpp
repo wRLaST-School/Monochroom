@@ -53,7 +53,7 @@ Matrix Camera::GetBillboardMat()
 
 bool Camera::CheckisInCameraInside(Vec3 pos, float r)
 {
-	Vec3 toPlaneNorm = (pos - position)/*.GetNorm()*/;
+	Vec3 toPlaneNorm = (pos - position).GetNorm();
 	bool isInside = true;
 	for (int i = 0; i < 4; i++)
 	{
@@ -358,14 +358,18 @@ Camera* Camera::sCurrent = nullptr;
 void Frustum::CalcFrustum(Camera* cam)
 {
 	// カメラの情報
-	float aspectRatio = 1920.f / 1080.f;
+	float aspectRatio = (float)cam->renderWidth / (float)cam->renderHeight;
 	float tanHalfFov = tanf(cam->fov / 2);
 
 	//float farZ = cam->farZ;
 
 	// 水平Fovと垂直Fovを計算
 	horizontalFov = atanf(tanHalfFov * aspectRatio);
-	verticalFov = tanHalfFov;
+	verticalFov = cam->fov / 2;
+
+	//horizontalFov = cam->GetProjMat()[1][1];
+	//verticalFov = cam->GetProjMat()[0][0];
+
 
 	// 向いてる方向
 	vec[(int)FrustumPlane::Left] = Vec3(-sinf(horizontalFov), 0, cosf(horizontalFov));
@@ -374,40 +378,54 @@ void Frustum::CalcFrustum(Camera* cam)
 	vec[(int)FrustumPlane::Bottom] = Vec3(0, -sinf(verticalFov), cosf(verticalFov));
 
 	// カメラのy軸回転を考慮し回転後のベクトルを作成
-	float camAngeX = cam->rotationE.x;
-	float camAngeY = cam->rotationE.y;
+	float camAngleX = cam->rotationE.x;
+	float camAngleY = cam->rotationE.y;
 
 	// y軸周りの回転行列を作成
-	Quaternion xRotation = Quaternion::AngleAxis(Vec3::right, camAngeX);
-	Quaternion yRotation = Quaternion::AngleAxis(Vec3::up, camAngeY);
+	Quaternion xRotation = Quaternion::AngleAxis(Vec3::right, ConvertRadianToAngle(camAngleX));
+	Quaternion yRotation = Quaternion::AngleAxis(Vec3::up, ConvertRadianToAngle(camAngleY));
+
 
 	Vec3 frontVec = Vec3::zero;
 	Vec3 rightVec = Vec3::zero;
 	Vec3 upVec = Vec3::zero;
 
+	Vec3 test1 = Quaternion::AnyAxisRotation(Vec3::right, Vec3::up, ConvertAngleToRadian(90));
+	Vec3 test2 = Quaternion::AnyAxisRotation(test1, Vec3::right, ConvertAngleToRadian(90));
+
 	// 左の面の法線ベクトルの計算
-	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Left]).v;
+	frontVec = vec[(int)FrustumPlane::Left];
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::up, camAngleY);		// Y軸回転
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::right, camAngleX);	// X軸回転
 	rightVec = Vec3::Cross(frontVec, Vec3::up);
 	upVec = Vec3::Cross(rightVec, frontVec);
 	rightVec = Vec3::Cross(frontVec, upVec);
 	normal[(int)FrustumPlane::Left] = rightVec;
 
 	// 右の面の法線ベクトルの計算
-	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Right]).v;
+	frontVec = vec[(int)FrustumPlane::Right];
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::up, camAngleY);		// Y軸回転
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::right, camAngleX);	// X軸回転
 	rightVec = Vec3::Cross(frontVec, Vec3::down);
 	upVec = Vec3::Cross(rightVec, frontVec);
 	rightVec = Vec3::Cross(frontVec, upVec);
 	normal[(int)FrustumPlane::Right] = rightVec;
 
 	// 上の面の法線ベクトルの計算
-	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Top]).v;
-	rightVec = Vec3::Cross(frontVec, Vec3::up);
+	frontVec = vec[(int)FrustumPlane::Top];
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::up, camAngleY);		// Y軸回転
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::right, camAngleX);	// X軸回転
+	upVec = Vec3::Cross(frontVec, Vec3::left);
+	rightVec = Vec3::Cross(upVec, frontVec);
 	upVec = Vec3::Cross(rightVec, frontVec);
 	normal[(int)FrustumPlane::Top] = upVec;
 
 	// 下の面の法線ベクトルの計算
-	frontVec = (yRotation * xRotation * vec[(int)FrustumPlane::Bottom]).v;
-	rightVec = Vec3::Cross(frontVec, Vec3::down);
+	frontVec = vec[(int)FrustumPlane::Bottom];
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::up, camAngleY);		// Y軸回転
+	frontVec = Quaternion::AnyAxisRotation(frontVec, Vec3::right, camAngleX);	// X軸回転
+	upVec = Vec3::Cross(frontVec, Vec3::right);
+	rightVec = Vec3::Cross(upVec, frontVec);
 	upVec = Vec3::Cross(rightVec, frontVec);
 	normal[(int)FrustumPlane::Bottom] = upVec;
 }
