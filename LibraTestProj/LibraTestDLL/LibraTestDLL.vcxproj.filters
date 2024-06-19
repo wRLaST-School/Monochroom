@@ -25,6 +25,12 @@
     <Filter Include="ヘッダー ファイル\Camera">
       <UniqueIdentifier>{d368ebbf-b613-4d32-a04c-cab41edc5cc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\UI">
+      <UniqueIdentifier>{61d07adf-73a5-4cf0-92f0-d85c82b63b02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\UI">
+      <UniqueIdentifier>{db7f94c9-264b-43ba-b687-ed4993809c44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IScriptObject.h">
@@ -42,6 +48,9 @@
     <ClInclude Include="TestObject.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="TitleCamera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
     <ClInclude Include="TestDayo.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -50,6 +59,15 @@
     </ClInclude>
     <ClInclude Include="FirstPersonCamera.h">
       <Filter>ヘッダー ファイル\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="ababa.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="testA.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperUI.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +83,9 @@
     <ClCompile Include="TestObject.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="TitleCamera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="TestDayo.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -76,6 +97,15 @@
     </ClCompile>
     <ClCompile Include="TestClass.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ababa.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="testA.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperUI.cpp">
+      <Filter>ソース ファイル\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

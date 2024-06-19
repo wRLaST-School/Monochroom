@@ -142,7 +142,7 @@ void GPipelineManager::CreateAll()
 	toonModelDesc.RootSignature.ptr = SpRootSignature::Get("3D")->rootsignature.Get();
 
 	toonModelDesc.Shader.pShader = GetShader("ToonModel");
-	toonModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
+	toonModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_BACK;
 
 	GPipeline::Create(toonModelDesc, "ToonModel");
 #pragma endregion

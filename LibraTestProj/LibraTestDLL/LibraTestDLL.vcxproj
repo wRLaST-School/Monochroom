@@ -12,23 +12,31 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="ababa.h" />
     <ClInclude Include="FirstPersonCamera.h" />
     <ClInclude Include="PlayerControl.h" />
+    <ClInclude Include="SuperUI.h" />
+    <ClInclude Include="testA.h" />
     <ClInclude Include="TestDayo.h" />
     <ClInclude Include="Bases.h" />
     <ClInclude Include="IScriptObject.h" />
     <ClInclude Include="TestObject.h" />
     <ClInclude Include="TestPlayer.h" />
+    <ClInclude Include="TitleCamera.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ababa.cpp" />
     <ClCompile Include="Bases.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="PlayerControl.cpp" />
+    <ClCompile Include="SuperUI.cpp" />
     <ClCompile Include="TestClass.cpp" />
+    <ClCompile Include="testA.cpp" />
     <ClCompile Include="TestDayo.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />
     <ClCompile Include="TestPlayer.cpp" />
+    <ClCompile Include="TitleCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SrcExternal\EASTL\EASTL.vcxproj">
