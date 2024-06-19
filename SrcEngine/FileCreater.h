@@ -12,6 +12,11 @@ namespace FileCreater
 
 #pragma endregion
 
+#pragma region シーンファイル関連
+	void CreateDefautScene(const std::string& path, const std::string& name);
+
+#pragma endregion
+
 #pragma region シェーダー関連
 
 	void CreateDefaultShader(const std::string& path, const std::string& name);

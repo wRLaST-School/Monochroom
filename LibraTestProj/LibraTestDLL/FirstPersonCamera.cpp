@@ -2,10 +2,13 @@
 #include <stdafx.h>
 #include <ScriptComponent.h>
 #include <Input.h>
+#include <SceneManager.h>
 
 void FirstPersonCamera::Init()
 {
-	player = This()->Parent()->Parent()->CastTo<Object3D>();
+	player = SceneManager::FindObject<Object3D>("Object3D");
+
+	//player = This()->Parent()->Parent();
 	obj = This()->Parent()->CastTo<Object3D>();
 	offset = Vec3(0, 1, -1);
 }

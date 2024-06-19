@@ -24,6 +24,7 @@
     <ClCompile Include="Bases.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="PlayerControl.cpp" />
+    <ClCompile Include="TestClass.cpp" />
     <ClCompile Include="TestDayo.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />

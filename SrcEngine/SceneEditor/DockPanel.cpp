@@ -41,7 +41,7 @@ void DockPanel::EnableScreenDock()
 		{
 			if (ImGui::BeginMenu("File"))
 			{
-				if (ImGui::MenuItem("Save","Ctrl + S"))
+				if (ImGui::MenuItem("Save", "Ctrl + S"))
 				{
 					showSaveDialog = true;
 				}
@@ -65,11 +65,24 @@ void DockPanel::EnableScreenDock()
 
 		if (Input::Key::Down(DIK_LCONTROL) || Input::Key::Down(DIK_RCONTROL))
 		{
-			if (Input::Key::Triggered(DIK_S))
+			bool pushLShift = Input::Key::Down(DIK_LSHIFT);
+
+			if (pushLShift)
 			{
-				if (lastSavePath == "") showSaveDialog = true;
-				else {
-					SceneRW::SaveScene(SceneManager::currentScene.get(), lastSavePath);
+				if (Input::Key::Triggered(DIK_S))
+				{
+					showSaveDialog = true;
+				}
+			}
+			else
+			{
+				if (Input::Key::Triggered(DIK_S))
+				{
+					if (lastSavePath == "") showSaveDialog = true;
+					else {
+
+						SceneRW::SaveScene(SceneManager::currentScene.get(), lastSavePath);
+					}
 				}
 			}
 		}
@@ -115,8 +128,8 @@ void DockPanel::DrawViewPort()
 			//タブ等を除いたウィンドウのサイズを取得(計算)
 			ImVec2 cntRegionMax = ImGui::GetWindowContentRegionMax();
 			ImVec2 cntRegionMin = ImGui::GetWindowContentRegionMin();
-			ImVec2 wndSize = {cntRegionMax.x - cntRegionMin.x, cntRegionMax.y - cntRegionMin.y};
-	
+			ImVec2 wndSize = { cntRegionMax.x - cntRegionMin.x, cntRegionMax.y - cntRegionMin.y };
+
 			//元のアス比とImGuiウィンドウのアス比を比較
 			float outerWindowAspectRatio = static_cast<float>(Util::GetWinWidth()) / static_cast<float>(Util::GetWinHeight());
 			float innerWindowAspectRatio = wndSize.x / wndSize.y;
@@ -125,7 +138,7 @@ void DockPanel::DrawViewPort()
 			//横幅が大きかったら縦基準で画像サイズを決定
 			if (outerWindowAspectRatio <= innerWindowAspectRatio)
 			{
-				finalWndSize.x *= outerWindowAspectRatio / innerWindowAspectRatio ;
+				finalWndSize.x *= outerWindowAspectRatio / innerWindowAspectRatio;
 			}
 			//縦幅が大きかったら横基準で画像サイズを決定
 			else
@@ -157,7 +170,7 @@ void DockPanel::DrawViewPort()
 			}
 
 			ImGui::End();
-		});
+			});
 	}
 }
 
@@ -212,7 +225,7 @@ void DockPanel::DrawSaveDialog()
 		}
 
 		ImGui::SameLine();
-		
+
 		if (ImGui::Button("Cancel"))
 		{
 			showSaveDialog = false;
