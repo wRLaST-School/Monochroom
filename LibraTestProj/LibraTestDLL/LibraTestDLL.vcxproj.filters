@@ -42,6 +42,9 @@
     <ClInclude Include="TestObject.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="TitleCamera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
     <ClInclude Include="TestDayo.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -50,6 +53,12 @@
     </ClInclude>
     <ClInclude Include="FirstPersonCamera.h">
       <Filter>ヘッダー ファイル\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="ababa.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="testA.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +74,9 @@
     <ClCompile Include="TestObject.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="TitleCamera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="TestDayo.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -75,6 +87,12 @@
       <Filter>ソース ファイル\Camera</Filter>
     </ClCompile>
     <ClCompile Include="TestClass.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ababa.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="testA.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
