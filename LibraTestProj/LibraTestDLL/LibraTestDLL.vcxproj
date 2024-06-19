@@ -14,6 +14,7 @@
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
     <ClInclude Include="FirstPersonCamera.h" />
     <ClInclude Include="PlayerControl.h" />
+    <ClInclude Include="SuperUI.h" />
     <ClInclude Include="TestDayo.h" />
     <ClInclude Include="Bases.h" />
     <ClInclude Include="IScriptObject.h" />
@@ -24,6 +25,7 @@
     <ClCompile Include="Bases.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="PlayerControl.cpp" />
+    <ClCompile Include="SuperUI.cpp" />
     <ClCompile Include="TestClass.cpp" />
     <ClCompile Include="TestDayo.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
