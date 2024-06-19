@@ -18,6 +18,8 @@ private:
 private:
 	void Init();
 	void Update();
+	void Draw() { ; }
+	void CopyComponent(IComponent* src) { ; }
 
 public:
 	void SetWiggleSpeed(const Vec2& speed) { wiggleSpeed_ = speed; }

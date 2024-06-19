@@ -33,7 +33,8 @@
                 "UseQuaternionRot": 1
             },
             {
-                "Model": "",
+                "BlendMode": 0,
+                "Model": "cube.obj",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
