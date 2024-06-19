@@ -25,7 +25,6 @@ float4 main(GSOutput input) : SV_TARGET
 
 	//Directional Light
 	{
-
 		float3 dotLightNormal = dot(lightVec, input.normal);
         dotLightNormal = smoothstep(0.3f, 0.6f, dotLightNormal);
 
