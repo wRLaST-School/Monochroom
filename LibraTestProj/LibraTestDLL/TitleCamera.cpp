@@ -8,6 +8,7 @@ void TitleCamera::Init()
 {
 	parent_ = This()->Parent()->CastTo<Object3D>();
 	templatePos_ = parent_->position;
+	parent_->rotMode = Object3D::RotMode::Quaternion;
 }
 
 
@@ -16,7 +17,7 @@ void TitleCamera::Update()
 	time_ += 1.0f;
 
 	Vec2 addLength = Vec2(sinf(time_ * wiggleSpeed_.x) * wiggleLength_.x,
-		cosf(time_ * wiggleSpeed_.y) * wiggleLength_.x);
+		sinf(time_ * wiggleSpeed_.y) * wiggleLength_.y);
 
 	//ターゲットへの方向
 	Vec3 dirVec = targetPos_ - templatePos_;
@@ -24,10 +25,13 @@ void TitleCamera::Update()
 
 	//外積で上と横を求める
 	Vec3 upVec = Vec3(0, 1, 0);
-	const Vec3 RIGHT_VEC = upVec.Cross(DIR_VEC);
+	const Vec3 RIGHT_VEC = DIR_VEC.Cross(upVec);
 
 	upVec = RIGHT_VEC.Cross(DIR_VEC);
 
-	//あいう
-	parent_->position = templatePos_ + upVec * addLength.y + RIGHT_VEC * addLength.x;
+	//移動
+	parent_->position = templatePos_ + RIGHT_VEC * addLength.x + upVec * addLength.y;
+
+	//カメラの向き
+	parent_->rotation = Quaternion::DirToDir({ 0,0,1.0f }, Vec3(targetPos_ - parent_->position).GetNorm());
 }
