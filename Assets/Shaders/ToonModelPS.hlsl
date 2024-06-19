@@ -1,5 +1,13 @@
 #include "ToonModel.hlsli"
 
+static const float _LightingCutoff = 0.1f;
+static const float _FalloffAmount = 0.1f;
+static const float _Smoothness = 5.0f;
+static const float _FresnelSize = 1.0f;
+static const float _FresnelMin = 1.0f;
+static const float _FresnelMax = 1.0f;
+static const float3 _FresnelColor = float3(1.0f, 1.0f, 1.0f);
+
 Texture2D<float4> tex : register(t0);
 
 SamplerState smp : register(s0);
@@ -14,66 +22,69 @@ float4 calcRim(GSOutput i, float4 color)
     return color;
 }
 
-float4 main(GSOutput input) : SV_TARGET
+float4 main(VSOutput input) : SV_TARGET
 {
-	float4 texcolor = float4(tex.Sample(smp, input.uv));
+    float3 L = lightVec;
+    float3 N = input.normal;
 	
-	float4 shadecolor;
-
-	float3 eyeDir = normalize(cameraPos - input.worldpos.xyz);
-	const float luster = 4.0f;
-
 	//Directional Light
-	{
-		float3 dotLightNormal = dot(lightVec, input.normal);
-        dotLightNormal = smoothstep(0.3f, 0.6f, dotLightNormal);
+	// Diffuse
+    float NdotL = dot(N, L);
+    float3 diffuse = 0.5f + NdotL * 0.5f;
+    float3 dRate = smoothstep(_LightingCutoff, _LightingCutoff + _FalloffAmount, diffuse);
+    diffuse = dRate * m_diffuse;
+	
+	// Specular
+    float3 V = normalize(cameraPos - input.worldpos.xyz);
+    float3 H = normalize(V + L);
+    float NdotH = dot(N, H);
+    float3 specular = pow(saturate(NdotH), _Smoothness) * diffuse;
+	
+	// Fresnel
+    float NdotV = dot(N, V);
+    float3 fresnel = (1 - pow(saturate(NdotV), _FresnelSize)) * diffuse;
+    fresnel = smoothstep(_FresnelMin, _FresnelMax, fresnel);
+    fresnel *= _FresnelColor;
 
-		float3 ambient = m_ambient;
-		float3 diffuse = dotLightNormal * m_diffuse;
-		float3 reflect = normalize(-lightVec + 2 * dotLightNormal * input.normal);
-		float3 specular = pow(saturate(dot(reflect, eyeDir)), luster) * m_specular;
+    float4 shadeCol;
+    shadeCol.rgb = (diffuse + specular + fresnel) * lightColor.rgb;
+    shadeCol.a = 1.0f;
 
-        float3 color = (ambient + diffuse /*+ specular*/) * lightColor;
-        shadecolor.xyz = color;
-		shadecolor.a = m_alpha;
-	}
+    return float4(diffuse.rgb, 1.0f);
+	
+    float4 texCol = tex.Sample(smp, input.uv);
+    return texCol * shadeCol /* * brightness*/;
 
+	
+ //   float4 texcolor = float4(tex.Sample(smp, input.uv));
+	
+ //   float4 shadecolor;
 
-	////Point Lights
-	//for (int i = 0; i < MAX_PLIGHTS; i++)
+ //   float3 eyeDir = normalize(cameraPos - input.worldpos.xyz);
+ //   const float luster = 4.0f;
+
+ //   float3 L = lightVec;
+ //   float3 N = input.normal;
+    
+	////Directional Light
 	//{
-	//	if (pointLights[i].isActive)
-	//	{
-	//		float3 lightVec = pointLights[i].lightPos - input.worldpos.xyz;
-	//		float d = length(lightVec);
-	//		lightVec = normalize(lightVec);
+ //       float NdotL = dot(N, L);
+ //       float3 dotLightNormal = dot(lightVec, input.normal);
+ //       dotLightNormal = smoothstep(0.3f, 0.6f, dotLightNormal);
 
-	//		float att = 1.0f / (pointLights[i].lightAtt.x + pointLights[i].lightAtt.y * d + pointLights[i].lightAtt.z * d * d);
-			
-	//		float3 dotLightNormal = dot(lightVec, input.normal);
+ //       float3 ambient = m_ambient;
+ //       float3 diffuse = 0.5f + NdotL * 0.5f;
+ //       //float3 dRate = smoothstep(_LightingCutoff, _LightingCutoff + _FalloffAmount, diffuse);
+ //       //diffuse = dRate * m_diffuse;
+        
+ //       //m_diffuse;
+ //       float3 reflect = normalize(-lightVec + 2 * dotLightNormal * input.normal);
+ //       float3 specular = pow(saturate(dot(reflect, eyeDir)), luster) * m_specular;
 
-	//		float3 diffuse = dotLightNormal * m_diffuse;
+ //       float3 color = (ambient + diffuse /*+ specular*/) * lightColor;
+ //       shadecolor.xyz = color;
+ //       shadecolor.a = m_alpha;
+ //   }
 
-	//		float3 reflect = normalize(-lightVec + 2 * dotLightNormal * input.normal);
-
-	//		float3 specular = specular = pow(saturate(dot(reflect, eyeDir)), luster) * m_specular;
-
-	//		//shadecolor.rgb += att * (diffuse + specular) * pointLights[i].lightColor;
-			
- //           float3 color = att * (diffuse + specular) * pointLights[i].lightColor;
- //           if (color.x < 0.f)
- //               color.x = 0.f;
- //           if (color.y < 0.f)
- //               color.y = 0.f;
- //           if (color.z < 0.f)
- //               color.z = 0.f;
- //           shadecolor.rgb += color;
- //       }
-		
-	//}
-	
-    return float4(1, 0, 0, 1);
-	
-    float4 ads = shadecolor * texcolor * brightness;
-    return calcRim(input, ads);
+ //   return shadecolor * texcolor * brightness;
 }
