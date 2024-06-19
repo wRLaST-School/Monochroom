@@ -142,6 +142,8 @@ protected:
 private:
 	IComponent* parent_ = nullptr;
 
+	eastl::vector<std::string> tags;
+
 	bool deleting = false;
 	
 	std::optional<eastl::multimap<std::string, eastl::unique_ptr<IComponent>>::iterator> childRemovedNewItr_;

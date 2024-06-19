@@ -33,6 +33,8 @@ void TestPlayer::Update()
 		
 		obj->position.y += move;
 	}
+
+	auto& obj2 = This()->Parent()->GetAllComponents();
 }
 
 void TestPlayer::Draw()
