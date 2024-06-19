@@ -3,6 +3,7 @@
 #include <Input.h>
 #include <Object3D.h>
 #include <SceneManager.h>
+#include <SpImGui.h>
 
 void TestObject::Init()
 {
@@ -31,6 +32,11 @@ void TestObject::Update()
 
 void TestObject::Draw()
 {
+}
+
+void TestObject::OnInspectorWindowDraw()
+{
+	ImGui::Text("taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu");
 }
 
 void TestObject::CopyComponent(IComponent* src)

@@ -34,6 +34,9 @@
     <ProjectReference Include="..\..\SrcExternal\EASTL\EASTL.vcxproj">
       <Project>{2ebf2370-9313-3e61-93e2-bf9215e3be2e}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\SrcImgui\imgui\imgui.vcxproj">
+      <Project>{3650decb-313b-4c2d-88db-9e59a8234b8d}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
