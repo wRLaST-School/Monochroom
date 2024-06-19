@@ -1157,8 +1157,9 @@ static void             UpdateViewportPlatformMonitor(ImGuiViewportP* viewport);
 //   - Future development aims to make this context pointer explicit to all calls. Also read https://github.com/ocornut/imgui/issues/586
 //   - If you need a finite number of contexts, you may compile and use multiple instances of the ImGui code from a different namespace.
 // - DLL users: read comments above.
-#ifndef GImGui
-ImGuiContext*   GImGui = NULL;
+#ifndef GImGui_Def
+ImGuiDLLExport ImGuiContext*   GImGui = NULL;
+#define GImGui_Def
 #endif
 
 // Memory Allocator functions. Use SetAllocatorFunctions() to change them.

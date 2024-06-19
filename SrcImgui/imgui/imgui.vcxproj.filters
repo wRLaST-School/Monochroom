@@ -74,5 +74,8 @@
     <ClInclude Include="ImGuizmo\ImGuizmo.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="DLLDefine.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

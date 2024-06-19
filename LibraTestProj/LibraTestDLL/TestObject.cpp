@@ -36,7 +36,7 @@ void TestObject::Draw()
 
 void TestObject::OnInspectorWindowDraw()
 {
-	ImGui::Text("taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu");
+	ImGui::Text("Krung Thep Mahanakhon Amon Rattanakosin Mahinthara Ayuthaya Mahadilok Phop Noppharat Ratchathani Burirom Udomratchaniwet Mahasathan Amon Piman Awatan Sathit Sakkathattiya Witsanukam Prasit");
 }
 
 void TestObject::CopyComponent(IComponent* src)
