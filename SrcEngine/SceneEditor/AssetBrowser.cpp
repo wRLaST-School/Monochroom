@@ -235,6 +235,12 @@ void AssetBrowser::PopWindow()
 
 		ImGui::Separator();
 
+		if (ImGui::MenuItem("Default Scene"))
+		{
+			popID = "Create Scene";
+			openPopModal = true;
+			inputName.clear();
+		}
 		if (ImGui::MenuItem("Default Shader"))
 		{
 			popID = "Create Shader";
@@ -289,11 +295,17 @@ void AssetBrowser::PopModalWindow()
 					CreateDirectory(wpath.c_str(), NULL);
 				}
 
-				// シェーダー作成なら
+				// クラス作成なら
 				if (popID == "Create C++ Class")
 				{
 					std::string projectPath = "LibraTestProj/LibraTestDLL/";
 					FileCreater::CreateCppClass(projectPath, inputName);
+				}
+
+				// シーン作成なら
+				if (popID == "Create Scene")
+				{
+					FileCreater::CreateDefautScene(currentDirectory_.string()+"/", inputName);
 				}
 
 				// シェーダー作成なら

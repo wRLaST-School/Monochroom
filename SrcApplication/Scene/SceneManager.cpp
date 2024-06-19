@@ -12,10 +12,6 @@
 #include <SceneRW.h>
 #include <SceneFromFile.h>
 
-std::future<void> SceneManager::ftr;
-bool SceneManager::transitionQueued = false;
-std::unique_ptr<DebugCamera> SceneManager::debugCamera;
-
 void SceneManager::Init()
 {
 	debugCamera = std::make_unique<DebugCamera>();
@@ -144,8 +140,3 @@ void SceneManager::UpdateLoadState()
 		loadFinished = false;
 	}
 }
-
-std::unique_ptr<IScene> SceneManager::currentScene = nullptr;
-std::unique_ptr<IScene> SceneManager::nextScene = nullptr;
-SceneManager::LoadState SceneManager::loadState = SceneManager::LoadState::NotInProgress;
-bool SceneManager::loadFinished = false;

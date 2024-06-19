@@ -58,17 +58,54 @@ public:
 
 	static DLLExport IScene* GetScene();
 
-	static std::unique_ptr<IScene> currentScene;
-	static std::unique_ptr<IScene> nextScene;
+
+	inline static std::unique_ptr<IScene> currentScene;
+	inline static std::unique_ptr<IScene> nextScene;
+
+#pragma region オブジェクト検索関連
+private:
+	template<typename T>
+	static T* FindObjectRecursive(const std::string& name, IComponent* component)
+	{
+		for (const auto& comp : component->GetAllComponents())
+		{
+			T* found = FindObjectRecursive<T>(name, comp.second.get());
+			if (found)
+			{
+				return found;
+			}
+
+			if (comp.second->GetName() == name)
+			{
+				T* cast = dynamic_cast<T*>(comp.second.get());
+				return cast;
+			}
+		}
+
+		return nullptr;
+	}
+
+public:
+	template<typename T>
+	static T* FindObject(const std::string& name)
+	{
+		T* found = FindObjectRecursive<T>(name, currentScene.get());
+		if (!found)
+		{
+			OutputDebugStringA("Object not Found");
+		}
+		return found;
+	}
+#pragma endregion 
 
 private:
 	//ロードの状態、毎フレームの最初に更新される
-	static LoadState loadState;
+	inline static LoadState loadState;
 	//こっちはリアルタイム更新、次フレームの最初にリセット
-	static bool loadFinished;
+	inline static bool loadFinished;
 	static DLLExport void UpdateLoadState();
-	static bool transitionQueued;
-	static std::unique_ptr<DebugCamera> debugCamera;
+	inline static bool transitionQueued;
+	inline static std::unique_ptr<DebugCamera> debugCamera;
 
 	//以下基本使用禁止
 public:
@@ -80,5 +117,5 @@ private:
 	~SceneManager() {};
 	SceneManager(const SceneManager& a) = delete;
 	SceneManager& operator=(const SceneManager& a) = delete;
-	static std::future<void> ftr;
+	inline static std::future<void> ftr;
 };

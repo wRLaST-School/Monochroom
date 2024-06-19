@@ -4,10 +4,13 @@
 #include <sstream>
 #include <format>
 
+const std::string defaultDataFileFolderPath = "SrcEngine/Data/";
+
 const std::string cppSourceExt = ".cpp";
 const std::string cppHeaderExt = ".h";
-const std::string defaultCppFileFolderPath = "SrcEngine/Data/";
 const std::string vcxprojPath = "LibraTestProj/LibraTestDLL/LibraTestDLL.vcxproj";
+
+const std::string sceneExt = ".scene";
 
 const std::string shaderSourceExt = ".hlsl";
 const std::string shaderHeaderExt = ".hlsli";
@@ -21,7 +24,7 @@ void FileCreater::CreateCppClass(const std::string& path, const std::string& nam
 	// .cppファイル作成
 	{
 		// デフォルトのhlsliファイルのデータをstring型に格納
-		srcPath = defaultCppFileFolderPath + "Default.cpp";
+		srcPath = defaultDataFileFolderPath + "Default.cpp";
 		fileData = CopyFileData(srcPath);
 
 		// 作成
@@ -31,7 +34,7 @@ void FileCreater::CreateCppClass(const std::string& path, const std::string& nam
 	// .hファイル作成
 	{
 		// デフォルトのhlsliファイルのデータをstring型に格納
-		srcPath = defaultCppFileFolderPath + "Default.h";
+		srcPath = defaultDataFileFolderPath + "Default.h";
 		fileData = CopyFileData(srcPath);
 
 		// 作成
@@ -95,12 +98,12 @@ void FileCreater::EditVCXProj(const std::string& name)
 	// ClInclude の位置を見つけて追加
 	std::string clIncludeTag = "<ClInclude Include=\"";
 	size_t includePos = fileData.find(clIncludeTag);
-	if (includePos != std::string::npos) 
+	if (includePos != std::string::npos)
 	{
 		size_t pos = fileData.find("\n", includePos);
 		fileData.insert(pos + 1, "    <ClInclude Include=\"" + name + cppHeaderExt + "\" />\n");
 	}
-	else 
+	else
 	{
 		OutputDebugStringA("No ClInclude group found in the vcxproj file.");
 	}
@@ -108,25 +111,55 @@ void FileCreater::EditVCXProj(const std::string& name)
 	// ClCompile の位置を見つけて追加
 	std::string clCompileTag = "<ClCompile Include=\"";
 	size_t compilePos = fileData.find(clCompileTag);
-	if (compilePos != std::string::npos) 
+	if (compilePos != std::string::npos)
 	{
 		size_t pos = fileData.find("\n", compilePos);
 		fileData.insert(pos + 1, "    <ClCompile Include=\"" + name + cppSourceExt + "\" />\n");
 	}
-	else 
+	else
 	{
 		OutputDebugStringA("No ClCompile group found in the vcxproj file.");
 	}
 
 	// 変更を保存
 	std::ofstream outFile(vcxprojPath);
-	if (!outFile.is_open()) 
+	if (!outFile.is_open())
 	{
 		OutputDebugStringA(std::format("Failed to open file : {}", vcxprojPath).c_str());
 		return;
 	}
 	outFile << fileData;
 	outFile.close();
+}
+
+void FileCreater::CreateDefautScene(const std::string& path, const std::string& name)
+{
+	std::string fileData;
+	std::string srcPath;
+
+	// デフォルトのシーンのデータをstring型に格納
+	srcPath = defaultDataFileFolderPath + "Default.scene";
+	fileData = CopyFileData(srcPath);
+
+	// 作成
+	const std::string fullPath = path + name + sceneExt;
+	std::ofstream file(fullPath);
+
+	// ファイルが正しく開かれたかを確認します
+	if (!file.is_open())
+	{
+		OutputDebugStringA(std::format("Failed to open file : {}", fullPath).c_str());
+		return;
+	}
+
+	if (fileData.empty())
+	{
+		OutputDebugStringA(std::format("fileData is null").c_str());
+		return;
+	}
+
+	file << fileData << std::endl;
+	file.close();
 }
 
 void FileCreater::CreateDefaultShader(const std::string& path, const std::string& name)
