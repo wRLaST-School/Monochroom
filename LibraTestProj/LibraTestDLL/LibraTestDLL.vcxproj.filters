@@ -30,6 +30,9 @@
     <ClInclude Include="TestObject.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="TitleCamera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -42,6 +45,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="TestObject.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleCamera.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
