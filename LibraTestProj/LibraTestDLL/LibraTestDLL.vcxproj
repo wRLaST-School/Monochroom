@@ -19,6 +19,7 @@
     <ClInclude Include="IScriptObject.h" />
     <ClInclude Include="TestObject.h" />
     <ClInclude Include="TestPlayer.h" />
+    <ClInclude Include="TitleCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bases.cpp" />
@@ -28,6 +29,7 @@
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />
     <ClCompile Include="TestPlayer.cpp" />
+    <ClCompile Include="TitleCamera.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
