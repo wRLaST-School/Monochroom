@@ -507,6 +507,9 @@
     <ClCompile Include="SrcEngine\FileCreater.cpp">
       <Filter>未分類\ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="SrcEngine\SceneEditor\PipelineWindow.cpp">
+      <Filter>Engine\ソースファイル\SceneEditor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\Others\Essentials.h">
@@ -850,6 +853,9 @@
     </ClInclude>
     <ClInclude Include="SrcEngine\FileCreater.h">
       <Filter>未分類\ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SrcEngine\SceneEditor\PipelineWindow.h">
+      <Filter>Engine\ヘッダーファイル\SceneEditor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

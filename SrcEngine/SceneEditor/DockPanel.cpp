@@ -10,6 +10,7 @@
 #include <SceneFromFile.h>
 #include <SpriteObject.h>
 #include <Input.h>
+#include <PipelineWindow.h>
 
 void DockPanel::EnableScreenDock()
 {
@@ -46,7 +47,6 @@ void DockPanel::EnableScreenDock()
 					showSaveDialog = true;
 				}
 
-
 				if (ImGui::MenuItem("Load"))
 				{
 					showLoadDialog = true;
@@ -60,6 +60,20 @@ void DockPanel::EnableScreenDock()
 
 				ImGui::EndMenu();
 			}
+
+			if (ImGui::BeginMenu("Window"))
+			{
+				bool isOpen = PipelineWindow::GetInstance()->GetisOpen();
+				if (ImGui::MenuItem("Pipeline Windwo", nullptr, isOpen))
+				{
+					if (isOpen == false)
+					{
+						PipelineWindow::GetInstance()->SetisOpen(true);
+					}
+				}
+				ImGui::EndMenu();
+			}
+
 			ImGui::EndMenuBar();
 		}
 

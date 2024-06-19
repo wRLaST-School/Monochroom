@@ -26,6 +26,7 @@
 #include <HierarchyPanel.h>
 #include <DockPanel.h>
 #include <InspectorWindow.h>
+#include <PipelineWindow.h>
 #include <ResourceWindow.h>
 #include <CustomComponentRegisterer.h>
 
@@ -149,6 +150,8 @@ void SpFramework::Run()
 			HierarchyPanel::SDraw();
 
 			InspectorWindow::SDraw();
+
+			PipelineWindow::SDraw();
 
 			ResourceWindow::SDraw();
 
