@@ -8,8 +8,8 @@ class TitleCamera : public IScriptObject
 {
 private:
 	float time_ = 0;
-	Vec2 wiggleSpeed_ = { 0.014f,0.009f };
-	Vec2 wiggleLength_ = { 0.85f,0.7f };
+	Vec2 wiggleSpeed_ = { 0.005f,0.0045f };
+	Vec2 wiggleLength_ = { 0.05f,0.023f };
 	Vec3 targetPos_ = { 0,0,0 };
 	Vec3 templatePos_ = { 0,0,0 };
 	Object3D* parent_ = nullptr;
