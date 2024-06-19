@@ -8,6 +8,7 @@ public:
     void Init();
     void Update();
     void Draw();
+    void OnInspectorWindowDraw() override;
     void CopyComponent(IComponent* src);
     DefDel;
 };
