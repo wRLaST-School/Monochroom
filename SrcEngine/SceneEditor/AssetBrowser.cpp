@@ -257,6 +257,14 @@ void AssetBrowser::PopWindow()
 			ShellExecute(NULL, L"open", wpath.c_str(), NULL, NULL, SW_SHOWDEFAULT);
 		}
 
+		if (ImGui::MenuItem("Show in Script Explorer"))
+		{
+			std::wstring wpath = L"LibraTestProj/LibraTestDLL";
+			wchar_t fullPath[MAX_PATH];
+			GetFullPathName(wpath.c_str(), MAX_PATH, fullPath, NULL);
+			ShellExecute(NULL, L"open", fullPath, NULL, NULL, SW_SHOWDEFAULT);
+		}
+
 		ImGui::EndPopup();
 	}
 }

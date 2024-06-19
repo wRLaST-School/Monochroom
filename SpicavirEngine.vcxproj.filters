@@ -922,6 +922,12 @@
     <FxCompile Include="Assets\Shaders\BasicInvVS.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\ToonModelPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\ToonModelVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Basic.hlsli">
@@ -961,5 +967,8 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Assets\Shaders\ShaderMathUtil.hlsli" />
+    <None Include="Assets\Shaders\ToonModel.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
