@@ -25,6 +25,8 @@ void SceneRW::SaveTextures(json& dist)
 
 			if (pair.second.filePath == "") continue;
 
+			if (pair.second.div) continue;
+
 			keyAndPath.emplace(pair.first, pair.second.filePath);
 		}
 	});

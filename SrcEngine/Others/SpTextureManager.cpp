@@ -738,6 +738,7 @@ TextureKey SpTextureManager::LoadSingleDiv(string filePath, int32_t originX, int
 	ins.texDataMap_.Access(
 		[&](auto& map) {
 			map[key].meta = metadata;
+			map[key].div = false;
 		}
 	);
 

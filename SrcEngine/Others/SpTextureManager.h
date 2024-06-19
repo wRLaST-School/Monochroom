@@ -26,6 +26,7 @@ private:
 		DirectX::TexMetadata meta;
 		Float2 ratio = { 0.f, 0.f }; //xがゼロ以外なら画面比率
 		std::string filePath;
+		bool div = false;
 	};
 public:
 	//リソースウィンドウに一覧を表示するため
