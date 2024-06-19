@@ -1,0 +1,75 @@
+[
+    {
+        "Children": [
+            {
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": -10.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Type": "Camera",
+                "UseQuaternionRot": 0
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Texture": "",
+                "Type": "Object3D"
+            }
+        ],
+        "EfkEffects": [
+            {}
+        ],
+        "Models": [
+            {
+                "cube.obj": "Assets\\Models\\cube\\cube.obj"
+            }
+        ],
+        "Sounds": [
+            {}
+        ],
+        "Textures": [
+            {
+                "Black": "Assets/Images/black.png"
+            }
+        ],
+        "Type": "IScene"
+    }
+]
