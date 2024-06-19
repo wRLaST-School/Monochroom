@@ -55,6 +55,12 @@ public:
 	void DDTargetModel(IComponent* current);
 
 	/**
+	 * @brief ドラッグドロップ受付結果が他のコンポーネントで親子関係を変更する場合
+	 *
+	 * @param current 対象コンポーネント
+	 */
+	void DDTargetReParent(IComponent* current);
+	/**
 	 * @brief Static描画関数
 	 * 
 	 */

@@ -43,10 +43,9 @@ void IComponent::ChangeParent(IComponent* newParent)
 	{
 		if ((*itr).second.get() == this)
 		{
-			//newParent->components_.emplace(name_, std::move((*itr)));
-			newParent;
+			newParent->components_.emplace(name_, std::move((itr->second)));
 			parent_->components_.erase(itr);
-
+			parent_ = newParent;
 			return;
 		}
 	}

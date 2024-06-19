@@ -8,6 +8,7 @@
 #include <Input.h>
 #include <SpriteObject.h>
 #include <ComponentFactory.h>
+#include <format>
 
 void HierarchyPanel::Draw()
 {
@@ -76,6 +77,12 @@ void HierarchyPanel::ShowItemRecursive(IComponent* current)
 	}
 
 	bool treeNodeTriggered = ImGui::TreeNodeEx(taggedName.c_str(), nodeFlags);
+	
+	if (ImGui::BeginDragDropSource())
+	{
+		ImGui::SetDragDropPayload("HIERARCHY_ITEM_COMPONENT", &current,  sizeof(IComponent**), ImGuiCond_Once);
+		ImGui::EndDragDropSource();
+	}
 
 	DragDropTarget(current);
 
@@ -102,6 +109,7 @@ void HierarchyPanel::DragDropTarget(IComponent* current)
 	{
 		DDTargetTexture(current);
 		DDTargetModel(current);
+		DDTargetReParent(current);
 
 		ImGui::EndDragDropTarget();
 	}
@@ -143,6 +151,17 @@ void HierarchyPanel::DDTargetModel(IComponent* current)
 		{
 			obj->model = ModelManager::GetModel(modelKey);
 		}
+	}
+}
+
+void HierarchyPanel::DDTargetReParent(IComponent* current)
+{
+	const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("HIERARCHY_ITEM_COMPONENT");
+
+	if (payload) {
+		IComponent* child = *reinterpret_cast<IComponent**>(payload->Data);
+		if(child != current)
+			child->ChangeParent(current);
 	}
 }
 
