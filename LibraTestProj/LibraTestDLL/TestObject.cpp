@@ -7,7 +7,7 @@
 void TestObject::Init()
 {
 	name_ = "TestObject";
-	auto obj = SceneManager::FindObject<Object3D>("Object3D");
+	//auto obj = SceneManager::FindObject<Object3D>("Object3D");
 }
 
 void TestObject::Update()

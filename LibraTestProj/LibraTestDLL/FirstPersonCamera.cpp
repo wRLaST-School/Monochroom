@@ -15,7 +15,14 @@ void FirstPersonCamera::Init()
 
 void FirstPersonCamera::Update()
 {
+	if (!player)
+	{
+		OutputDebugStringA("Player NULL");
+	}
+	player->rotationE.y += 0.1f;
+
 	obj->position = Vec3(player->position) + offset;
+	//assert(player);
 }
 
 void FirstPersonCamera::Draw()
