@@ -97,6 +97,8 @@ namespace Util
 	Float2 DLLExport GetWinSize();
 	int32_t DLLExport GetWinWidth();
 	int32_t DLLExport GetWinHeight();
+
+	std::string GetCurrentTimerString();
 };
 
 struct R8G8B8A8

@@ -2,6 +2,7 @@
     {
         "Children": [
             {
+                "Name": "Camera",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -30,11 +31,13 @@
                 "BlendMode": 3,
                 "Children": [
                     {
+                        "Name": "ScriptComponent",
                         "Type": "ScriptComponent",
                         "filePath": "TestObject"
                     }
                 ],
                 "Model": "cube.obj",
+                "Name": "Plane",
                 "Position": {
                     "X": -5.825948715209961,
                     "Y": -6.464900970458984,
@@ -47,7 +50,7 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -1.8051369741299493e-25,
+                    "X": -1.8051368508704328e-25,
                     "Y": 7.912750932310589e-20,
                     "Z": -0.34358543157577515
                 },
@@ -63,11 +66,13 @@
                 "BlendMode": 0,
                 "Children": [
                     {
+                        "Name": "ScriptComponent",
                         "Type": "ScriptComponent",
                         "filePath": "TestPlayer"
                     }
                 ],
                 "Model": "cube.obj",
+                "Name": "Object3D",
                 "Position": {
                     "X": 10.493735313415527,
                     "Y": -1.837533712387085,
@@ -133,7 +138,8 @@
                 "Triangle": "Assets/Models/triangle/triangle.obj",
                 "cube": "Assets/Models/Cube/Cube.obj",
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
-                "floor": "Assets/Models/Floor.glb"
+                "floor": "Assets/Models/Floor.glb",
+                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
             }
         ],
         "Sounds": [
@@ -144,9 +150,10 @@
                 "BasicParticle": "Assets/Images/circleParticle.png",
                 "Black": "Assets/Images/black.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
-                "Stars.png": "Assets/Models/skydome/Stars.png",
+                "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
+                "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "black": "Assets/Images/black.png",
                 "white.png": "Assets\\Images\\white.png"
             }

@@ -30,6 +30,8 @@
 #include <ConsoleWindow.h>
 #include <ResourceWindow.h>
 #include <CustomComponentRegisterer.h>
+#include <SceneRW.h>
+#include <Util.h>
 
 void SpFramework::Init()
 {
@@ -192,6 +194,11 @@ void SpFramework::Run()
 		TextDrawer::ReleaseDrawStringData();
 		LineDrawer::ClearLineData();
 	}
+
+	/*バックアップの処理*/
+	std::string currentTime = Util::GetCurrentTimerString();
+	std::string path = "BackUp/" + SceneManager::currentScene->GetName()+"_" + currentTime + ".scene";
+	SceneRW::SaveScene(SceneManager::currentScene.get(), path);
 
 	/*ループここまで*/
 	SoundManager::ReleaseAllSounds();

@@ -2,6 +2,9 @@
 #include <random>
 #include <GameManager.h>
 #include <SpWindow.h>
+#include <chrono>
+#include <ctime>
+#include <iomanip> 
 
 std::random_device rnd;
 std::mt19937 mt(rnd());
@@ -61,4 +64,20 @@ int32_t Util::RNG(int32_t min, int32_t max, bool preciseMode)
     std::uniform_int_distribution<> rbrnd(min, max);
 
     return rbrnd(mt);
+}
+
+std::string Util::GetCurrentTimerString()
+{
+    // 現在のシステム時間を取得
+    auto now = std::chrono::system_clock::now();
+    std::time_t currentTime = std::chrono::system_clock::to_time_t(now);
+
+    // localtime_s を使用してローカルタイムに変換
+    std::tm localTime;
+    localtime_s(&localTime, &currentTime);
+
+    // std::put_time を使用して文字列に変換
+    std::stringstream ss;
+    ss << std::put_time(&localTime, "%Y_%m_%d_%H_%M_%S");
+    return ss.str();
 }
