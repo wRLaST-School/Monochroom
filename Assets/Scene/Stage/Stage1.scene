@@ -2,6 +2,14 @@
     {
         "Children": [
             {
+                "Children": [
+                    {
+                        "Name": "FirstPersonCamera",
+                        "Type": "ScriptComponent",
+                        "filePath": "FirstPersonCamera"
+                    }
+                ],
+                "Name": "Main Camera",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -27,7 +35,16 @@
                 "UseQuaternionRot": 1
             },
             {
+                "BlendMode": 0,
+                "Children": [
+                    {
+                        "Name": "PlayerControl",
+                        "Type": "ScriptComponent",
+                        "filePath": "PlayerControl"
+                    }
+                ],
                 "Model": "cube.obj",
+                "Name": "Player",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,

@@ -25,6 +25,7 @@ void GPipelineManager::CreateAll()
 	defDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
 
 	GPipeline::Create(defDesc, "def");
+
 #pragma endregion
 
 #pragma region ライトなし描画用シェーダーのコンパイル

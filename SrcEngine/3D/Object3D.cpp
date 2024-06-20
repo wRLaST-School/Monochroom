@@ -314,7 +314,7 @@ void Object3D::DrawToon(const TextureKey& key)
 
 void Object3D::OnInspectorWindowDraw()
 {
-	ImGui::DragFloat3("Translation", & position.x);
+	ImGui::DragFloat3("Translation", &position.x);
 
 	if (rotMode == RotMode::Euler)
 	{
@@ -441,6 +441,11 @@ void Object3D::DrawGizmo()
 
 void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 {
+	if (jsonObject.contains("Name"))
+	{
+		name_ = jsonObject["Name"];
+	}
+
 	position.x = jsonObject["Position"]["X"];
 	position.y = jsonObject["Position"]["Y"];
 	position.z = jsonObject["Position"]["Z"];
@@ -470,6 +475,8 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 
 void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 {
+	jsonObject["Name"] = name_;
+
 	jsonObject["Position"]["X"] = position.x;
 	jsonObject["Position"]["Y"] = position.y;
 	jsonObject["Position"]["Z"] = position.z;
@@ -500,6 +507,7 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 void Object3D::CopyComponent(IComponent* src)
 {
 	Object3D* cast = dynamic_cast<Object3D*>(src);
+	name_ = cast->name_;
 	scale = cast->scale;
 	rotation = cast->rotation;
 	rotationE = cast->rotationE;

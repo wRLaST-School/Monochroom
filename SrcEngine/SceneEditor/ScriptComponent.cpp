@@ -41,17 +41,23 @@ void ScriptComponent::OnInspectorWindowDraw()
 
 void ScriptComponent::WriteParamJson(nlohmann::json& jsonObj)
 {
+	jsonObj["Name"] = name_;
 	jsonObj["filePath"] = className;
 }
 
 void ScriptComponent::ReadParamJson(const nlohmann::json& jsonObj)
 {
+	if (jsonObj.contains("Name"))
+	{
+		name_ = jsonObj["Name"];
+	}
 	className = jsonObj["filePath"];
 }
 
 void ScriptComponent::CopyComponent(IComponent* src)
 {
 	ScriptComponent* cast = dynamic_cast<ScriptComponent*>(src);
+	name_ = cast->name_;
 	className = cast->className;
 }
 
@@ -75,7 +81,7 @@ void ScriptComponent::CompileScript()
 		if (castedParent) {
 			list.push_back(castedParent);
 		}
-	};
+		};
 
 	GetAllScriptCompsRecursive(scriptcomps, SceneManager::currentScene.get());
 

@@ -9,6 +9,7 @@
 #include <Input.h>
 #include <ScriptComponent.h>
 #include <format>
+#include <ConsoleWindow.h>
 
 void TestPlayer::Init()
 {

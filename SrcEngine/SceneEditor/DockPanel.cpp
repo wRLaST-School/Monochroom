@@ -11,6 +11,7 @@
 #include <SpriteObject.h>
 #include <Input.h>
 #include <PipelineWindow.h>
+#include <ConsoleWindow.h>
 
 void DockPanel::EnableScreenDock()
 {
@@ -64,11 +65,19 @@ void DockPanel::EnableScreenDock()
 			if (ImGui::BeginMenu("Window"))
 			{
 				bool isOpen = PipelineWindow::GetInstance()->GetisOpen();
-				if (ImGui::MenuItem("Pipeline Windwo", nullptr, isOpen))
+				if (ImGui::MenuItem("Pipeline Window", nullptr, isOpen))
 				{
 					if (isOpen == false)
 					{
 						PipelineWindow::GetInstance()->SetisOpen(true);
+					}
+				}
+				isOpen = ConsoleWindow::GetInstance()->GetisOpen();
+				if (ImGui::MenuItem("Console Window", nullptr, isOpen))
+				{
+					if (isOpen == false)
+					{
+						ConsoleWindow::GetInstance()->SetisOpen(true);
 					}
 				}
 				ImGui::EndMenu();

@@ -165,6 +165,11 @@ Matrix Camera::GetCurrentCameraBillboardMat()
 
 void Camera::ReadParamJson(const nlohmann::json& jsonObject)
 {
+	if (jsonObject.contains("Name"))
+	{
+		name_ = jsonObject["Name"];
+	}
+
 	position.x = jsonObject["Position"]["X"];
 	position.y = jsonObject["Position"]["Y"];
 	position.z = jsonObject["Position"]["Z"];
@@ -187,6 +192,8 @@ void Camera::ReadParamJson(const nlohmann::json& jsonObject)
 
 void Camera::WriteParamJson(nlohmann::json& jsonObject)
 {
+	jsonObject["Name"] = name_;
+
 	jsonObject["Position"]["X"] = position.x;
 	jsonObject["Position"]["Y"] = position.y;
 	jsonObject["Position"]["Z"] = position.z;
@@ -210,6 +217,7 @@ void Camera::WriteParamJson(nlohmann::json& jsonObject)
 void Camera::CopyComponent(IComponent* src)
 {
 	Camera* cast = dynamic_cast<Camera*>(src);
+	name_ = cast->name_;
 	target = cast->target;
 	renderWidth = cast->renderWidth;
 	renderHeight = cast->renderHeight;

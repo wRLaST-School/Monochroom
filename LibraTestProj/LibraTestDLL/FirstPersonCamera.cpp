@@ -6,7 +6,7 @@
 
 void FirstPersonCamera::Init()
 {
-	player = SceneManager::FindObject<Object3D>("Object3D");
+	//player = SceneManager::FindObject<Object3D>("Player");
 
 	//player = This()->Parent()->Parent();
 	obj = This()->Parent()->CastTo<Object3D>();
@@ -15,6 +15,7 @@ void FirstPersonCamera::Init()
 
 void FirstPersonCamera::Update()
 {
+	player = SceneManager::FindObject<Object3D>("Player");
 	if (!player)
 	{
 		OutputDebugStringA("Player NULL");

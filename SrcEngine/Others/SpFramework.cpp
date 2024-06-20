@@ -27,6 +27,7 @@
 #include <DockPanel.h>
 #include <InspectorWindow.h>
 #include <PipelineWindow.h>
+#include <ConsoleWindow.h>
 #include <ResourceWindow.h>
 #include <CustomComponentRegisterer.h>
 
@@ -151,9 +152,11 @@ void SpFramework::Run()
 
 			InspectorWindow::SDraw();
 
+			ResourceWindow::SDraw();
+
 			PipelineWindow::SDraw();
 
-			ResourceWindow::SDraw();
+			ConsoleWindow::SDraw();
 
 			SpImGui::Command([&] {
 				if (ImGui::Begin("Game Scene"))
