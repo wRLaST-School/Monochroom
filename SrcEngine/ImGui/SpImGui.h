@@ -40,6 +40,10 @@ public:
 	static DLLExport bool InputText(const char* label, std::string* str, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback = nullptr, void* user_data = nullptr);
 	static DLLExport bool DragAngle(const char* label, float* prad);
 
+	// ラッピング関数
+	static DLLExport bool TreeNode(const char* str_id, const bool isOpen);
+	static DLLExport bool InputText(const char* label, std::string& input);
+
 private:
 	static int InputTextCallback(ImGuiInputTextCallbackData* data);
 };

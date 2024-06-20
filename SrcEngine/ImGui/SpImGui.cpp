@@ -151,5 +151,23 @@ int SpImGui::InputTextCallback(ImGuiInputTextCallbackData* data)
 	return 0;
 }
 
+bool SpImGui::TreeNode(const char* str_id, const bool isOpen)
+{
+	uint32_t nodeFlag =
+		(isOpen == false) ?
+		ImGuiTreeNodeFlags_None :
+		ImGuiTreeNodeFlags_DefaultOpen;
+
+	return ImGui::TreeNodeEx(str_id, nodeFlag);
+}
+
+bool SpImGui::InputText(const char* label, std::string& input)
+{
+	char* cstr = const_cast<char*>(input.c_str());
+	bool result = ImGui::InputText(label, cstr, 30);
+	input = cstr;
+
+	return result;
+}
 
 std::list<std::function<void(void)>> SpImGui::sCommands;
