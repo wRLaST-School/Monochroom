@@ -4,6 +4,7 @@
 #include "SpTextureManager.h"
 #include <Quaternion.h>
 #include <ComponentFactory.h>
+#include <DLLDef.h>
 
 struct ConstBufferDataTransform {
 	Matrix mat;//3D変換行列
@@ -23,37 +24,37 @@ public:
 	ComponentFactoryRegister(Object3D)
 
 	Object3D() { transformCB.contents->mat = Matrix::Identity(); *brightnessCB.contents = { 1.0f, 1.0f, 1.0f, 1.0f }; miscCB.contents->rimColor = { 1.f, 0.f, 0.f, 1.f }; };
-	void UpdateMatrix();
-	void DecomposeMatrix();
+	void DLLExport UpdateMatrix();
+	void DLLExport DecomposeMatrix();
 
-	void Update()override;
+	void DLLExport Update()override;
 
-	void Draw();
+	void DLLExport Draw();
 	//別途読み込んだテクスチャを使う場合
-	void Draw(const TextureKey& key);
+	void DLLExport Draw(const TextureKey& key);
 
-	void DrawCommands(const TextureKey& key);
+	void DLLExport DrawCommands(const TextureKey& key);
 
 	//加算合成
-	void DrawAdd();
-	void DrawAdd(const TextureKey& key);
+	void DLLExport DrawAdd();
+	void DLLExport DrawAdd(const TextureKey& key);
 
 	//透過表示用
-	void DrawAlpha();
-	void DrawAlpha(const TextureKey& key);
+	void DLLExport DrawAlpha();
+	void DLLExport DrawAlpha(const TextureKey& key);
 
 	//Toon用
-	void DrawToon();
-	void DrawToon(const TextureKey& key);
+	void DLLExport DrawToon();
+	void DLLExport DrawToon(const TextureKey& key);
 
 	//Inspector Window用
-	void OnInspectorWindowDraw();
-	void DrawGizmo();
+	void DLLExport OnInspectorWindowDraw();
+	void DLLExport DrawGizmo();
 
-	void ReadParamJson([[maybe_unused]]const nlohmann::json& jsonObject) override;
-	void WriteParamJson([[maybe_unused]] nlohmann::json& jsonObject) override;
+	void DLLExport ReadParamJson([[maybe_unused]]const nlohmann::json& jsonObject) override;
+	void DLLExport WriteParamJson([[maybe_unused]] nlohmann::json& jsonObject) override;
 
-	void CopyComponent(IComponent* src) override;
+	void DLLExport CopyComponent(IComponent* src) override;
 
 	SpConstBuffer<ConstBufferDataTransform> transformCB;
 	SpConstBuffer<Float4> brightnessCB;

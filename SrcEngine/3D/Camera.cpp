@@ -353,8 +353,6 @@ Matrix Camera::GetProjMat()
 	return proj;
 }
 
-Camera* Camera::sCurrent = nullptr;
-
 void Frustum::CalcFrustum(Camera* cam)
 {
 	// カメラの情報

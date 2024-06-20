@@ -78,7 +78,7 @@ public:
 	CameraTargetMode targetMode = CameraTargetMode::LookTo;
 
 	static DLLExport void Set(Camera& camera);
-	static Camera* sCurrent;
+	inline static Camera* sCurrent = nullptr;
 	static void UseCurrent();
 
 	static DLLExport Matrix GetCurrentCameraBillboardMat();

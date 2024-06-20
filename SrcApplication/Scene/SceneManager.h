@@ -69,16 +69,16 @@ private:
 	{
 		for (const auto& comp : component->GetAllComponents())
 		{
-			T* found = FindObjectRecursive<T>(name, comp.second.get());
-			if (found)
-			{
-				return found;
-			}
-
 			if (comp.second->GetName() == name)
 			{
 				T* cast = dynamic_cast<T*>(comp.second.get());
 				return cast;
+			}
+
+			T* found = FindObjectRecursive<T>(name, comp.second.get());
+			if (found)
+			{
+				return found;
 			}
 		}
 
