@@ -14,6 +14,7 @@ public:
 };
 
 DLLExport void RegisterShader(const std::string& id);
+DLLExport void RegisterShader(SpShader* shader, const std::string& id);
 DLLExport void InitVS(const std::string& id, const std::string& vsPath);
 DLLExport void InitPS(const std::string& id, const std::string& psPath);
 DLLExport void InitGS(const std::string& id, const std::string& gsPath);

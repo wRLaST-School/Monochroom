@@ -1,15 +1,29 @@
 #pragma once
+#include <SpRootSignature.h>
 
 class PipelineWindow
 {
 private:
+	enum class TabState
+	{
+		Pipeline,
+		RootSignature,
+		Shader,
+	};
+
+private:
 	bool mIsOpen;
+	TabState tabState;
+
+private:
+	void PipelineTabStateDraw();
+	void RootSignatureTabStateDraw();
+	void ShaderTabStateDraw();
 
 public:
 	PipelineWindow();
 	void DrawWindow();
 	static void SDraw();
-
 
 public:
 	// セッター

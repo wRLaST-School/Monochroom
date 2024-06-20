@@ -36,6 +36,11 @@ void SpRootSignature::UseDefaultSettings()
 
 SpRootSignature* SpRootSignature::Get(const std::string& id)
 {
+	auto it = sRsMap.find(id);
+	if (it == sRsMap.end())
+	{
+		return nullptr;
+	}
 	return &sRsMap.find(id)->second;
 }
 

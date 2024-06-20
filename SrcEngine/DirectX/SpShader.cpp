@@ -110,6 +110,11 @@ void RegisterShader(const string& id)
 	shaderMap[id] = SpShader();
 }
 
+void RegisterShader(SpShader* shader, const std::string& id)
+{
+	shaderMap[id] = *shader;
+}
+
 void InitGS(const string& id, const string& gsPath)
 {
 	shaderMap[id].InitGS(gsPath);
@@ -127,5 +132,10 @@ void InitPS(const string& id, const string& psPath)
 
 SpShader* GetShader(const string& id)
 {
+	auto it = shaderMap.find(id);
+	if (it == shaderMap.end())
+	{
+		return nullptr;
+	}
 	return &shaderMap[id];
 }
