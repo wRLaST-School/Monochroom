@@ -71,6 +71,27 @@ void PlayerControl::MoveUpdate()
 }
 
 
+//-------------------------------------------------------------------------------
+void PlayerControl::CameraUpdate()
+{
+	Vec2 mousePos = Mouse::GetPos();
+
+	Vec2 mouseMove = mousePos - oldMousePos_;
+
+	parent_->rotationE.y += mouseMove.x * MOUSE_ROT_SPEED;
+	parent_->rotationE.x += mouseMove.y * MOUSE_ROT_SPEED;
+
+	parent_->rotationE.x = std::min(parent_->rotationE.x, ANGLE_LIMIT);
+	parent_->rotationE.x = std::max(parent_->rotationE.x, -ANGLE_LIMIT);
+
+	Quaternion q = Quaternion::EulerToQuaternion(parent_->rotationE);
+
+	//Quaternion::
+
+	oldMousePos_ = mousePos;
+}
+
+
 //--------------------------------------------------------------------------------
 Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 {
@@ -95,6 +116,9 @@ void PlayerControl::Update()
 
 	//ジャンプ更新
 	JumpUpdate();
+
+	//
+	CameraUpdate();
 
 	//移動更新
 	MoveUpdate();
