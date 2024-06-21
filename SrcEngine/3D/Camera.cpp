@@ -420,8 +420,8 @@ void Frustum::CalcFrustum(Camera* cam)
 	verticalFov = cam->fov / 2;
 
 	// 向いてる方向
-	vec[(int)FrustumPlane::Left] = Vec3(-sinf(horizontalFov), 0, cosf(horizontalFov));
-	vec[(int)FrustumPlane::Right] = Vec3(sinf(horizontalFov), 0, cosf(horizontalFov));
+	vec[(int)FrustumPlane::Left] = Vec3(-sinf(horizontalFov), 0, -cosf(horizontalFov));
+	vec[(int)FrustumPlane::Right] = Vec3(sinf(horizontalFov), 0, -cosf(horizontalFov));
 	vec[(int)FrustumPlane::Top] = Vec3(0, sinf(verticalFov), cosf(verticalFov));
 	vec[(int)FrustumPlane::Bottom] = Vec3(0, -sinf(verticalFov), cosf(verticalFov));
 

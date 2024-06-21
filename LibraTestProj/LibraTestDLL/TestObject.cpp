@@ -13,7 +13,11 @@ void TestObject::Init()
 
 void TestObject::Update()
 {
-	auto obj = This()->Parent()->CastTo<Object3D>();
+	auto obj = SceneManager::FindObject<Object3D>("Object3D");
+
+	//auto object = SceneManager::FindObject<Object3D>("Object3D");
+
+	//auto obj = This()->Parent()->CastTo<Object3D>();
 
 	if (obj)
 	{

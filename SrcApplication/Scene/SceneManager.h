@@ -65,7 +65,7 @@ public:
 #pragma region オブジェクト検索関連
 private:
 	template<typename T>
-	static T* FindObjectRecursive(const std::string& name, IComponent* component)
+	inline static T* FindObjectRecursive(const std::string& name, IComponent* component)
 	{
 		for (const auto& comp : component->GetAllComponents())
 		{
@@ -87,7 +87,7 @@ private:
 
 public:
 	template<typename T>
-	static T* FindObject(const std::string& name)
+	inline static T* FindObject(const std::string& name)
 	{
 		T* found = FindObjectRecursive<T>(name, currentScene.get());
 		if (!found)
