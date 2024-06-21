@@ -155,6 +155,7 @@
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "black": "Assets/Images/black.png",
+                "circleParticle.png": "Assets\\Images\\circleParticle.png",
                 "white.png": "Assets\\Images\\white.png"
             }
         ],

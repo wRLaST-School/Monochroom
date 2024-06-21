@@ -4,6 +4,7 @@
 #include <Object3D.h>
 #include <SceneManager.h>
 #include <SpImGui.h>
+#include <ConsoleWindow.h>
 
 void TestObject::Init()
 {
@@ -13,7 +14,11 @@ void TestObject::Init()
 
 void TestObject::Update()
 {
-	auto obj = This()->Parent()->CastTo<Object3D>();
+	auto obj = SceneManager::FindObject<Object3D>("Object3D");
+
+	//auto object = SceneManager::FindObject<Object3D>("Object3D");
+
+	//auto obj = This()->Parent()->CastTo<Object3D>();
 
 	if (obj)
 	{
@@ -27,6 +32,7 @@ void TestObject::Update()
 		move *= 0.1f;
 
 		obj->position.z += move;
+
 	}
 }
 

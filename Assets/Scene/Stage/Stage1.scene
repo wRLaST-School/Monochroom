@@ -2,14 +2,6 @@
     {
         "Children": [
             {
-                "Children": [
-                    {
-                        "Name": "FirstPersonCamera",
-                        "Type": "ScriptComponent",
-                        "filePath": "FirstPersonCamera"
-                    }
-                ],
-                "Name": "Main Camera",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -36,15 +28,7 @@
             },
             {
                 "BlendMode": 0,
-                "Children": [
-                    {
-                        "Name": "PlayerControl",
-                        "Type": "ScriptComponent",
-                        "filePath": "PlayerControl"
-                    }
-                ],
                 "Model": "cube.obj",
-                "Name": "Player",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -62,11 +46,119 @@
                     "Z": 0.0
                 },
                 "Scale": {
+                    "X": 10.0,
+                    "Y": 0.9999999403953552,
+                    "Z": 30.0
+                },
+                "Texture": "white.png",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Position": {
+                    "X": 10.0,
+                    "Y": 4.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
                     "X": 1.0,
-                    "Y": 1.0,
+                    "Y": 5.0,
+                    "Z": 30.0
+                },
+                "Texture": "white.png",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Position": {
+                    "X": -10.0,
+                    "Y": 4.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 5.0,
+                    "Z": 30.0
+                },
+                "Texture": "white.png",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 4.0,
+                    "Z": -30.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 11.0,
+                    "Y": 5.0,
                     "Z": 1.0
                 },
-                "Texture": "",
+                "Texture": "white.png",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 4.0,
+                    "Z": 30.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 11.0,
+                    "Y": 5.0,
+                    "Z": 1.0
+                },
+                "Texture": "white.png",
                 "Type": "Object3D"
             }
         ],
@@ -83,7 +175,8 @@
         ],
         "Textures": [
             {
-                "Black": "Assets/Images/black.png"
+                "Black": "Assets/Images/black.png",
+                "white.png": "Assets\\Images\\white.png"
             }
         ],
         "Type": "IScene"

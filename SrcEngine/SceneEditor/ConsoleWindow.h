@@ -14,7 +14,7 @@ public:
 	static void SDraw();
 
 public:
-	static void Log(const std::string& log);
+	static DLLExport void Log(const std::string& log);
 
 public:
 	// セッター
