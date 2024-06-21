@@ -17,12 +17,21 @@ private:
 	const float MOVE_SPEED_MAX = 1.2f;
 	const float MOVE_ATTEN = 0.87f;
 
+	const float ANGLE_LIMIT = 75.0f;
+	const float MOUSE_ROT_SPEED = 0.01f;
+
+	Vec3 frontVec_ = { 0,0,1.0f };
+
+	Vec2 oldMousePos_ = { 0,0 };
+
 	Object3D* parent_ = nullptr;
 
 private:
 	void Jump();
 	void MoveUpdate();
 	void JumpUpdate();
+
+	void CameraUpdate();
 
 	Vec3 MinLengthVec3(const Vec3& vec, float maxLength);
 
