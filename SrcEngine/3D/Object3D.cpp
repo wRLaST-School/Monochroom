@@ -357,8 +357,21 @@ void Object3D::OnInspectorWindowDraw()
 		ImGui::RadioButton("Toon", &blendeModeInt, (int)BlendMode::Toon);
 		blendMode = (BlendMode)blendeModeInt;
 	}
+
 	ImGui::Separator();
 
+	if (ImGui::CollapsingHeader("Model"))
+	{
+		if (ImGui::RadioButton("Default", &normalType, 0))
+		{
+			model->MappingVertex();
+		}
+		ImGui::SameLine();
+		if (ImGui::RadioButton("Smoothing", &normalType, 1))
+		{
+			model->MappingSmoothing();
+		}
+	}
 
 	UpdateMatrix();
 }
@@ -478,6 +491,13 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 		blendMode = (BlendMode)jsonObject["BlendMode"];
 	}
 	model = ModelManager::GetModel(modelStr);
+	if (model)
+	{
+		if (jsonObject.contains("NormalType"))
+		{
+			normalType = jsonObject["NormalType"];
+		}
+	}
 }
 
 void Object3D::WriteParamJson(nlohmann::json& jsonObject)
@@ -504,9 +524,14 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	jsonObject["Texture"] = texture;
 
 	if (model)
+	{
 		jsonObject["Model"] = model->key;
+		jsonObject["NormalType"] = normalType;
+	}
 	else
+	{
 		jsonObject["Model"] = "";
+	}
 
 	jsonObject["BlendMode"] = (int)blendMode;
 }

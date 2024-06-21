@@ -142,9 +142,13 @@ public:
 	void LoadMaterial(const std::string& path, const std::string& filename);
 	void UpdateMaterial();
 
+	void Smoothing();
+
 	void SetAnim(std::string animKey);
 	void UpdateAnim();
 	void ResetAnimTimer();
+	void MappingVertex();
+	void MappingSmoothing();
 
 	D3D12_VERTEX_BUFFER_VIEW vbView{};
 	D3D12_INDEX_BUFFER_VIEW ibView{};
@@ -171,6 +175,9 @@ public:
 private:
 	uint32_t animTimer = 0;
 	std::string currentAnim = "Walk";
+
+	std::vector<Vertex> vertices;
+	std::vector<Vertex> smoothed;
 };
 
 typedef std::string ModelKey;

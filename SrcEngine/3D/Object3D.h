@@ -20,6 +20,9 @@ struct ConstBufferDataMisc {
 
 class Object3D : public IComponent
 {
+private:
+	int normalType = 0;
+
 public:
 	ComponentFactoryRegister(Object3D)
 
@@ -51,7 +54,7 @@ public:
 	void DLLExport OnInspectorWindowDraw();
 	void DLLExport DrawGizmo();
 
-	void DLLExport ReadParamJson([[maybe_unused]]const nlohmann::json& jsonObject) override;
+	void DLLExport ReadParamJson([[maybe_unused]] const nlohmann::json& jsonObject) override;
 	void DLLExport WriteParamJson([[maybe_unused]] nlohmann::json& jsonObject) override;
 
 	void DLLExport CopyComponent(IComponent* src) override;
@@ -63,7 +66,7 @@ public:
 	Float3 scale = { 1, 1, 1 };
 	Quaternion rotation = Quaternion::Identity();
 	Float3 rotationE = {};
-	enum class RotMode{
+	enum class RotMode {
 		Euler,
 		Quaternion
 	} rotMode = RotMode::Euler;

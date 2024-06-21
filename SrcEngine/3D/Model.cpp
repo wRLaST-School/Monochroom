@@ -23,12 +23,12 @@ Matrix AiMatToSpMat(aiMatrix4x4 m)
 
 Model::Model(const std::string& modelName)
 {
-	std::string path = "Assets/Models/"+modelName+"/";
+	std::string path = "Assets/Models/" + modelName + "/";
 	std::string objfile = modelName + ".obj";
 
 	filePath = path + objfile;
 
-	std::vector<Vertex> vertices;
+	//std::vector<Vertex> vertices;
 
 	std::vector<UINT> indices;
 
@@ -82,7 +82,7 @@ Model::Model(const std::string& modelName)
 		if (tag == "f")
 		{
 			std::string indexString;
-			while (getline(lineStream, indexString, ' ')) 
+			while (getline(lineStream, indexString, ' '))
 			{
 				std::istringstream indexStream(indexString);
 				UINT indexPosition;
@@ -211,6 +211,7 @@ Model::Model(const std::string& modelFilePath, bool useSmoothShading)
 		aiProcess_SortByPType |
 		aiProcess_ConvertToLeftHanded |
 		(useSmoothShading ? aiProcess_GenSmoothNormals : aiProcess_GenNormals) |
+		//aiProcess_GenSmoothNormals |
 		aiProcess_FixInfacingNormals
 	);
 
@@ -225,7 +226,7 @@ Model::Model(const std::string& modelFilePath, bool useSmoothShading)
 	std::vector<eastl::array<int32_t, 4>> bIndexList;
 	std::vector<Float2> tcList;
 	std::vector<UINT> indices;
-	std::vector<Vertex> vertices;
+	//std::vector<Vertex> vertices;
 
 	UINT backIndex = 0;
 
@@ -281,48 +282,48 @@ Model::Model(const std::string& modelFilePath, bool useSmoothShading)
 
 	//先にBoneのみ列挙して保存
 	std::function<void(aiNode*)>fNodeBone = [&](aiNode* cur)
-	{
-		for (uint32_t i = 0; i < cur->mNumChildren; i++)
 		{
-			fNodeBone(cur->mChildren[i]);
-		}
-		//ノードごとのメッシュについて
-		for (uint32_t k = 0; k < cur->mNumMeshes; k++) {
-
-			//メッシュごとの処理
-			uint32_t i = cur->mMeshes[k];
-			aiMesh* mesh = scene->mMeshes[i];
-
-			//ボーンの情報を保存
-			if (mesh->HasBones())
+			for (uint32_t i = 0; i < cur->mNumChildren; i++)
 			{
-				for (int32_t boneIndex = 0; boneIndex < std::min((int32_t)mesh->mNumBones, ModelConsts::MAX_BONES_PER_MODEL); boneIndex++)
+				fNodeBone(cur->mChildren[i]);
+			}
+			//ノードごとのメッシュについて
+			for (uint32_t k = 0; k < cur->mNumMeshes; k++) {
+
+				//メッシュごとの処理
+				uint32_t i = cur->mMeshes[k];
+				aiMesh* mesh = scene->mMeshes[i];
+
+				//ボーンの情報を保存
+				if (mesh->HasBones())
+				{
+					for (int32_t boneIndex = 0; boneIndex < std::min((int32_t)mesh->mNumBones, ModelConsts::MAX_BONES_PER_MODEL); boneIndex++)
+					{
+						Bone bone;
+						aiMatrix4x4 aioffsetmat = mesh->mBones[boneIndex]->mOffsetMatrix;
+						aioffsetmat.Transpose();
+						Matrix bOffsetMat = Matrix(
+							(float)aioffsetmat.a1, (float)aioffsetmat.a2, (float)aioffsetmat.a3, (float)aioffsetmat.a4,
+							(float)aioffsetmat.b1, (float)aioffsetmat.b2, (float)aioffsetmat.b3, (float)aioffsetmat.b4,
+							(float)aioffsetmat.c1, (float)aioffsetmat.c2, (float)aioffsetmat.c3, (float)aioffsetmat.c4,
+							(float)aioffsetmat.d1, (float)aioffsetmat.d2, (float)aioffsetmat.d3, (float)aioffsetmat.d4
+						);
+						bone.offsetMatrix = bOffsetMat;
+						bone.index = boneIndex;
+
+						bones.insert(eastl::pair<std::string, Bone>(std::string(mesh->mBones[boneIndex]->mName.C_Str()), bone));
+					}
+				}
+				else
 				{
 					Bone bone;
-					aiMatrix4x4 aioffsetmat = mesh->mBones[boneIndex]->mOffsetMatrix;
-					aioffsetmat.Transpose();
-					Matrix bOffsetMat = Matrix(
-						(float)aioffsetmat.a1, (float)aioffsetmat.a2, (float)aioffsetmat.a3, (float)aioffsetmat.a4,
-						(float)aioffsetmat.b1, (float)aioffsetmat.b2, (float)aioffsetmat.b3, (float)aioffsetmat.b4,
-						(float)aioffsetmat.c1, (float)aioffsetmat.c2, (float)aioffsetmat.c3, (float)aioffsetmat.c4,
-						(float)aioffsetmat.d1, (float)aioffsetmat.d2, (float)aioffsetmat.d3, (float)aioffsetmat.d4
-					);
-					bone.offsetMatrix = bOffsetMat;
-					bone.index = boneIndex;
-
-					bones.insert(eastl::pair<std::string, Bone>(std::string(mesh->mBones[boneIndex]->mName.C_Str()), bone));
+					bone.offsetMatrix = Matrix::Identity();
+					bone.index = 0;
+					bones.insert(eastl::pair<std::string, Bone>("", bone));
+					bMatrixCB.contents->bMatrix[0] = Matrix::Identity();
 				}
 			}
-			else
-			{
-				Bone bone;
-				bone.offsetMatrix = Matrix::Identity();
-				bone.index = 0;
-				bones.insert(eastl::pair<std::string, Bone>("", bone));
-				bMatrixCB.contents->bMatrix[0] = Matrix::Identity();
-			}
-		}
-	};
+		};
 
 	fNodeBone(scene->mRootNode);
 
@@ -467,7 +468,7 @@ Model::Model(const std::string& modelFilePath, bool useSmoothShading)
 				}
 			}
 		}
-	};
+		};
 
 	//ノードごとの処理呼び出し
 	fNode(scene->mRootNode, nullptr);
@@ -510,6 +511,9 @@ Model::Model(const std::string& modelFilePath, bool useSmoothShading)
 
 		mtr->textureKey = SpTextureManager::LoadTexture(filedir + std::string("/") + std::string(tempstr.C_Str()), std::string("asmptex:") + filedir + std::string(tempstr.C_Str()));
 	}
+
+	// スムージング
+	Smoothing();
 
 	UINT sizeVB = static_cast<UINT>(sizeof(Vertex) * vertices.size());
 
@@ -656,6 +660,41 @@ void Model::UpdateMaterial()
 	materialCBs.back().contents->alpha = material.front().alpha;
 }
 
+void Model::Smoothing()
+{
+	smoothed = vertices;
+
+	for (size_t i = 0; i < vertices.size(); ++i)
+	{
+		Vec3 sumNormal = { 0.0f, 0.0f, 0.0f };
+		int neighborCount = 0;
+
+		for (size_t j = 0; j < vertices.size(); ++j)
+		{
+			if (i == j) {
+				sumNormal += vertices[j].normal;
+				neighborCount++;
+			}
+			else
+			{
+				float distance = Vec3::Distance(vertices[i].pos, vertices[j].pos);
+				if (distance < 0.01f)
+				{
+					sumNormal += vertices[j].normal;
+					neighborCount++;
+				}
+			}
+		}
+
+		if (neighborCount > 0) 
+		{
+			sumNormal = sumNormal / static_cast<float>(neighborCount);
+		}
+
+		smoothed[i].normal = sumNormal.GetNorm();
+	}
+}
+
 void Model::SetAnim(std::string animKey)
 {
 	currentAnim = animKey;
@@ -683,144 +722,144 @@ void Model::UpdateAnim()
 	double aniTick = (double)animTimer / 60.0 * anim->tickPerSecond * (double)aniSpeed;
 
 	//Nodeを使って再帰的に処理を行う
-	std::function<Matrix(Node*, Channel*, eastl::unordered_map<std::string, Node>&, eastl::unordered_map<std::string, Bone>&)> 
-		fCalcParentTransform = 
-		[&aniTick, &fCalcParentTransform, &anim](Node* node, Channel* channel, eastl::unordered_map<std::string, Node>& nodes, eastl::unordered_map<std::string, Bone>& bones) 
-	{
-		Matrix transform;
-		Matrix parentTrans;
-		Channel* parentChannel = nullptr;
-
-		if (node == nullptr)
+	std::function<Matrix(Node*, Channel*, eastl::unordered_map<std::string, Node>&, eastl::unordered_map<std::string, Bone>&)>
+		fCalcParentTransform =
+		[&aniTick, &fCalcParentTransform, &anim](Node* node, Channel* channel, eastl::unordered_map<std::string, Node>& nodes, eastl::unordered_map<std::string, Bone>& bones)
 		{
-			return Matrix::Identity();
-		}
-		else
-		{
-			if (node->parent != nullptr)
+			Matrix transform;
+			Matrix parentTrans;
+			Channel* parentChannel = nullptr;
+
+			if (node == nullptr)
 			{
-				for (auto& a : anim->channels)
-				{
-					if (a.name == node->parent->name)
-					{
-						parentChannel = &a;
-					}
-				}
-			}
-
-			parentTrans = fCalcParentTransform(node->parent, parentChannel, nodes, bones);
-		}
-
-		AScaleData fst{};
-		AScaleData scd{};
-
-		if (channel != nullptr)
-		{
-			if (channel->scales.size())
-			{
-				fst = channel->scales.front();
-				scd = channel->scales.front();
-			}
-
-			for (auto itr = channel->scales.begin(); itr != channel->scales.end(); itr++)
-			{
-				if (itr->time > aniTick)
-				{
-					scd = *itr;
-					if (itr != channel->scales.begin())
-					{
-						itr--;
-					}
-
-					fst = *itr;
-					break;
-				}
-			}
-
-			Vec3 lerpedScale;
-
-			if (scd.time - fst.time)
-			{
-				lerpedScale = Vec3::Lerp(fst.scale, scd.scale, (float)((aniTick - fst.time) / (scd.time - fst.time)));
+				return Matrix::Identity();
 			}
 			else
 			{
-				lerpedScale = fst.scale;
-			}
-
-			transform = Matrix::Scale(lerpedScale);
-
-			ARotData fstr{};
-			ARotData scdr{};
-
-			for (auto itr = channel->rotations.begin(); itr != channel->rotations.end(); itr++)
-			{
-				if (itr->time > aniTick)
+				if (node->parent != nullptr)
 				{
-					scdr = *itr;
-					if (itr != channel->rotations.begin())
+					for (auto& a : anim->channels)
 					{
-						itr--;
+						if (a.name == node->parent->name)
+						{
+							parentChannel = &a;
+						}
 					}
-					fstr = *itr;
-					break;
 				}
+
+				parentTrans = fCalcParentTransform(node->parent, parentChannel, nodes, bones);
 			}
 
-			Quaternion slerpedRot;
+			AScaleData fst{};
+			AScaleData scd{};
 
-			if (scdr.time - fstr.time)
+			if (channel != nullptr)
 			{
-				slerpedRot = Quaternion::Slerp(fstr.rot, scdr.rot, (float)((aniTick - fstr.time) / (scdr.time - fstr.time)));
+				if (channel->scales.size())
+				{
+					fst = channel->scales.front();
+					scd = channel->scales.front();
+				}
+
+				for (auto itr = channel->scales.begin(); itr != channel->scales.end(); itr++)
+				{
+					if (itr->time > aniTick)
+					{
+						scd = *itr;
+						if (itr != channel->scales.begin())
+						{
+							itr--;
+						}
+
+						fst = *itr;
+						break;
+					}
+				}
+
+				Vec3 lerpedScale;
+
+				if (scd.time - fst.time)
+				{
+					lerpedScale = Vec3::Lerp(fst.scale, scd.scale, (float)((aniTick - fst.time) / (scd.time - fst.time)));
+				}
+				else
+				{
+					lerpedScale = fst.scale;
+				}
+
+				transform = Matrix::Scale(lerpedScale);
+
+				ARotData fstr{};
+				ARotData scdr{};
+
+				for (auto itr = channel->rotations.begin(); itr != channel->rotations.end(); itr++)
+				{
+					if (itr->time > aniTick)
+					{
+						scdr = *itr;
+						if (itr != channel->rotations.begin())
+						{
+							itr--;
+						}
+						fstr = *itr;
+						break;
+					}
+				}
+
+				Quaternion slerpedRot;
+
+				if (scdr.time - fstr.time)
+				{
+					slerpedRot = Quaternion::Slerp(fstr.rot, scdr.rot, (float)((aniTick - fstr.time) / (scdr.time - fstr.time)));
+				}
+				else
+				{
+					slerpedRot = fstr.rot;
+				}
+
+				Quaternion finr = slerpedRot;
+
+				transform *= finr.GetRotMat();
+
+				ATransData fstt{};
+				ATransData scdt{};
+
+				for (auto itr = channel->translations.begin(); itr != channel->translations.end(); itr++)
+				{
+					if (itr->time > aniTick)
+					{
+						scdt = *itr;
+						if (itr != channel->translations.begin())
+						{
+							itr--;
+						}
+						fstt = *itr;
+						break;
+					}
+				}
+
+				Vec3 lerpedTrans;
+
+				if (scdt.time - fstt.time)
+				{
+					lerpedTrans = Vec3::Lerp(fstt.translation, scdt.translation, (float)((aniTick - fstt.time) / (scdt.time - fstt.time)));
+				}
+				else
+				{
+					lerpedTrans = fstt.translation;
+				}
+
+				transform *= Matrix::Translation(lerpedTrans);
 			}
 			else
 			{
-				slerpedRot = fstr.rot;
+				transform = node->worldTransform;
 			}
 
-			Quaternion finr = slerpedRot;
+			bones.at(node->name).finalMatrix = bones.at(node->name).offsetMatrix * transform * parentTrans /** node->worldTransform*/;
 
-			transform *= finr.GetRotMat();
-
-			ATransData fstt{};
-			ATransData scdt{};
-
-			for (auto itr = channel->translations.begin(); itr != channel->translations.end(); itr++)
-			{
-				if (itr->time > aniTick)
-				{
-					scdt = *itr;
-					if (itr != channel->translations.begin())
-					{
-						itr--;
-					}
-					fstt = *itr;
-					break;
-				}
-			}
-
-			Vec3 lerpedTrans;
-
-			if (scdt.time - fstt.time)
-			{
-				lerpedTrans = Vec3::Lerp(fstt.translation, scdt.translation, (float)((aniTick - fstt.time) / (scdt.time - fstt.time)));
-			}
-			else
-			{
-				lerpedTrans = fstt.translation;
-			}
-
-			transform *= Matrix::Translation(lerpedTrans);
-		}
-		else
-		{
-			transform = node->worldTransform;
-		}
-
-		bones.at(node->name).finalMatrix = bones.at(node->name).offsetMatrix * transform * parentTrans /** node->worldTransform*/;
-
-		return transform * parentTrans;
-	};
+			return transform * parentTrans;
+		};
 
 	for (auto& channel : anim->channels)
 	{
@@ -835,7 +874,7 @@ void Model::UpdateAnim()
 
 	std::sort(finalBones.begin(), finalBones.end(), [](const auto& lhs, const auto& rhs) {
 		return lhs.index < rhs.index;
-	});
+		});
 
 	for (uint32_t i = 0; i < ModelConsts::MAX_BONES_PER_MODEL; i++)
 	{
@@ -853,6 +892,38 @@ void Model::UpdateAnim()
 void Model::ResetAnimTimer()
 {
 	animTimer = 0;
+}
+
+void Model::MappingVertex()
+{
+	// GPU上のバッファに対応した仮想メモリを取得
+	Vertex* vertMap = nullptr;
+	vertBuff->Map(0, nullptr, (void**)&vertMap);
+
+	// 全頂点に対して
+	for (int32_t i = 0; i < vertices.size(); i++)
+	{
+		vertMap[i] = vertices[i];   // 座標をコピー
+	}
+
+	// マップを解除
+	vertBuff->Unmap(0, nullptr);
+}
+
+void Model::MappingSmoothing()
+{
+	// GPU上のバッファに対応した仮想メモリを取得
+	Vertex* vertMap = nullptr;
+	vertBuff->Map(0, nullptr, (void**)&vertMap);
+
+	// 全頂点に対して
+	for (int32_t i = 0; i < smoothed.size(); i++)
+	{
+		vertMap[i] = smoothed[i];   // 座標をコピー
+	}
+
+	// マップを解除
+	vertBuff->Unmap(0, nullptr);
 }
 
 void ModelManager::Register(const std::string& modelName, const ModelKey& key)
