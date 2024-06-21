@@ -75,7 +75,6 @@ void Object3D::Update()
 
 void Object3D::Draw()
 {
-	Camera::sCurrent->FrustumCulling();
 	bool isInside = Camera::sCurrent->CheckisInCameraInside(position);
 	if (!isInside)
 	{
