@@ -30,7 +30,7 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
     //生成済みの場合はリセット
     component_ = instantiateFunc();
 
-    OutputDebugStringA(std::format("Attaching Class {}, size: {}", className, sizeof(*component_)).c_str());
+    OutputDebugStringA(std::format("Attaching Class {}, size: {}\n", className, sizeof(*component_)).c_str());
 
     return hModule_;
 }
