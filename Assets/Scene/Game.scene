@@ -1,0 +1,200 @@
+[
+    {
+        "Children": [
+            {
+                "Children": [
+                    {
+                        "Name": "PlayerControl",
+                        "Type": "ScriptComponent",
+                        "filePath": "PlayerControl"
+                    }
+                ],
+                "Name": "Camera",
+                "Position": {
+                    "X": 18.9290771484375,
+                    "Y": 0.0,
+                    "Z": 44.684146881103516
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Type": "Camera",
+                "UseQuaternionRot": 0
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Name": "yuka",
+                "Position": {
+                    "X": -0.6473812460899353,
+                    "Y": -7.332832336425781,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 171.59519958496094,
+                    "Y": 1.340000033378601,
+                    "Z": 345.39251708984375
+                },
+                "Texture": "white.png",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "skydome.obj",
+                "Name": "kabe",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Texture": "SpicavirSky.png",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Name": "Object3D",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 57.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Name": "Object3D",
+                "Position": {
+                    "X": 27.0,
+                    "Y": 0.0,
+                    "Z": 51.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Model": "cube.obj",
+                "Name": "Object3D",
+                "Position": {
+                    "X": 16.0,
+                    "Y": 0.0,
+                    "Z": 67.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Texture": "",
+                "Type": "Object3D"
+            }
+        ],
+        "EfkEffects": [
+            {}
+        ],
+        "Models": [
+            {
+                "cube.obj": "Assets\\Models\\cube\\cube.obj",
+                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
+            }
+        ],
+        "Sounds": [
+            {}
+        ],
+        "Textures": [
+            {
+                "Black": "Assets/Images/black.png",
+                "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
+                "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
+                "white.png": "Assets\\Images\\white.png"
+            }
+        ],
+        "Type": "IScene"
+    }
+]
