@@ -31,6 +31,12 @@
     <Filter Include="ヘッダー ファイル\UI">
       <UniqueIdentifier>{db7f94c9-264b-43ba-b687-ed4993809c44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Easing">
+      <UniqueIdentifier>{6874f44a-9503-4725-9dea-fb7dab05b7a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Easing">
+      <UniqueIdentifier>{ffeed5a8-cf03-407a-be1a-81401aaee6ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IScriptObject.h">
@@ -69,6 +75,12 @@
     <ClInclude Include="SuperUI.h">
       <Filter>ヘッダー ファイル\UI</Filter>
     </ClInclude>
+    <ClInclude Include="Easing.h">
+      <Filter>ヘッダー ファイル\Easing</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>ヘッダー ファイル\Easing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -106,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="SuperUI.cpp">
       <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Easing.cpp">
+      <Filter>ソース ファイル\Easing</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>ソース ファイル\Easing</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
