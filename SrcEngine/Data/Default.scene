@@ -2,6 +2,7 @@
     {
         "Children": [
             {
+                "Name": "Main Camera",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -24,11 +25,40 @@
                     "Z": 1.0
                 },
                 "Type": "Camera",
-                "UseQuaternionRot": 0
+                "UseQuaternionRot": 1
+            },
+            {
+                "BlendMode": 0,
+                "Model": "skydome.obj",
+                "Name": "SkyDome",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Texture": "Stars.png",
+                "Type": "Object3D"
             },
             {
                 "BlendMode": 0,
                 "Model": "cube.obj",
+                "Name": "Object3D",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -59,7 +89,8 @@
         ],
         "Models": [
             {
-                "cube.obj": "Assets\\Models\\cube\\cube.obj"
+                "cube.obj": "Assets\\Models\\cube\\cube.obj",
+                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
             }
         ],
         "Sounds": [
@@ -67,7 +98,9 @@
         ],
         "Textures": [
             {
-                "Black": "Assets/Images/black.png"
+                "Black": "Assets/Images/black.png",
+                "Stars.png": "Assets\\Models\\skydome\\Stars.png",
+                "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png"
             }
         ],
         "Type": "IScene"

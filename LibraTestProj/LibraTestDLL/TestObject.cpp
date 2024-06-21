@@ -4,6 +4,7 @@
 #include <Object3D.h>
 #include <SceneManager.h>
 #include <SpImGui.h>
+#include <ConsoleWindow.h>
 
 void TestObject::Init()
 {
@@ -31,6 +32,7 @@ void TestObject::Update()
 		move *= 0.1f;
 
 		obj->position.z += move;
+
 	}
 }
 

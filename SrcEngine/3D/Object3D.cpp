@@ -417,8 +417,16 @@ void Object3D::DrawGizmo()
 
 	UpdateMatrix();
 
+	float snap[3] = { 0.001f,0.001f,0.001f };
+	if (Input::Key::Down(DIK_LSHIFT))
+	{
+		snap[0] = 0.1f;
+		snap[1] = 0.1f;
+		snap[2] = 0.1f;
+	}
+
 	ImGuizmo::Manipulate(reinterpret_cast<float*>(&view),
-		reinterpret_cast<float*>(&proj), mCurrentGizmoOperation, mCurrentGizmoMode, &matWorld[0][0], NULL, NULL);
+		reinterpret_cast<float*>(&proj), mCurrentGizmoOperation, mCurrentGizmoMode, &matWorld[0][0], NULL, snap);
 
 	if (ImGuizmo::IsUsing())
 	{
