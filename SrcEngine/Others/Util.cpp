@@ -1,4 +1,5 @@
 #include "Util.h"
+#include "Util.h"
 #include <random>
 #include <GameManager.h>
 #include <SpWindow.h>
@@ -28,6 +29,11 @@ std::wstring Util::StrToWStr(const std::string& str, uint32_t page)
 
     // 変換結果を返す
     return ret;
+}
+
+Float2 DLLExport Util::GetWinHalfSize()
+{
+    return Float2(static_cast<float>(GetSpWindow()->width) / 2, static_cast<float>(GetSpWindow()->height) / 2);
 }
 
 Float2 Util::GetWinSize()

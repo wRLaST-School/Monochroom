@@ -81,6 +81,15 @@ Vec2& Vec2::operator/=(float div)
 	return *this;
 }
 
+Vec2& Vec2::operator=(float num)
+{
+	x = num;
+	y = num;
+	return *this;
+
+	// TODO: return ステートメントをここに挿入します
+}
+
 bool Vec2::operator>(const Vec2& v2) const
 {
 	return this->GetSquaredLength() > v2.GetSquaredLength();

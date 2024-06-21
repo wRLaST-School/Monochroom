@@ -24,7 +24,7 @@ namespace Util
 	 * @return クランプされた値
 	 */
 	template<class T>
-	T DLLExport Clamp(T value, T min, T max)
+	T Clamp(T value, T min, T max)
 	{
 		return value < min ? min : value > max ? max : value;
 	}
@@ -37,7 +37,7 @@ namespace Util
 	 * @return クランプされた値
 	 */
 	template<class T>
-	T DLLExport ClampMin(T value, T min)
+	T ClampMin(T value, T min)
 	{
 		return value < min ? min : value;
 	}
@@ -50,7 +50,7 @@ namespace Util
 	 * @return クランプされた値
 	 */
 	template<class T>
-	T DLLExport ClampMax(T value, T max)
+	T ClampMax(T value, T max)
 	{
 		return value > max ? max : value;
 	}
@@ -79,7 +79,7 @@ namespace Util
 
 	//serialize関数を定義したオブジェクトのファイル保存/読み込み
 	template<class T>
-	void DLLExport SerializeData(const std::string& path, const T& obj)
+	void SerializeData(const std::string& path, const T& obj)
 	{
 		std::ofstream ofs(path.c_str(), std::ios::binary);
 		cereal::BinaryOutputArchive archive(ofs);
@@ -87,13 +87,14 @@ namespace Util
 	}
 
 	template<class T>
-	void DLLExport DeserializeData(const std::string& path, T& obj)
+	void DeserializeData(const std::string& path, T& obj)
 	{
 		std::ifstream ifs(path.c_str(), std::ios::binary);
 		cereal::BinaryInputArchive archive(ifs);
 		archive(obj);
 	}
 
+	Float2 DLLExport GetWinHalfSize();
 	Float2 DLLExport GetWinSize();
 	int32_t DLLExport GetWinWidth();
 	int32_t DLLExport GetWinHeight();

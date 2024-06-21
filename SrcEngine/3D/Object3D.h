@@ -26,7 +26,7 @@ private:
 public:
 	ComponentFactoryRegister(Object3D)
 
-	Object3D() { transformCB.contents->mat = Matrix::Identity(); *brightnessCB.contents = { 1.0f, 1.0f, 1.0f, 1.0f }; miscCB.contents->rimColor = { 1.f, 0.f, 0.f, 1.f }; };
+	DLLExport Object3D();
 	void DLLExport UpdateMatrix();
 	void DLLExport DecomposeMatrix();
 

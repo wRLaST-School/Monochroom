@@ -46,6 +46,8 @@ public:
 
 	Vec2& operator /=(float div);
 
+	Vec2& operator=(float num);            // スカラーの代入
+
 	bool operator > (const Vec2& v2) const;
 	bool operator >= (const Vec2& v2) const;
 	bool operator < (const Vec2& v2) const;
