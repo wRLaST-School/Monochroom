@@ -61,40 +61,16 @@ public:
 
 	inline static std::unique_ptr<IScene> currentScene;
 	inline static std::unique_ptr<IScene> nextScene;
-
 #pragma region オブジェクト検索関連
 private:
-	template<typename T>
-	static T* FindObjectRecursive(const std::string& name, IComponent* component)
-	{
-		for (const auto& comp : component->GetAllComponents())
-		{
-			if (comp.second->GetName() == name)
-			{
-				T* cast = dynamic_cast<T*>(comp.second.get());
-				return cast;
-			}
 
-			T* found = FindObjectRecursive<T>(name, comp.second.get());
-			if (found)
-			{
-				return found;
-			}
-		}
-
-		return nullptr;
-	}
-
+	static DLLExport IComponent* FindObjectExport(const std::string& name);
+	static DLLExport IComponent* FindObjectRecursive(const std::string& name, IComponent* component);
 public:
 	template<typename T>
 	static T* FindObject(const std::string& name)
 	{
-		T* found = FindObjectRecursive<T>(name, currentScene.get());
-		if (!found)
-		{
-			OutputDebugStringA("Object not Found");
-		}
-		return found;
+		return FindObjectExport(name)->CastTo<T>();
 	}
 #pragma endregion 
 
