@@ -68,7 +68,7 @@ private:
 	static DLLExport IComponent* FindObjectRecursive(const std::string& name, IComponent* component);
 public:
 	template<typename T>
-	static T* FindObject(const std::string& name)
+	inline static T* FindObject(const std::string& name)
 	{
 		return FindObjectExport(name)->CastTo<T>();
 	}
