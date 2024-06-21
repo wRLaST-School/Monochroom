@@ -73,6 +73,7 @@ private:
 
 	int32_t itemIndex = 0;
 	IComponent* selected;
+	IComponent* copy;
 
 public://singleton
 	HierarchyPanel(const HierarchyPanel&) = delete;
