@@ -33,14 +33,18 @@ void HierarchyPanel::OnImGuiRender()
 
 		if (Input::Key::Down(DIK_LCONTROL))
 		{
+			if (Input::Key::Triggered(DIK_C))
+			{
+				copy = selected;
+			}
+
 			if (Input::Key::Triggered(DIK_V))
 			{
-				IComponent* parent = selected->parent_;
-				std::string selectedName = selected->name_;
+				IComponent* parent = copy->parent_;
 
 				if (parent)
 				{
-					ComponentFactory::CopyComponent(selected, parent);
+					ComponentFactory::CopyComponent(copy, parent);
 				}
 			}
 		}
@@ -77,10 +81,10 @@ void HierarchyPanel::ShowItemRecursive(IComponent* current)
 	}
 
 	bool treeNodeTriggered = ImGui::TreeNodeEx(taggedName.c_str(), nodeFlags);
-	
+
 	if (ImGui::BeginDragDropSource())
 	{
-		ImGui::SetDragDropPayload("HIERARCHY_ITEM_COMPONENT", &current,  sizeof(IComponent**), ImGuiCond_Once);
+		ImGui::SetDragDropPayload("HIERARCHY_ITEM_COMPONENT", &current, sizeof(IComponent**), ImGuiCond_Once);
 		ImGui::EndDragDropSource();
 	}
 
@@ -160,8 +164,15 @@ void HierarchyPanel::DDTargetReParent(IComponent* current)
 
 	if (payload) {
 		IComponent* child = *reinterpret_cast<IComponent**>(payload->Data);
-		if(child != current)
+		if (child != current)
 			child->ChangeParent(current);
+
+		//Object3D* castCurrent = dynamic_cast<Object3D*>(current);
+		//Object3D* castChild = dynamic_cast<Object3D*>(child);
+		//if (castCurrent && castChild)
+		//{
+		//	castChild->parent = castCurrent;
+		//}
 	}
 }
 
