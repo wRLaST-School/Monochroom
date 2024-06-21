@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
-    <ClInclude Include="ababa.h" />
     <ClInclude Include="Easing.h" />
     <ClInclude Include="AppOperationCommand.h" />
     <ClInclude Include="FirstPersonCamera.h" />
