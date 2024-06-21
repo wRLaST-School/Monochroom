@@ -113,6 +113,17 @@ const std::string& IComponent::GetName()
 	return name_;
 }
 
+DLLExport bool IComponent::FindTag(const std::string& tag)
+{
+	for (auto& t : tags)
+	{
+		if (t == tag)
+			return true;
+	}
+
+	return false;
+}
+
 void IComponent::Init()
 {
 }

@@ -81,6 +81,8 @@ public:
 	//つけられている名前を取得
 	const DLLExport std::string& GetName();
 
+	DLLExport bool FindTag(const std::string& tag);
+
 	//コンポーネントのクラス名を取得
 	virtual DLLExport std::string GetClassString() = 0;
 
