@@ -124,8 +124,22 @@ DLLExport bool IComponent::FindTag(const std::string& tag)
 	return false;
 }
 
+DLLExport void IComponent::AddTag(const std::string& tag)
+{
+	addingTag = tag;
+}
+
 void IComponent::Init()
 {
+}
+
+DLLExport void IComponent::CheckAddTag()
+{
+	if (addingTag)
+	{
+		tags.push_back(addingTag.value());
+		addingTag.reset();
+	}
 }
 
 void IComponent::Update()
@@ -219,6 +233,7 @@ void IComponent::UpdateAllChildComponents(IComponent* parent)
 	}
 
 	parent->Update();
+	parent->CheckAddTag();
 }
 
 void IComponent::DrawAllChildComponents(IComponent* parent)
