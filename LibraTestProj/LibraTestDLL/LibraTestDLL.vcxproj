@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
     <ClInclude Include="ababa.h" />
+    <ClInclude Include="AppOperationCommand.h" />
     <ClInclude Include="FirstPersonCamera.h" />
     <ClInclude Include="PlayerControl.h" />
     <ClInclude Include="SuperUI.h" />
@@ -26,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ababa.cpp" />
+    <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="PlayerControl.cpp" />
