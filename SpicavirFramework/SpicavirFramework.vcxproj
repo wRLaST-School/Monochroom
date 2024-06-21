@@ -317,6 +317,12 @@
     <ProjectReference Include="..\SpicavirEngine.vcxproj">
       <Project>{44ac3038-21f4-4d3a-b846-3091b26d74cc}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\SrcExternal\EASTL\EASTL.vcxproj">
+      <Project>{2ebf2370-9313-3e61-93e2-bf9215e3be2e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SrcImgui\imgui\imgui.vcxproj">
+      <Project>{3650decb-313b-4c2d-88db-9e59a8234b8d}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
