@@ -40,6 +40,9 @@ private:
     // メニューが開いた瞬間のリセット
     void MomentMenuReset();
 
+    // オプションのリセット
+    void ResetOption();
+
 private:// メンバー変数
 
     // UIメニューを開くかどうか
@@ -47,6 +50,9 @@ private:// メンバー変数
 
     // UIメニューの開いた瞬間
     bool mIsMomentOpenMenu;
+
+    // UIが表示するかどうか
+    bool mIsDisplayUI;
 
     // オプションメイン項目の親座標
     Vec2 mUiOptionBasePos;

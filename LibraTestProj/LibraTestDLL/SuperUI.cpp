@@ -44,15 +44,21 @@ void SuperUI::Init()
 
 void SuperUI::Update()
 {
+	
 	// もしTABキーを押したらメニューを開け閉めする
 	if (Input::Key::Triggered(DIK_TAB)) {
 		ConsoleWindow::Log("TAB押された。");
-		if (mIsOpenUIMenu) {
+		if (mIsMomentOpenMenu) {
 			mIsOpenUIMenu = false;
 			mIsMomentOpenMenu = false;
+			mIsDisplayUI = false;
+			ResetOption();
+			ConsoleWindow::Log("メニューを閉じた");
 		}
 		else {
 			mIsMomentOpenMenu = true;
+			mIsDisplayUI = true;
+			ConsoleWindow::Log("メニューを開いた");
 		}
 	}
 
@@ -72,12 +78,13 @@ void SuperUI::Draw()
 {
 	SpDS::DrawRotaGraph(100, 100, 1, 1, 0, "testTex");
 
-	for (size_t i = 0; i < mNumOfUIOption; i++)
-	{
-		SpDS::DrawRotaGraph(mUIStatus[i].basePos.x, mUIStatus[i].basePos.y, 
-							mUIStatus[i].scaleChangeValue.x, mUIStatus[i].scaleChangeValue.y, 0, "testTex");
+	if (mIsDisplayUI) {
+		for (size_t i = 0; i < mNumOfUIOption; i++)
+		{
+			SpDS::DrawRotaGraph(mUIStatus[i].basePos.x, mUIStatus[i].basePos.y,
+				mUIStatus[i].scaleChangeValue.x, mUIStatus[i].scaleChangeValue.y, 0, "testTex");
+		}
 	}
-	
 }
 
 void SuperUI::CopyComponent(IComponent* src)
@@ -92,6 +99,9 @@ void SuperUI::LoadTexInit()
 
 void SuperUI::MomentMenuReset()
 {
+	ConsoleWindow::Log("メニューが開いた瞬間。");
+
+	mUiWaitTimer++;
 	for (size_t i = 0; i < mNumOfUIOption; i++)
 	{
 		if (mUiWaitTimer > mUiWaitTimeInterval * i) {
@@ -102,13 +112,26 @@ void SuperUI::MomentMenuReset()
 		if (mUIStatus[i].IsTimingOff == true) {
 			mEaseUIMenu[i].Update();
 
-			mUIStatus[i].scaleChangeValue = mEaseUIMenu[i].In(1, 2);
+			mUIStatus[i].scaleChangeValue = mEaseUIMenu[i].In(0, 1.5f);
 
-			if (mEaseUIMenu[i].GetisEnd()) {
+			if (mEaseUIMenu[mNumOfUIOption-1].GetisEnd()) {
 				mIsMomentOpenMenu = false;
 				mIsOpenUIMenu = true;
+				mUiWaitTimer = 0;
 				mEaseUIMenu[i].Reset();
 			}
 		}
+	}
+}
+
+void SuperUI::ResetOption()
+{
+	mUiWaitTimer = 0;
+	for (size_t i = 0; i < mNumOfUIOption; i++)
+	{
+		mEaseUIMenu[i].Reset();
+		mUIStatus[i].scaleChangeValue = { 0,0 };
+		mUIStatus[i].IsTimingOff = false;
+		mUIStatus[i].IsActiveMenu = false;
 	}
 }
