@@ -46,6 +46,35 @@ void SceneManager::Update()
 	}
 }
 
+DLLExport IComponent* SceneManager::FindObjectExport(const std::string& name)
+{
+	IComponent* found = FindObjectRecursive(name, currentScene.get());
+	if (!found)
+	{
+		OutputDebugStringA("Object not Found");
+	}
+	return found;
+}
+
+DLLExport IComponent* SceneManager::FindObjectRecursive(const std::string& name, IComponent* component)
+{
+	for (const auto& comp : component->GetAllComponents())
+	{
+		if (comp.second->GetName() == name)
+		{
+			return comp.second.get();
+		}
+
+		IComponent* found = FindObjectRecursive(name, comp.second.get());
+		if (found)
+		{
+			return found;
+		}
+	}
+
+	return nullptr;
+}
+
 void SceneManager::Draw3D()
 {
 	currentScene->Draw3D();

@@ -29,6 +29,7 @@ struct Frustum
 
 	std::array<Vec3, (int)FrustumPlane::Max> vec;
 	std::array<Vec3, (int)FrustumPlane::Max> normal;
+	std::array<Vec3, (int)FrustumPlane::Max> initalNormal;
 	float horizontalFov = 0;    //　水平Fov
 	float verticalFov = 0;      //　垂直Fov
 

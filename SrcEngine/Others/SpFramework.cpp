@@ -166,6 +166,18 @@ void SpFramework::Run()
 					ImGui::Text("FPS : %.1f", ImGui::GetIO().Framerate);
 					ImGui::Checkbox("Show Hit Box", &GameManager::sShowHitBoxes);
 					ImGui::Checkbox("Pause Game", &GameManager::sDebugTimeStop);
+
+					ImGui::PushItemWidth(120.0f);
+					ImGui::DragFloat3("Position", &Camera::sCurrent->position.x);
+					ImGui::PopItemWidth();
+
+					ImGui::PushItemWidth(40.0f);
+					SpImGui::DragAngle("##rotEX", &Camera::sCurrent->rotationE.x);
+					ImGui::SameLine();
+					SpImGui::DragAngle("##rotEY", &Camera::sCurrent->rotationE.y);
+					ImGui::SameLine();
+					SpImGui::DragAngle("Rotation", &Camera::sCurrent->rotationE.z);
+					ImGui::PopItemWidth();
 				}
 				ImGui::End();
 				});
