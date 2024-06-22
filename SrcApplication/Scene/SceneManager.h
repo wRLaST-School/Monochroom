@@ -58,7 +58,6 @@ public:
 
 	static DLLExport IScene* GetScene();
 
-
 	inline static std::unique_ptr<IScene> currentScene;
 	inline static std::unique_ptr<IScene> nextScene;
 #pragma region オブジェクト検索関連
@@ -66,11 +65,68 @@ private:
 
 	static DLLExport IComponent* FindObjectExport(const std::string& name);
 	static DLLExport IComponent* FindObjectRecursive(const std::string& name, IComponent* component);
+
+	static DLLExport IComponent* FindObjectTagExport(const std::string& tag);
+	static DLLExport IComponent* FindObjectTagRecursive(const std::string& tag, IComponent* component);
+
+	static DLLExport void FindObjectsTagExport(const std::string& tag, eastl::list<IComponent*>* pList);
+	static DLLExport void FindObjectsTagRecursive(const std::string& tag, IComponent* component, eastl::list<IComponent*>* pList);
 public:
 	template<typename T>
 	inline static T* FindObject(const std::string& name)
 	{
 		return FindObjectExport(name)->CastTo<T>();
+	}
+
+	template<class T>
+	inline static T* FindChildObject(const std::string& name, IComponent* root){
+		return FindObjectRecursive(name, root)->CastTo<T>();
+	}
+
+	template<class T>
+	inline static T* FindObjectWithTag(const std::string& tag)
+	{
+		return FindObjectTagExport(tag)->CastTo<T>();
+	}
+
+	template<class T>
+	inline static T* FindChildObjectWithTag(const std::string& tag, IComponent* root)
+	{
+		return FindObjectTagRecursive(tag, root)->CastTo<T>();
+	}
+
+	template<class T>
+	inline static eastl::list<T*> FindObjectsWithTag(const std::string& tag)
+	{
+		eastl::list<T*> foundList;
+		
+		eastl::list<IComponent*> notCasted;
+
+		FindObjectsTagExport(notCasted);
+
+		for (auto& nc : notCasted)
+		{
+			foundList.emplace_back(nc->CastTo<T>());
+		}
+
+		return foundList;
+	}
+
+	template<class T>
+	inline static eastl::list<T*> FindChildObjectsWithTag(const std::string& tag, IComponent* root)
+	{
+		eastl::list<T*> foundList;
+
+		eastl::list<IComponent*> notCasted;
+
+		FindObjectsTagRecursive(tag, root, notCasted);
+
+		for (auto& nc : notCasted)
+		{
+			foundList.emplace_back(nc->CastTo<T>());
+		}
+
+		return foundList;
 	}
 #pragma endregion 
 

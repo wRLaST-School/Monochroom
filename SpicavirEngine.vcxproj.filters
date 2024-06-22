@@ -513,6 +513,9 @@
     <ClCompile Include="SrcEngine\SceneEditor\ConsoleWindow.cpp">
       <Filter>Engine\ソースファイル\SceneEditor</Filter>
     </ClCompile>
+    <ClCompile Include="TagWindow.cpp">
+      <Filter>Engine\ソースファイル\SceneEditor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\Others\Essentials.h">
@@ -861,6 +864,9 @@
       <Filter>Engine\ヘッダーファイル\SceneEditor</Filter>
     </ClInclude>
     <ClInclude Include="SrcEngine\SceneEditor\ConsoleWindow.h">
+      <Filter>Engine\ヘッダーファイル\SceneEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TagWindow.h">
       <Filter>Engine\ヘッダーファイル\SceneEditor</Filter>
     </ClInclude>
   </ItemGroup>

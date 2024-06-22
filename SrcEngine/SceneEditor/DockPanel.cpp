@@ -12,6 +12,7 @@
 #include <Input.h>
 #include <PipelineWindow.h>
 #include <ConsoleWindow.h>
+#include <TagWindow.h>
 
 void DockPanel::EnableScreenDock()
 {
@@ -78,6 +79,14 @@ void DockPanel::EnableScreenDock()
 					if (isOpen == false)
 					{
 						ConsoleWindow::GetInstance()->SetisOpen(true);
+					}
+				}
+				isOpen = TagWindow::open;
+				if (ImGui::MenuItem("Tag Window", nullptr, isOpen))
+				{
+					if (isOpen == false)
+					{
+						TagWindow::Show();
 					}
 				}
 				ImGui::EndMenu();

@@ -77,6 +77,53 @@ DLLExport IComponent* SceneManager::FindObjectRecursive(const std::string& name,
 	return nullptr;
 }
 
+DLLExport IComponent* SceneManager::FindObjectTagExport(const std::string& tag)
+{
+	IComponent* found = FindObjectTagRecursive(tag, currentScene.get());
+	if (!found)
+	{
+		OutputDebugStringA("Object not Found");
+	}
+	return found;
+}
+
+DLLExport IComponent* SceneManager::FindObjectTagRecursive(const std::string& tag, IComponent* component)
+{
+	for (const auto& comp : component->GetAllComponents())
+	{
+		if (comp.second->FindTag(tag))
+		{
+			return comp.second.get();
+		}
+
+		IComponent* found = FindObjectTagRecursive(tag, comp.second.get());
+		if (found)
+		{
+			return found;
+		}
+	}
+
+	return nullptr;
+}
+
+DLLExport void SceneManager::FindObjectsTagExport(const std::string& tag, eastl::list<IComponent*>* pList)
+{
+	FindObjectsTagRecursive(tag, currentScene.get(), pList);
+}
+
+DLLExport void SceneManager::FindObjectsTagRecursive(const std::string& tag, IComponent* component, eastl::list<IComponent*>* pList)
+{
+	for (const auto& comp : component->GetAllComponents())
+	{
+		if (comp.second->FindTag(tag))
+		{
+			pList->emplace_back(comp.second.get());
+		}
+
+		FindObjectsTagRecursive(tag, comp.second.get(), pList);
+	}
+}
+
 void SceneManager::Draw3D()
 {
 	currentScene->Draw3D();
