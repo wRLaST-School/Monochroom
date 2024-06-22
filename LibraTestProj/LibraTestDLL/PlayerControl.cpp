@@ -4,8 +4,6 @@
 
 using namespace Input;
 
-
-
 void PlayerControl::Init()
 {
 	parent_ = This()->Parent()->CastTo<Object3D>();

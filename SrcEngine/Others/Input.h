@@ -3,6 +3,7 @@
 #include <dinput.h>
 #include <Windows.h>
 #include <Xinput.h>
+#include <Float2.h>
 
 enum class Button {
 	Up = 0x0001,

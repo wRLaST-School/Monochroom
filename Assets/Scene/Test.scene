@@ -33,15 +33,16 @@
                     {
                         "Name": "ScriptComponent",
                         "Type": "ScriptComponent",
-                        "filePath": "TestObject"
+                        "filePath": ""
                     }
                 ],
                 "Model": "cube.obj",
                 "Name": "Plane",
+                "NormalType": 0,
                 "Position": {
-                    "X": -5.825948715209961,
-                    "Y": -6.464900970458984,
-                    "Z": 4.228254318237305
+                    "X": 0.0,
+                    "Y": -10.0,
+                    "Z": 0.0
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -52,12 +53,12 @@
                 "RotationEuler": {
                     "X": -1.8051368508704328e-25,
                     "Y": 7.912750932310589e-20,
-                    "Z": -0.34358543157577515
+                    "Z": 0.0
                 },
                 "Scale": {
-                    "X": 26.91973304748535,
-                    "Y": 0.0025251321494579315,
-                    "Z": 22.177528381347656
+                    "X": 30.0,
+                    "Y": 1.0,
+                    "Z": 30.0
                 },
                 "Texture": "white.png",
                 "Type": "Object3D"
@@ -68,11 +69,12 @@
                     {
                         "Name": "ScriptComponent",
                         "Type": "ScriptComponent",
-                        "filePath": "TestPlayer"
+                        "filePath": "TestObject"
                     }
                 ],
                 "Model": "cube.obj",
                 "Name": "Object3D",
+                "NormalType": 0,
                 "Position": {
                     "X": 10.493735313415527,
                     "Y": -1.837533712387085,
@@ -90,9 +92,9 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 4.783242225646973,
-                    "Y": 1.4808357954025269,
-                    "Z": 2.7535593509674072
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
                 },
                 "Texture": "DissolveMap.png",
                 "Type": "Object3D"

@@ -2,16 +2,17 @@
 #include "ICollider.h"
 #include "SpMath.h"
 #include <PlaneCollider.h>
-class DLLExport SphereCollider :
-    public ICollider
+class DLLExport SphereCollider : public ICollider
 {
 public:
-    SphereCollider(Float3 pos, float r) :pos(pos), r(r) {};
-
-    bool Collide(PlaneCollider other);
+	SphereCollider();
+	Vec3 pos;
+	float r;
 
 public:
-    Float3 pos;
-    float r;
+	SphereCollider(Float3 pos, float r) :pos(pos), r(r) {};
+
+	//bool Collide(PlaneCollider other);
+	void DrawCollider() override;
 };
 

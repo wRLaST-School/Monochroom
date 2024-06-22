@@ -75,6 +75,9 @@
     <ClInclude Include="Timer.h">
       <Filter>ヘッダー ファイル\Easing</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -109,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>ソース ファイル\Easing</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

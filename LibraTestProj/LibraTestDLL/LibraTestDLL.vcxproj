@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Easing.h" />
     <ClInclude Include="AppOperationCommand.h" />
     <ClInclude Include="FirstPersonCamera.h" />
@@ -27,6 +28,7 @@
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Easing.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="PlayerControl.cpp" />
