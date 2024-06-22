@@ -55,12 +55,12 @@ Matrix Camera::GetBillboardMat()
 
 bool Camera::CheckisInCameraInside(Vec3 pos, float r)
 {
-	Vec3 toPlaneNorm = (pos - position).GetNorm();
+	Vec3 toPlaneNorm = (pos - position)/*.GetNorm()*/;
 	bool isInside = true;
-	for (int i = 2; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		float dot = Vec3::Dot(frustum.normal[i], toPlaneNorm);
-		if (dot > r)
+		if (dot > r*2)
 		{
 			isInside = false;
 			break;

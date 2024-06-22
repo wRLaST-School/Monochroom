@@ -80,7 +80,8 @@ void Object3D::Update()
 
 void Object3D::Draw()
 {
-	bool isInside = Camera::sCurrent->CheckisInCameraInside(position);
+	float radius = Vec3(scale).GetMaxElement();
+	bool isInside = Camera::sCurrent->CheckisInCameraInside(position, radius);
 	if (!isInside)
 	{
 		return;
