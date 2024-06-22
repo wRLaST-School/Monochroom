@@ -86,6 +86,11 @@ public:
 	static float Dot(const Vec3 v1, const Vec3 v2);
 	static Vec3 Cross(const Vec3 v1, const Vec3 v2);
 
+	Vec3 Clamp(Vec3 min, Vec3 max);
+
+	Vec3 ClampMin(Vec3 min);
+	Vec3 ClampMax(Vec3 max);
+
 	operator Float3() const;
 	operator Vec2() const;
 };

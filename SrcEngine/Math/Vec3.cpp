@@ -225,6 +225,21 @@ Vec3 Vec3::Cross(const Vec3 v1, const Vec3 v2)
 	return Vec3(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x);
 }
 
+Vec3 Vec3::Clamp(Vec3 min, Vec3 max)
+{
+	return Vec3(Util::Clamp(x, min.x, max.x), Util::Clamp(y, min.y, max.y), Util::Clamp(z, min.z, max.z));
+}
+
+Vec3 Vec3::ClampMin(Vec3 min)
+{
+	return Vec3(Util::ClampMin(x, min.x), Util::ClampMin(y, min.y), Util::ClampMin(z, min.z));
+}
+
+Vec3 Vec3::ClampMax(Vec3 max)
+{
+	return Vec3(Util::ClampMax(x, max.x), Util::ClampMax(y, max.y), Util::ClampMax(z, max.z));
+}
+
 float Vec3::GetLength() const
 {
 	return sqrtf(this->GetSquaredLength());
