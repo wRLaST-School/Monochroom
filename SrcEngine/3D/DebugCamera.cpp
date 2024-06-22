@@ -78,9 +78,9 @@ void DebugCamera::Update()
 	{
 		float dis = (target - debugCamera->position).GetLength();
 		float speedRate = dis * 0.01f;
-		if (speedRate < 0.1f)
+		if (speedRate < 0.01f)
 		{
-			speedRate = 0.1f;
+			speedRate = 0.01f;
 
 			if (Mouse::GetWheelVel() > 0)
 			{
