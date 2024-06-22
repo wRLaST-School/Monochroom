@@ -95,6 +95,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\DirectXTex;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(ProjectDir)..\..\SrcExternal\EASTL\test\packages\EABase\include\Common;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\Effekseer;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\EffekseerRendererDX12;$(ProjectDir)..\..\SrcExternal\Cereal\include</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -118,6 +119,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\DirectXTex;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(ProjectDir)..\..\SrcExternal\EASTL\test\packages\EABase\include\Common;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\Effekseer;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\EffekseerRendererDX12;$(ProjectDir)..\..\SrcExternal\Cereal\include</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

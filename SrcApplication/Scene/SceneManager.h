@@ -58,7 +58,6 @@ public:
 
 	static DLLExport IScene* GetScene();
 
-
 	inline static std::unique_ptr<IScene> currentScene;
 	inline static std::unique_ptr<IScene> nextScene;
 #pragma region オブジェクト検索関連
@@ -91,7 +90,7 @@ public:
 	}
 
 	template<class T>
-	inline static T* FindChildObjectWithTag(const std::string& tag)
+	inline static T* FindChildObjectWithTag(const std::string& tag, IComponent* root)
 	{
 		return FindObjectTagRecursive(tag, root)->CastTo<T>();
 	}

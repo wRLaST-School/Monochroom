@@ -90,7 +90,6 @@ public:
 
 	//コンポーネント共通で自動で呼ばれる処理
 	virtual DLLExport void Init();
-	DLLExport void CheckAddTag();
 	virtual DLLExport void Update();
 	virtual DLLExport void Draw();
 

@@ -38,18 +38,23 @@ void TagWindow::Draw()
 					SpImGui::InputText(std::format("##TagWindowID{:04}",tagWindowIndex).c_str(), *itr);
 					ImGui::SameLine();
 					std::string buttonName = std::format("-##TagWindowDeleteID{:04}", tagWindowIndex);
-					if (ImGui::Button(buttonName.c_str())) {
-						itr = tags.erase(itr);
-					}
-					else
-					{
-						itr++;
-					}
+
+					bool button = ImGui::Button(buttonName.c_str());
+					
 					ImGui::SameLine();
 					std::string buttonNameAdd = std::format("Attach##TagWindowAttachID{:04}", tagWindowIndex);
 					if (ImGui::Button(buttonNameAdd.c_str())) {
 						if(InspectorWindow::GetSelected<IComponent>())
 							InspectorWindow::GetInstance()->selected_->AddTag(*itr);
+					}
+
+
+					if (button) {
+						itr = tags.erase(itr);
+					}
+					else
+					{
+						itr++;
 					}
 
 					tagWindowIndex++;
