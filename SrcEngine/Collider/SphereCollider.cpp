@@ -19,4 +19,5 @@ SphereCollider::SphereCollider()
 
 void SphereCollider::DrawCollider()
 {
+    LineDrawer::DrawSphere(pos, r, color);
 }

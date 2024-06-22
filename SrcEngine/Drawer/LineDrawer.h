@@ -18,6 +18,7 @@ public:
 
 	static DLLExport void DrawLine(const Float3& start, const Float3& end, const Float4& color);
 	static DLLExport void DrawLines(const std::vector<Float3>& positions, const Float4& color);
+	static DLLExport void DrawSphere(const Float3& center, const float radius, const Float4& color, const int segments = 16, const int ring = 8);
 	static DLLExport void DrawCube(const Float3& center, const Float3& scale, const Float4& color);
 	static DLLExport void DrawRotaCube(const Float3& center, const Float3& scale, const Float3& rot, const Float4& color);
 	static DLLExport void DrawRotaCube(const Float3& center, const Float3& scale, const Quaternion& rot, const Float4& color);
@@ -39,7 +40,7 @@ namespace LineDrawerCommon {
 	// 頂点レイアウト
 	static D3D12_INPUT_ELEMENT_DESC inputLayout[] = {
 			{
-				"FROM", 0, 
+				"FROM", 0,
 				DXGI_FORMAT_R32G32B32_FLOAT, 0,
 				D3D12_APPEND_ALIGNED_ELEMENT,
 				D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0

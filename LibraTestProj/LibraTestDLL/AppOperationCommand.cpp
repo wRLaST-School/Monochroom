@@ -4,7 +4,7 @@ using namespace Input;
 
 void AppOperationCommand::PlayerMouseAngleUpdate()
 {
-	mouseMoveVec_ = Mouse::GetPos() - oldMousePos_;
+	mouseMoveVec_ = Vec2(Mouse::GetPos()) - oldMousePos_;
 
 	oldMousePos_ = Mouse::GetPos();
 }

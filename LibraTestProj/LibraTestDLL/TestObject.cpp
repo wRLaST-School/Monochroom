@@ -18,7 +18,7 @@ void TestObject::Update()
 	
 	obbCollider.Setting(Vec3::zero, Quaternion::EulerToQuaternion(Float3(0, 0, 0)), Vec3(1, 1, 1));
 	sphereCollider.pos = obj->position;
-	sphereCollider.r = 1.f;
+	sphereCollider.r = 2.f;
 
 	if (obbCollider.IsTrigger(&sphereCollider))
 	{
@@ -43,6 +43,7 @@ void TestObject::Update()
 void TestObject::Draw()
 {
 	obbCollider.DrawCollider();
+	sphereCollider.DrawCollider();
 }
 
 void TestObject::OnInspectorWindowDraw()

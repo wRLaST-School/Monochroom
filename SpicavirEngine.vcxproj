@@ -660,6 +660,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <None Include="Assets\Shaders\ShaderUtil.hlsli" />
     <None Include="Assets\Shaders\Sprite.hlsli" />
     <None Include="Assets\Shaders\ToonModel.hlsli" />
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

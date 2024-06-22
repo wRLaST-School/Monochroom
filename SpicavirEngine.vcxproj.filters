@@ -982,5 +982,6 @@
     <None Include="Assets\Shaders\ToonModel.hlsli">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
