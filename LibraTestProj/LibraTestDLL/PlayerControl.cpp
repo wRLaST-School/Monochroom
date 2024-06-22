@@ -10,8 +10,7 @@ using namespace Input;
 void PlayerControl::Init()
 {
 	parent_ = This()->Parent()->CastTo<Object3D>();
-	parent_->rotationE.z = 180.0f;
-	AppOperationCommand::GetInstance()->PlayerMouseAngleInit();
+	//parent_->rotationE.z = 180.0f;
 }
 
 //-------------------------------------------
@@ -70,17 +69,25 @@ void PlayerControl::MoveUpdate()
 //-------------------------------------------------------------------------------
 void PlayerControl::CameraUpdate()
 {
-	AppOperationCommand::GetInstance()->PlayerMouseAngleUpdate();
 	Vec3 mouseMoveVec = AppOperationCommand::GetInstance()->PlayerAngleCommand();
 
 	parent_->rotationE.y += mouseMoveVec.x * MOUSE_ROT_SPEED;
 	parent_->rotationE.x += mouseMoveVec.y * MOUSE_ROT_SPEED;
 
+	if (parent_->rotationE.y > PIf * 2.0f)
+	{
+		parent_->rotationE.y = 0;
+	}
+	else if (parent_->rotationE.y < 0)
+	{
+		parent_->rotationE.y = PIf * 2.0f;
+	}
+
 	parent_->rotationE.x = std::min(parent_->rotationE.x, ANGLE_LIMIT);
 	parent_->rotationE.x = std::max(parent_->rotationE.x, -ANGLE_LIMIT);
 
 	//正面回転
-	frontVec_.x = FRONT_VEC_TEMP.x * cosf(parent_->rotationE.y) - FRONT_VEC_TEMP.z * sinf(parent_->rotationE.y);
+	frontVec_.x = -(FRONT_VEC_TEMP.x * cosf(parent_->rotationE.y) - FRONT_VEC_TEMP.z * sinf(parent_->rotationE.y));
 	frontVec_.z = FRONT_VEC_TEMP.x * sinf(parent_->rotationE.y) + FRONT_VEC_TEMP.z * cosf(parent_->rotationE.y);
 }
 

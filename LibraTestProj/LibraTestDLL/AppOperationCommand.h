@@ -1,18 +1,10 @@
 #pragma once
 #include <Vec3.h>
 #include <Vec2.h>
+#include <Float2.h>
 
 class AppOperationCommand
 {
-private:
-	Vec2 oldMousePos_ = { 0,0 };
-	Vec2 mouseMoveVec_ = { 0,0 };
-
-
-public:
-	void PlayerMouseAngleUpdate();
-	void PlayerMouseAngleInit();
-
 public:
 	Vec3 PlayerMoveCommand();
 	bool PlayerJumpCommand();

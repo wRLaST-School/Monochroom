@@ -211,6 +211,8 @@ void Input::Mouse::Update()
 	Mouse* ins = GetInstance();
 	ins->prevState_ = ins->state_;
 
+	ins->oldCursor_ = ins->cursor_;
+
 	ins->devmouse_->Acquire();
 	ins->devmouse_->Poll();
 	ins->devmouse_->GetDeviceState(sizeof(DIMOUSESTATE), &ins->state_);
@@ -221,6 +223,11 @@ void Input::Mouse::Update()
 	ScreenToClient(GetSpWindow()->hwnd, &pos);
 
 	ins->cursor_ = { (float)pos.x, (float)pos.y };
+
+	ins->cusorMove_ = {
+		ins->cursor_.x - ins->oldCursor_.x,
+		ins->cursor_.y - ins->oldCursor_.y
+	};
 }
 
 void Input::Mouse::Close()
@@ -252,6 +259,11 @@ Float2 Input::Mouse::GetVel()
 Float2 Input::Mouse::GetPos()
 {
 	return GetInstance()->cursor_;
+}
+
+Float2 Input::Mouse::GetMouseMove()
+{
+	return GetInstance()->cusorMove_;
 }
 
 float Input::Mouse::GetWheelVel()

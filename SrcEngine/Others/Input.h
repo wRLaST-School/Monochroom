@@ -3,6 +3,7 @@
 #include <dinput.h>
 #include <Windows.h>
 #include <Xinput.h>
+#include <Float2.h>
 
 enum class Button {
 	Up = 0x0001,
@@ -98,6 +99,9 @@ namespace Input {
 		//マウスの座標
 		static Float2 GetPos();
 
+		//マウスの移動量
+		static Float2 GetMouseMove();
+
 		//ホイールの移動量
 		static float GetWheelVel();
 
@@ -107,6 +111,9 @@ namespace Input {
 		IDirectInputDevice8* devmouse_ = nullptr;
 
 		Float2 cursor_;
+		Float2 oldCursor_;
+
+		Float2 cusorMove_;
 
 		DIMOUSESTATE state_;
 		DIMOUSESTATE prevState_;
