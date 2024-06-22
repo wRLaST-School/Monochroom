@@ -2,6 +2,7 @@
     {
         "Children": [
             {
+                "Name": "Camera",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -27,8 +28,10 @@
                 "UseQuaternionRot": 1
             },
             {
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Model": "cube.obj",
+                "Name": "Object3D",
+                "NormalType": 0,
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -54,8 +57,10 @@
                 "Type": "Object3D"
             },
             {
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Model": "cube.obj",
+                "Name": "Object3D",
+                "NormalType": 0,
                 "Position": {
                     "X": 10.0,
                     "Y": 4.0,
@@ -81,8 +86,10 @@
                 "Type": "Object3D"
             },
             {
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Model": "cube.obj",
+                "Name": "Object3D",
+                "NormalType": 0,
                 "Position": {
                     "X": -10.0,
                     "Y": 4.0,
@@ -108,8 +115,10 @@
                 "Type": "Object3D"
             },
             {
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Model": "cube.obj",
+                "Name": "Object3D",
+                "NormalType": 0,
                 "Position": {
                     "X": 0.0,
                     "Y": 4.0,
@@ -135,8 +144,10 @@
                 "Type": "Object3D"
             },
             {
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Model": "cube.obj",
+                "Name": "Object3D",
+                "NormalType": 0,
                 "Position": {
                     "X": 0.0,
                     "Y": 4.0,
@@ -160,6 +171,11 @@
                 },
                 "Texture": "white.png",
                 "Type": "Object3D"
+            },
+            {
+                "Name": "CollisionManager",
+                "Type": "ScriptComponent",
+                "filePath": "CollisionManager"
             }
         ],
         "EfkEffects": [

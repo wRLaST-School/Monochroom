@@ -7,6 +7,7 @@ static const float _FresnelSize = 1.0f;
 static const float _FresnelMin = 1.0f;
 static const float _FresnelMax = 1.0f;
 static const float3 _FresnelColor = float3(1.0f, 1.0f, 1.0f);
+static const float3 _ShadowColor = float3(0.25f, 0.25f, 0.25f);
 
 Texture2D<float4> tex : register(t0);
 
@@ -32,7 +33,7 @@ float4 main(VSOutput input) : SV_TARGET
     float NdotL = dot(N, L);
     float3 diffuse = 0.5f + NdotL * 0.5f;
     float3 dRate = smoothstep(_LightingCutoff, _LightingCutoff + _FalloffAmount, diffuse);
-    diffuse = dRate * m_diffuse;
+    diffuse = dRate * m_diffuse + (1 - dRate) * _ShadowColor;
 	
 	// Specular
     float3 V = normalize(cameraPos - input.worldpos.xyz);

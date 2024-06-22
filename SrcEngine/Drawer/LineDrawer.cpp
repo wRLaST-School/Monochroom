@@ -55,16 +55,68 @@ void LineDrawer::DrawLines(const std::vector<Float3>& positions, const Float4& c
 	}
 }
 
+void LineDrawer::DrawSphere(const Float3& center, const float radius, const Float4& color, const int segments, const int ring)
+{
+	std::vector<Float3> circlePoints;
+
+	// XY平面を回転
+	for (int i = 0; i < segments / 2; ++i)
+	{
+		float phiAngle = 360.f / segments;
+		float phi = ConvertAngleToRadian(i * phiAngle);
+		circlePoints.clear();
+		for (int j = 0; j < segments; ++j)
+		{
+			float thetaAngle = 360.f / segments;
+			float theta = ConvertAngleToRadian(j * thetaAngle);
+			Vec3 offset = Vec3(
+				radius * cosf(phi) * cosf(theta),
+				radius * sinf(theta),
+				radius * sinf(phi) * cosf(theta));
+
+			circlePoints.push_back(Vec3(center) + offset);
+		}
+
+		for (int j = 0; j < segments; ++j)
+		{
+			DrawLine(circlePoints[j], circlePoints[(j + 1) % segments], color);
+		}
+	}
+
+	// X-Z平面を上下に複数描画
+	for (int i = 0; i <= ring; ++i)
+	{
+		float phi = ConvertAngleToRadian(i * 180.f / ring);	  // 上下方向の角度
+		float r = radius * sinf(phi); // この高さでの半径
+
+		Vec3 offset = Vec3(0, radius * cosf(phi), 0);
+
+		circlePoints.clear();
+		for (int j = 0; j < segments; ++j)
+		{
+			float theta = ConvertAngleToRadian(j * 360.f / segments);
+			offset.x = r * cosf(theta);
+			offset.z = r * sinf(theta);
+			circlePoints.push_back(Vec3(center) + offset);
+		}
+
+		for (int j = 0; j < segments; ++j)
+		{
+			DrawLine(circlePoints[j], circlePoints[(j + 1) % segments], color);
+		}
+	}
+}
+
 void LineDrawer::DrawCube(const Float3& center, const Float3& scale, const Float4& color)
 {
 	std::vector<Float3> points = {
 		(Vec3)center + Vec3(-scale.x,  scale.y, -scale.z),
-		(Vec3)center + Vec3( scale.x,  scale.y, -scale.z),
-		(Vec3)center + Vec3( scale.x, -scale.y, -scale.z),
+		(Vec3)center + Vec3(scale.x,  scale.y, -scale.z),
+		(Vec3)center + Vec3(scale.x, -scale.y, -scale.z),
 		(Vec3)center + Vec3(-scale.x, -scale.y, -scale.z),
 		(Vec3)center + Vec3(-scale.x,  scale.y,  scale.z),
-		(Vec3)center + Vec3( scale.x,  scale.y,  scale.z),
-		(Vec3)center + Vec3( scale.x, -scale.y,  scale.z),
+		(Vec3)center + Vec3(scale.x,  scale.y,  scale.z),
+		(Vec3)center + Vec3(scale.x, -scale.y,  scale.z),
 		(Vec3)center + Vec3(-scale.x, -scale.y,  scale.z),
 	};
 

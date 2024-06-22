@@ -1,16 +1,22 @@
 #pragma once
 #include "IScriptObject.h"
 #include "Bases.h"
+#include <OBBCollider.h>
+#include <SphereCollider.h>
 class TestObject :
-    public IScriptObject
+	public IScriptObject
 {
+private:
+	OBBCollider obbCollider;
+	SphereCollider sphereCollider;
+
 public:
-    void Init();
-    void Update();
-    void Draw();
-    void OnInspectorWindowDraw() override;
-    void CopyComponent(IComponent* src);
-    DefDel;
+	void Init();
+	void Update();
+	void Draw();
+	void OnInspectorWindowDraw() override;
+	void CopyComponent(IComponent* src);
+	DefDel;
 };
 
 RegisterScript(TestObject);
