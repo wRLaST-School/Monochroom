@@ -17,7 +17,8 @@ void InspectorWindow::DrawWindow()
 		ImGui::Begin("Inspector Window", &open, ImGuiWindowFlags_MenuBar);
 		if (selected_)
 		{
-			SpImGui::InputText("Name", &selected_->name_, ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
+			//SpImGui::InputText("Name", &selected_->name_, ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
+			selected_->CommonInspectorWindowDraw();
 
 			ImGui::Separator();
 			if (ImGui::CollapsingHeader("Tags"))
@@ -47,7 +48,6 @@ void InspectorWindow::DrawWindow()
 			}
 
 			selected_->OnInspectorWindowDraw();
-			selected_->CommonInspectorWindowDraw();
 
 			if (ImGui::Button("Add Component"))
 			{

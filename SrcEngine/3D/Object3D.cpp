@@ -319,40 +319,30 @@ void Object3D::DrawToon(const TextureKey& key)
 
 void Object3D::OnInspectorWindowDraw()
 {
-	ImGui::DragFloat3("Translation", &position.x);
-
-	if (rotMode == RotMode::Euler)
+	if (ImGui::CollapsingHeader("Transform"))
 	{
-		ImGui::PushItemWidth(80.0f);
-		SpImGui::DragAngle("##rotEX", &rotationE.x);
-		ImGui::SameLine();
-		SpImGui::DragAngle("##rotEY", &rotationE.y);
-		ImGui::SameLine();
-		SpImGui::DragAngle("Rotation", &rotationE.z);
-		ImGui::PopItemWidth();
+		ImGui::DragFloat3("Translation", &position.x);
+
+		if (rotMode == RotMode::Euler)
+		{
+			ImGui::PushItemWidth(80.0f);
+			SpImGui::DragAngle("##rotEX", &rotationE.x);
+			ImGui::SameLine();
+			SpImGui::DragAngle("##rotEY", &rotationE.y);
+			ImGui::SameLine();
+			SpImGui::DragAngle("Rotation", &rotationE.z);
+			ImGui::PopItemWidth();
+		}
+		else
+		{
+			ImGui::Text("vvv Gizmo Does Not Work Currently vvv");
+			ImGui::DragFloat4("Rotation", &rotation.w);
+		}
+		ImGui::Checkbox("Use Quaternion Rotation", reinterpret_cast<bool*>(&rotMode));
+
+		ImGui::DragFloat3("Scale", &scale.x);
 	}
-	else
-	{
-		ImGui::DragFloat4("Rotation", &rotation.w);
-		ImGui::Text("vvv Gizmo Does Not Work Currently vvv");
-	}
-	ImGui::Checkbox("Use Quaternion Rotation", reinterpret_cast<bool*>(&rotMode));
-
-	ImGui::DragFloat3("Scale", &scale.x);
-
 	ImGui::Separator();
-
-	ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));
-
-	ImGui::Separator();
-
-	const size_t bufSize = 256;
-	char buf[bufSize];
-	strncpy_s(buf, texture.c_str(), std::min(bufSize, texture.length()));
-	if (ImGui::InputText("Texture", buf, bufSize, ImGuiInputTextFlags_EnterReturnsTrue))
-	{
-		texture = buf;
-	};
 
 	if (ImGui::CollapsingHeader("Blend Mode"))
 	{
@@ -362,8 +352,22 @@ void Object3D::OnInspectorWindowDraw()
 		ImGui::RadioButton("Alpha", &blendeModeInt, (int)BlendMode::Alpha);		ImGui::SameLine();
 		ImGui::RadioButton("Toon", &blendeModeInt, (int)BlendMode::Toon);
 		blendMode = (BlendMode)blendeModeInt;
-	}
+		ImGui::Separator();
 
+		ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));
+	}
+	ImGui::Separator();
+
+	if (ImGui::CollapsingHeader("Texture"))
+	{
+		const size_t bufSize = 256;
+		char buf[bufSize];
+		strncpy_s(buf, texture.c_str(), std::min(bufSize, texture.length()));
+		if (ImGui::InputText("Texture", buf, bufSize, ImGuiInputTextFlags_EnterReturnsTrue))
+		{
+			texture = buf;
+		};
+	}
 	ImGui::Separator();
 
 	if (ImGui::CollapsingHeader("Model"))
@@ -378,6 +382,7 @@ void Object3D::OnInspectorWindowDraw()
 			model->MappingSmoothing();
 		}
 	}
+	ImGui::Separator();
 
 	UpdateMatrix();
 }
