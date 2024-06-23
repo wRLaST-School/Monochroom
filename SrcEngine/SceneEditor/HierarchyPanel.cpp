@@ -167,12 +167,12 @@ void HierarchyPanel::DDTargetReParent(IComponent* current)
 		if (child != current)
 			child->ChangeParent(current);
 
-		//Object3D* castCurrent = dynamic_cast<Object3D*>(current);
-		//Object3D* castChild = dynamic_cast<Object3D*>(child);
-		//if (castCurrent && castChild)
-		//{
-		//	castChild->parent = castCurrent;
-		//}
+		Object3D* castCurrent = dynamic_cast<Object3D*>(current);
+		Object3D* castChild = dynamic_cast<Object3D*>(child);
+		if (castCurrent && castChild)
+		{
+			castChild->parent = castCurrent;
+		}
 	}
 }
 

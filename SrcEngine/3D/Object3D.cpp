@@ -39,7 +39,17 @@ void Object3D::UpdateMatrix()
 
 	if (parent != nullptr)
 	{
+		matLocal = matWorld;
 		matWorld *= parent->matWorld;
+	}
+
+	for (const auto& comp : components_)
+	{
+		Object3D* cast = dynamic_cast<Object3D*>(comp.second.get());
+		if (cast)
+		{
+			cast->UpdateMatrix();
+		}
 	}
 }
 
@@ -80,12 +90,12 @@ void Object3D::Update()
 
 void Object3D::Draw()
 {
-	float radius = Vec3(scale).GetMaxElement();
-	bool isInside = Camera::sCurrent->CheckisInCameraInside(position, radius);
-	if (!isInside)
-	{
-		return;
-	}
+	//float radius = Vec3(scale).GetMaxElement();
+	//bool isInside = Camera::sCurrent->CheckisInCameraInside(position, radius);
+	//if (!isInside)
+	//{
+	//	return;
+	//}
 
 	//モデルが設定されていないならなにもしない
 	if (!model)
@@ -449,13 +459,20 @@ void Object3D::DrawGizmo()
 		snap[2] = 0.1f;
 	}
 
+	Matrix mat = matWorld;
+	if (parent != nullptr)
+	{
+		mat = matLocal;
+	}
+
+	
 	ImGuizmo::Manipulate(reinterpret_cast<float*>(&view),
-		reinterpret_cast<float*>(&proj), mCurrentGizmoOperation, mCurrentGizmoMode, &matWorld[0][0], NULL, snap);
+		reinterpret_cast<float*>(&proj), mCurrentGizmoOperation, mCurrentGizmoMode, &mat[0][0], NULL, snap);
 
 	if (ImGuizmo::IsUsing())
 	{
 		Float3 rot;
-		matWorld.DecomposeTransform(&position, &rot, &scale);
+		mat.DecomposeTransform(&position, &rot, &scale);
 
 		//Float3 rot;
 		//ImGuizmo::DecomposeMatrixToComponents(&matWorld[0][0] ,&position.x, &rot.x, &scale.x);

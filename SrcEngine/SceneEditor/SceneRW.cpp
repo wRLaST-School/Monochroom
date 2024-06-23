@@ -147,6 +147,8 @@ void SceneRW::LoadScene(IScene* scene, std::string filePath)
 		auto child = ComponentFactory::AddChildComponent(current, componentType, componentType);
 		child->ReadParamJson(object);
 		if (componentType == "Object3D" || componentType == "Camera") {
+
+			child->CastTo<Object3D>()->parent = current->CastTo<Object3D>();
 			child->CastTo<Object3D>()->UpdateMatrix();
 		}
 
