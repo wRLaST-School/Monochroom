@@ -45,5 +45,7 @@ public:
 	DefDel;
 };
 
+#ifndef PlayerControl_RegisterDef
+#define PlayerControl_RegisterDef
 RegisterScript(PlayerControl);
-
+#endif

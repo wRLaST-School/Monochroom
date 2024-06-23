@@ -25,5 +25,8 @@ public:
 
 };
 
+#ifndef PlayerCollider_RegisterDef
+#define PlayerCollider_RegisterDef
 RegisterScript(PlayerCollider);
 
+#endif
