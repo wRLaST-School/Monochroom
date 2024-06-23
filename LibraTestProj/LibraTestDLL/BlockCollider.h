@@ -4,19 +4,23 @@
 #include <OBBCollider.h>
 
 class BlockCollider :
-    public IScriptObject
+	public IScriptObject
 {
 private:
-    Object3D* obj;
-    OBBCollider bodyCollider;
+	Object3D* mObj;
+	OBBCollider mBodyCollider;
 
 public:
-    void Init();
-    void Update();
-    void Draw();
-    void CopyComponent(IComponent* src);
+	void Init();
+	void Update();
+	void Draw();
+	void CopyComponent(IComponent* src);
 
-    DefDel;
+	DefDel;
+
+public:
+	// ゲッター
+	OBBCollider GetBodyCollider();
 };
 
 RegisterScript(BlockCollider);

@@ -3,23 +3,28 @@
 
 void BlockCollider::Init()
 {
-	obj = This()->Parent()->CastTo<Object3D>();
+	mObj = This()->Parent()->CastTo<Object3D>();
 }
 
 void BlockCollider::Update()
 {
-	Vec3 pos = Vec3(obj->position);
-	Quaternion rot = Quaternion::EulerToQuaternion(obj->rotationE);
-	Vec3 scale = obj->scale;
-	bodyCollider.Setting(pos, rot, scale);
+	Vec3 pos = Vec3(mObj->position);
+	Quaternion rot = Quaternion::EulerToQuaternion(mObj->rotationE);
+	Vec3 scale = mObj->scale;
+	mBodyCollider.Setting(pos, rot, scale);
 }
 
 void BlockCollider::Draw()
 {
-	bodyCollider.DrawCollider();
+	mBodyCollider.DrawCollider();
 }
 
 void BlockCollider::CopyComponent(IComponent* src)
 {
 
+}
+
+OBBCollider BlockCollider::GetBodyCollider()
+{
+	return mBodyCollider;
 }

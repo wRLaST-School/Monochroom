@@ -219,6 +219,11 @@
                 },
                 "Texture": "",
                 "Type": "Object3D"
+            },
+            {
+                "Name": "CollisionManager",
+                "Type": "ScriptComponent",
+                "filePath": "CollisionManager"
             }
         ],
         "EfkEffects": [

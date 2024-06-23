@@ -10,9 +10,7 @@ public:
 	float r;
 
 public:
-	SphereCollider(Float3 pos, float r) :pos(pos), r(r) {};
-
-	//bool Collide(PlaneCollider other);
+	void Setting(const Vec3 pos, const float r);
 	void DrawCollider() override;
 };
 

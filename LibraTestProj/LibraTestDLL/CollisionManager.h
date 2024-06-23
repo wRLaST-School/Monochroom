@@ -1,22 +1,22 @@
 #pragma once
 #include "IScriptObject.h"
-#include <Object3D.h>
-#include <vector>
+#include <PlayerCollider.h>
+#include <BlockCollider.h>
 
 class CollisionManager :
-    public IScriptObject
+	public IScriptObject
 {
 private:
-    Object3D* mPlayer;
-    std::vector<Object3D*> mBlocks;
+	PlayerCollider* mPlayerCollider;
+	std::vector<BlockCollider*> mBlockColliders;
 
 public:
-    void Init();
-    void Update();
-    void Draw();
-    void CopyComponent(IComponent* src);
+	void Init();
+	void Update();
+	void Draw();
+	void CopyComponent(IComponent* src);
 
-    DefDel;
+	DefDel;
 };
 
 RegisterScript(CollisionManager);

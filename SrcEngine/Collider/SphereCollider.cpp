@@ -8,14 +8,11 @@ SphereCollider::SphereCollider()
     type = ColliderType::Sphere;
 }
 
-//bool SphereCollider::Collide(PlaneCollider other)
-//{
-//    float oDist = ((Vec3)this->pos).Dot(other.norm);
-//    float aDist = oDist - other.distance;
-//    if (aDist < 0) aDist = -aDist;
-//
-//    return aDist <= this->r;
-//}
+void SphereCollider::Setting(const Vec3 aPos, const float aR)
+{
+    pos = aPos;
+    r = aR;
+}
 
 void SphereCollider::DrawCollider()
 {

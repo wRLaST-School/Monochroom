@@ -2,12 +2,14 @@
 #include "IScriptObject.h"
 #include <Object3D.h>
 #include <OBBCollider.h>
+#include <SphereCollider.h>
 
 class PlayerCollider :
     public IScriptObject
 {
 private:
     Object3D* mObj;
+    SphereCollider mBodyCollider;
     OBBCollider mDownCollider;
 
 public:
@@ -17,6 +19,10 @@ public:
     void CopyComponent(IComponent* src);
 
     DefDel;
+
+public:
+    SphereCollider GetBodyCollider();
+
 };
 
 RegisterScript(PlayerCollider);
