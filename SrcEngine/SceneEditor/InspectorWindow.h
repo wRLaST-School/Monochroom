@@ -6,12 +6,16 @@
  * @author Wrelf
  *********************************************************************/
 
+class TagWindow;
+
 /**
  * @brief InspectorWindowのクラス
  */
 class InspectorWindow
 {
 public:
+	friend TagWindow;
+
 	/**
 	 * @brief オブジェクトを選択する関数
 	 * @details HierarchyPanel等でInspectorWindowに表示するコンポーネントを選択する時に使用する。

@@ -32,6 +32,7 @@
 #include <CustomComponentRegisterer.h>
 #include <SceneRW.h>
 #include <Util.h>
+#include <TagWindow.h>
 
 void SpFramework::Init()
 {
@@ -159,6 +160,8 @@ void SpFramework::Run()
 			PipelineWindow::SDraw();
 
 			ConsoleWindow::SDraw();
+
+			TagWindow::Draw();
 
 			SpImGui::Command([&] {
 				if (ImGui::Begin("Game Scene"))

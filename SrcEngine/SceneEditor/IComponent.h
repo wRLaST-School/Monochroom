@@ -31,6 +31,7 @@ std::string GetClassString() override {\
 
 class HierarchyPanel;
 class InspectorWindow;
+class TagWindow;
 
 class IComponent
 {
@@ -80,6 +81,9 @@ public:
 
 	//つけられている名前を取得
 	const DLLExport std::string& GetName();
+
+	DLLExport bool FindTag(const std::string& tag);
+	DLLExport void AddTag(const std::string& tag);
 
 	//コンポーネントのクラス名を取得
 	virtual DLLExport std::string GetClassString() = 0;
@@ -132,6 +136,7 @@ public:
 	//components_の中身をHierarchy Panelからのみ直接操作したいため
 	friend HierarchyPanel;
 	friend InspectorWindow;
+	friend TagWindow;
 protected:
 	std::string name_ = "";
 
@@ -142,7 +147,9 @@ protected:
 private:
 	IComponent* parent_ = nullptr;
 
-	eastl::vector<std::string> tags;
+	eastl::list<std::string> tags;
+
+	std::optional<std::string> addingTag;
 
 	bool deleting = false;
 	
