@@ -1,14 +1,14 @@
 #pragma once
 #include "IScriptObject.h"
 #include <Object3D.h>
-#include <vector>
+#include <OBBCollider.h>
 
-class CollisionManager :
+class BlockCollider :
     public IScriptObject
 {
 private:
-    Object3D* mPlayer;
-    std::vector<Object3D*> mBlocks;
+    Object3D* obj;
+    OBBCollider bodyCollider;
 
 public:
     void Init();
@@ -19,5 +19,5 @@ public:
     DefDel;
 };
 
-RegisterScript(CollisionManager);
+RegisterScript(BlockCollider);
 

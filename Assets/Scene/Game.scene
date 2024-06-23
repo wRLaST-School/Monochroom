@@ -2,13 +2,6 @@
     {
         "Children": [
             {
-                "Children": [
-                    {
-                        "Name": "PlayerControl",
-                        "Type": "ScriptComponent",
-                        "filePath": "PlayerControl"
-                    }
-                ],
                 "Name": "Camera",
                 "Position": {
                     "X": 6.8165106773376465,
@@ -22,8 +15,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 1.4707967042922974,
-                    "Y": 1.4831817150115967,
+                    "X": -1.5707963705062866,
+                    "Y": 5.200000762939453,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -94,13 +87,20 @@
             },
             {
                 "BlendMode": 0,
+                "Children": [
+                    {
+                        "Name": "BlockCollider",
+                        "Type": "ScriptComponent",
+                        "filePath": "BlockCollider"
+                    }
+                ],
                 "Model": "cube.obj",
-                "Name": "Object3D",
+                "Name": "Block",
                 "NormalType": 0,
                 "Position": {
                     "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 57.0
+                    "Y": 1.0,
+                    "Z": 10.0
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -114,9 +114,9 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
                 },
                 "Texture": "",
                 "Type": "Object3D"
@@ -169,6 +169,47 @@
                 "RotationEuler": {
                     "X": 0.0,
                     "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Children": [
+                    {
+                        "Name": "PlayerControl",
+                        "Type": "ScriptComponent",
+                        "filePath": "PlayerControl"
+                    },
+                    {
+                        "Name": "PlayerCollider",
+                        "Type": "ScriptComponent",
+                        "filePath": "PlayerCollider"
+                    }
+                ],
+                "Model": "cube.obj",
+                "Name": "Player",
+                "NormalType": 0,
+                "Position": {
+                    "X": -0.09933694452047348,
+                    "Y": 0.0,
+                    "Z": 2.258925437927246
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": -1.5707963705062866,
+                    "Y": 3.9099979400634766,
                     "Z": 0.0
                 },
                 "Scale": {

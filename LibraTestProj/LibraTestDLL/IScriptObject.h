@@ -19,6 +19,6 @@ public:
 	ScriptComponent* This();
 
 	std::string GetClassString() override;
-
+	
 	ScriptComponent* body;
 };

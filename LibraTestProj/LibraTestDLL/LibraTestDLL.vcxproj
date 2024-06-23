@@ -12,10 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="BlockCollider.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Easing.h" />
     <ClInclude Include="AppOperationCommand.h" />
     <ClInclude Include="FirstPersonCamera.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="PlayerCollider.h" />
     <ClInclude Include="PlayerControl.h" />
     <ClInclude Include="SuperUI.h" />
     <ClInclude Include="Bases.h" />
@@ -28,9 +31,12 @@
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="BlockCollider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Easing.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="PlayerCollider.cpp" />
     <ClCompile Include="PlayerControl.cpp" />
     <ClCompile Include="SuperUI.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
