@@ -35,3 +35,5 @@ void TitleCamera::Update()
 	//カメラの向き
 	parent_->rotation = Quaternion::DirToDir({ 0,0,1.0f }, Vec3(targetPos_ - parent_->position).GetNorm());
 }
+
+RegisterScriptBody(TitleCamera);

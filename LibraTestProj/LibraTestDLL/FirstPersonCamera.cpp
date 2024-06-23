@@ -35,3 +35,5 @@ void FirstPersonCamera::CopyComponent(IComponent* src)
 {
 
 }
+
+RegisterScriptBody(FirstPersonCamera);

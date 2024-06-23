@@ -131,3 +131,5 @@ void PlayerControl::CopyComponent(IComponent* src)
 {
 
 }
+
+RegisterScriptBody(PlayerControl);

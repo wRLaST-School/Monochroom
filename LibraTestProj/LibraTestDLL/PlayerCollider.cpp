@@ -37,3 +37,6 @@ SphereCollider PlayerCollider::GetBodyCollider()
 {
 	return mBodyCollider;
 }
+
+
+RegisterScriptBody(PlayerCollider);

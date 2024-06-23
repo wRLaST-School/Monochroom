@@ -135,3 +135,5 @@ void SuperUI::ResetOption()
 		mUIStatus[i].IsActiveMenu = false;
 	}
 }
+
+RegisterScriptBody(SuperUI);

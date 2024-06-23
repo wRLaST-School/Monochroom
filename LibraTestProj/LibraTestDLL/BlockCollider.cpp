@@ -28,3 +28,5 @@ OBBCollider BlockCollider::GetBodyCollider()
 {
 	return mBodyCollider;
 }
+
+RegisterScriptBody(BlockCollider);
