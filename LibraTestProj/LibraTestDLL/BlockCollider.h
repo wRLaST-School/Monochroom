@@ -23,5 +23,8 @@ public:
 	OBBCollider GetBodyCollider();
 };
 
+#ifndef BlockCollider_RegisterDef
+#define BlockCollider_RegisterDef
 RegisterScript(BlockCollider);
+#endif
 

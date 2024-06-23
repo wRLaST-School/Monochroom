@@ -102,7 +102,7 @@ public:
 		
 		eastl::list<IComponent*> notCasted;
 
-		FindObjectsTagExport(notCasted);
+		FindObjectsTagExport(tag, &notCasted);
 
 		for (auto& nc : notCasted)
 		{
