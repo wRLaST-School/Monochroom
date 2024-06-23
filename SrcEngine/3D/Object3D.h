@@ -81,6 +81,7 @@ public:
 	Float3 position = { 0, 0, 0 };
 
 	Matrix matWorld = Matrix::Identity();
+	Matrix matLocal = Matrix::Identity();
 
 	Object3D* parent = nullptr;
 
