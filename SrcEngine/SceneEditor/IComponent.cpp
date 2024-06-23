@@ -247,7 +247,8 @@ void IComponent::OnInspectorWindowDraw()
 
 void IComponent::CommonInspectorWindowDraw()
 {
-	ImGui::Checkbox("Active", &active);
+	ImGui::Checkbox("##", &active); ImGui::SameLine();
+	SpImGui::InputText("Name", &name_, ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
 }
 
 
