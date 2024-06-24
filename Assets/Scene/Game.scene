@@ -12,9 +12,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 6.8165106773376465,
+                    "X": 26.312484741210938,
                     "Y": 0.0,
-                    "Z": 61.75542068481445
+                    "Z": 28.780963897705078
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -24,7 +24,7 @@
                 },
                 "RotationEuler": {
                     "X": -1.5707963705062866,
-                    "Y": 5.200000762939453,
+                    "Y": 0.3431870937347412,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -37,18 +37,6 @@
                 ],
                 "Type": "Camera",
                 "UseQuaternionRot": 0
-            },
-            {
-                "Name": "GameManager",
-                "Tags": null,
-                "Type": "ScriptComponent",
-                "filePath": "GameManager"
-            },
-            {
-                "Name": "CollisionManager",
-                "Tags": null,
-                "Type": "ScriptComponent",
-                "filePath": "CollisionManager"
             },
             {
                 "BlendMode": 0,
@@ -170,9 +158,9 @@
                 "Name": "Player",
                 "NormalType": 0,
                 "Position": {
-                    "X": -0.09933694452047348,
+                    "X": 25.812841415405273,
                     "Y": 0.0,
-                    "Z": 2.258925437927246
+                    "Z": 27.914731979370117
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -182,7 +170,7 @@
                 },
                 "RotationEuler": {
                     "X": -1.5707963705062866,
-                    "Y": 3.9099979400634766,
+                    "Y": 0.16318710148334503,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -255,6 +243,18 @@
                 "Tags": null,
                 "Texture": "white.png",
                 "Type": "Object3D"
+            },
+            {
+                "Name": "GameManager",
+                "Tags": null,
+                "Type": "ScriptComponent",
+                "filePath": "GameManager"
+            },
+            {
+                "Name": "CollisionManager",
+                "Tags": null,
+                "Type": "ScriptComponent",
+                "filePath": "CollisionManager"
             }
         ],
         "EfkEffects": [
