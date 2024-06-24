@@ -150,7 +150,7 @@ protected:
 
 	bool active = true;
 
-	IComponent* GetScriptBody();
+	DLLExport IComponent* GetScriptBody();
 
 private:
 	IComponent* parent_ = nullptr;
