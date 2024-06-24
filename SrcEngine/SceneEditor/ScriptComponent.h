@@ -19,6 +19,8 @@ public:
 
     void CopyComponent(IComponent* src) override;
 
+    Libra::DLLObject* GetObj();
+
 private:
     void CompileScript();
     void LoadDLL();

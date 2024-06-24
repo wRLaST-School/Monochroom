@@ -9,6 +9,7 @@
 #pragma warning (pop)
 
 #include <SpImGui.h>
+#include <ScriptComponent.h>
 
 using namespace nlohmann;
 
@@ -187,6 +188,11 @@ DLLExport void IComponent::ToggleActive()
 	active = !active;
 }
 
+bool IComponent::IsScript()
+{
+	return dynamic_cast<ScriptComponent*>(this) ? true : false;
+}
+
 void IComponent::InitAllChildComponents(IComponent* parent)
 {
 	parent->Init();
@@ -273,6 +279,9 @@ void IComponent::CommonInspectorWindowDraw()
 	SpImGui::InputText("Name", &name_, ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
 }
 
-
-
-
+IComponent* IComponent::GetScriptBody()
+{
+	auto script = dynamic_cast<ScriptComponent*>(this);
+	if (script) return script->GetObj()->GetComponent();
+	return nullptr;
+}

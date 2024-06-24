@@ -101,6 +101,8 @@ public:
 	DLLExport void Deactivate();
 	DLLExport void ToggleActive();
 
+	DLLExport bool IsScript();
+
 	virtual void CopyComponent(IComponent* src) = 0;
 
 	static void InitAllChildComponents(IComponent* parent);
@@ -131,6 +133,9 @@ public:
 	template <class Type>
 	Type* CastTo();
 
+	template <class Type>
+	Type* CastToScript();
+	
 	virtual ~IComponent() {
 	};
 
@@ -144,6 +149,8 @@ protected:
 	eastl::multimap<std::string, eastl::unique_ptr<IComponent>> components_;
 
 	bool active = true;
+
+	IComponent* GetScriptBody();
 
 private:
 	IComponent* parent_ = nullptr;
@@ -194,5 +201,12 @@ inline eastl::list<Type*> IComponent::GetComponents(const std::string& key)
 template<class Type>
 inline Type* IComponent::CastTo()
 {
+	return dynamic_cast<Type*>(this);
+}
+
+template<class Type>
+inline Type* IComponent::CastToScript()
+{
+	if (IsScript()) return dynamic_cast<Type*>(GetScriptBody());
 	return dynamic_cast<Type*>(this);
 }
