@@ -19,6 +19,8 @@ public:
 
 public:
 	Object3D* GetPlayer();
+
+	static GameManager* GetInstance();
 };
 
 RegisterScript(GameManager);
