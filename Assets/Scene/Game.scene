@@ -4,10 +4,10 @@
             {
                 "Children": [
                     {
-                        "Name": "",
+                        "Name": "FirstPersonCamera",
                         "Tags": null,
                         "Type": "ScriptComponent",
-                        "filePath": ""
+                        "filePath": "FirstPersonCamera"
                     }
                 ],
                 "Name": "Camera",
@@ -215,7 +215,7 @@
                     }
                 ],
                 "Model": "cube.obj",
-                "Name": "",
+                "Name": "Player",
                 "NormalType": 0,
                 "Position": {
                     "X": -0.09933694452047348,
@@ -238,7 +238,9 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Tags": null,
+                "Tags": [
+                    "Player"
+                ],
                 "Texture": "",
                 "Type": "Object3D"
             },
