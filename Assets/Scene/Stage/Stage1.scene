@@ -2,7 +2,7 @@
     {
         "Children": [
             {
-                "Name": "Camera",
+                "Name": "Main Camera",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -24,46 +24,18 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Type": "Camera",
                 "UseQuaternionRot": 1
             },
             {
-                "BlendMode": 3,
-                "Model": "cube.obj",
-                "Name": "Object3D",
+                "BlendMode": 0,
+                "Model": "skydome.obj",
+                "Name": "SkyDome",
                 "NormalType": 0,
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 10.0,
-                    "Y": 0.9999999403953552,
-                    "Z": 30.0
-                },
-                "Texture": "white.png",
-                "Type": "Object3D"
-            },
-            {
-                "BlendMode": 3,
-                "Model": "cube.obj",
-                "Name": "Object3D",
-                "NormalType": 0,
-                "Position": {
-                    "X": 10.0,
-                    "Y": 4.0,
                     "Z": 0.0
                 },
                 "Rotation": {
@@ -79,20 +51,402 @@
                 },
                 "Scale": {
                     "X": 1.0,
-                    "Y": 5.0,
-                    "Z": 30.0
+                    "Y": 1.0,
+                    "Z": 1.0
                 },
-                "Texture": "white.png",
+                "Tags": null,
+                "Texture": "Stars.png",
                 "Type": "Object3D"
             },
             {
-                "BlendMode": 3,
-                "Model": "cube.obj",
-                "Name": "Object3D",
-                "NormalType": 0,
+                "BlendMode": 0,
+                "Children": [
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -2.0,
+                            "Y": 8.0,
+                            "Z": 56.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 12.0,
+                            "Y": 8.0,
+                            "Z": 2.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -20.0,
+                            "Y": 8.0,
+                            "Z": 56.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 6.0,
+                            "Y": 8.0,
+                            "Z": 2.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 12.0,
+                            "Y": 8.0,
+                            "Z": 46.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 2.0,
+                            "Y": 8.0,
+                            "Z": 12.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -2.0,
+                            "Y": 4.0,
+                            "Z": 50.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 12.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -20.0,
+                            "Y": 4.0,
+                            "Z": 50.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 6.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 42.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 6.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -14.0,
+                            "Y": 4.0,
+                            "Z": 42.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 12.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -2.0,
+                            "Y": 4.0,
+                            "Z": 34.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 12.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -20.0,
+                            "Y": 4.0,
+                            "Z": 34.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 3.9999992847442627,
+                            "Y": 3.9999992847442627,
+                            "Z": 5.999999523162842
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 3,
+                        "Children": [
+                            {
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -28.0,
+                            "Y": 8.0,
+                            "Z": 46.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 2.0,
+                            "Y": 8.0,
+                            "Z": 12.0
+                        },
+                        "Tags": null,
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    }
+                ],
+                "Model": "",
+                "Name": "StageBloks",
                 "Position": {
-                    "X": -10.0,
-                    "Y": 4.0,
+                    "X": 0.0,
+                    "Y": 0.0,
                     "Z": 0.0
                 },
                 "Rotation": {
@@ -108,74 +462,12 @@
                 },
                 "Scale": {
                     "X": 1.0,
-                    "Y": 5.0,
-                    "Z": 30.0
-                },
-                "Texture": "white.png",
-                "Type": "Object3D"
-            },
-            {
-                "BlendMode": 3,
-                "Model": "cube.obj",
-                "Name": "Object3D",
-                "NormalType": 0,
-                "Position": {
-                    "X": 0.0,
-                    "Y": 4.0,
-                    "Z": -30.0
-                },
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 11.0,
-                    "Y": 5.0,
+                    "Y": 1.0,
                     "Z": 1.0
                 },
-                "Texture": "white.png",
+                "Tags": null,
+                "Texture": "",
                 "Type": "Object3D"
-            },
-            {
-                "BlendMode": 3,
-                "Model": "cube.obj",
-                "Name": "Object3D",
-                "NormalType": 0,
-                "Position": {
-                    "X": 0.0,
-                    "Y": 4.0,
-                    "Z": 30.0
-                },
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 11.0,
-                    "Y": 5.0,
-                    "Z": 1.0
-                },
-                "Texture": "white.png",
-                "Type": "Object3D"
-            },
-            {
-                "Name": "CollisionManager",
-                "Type": "ScriptComponent",
-                "filePath": "CollisionManager"
             }
         ],
         "EfkEffects": [
@@ -183,16 +475,21 @@
         ],
         "Models": [
             {
-                "cube.obj": "Assets\\Models\\cube\\cube.obj"
+                "Block.obj": "Assets\\Models\\Stage\\Block\\Block.obj",
+                "cube.obj": "Assets\\Models\\cube\\cube.obj",
+                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
             }
         ],
         "Sounds": [
             {}
         ],
+        "Tags": null,
         "Textures": [
             {
                 "Black": "Assets/Images/black.png",
-                "white.png": "Assets\\Images\\white.png"
+                "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
+                "Stars.png": "Assets\\Models\\skydome\\Stars.png",
+                "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png"
             }
         ],
         "Type": "IScene"

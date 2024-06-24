@@ -471,18 +471,14 @@ void Object3D::DrawGizmo()
 
 	if (ImGuizmo::IsUsing())
 	{
+		//mat.DecomposeTransform(&position, &rot, &scale);
+
+		//Vec3 deltaRot = static_cast<Vec3>(rot) - rotationE;
+
+		//rotationE += deltaRot;
+
 		Float3 rot;
 		mat.DecomposeTransform(&position, &rot, &scale);
-
-		//Float3 rot;
-		//ImGuizmo::DecomposeMatrixToComponents(&matWorld[0][0] ,&position.x, &rot.x, &scale.x);
-		//ImGuizmo::RecomposeMatrixFromComponents(&position.x, &rot.x, &scale.x, &matWorld[0][0]);
-		//rotationE = ConvertRadianToAngle(rot);
-
-		Vec3 deltaRot = static_cast<Vec3>(rot) - rotationE;
-
-		rotationE += deltaRot;
-
 		UpdateMatrix();
 	}
 }
