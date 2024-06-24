@@ -107,6 +107,8 @@ namespace Input {
 
 		static Mouse* GetInstance();
 
+		static void SetCursorVisible(const bool isVisible);
+
 	private:
 		IDirectInputDevice8* devmouse_ = nullptr;
 
