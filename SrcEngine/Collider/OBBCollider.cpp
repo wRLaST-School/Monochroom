@@ -169,18 +169,17 @@ void OBBCollider::Setting(const Vec3 aPos, const Quaternion aRot, const Vec3 aSc
 	scale = aScale;
 }
 
-bool OBBCollider::IsTrigger(ICollider* other, Vec3* pushOut)
+bool OBBCollider::IsTrigger(ICollider* collider, Vec3* pushOut)
 {
-	if (!isActive || !other->isActive)
+	if (!isActive || !collider->isActive)
 	{
 		return false;
 	}
 
-	switch (other->type)
+	switch (collider->type)
 	{
 	case ColliderType::Sphere:
-		SphereCollider* cast = dynamic_cast<SphereCollider*>(other);
-		return IsTriggerSphere(cast, pushOut);
+		return IsTriggerSphere(collider, pushOut);
 		break;
 	}
 
@@ -195,10 +194,12 @@ void OBBCollider::DrawCollider()
 	}
 }
 
-bool OBBCollider::IsTriggerSphere(SphereCollider* other, Vec3* pushOut)
+bool OBBCollider::IsTriggerSphere(ICollider* other, Vec3* pushOut)
 {
+	SphereCollider* cast = dynamic_cast<SphereCollider*>(other);
+
 	// OBBの中心から球の中心までのベクトル
-	Vec3 diff = other->pos - pos;
+	Vec3 diff = cast->pos - pos;
 
 	// OBBの中心から球の中心までの最近接点を求める用
 	Vec3 closestPoint = pos;
@@ -226,19 +227,19 @@ bool OBBCollider::IsTriggerSphere(SphereCollider* other, Vec3* pushOut)
 	closestPoint += zAxis * distanceAlongAxes.z;
 
 	// 最近接点と球の中心までの距離を計算
-	float squaredDis = (closestPoint - other->pos).GetSquaredLength();
-	float r2 = other->r * other->r;
+	float squaredDis = (closestPoint - cast->pos).GetSquaredLength();
+	float r2 = cast->r * cast->r;
 
 	// 球の半径の二乗と比較して判定
 	if (squaredDis <= r2)
 	{
-		diff = (closestPoint - other->pos);
+		diff = (closestPoint - cast->pos);
 		color = Color::Red;
 		other->color = Color::Red;
 
 		if (pushOut)
 		{
-			*pushOut = -diff.GetNorm() * (other->r - diff.GetLength());
+			*pushOut = -diff.GetNorm() * (cast->r - diff.GetLength());
 		}
 
 		return true;

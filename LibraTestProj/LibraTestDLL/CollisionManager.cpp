@@ -14,7 +14,7 @@ void CollisionManager::Init()
 
 void CollisionManager::Update()
 {
-	PlayerHitBlocks();
+
 }
 
 void CollisionManager::Draw()
@@ -22,15 +22,7 @@ void CollisionManager::Draw()
 
 }
 
-void CollisionManager::PlayerHitBlocks()
+void CollisionManager::CopyComponent(IComponent* src)
 {
-	auto collider = mPlayerCollider->GetBodyCollider();
-	for (const auto& bc : mBlockColliders)
-	{
-		Vec3 pushOut = Vec3::zero;
-		if (bc->GetBodyCollider().IsTriggerSphere(&collider, &pushOut))
-		{
-			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
-		}
-	}
+
 }

@@ -277,11 +277,6 @@ Mouse* Input::Mouse::GetInstance()
 	return &obj;
 }
 
-void Input::Mouse::SetCursorVisible(const bool isVisible)
-{
-	ShowCursor(isVisible);
-}
-
 IDirectInput8* Input::GetDInput()
 {
 	return Key::GetInstance()->dinput_;

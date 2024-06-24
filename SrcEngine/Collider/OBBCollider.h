@@ -4,8 +4,8 @@
 #include <SphereCollider.h>
 class DLLExport OBBCollider : public ICollider
 {
-public:
-	bool IsTriggerSphere(SphereCollider* other, Vec3* pushOut = nullptr);
+private:
+	bool IsTriggerSphere(ICollider* other, Vec3* pushOut = nullptr);
 
 public:
 	bool IsTrigger(ICollider* other, Vec3* pushOut = nullptr);
