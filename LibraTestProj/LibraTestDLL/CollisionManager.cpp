@@ -27,5 +27,4 @@ void CollisionManager::CopyComponent(IComponent* src)
 
 }
 
-
 RegisterScriptBody(CollisionManager);
