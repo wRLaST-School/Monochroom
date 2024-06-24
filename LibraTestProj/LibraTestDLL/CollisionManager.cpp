@@ -41,8 +41,8 @@ void CollisionManager::PlayerHitBlocks()
 		Vec3 pushOut = Vec3::zero;
 		if (bc->GetBodyCollider().IsTriggerSphere(&playerBodyCollider, &pushOut))
 		{
-			SceneManager::FindObject<Object3D>("Player")->position += pushOut;
-			//mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+			//SceneManager::FindObject<Object3D>("Player")->position += pushOut;
+			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 		}
 	}
 }
