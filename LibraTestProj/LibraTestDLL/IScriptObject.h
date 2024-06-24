@@ -16,6 +16,8 @@ public:
 
 	virtual void Del() { delete this; };
 
+	IComponent* Parent();
+
 	ScriptComponent* This();
 
 	std::string GetClassString() override;

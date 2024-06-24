@@ -2,6 +2,14 @@
     {
         "Children": [
             {
+                "Children": [
+                    {
+                        "Name": "FirstPersonCamera",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FirstPersonCamera"
+                    }
+                ],
                 "Name": "Camera",
                 "Position": {
                     "X": 6.8165106773376465,
@@ -24,7 +32,9 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Tags": null,
+                "Tags": [
+                    "PlayerCamera"
+                ],
                 "Type": "Camera",
                 "UseQuaternionRot": 0
             },
@@ -180,7 +190,9 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Tags": null,
+                "Tags": [
+                    "Player"
+                ],
                 "Texture": "",
                 "Type": "Object3D"
             },
