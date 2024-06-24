@@ -7,8 +7,8 @@ class FirstPersonCamera :
 {
 private:
     Object3D* player;
-    Object3D* obj;
-    Vec3 offset;
+    Object3D* parentObj;
+    const Vec3 OFFSET = Vec3(0, 0, 1);
 
 public:
     void Init();
