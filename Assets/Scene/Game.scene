@@ -12,9 +12,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -8.94229793548584,
-                    "Y": 0.0,
-                    "Z": 47.92087936401367
+                    "X": -5.710992813110352,
+                    "Y": -239211.234375,
+                    "Z": 20.07192611694336
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -24,7 +24,7 @@
                 },
                 "RotationEuler": {
                     "X": -1.5707963705062866,
-                    "Y": 1.630000114440918,
+                    "Y": 1.6400034427642822,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -37,52 +37,6 @@
                 ],
                 "Type": "Camera",
                 "UseQuaternionRot": 0
-            },
-            {
-                "BlendMode": 0,
-                "Children": [
-                    {
-                        "Name": "PlayerControl",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "PlayerControl"
-                    },
-                    {
-                        "Name": "PlayerCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "PlayerCollider"
-                    }
-                ],
-                "Model": "cube.obj",
-                "Name": "Player",
-                "NormalType": 0,
-                "Position": {
-                    "X": -9.939163208007813,
-                    "Y": 0.0,
-                    "Z": 48.0
-                },
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": -1.5707963705062866,
-                    "Y": 1.6100001335144043,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 0.9999824166297913,
-                    "Y": 0.9999824166297913,
-                    "Z": 1.0
-                },
-                "Tags": [
-                    "Player"
-                ],
-                "Texture": "",
-                "Type": "Object3D"
             },
             {
                 "BlendMode": 0,
@@ -576,6 +530,113 @@
                 "Type": "Object3D"
             },
             {
+                "BlendMode": 0,
+                "Children": [
+                    {
+                        "BlendMode": 0,
+                        "Model": "Goggles.obj",
+                        "Name": "Goggles",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 1.1344640254974365,
+                            "Y": 3.1415927410125732,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "Goggles.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "BlendMode": 0,
+                        "Model": "cube.obj",
+                        "Name": "Debug Cube",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": -1.5707963705062866,
+                            "Y": 2.383183002471924,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.9999797940254211,
+                            "Y": 0.9999797940254211,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Player"
+                        ],
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Name": "PlayerCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "PlayerCollider"
+                    },
+                    {
+                        "Name": "PlayerControl",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "PlayerControl"
+                    }
+                ],
+                "Model": "",
+                "Name": "Player",
+                "Position": {
+                    "X": -6.707857608795166,
+                    "Y": -241902.515625,
+                    "Z": 20.151050567626953
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": -1.5707963705062866,
+                    "Y": 1.630003571510315,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": [
+                    "Player"
+                ],
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
                 "Name": "GameManager",
                 "Tags": null,
                 "Type": "ScriptComponent",
@@ -621,6 +682,7 @@
                 "Block.obj": "Assets\\Models\\Stage\\Block\\Block.obj",
                 "Boss": "Assets/Models/Boss/boss.glb",
                 "Cube": "Assets/Models/cube/cube.obj",
+                "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
@@ -640,10 +702,12 @@
                 "Black": "Assets/Images/black.png",
                 "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
+                "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
+                "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "black": "Assets/Images/black.png",
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
