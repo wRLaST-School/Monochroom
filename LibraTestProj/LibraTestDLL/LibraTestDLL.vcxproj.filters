@@ -31,17 +31,17 @@
     <Filter Include="ヘッダー ファイル\UI">
       <UniqueIdentifier>{db7f94c9-264b-43ba-b687-ed4993809c44}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル\Easing">
-      <UniqueIdentifier>{6874f44a-9503-4725-9dea-fb7dab05b7a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Easing">
-      <UniqueIdentifier>{ffeed5a8-cf03-407a-be1a-81401aaee6ae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Gimmick">
       <UniqueIdentifier>{e8475ee8-a7b1-468f-bd2c-b207d36ae7f7}</UniqueIdentifier>
     </Filter>
     <Filter Include="ヘッダー ファイル\Gimmick">
       <UniqueIdentifier>{d69a9f6d-2969-407d-969d-40582646ae42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Util">
+      <UniqueIdentifier>{ffeed5a8-cf03-407a-be1a-81401aaee6ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Util">
+      <UniqueIdentifier>{6874f44a-9503-4725-9dea-fb7dab05b7a3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,12 +75,6 @@
     <ClInclude Include="TestPlayer.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Easing\Easing.h">
-      <Filter>ヘッダー ファイル\Easing</Filter>
-    </ClInclude>
-    <ClInclude Include="Easing\Timer.h">
-      <Filter>ヘッダー ファイル\Easing</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -92,6 +86,15 @@
     </ClInclude>
     <ClInclude Include="Gimmick\BlockCollider.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Easing.h">
+      <Filter>ヘッダー ファイル\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Timer.h">
+      <Filter>ヘッダー ファイル\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Gravity.h">
+      <Filter>ヘッダー ファイル\Util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -122,12 +125,6 @@
     <ClCompile Include="AppOperationCommand.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Easing\Easing.cpp">
-      <Filter>ソース ファイル\Easing</Filter>
-    </ClCompile>
-    <ClCompile Include="Easing\Timer.cpp">
-      <Filter>ソース ファイル\Easing</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -139,6 +136,15 @@
     </ClCompile>
     <ClCompile Include="Gimmick\BlockCollider.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Easing.cpp">
+      <Filter>ソース ファイル\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Timer.cpp">
+      <Filter>ソース ファイル\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Gravity.cpp">
+      <Filter>ソース ファイル\Util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

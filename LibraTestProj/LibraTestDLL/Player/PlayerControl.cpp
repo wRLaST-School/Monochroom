@@ -8,6 +8,7 @@ using namespace Input;
 void PlayerControl::Init()
 {
 	parent_ = This()->Parent()->CastTo<Object3D>();
+	mGravity = std::make_unique<Gravity>();
 	//parent_->rotationE.z = 180.0f;
 }
 
@@ -22,15 +23,7 @@ void PlayerControl::Jump()
 
 void PlayerControl::JumpUpdate()
 {
-	//とりあえず仮で
-	//if (parent_->position.y < 0.0f)
-	//{
-	//	parent_->position.y = 0;
-	//	isJump_ = false;
-	//	gravityAccel_ = 0;
-	//	moveVec_.y = 0;
-	//}
-	/*else */if (isJump_)
+	if (isJump_)
 	{
 		gravityAccel_ += GRAVITY;
 
@@ -111,6 +104,8 @@ void PlayerControl::Update()
 	{
 		Jump();
 	}
+
+	moveVec_ += mGravity->CalcGravity();
 
 	//ジャンプ更新
 	JumpUpdate();
