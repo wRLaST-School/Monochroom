@@ -5,6 +5,7 @@ enum class DLLExport ColliderType
 {
 	OBB,
 	Sphere,
+	Ray,
 };
 
 class DLLExport ICollider

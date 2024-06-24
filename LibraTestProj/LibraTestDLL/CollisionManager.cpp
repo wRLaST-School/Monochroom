@@ -38,6 +38,13 @@ void CollisionManager::PlayerHitBlocks()
 {
 	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
 	auto playerDownCollider = mPlayerCollider->GetDownCollider();
+	auto playerRayCollider = mPlayerCollider->GetRayCollider();
+
+	if (playerDownCollider.IsTriggerRay(&playerRayCollider))
+	{
+		ConsoleWindow::Log("Ray Hit Down");
+	}
+
 	for (const auto& bc : mBlockColliders)
 	{
 		// 押し出し
@@ -60,6 +67,11 @@ void CollisionManager::PlayerHitBlocks()
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
 		}
+
+		//if (bc->GetBodyCollider().IsTriggerRay(&playerRayCollider))
+		//{
+		//	ConsoleWindow::Log("Hit : " + bc->Parent()->GetName());
+		//}
 	}
 }
 

@@ -3,6 +3,7 @@
 #include <Object3D.h>
 #include <OBBCollider.h>
 #include <SphereCollider.h>
+#include <RayCollider.h>
 
 class PlayerCollider :
     public IScriptObject
@@ -11,6 +12,7 @@ private:
     Object3D* mObj;
     SphereCollider mBodyCollider;
     OBBCollider mDownCollider;
+    RayCollider mRayCollider;
 
 public:
     void Init();
@@ -23,6 +25,7 @@ public:
 public:
     SphereCollider GetBodyCollider();
     OBBCollider GetDownCollider();
+    RayCollider GetRayCollider();
 
 };
 

@@ -235,6 +235,53 @@ bool OBBCollider::IsTriggerOBB(OBBCollider* other)
 	//return true;
 }
 
+bool OBBCollider::IsTriggerRay(RayCollider* other)
+{
+	color = Color::White;
+	other->color = Color::White;
+
+	float tMin = 0.f;
+	float tMax = other->r.length;
+
+	std::array<Vec3, 3> axes;
+	Matrix aRotMat = rot.GetRotMat();
+	axes[0] = aRotMat.ExtractAxisX().GetNorm();
+	axes[1] = aRotMat.ExtractAxisY().GetNorm();
+	axes[2] = aRotMat.ExtractAxisZ().GetNorm();
+
+	Vec3 p = pos - other->r.origin;
+	for (int i = 0; i < 3; ++i)
+	{
+		float e = axes[i].Dot(p);
+		float f = axes[i].Dot(other->r.ray);
+
+		// レイが平面に平行でない場合
+		if (std::fabs(f) > 0.001f)
+		{
+			float t1 = (e + scale.x * (i == 0) + scale.y * (i == 1) + scale.z * (i == 2)) / f;
+			float t2 = (e - scale.x * (i == 0) - scale.y * (i == 1) - scale.z * (i == 2)) / f;
+
+			if (t1 > t2) std::swap(t1, t2);
+
+			tMin = std::max(tMin, t1);
+			tMax = std::min(tMax, t2);
+
+			if (tMin > tMax) return false;
+		}
+		else if (
+			-e - scale.x * (i == 0) - scale.y * (i == 1) - scale.z * (i == 2) > 0.0f ||
+			-e + scale.x * (i == 0) + scale.y * (i == 1) + scale.z * (i == 2) < 0.0f)
+		{
+			return false;
+		}
+	}
+
+
+	color = Color::Red;
+	other->color = Color::Red;
+	return true;
+}
+
 void OBBCollider::Setting(const Vec3 aPos, const Quaternion aRot, const Vec3 aScale)
 {
 	pos = aPos;
