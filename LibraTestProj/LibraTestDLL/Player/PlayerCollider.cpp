@@ -12,7 +12,7 @@ void PlayerCollider::Update()
 {
 	// 押し戻し用
 	float r = Vec3(mObj->scale).GetMaxElement();
-	mBodyCollider.Setting(mObj->position, r);
+	mBodyCollider.Setting(mObj->position, r*2);
 
 		// 重力判定用
 	Vec3 pos = Vec3(mObj->position) + Vec3(0.f, -1.f, 0.f);

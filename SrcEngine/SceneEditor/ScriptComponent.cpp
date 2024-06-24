@@ -61,6 +61,11 @@ void ScriptComponent::CopyComponent(IComponent* src)
 	className = cast->className;
 }
 
+Libra::DLLObject* ScriptComponent::GetObj()
+{
+	return &dllobj_;
+}
+
 void ScriptComponent::CompileScript()
 {
 	//スクリプトコンポーネントを全て保持してdllobjをfree

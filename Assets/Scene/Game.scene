@@ -132,7 +132,9 @@
                     "Y": 2.0,
                     "Z": 2.0
                 },
-                "Tags": null,
+                "Tags": [
+                    "Block"
+                ],
                 "Texture": "",
                 "Type": "Object3D"
             },

@@ -16,6 +16,17 @@ public:
 public:
 	static DLLExport void Log(const std::string& log);
 
+	template<typename T>
+	inline static bool NullCheck(T* instance)
+	{
+		if (!instance)
+		{
+			GetInstance()->logs.push_back("NullCheck : Null");
+			return false;
+		}
+		return true;
+	}
+
 public:
 	// セッター
 	void SetisOpen(bool isOpen);
@@ -23,7 +34,7 @@ public:
 public:
 	// ゲッター
 	bool GetisOpen();
-	static ConsoleWindow* GetInstance();
+	static DLLExport ConsoleWindow* GetInstance();
 
 private:
 	// singleton

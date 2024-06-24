@@ -12,37 +12,37 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
-    <ClInclude Include="BlockCollider.h" />
+    <ClInclude Include="Gimmick\BlockCollider.h" />
     <ClInclude Include="CollisionManager.h" />
-    <ClInclude Include="Easing.h" />
+    <ClInclude Include="Easing\Easing.h" />
     <ClInclude Include="AppOperationCommand.h" />
-    <ClInclude Include="FirstPersonCamera.h" />
+    <ClInclude Include="Camera\FirstPersonCamera.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="PlayerCollider.h" />
-    <ClInclude Include="PlayerControl.h" />
-    <ClInclude Include="SuperUI.h" />
+    <ClInclude Include="Player\PlayerCollider.h" />
+    <ClInclude Include="Player\PlayerControl.h" />
+    <ClInclude Include="UI\SuperUI.h" />
     <ClInclude Include="Bases.h" />
     <ClInclude Include="IScriptObject.h" />
     <ClInclude Include="TestObject.h" />
     <ClInclude Include="TestPlayer.h" />
-    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Easing\Timer.h" />
     <ClInclude Include="TitleCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
-    <ClCompile Include="BlockCollider.cpp" />
+    <ClCompile Include="Gimmick\BlockCollider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
-    <ClCompile Include="Easing.cpp" />
-    <ClCompile Include="FirstPersonCamera.cpp" />
+    <ClCompile Include="Easing\Easing.cpp" />
+    <ClCompile Include="Camera\FirstPersonCamera.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="PlayerCollider.cpp" />
-    <ClCompile Include="PlayerControl.cpp" />
-    <ClCompile Include="SuperUI.cpp" />
+    <ClCompile Include="Player\PlayerCollider.cpp" />
+    <ClCompile Include="Player\PlayerControl.cpp" />
+    <ClCompile Include="UI\SuperUI.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />
     <ClCompile Include="TestPlayer.cpp" />
-    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Easing\Timer.cpp" />
     <ClCompile Include="TitleCamera.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -80,13 +80,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)..\..\Resources\Compiled\</OutDir>
-    <IncludePath>$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Easing;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
     <TargetName>ScriptsD</TargetName>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)..\..\Resources\Compiled\$(Configuration)\</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)..\..\Resources\Compiled\</OutDir>
-    <IncludePath>$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Easing;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
     <TargetName>Scripts</TargetName>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)..\..\Resources\Compiled\$(Configuration)\</LibraryPath>
   </PropertyGroup>
