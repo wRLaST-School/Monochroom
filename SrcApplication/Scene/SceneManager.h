@@ -75,24 +75,24 @@ public:
 	template<typename T>
 	inline static T* FindObject(const std::string& name)
 	{
-		return FindObjectExport(name)->CastTo<T>();
+		return FindObjectExport(name)->CastToScript<T>();
 	}
 
 	template<class T>
 	inline static T* FindChildObject(const std::string& name, IComponent* root){
-		return FindObjectRecursive(name, root)->CastTo<T>();
+		return FindObjectRecursive(name, root)->CastToScript<T>();
 	}
 
 	template<class T>
 	inline static T* FindObjectWithTag(const std::string& tag)
 	{
-		return FindObjectTagExport(tag)->CastTo<T>();
+		return FindObjectTagExport(tag)->CastToScript<T>();
 	}
 
 	template<class T>
 	inline static T* FindChildObjectWithTag(const std::string& tag, IComponent* root)
 	{
-		return FindObjectTagRecursive(tag, root)->CastTo<T>();
+		return FindObjectTagRecursive(tag, root)->CastToScript<T>();
 	}
 
 	template<class T>
@@ -106,7 +106,7 @@ public:
 
 		for (auto& nc : notCasted)
 		{
-			foundList.emplace_back(nc->CastTo<T>());
+			foundList.emplace_back(nc->CastToScript<T>());
 		}
 
 		return foundList;
@@ -123,7 +123,7 @@ public:
 
 		for (auto& nc : notCasted)
 		{
-			foundList.emplace_back(nc->CastTo<T>());
+			foundList.emplace_back(nc->CastToScript<T>());
 		}
 
 		return foundList;

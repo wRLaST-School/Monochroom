@@ -57,13 +57,13 @@
     <ClInclude Include="TitleCamera.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerControl.h">
+    <ClInclude Include="Player\PlayerControl.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
-    <ClInclude Include="FirstPersonCamera.h">
+    <ClInclude Include="Camera\FirstPersonCamera.h">
       <Filter>ヘッダー ファイル\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="SuperUI.h">
+    <ClInclude Include="UI\SuperUI.h">
       <Filter>ヘッダー ファイル\UI</Filter>
     </ClInclude>
     <ClInclude Include="AppOperationCommand.h">
@@ -75,10 +75,10 @@
     <ClInclude Include="TestPlayer.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Easing.h">
+    <ClInclude Include="Easing\Easing.h">
       <Filter>ヘッダー ファイル\Easing</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
+    <ClInclude Include="Easing\Timer.h">
       <Filter>ヘッダー ファイル\Easing</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
@@ -87,10 +87,10 @@
     <ClInclude Include="GameManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerCollider.h">
+    <ClInclude Include="Player\PlayerCollider.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
-    <ClInclude Include="BlockCollider.h">
+    <ClInclude Include="Gimmick\BlockCollider.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
   </ItemGroup>
@@ -110,22 +110,22 @@
     <ClCompile Include="TitleCamera.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerControl.cpp">
+    <ClCompile Include="Player\PlayerControl.cpp">
       <Filter>ソース ファイル\Player</Filter>
     </ClCompile>
-    <ClCompile Include="FirstPersonCamera.cpp">
+    <ClCompile Include="Camera\FirstPersonCamera.cpp">
       <Filter>ソース ファイル\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="SuperUI.cpp">
+    <ClCompile Include="UI\SuperUI.cpp">
       <Filter>ソース ファイル\UI</Filter>
     </ClCompile>
     <ClCompile Include="AppOperationCommand.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Easing.cpp">
+    <ClCompile Include="Easing\Easing.cpp">
       <Filter>ソース ファイル\Easing</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
+    <ClCompile Include="Easing\Timer.cpp">
       <Filter>ソース ファイル\Easing</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
@@ -134,10 +134,10 @@
     <ClCompile Include="GameManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerCollider.cpp">
+    <ClCompile Include="Player\PlayerCollider.cpp">
       <Filter>ソース ファイル\Player</Filter>
     </ClCompile>
-    <ClCompile Include="BlockCollider.cpp">
+    <ClCompile Include="Gimmick\BlockCollider.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>

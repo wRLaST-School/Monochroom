@@ -46,7 +46,7 @@ void ConsoleWindow::SDraw()
 
 void ConsoleWindow::Log(const std::string& log)
 {
-	GetInstance()->logs.push_back(log);
+	GetInstance()->logs.push_back("Log : " + log);
 }
 
 void ConsoleWindow::SetisOpen(bool isOpen)

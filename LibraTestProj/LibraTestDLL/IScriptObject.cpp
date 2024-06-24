@@ -1,4 +1,9 @@
 #include "IScriptObject.h"
+#include <ScriptComponent.h>
+IComponent* IScriptObject::Parent()
+{
+    return body->Parent();
+}
 
 ScriptComponent* IScriptObject::This()
 {

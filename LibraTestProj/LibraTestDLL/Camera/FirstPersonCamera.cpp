@@ -6,11 +6,7 @@
 
 void FirstPersonCamera::Init()
 {
-	//player = SceneManager::FindObject<Object3D>("Player");
-
-	//player = This()->Parent()->Parent();
-	obj = This()->Parent()->CastTo<Object3D>();
-	offset = Vec3(0, 1, -1);
+	parentObj = This()->Parent()->CastTo<Object3D>();
 }
 
 void FirstPersonCamera::Update()
@@ -19,11 +15,15 @@ void FirstPersonCamera::Update()
 	if (!player)
 	{
 		OutputDebugStringA("Player NULL");
+		return;
 	}
-	player->rotationE.y += 0.1f;
 
-	obj->position = Vec3(player->position) + offset;
-	//assert(player);
+	Vec3 frontOffset;
+	frontOffset.x = -(OFFSET.x * cosf(parentObj->rotationE.y) - OFFSET.z * sinf(parentObj->rotationE.y));
+	frontOffset.z = OFFSET.x * sinf(parentObj->rotationE.y) + OFFSET.z * cosf(parentObj->rotationE.y);
+
+	parentObj->position = Vec3(player->position) + frontOffset;
+	parentObj->rotationE = Vec3(player->rotationE);
 }
 
 void FirstPersonCamera::Draw()

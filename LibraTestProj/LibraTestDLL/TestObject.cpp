@@ -5,6 +5,7 @@
 #include <SceneManager.h>
 #include <SpImGui.h>
 #include <ConsoleWindow.h>
+#include <format>
 
 void TestObject::Init()
 {
@@ -15,15 +16,19 @@ void TestObject::Init()
 void TestObject::Update()
 {
 	auto obj = SceneManager::FindObject<Object3D>("Object3D");
+
+	Float2 mpos = Input::Mouse::GetPos();
+
+	ConsoleWindow::Log(std::format("mouse pos: {}, {}", (int)mpos.x, (int)mpos.y));
 	
 	obbCollider.Setting(Vec3::zero, Quaternion::EulerToQuaternion(Float3(0, 0, 0)), Vec3(1, 1, 1));
 	sphereCollider.pos = obj->position;
 	sphereCollider.r = 2.f;
 
-	if (obbCollider.IsTrigger(&sphereCollider))
-	{
-		ConsoleWindow::Log("HitSphere");
-	}
+	//if (obbCollider.IsTrigger(&sphereCollider))
+	//{
+	//	ConsoleWindow::Log("HitSphere");
+	//}
 
 	if (obj)
 	{

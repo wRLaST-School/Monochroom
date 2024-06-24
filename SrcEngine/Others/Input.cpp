@@ -277,6 +277,27 @@ Mouse* Input::Mouse::GetInstance()
 	return &obj;
 }
 
+void Input::Mouse::ShowCursorM()
+{
+	if (!GetInstance()->showCursor) {
+		while (ShowCursor(TRUE) >= 0) {};
+		GetInstance()->showCursor = true;
+	}
+}
+
+void Input::Mouse::HideCursor()
+{
+	if (GetInstance()->showCursor) {
+		while (ShowCursor(FALSE) < 0) {};
+		GetInstance()->showCursor = false;
+	}
+}
+
+void Input::Mouse::SetPos(Float2 pos)
+{
+	SetCursorPos((int)pos.x, (int)pos.y);
+}
+
 IDirectInput8* Input::GetDInput()
 {
 	return Key::GetInstance()->dinput_;
