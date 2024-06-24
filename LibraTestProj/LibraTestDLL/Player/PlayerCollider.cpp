@@ -18,8 +18,12 @@ void PlayerCollider::Update()
 	Vec3 pos = Vec3(mObj->position) + Vec3(0.f, -1.f, 0.f);
 	Quaternion rot = Quaternion();
 	Vec3 scale = mObj->scale;
-	scale.y = 0.1f;
+	scale.y = 0.5f;
 	mDownCollider.Setting(pos, rot, scale);
+
+	ConsoleWindow::Log(std::format("Pos : ({},{},{})", pos.x, pos.y, pos.z));
+	ConsoleWindow::Log(std::format("Rot : ({},{},{},{})", rot.v.x, rot.v.y, rot.v.z, rot.w));
+	ConsoleWindow::Log(std::format("Scale : ({},{},{})", scale.x, scale.y, scale.z));
 }
 
 void PlayerCollider::Draw()
@@ -28,14 +32,14 @@ void PlayerCollider::Draw()
 	mDownCollider.DrawCollider();
 }
 
-void PlayerCollider::CopyComponent(IComponent* src)
-{
-
-}
-
 SphereCollider PlayerCollider::GetBodyCollider()
 {
 	return mBodyCollider;
+}
+
+OBBCollider PlayerCollider::GetDownCollider()
+{
+	return mDownCollider;
 }
 
 

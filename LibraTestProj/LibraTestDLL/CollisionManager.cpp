@@ -2,6 +2,7 @@
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
 #include <GameManager.h>
+#include <PlayerControl.h>
 
 void CollisionManager::Init()
 {
@@ -36,13 +37,28 @@ void CollisionManager::Draw()
 void CollisionManager::PlayerHitBlocks()
 {
 	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
+	auto playerDownCollider = mPlayerCollider->GetDownCollider();
 	for (const auto& bc : mBlockColliders)
 	{
+		// 押し出し
 		Vec3 pushOut = Vec3::zero;
 		if (bc->GetBodyCollider().IsTriggerSphere(&playerBodyCollider, &pushOut))
 		{
 			//SceneManager::FindObject<Object3D>("Player")->position += pushOut;
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+
+		// 重力
+		if (bc->GetBodyCollider().IsTriggerOBB(&playerDownCollider))
+		{
+			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+
+			float posY = bc->GetBodyCollider().pos.y;
+			float offsetY = bc->GetBodyCollider().scale.y + player->scale.y;
+			player->position.y = posY + offsetY;
+
+			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
+			playerControl->GravityToZero();
 		}
 	}
 }

@@ -23,14 +23,14 @@ void PlayerControl::Jump()
 void PlayerControl::JumpUpdate()
 {
 	//とりあえず仮で
-	if (parent_->position.y < 0.0f)
-	{
-		parent_->position.y = 0;
-		isJump_ = false;
-		gravityAccel_ = 0;
-		moveVec_.y = 0;
-	}
-	else if (isJump_)
+	//if (parent_->position.y < 0.0f)
+	//{
+	//	parent_->position.y = 0;
+	//	isJump_ = false;
+	//	gravityAccel_ = 0;
+	//	moveVec_.y = 0;
+	//}
+	/*else */if (isJump_)
 	{
 		gravityAccel_ += GRAVITY;
 
@@ -130,6 +130,16 @@ void PlayerControl::Draw()
 void PlayerControl::CopyComponent(IComponent* src)
 {
 
+}
+
+void PlayerControl::GravityToZero()
+{
+	if (moveVec_.y <= 0.0f)
+	{
+		isJump_ = false;
+		gravityAccel_ = 0;
+		moveVec_.y = 0;
+	}
 }
 
 RegisterScriptBody(PlayerControl);

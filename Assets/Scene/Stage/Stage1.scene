@@ -95,7 +95,9 @@
                             "Y": 8.0,
                             "Z": 2.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -133,7 +135,9 @@
                             "Y": 8.0,
                             "Z": 2.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -171,7 +175,9 @@
                             "Y": 8.0,
                             "Z": 12.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -209,7 +215,9 @@
                             "Y": 4.0,
                             "Z": 12.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -247,7 +255,9 @@
                             "Y": 4.0,
                             "Z": 6.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -285,7 +295,9 @@
                             "Y": 4.0,
                             "Z": 6.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -323,7 +335,9 @@
                             "Y": 4.0,
                             "Z": 12.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -361,7 +375,9 @@
                             "Y": 4.0,
                             "Z": 12.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -399,7 +415,9 @@
                             "Y": 3.9999992847442627,
                             "Z": 5.999999523162842
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     },
@@ -437,7 +455,9 @@
                             "Y": 8.0,
                             "Z": 12.0
                         },
-                        "Tags": null,
+                        "Tags": [
+                            "Block"
+                        ],
                         "Texture": "Block1.png",
                         "Type": "Object3D"
                     }
@@ -471,12 +491,44 @@
             }
         ],
         "EfkEffects": [
-            {}
+            {
+                "LineAttack": [
+                    "Assets/Effekseer/Line",
+                    "Assets/Effekseer/Line/Line.efk"
+                ],
+                "Marker": [
+                    "Assets/Effekseer",
+                    "Assets/Effekseer/Marker/Marker.efk"
+                ],
+                "Slash1": [
+                    "Assets/Effekseer/Slash1",
+                    "Assets/Effekseer/Slash1/Slash1.efk"
+                ],
+                "Slash2": [
+                    "Assets/Effekseer/Slash2",
+                    "Assets/Effekseer/Slash2/Slash2.efk"
+                ],
+                "Slash3": [
+                    "Assets/Effekseer/Slash3",
+                    "Assets/Effekseer/Slash3/Slash3.efk"
+                ],
+                "SphereParticle": [
+                    "Assets/Effekseer/Sphere",
+                    "Assets/Effekseer/Sphere/sphere.efk"
+                ]
+            }
         ],
         "Models": [
             {
                 "Block.obj": "Assets\\Models\\Stage\\Block\\Block.obj",
+                "Boss": "Assets/Models/Boss/boss.glb",
+                "Cube": "Assets/Models/cube/cube.obj",
+                "Sky": "Assets/Models/skydome/skydome.obj",
+                "Sphere": "Assets/Models/Sphere/Sphere.obj",
+                "Triangle": "Assets/Models/triangle/triangle.obj",
+                "cube": "Assets/Models/Cube/Cube.obj",
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
+                "floor": "Assets/Models/Floor.glb",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
             }
         ],
@@ -486,10 +538,18 @@
         "Tags": null,
         "Textures": [
             {
+                "BasicParticle": "Assets/Images/circleParticle.png",
                 "Black": "Assets/Images/black.png",
                 "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
+                "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
+                "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
-                "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png"
+                "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
+                "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
+                "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
+                "black": "Assets/Images/black.png",
+                "circleParticle.png": "Assets\\Images\\circleParticle.png",
+                "white.png": "Assets\\Images\\white.png"
             }
         ],
         "Type": "IScene"

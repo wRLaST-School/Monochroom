@@ -43,6 +43,9 @@ public:
 	void CopyComponent(IComponent* src);
 
 	DefDel;
+
+public:
+	void GravityToZero();
 };
 
 #ifndef PlayerControl_RegisterDef
