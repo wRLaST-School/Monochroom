@@ -1,7 +1,7 @@
 #pragma once
 #include "IScriptObject.h"
 
-class TestClass :
+class ButtonCollider :
     public IScriptObject
 {
 public:
@@ -13,5 +13,5 @@ public:
     DefDel;
 };
 
-RegisterScript(TestClass);
+RegisterScript(ButtonCollider);
 
