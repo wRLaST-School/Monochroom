@@ -54,3 +54,5 @@ void TestObject::OnInspectorWindowDraw()
 void TestObject::CopyComponent(IComponent* src)
 {
 }
+
+RegisterScriptBody(TestObject);

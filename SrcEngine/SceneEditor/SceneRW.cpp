@@ -95,6 +95,7 @@ void SceneRW::SaveScene(IScene* scene, std::string filePath)
 
 		curObj["Type"] = current->GetClassString();
 		current->WriteParamJson(curObj);
+		current->WriteCommonParamJson(curObj);
 		for (auto& c : current->GetAllComponents())
 		{
 			processNode(curObj["Children"], c.second.get());
@@ -146,6 +147,7 @@ void SceneRW::LoadScene(IScene* scene, std::string filePath)
 
 		auto child = ComponentFactory::AddChildComponent(current, componentType, componentType);
 		child->ReadParamJson(object);
+		child->ReadCommonParamJson(object);
 		if (componentType == "Object3D" || componentType == "Camera") {
 
 			child->CastTo<Object3D>()->parent = current->CastTo<Object3D>();

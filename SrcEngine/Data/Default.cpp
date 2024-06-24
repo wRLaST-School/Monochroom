@@ -19,3 +19,5 @@ void Default::CopyComponent(IComponent* src)
 {
 
 }
+
+RegisterScriptBody(Default);

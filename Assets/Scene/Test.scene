@@ -24,6 +24,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Type": "Camera",
                 "UseQuaternionRot": 1
             },
@@ -35,6 +36,7 @@
                         "Children": [
                             {
                                 "Name": "ScriptComponent",
+                                "Tags": null,
                                 "Type": "ScriptComponent",
                                 "filePath": ""
                             }
@@ -63,11 +65,13 @@
                             "Y": 1.0,
                             "Z": 30.0
                         },
+                        "Tags": null,
                         "Texture": "white.png",
                         "Type": "Object3D"
                     },
                     {
                         "Name": "ScriptComponent",
+                        "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TestObject"
                     }
@@ -96,10 +100,12 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Texture": "DissolveMap.png",
                 "Type": "Object3D"
             },
             {
+                "Tags": null,
                 "Type": "PointLight"
             }
         ],
@@ -147,11 +153,13 @@
         "Sounds": [
             {}
         ],
+        "Tags": null,
         "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",
                 "Black": "Assets/Images/black.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
+                "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",

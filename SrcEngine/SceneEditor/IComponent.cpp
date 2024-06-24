@@ -241,6 +241,28 @@ void IComponent::DrawAllChildComponents(IComponent* parent)
 	}
 }
 
+void IComponent::WriteCommonParamJson(nlohmann::json& jsonObj)
+{
+	nlohmann::json& arr = jsonObj["Tags"];
+
+	for (auto& t : tags)
+	{
+		arr.push_back(t);
+	}
+}
+
+void IComponent::ReadCommonParamJson(const nlohmann::json& paramsObject)
+{
+	if (paramsObject.At("Tags").is_null()) return;
+
+	const nlohmann::json& arr = paramsObject["Tags"];
+
+	for (auto& t : arr)
+	{
+		tags.push_back(t);
+	}
+}
+
 void IComponent::OnInspectorWindowDraw()
 {
 }

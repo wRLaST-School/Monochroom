@@ -45,3 +45,6 @@ void TestPlayer::Draw()
 void TestPlayer::CopyComponent(IComponent* src)
 {
 }
+
+
+RegisterScriptBody(TestPlayer);

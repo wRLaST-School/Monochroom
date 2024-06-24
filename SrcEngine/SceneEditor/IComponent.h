@@ -118,11 +118,12 @@ public:
 	* ]
 	*/
 	virtual void WriteParamJson([[maybe_unused]] nlohmann::json& jsonObj) {};
+	void WriteCommonParamJson([[maybe_unused]] nlohmann::json& jsonObj);
 	/*
 	* obj["ComponentParams"]のオブジェクトを受け取る
 	*/
 	virtual void ReadParamJson([[maybe_unused]] const nlohmann::json& paramsObject) {};
-
+	void ReadCommonParamJson([[maybe_unused]] const nlohmann::json& paramsObject);
 	//Inspector Windowに描画する内容。継承先で何も定義しなくてもOK(なにも表示されないだけ)
 	virtual DLLExport void OnInspectorWindowDraw();
 	void CommonInspectorWindowDraw();
