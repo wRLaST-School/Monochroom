@@ -107,6 +107,10 @@ namespace Input {
 
 		static Mouse* GetInstance();
 
+		static void ShowCursorM();
+		static void HideCursor();
+
+		static void SetPos(Float2 pos);
 	private:
 		IDirectInputDevice8* devmouse_ = nullptr;
 
@@ -117,6 +121,8 @@ namespace Input {
 
 		DIMOUSESTATE state_;
 		DIMOUSESTATE prevState_;
+
+		bool showCursor = true;
 	};
 
 	class DLLExport Pad
