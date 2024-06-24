@@ -2,6 +2,7 @@
 #include "IScriptObject.h"
 #include <Object3D.h>
 #include "Easing.h"
+#include <Color.h>
 
 class SuperUI :
     public IScriptObject
@@ -16,19 +17,45 @@ public:
 
 private:// クラス内構造体
 
+    enum UIOptionNum
+    {
+        CAMERA,// カメラ
+        GUID,// 説明画面
+        QUIT_TITLE,// タイトルへ戻る
+    };
+
+    enum UIMenuState 
+    {
+        DISABLED,// 選択されていない状態
+        SELECT,// 選択されている状態
+        PRESSED,// 押された後の状態
+    };
+
     struct UIMenuStatus
     {
         // ベースの座標
-        Vec2 basePos;
+        Vec2 afterBasePos;
 
-        // 出現時に変化するスケール量
+        // 移動前の座標
+        Vec2 beforePos;
+
+        // 出現時に変化する座標量
+        Vec2 posChangeValue;
+
+        // 選択された時に変化するスケール量
         Vec2 scaleChangeValue;
+
+        // 現在のカラー
+        Color correntColor;
 
         // 今アクティブ状態かどうか
         bool IsActiveMenu;
 
         // タイミングがずれた時
         bool IsTimingOff;
+
+        // UIのオプションのそれぞれの状態
+        UIMenuState state;
     };
 
 private:
@@ -42,6 +69,9 @@ private:
 
     // オプションのリセット
     void ResetOption();
+
+    // UIの項目の更新処理
+    void UIOptionsUpdate();
 
 private:// メンバー変数
 
@@ -74,6 +104,23 @@ private:// メンバー変数
 
     int mUiWaitTimeInterval = 20;
     int mUiWaitTimer = 0;
+
+    // UIの項目の全体共通の初期座標
+    float mUICommonBasePos;
+
+    float mUICommonSpacePos;
+
+    // UIの現在の項目をNUM型に保存
+    int mUICurrentNum;
+
+    // UIの項目の選択時のそれぞれのスケール変化量
+    Vec2 mUIDesabledScale;
+    Vec2 mUISelectScale;
+
+    // UIの項目の選択時のそれぞれのカラー変化量
+    Color mDesabledColor;
+    Color mSelectColor;
+    Color mPressedColor;
 
     // UIのオプション項目
     Object3D* mUIOptionParentObj;
