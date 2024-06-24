@@ -179,7 +179,7 @@ inline Type* IComponent::GetComponent(const std::string& key)
 {
 	auto c = components_.find(key);
 	if (c == components_.end()) return nullptr;
-	return dynamic_cast<Type*>(c->second.get());
+	return c->second.get()->CastToScript<Type>();
 }
 
 template<class Type>
@@ -191,7 +191,7 @@ inline eastl::list<Type*> IComponent::GetComponents(const std::string& key)
 	auto itr = components_.find(key);
 	for (size_t i = 0; i < count; i++)
 	{
-		hitComponents.emplace_back(dynamic_cast<Type*>(itr->second.get()));
+		hitComponents.emplace_back(itr->second.get()->CastToScript<Type>());
 		itr++;
 	}
 
