@@ -1,9 +1,10 @@
 #include "CollisionManager.h"
 #include <SceneManager.h>
+#include <ConsoleWindow.h>
 
 void CollisionManager::Init()
 {
-	mPlayerCollider = SceneManager::FindObject<Object3D>("Player")->GetComponent<PlayerCollider>("PlayerCollider");
+	mPlayerCollider = SceneManager::FindObject<PlayerCollider>("PlayerCollider");
 
 	auto objs = SceneManager::FindObjectsWithTag<Object3D>("Block");
 	for (const auto& obj : objs)
@@ -14,7 +15,13 @@ void CollisionManager::Init()
 
 void CollisionManager::Update()
 {
+	if (!ConsoleWindow::NullCheck<PlayerCollider>(mPlayerCollider))
+	{
+		ConsoleWindow::Log("mPlayerCollider is Null");
+		return;
+	}
 
+	PlayerHitBlocks();
 }
 
 void CollisionManager::Draw()
@@ -22,9 +29,19 @@ void CollisionManager::Draw()
 
 }
 
-void CollisionManager::CopyComponent(IComponent* src)
+void CollisionManager::PlayerHitBlocks()
 {
+	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
 
+
+	for (const auto& bc : mBlockColliders)
+	{
+		Vec3 pushOut = Vec3::zero;
+		if (bc->GetBodyCollider().IsTriggerSphere(&playerBodyCollider, &pushOut))
+		{
+			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+	}
 }
 
 RegisterScriptBody(CollisionManager);

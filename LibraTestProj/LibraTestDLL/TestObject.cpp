@@ -20,10 +20,10 @@ void TestObject::Update()
 	sphereCollider.pos = obj->position;
 	sphereCollider.r = 2.f;
 
-	if (obbCollider.IsTrigger(&sphereCollider))
-	{
-		ConsoleWindow::Log("HitSphere");
-	}
+	//if (obbCollider.IsTrigger(&sphereCollider))
+	//{
+	//	ConsoleWindow::Log("HitSphere");
+	//}
 
 	if (obj)
 	{

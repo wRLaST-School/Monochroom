@@ -24,6 +24,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Type": "Camera",
                 "UseQuaternionRot": 0
             },
@@ -53,6 +54,7 @@
                     "Y": 1.340000033378601,
                     "Z": 345.39251708984375
                 },
+                "Tags": null,
                 "Texture": "white.png",
                 "Type": "Object3D"
             },
@@ -82,6 +84,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Texture": "SpicavirSky.png",
                 "Type": "Object3D"
             },
@@ -90,6 +93,7 @@
                 "Children": [
                     {
                         "Name": "BlockCollider",
+                        "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "BlockCollider"
                     }
@@ -118,6 +122,9 @@
                     "Y": 2.0,
                     "Z": 2.0
                 },
+                "Tags": [
+                    "Block"
+                ],
                 "Texture": "",
                 "Type": "Object3D"
             },
@@ -147,6 +154,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Texture": "",
                 "Type": "Object3D"
             },
@@ -176,6 +184,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Texture": "",
                 "Type": "Object3D"
             },
@@ -184,11 +193,13 @@
                 "Children": [
                     {
                         "Name": "PlayerControl",
+                        "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "PlayerControl"
                     },
                     {
                         "Name": "PlayerCollider",
+                        "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "PlayerCollider"
                     }
@@ -217,11 +228,13 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Texture": "",
                 "Type": "Object3D"
             },
             {
                 "Name": "CollisionManager",
+                "Tags": null,
                 "Type": "ScriptComponent",
                 "filePath": "CollisionManager"
             }
@@ -238,6 +251,7 @@
         "Sounds": [
             {}
         ],
+        "Tags": null,
         "Textures": [
             {
                 "Black": "Assets/Images/black.png",
