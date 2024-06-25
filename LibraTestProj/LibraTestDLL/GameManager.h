@@ -8,6 +8,7 @@ class GameManager :
 {
 private:
 	Object3D* mPlayer;
+	bool isStop;
 
 public:
 	void Init();
@@ -19,6 +20,7 @@ public:
 
 public:
 	Object3D* GetPlayer();
+	bool GetisStop();
 
 	static GameManager* GetInstance();
 };

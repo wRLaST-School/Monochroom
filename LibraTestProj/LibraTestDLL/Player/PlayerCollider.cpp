@@ -22,19 +22,12 @@ void PlayerCollider::Update()
 	pos = Vec3::zero;
 	scale = Vec3::one;
 	mDownCollider.Setting(pos, rot, scale);
-
-	// レイ
-	Vec3 dir = mObj->matWorld.ExtractAxisZ();
-	dir = Vec3::front;
-	ConsoleWindow::Log(std::format("Dir : ({},{},{})", dir.x, dir.y, dir.z));
-	mRayCollider.Setting(mObj->position, dir);
 }
 
 void PlayerCollider::Draw()
 {
 	mBodyCollider.DrawCollider();
 	mDownCollider.DrawCollider();
-	mRayCollider.DrawCollider();
 }
 
 SphereCollider PlayerCollider::GetBodyCollider()
@@ -46,11 +39,5 @@ OBBCollider PlayerCollider::GetDownCollider()
 {
 	return mDownCollider;
 }
-
-RayCollider PlayerCollider::GetRayCollider()
-{
-	return mRayCollider;
-}
-
 
 RegisterScriptBody(PlayerCollider);

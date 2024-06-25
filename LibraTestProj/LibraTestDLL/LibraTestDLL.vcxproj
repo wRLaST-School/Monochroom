@@ -12,11 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="Gimmick\FlyBlock.h" />
     <ClInclude Include="Gimmick\BlockCollider.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="AppOperationCommand.h" />
     <ClInclude Include="Camera\FirstPersonCamera.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Gimmick\FlyBlockCollider.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
     <ClInclude Include="UI\SuperUI.h" />
@@ -28,14 +30,17 @@
     <ClInclude Include="Util\Easing.h" />
     <ClInclude Include="Util\Gravity.h" />
     <ClInclude Include="Util\Timer.h" />
+    <ClInclude Include="Camera\ViewCollider.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="Gimmick\FlyBlock.cpp" />
     <ClCompile Include="Gimmick\BlockCollider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Camera\FirstPersonCamera.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Gimmick\FlyBlockCollider.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
     <ClCompile Include="UI\SuperUI.cpp" />
@@ -46,6 +51,7 @@
     <ClCompile Include="Util\Easing.cpp" />
     <ClCompile Include="Util\Gravity.cpp" />
     <ClCompile Include="Util\Timer.cpp" />
+    <ClCompile Include="Camera\ViewCollider.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

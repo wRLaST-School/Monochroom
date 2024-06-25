@@ -9,6 +9,12 @@ RayCollider::RayCollider()
 	color = Color::White;
 }
 
+bool RayCollider::IsTriggerSphere(SphereCollider* other)
+{
+	other;
+	return false;
+}
+
 void RayCollider::Setting(const Vec3 aPos, const Vec3 aDir, const float aLength)
 {
 	r.origin = aPos;

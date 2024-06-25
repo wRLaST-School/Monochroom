@@ -8,13 +8,19 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "FirstPersonCamera"
+                    },
+                    {
+                        "Name": "ViewCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "ViewCollider"
                     }
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -5.710992813110352,
-                    "Y": -239211.234375,
-                    "Z": 20.07192611694336
+                    "X": -1.9243531227111816,
+                    "Y": 10.0,
+                    "Z": 31.77446174621582
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -24,7 +30,7 @@
                 },
                 "RotationEuler": {
                     "X": -1.5707963705062866,
-                    "Y": 1.6400034427642822,
+                    "Y": 3.5199995040893555,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -610,9 +616,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -6.707857608795166,
-                    "Y": -241902.515625,
-                    "Z": 20.151050567626953
+                    "X": -1.5549126863479614,
+                    "Y": 10.0,
+                    "Z": 32.70371627807617
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -622,7 +628,7 @@
                 },
                 "RotationEuler": {
                     "X": -1.5707963705062866,
-                    "Y": 1.630003571510315,
+                    "Y": 3.5199995040893555,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -632,6 +638,46 @@
                 },
                 "Tags": [
                     "Player"
+                ],
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "BlendMode": 0,
+                "Children": [
+                    {
+                        "Name": "FlyBlockCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlockCollider"
+                    }
+                ],
+                "Model": "cube.obj",
+                "Name": "FlyBlock",
+                "NormalType": 0,
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": [
+                    "FlyBlock"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -647,6 +693,15 @@
                 "Tags": null,
                 "Type": "ScriptComponent",
                 "filePath": "CollisionManager"
+            },
+            {
+                "Tags": null,
+                "Texture": "white.png",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 540.0,
+                "scaleX": 20.0,
+                "scaleY": 20.0
             }
         ],
         "EfkEffects": [

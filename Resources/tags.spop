@@ -2,5 +2,6 @@
     "hello world",
     "Block",
     "PlayerCamera",
-    "Player"
+    "Player",
+    "FlyBlock"
 ]

@@ -1,7 +1,7 @@
 #pragma once
 #include "IScriptObject.h"
 
-class Default :
+class FlyBlock :
     public IScriptObject
 {
 public:
@@ -13,4 +13,5 @@ public:
     DefDel;
 };
 
-RegisterScript(Default);
+RegisterScript(FlyBlock);
+

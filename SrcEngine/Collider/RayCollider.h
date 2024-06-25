@@ -10,6 +10,7 @@ public:
 
 public:
 	RayCollider();
+	bool IsTriggerSphere(SphereCollider* other);
 	void Setting(const Vec3 pos, const Vec3 dir, const float length = -1);
 
 public:

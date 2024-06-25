@@ -96,6 +96,15 @@
     <ClInclude Include="Util\Gravity.h">
       <Filter>ヘッダー ファイル\Util</Filter>
     </ClInclude>
+    <ClInclude Include="Camera\ViewCollider.h">
+      <Filter>ヘッダー ファイル\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Gimmick\FlyBlock.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Gimmick\FlyBlockCollider.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -145,6 +154,15 @@
     </ClCompile>
     <ClCompile Include="Util\Gravity.cpp">
       <Filter>ソース ファイル\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\ViewCollider.cpp">
+      <Filter>ソース ファイル\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Gimmick\FlyBlock.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Gimmick\FlyBlockCollider.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

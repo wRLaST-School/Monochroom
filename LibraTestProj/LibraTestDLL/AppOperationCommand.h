@@ -10,6 +10,8 @@ public:
 	bool PlayerJumpCommand();
 	Vec3 PlayerAngleCommand();
 
+	bool UserDebugStopGameCommand();
+
 
 public:
 	static AppOperationCommand* GetInstance();
