@@ -20,4 +20,9 @@ void GlassCollider::Draw()
 	mBodyCollider.DrawCollider();
 }
 
+OBBCollider GlassCollider::GetBodyCollider()
+{
+	return mBodyCollider;
+}
+
 RegisterScriptBody(GlassCollider);

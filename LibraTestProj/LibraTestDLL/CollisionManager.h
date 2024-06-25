@@ -1,11 +1,12 @@
 #pragma once
 #include "IScriptObject.h"
+#include <SceneManager.h>
 #include <ViewCollider.h>
 #include <PlayerCollider.h>
 #include <BlockCollider.h>
 #include <FlyBlockCollider.h>
 #include <ButtonCollider.h>
-#include <SceneManager.h>
+#include <GlassCollider.h>
 
 class CollisionManager :
 	public IScriptObject
@@ -16,6 +17,7 @@ private:
 	std::vector<BlockCollider*> mBlockColliders;
 	std::vector<FlyBlockCollider*> mFlyBlockColliders;
 	std::vector<ButtonCollider*> mButtonColliders;
+	std::vector<GlassCollider*> mGlassColliders;
 
 private:
 	bool isPlayerTriggerButton;
@@ -28,6 +30,7 @@ private:
 	void RayHitFlyBlocks();
 	void PlayerHitBlocks();
 	void PlayerHitButtons();
+	void PlayerHitGlasses();
 
 public:
 	void Init();
