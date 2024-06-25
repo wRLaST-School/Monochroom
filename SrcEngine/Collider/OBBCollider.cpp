@@ -34,249 +34,153 @@ bool OBBCollider::CheckSeparationAxis(OBBCollider* other, Vec3 axis)
 	return dis <= r1 + r2;
 }
 
-bool OBBCollider::IsTriggerOBB(OBBCollider* other)
+bool OBBCollider::Collide(OBBCollider* other)
 {
-	if (!isActive || !other->isActive)
-	{
-		return false;
-	}
-
-	std::array<Vec3, 15> tempAxes;
-
-	// 各OBBの軸
 	Matrix aRotMat = rot.GetRotMat();
+
+	Vec3 axVecNorm = aRotMat.ExtractAxisX().GetNorm();
+	Vec3 ayVecNorm = aRotMat.ExtractAxisY().GetNorm();
+	Vec3 azVecNorm = aRotMat.ExtractAxisZ().GetNorm();
+
+	Vec3 axVec = axVecNorm * scale.x;
+	Vec3 ayVec = ayVecNorm * scale.y;
+	Vec3 azVec = azVecNorm * scale.z;
+
 	Matrix bRotMat = other->rot.GetRotMat();
-	tempAxes[0] = aRotMat.ExtractAxisX().GetNorm();
-	tempAxes[1] = aRotMat.ExtractAxisY().GetNorm();
-	tempAxes[2] = aRotMat.ExtractAxisZ().GetNorm();
-	tempAxes[3] = bRotMat.ExtractAxisX().GetNorm();
-	tempAxes[4] = bRotMat.ExtractAxisY().GetNorm();
-	tempAxes[5] = bRotMat.ExtractAxisZ().GetNorm();
 
-	// 軸のクロス積
-	int index = 6;
-	for (int i = 0; i < 3; ++i)
-	{
-		for (int j = 0; j < 3; ++j)
-		{
-			tempAxes[index++] = Vec3::Cross(tempAxes[i], tempAxes[j + 3]);
-		}
-	}
+	Vec3 bxVecNorm = bRotMat.ExtractAxisX().GetNorm();
+	Vec3 byVecNorm = bRotMat.ExtractAxisY().GetNorm();
+	Vec3 bzVecNorm = bRotMat.ExtractAxisZ().GetNorm();
 
-	for (auto axis : tempAxes)
-	{
-		if (axis.x == 0 && axis.y == 0 && axis.z == 0)
-		{
-			continue;
-		}
+	Vec3 bxVec = bxVecNorm * other->scale.x;
+	Vec3 byVec = byVecNorm * other->scale.y;
+	Vec3 bzVec = bzVecNorm * other->scale.z;
 
-		if (!CheckSeparationAxis(other, axis))
-		{
-			color = Color::White;
-			other->color = Color::White;
-			return false;
-		}
-	}
+	Vec3 interval = (Vec3)pos - other->pos;
 
-	//分離できないため当たっている
-	color = Color::Red;
-	other->color = Color::Red;
-	return true;
-
-
-
-	//Matrix aRotMat = rot.GetRotMat();
-
-	//Vec3 axVecNorm = aRotMat.ExtractAxisX().GetNorm();
-	//Vec3 ayVecNorm = aRotMat.ExtractAxisY().GetNorm();
-	//Vec3 azVecNorm = aRotMat.ExtractAxisZ().GetNorm();
-
-	//Vec3 axVec = axVecNorm * scale.x;
-	//Vec3 ayVec = ayVecNorm * scale.y;
-	//Vec3 azVec = azVecNorm * scale.z;
-
-	//Matrix bRotMat = other->rot.GetRotMat();
-
-	//Vec3 bxVecNorm = bRotMat.ExtractAxisX().GetNorm();
-	//Vec3 byVecNorm = bRotMat.ExtractAxisY().GetNorm();
-	//Vec3 bzVecNorm = bRotMat.ExtractAxisZ().GetNorm();
-
-	//Vec3 bxVec = bxVecNorm * other->scale.x;
-	//Vec3 byVec = byVecNorm * other->scale.y;
-	//Vec3 bzVec = bzVecNorm * other->scale.z;
-
-	//Vec3 interval = (Vec3)pos - other->pos;
-
-	//color = Color::White;
-	//other->color = Color::White;
-
-	////分離軸Ae1
-	//float rA = scale.x;
-	//float rB = GetSeparateAxisLength(axVecNorm, bxVec, byVec, bzVec);
-	//float l = fabsf(interval.Dot(axVecNorm));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸Ae2
-
-	//rA = scale.y;
-	//rB = GetSeparateAxisLength(ayVecNorm, bxVec, byVec, bzVec);
-	//l = fabsf(interval.Dot(ayVecNorm));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸Ae3
-
-	//rA = scale.z;
-	//rB = GetSeparateAxisLength(azVecNorm, bxVec, byVec, bzVec);
-	//l = fabsf(interval.Dot(azVecNorm));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸Be1
-
-	//rA = GetSeparateAxisLength(bxVecNorm, axVec, ayVec, azVec);
-	//rB = other->scale.x;
-	//l = fabsf(interval.Dot(bxVecNorm));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸Be2
-
-	//rA = GetSeparateAxisLength(byVecNorm, axVec, ayVec, azVec);
-	//rB = other->scale.y;
-	//l = fabsf(interval.Dot(byVecNorm));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸Be3
-
-	//rA = GetSeparateAxisLength(bzVecNorm, axVec, ayVec, azVec);
-	//rB = other->scale.z;
-	//l = fabsf(interval.Dot(bzVecNorm));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸ax bx
-	//Vec3 cross = axVecNorm.Cross(bxVecNorm);
-	//rA = GetSeparateAxisLength(cross, ayVec, azVec);
-	//rB = GetSeparateAxisLength(cross, byVec, bzVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸ax by
-	//cross = axVecNorm.Cross(byVecNorm);
-	//rA = GetSeparateAxisLength(cross, ayVec, azVec);
-	//rB = GetSeparateAxisLength(cross, bxVec, bzVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸ax bz
-	//cross = axVecNorm.Cross(bzVecNorm);
-	//rA = GetSeparateAxisLength(cross, ayVec, azVec);
-	//rB = GetSeparateAxisLength(cross, bxVec, byVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸ay bx
-	//cross = ayVecNorm.Cross(bxVecNorm);
-	//rA = GetSeparateAxisLength(cross, axVec, azVec);
-	//rB = GetSeparateAxisLength(cross, byVec, bzVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸ay by
-	//cross = ayVecNorm.Cross(byVecNorm);
-	//rA = GetSeparateAxisLength(cross, axVec, azVec);
-	//rB = GetSeparateAxisLength(cross, bxVec, bzVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸ay bz
-	//cross = ayVecNorm.Cross(bzVecNorm);
-	//rA = GetSeparateAxisLength(cross, axVec, azVec);
-	//rB = GetSeparateAxisLength(cross, bxVec, byVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸az bx
-	//cross = azVecNorm.Cross(bxVecNorm);
-	//rA = GetSeparateAxisLength(cross, axVec, ayVec);
-	//rB = GetSeparateAxisLength(cross, byVec, bzVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸az by
-	//cross = azVecNorm.Cross(byVecNorm);
-	//rA = GetSeparateAxisLength(cross, axVec, ayVec);
-	//rB = GetSeparateAxisLength(cross, bxVec, bzVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離軸az bz
-	//cross = azVecNorm.Cross(bzVecNorm);
-	//rA = GetSeparateAxisLength(cross, axVec, ayVec);
-	//rB = GetSeparateAxisLength(cross, bxVec, byVec);
-	//l = fabsf(interval.Dot(cross));
-
-	//if (l > rA + rB) return false;
-
-	////分離できないため当たっている
-	//color = Color::Red;
-	//other->color = Color::Red;
-	//return true;
-}
-
-bool OBBCollider::IsTriggerRay(RayCollider* other)
-{
 	color = Color::White;
 	other->color = Color::White;
 
-	float tMin = 0.f;
-	float tMax = other->r.length;
+	//分離軸Ae1
+	float rA = scale.x;
+	float rB = GetSeparateAxisLength(axVecNorm, bxVec, byVec, bzVec);
+	float l = fabsf(interval.Dot(axVecNorm));
 
-	std::array<Vec3, 3> axes;
-	Matrix aRotMat = rot.GetRotMat();
-	axes[0] = aRotMat.ExtractAxisX().GetNorm();
-	axes[1] = aRotMat.ExtractAxisY().GetNorm();
-	axes[2] = aRotMat.ExtractAxisZ().GetNorm();
+	if (l > rA + rB) return false;
 
-	Vec3 p = pos - other->r.origin;
-	for (int i = 0; i < 3; ++i)
-	{
-		float e = axes[i].Dot(p);
-		float f = axes[i].Dot(other->r.ray);
+	//分離軸Ae2
 
-		// レイが平面に平行でない場合
-		if (std::fabs(f) > 0.001f)
-		{
-			float t1 = (e + scale.x * (i == 0) + scale.y * (i == 1) + scale.z * (i == 2)) / f;
-			float t2 = (e - scale.x * (i == 0) - scale.y * (i == 1) - scale.z * (i == 2)) / f;
+	rA = scale.y;
+	rB = GetSeparateAxisLength(ayVecNorm, bxVec, byVec, bzVec);
+	l = fabsf(interval.Dot(ayVecNorm));
 
-			if (t1 > t2) std::swap(t1, t2);
+	if (l > rA + rB) return false;
 
-			tMin = std::max(tMin, t1);
-			tMax = std::min(tMax, t2);
+	//分離軸Ae3
 
-			if (tMin > tMax) return false;
-		}
-		else if (
-			-e - scale.x * (i == 0) - scale.y * (i == 1) - scale.z * (i == 2) > 0.0f ||
-			-e + scale.x * (i == 0) + scale.y * (i == 1) + scale.z * (i == 2) < 0.0f)
-		{
-			return false;
-		}
-	}
+	rA = scale.z;
+	rB = GetSeparateAxisLength(azVecNorm, bxVec, byVec, bzVec);
+	l = fabsf(interval.Dot(azVecNorm));
 
+	if (l > rA + rB) return false;
 
+	//分離軸Be1
+
+	rA = GetSeparateAxisLength(bxVecNorm, axVec, ayVec, azVec);
+	rB = other->scale.x;
+	l = fabsf(interval.Dot(bxVecNorm));
+
+	if (l > rA + rB) return false;
+
+	//分離軸Be2
+
+	rA = GetSeparateAxisLength(byVecNorm, axVec, ayVec, azVec);
+	rB = other->scale.y;
+	l = fabsf(interval.Dot(byVecNorm));
+
+	if (l > rA + rB) return false;
+
+	//分離軸Be3
+
+	rA = GetSeparateAxisLength(bzVecNorm, axVec, ayVec, azVec);
+	rB = other->scale.z;
+	l = fabsf(interval.Dot(bzVecNorm));
+
+	if (l > rA + rB) return false;
+
+	//分離軸ax bx
+	Vec3 cross = axVecNorm.Cross(bxVecNorm);
+	rA = GetSeparateAxisLength(cross, ayVec, azVec);
+	rB = GetSeparateAxisLength(cross, byVec, bzVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸ax by
+	cross = axVecNorm.Cross(byVecNorm);
+	rA = GetSeparateAxisLength(cross, ayVec, azVec);
+	rB = GetSeparateAxisLength(cross, bxVec, bzVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸ax bz
+	cross = axVecNorm.Cross(bzVecNorm);
+	rA = GetSeparateAxisLength(cross, ayVec, azVec);
+	rB = GetSeparateAxisLength(cross, bxVec, byVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸ay bx
+	cross = ayVecNorm.Cross(bxVecNorm);
+	rA = GetSeparateAxisLength(cross, axVec, azVec);
+	rB = GetSeparateAxisLength(cross, byVec, bzVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸ay by
+	cross = ayVecNorm.Cross(byVecNorm);
+	rA = GetSeparateAxisLength(cross, axVec, azVec);
+	rB = GetSeparateAxisLength(cross, bxVec, bzVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸ay bz
+	cross = ayVecNorm.Cross(bzVecNorm);
+	rA = GetSeparateAxisLength(cross, axVec, azVec);
+	rB = GetSeparateAxisLength(cross, bxVec, byVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸az bx
+	cross = azVecNorm.Cross(bxVecNorm);
+	rA = GetSeparateAxisLength(cross, axVec, ayVec);
+	rB = GetSeparateAxisLength(cross, byVec, bzVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸az by
+	cross = azVecNorm.Cross(byVecNorm);
+	rA = GetSeparateAxisLength(cross, axVec, ayVec);
+	rB = GetSeparateAxisLength(cross, bxVec, bzVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離軸az bz
+	cross = azVecNorm.Cross(bzVecNorm);
+	rA = GetSeparateAxisLength(cross, axVec, ayVec);
+	rB = GetSeparateAxisLength(cross, bxVec, byVec);
+	l = fabsf(interval.Dot(cross));
+
+	if (l > rA + rB) return false;
+
+	//分離できないため当たっている
 	color = Color::Red;
 	other->color = Color::Red;
 	return true;
@@ -295,65 +199,6 @@ void OBBCollider::DrawCollider()
 	{
 		LineDrawer::DrawRotaCube(pos, scale, rot, color.f4);
 	}
-}
-
-bool OBBCollider::IsTriggerSphere(SphereCollider* other, Vec3* pushOut)
-{
-	if (!isActive || !other->isActive)
-	{
-		return false;
-	}
-
-	// OBBの中心から球の中心までのベクトル
-	Vec3 diff = other->pos - pos;
-
-	// OBBの中心から球の中心までの最近接点を求める用
-	Vec3 closestPoint = pos;
-
-	// 軸ベクトルを取得
-	Matrix rotMat = rot.GetRotMat();
-
-	Vec3 xAxis = rotMat.ExtractAxisX().GetNorm();
-	Vec3 yAxis = rotMat.ExtractAxisY().GetNorm();
-	Vec3 zAxis = rotMat.ExtractAxisZ().GetNorm();
-
-	float a = Util::Clamp<float>(0, -1, 1);
-	a;
-
-	Vec3 distanceAlongAxes = Vec3(
-		Vec3::Dot(diff, xAxis),
-		Vec3::Dot(diff, yAxis),
-		Vec3::Dot(diff, zAxis));
-	distanceAlongAxes.x = Util::Clamp<float>(distanceAlongAxes.x, -scale.x, scale.x);
-	distanceAlongAxes.y = Util::Clamp<float>(distanceAlongAxes.y, -scale.y, scale.y);
-	distanceAlongAxes.z = Util::Clamp<float>(distanceAlongAxes.z, -scale.z, scale.z);
-
-	closestPoint += xAxis * distanceAlongAxes.x;
-	closestPoint += yAxis * distanceAlongAxes.y;
-	closestPoint += zAxis * distanceAlongAxes.z;
-
-	// 最近接点と球の中心までの距離を計算
-	float squaredDis = (closestPoint - other->pos).GetSquaredLength();
-	float r2 = other->r * other->r;
-
-	// 球の半径の二乗と比較して判定
-	if (squaredDis <= r2)
-	{
-		diff = (closestPoint - other->pos);
-		color = Color::Red;
-		other->color = Color::Red;
-
-		if (pushOut)
-		{
-			*pushOut = -diff.GetNorm() * (other->r - diff.GetLength());
-		}
-
-		return true;
-	}
-
-	color = Color::White;
-	other->color = Color::White;
-	return false;
 }
 
 void OBBCollider::DrawBB(Color color_)

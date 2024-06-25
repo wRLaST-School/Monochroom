@@ -2,6 +2,7 @@
 #include "ICollider.h"
 #include "SphereCollider.h"
 #include "SpMath.h"
+
 class DLLExport RayCollider :
 	public ICollider
 {
@@ -10,7 +11,7 @@ public:
 
 public:
 	RayCollider();
-	bool IsTriggerSphere(SphereCollider* other);
+	//bool IsTrigger(ICollider* other);
 	void Setting(const Vec3 pos, const Vec3 dir, const float length = -1);
 
 public:

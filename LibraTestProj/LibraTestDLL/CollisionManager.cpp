@@ -64,7 +64,7 @@ void CollisionManager::RayHitFlyBlocks()
 	{
 		// レイ
 		auto fbBodyCollider = fbc->GetBodyCollider();
-		if (rayCollider.IsTriggerSphere(&fbBodyCollider))
+		if (rayCollider.IsTrigger(&fbBodyCollider))
 		{
 			ConsoleWindow::Log("Ray Hit FlyBlock");
 		}
@@ -80,14 +80,14 @@ void CollisionManager::PlayerHitBlocks()
 	{
 		// 押し出し
 		Vec3 pushOut = Vec3::zero;
-		if (bc->GetBodyCollider().IsTriggerSphere(&playerBodyCollider, &pushOut))
+		if (bc->GetBodyCollider().IsTrigger(&playerBodyCollider, &pushOut))
 		{
 			//SceneManager::FindObject<Object3D>("Player")->position += pushOut;
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 		}
 
 		// 重力
-		if (bc->GetBodyCollider().IsTriggerOBB(&playerDownCollider))
+		if (bc->GetBodyCollider().IsTrigger(&playerDownCollider))
 		{
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
 
