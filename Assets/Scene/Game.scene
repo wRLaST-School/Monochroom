@@ -18,9 +18,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 1.972533941268921,
-                    "Y": 9.75,
-                    "Z": 41.89824676513672
+                    "X": -0.42392656207084656,
+                    "Y": 11.0,
+                    "Z": 42.48247528076172
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -29,8 +29,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.08079643547534943,
-                    "Y": 1.6231865882873535,
+                    "X": -1.5707963705062866,
+                    "Y": 5.273183822631836,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -110,7 +110,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -2.0,
                             "Y": 8.0,
@@ -157,7 +157,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -20.0,
                             "Y": 8.0,
@@ -204,7 +204,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 12.0,
                             "Y": 8.0,
@@ -251,7 +251,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -2.0,
                             "Y": 4.0,
@@ -298,7 +298,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -20.0,
                             "Y": 4.0,
@@ -345,7 +345,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 4.0,
                             "Y": 4.0,
@@ -392,7 +392,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -14.0,
                             "Y": 4.0,
@@ -439,7 +439,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -2.0,
                             "Y": 4.0,
@@ -486,7 +486,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -20.0,
                             "Y": 4.0,
@@ -533,7 +533,7 @@
                         ],
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -28.0,
                             "Y": 8.0,
@@ -622,7 +622,9 @@
                     "Y": 1.0,
                     "Z": 0.0010000000474974513
                 },
-                "Tags": null,
+                "Tags": [
+                    "Glass"
+                ],
                 "Texture": "white.png",
                 "Type": "Object3D"
             },
@@ -728,8 +730,8 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 0.4229060411453247,
-                    "Y": 9.75,
+                    "X": 0.4229060709476471,
+                    "Y": 11.0,
                     "Z": 41.95061492919922
                 },
                 "Rotation": {
@@ -739,8 +741,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.08079643547534943,
-                    "Y": 1.6231865882873535,
+                    "X": -1.5707963705062866,
+                    "Y": 5.273183822631836,
                     "Z": 0.0
                 },
                 "Scale": {

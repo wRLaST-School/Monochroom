@@ -4,5 +4,6 @@
     "PlayerCamera",
     "Player",
     "FlyBlock",
-    "Button"
+    "Button",
+    "Glass"
 ]

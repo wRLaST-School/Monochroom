@@ -20,6 +20,7 @@
     <ClInclude Include="Camera\FirstPersonCamera.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Gimmick\FlyBlockCollider.h" />
+    <ClInclude Include="Gimmick\GlassCollider.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
     <ClInclude Include="UI\SuperUI.h" />
@@ -43,6 +44,7 @@
     <ClCompile Include="Camera\FirstPersonCamera.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Gimmick\FlyBlockCollider.cpp" />
+    <ClCompile Include="Gimmick\GlassCollider.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
     <ClCompile Include="UI\SuperUI.cpp" />

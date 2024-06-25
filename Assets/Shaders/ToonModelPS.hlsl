@@ -2,7 +2,7 @@
 
 static const float _LightingCutoff = 0.1f;
 static const float _FalloffAmount = 0.1f;
-static const float _Smoothness = 5.0f;
+static const float _Smoothness = 50.f;
 static const float _FresnelSize = 1.0f;
 static const float _FresnelMin = 1.0f;
 static const float _FresnelMax = 1.0f;
@@ -39,7 +39,7 @@ float4 main(VSOutput input) : SV_TARGET
     float3 V = normalize(cameraPos - input.worldpos.xyz);
     float3 H = normalize(V + L);
     float NdotH = dot(N, H);
-    float3 specular = pow(saturate(NdotH), _Smoothness) * diffuse;
+    float3 specular = pow(saturate(NdotH), _Smoothness) * m_specular * diffuse;
 	
 	// Fresnel
     float NdotV = dot(N, V);

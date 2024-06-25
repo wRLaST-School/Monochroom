@@ -1,6 +1,7 @@
 #include "RayCollider.h"
 #include <Collision.h>
 #include <LineDrawer.h>
+#include <GameManager.h>
 using namespace Collision;
 
 RayCollider::RayCollider()
@@ -10,27 +11,6 @@ RayCollider::RayCollider()
 	isActive = true;
 	color = Color::White;
 }
-
-//bool RayCollider::IsTrigger(ICollider* other)
-//{
-//	if (!isActive || !other->isActive)
-//	{
-//		color = Color::White;
-//		other->color = Color::White;
-//		return false;
-//	}
-//
-//	bool result = false;
-//	switch (other->type)
-//	{
-//	case ColliderType::Sphere:
-//		result = RayTriggerSphere(this, dynamic_cast<SphereCollider*>(other));
-//		break;
-//
-//	}
-//
-//	return result;
-//}
 
 void RayCollider::Setting(const Vec3 aPos, const Vec3 aDir, const float aLength)
 {
@@ -48,9 +28,12 @@ void RayCollider::Setting(const Vec3 aPos, const Vec3 aDir, const float aLength)
 
 void RayCollider::DrawCollider()
 {
-	Vec3 start = r.origin;
-	Vec3 end = start + r.ray.GetNorm() * r.length;
-	LineDrawer::DrawLine(start, end, color);
+	if (GameManager::sShowHitBoxes)
+	{
+		Vec3 start = r.origin;
+		Vec3 end = start + r.ray.GetNorm() * r.length;
+		LineDrawer::DrawLine(start, end, color);
+	}
 }
 
 bool RayCollider::Collide(const SphereCollider& other) const
