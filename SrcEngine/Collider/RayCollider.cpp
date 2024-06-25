@@ -11,7 +11,52 @@ RayCollider::RayCollider()
 
 bool RayCollider::IsTriggerSphere(SphereCollider* other)
 {
-	other;
+	if (!isActive || !other->isActive)
+	{
+		color = Color::White;
+		other->color = Color::White;
+		return false;
+	}
+
+	// レイの起点から球の中心へのベクトル
+	Vec3 oc = r.origin - other->pos;
+
+	// レイの方向ベクトルの長さの二乗
+	float rayDirDot = r.ray.Dot(r.ray);
+
+	// 2倍のレイの方向ベクトルとocのドット積
+	float raySphereDot = 2.0f * oc.Dot(r.ray);
+
+	// ocの長さの二乗から球の半径の二乗を引いた値
+	float diff = oc.Dot(oc) - other->r * other->r;
+
+	// 判別式
+	float discriminant = raySphereDot * raySphereDot - 4 * rayDirDot * diff;
+
+	// 判別式が0以上なら交差している可能性がある
+	if (discriminant < 0)
+	{
+		color = Color::White;
+		other->color = Color::White;
+		return false;
+	}
+
+	// 判別式が0以上の場合、2つの解を求める
+	float sqrtDiscriminant = sqrt(discriminant);
+	float t1 = (-raySphereDot - sqrtDiscriminant) / (2.0f * rayDirDot);
+	float t2 = (-raySphereDot + sqrtDiscriminant) / (2.0f * rayDirDot);
+
+	// tがレイの長さの範囲内にあるかどうかを確認する
+	if ((t1 >= 0 && t1 <= r.length) || 
+		(t2 >= 0 && t2 <= r.length)) 
+	{
+		color = Color::Red;
+		other->color = Color::Red;
+		return true;
+	}
+
+	color = Color::White;
+	other->color = Color::White;
 	return false;
 }
 

@@ -63,7 +63,8 @@ void CollisionManager::RayHitFlyBlocks()
 	for (const auto& fbc : mFlyBlockColliders)
 	{
 		// レイ
-		if (rayCollider.Collide(fbc->GetBodyCollider()))
+		auto fbBodyCollider = fbc->GetBodyCollider();
+		if (rayCollider.IsTriggerSphere(&fbBodyCollider))
 		{
 			ConsoleWindow::Log("Ray Hit FlyBlock");
 		}
