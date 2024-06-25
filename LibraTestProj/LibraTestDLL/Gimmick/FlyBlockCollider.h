@@ -2,6 +2,7 @@
 #include "IScriptObject.h"
 #include <Object3D.h>
 #include <SphereCollider.h>
+#include <OBBCollider.h>
 
 class FlyBlockCollider :
     public IScriptObject
@@ -9,6 +10,7 @@ class FlyBlockCollider :
 private:
     Object3D* mObj;
     SphereCollider mBodyCollider;
+    OBBCollider mDownCollider;
 
 public:
     void Init();
@@ -20,6 +22,7 @@ public:
 
 public:
     SphereCollider GetBodyCollider();
+    OBBCollider GetDownCollider();
 };
 
 RegisterScript(FlyBlockCollider);
