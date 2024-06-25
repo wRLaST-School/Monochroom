@@ -593,6 +593,7 @@ void Object3D::CopyComponent(IComponent* src)
 	model = cast->model;
 	distanceToCam = cast->distanceToCam;
 	alphaTexKey = cast->alphaTexKey;
+	tags = cast->tags;
 
 	UpdateMatrix();
 }
