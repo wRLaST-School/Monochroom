@@ -516,6 +516,9 @@
     <ClCompile Include="TagWindow.cpp">
       <Filter>Engine\ソースファイル\SceneEditor</Filter>
     </ClCompile>
+    <ClCompile Include="SrcEngine\Collider\Collision.cpp">
+      <Filter>Engine\ソースファイル\Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\Others\Essentials.h">
@@ -868,6 +871,9 @@
     </ClInclude>
     <ClInclude Include="TagWindow.h">
       <Filter>Engine\ヘッダーファイル\SceneEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="SrcEngine\Collider\Collision.h">
+      <Filter>Engine\ヘッダーファイル\Collider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

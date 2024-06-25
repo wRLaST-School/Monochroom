@@ -6,13 +6,14 @@
 
 void FirstPersonCamera::Init()
 {
-	parentObj = This()->Parent()->CastTo<Object3D>();
 }
 
 void FirstPersonCamera::Update()
 {
+	parentObj = This()->Parent()->CastTo<Object3D>();
+
 	player = SceneManager::FindObject<Object3D>("Player");
-	if (!player)
+	if (!player || !parentObj)
 	{
 		OutputDebugStringA("Player NULL");
 		return;

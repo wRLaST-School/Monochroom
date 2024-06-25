@@ -1,13 +1,16 @@
 #include "PlayerControl.h"
 #include <Input.h>
 #include <ScriptComponent.h>
-#include "AppOperationCommand.h"
+#include <AppOperationCommand.h>
+#include <GameManager.h>
+#include <ConsoleWindow.h>
 
 using namespace Input;
 
 void PlayerControl::Init()
 {
 	parent_ = This()->Parent()->CastTo<Object3D>();
+	mGravity = std::make_unique<Gravity>();
 	//parent_->rotationE.z = 180.0f;
 }
 
@@ -22,15 +25,7 @@ void PlayerControl::Jump()
 
 void PlayerControl::JumpUpdate()
 {
-	//とりあえず仮で
-	if (parent_->position.y < 0.0f)
-	{
-		parent_->position.y = 0;
-		isJump_ = false;
-		gravityAccel_ = 0;
-		moveVec_.y = 0;
-	}
-	else if (isJump_)
+	if (isJump_)
 	{
 		gravityAccel_ += GRAVITY;
 
@@ -106,11 +101,20 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
+	if (GameManager::GetInstance()->GetisStop())
+	{
+		return;
+	}
+	ConsoleWindow::Log(std::format("PlayerControl::isStop : {}", GameManager::GetInstance()->GetisStop()));
+
+
 	//ジャンプ
 	if (AppOperationCommand::GetInstance()->PlayerJumpCommand() && !isJump_)
 	{
 		Jump();
 	}
+
+	moveVec_ += mGravity->CalcGravity();
 
 	//ジャンプ更新
 	JumpUpdate();
@@ -130,6 +134,16 @@ void PlayerControl::Draw()
 void PlayerControl::CopyComponent(IComponent* src)
 {
 
+}
+
+void PlayerControl::GravityToZero()
+{
+	if (moveVec_.y <= 0.0f)
+	{
+		isJump_ = false;
+		gravityAccel_ = 0;
+		moveVec_.y = 0;
+	}
 }
 
 RegisterScriptBody(PlayerControl);
