@@ -31,8 +31,6 @@ void RayCollider::Setting(const Vec3 aPos, const Vec3 aDir, const float aLength)
 
 void RayCollider::DrawCollider()
 {
-	//std::numeric_limits<float>::max();
-
 	Vec3 start = r.origin;
 	Vec3 end = start + r.ray.GetNorm() * r.length;
 	LineDrawer::DrawLine(start, end, color);

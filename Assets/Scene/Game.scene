@@ -45,7 +45,14 @@
                 "UseQuaternionRot": 0
             },
             {
+                "Active": true,
                 "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
                 "Model": "cube.obj",
                 "Name": "yuka",
                 "NormalType": 0,
@@ -75,10 +82,24 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
                 "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
                 "Children": [
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -118,7 +139,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -158,7 +186,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -198,7 +233,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -238,7 +280,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -278,7 +327,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -318,7 +374,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -358,7 +421,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -398,7 +468,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -438,7 +515,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "BlockCollider",
@@ -506,7 +590,14 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
                 "BlendMode": 2,
+                "Brightness": {
+                    "W": 0.4117647111415863,
+                    "X": 0.5239635705947876,
+                    "Y": 0.7799227833747864,
+                    "Z": 0.7591692805290222
+                },
                 "Model": "Cube",
                 "Name": "Glass",
                 "NormalType": 0,
@@ -536,10 +627,24 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
                 "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
                 "Children": [
                     {
+                        "Active": false,
                         "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Model": "Goggles.obj",
                         "Name": "Goggles",
                         "NormalType": 0,
@@ -569,7 +674,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": false,
                         "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Model": "cube.obj",
                         "Name": "Debug Cube",
                         "NormalType": 0,
@@ -643,7 +755,14 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
                 "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
                 "Children": [
                     {
                         "Name": "FlyBlockCollider",

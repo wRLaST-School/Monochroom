@@ -465,7 +465,7 @@ void Object3D::DrawGizmo()
 		mat = matLocal;
 	}
 
-	
+
 	ImGuizmo::Manipulate(reinterpret_cast<float*>(&view),
 		reinterpret_cast<float*>(&proj), mCurrentGizmoOperation, mCurrentGizmoMode, &mat[0][0], NULL, snap);
 
@@ -489,6 +489,10 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	{
 		name_ = jsonObject["Name"];
 	}
+	if (jsonObject.contains("Active"))
+	{
+		active = jsonObject["Active"];
+	}
 
 	position.x = jsonObject["Position"]["X"];
 	position.y = jsonObject["Position"]["Y"];
@@ -506,6 +510,14 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	rotationE.x = jsonObject["RotationEuler"]["X"];
 	rotationE.y = jsonObject["RotationEuler"]["Y"];
 	rotationE.z = jsonObject["RotationEuler"]["Z"];
+
+	if (jsonObject.contains("Brightness"))
+	{
+		brightnessCB.contents->x = jsonObject["Brightness"]["X"];
+		brightnessCB.contents->y = jsonObject["Brightness"]["Y"];
+		brightnessCB.contents->z = jsonObject["Brightness"]["Z"];
+		brightnessCB.contents->w = jsonObject["Brightness"]["W"];
+	}
 
 	texture = jsonObject["Texture"];
 	std::string modelStr = jsonObject.At("Model");
@@ -527,6 +539,7 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 {
 	jsonObject["Name"] = name_;
+	jsonObject["Active"] = active;
 
 	jsonObject["Position"]["X"] = position.x;
 	jsonObject["Position"]["Y"] = position.y;
@@ -544,6 +557,11 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	jsonObject["RotationEuler"]["X"] = rotationE.x;
 	jsonObject["RotationEuler"]["Y"] = rotationE.y;
 	jsonObject["RotationEuler"]["Z"] = rotationE.z;
+
+	jsonObject["Brightness"]["X"] = brightnessCB.contents->x;
+	jsonObject["Brightness"]["Y"] = brightnessCB.contents->y;
+	jsonObject["Brightness"]["Z"] = brightnessCB.contents->z;
+	jsonObject["Brightness"]["W"] = brightnessCB.contents->w;
 
 	jsonObject["Texture"] = texture;
 
