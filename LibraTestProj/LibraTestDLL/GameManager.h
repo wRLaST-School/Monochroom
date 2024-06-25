@@ -22,6 +22,9 @@ public:
 	Object3D* GetPlayer();
 	bool GetisStop();
 
+	// ゲーム一時停止の設定
+	void SetIsStop(bool IsStop);
+
 	static GameManager* GetInstance();
 };
 

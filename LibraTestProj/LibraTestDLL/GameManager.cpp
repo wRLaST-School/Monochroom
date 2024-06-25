@@ -39,6 +39,11 @@ bool GameManager::GetisStop()
 	return isStop;
 }
 
+void GameManager::SetIsStop(bool IsStop)
+{
+	isStop = IsStop;
+}
+
 GameManager* GameManager::GetInstance()
 {
 	static GameManager* instance = SceneManager::FindObject<GameManager>("GameManager");;

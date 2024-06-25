@@ -303,7 +303,7 @@ void TextDrawer::DrawString(string str, int32_t x, int32_t y, Align alignment, C
 		break;
 	}
 
-	SpDS::DrawRotaGraph((int32_t)spr->pos.x, (int32_t)spr->pos.y,
+	SpDS::DrawRotaGraph(spr->pos.x, spr->pos.y,
 		spr->scale.x, spr->scale.y, 0.f, spr->key, Anchor::Center, color);
 
 	GetInstance()->releaseQueue.push_back(strData.key);
