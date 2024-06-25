@@ -48,8 +48,17 @@ private:// クラス内構造体
         // 現在のカラー
         Color correntColor;
 
+        // 現在のボタンカラー
+        Color buttonColor;
+
+        // 現在ンのメニュー内部のテキストカラー
+        Color textCurrentColor;
+
         // 今アクティブ状態かどうか
         bool IsActiveMenu;
+
+        // メニューを選択後に文字が徐々の演出フラグ
+        bool IsPressedAlpha;
 
         // タイミングがずれた時
         bool IsTimingOff;
@@ -73,6 +82,15 @@ private:
     // UIの項目の更新処理
     void UIOptionsUpdate();
 
+    // カメラメニューの描画
+    void CameraMenuDraw();
+
+    // ガイドメニューの描画
+    void GuidMenuDraw();
+
+    // 戻るメニューの描画
+    void QuitMenuDraw();
+
 private:// メンバー変数
 
     // UIメニューを開くかどうか
@@ -92,6 +110,7 @@ private:// メンバー変数
 
     // イージング
     std::vector<Easing> mEaseUIMenu;
+    Easing mTextAlphaEase;
 
     // UIの項目数
     int32_t mNumOfUIOption;
@@ -121,6 +140,26 @@ private:// メンバー変数
     Color mDesabledColor;
     Color mSelectColor;
     Color mPressedColor;
+
+    Color mDesabledTextColor;
+    Color mSelectTextColor;
+    Color mPressedTextColor;
+
+    // UIのメニューテキストのパラメータ
+    Vec2 mUIMenuTextPos;
+    Vec2 mUIMenuTexScale;
+
+    // UIのボードのパラメータ
+    Vec2 mUIBoardPos;
+    Vec2 mUIBoardScale;
+    Color mUIBoardCurrentColor;
+
+    // UIのメニュー内部のテキストの色
+    Color mUITextBeforeColor;
+    Color mUITextAfterColor;
+
+    // UIのメニュー内部のテキストパラメータ
+    Vec2 mUITextBasePos;
 
     // UIのオプション項目
     Object3D* mUIOptionParentObj;
