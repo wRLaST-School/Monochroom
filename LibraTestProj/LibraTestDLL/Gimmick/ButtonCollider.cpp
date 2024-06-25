@@ -6,9 +6,9 @@ void ButtonCollider::Init()
 {
 	mObj = This()->Parent()->CastTo<Object3D>();
 	bodyColliderPos = Vec3(0.f,0.125f,0.f);
-	FrameColliderPos = Vec3(1.5f, 0.75f, 1.5f);
+	FrameColliderPos = Vec3(0.f, 0., 0.f);
 
-	bodyColliderScale = Vec3(0.f, -0.625f, 0.f);
+	bodyColliderScale = Vec3(1.5f, 0.75f, 1.5f);
 	FrameColliderScale = Vec3(2.f, 0.375f, 2.f);
 }
 

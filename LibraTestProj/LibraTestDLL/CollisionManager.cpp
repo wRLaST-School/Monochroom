@@ -14,6 +14,8 @@ void CollisionManager::Init()
 	mBlockColliders = FindColliderList<BlockCollider>("Block", "BlockCollider");
 	mFlyBlockColliders = FindColliderList<FlyBlockCollider>("FlyBlock", "FlyBlockCollider");
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
+
+	isPlayerTriggerButton = false;
 }
 
 void CollisionManager::Update()
@@ -27,11 +29,11 @@ void CollisionManager::Update()
 	// レイと飛んでくるブロック
 	RayHitFlyBlocks();
 
-	// プレイヤーとブロック
-	PlayerHitBlocks();
-
 	// プレイヤーとボタン
 	PlayerHitButtons();
+
+	// プレイヤーとブロック
+	PlayerHitBlocks();
 }
 
 void CollisionManager::RayHitFlyBlocks()
@@ -40,8 +42,6 @@ void CollisionManager::RayHitFlyBlocks()
 	{
 		return;
 	}
-
-	ConsoleWindow::Log(std::format("mFlyBlockColliders Size : {}", mFlyBlockColliders.size()));
 
 	auto rayCollider = mViewCollider->GetRayCollider();
 	for (const auto& fbc : mFlyBlockColliders)
@@ -70,6 +70,11 @@ void CollisionManager::PlayerHitBlocks()
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 		}
 
+		if (isPlayerTriggerButton)
+		{
+			continue;
+		}
+
 		// 重力
 		if (bc->GetBodyCollider().IsTrigger(&playerDownCollider))
 		{
@@ -88,6 +93,7 @@ void CollisionManager::PlayerHitBlocks()
 void CollisionManager::PlayerHitButtons()
 {
 	auto playerDownCollider = mPlayerCollider->GetDownCollider();
+	ConsoleWindow::Log(std::format("ButtonColliders Size : {}", mButtonColliders.size()));
 
 	for (const auto& bc : mButtonColliders)
 	{
@@ -97,11 +103,30 @@ void CollisionManager::PlayerHitButtons()
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
 
 			float posY = bc->GetBodyCollider().pos.y;
-			float offsetY = bc->GetBodyCollider().scale.y + player->scale.y;
+			float offsetY = bc->GetBodyCollider().scale.y + player->scale.y * 2;
 			player->position.y = posY + offsetY;
 
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
+
+			isPlayerTriggerButton = true;
+
+			ConsoleWindow::Log("Hit Body");
+		}
+		else if (bc->GetFrameCollider().IsTrigger(&playerDownCollider))
+		{
+			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+
+			float posY = bc->GetFrameCollider().pos.y;
+			float offsetY = bc->GetFrameCollider().scale.y + player->scale.y * 2;
+			player->position.y = posY + offsetY;
+
+			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
+			playerControl->GravityToZero();
+
+			isPlayerTriggerButton = true;
+
+			ConsoleWindow::Log("Hit Frame");
 		}
 	}
 }

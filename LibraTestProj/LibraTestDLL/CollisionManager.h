@@ -18,6 +18,9 @@ private:
 	std::vector<ButtonCollider*> mButtonColliders;
 
 private:
+	bool isPlayerTriggerButton;
+
+private:
 	template<typename T>
 	inline std::vector<T*> FindColliderList(const std::string& objectTag, const std::string& scriptTag);
 
