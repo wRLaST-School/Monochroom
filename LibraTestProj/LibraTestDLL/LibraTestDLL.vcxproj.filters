@@ -105,6 +105,9 @@
     <ClInclude Include="Gimmick\FlyBlockCollider.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="Gimmick\ButtonCollider.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -162,6 +165,9 @@
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="Gimmick\FlyBlockCollider.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Gimmick\ButtonCollider.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>

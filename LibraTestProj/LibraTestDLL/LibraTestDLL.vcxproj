@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="Gimmick\ButtonCollider.h" />
     <ClInclude Include="Gimmick\FlyBlock.h" />
     <ClInclude Include="Gimmick\BlockCollider.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -35,6 +36,7 @@
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="Gimmick\ButtonCollider.cpp" />
     <ClCompile Include="Gimmick\FlyBlock.cpp" />
     <ClCompile Include="Gimmick\BlockCollider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />

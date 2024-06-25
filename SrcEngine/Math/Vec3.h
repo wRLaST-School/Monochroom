@@ -2,7 +2,7 @@
 /*****************************************************************//**
  * @file   Vec3.h
  * @brief  3次元ベクトルのヘッダー
- * 
+ *
  * @author Wrelf
  *********************************************************************/
 #include <vector>
@@ -90,6 +90,8 @@ public:
 
 	Vec3 ClampMin(Vec3 min);
 	Vec3 ClampMax(Vec3 max);
+
+	static Vec3 Mul(Vec3 v1, Vec3 v2);
 
 	operator Float3() const;
 	operator Vec2() const;

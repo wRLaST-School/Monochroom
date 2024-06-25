@@ -240,6 +240,11 @@ Vec3 Vec3::ClampMax(Vec3 max)
 	return Vec3(Util::ClampMax(x, max.x), Util::ClampMax(y, max.y), Util::ClampMax(z, max.z));
 }
 
+Vec3 Vec3::Mul(Vec3 v1, Vec3 v2)
+{
+	return Vec3(v1.x * v2.x, v1.y * v2.y, v1.z * v2.z);
+}
+
 float Vec3::GetLength() const
 {
 	return sqrtf(this->GetSquaredLength());

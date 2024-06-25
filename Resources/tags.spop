@@ -3,5 +3,6 @@
     "Block",
     "PlayerCamera",
     "Player",
-    "FlyBlock"
+    "FlyBlock",
+    "Button"
 ]

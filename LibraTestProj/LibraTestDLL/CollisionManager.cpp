@@ -1,5 +1,4 @@
 #include "CollisionManager.h"
-#include <SceneManager.h>
 #include <ConsoleWindow.h>
 #include <GameManager.h>
 #include <PlayerControl.h>
@@ -12,22 +11,9 @@ void CollisionManager::Init()
 	auto player = SceneManager::FindObject<Object3D>("Player");
 	mPlayerCollider = SceneManager::FindChildObject<PlayerCollider>("PlayerCollider", player);
 
-	mBlockColliders.clear();
-	auto objs = SceneManager::FindObjectsWithTag<Object3D>("Block");
-	for (const auto& obj : objs)
-	{
-		auto collider = SceneManager::FindChildObject<BlockCollider>("BlockCollider", obj);
-		mBlockColliders.push_back(collider);
-	}
-
-	mFlyBlockColliders.clear();
-	objs.clear();
-	objs = SceneManager::FindObjectsWithTag<Object3D>("FlyBlock");
-	for (const auto& obj : objs)
-	{
-		auto collider = SceneManager::FindChildObject<FlyBlockCollider>("FlyBlockCollider", obj);
-		mFlyBlockColliders.push_back(collider);
-	}
+	mBlockColliders = FindColliderList<BlockCollider>("Block", "BlockCollider");
+	mFlyBlockColliders = FindColliderList<FlyBlockCollider>("FlyBlock", "FlyBlockCollider");
+	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 }
 
 void CollisionManager::Update()
@@ -43,11 +29,9 @@ void CollisionManager::Update()
 
 	// プレイヤーとブロック
 	PlayerHitBlocks();
-}
 
-void CollisionManager::Draw()
-{
-
+	// プレイヤーとボタン
+	PlayerHitButtons();
 }
 
 void CollisionManager::RayHitFlyBlocks()
@@ -86,6 +70,27 @@ void CollisionManager::PlayerHitBlocks()
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 		}
 
+		// 重力
+		if (bc->GetBodyCollider().IsTrigger(&playerDownCollider))
+		{
+			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+
+			float posY = bc->GetBodyCollider().pos.y;
+			float offsetY = bc->GetBodyCollider().scale.y + player->scale.y;
+			player->position.y = posY + offsetY;
+
+			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
+			playerControl->GravityToZero();
+		}
+	}
+}
+
+void CollisionManager::PlayerHitButtons()
+{
+	auto playerDownCollider = mPlayerCollider->GetDownCollider();
+
+	for (const auto& bc : mButtonColliders)
+	{
 		// 重力
 		if (bc->GetBodyCollider().IsTrigger(&playerDownCollider))
 		{
