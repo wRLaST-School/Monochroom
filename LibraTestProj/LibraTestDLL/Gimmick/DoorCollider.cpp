@@ -15,17 +15,6 @@ void DoorCollider::Init()
 
 void DoorCollider::Update()
 {
-	if (mLeft == nullptr)
-	{
-		ConsoleWindow::Log("Left is Null");
-	}
-	if (mRight == nullptr)
-	{
-		ConsoleWindow::Log("Right is Null");
-	}
-
-	//return;
-
 	Vec3 leftWorldPos = mLeft->matWorld.ExtractTranslation();
 	Vec3 rightWorldPos = mRight->matWorld.ExtractTranslation();
 

@@ -15,9 +15,6 @@ void CollisionManager::Init()
 	mFlyBlockColliders = FindColliderList<FlyBlockCollider>("FlyBlock", "FlyBlockCollider");
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
-
-	isPlayerDownHit = false;
-	isPlayerTriggerButton = false;
 }
 
 void CollisionManager::Update()
@@ -31,19 +28,17 @@ void CollisionManager::Update()
 	// レイと飛んでくるブロック
 	RayHitFlyBlocks();
 
-	// プレイヤーとボタン
-	PlayerHitButtons();
-
 	// プレイヤーとブロック
 	PlayerHitBlocks();
+
+	// プレイヤーとボタン
+	PlayerHitButtons();
 
 	// プレイヤーとガラス
 	PlayerHitGlasses();
 
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
-
-	ConsoleWindow::Log("CollisionManager");
 }
 
 void CollisionManager::RayHitFlyBlocks()
@@ -76,13 +71,7 @@ void CollisionManager::PlayerHitBlocks()
 		Vec3 pushOut = Vec3::zero;
 		if (bc->GetBodyCollider().IsTrigger(&playerBodyCollider, &pushOut))
 		{
-			//SceneManager::FindObject<Object3D>("Player")->position += pushOut;
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
-		}
-
-		if (isPlayerTriggerButton)
-		{
-			continue;
 		}
 
 		// 重力
@@ -121,10 +110,6 @@ void CollisionManager::PlayerHitButtons()
 
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
-
-			isPlayerTriggerButton = true;
-
-			ConsoleWindow::Log("Hit Body");
 		}
 		else if (bc->GetFrameCollider().IsTrigger(&playerDownCollider))
 		{
@@ -136,10 +121,6 @@ void CollisionManager::PlayerHitButtons()
 
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
-
-			isPlayerTriggerButton = true;
-
-			ConsoleWindow::Log("Hit Frame");
 		}
 	}
 }
