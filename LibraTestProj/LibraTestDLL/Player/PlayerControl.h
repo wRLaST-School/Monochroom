@@ -10,7 +10,7 @@ class PlayerControl :
 private:
 	std::unique_ptr<Gravity> mGravity;
 
-	const Vec3 JUMP_POWER = { 0,0.43f,0 };
+	const Vec3 JUMP_POWER = { 0,0.056f,0 };
 
 	bool isJump_ = false;
 	Vec3 moveVec_ = { 0,0,0 };
@@ -27,6 +27,8 @@ private:
 	Vec2 oldMousePos_ = { 0,0 };
 
 	Object3D* parent_ = nullptr;
+
+	Vec2 mMouseSensitivity;
 
 private:
 	void Jump();
@@ -46,6 +48,10 @@ public:
 	DefDel;
 
 public:
+	// マウスの感度取得や設定
+	Vec2 GetMouseSensitivity();
+	void SetMouseSensitivity(Vec2 mouseSensitivity);
+
 	void GravityToZero();
 	Gravity* GetGravity();
 };
