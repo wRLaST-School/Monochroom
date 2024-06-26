@@ -16,6 +16,7 @@ void CollisionManager::Init()
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
 
+	isPlayerDownHit = false;
 	isPlayerTriggerButton = false;
 }
 
@@ -41,6 +42,8 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
+
+	ConsoleWindow::Log("CollisionManager");
 }
 
 void CollisionManager::RayHitFlyBlocks()
