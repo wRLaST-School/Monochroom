@@ -150,12 +150,12 @@ protected:
 
 	bool active = true;
 
+	eastl::list<std::string> tags;
+
 	DLLExport IComponent* GetScriptBody();
 
 private:
 	IComponent* parent_ = nullptr;
-
-	eastl::list<std::string> tags;
 
 	std::optional<std::string> addingTag;
 

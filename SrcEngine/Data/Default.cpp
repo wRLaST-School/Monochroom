@@ -15,9 +15,4 @@ void Default::Draw()
 
 }
 
-void Default::CopyComponent(IComponent* src)
-{
-
-}
-
 RegisterScriptBody(Default);

@@ -29,8 +29,13 @@ Vec3 AppOperationCommand::PlayerAngleCommand()
 	return Vec3(mouseMove.x, mouseMove.y,0);
 }
 
+bool AppOperationCommand::UserDebugStopGameCommand()
+{
+	return Key::Triggered(DIK_F5);
+}
+
 AppOperationCommand* AppOperationCommand::GetInstance()
 {
-	AppOperationCommand instance;
+	static AppOperationCommand instance;
 	return &instance;
 }

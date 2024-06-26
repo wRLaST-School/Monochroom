@@ -190,9 +190,9 @@ Quaternion Quaternion::EulerToQuaternion(const Float3& xyz)
 	return Quaternion(
 		rollCos * pitchCos * yawCos + rollSin * pitchSin * yawSin,
 		Vec3(
-			rollSin * pitchCos * yawCos - rollCos * pitchSin * yawSin,
 			rollCos * pitchSin * yawCos + rollSin * pitchCos * yawSin,
-			rollCos * pitchCos * yawSin - rollSin * pitchSin * yawCos
+			rollCos * pitchCos * yawSin - rollSin * pitchSin * yawCos,
+			rollSin * pitchCos * yawCos - rollCos * pitchSin * yawSin
 		)
 	);
 }

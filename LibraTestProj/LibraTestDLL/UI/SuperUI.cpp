@@ -6,6 +6,7 @@
 #include <SceneManager.h>
 #include <Input.h>
 #include <ConsoleWindow.h>
+#include "GameManager.h"
 
 void SuperUI::Init()
 {
@@ -23,67 +24,133 @@ void SuperUI::Init()
 	mUiOptionItemBasePos = { Util::GetWinHalfSize().x,300 };
 
 	// UIのオプションの項目数
-	mNumOfUIOption = 5;
+	mNumOfUIOption = 3;
 
 	// UIのスケールの変化量の初期設定
 	mUIStatus.resize(mNumOfUIOption);
 	mEaseUIMenu.resize(mNumOfUIOption);
 
+	mUICommonBasePos = 480;
+	mUICommonSpacePos = 100;
+
+	mUICurrentNum = 0;
+
+	mUIDesabledScale = { 0.7f ,0.5f};
+	mUISelectScale = { 0.8f ,0.6f };
+
+	mDesabledColor = { 80,80,150 };
+	mSelectColor = { 100,100,200 };
+	mPressedColor = { 150,225,255 };
+
+	mDesabledTextColor = {215,215,215};
+	mSelectTextColor = { 255,255,255 };
+	mPressedTextColor = { 255,255,255 };
+
+	mUITextBeforeColor = { 215,215,215,0 };
+	mUITextAfterColor = { 245,245,245,255 };
+
+	mUIMenuTextPos = { 160,360 };
+	mUIMenuTexScale = { 0.5f,0.4f };
+
+	mUIBoardPos = { 940,400 };
+	mUIBoardScale = { 2.4f,4.4f };
+
+	mUITextBasePos = { 620,150 };
+	mUIBoardCurrentColor = mDesabledColor;
+
 	// UIオプションの座標を設定
 	for (size_t i = 0; i < mNumOfUIOption; i++)
 	{
-		mUIStatus[i].basePos.x = 100 * i;
-		mUIStatus[i].basePos.y = 150;
+		mUIStatus[i].afterBasePos.x = 200;
+		mUIStatus[i].afterBasePos.y = mUICommonBasePos + (mUICommonSpacePos * i);
+		mUIStatus[i].beforePos.x = -300;
+		mUIStatus[i].beforePos.y = mUICommonBasePos + (mUICommonSpacePos * i);
+		mUIStatus[i].scaleChangeValue = mUIDesabledScale;
+		mUIStatus[i].textCurrentColor = mUITextBeforeColor;
 	}
 
-	for (size_t i = 0; i < mEaseUIMenu.size(); i++)
+	for (size_t i = 0; i < mNumOfUIOption; i++)
 	{
-		mEaseUIMenu[i].SetEaseTimer(90);
+		mEaseUIMenu[i].SetEaseTimer(30);
+		mEaseUIMenu[i].Reset();
 	}
+
+	mTextAlphaEase.SetEaseTimer(25);
+
+	//Input::Mouse::HideCursor();
 }
 
 void SuperUI::Update()
 {
 	
 	// もしTABキーを押したらメニューを開け閉めする
-	if (Input::Key::Triggered(DIK_TAB)) {
+	if (Input::Key::Triggered(DIK_TAB)) 
+	{
 		ConsoleWindow::Log("TAB押された。");
-		if (mIsMomentOpenMenu) {
+		if (mIsDisplayUI) 
+		{
+			GameManager::GetInstance()->SetIsStop(false);
 			mIsOpenUIMenu = false;
 			mIsMomentOpenMenu = false;
 			mIsDisplayUI = false;
 			ResetOption();
+			//Input::Mouse::HideCursor();
 			ConsoleWindow::Log("メニューを閉じた");
 		}
-		else {
+		else 
+		{
+			GameManager::GetInstance()->SetIsStop(true);
 			mIsMomentOpenMenu = true;
 			mIsDisplayUI = true;
+
+			//if (Input::Mouse::GetShowCursor() == false) {
+			//	//Input::Mouse::ShowCursorM();
+			//}
 			ConsoleWindow::Log("メニューを開いた");
 		}
 	}
 
 	// メニューが開いた瞬間 
-	if (mIsMomentOpenMenu) {
+	if (mIsMomentOpenMenu) 
+	{
 		MomentMenuReset();
 	}
 
 	// メニューがオンになったら
-	if (mIsOpenUIMenu) {
-		
+	if (mIsOpenUIMenu) 
+	{
+		UIOptionsUpdate();
 	}
 
 }
 
 void SuperUI::Draw()
 {
-	SpDS::DrawRotaGraph(100, 100, 1, 1, 0, "testTex");
+	//SpDS::DrawRotaGraph(100, 100, 1, 1, 0, "testTex");
 
-	if (mIsDisplayUI) {
+	if (mIsDisplayUI) 
+	{
 		for (size_t i = 0; i < mNumOfUIOption; i++)
 		{
-			SpDS::DrawRotaGraph(mUIStatus[i].basePos.x, mUIStatus[i].basePos.y,
-				mUIStatus[i].scaleChangeValue.x, mUIStatus[i].scaleChangeValue.y, 0, "testTex");
+			SpDS::DrawRotaGraph(mUIStatus[i].posChangeValue.x, mUIStatus[i].posChangeValue.y,
+								mUIStatus[i].scaleChangeValue.x, mUIStatus[i].scaleChangeValue.y, 0, "buttonBackTex",
+								Anchor::Center, mUIStatus[i].buttonColor);
+
 		}
+
+		SpDS::DrawRotaGraph(mUIBoardPos.x, mUIBoardPos.y,
+			mUIBoardScale.x, mUIBoardScale.y, 0, "buttonBackTex",Anchor::Center, mUIBoardCurrentColor);
+
+		SpDS::DrawRotaGraph(mUIMenuTextPos.x, mUIMenuTextPos.y, mUIMenuTexScale.x, mUIMenuTexScale.y, 0, "buttonBackTex",
+			Anchor::Center, mDesabledColor);
+
+		SpDS::DrawRotaGraph(mUIMenuTextPos.x, mUIMenuTextPos.y, mUIMenuTexScale.x, mUIMenuTexScale.y, 0, "menuTextTex",
+			Anchor::Center, mSelectTextColor);
+
+		CameraMenuDraw();
+		GuidMenuDraw();
+		QuitMenuDraw();
+
 	}
 }
 
@@ -94,7 +161,12 @@ void SuperUI::CopyComponent(IComponent* src)
 
 void SuperUI::LoadTexInit()
 {
-	SpTextureManager::LoadTexture("Assets/Images/DissolveMap.png", "testTex");
+	SpTextureManager::LoadTexture("Assets/Images/circleParticle.png", "testTex");
+	SpTextureManager::LoadTexture("Assets/Images/MenuImages/ButtonBack.png", "buttonBackTex");
+	SpTextureManager::LoadTexture("Assets/Images/MenuImages/CameraText.png", "cameraTextTex");
+	SpTextureManager::LoadTexture("Assets/Images/MenuImages/GuidText.png", "guidTextTex");
+	SpTextureManager::LoadTexture("Assets/Images/MenuImages/QuitText.png", "quitTextTex");
+	SpTextureManager::LoadTexture("Assets/Images/MenuImages/MenuText.png", "menuTextTex");
 }
 
 void SuperUI::MomentMenuReset()
@@ -102,19 +174,23 @@ void SuperUI::MomentMenuReset()
 	ConsoleWindow::Log("メニューが開いた瞬間。");
 
 	mUiWaitTimer++;
+
 	for (size_t i = 0; i < mNumOfUIOption; i++)
 	{
-		if (mUiWaitTimer > mUiWaitTimeInterval * i) {
+		if (mUiWaitTimer > mUiWaitTimeInterval * i) 
+		{
 			mUIStatus[i].IsTimingOff = true;
 		}
 
 		// タイミングをずらして、UIの項目を出現させる
-		if (mUIStatus[i].IsTimingOff == true) {
+		if (mUIStatus[i].IsTimingOff == true) 
+		{
 			mEaseUIMenu[i].Update();
 
-			mUIStatus[i].scaleChangeValue = mEaseUIMenu[i].In(0, 1.5f);
+			mUIStatus[i].posChangeValue = mEaseUIMenu[i].In(mUIStatus[i].beforePos, mUIStatus[i].afterBasePos);
 
-			if (mEaseUIMenu[mNumOfUIOption-1].GetisEnd()) {
+			if (mEaseUIMenu[mNumOfUIOption-1].GetisEnd()) 
+			{
 				mIsMomentOpenMenu = false;
 				mIsOpenUIMenu = true;
 				mUiWaitTimer = 0;
@@ -127,12 +203,166 @@ void SuperUI::MomentMenuReset()
 void SuperUI::ResetOption()
 {
 	mUiWaitTimer = 0;
+	mUICurrentNum = 0;
 	for (size_t i = 0; i < mNumOfUIOption; i++)
 	{
 		mEaseUIMenu[i].Reset();
-		mUIStatus[i].scaleChangeValue = { 0,0 };
+		mUIStatus[i].posChangeValue = mUIStatus[i].beforePos;
+		mUIStatus[i].scaleChangeValue = mUIDesabledScale;
 		mUIStatus[i].IsTimingOff = false;
 		mUIStatus[i].IsActiveMenu = false;
+		mUIStatus[i].IsPressedAlpha = false;
+	}
+}
+
+void SuperUI::UIOptionsUpdate()
+{
+	for (size_t i = 0; i < mNumOfUIOption; i++)
+	{
+		// 選択されたときとそうではないとき
+		if (mUIStatus[mUICurrentNum].state != PRESSED)
+		{
+			mUIStatus[mUICurrentNum].state = SELECT;
+			ConsoleWindow::Log(std::format("今のメニュー番号:{}\n", mUICurrentNum));
+
+			if (Input::Key::Triggered(DIK_Z))
+			{
+				mUIStatus[mUICurrentNum].state = PRESSED;
+			}
+
+			// 項目のナンバーを変更
+			if (Input::Key::Triggered(DIK_W)) 
+			{
+				mUICurrentNum--;
+				if (mUICurrentNum <= 0) 
+				{
+					mUICurrentNum = 0;
+				}
+				mUIStatus[mUICurrentNum].state = SELECT;
+
+				break;
+			}
+			if (Input::Key::Triggered(DIK_S)) 
+			{
+				mUICurrentNum++;
+				if (mUICurrentNum >= mNumOfUIOption - 1) 
+				{
+					mUICurrentNum = mNumOfUIOption - 1;
+				}
+				mUIStatus[mUICurrentNum].state = SELECT;
+				break;
+			}
+		}
+		else 
+		{
+			if (Input::Key::Triggered(DIK_X) && mUIStatus[mUICurrentNum].IsPressedAlpha) 
+			{
+				mUIBoardCurrentColor = mDesabledColor;
+				mUIStatus[mUICurrentNum].state = SELECT;
+				mUIStatus[mUICurrentNum].IsPressedAlpha = false;
+				mUIStatus[mUICurrentNum].textCurrentColor = mUITextBeforeColor;
+			}
+		}
+	}
+
+	for (size_t i = 0; i < mNumOfUIOption; i++)
+	{
+		// 選択されたときとそうではないとき
+		if (mUIStatus[i].state != PRESSED)
+		{
+			if (i != mUICurrentNum) 
+			{
+				mUIStatus[i].state = DISABLED;
+			}
+		}
+
+		// それぞれの項目の状態処理
+		switch (mUIStatus[i].state)
+		{
+		case DISABLED:
+		{
+			mUIStatus[i].scaleChangeValue = mUIDesabledScale;
+			mUIStatus[i].correntColor = mDesabledTextColor;
+			mUIStatus[i].buttonColor = mDesabledColor;
+		}
+			break;
+		case SELECT:
+		{
+			mUIStatus[i].scaleChangeValue = mUISelectScale;
+			mUIStatus[i].correntColor = mSelectTextColor;
+			mUIStatus[i].buttonColor = mSelectColor;
+		}
+			break;
+		case PRESSED:
+		{
+			mUIStatus[i].correntColor = mPressedTextColor;
+			mUIStatus[i].buttonColor = mPressedColor;
+
+			if (mUIStatus[i].IsPressedAlpha == false) 
+			{
+				mTextAlphaEase.Update();
+
+				mUIBoardCurrentColor.f4.x = mTextAlphaEase.In(mDesabledColor.f4.x, mSelectColor.f4.x);
+				mUIBoardCurrentColor.f4.y = mTextAlphaEase.In(mDesabledColor.f4.y, mSelectColor.f4.y);
+				mUIBoardCurrentColor.f4.z = mTextAlphaEase.In(mDesabledColor.f4.z, mSelectColor.f4.z);
+
+				mUIStatus[i].textCurrentColor.f4.w = mTextAlphaEase.In(mUITextBeforeColor.f4.w, mUITextAfterColor.f4.w);
+
+				if (mTextAlphaEase.GetisEnd()) 
+				{
+					mTextAlphaEase.Reset();
+					mUIStatus[i].IsPressedAlpha = true;
+				}
+			}
+			
+		}
+			break;
+		default:
+			break;
+		}
+	}
+
+}
+
+void SuperUI::CameraMenuDraw()
+{
+	SpDS::DrawRotaGraph(mUIStatus[CAMERA].posChangeValue.x, mUIStatus[CAMERA].posChangeValue.y,
+		mUIStatus[CAMERA].scaleChangeValue.x, mUIStatus[CAMERA].scaleChangeValue.y, 0, "cameraTextTex",
+		Anchor::Center, mUIStatus[CAMERA].correntColor);
+
+	if (mUIStatus[CAMERA].state == PRESSED) 
+	{
+		SpDS::DrawRotaGraph(mUITextBasePos.x, mUITextBasePos.y,
+			0.8f, 0.8f, 0, "cameraTextTex",
+			Anchor::Center, mUIStatus[CAMERA].textCurrentColor);
+	}
+}
+
+void SuperUI::GuidMenuDraw()
+{
+	SpDS::DrawRotaGraph(mUIStatus[GUID].posChangeValue.x, mUIStatus[GUID].posChangeValue.y,
+		mUIStatus[GUID].scaleChangeValue.x, mUIStatus[GUID].scaleChangeValue.y, 0, "guidTextTex",
+		Anchor::Center, mUIStatus[GUID].correntColor);
+
+	if (mUIStatus[GUID].state == PRESSED) 
+	{
+		SpDS::DrawRotaGraph(mUITextBasePos.x, mUITextBasePos.y,
+			0.8f, 0.8f, 0, "guidTextTex",
+			Anchor::Center, mUIStatus[GUID].textCurrentColor);
+	}
+}
+
+void SuperUI::QuitMenuDraw()
+{
+	SpDS::DrawRotaGraph(mUIStatus[QUIT_TITLE].posChangeValue.x, mUIStatus[QUIT_TITLE].posChangeValue.y,
+		mUIStatus[QUIT_TITLE].scaleChangeValue.x, mUIStatus[QUIT_TITLE].scaleChangeValue.y, 0, "quitTextTex",
+		Anchor::Center, mUIStatus[QUIT_TITLE].correntColor);
+
+	if (mUIStatus[QUIT_TITLE].state == PRESSED) 
+	{
+		SpDS::DrawRotaGraph(mUITextBasePos.x, mUITextBasePos.y,
+			0.8f, 0.8f, 0, "quitTextTex",
+			Anchor::Center, mUIStatus[QUIT_TITLE].textCurrentColor);
 	}
 }
 

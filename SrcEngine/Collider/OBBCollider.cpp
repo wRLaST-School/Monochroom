@@ -15,7 +15,26 @@ float GetSeparateAxisLength(const Vec3& sep, const Vec3& e1, const Vec3& e2, con
 	return r1 + r2 + r3;
 }
 
-bool OBBCollider::Collide(const OBBCollider& other)
+bool OBBCollider::CheckSeparationAxis(OBBCollider* other, Vec3 axis)
+{
+	Matrix aRotMat = rot.GetRotMat();
+	float r1 = fabsf(
+		scale.x * Vec3::Dot(axis, aRotMat.ExtractAxisX()) +
+		scale.y * Vec3::Dot(axis, aRotMat.ExtractAxisY()) +
+		scale.z * Vec3::Dot(axis, aRotMat.ExtractAxisZ()));
+
+	Matrix bRotMat = other->rot.GetRotMat();
+	float r2 = fabsf(
+		other->scale.x * Vec3::Dot(axis, bRotMat.ExtractAxisX()) +
+		other->scale.y * Vec3::Dot(axis, bRotMat.ExtractAxisY()) +
+		other->scale.z * Vec3::Dot(axis, bRotMat.ExtractAxisZ()));
+
+	Vec3 v = other->pos - pos;
+	float dis = fabsf(Vec3::Dot(v, axis));
+	return dis <= r1 + r2;
+}
+
+bool OBBCollider::Collide(OBBCollider* other)
 {
 	Matrix aRotMat = rot.GetRotMat();
 
@@ -27,17 +46,20 @@ bool OBBCollider::Collide(const OBBCollider& other)
 	Vec3 ayVec = ayVecNorm * scale.y;
 	Vec3 azVec = azVecNorm * scale.z;
 
-	Matrix bRotMat = other.rot.GetRotMat();
+	Matrix bRotMat = other->rot.GetRotMat();
 
 	Vec3 bxVecNorm = bRotMat.ExtractAxisX().GetNorm();
 	Vec3 byVecNorm = bRotMat.ExtractAxisY().GetNorm();
 	Vec3 bzVecNorm = bRotMat.ExtractAxisZ().GetNorm();
 
-	Vec3 bxVec = bxVecNorm * other.scale.x;
-	Vec3 byVec = byVecNorm * other.scale.y;
-	Vec3 bzVec = bzVecNorm * other.scale.z;
+	Vec3 bxVec = bxVecNorm * other->scale.x;
+	Vec3 byVec = byVecNorm * other->scale.y;
+	Vec3 bzVec = bzVecNorm * other->scale.z;
 
-	Vec3 interval = (Vec3)pos - other.pos;
+	Vec3 interval = (Vec3)pos - other->pos;
+
+	color = Color::White;
+	other->color = Color::White;
 
 	//分離軸Ae1
 	float rA = scale.x;
@@ -65,7 +87,7 @@ bool OBBCollider::Collide(const OBBCollider& other)
 	//分離軸Be1
 
 	rA = GetSeparateAxisLength(bxVecNorm, axVec, ayVec, azVec);
-	rB = other.scale.x;
+	rB = other->scale.x;
 	l = fabsf(interval.Dot(bxVecNorm));
 
 	if (l > rA + rB) return false;
@@ -73,7 +95,7 @@ bool OBBCollider::Collide(const OBBCollider& other)
 	//分離軸Be2
 
 	rA = GetSeparateAxisLength(byVecNorm, axVec, ayVec, azVec);
-	rB = other.scale.y;
+	rB = other->scale.y;
 	l = fabsf(interval.Dot(byVecNorm));
 
 	if (l > rA + rB) return false;
@@ -81,7 +103,7 @@ bool OBBCollider::Collide(const OBBCollider& other)
 	//分離軸Be3
 
 	rA = GetSeparateAxisLength(bzVecNorm, axVec, ayVec, azVec);
-	rB = other.scale.z;
+	rB = other->scale.z;
 	l = fabsf(interval.Dot(bzVecNorm));
 
 	if (l > rA + rB) return false;
@@ -159,6 +181,8 @@ bool OBBCollider::Collide(const OBBCollider& other)
 	if (l > rA + rB) return false;
 
 	//分離できないため当たっている
+	color = Color::Red;
+	other->color = Color::Red;
 	return true;
 }
 
@@ -175,65 +199,6 @@ void OBBCollider::DrawCollider()
 	{
 		LineDrawer::DrawRotaCube(pos, scale, rot, color.f4);
 	}
-}
-
-bool OBBCollider::IsTriggerSphere(SphereCollider* other, Vec3* pushOut)
-{
-	if (!isActive || !other->isActive)
-	{
-		return false;
-	}
-
-	// OBBの中心から球の中心までのベクトル
-	Vec3 diff = other->pos - pos;
-
-	// OBBの中心から球の中心までの最近接点を求める用
-	Vec3 closestPoint = pos;
-
-	// 軸ベクトルを取得
-	Matrix rotMat = rot.GetRotMat();
-
-	Vec3 xAxis = rotMat.ExtractAxisX().GetNorm();
-	Vec3 yAxis = rotMat.ExtractAxisY().GetNorm();
-	Vec3 zAxis = rotMat.ExtractAxisZ().GetNorm();
-
-	float a = Util::Clamp<float>(0, -1, 1);
-	a;
-
-	Vec3 distanceAlongAxes = Vec3(
-		Vec3::Dot(diff, xAxis),
-		Vec3::Dot(diff, yAxis),
-		Vec3::Dot(diff, zAxis));
-	distanceAlongAxes.x = Util::Clamp<float>(distanceAlongAxes.x, -scale.x, scale.x);
-	distanceAlongAxes.y = Util::Clamp<float>(distanceAlongAxes.y, -scale.y, scale.y);
-	distanceAlongAxes.z = Util::Clamp<float>(distanceAlongAxes.z, -scale.z, scale.z);
-
-	closestPoint += xAxis * distanceAlongAxes.x;
-	closestPoint += yAxis * distanceAlongAxes.y;
-	closestPoint += zAxis * distanceAlongAxes.z;
-
-	// 最近接点と球の中心までの距離を計算
-	float squaredDis = (closestPoint - other->pos).GetSquaredLength();
-	float r2 = other->r * other->r;
-
-	// 球の半径の二乗と比較して判定
-	if (squaredDis <= r2)
-	{
-		diff = (closestPoint - other->pos);
-		color = Color::Red;
-		other->color = Color::Red;
-
-		if (pushOut)
-		{
-			*pushOut = -diff.GetNorm() * (other->r - diff.GetLength());
-		}
-
-		return true;
-	}
-
-	color = Color::White;
-	other->color = Color::White;
-	return false;
 }
 
 void OBBCollider::DrawBB(Color color_)

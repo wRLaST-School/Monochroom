@@ -2,7 +2,7 @@
 
 static const float _LightingCutoff = 0.1f;
 static const float _FalloffAmount = 0.1f;
-static const float _Smoothness = 5.0f;
+static const float _Smoothness = 50.f;
 static const float _FresnelSize = 1.0f;
 static const float _FresnelMin = 1.0f;
 static const float _FresnelMax = 1.0f;
@@ -39,7 +39,7 @@ float4 main(VSOutput input) : SV_TARGET
     float3 V = normalize(cameraPos - input.worldpos.xyz);
     float3 H = normalize(V + L);
     float NdotH = dot(N, H);
-    float3 specular = pow(saturate(NdotH), _Smoothness) * diffuse;
+    float3 specular = pow(saturate(NdotH), _Smoothness) * m_specular * diffuse;
 	
 	// Fresnel
     float NdotV = dot(N, V);
@@ -51,41 +51,6 @@ float4 main(VSOutput input) : SV_TARGET
     shadeCol.rgb = (diffuse + specular + fresnel) * lightColor.rgb;
     shadeCol.a = 1.0f;
 
-    return float4(diffuse.rgb, 1.0f);
-	
     float4 texCol = tex.Sample(smp, input.uv);
-    return texCol * shadeCol /* * brightness*/;
-
-	
- //   float4 texcolor = float4(tex.Sample(smp, input.uv));
-	
- //   float4 shadecolor;
-
- //   float3 eyeDir = normalize(cameraPos - input.worldpos.xyz);
- //   const float luster = 4.0f;
-
- //   float3 L = lightVec;
- //   float3 N = input.normal;
-    
-	////Directional Light
-	//{
- //       float NdotL = dot(N, L);
- //       float3 dotLightNormal = dot(lightVec, input.normal);
- //       dotLightNormal = smoothstep(0.3f, 0.6f, dotLightNormal);
-
- //       float3 ambient = m_ambient;
- //       float3 diffuse = 0.5f + NdotL * 0.5f;
- //       //float3 dRate = smoothstep(_LightingCutoff, _LightingCutoff + _FalloffAmount, diffuse);
- //       //diffuse = dRate * m_diffuse;
-        
- //       //m_diffuse;
- //       float3 reflect = normalize(-lightVec + 2 * dotLightNormal * input.normal);
- //       float3 specular = pow(saturate(dot(reflect, eyeDir)), luster) * m_specular;
-
- //       float3 color = (ambient + diffuse /*+ specular*/) * lightColor;
- //       shadecolor.xyz = color;
- //       shadecolor.a = m_alpha;
- //   }
-
- //   return shadecolor * texcolor * brightness;
+    return texCol * shadeCol * brightness;
 }

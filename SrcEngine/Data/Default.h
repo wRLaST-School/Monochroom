@@ -8,7 +8,7 @@ public:
     void Init();
     void Update();
     void Draw();
-    void CopyComponent(IComponent* src);
+    void CopyComponent(IComponent* src) { src; }
 
     DefDel;
 };
