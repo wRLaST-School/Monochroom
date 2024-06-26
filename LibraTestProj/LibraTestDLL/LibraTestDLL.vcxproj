@@ -12,12 +12,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="Gimmick\ButtonCollider.h" />
+    <ClInclude Include="Gimmick\FlyBlock.h" />
     <ClInclude Include="Gimmick\BlockCollider.h" />
     <ClInclude Include="CollisionManager.h" />
-    <ClInclude Include="Easing\Easing.h" />
     <ClInclude Include="AppOperationCommand.h" />
     <ClInclude Include="Camera\FirstPersonCamera.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Gimmick\FlyBlockCollider.h" />
+    <ClInclude Include="Gimmick\GlassCollider.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
     <ClInclude Include="UI\SuperUI.h" />
@@ -25,25 +28,34 @@
     <ClInclude Include="IScriptObject.h" />
     <ClInclude Include="TestObject.h" />
     <ClInclude Include="TestPlayer.h" />
-    <ClInclude Include="Easing\Timer.h" />
     <ClInclude Include="TitleCamera.h" />
+    <ClInclude Include="Util\Easing.h" />
+    <ClInclude Include="Util\Gravity.h" />
+    <ClInclude Include="Util\Timer.h" />
+    <ClInclude Include="Camera\ViewCollider.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="Gimmick\ButtonCollider.cpp" />
+    <ClCompile Include="Gimmick\FlyBlock.cpp" />
     <ClCompile Include="Gimmick\BlockCollider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
-    <ClCompile Include="Easing\Easing.cpp" />
     <ClCompile Include="Camera\FirstPersonCamera.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Gimmick\FlyBlockCollider.cpp" />
+    <ClCompile Include="Gimmick\GlassCollider.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
     <ClCompile Include="UI\SuperUI.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />
     <ClCompile Include="TestPlayer.cpp" />
-    <ClCompile Include="Easing\Timer.cpp" />
     <ClCompile Include="TitleCamera.cpp" />
+    <ClCompile Include="Util\Easing.cpp" />
+    <ClCompile Include="Util\Gravity.cpp" />
+    <ClCompile Include="Util\Timer.cpp" />
+    <ClCompile Include="Camera\ViewCollider.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -80,13 +92,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)..\..\Resources\Compiled\</OutDir>
-    <IncludePath>$(ProjectDir)Easing;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Util;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
     <TargetName>ScriptsD</TargetName>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)..\..\Resources\Compiled\$(Configuration)\</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)..\..\Resources\Compiled\</OutDir>
-    <IncludePath>$(ProjectDir)Easing;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Util;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
     <TargetName>Scripts</TargetName>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)..\..\Resources\Compiled\$(Configuration)\</LibraryPath>
   </PropertyGroup>
@@ -103,6 +115,7 @@
       <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -127,6 +140,7 @@
       <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

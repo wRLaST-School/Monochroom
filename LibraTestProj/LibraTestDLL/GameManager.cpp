@@ -1,25 +1,22 @@
 #include "GameManager.h"
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
+#include <AppOperationCommand.h>
 
 void GameManager::Init()
 {
 	mPlayer = SceneManager::FindObject<Object3D>("Player");
-	if (!ConsoleWindow::NullCheck<Object3D>(mPlayer))
-	{
-		ConsoleWindow::Log("mPlayer is Null");
-		return;
-	}
+	isStop = false;
 }
 
 void GameManager::Update()
 {
-	if (!ConsoleWindow::NullCheck<Object3D>(mPlayer))
+	if (AppOperationCommand::GetInstance()->UserDebugStopGameCommand())
 	{
-		ConsoleWindow::Log("mPlayer is Null");
-		return;
+		isStop = isStop ? false : true;
 	}
-	ConsoleWindow::Log("mPlayer is Not Null");
+
+	ConsoleWindow::Log(std::format("GameManager::isStop : {}", isStop));
 }
 
 void GameManager::Draw()
@@ -37,10 +34,20 @@ Object3D* GameManager::GetPlayer()
 	return mPlayer;
 }
 
+bool GameManager::GetisStop()
+{
+	return isStop;
+}
+
+void GameManager::SetIsStop(bool IsStop)
+{
+	isStop = IsStop;
+}
+
 GameManager* GameManager::GetInstance()
 {
-	static GameManager instance;
-	return &instance;
+	static GameManager* instance = SceneManager::FindObject<GameManager>("GameManager");;
+	return instance;
 }
 
 RegisterScriptBody(GameManager);

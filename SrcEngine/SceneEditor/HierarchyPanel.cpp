@@ -80,7 +80,14 @@ void HierarchyPanel::ShowItemRecursive(IComponent* current)
 		nodeFlags |= ImGuiTreeNodeFlags_Leaf;
 	}
 
+	ImVec4 col = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+	if (!current->IsActive())
+	{
+		col = ImVec4(0.5f, 0.5f, 0.5f, 1.0f);
+	}
+	ImGui::PushStyleColor(ImGuiCol_Text, col);
 	bool treeNodeTriggered = ImGui::TreeNodeEx(taggedName.c_str(), nodeFlags);
+	ImGui::PopStyleColor(1); // 3つのスタイルカラーをポップ
 
 	if (ImGui::BeginDragDropSource())
 	{

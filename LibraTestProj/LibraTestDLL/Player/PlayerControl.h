@@ -1,12 +1,15 @@
 #pragma once
 #include "IScriptObject.h"
 #include <Object3D.h>
-
+#include <Gravity.h>
+#include <memory>
 
 class PlayerControl :
 	public IScriptObject
 {
 private:
+	std::unique_ptr<Gravity> mGravity;
+
 	const float GRAVITY = 0.003f;
 	const Vec3 JUMP_POWER = { 0,0.43f,0 };
 	float gravityAccel_ = 0.0f;
@@ -43,6 +46,9 @@ public:
 	void CopyComponent(IComponent* src);
 
 	DefDel;
+
+public:
+	void GravityToZero();
 };
 
 #ifndef PlayerControl_RegisterDef
