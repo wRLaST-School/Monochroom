@@ -3,7 +3,7 @@
 
 struct GrayScaleInfo
 {
-	bool isDraw = false;
+	bool isDraw = true;
 };
 
 class GrayScale : public IPostEffector
