@@ -88,7 +88,7 @@ void CollisionManager::PlayerHitBlocks()
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
 
 			float posY = bc->GetBodyCollider().pos.y;
-			float offsetY = bc->GetBodyCollider().scale.y + player->scale.y;
+			float offsetY = bc->GetBodyCollider().scale.y + player->scale.y * 2;
 			player->position.y = posY + offsetY;
 
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
