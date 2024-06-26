@@ -11,6 +11,8 @@ void PlayerControl::Init()
 {
 	parent_ = This()->Parent()->CastTo<Object3D>();
 	mGravity = std::make_unique<Gravity>();
+
+	mMouseSensitivity = { 1,1 };
 	//parent_->rotationE.z = 180.0f;
 }
 
@@ -64,8 +66,8 @@ void PlayerControl::CameraUpdate()
 {
 	Vec3 mouseMoveVec = AppOperationCommand::GetInstance()->PlayerAngleCommand();
 
-	parent_->rotationE.y += mouseMoveVec.x * MOUSE_ROT_SPEED;
-	parent_->rotationE.x += mouseMoveVec.y * MOUSE_ROT_SPEED;
+	parent_->rotationE.y += mouseMoveVec.x * MOUSE_ROT_SPEED * mMouseSensitivity.x;
+	parent_->rotationE.x += mouseMoveVec.y * MOUSE_ROT_SPEED * mMouseSensitivity.y;
 
 	if (parent_->rotationE.y > PIf * 2.0f)
 	{
@@ -134,6 +136,16 @@ void PlayerControl::Draw()
 void PlayerControl::CopyComponent(IComponent* src)
 {
 
+}
+
+Vec2 PlayerControl::GetMouseSensitivity()
+{
+	return mMouseSensitivity;
+}
+
+void PlayerControl::SetMouseSensitivity(Vec2 mouseSensitivity)
+{
+	mMouseSensitivity = mouseSensitivity;
 }
 
 void PlayerControl::GravityToZero()

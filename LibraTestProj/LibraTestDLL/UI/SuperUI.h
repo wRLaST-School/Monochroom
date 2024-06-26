@@ -3,6 +3,7 @@
 #include <Object3D.h>
 #include "Easing.h"
 #include <Color.h>
+#include "PlayerControl.h"
 
 class SuperUI :
     public IScriptObject
@@ -29,6 +30,12 @@ private:// クラス内構造体
         DISABLED,// 選択されていない状態
         SELECT,// 選択されている状態
         PRESSED,// 押された後の状態
+    };
+
+    enum CameraMenuNum
+    {
+        MOUSESENSITIVITY_X,
+        MOUSESENSITIVITY_Y,
     };
 
     struct UIMenuStatus
@@ -67,6 +74,15 @@ private:// クラス内構造体
         UIMenuState state;
     };
 
+    struct UIInternalItem
+    {
+        Vec2 basePos;
+
+        Vec2 scaleChageValue;
+
+        bool IsActive;
+    };
+
 private:
     // メニューのステート
 
@@ -81,6 +97,9 @@ private:
 
     // UIの項目の更新処理
     void UIOptionsUpdate();
+
+    // カメラメニューの更新処理
+    void CameraMenuUpdate();
 
     // カメラメニューの描画
     void CameraMenuDraw();
@@ -161,15 +180,16 @@ private:// メンバー変数
     // UIのメニュー内部のテキストパラメータ
     Vec2 mUITextBasePos;
 
-    // UIのオプション項目
-    Object3D* mUIOptionParentObj;
-    std::vector<Object3D*> mUIOptionObjs;
+    // カメラメニューの感度のパラメータ
+    Vec2 mCameraSensitivity;
 
-    // UIのオプションのそれぞれの項目
-    Object3D* mUIOptionItemParentObj;
-    std::vector<Object3D*> mUIOptionItemObjs;
+    // カメラの内部項目
+    int mNumCameraItem;
+    std::vector<UIInternalItem> mCameraItems;
 
 
+    // プレイヤーコントロール(取得用)
+    PlayerControl* mPlayerControl;
 };
 RegisterScript(SuperUI);
 
