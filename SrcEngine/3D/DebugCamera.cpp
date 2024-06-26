@@ -92,10 +92,8 @@ void DebugCamera::Update()
 			speedRate = 5;
 		}
 
-
 		const float moveSpeed = 0.05f * speedRate;
-		Matrix viewMat = debugCamera->GetViewMat();
-		Vec3 vec = Vec3(-viewMat.ExtractAxisZ().x, -viewMat.ExtractAxisZ().y, viewMat.ExtractAxisZ().z);
+		Vec3 vec = (target - debugCamera->position).GetNorm();
 		debugCamera->position += vec * Mouse::GetWheelVel() * moveSpeed;
 	}
 
