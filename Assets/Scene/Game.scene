@@ -932,6 +932,50 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Name": "UI",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "SuperUI"
+                    }
+                ],
+                "Model": "",
+                "Name": "UI",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
                 "Name": "GameManager",
                 "Tags": null,
                 "Type": "ScriptComponent",
