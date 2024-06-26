@@ -271,6 +271,11 @@ float Input::Mouse::GetWheelVel()
 	return (float)GetInstance()->state_.lZ;
 }
 
+bool Input::Mouse::GetShowCursor()
+{
+	return GetInstance()->showCursor;
+}
+
 Mouse* Input::Mouse::GetInstance()
 {
 	static Mouse obj;
