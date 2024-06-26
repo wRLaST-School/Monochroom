@@ -42,7 +42,7 @@ public:
 
 	// ラッピング関数
 	static DLLExport bool TreeNode(const char* str_id, const bool isOpen);
-	static DLLExport bool InputText(const char* label, std::string& input);
+	static DLLExport bool InputText(const char* label, std::string& input, ImGuiInputTextFlags flags = 0);
 
 private:
 	static int InputTextCallback(ImGuiInputTextCallbackData* data);

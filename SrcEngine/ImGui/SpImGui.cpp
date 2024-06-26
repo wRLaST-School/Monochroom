@@ -91,7 +91,7 @@ bool SpImGui::DoubleClickButton(const char* label, const ImVec2& size_arg)
 
 bool SpImGui::DoubleClickImageButton(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0, const ImVec2& uv1, int32_t frame_padding, const ImVec4& bg_col, const ImVec4& tint_col)
 {
-	ImGui::ImageButton(user_texture_id, size, uv0, uv1, frame_padding,  bg_col, tint_col);
+	ImGui::ImageButton(user_texture_id, size, uv0, uv1, frame_padding, bg_col, tint_col);
 
 	return ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left);
 }
@@ -161,10 +161,10 @@ bool SpImGui::TreeNode(const char* str_id, const bool isOpen)
 	return ImGui::TreeNodeEx(str_id, nodeFlag);
 }
 
-bool SpImGui::InputText(const char* label, std::string& input)
+bool SpImGui::InputText(const char* label, std::string& input, ImGuiInputTextFlags flags)
 {
 	char* cstr = const_cast<char*>(input.c_str());
-	bool result = ImGui::InputText(label, cstr, 30);
+	bool result = ImGui::InputText(label, cstr, 256, flags);
 	input = cstr;
 
 	return result;

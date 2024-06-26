@@ -371,9 +371,9 @@ void Object3D::OnInspectorWindowDraw()
 	if (ImGui::CollapsingHeader("Texture"))
 	{
 		const size_t bufSize = 256;
-		char buf[bufSize];
+		static char buf[bufSize];
 		strncpy_s(buf, texture.c_str(), std::min(bufSize, texture.length()));
-		if (ImGui::InputText("Texture", buf, bufSize, ImGuiInputTextFlags_EnterReturnsTrue))
+		if (ImGui::InputText("Texture Key", buf, bufSize, ImGuiInputTextFlags_EnterReturnsTrue))
 		{
 			texture = buf;
 		};
