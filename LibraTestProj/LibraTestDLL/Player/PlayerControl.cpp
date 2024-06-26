@@ -24,6 +24,7 @@ void PlayerControl::Jump()
 	isJump_ = true;
 	moveVec_ += JUMP_POWER;
 	mGravity->ZeroVelocity();
+	mGravity->SetUseGravity(true);
 }
 
 void PlayerControl::JumpUpdate()
