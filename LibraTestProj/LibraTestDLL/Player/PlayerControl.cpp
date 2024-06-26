@@ -12,6 +12,9 @@ void PlayerControl::Init()
 	parent_ = This()->Parent()->CastTo<Object3D>();
 	mGravity = std::make_unique<Gravity>();
 	//parent_->rotationE.z = 180.0f;
+
+	mGravity->ZeroVelocity();
+	mGravity->SetUseGravity(true);
 }
 
 //-------------------------------------------
@@ -20,19 +23,14 @@ void PlayerControl::Jump()
 	moveVec_.y = 0;
 	isJump_ = true;
 	moveVec_ += JUMP_POWER;
-	gravityAccel_ = 0;
+	mGravity->ZeroVelocity();
 }
 
 void PlayerControl::JumpUpdate()
 {
-	if (isJump_)
-	{
-		gravityAccel_ += GRAVITY;
+	moveVec_ += mGravity->CalcGravity();
 
-		moveVec_ -= {0, gravityAccel_, 0};
-
-		parent_->position += {0, moveVec_.y, 0};
-	}
+	parent_->position += {0, moveVec_.y, 0};
 }
 
 void PlayerControl::MoveUpdate()
@@ -114,8 +112,6 @@ void PlayerControl::Update()
 		Jump();
 	}
 
-	moveVec_ += mGravity->CalcGravity();
-
 	//ジャンプ更新
 	JumpUpdate();
 
@@ -141,8 +137,9 @@ void PlayerControl::GravityToZero()
 	if (moveVec_.y <= 0.0f)
 	{
 		isJump_ = false;
-		gravityAccel_ = 0;
 		moveVec_.y = 0;
+		mGravity->SetUseGravity(false);
+		mGravity->ZeroVelocity();
 	}
 }
 
