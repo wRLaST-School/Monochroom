@@ -10,7 +10,7 @@ class PlayerControl :
 private:
 	std::unique_ptr<Gravity> mGravity;
 
-	const Vec3 JUMP_POWER = { 0,0.43f,0 };
+	const Vec3 JUMP_POWER = { 0,0.056f,0 };
 
 	bool isJump_ = false;
 	Vec3 moveVec_ = { 0,0,0 };
