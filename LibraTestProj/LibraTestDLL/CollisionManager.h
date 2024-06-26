@@ -20,6 +20,7 @@ private:
 	std::vector<GlassCollider*> mGlassColliders;
 
 private:
+	bool isPlayerDownHit;
 	bool isPlayerTriggerButton;
 
 private:

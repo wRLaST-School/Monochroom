@@ -2,7 +2,6 @@
 #include <Input.h>
 using namespace Input;
 
-
 Vec3 AppOperationCommand::PlayerMoveCommand()
 {
 	float right = Key::Down(DIK_RIGHTARROW) || Key::Down(DIK_D);

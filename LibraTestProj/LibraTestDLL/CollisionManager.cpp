@@ -16,6 +16,7 @@ void CollisionManager::Init()
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
 
+	isPlayerDownHit = false;
 	isPlayerTriggerButton = false;
 }
 
@@ -41,6 +42,8 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
+
+	ConsoleWindow::Log("CollisionManager");
 }
 
 void CollisionManager::RayHitFlyBlocks()
@@ -86,13 +89,16 @@ void CollisionManager::PlayerHitBlocks()
 		if (bc->GetBodyCollider().IsTrigger(&playerDownCollider))
 		{
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
-
-			float posY = bc->GetBodyCollider().pos.y;
-			float offsetY = bc->GetBodyCollider().scale.y + player->scale.y;
-			player->position.y = posY + offsetY;
-
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
-			playerControl->GravityToZero();
+
+			if (playerControl->GetGravity()->GetVelocity().y <= 0.f)
+			{
+				float posY = bc->GetBodyCollider().pos.y;
+				float offsetY = bc->GetBodyCollider().scale.y + player->scale.y * 2;
+				player->position.y = posY + offsetY;
+
+				playerControl->GravityToZero();
+			}
 		}
 	}
 }

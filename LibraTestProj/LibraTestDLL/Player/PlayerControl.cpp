@@ -14,6 +14,9 @@ void PlayerControl::Init()
 
 	mMouseSensitivity = { 1,1 };
 	//parent_->rotationE.z = 180.0f;
+
+	mGravity->ZeroVelocity();
+	mGravity->SetUseGravity(true);
 }
 
 //-------------------------------------------
@@ -21,20 +24,15 @@ void PlayerControl::Jump()
 {
 	moveVec_.y = 0;
 	isJump_ = true;
-	moveVec_ += JUMP_POWER;
-	gravityAccel_ = 0;
+	mGravity->AddForce(JUMP_POWER);
+	mGravity->SetUseGravity(true);
 }
 
 void PlayerControl::JumpUpdate()
 {
-	if (isJump_)
-	{
-		gravityAccel_ += GRAVITY;
+	moveVec_ += mGravity->CalcGravity();
 
-		moveVec_ -= {0, gravityAccel_, 0};
-
-		parent_->position += {0, moveVec_.y, 0};
-	}
+	parent_->position += {0, moveVec_.y, 0};
 }
 
 void PlayerControl::MoveUpdate()
@@ -103,20 +101,20 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
+	ConsoleWindow::Log("PlayerControl");
+
+
 	if (GameManager::GetInstance()->GetisStop())
 	{
 		return;
 	}
 	ConsoleWindow::Log(std::format("PlayerControl::isStop : {}", GameManager::GetInstance()->GetisStop()));
 
-
 	//ジャンプ
 	if (AppOperationCommand::GetInstance()->PlayerJumpCommand() && !isJump_)
 	{
 		Jump();
 	}
-
-	moveVec_ += mGravity->CalcGravity();
 
 	//ジャンプ更新
 	JumpUpdate();
@@ -153,9 +151,17 @@ void PlayerControl::GravityToZero()
 	if (moveVec_.y <= 0.0f)
 	{
 		isJump_ = false;
-		gravityAccel_ = 0;
 		moveVec_.y = 0;
+		//mGravity->SetUseGravity(false);
+		mGravity->ZeroVelocity();
+
+		ConsoleWindow::Log(std::format("Gravity : {}", mGravity->GetVelocity().y));
 	}
+}
+
+Gravity* PlayerControl::GetGravity()
+{
+	return mGravity.get();
 }
 
 RegisterScriptBody(PlayerControl);

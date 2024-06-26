@@ -18,9 +18,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 6.123147487640381,
-                    "Y": 12.047982215881348,
-                    "Z": 39.1024169921875
+                    "X": -3.5893139839172363,
+                    "Y": -228739.0,
+                    "Z": 41.31820297241211
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -30,7 +30,7 @@
                 },
                 "RotationEuler": {
                     "X": -1.5707963705062866,
-                    "Y": 1.6800000667572021,
+                    "Y": 3.709998846054077,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -738,9 +738,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 5.128222942352295,
-                    "Y": 12.047982215881348,
-                    "Z": 39.001792907714844
+                    "X": -3.059478759765625,
+                    "Y": 8.0,
+                    "Z": 42.16630172729492
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -750,7 +750,7 @@
                 },
                 "RotationEuler": {
                     "X": -1.5707963705062866,
-                    "Y": 1.8900001049041748,
+                    "Y": 3.719998836517334,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1063,7 +1063,13 @@
                 "asmptex:Assets\\Models\\Stage\\ButtonFrameButtonFrame.png": "Assets\\Models\\Stage\\ButtonFrame/ButtonFrame.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "black": "Assets/Images/black.png",
+                "buttonBackTex": "Assets/Images/MenuImages/ButtonBack.png",
+                "cameraTextTex": "Assets/Images/MenuImages/CameraText.png",
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
+                "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
+                "menuTextTex": "Assets/Images/MenuImages/MenuText.png",
+                "quitTextTex": "Assets/Images/MenuImages/QuitText.png",
+                "testTex": "Assets/Images/circleParticle.png",
                 "white.png": "Assets\\Images\\white.png"
             }
         ],

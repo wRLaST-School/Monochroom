@@ -10,9 +10,7 @@ class PlayerControl :
 private:
 	std::unique_ptr<Gravity> mGravity;
 
-	const float GRAVITY = 0.003f;
 	const Vec3 JUMP_POWER = { 0,0.43f,0 };
-	float gravityAccel_ = 0.0f;
 
 	bool isJump_ = false;
 	Vec3 moveVec_ = { 0,0,0 };
@@ -55,6 +53,7 @@ public:
 	void SetMouseSensitivity(Vec2 mouseSensitivity);
 
 	void GravityToZero();
+	Gravity* GetGravity();
 };
 
 #ifndef PlayerControl_RegisterDef
