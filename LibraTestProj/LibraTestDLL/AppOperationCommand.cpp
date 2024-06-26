@@ -36,6 +36,6 @@ bool AppOperationCommand::UserDebugStopGameCommand()
 
 AppOperationCommand* AppOperationCommand::GetInstance()
 {
-	AppOperationCommand instance;
+	static AppOperationCommand instance;
 	return &instance;
 }

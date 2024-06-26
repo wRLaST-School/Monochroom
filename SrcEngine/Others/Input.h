@@ -105,6 +105,9 @@ namespace Input {
 		//ホイールの移動量
 		static float GetWheelVel();
 
+		// カーソルが出現しているかどうか
+		static bool GetShowCursor();
+
 		static Mouse* GetInstance();
 
 		static void ShowCursorM();
