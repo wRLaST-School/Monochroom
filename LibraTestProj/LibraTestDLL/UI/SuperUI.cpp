@@ -8,6 +8,7 @@
 #include <ConsoleWindow.h>
 #include "GameManager.h"
 
+
 void SuperUI::Init()
 {
 
@@ -77,6 +78,9 @@ void SuperUI::Init()
 
 	mTextAlphaEase.SetEaseTimer(25);
 
+	mNumCameraItem = 2;
+
+	mCameraItems.resize(mNumCameraItem);
 	//Input::Mouse::HideCursor();
 }
 
@@ -119,6 +123,10 @@ void SuperUI::Update()
 	// メニューがオンになったら
 	if (mIsOpenUIMenu) 
 	{
+		
+
+
+
 		UIOptionsUpdate();
 	}
 
@@ -320,6 +328,23 @@ void SuperUI::UIOptionsUpdate()
 		default:
 			break;
 		}
+	}
+
+}
+
+void SuperUI::CameraMenuUpdate()
+{
+	if (mUIStatus[CAMERA].state == PRESSED) 
+	{
+		mPlayerControl = SceneManager::FindObject<PlayerControl>("PlayerControl");
+		mCameraSensitivity = mPlayerControl->GetMouseSensitivity();
+		if (Input::Key::Triggered(DIK_W)) 
+		{
+			mNumCameraItem--;
+
+		}
+
+
 	}
 
 }

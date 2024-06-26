@@ -28,6 +28,8 @@ private:
 
 	Object3D* parent_ = nullptr;
 
+	Vec2 mMouseSensitivity;
+
 private:
 	void Jump();
 	void MoveUpdate();
@@ -46,6 +48,10 @@ public:
 	DefDel;
 
 public:
+	// マウスの感度取得や設定
+	Vec2 GetMouseSensitivity();
+	void SetMouseSensitivity(Vec2 mouseSensitivity);
+
 	void GravityToZero();
 	Gravity* GetGravity();
 };
