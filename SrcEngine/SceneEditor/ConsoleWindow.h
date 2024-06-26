@@ -15,6 +15,7 @@ public:
 
 public:
 	static DLLExport void Log(const std::string& log);
+	static DLLExport void LogVec3(const std::string& log, Vec3 v);
 
 	template<typename T>
 	inline static bool NullCheck(T* instance)

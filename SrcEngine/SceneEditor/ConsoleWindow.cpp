@@ -49,6 +49,11 @@ void ConsoleWindow::Log(const std::string& log)
 	GetInstance()->logs.push_back("Log : " + log);
 }
 
+void ConsoleWindow::LogVec3(const std::string& log, Vec3 v)
+{
+	GetInstance()->logs.push_back("Log : " + log + std::format(" : ({},{},{})", v.x, v.y, v.z));
+}
+
 void ConsoleWindow::SetisOpen(bool isOpen)
 {
 	mIsOpen = isOpen;

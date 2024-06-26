@@ -137,6 +137,11 @@ Vec3 Matrix::ExtractAxisZ(float scale)
 	return Vec3(r[2][0], r[2][1], r[2][2] / scale).GetNorm();
 }
 
+Vec3 Matrix::ExtractTranslation()
+{
+	return Vec3(r[3][0], r[3][1], r[3][2]);
+}
+
 void Matrix::DecomposeTransform(Float3* pos, Float3* rot, Float3* scale) const
 {
 	Matrix copied(*this);
