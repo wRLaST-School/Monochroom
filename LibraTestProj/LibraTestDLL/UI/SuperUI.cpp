@@ -6,6 +6,7 @@
 #include <SceneManager.h>
 #include <Input.h>
 #include <ConsoleWindow.h>
+#include "GameManager.h"
 
 void SuperUI::Init()
 {
@@ -34,7 +35,7 @@ void SuperUI::Init()
 
 	mUICurrentNum = 0;
 
-	mUIDesabledScale = { 0.7 ,0.5f};
+	mUIDesabledScale = { 0.7f ,0.5f};
 	mUISelectScale = { 0.8f ,0.6f };
 
 	mDesabledColor = { 80,80,150 };
@@ -49,7 +50,7 @@ void SuperUI::Init()
 	mUITextAfterColor = { 245,245,245,255 };
 
 	mUIMenuTextPos = { 160,360 };
-	mUIMenuTexScale = { 0.5,0.4 };
+	mUIMenuTexScale = { 0.5f,0.4f };
 
 	mUIBoardPos = { 940,400 };
 	mUIBoardScale = { 2.4f,4.4f };
@@ -84,6 +85,7 @@ void SuperUI::Update()
 	if (Input::Key::Triggered(DIK_TAB)) {
 		ConsoleWindow::Log("TAB押された。");
 		if (mIsDisplayUI) {
+			GameManager::GetInstance()->SetIsStop(false);
 			mIsOpenUIMenu = false;
 			mIsMomentOpenMenu = false;
 			mIsDisplayUI = false;
@@ -91,6 +93,7 @@ void SuperUI::Update()
 			ConsoleWindow::Log("メニューを閉じた");
 		}
 		else {
+			GameManager::GetInstance()->SetIsStop(true);
 			mIsMomentOpenMenu = true;
 			mIsDisplayUI = true;
 			ConsoleWindow::Log("メニューを開いた");

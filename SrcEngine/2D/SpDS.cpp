@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void SpDS::DrawRotaGraph(int32_t x, int32_t y, float dx, float dy, float rot, TextureKey key, Anchor anchor, Color brightness)
+void SpDS::DrawRotaGraph(float x, float y, float dx, float dy, float rot, TextureKey key, Anchor anchor, Color brightness)
 {
 	Matrix m;
 	auto meta = SpTextureManager::GetTextureMetadata(key);
@@ -53,12 +53,12 @@ void SpDS::DrawRotaGraph(int32_t x, int32_t y, float dx, float dy, float rot, Te
 
 void SpDS::DrawRotaGraph(int32_t x, int32_t y, float dx, float dy, float rot, TextureKey key)
 {
-	DrawRotaGraph(x, y, dx, dy, rot, key, Anchor::Center, Color(0xffffff));
+	DrawRotaGraph((float)x, (float)y, dx, dy, rot, key, Anchor::Center, Color(0xffffff));
 }
 
 void SpDS::DrawBox(int32_t x, int32_t y, int32_t width, int32_t height, float rot, const Color& color, const Anchor& anchor)
 {
-	DrawRotaGraph(x, y, (float)width, (float)height, rot, "white", anchor, color);
+	DrawRotaGraph((float)x, (float)y, (float)width, (float)height, rot, "white", anchor, color);
 }
 
 void SpDS::DrawBox(int32_t x0, int32_t y0, int32_t x1, int32_t y1, const  Color& color)

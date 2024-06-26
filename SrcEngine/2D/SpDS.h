@@ -12,7 +12,7 @@ public:
 		Sub
 	};
 
-	static DLLExport void DrawRotaGraph(int32_t x, int32_t y, float dx, float dy, float rot,
+	static DLLExport void DrawRotaGraph(float x, float y, float dx, float dy, float rot,
 		TextureKey key, Anchor anchor,
 		Color brightness = Color(0xffffff));
 

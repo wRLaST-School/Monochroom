@@ -3,7 +3,7 @@
 
 void Camera2D::DrawRotaGraphCam(int32_t cx, int32_t cy, float dx, float dy, float rot, const TextureKey& key, const Anchor& anchor, const Color& color)
 {
-	SpDS::DrawRotaGraph(cx - this->x, cy - this->y, dx, dy, rot, key, anchor, color);
+	SpDS::DrawRotaGraph((float)cx - this->x, (float)cy - this->y, dx, dy, rot, key, anchor, color);
 }
 
 Camera2D* Camera2D::Get()
