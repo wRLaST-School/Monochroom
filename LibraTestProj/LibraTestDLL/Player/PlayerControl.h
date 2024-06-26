@@ -47,6 +47,7 @@ public:
 
 public:
 	void GravityToZero();
+	Gravity* GetGravity();
 };
 
 #ifndef PlayerControl_RegisterDef

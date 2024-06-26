@@ -22,8 +22,7 @@ void PlayerControl::Jump()
 {
 	moveVec_.y = 0;
 	isJump_ = true;
-	moveVec_ += JUMP_POWER;
-	mGravity->ZeroVelocity();
+	mGravity->AddForce(JUMP_POWER);
 	mGravity->SetUseGravity(true);
 }
 
@@ -141,9 +140,16 @@ void PlayerControl::GravityToZero()
 	{
 		isJump_ = false;
 		moveVec_.y = 0;
-		mGravity->SetUseGravity(false);
+		//mGravity->SetUseGravity(false);
 		mGravity->ZeroVelocity();
+
+		ConsoleWindow::Log(std::format("Gravity : {}", mGravity->GetVelocity().y));
 	}
+}
+
+Gravity* PlayerControl::GetGravity()
+{
+	return mGravity.get();
 }
 
 RegisterScriptBody(PlayerControl);
