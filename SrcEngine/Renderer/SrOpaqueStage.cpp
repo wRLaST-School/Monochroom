@@ -39,7 +39,8 @@ void SrOpaqueStage::PreDraw()
 	Light::Use();
 	Camera::UseCurrent();
 
-	RTVManager::SetRenderTargetToTexture("BloomBefore");
+	RTVManager::SetRenderTargetToTexture("CurrentScene");
+	//RTVManager::SetRenderTargetToTexture("BloomBefore");
 
 	//vector<TextureKey> rts = { "normalTest", "inverseTest" };
 	//RTVManager::SetRenderTargets(rts);

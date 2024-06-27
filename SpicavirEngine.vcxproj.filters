@@ -519,6 +519,9 @@
     <ClCompile Include="SrcEngine\Collider\Collision.cpp">
       <Filter>Engine\ソースファイル\Collider</Filter>
     </ClCompile>
+    <ClCompile Include="SrcEngine\PostEffect\GrayScale.cpp">
+      <Filter>Engine\ソースファイル\PostEffect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\Others\Essentials.h">
@@ -875,6 +878,9 @@
     <ClInclude Include="SrcEngine\Collider\Collision.h">
       <Filter>Engine\ヘッダーファイル\Collider</Filter>
     </ClInclude>
+    <ClInclude Include="SrcEngine\PostEffect\GrayScale.h">
+      <Filter>Engine\ヘッダーファイル\PostEffect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shaders\BasicPS.hlsl">
@@ -952,6 +958,12 @@
     <FxCompile Include="Assets\Shaders\ToonModelVS.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\GrayScaleVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\GrayScalePS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Basic.hlsli">
@@ -995,5 +1007,8 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="cpp.hint" />
+    <None Include="Assets\Shaders\GrayScale.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

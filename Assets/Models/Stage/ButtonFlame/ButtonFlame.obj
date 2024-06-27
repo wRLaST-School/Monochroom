@@ -1,6 +1,6 @@
 # Blender 3.5.0
 # www.blender.org
-mtllib ButtonFrame.mtl
+mtllib ButtonFlame.mtl
 o button
 v -0.786373 -0.589849 0.786373
 v -0.786373 -0.390987 1.310622
