@@ -23,6 +23,8 @@ public:
 public:
     SphereCollider GetBodyCollider();
     OBBCollider GetDownCollider();
+
+    Object3D* GetObj() { return mObj; }
 };
 
 RegisterScript(FlyBlockCollider);

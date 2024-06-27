@@ -21,6 +21,9 @@ public:
 public:
 	RayCollider GetRayCollider();
 
+	//const 参照だとエラー出るので
+	Vec3 GetPos();
+
 };
 
 RegisterScript(ViewCollider);
