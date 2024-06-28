@@ -522,6 +522,9 @@
     <ClCompile Include="SrcEngine\PostEffect\GrayScale.cpp">
       <Filter>Engine\ソースファイル\PostEffect</Filter>
     </ClCompile>
+    <ClCompile Include="SrcEngine\Renderer\SrUIPlaneModel.cpp">
+      <Filter>Engine\ソースファイル\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\Others\Essentials.h">
@@ -880,6 +883,9 @@
     </ClInclude>
     <ClInclude Include="SrcEngine\PostEffect\GrayScale.h">
       <Filter>Engine\ヘッダーファイル\PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SrcEngine\Renderer\SrUIPlaneModel.h">
+      <Filter>Engine\ヘッダーファイル\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

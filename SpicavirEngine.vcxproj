@@ -194,6 +194,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClCompile Include="SrcEngine\Collider\Collision.cpp" />
     <ClCompile Include="SrcEngine\PostEffect\GrayScale.cpp" />
     <ClCompile Include="SrcEngine\Renderer\SrToonStage.cpp" />
+    <ClCompile Include="SrcEngine\Renderer\SrUIPlaneModel.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\ConsoleWindow.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\DLLObject.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\PipelineWindow.cpp" />
@@ -309,6 +310,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClInclude Include="SrcEngine\Collider\Collision.h" />
     <ClInclude Include="SrcEngine\PostEffect\GrayScale.h" />
     <ClInclude Include="SrcEngine\Renderer\SrToonStage.h" />
+    <ClInclude Include="SrcEngine\Renderer\SrUIPlaneModel.h" />
     <ClInclude Include="SrcEngine\SceneEditor\ConsoleWindow.h" />
     <ClInclude Include="SrcEngine\SceneEditor\DLLDef.h" />
     <ClInclude Include="SrcEngine\SceneEditor\DLLObject.h" />

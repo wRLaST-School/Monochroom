@@ -12,6 +12,7 @@
 #include <SrImGuiStage.h>
 #include <SrParticleStage.h>
 #include <SrToonStage.h>
+#include <SrUIPlaneModel.h>
 class SpRenderer
 {
 public:
@@ -28,13 +29,14 @@ public:
 		Particle,
 		PostEffect,
 		Sprite,
+		UIPlane,
 		ImGui,
 	};
 
 	static void DrawCommand(std::function<void()> cmd, const Stage& stg);
 	static void RegisterAlphaObj(Object3D* obj);
 private:
-	std::unique_ptr<IRenderStage> stages_[8] = {
+	std::unique_ptr<IRenderStage> stages_[9] = {
 		std::make_unique<SrOpaqueStage>(),
 		std::make_unique<SrAddStage>(),
 		std::make_unique<SrToonStage>(),
@@ -42,6 +44,7 @@ private:
 		std::make_unique<SrParticleStage>(),
 		std::make_unique<SrPostEffectStage>(),
 		std::make_unique<SrSpriteStage>(),
+		std::make_unique<SrUIPlaneModel>(),
 		std::make_unique<SrImGuiStage>(),
 	};
 };
