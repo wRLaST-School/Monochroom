@@ -6,31 +6,35 @@
 
 
 class FlyBlock :
-    public IScriptObject
+	public IScriptObject
 {
 private:
-    Object3D* mParent = nullptr;
-    std::unique_ptr<Gravity> mGravity = nullptr;
-    
-    bool mIsAttracted = false;
-    Vec3 mBeginPos;
-    Vec3 mEndPos;
+	Object3D* mParent = nullptr;
+	std::unique_ptr<Gravity> mGravity = nullptr;
 
-    std::unique_ptr<Easing> mEasing = nullptr;
+	bool mIsAttracted = false;
+	Vec3 mBeginPos;
+	Vec3 mEndPos;
 
-    const int16_t kAttractedFrameMax = 60 * 4;
+	std::unique_ptr<Easing> mEasing = nullptr;
 
-public:
-    void Init();
-    void Update();
-    void Draw();
-    void CopyComponent(IComponent* src) { src; }
+	const int16_t kAttractedFrameMax = 60 * 2;
 
 public:
-    void BeginAttracting(const Vec3& endPos);
-    void EndAttracting();
+	void Init();
+	void Update();
+	void Draw();
+	void CopyComponent(IComponent* src) { src; }
 
-    DefDel;
+public:
+	void BeginAttracting(const Vec3& endPos);
+	void EndAttracting();
+
+	bool GetIsAttracting() { return mIsAttracted; }
+
+	void ZeroGravity() { mGravity->ZeroVelocity(); }
+
+	DefDel;
 };
 
 RegisterScript(FlyBlock);

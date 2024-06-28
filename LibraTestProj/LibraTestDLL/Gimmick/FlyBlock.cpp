@@ -55,6 +55,9 @@ void FlyBlock::BeginAttracting(const Vec3& endPos)
 	mIsAttracted = true;
 
 	mEasing->Reset();
+	mEasing->SetEaseTimer(kAttractedFrameMax);
+
+	mGravity->ZeroVelocity();
 }
 
 void FlyBlock::EndAttracting()
