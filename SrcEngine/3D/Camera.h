@@ -62,7 +62,7 @@ public:
 
 	Matrix GetBillboardMat();
 
-	bool CheckisInCameraInside(Vec3 pos, float r = 0);
+	DLLExport bool CheckisInCameraInside(Vec3 pos, float r = 0);
 
 	void OnInspectorWindowDraw();
 

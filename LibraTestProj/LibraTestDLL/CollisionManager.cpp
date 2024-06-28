@@ -5,6 +5,7 @@
 #include <FlyBlock.h>
 #include <Input.h>
 #include <AppOperationCommand.h>
+#include <Camera.h>
 
 void CollisionManager::Init()
 {
@@ -43,6 +44,9 @@ void CollisionManager::Update()
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
 
+	//カメラにブロックが映っているか
+	CameraInsideFlyBlocks();
+
 	// 飛んでくるブロックとガラス
 	FlyBlocksHitGlasses();
 }
@@ -66,10 +70,29 @@ void CollisionManager::RayHitFlyBlocks()
 				//引き寄せる
 				auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
 
-				flyblock->BeginAttracting(mViewCollider->GetPos());
+				flyblock->BeginAttracting(mViewCollider->GetPos() + Vec3{0,2.0f,0});
 			}
 
 			ConsoleWindow::Log("Ray Hit FlyBlock");
+		}
+	}
+}
+
+void CollisionManager::CameraInsideFlyBlocks()
+{
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+
+		if (flyblock->GetIsAttracting())
+		{
+			auto camera = SceneManager::FindObjectWithTag<Camera>("PlayerCamera");
+
+			//画面外に出たら落ちる
+			if (!camera->CheckisInCameraInside(fbc->Parent()->CastTo<Object3D>()->position))
+			{
+				flyblock->EndAttracting();
+			}
 		}
 	}
 }
