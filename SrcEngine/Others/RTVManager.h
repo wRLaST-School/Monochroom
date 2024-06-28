@@ -27,6 +27,8 @@ public:
 
 	bool isAllResBarClosed = true;
 
+	inline static std::string defaultRT = "CurrentScene";
+
 private:
 	int32_t currentRTIndex_[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
 

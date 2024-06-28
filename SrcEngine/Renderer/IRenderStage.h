@@ -7,6 +7,7 @@
  *********************************************************************/
 #include <GPipeline.h>
 #include <SpRootSignature.h>
+#include <RTVManager.h>
 /**
  * @brief レンダー順管理を行うためのレンダーステージの基底クラス
  */
@@ -42,6 +43,9 @@ public:
 	 * 
 	 * @param cmd
 	 */
-	virtual void DrawCommands(std::function<void(void)> cmd) = 0;
+	virtual void DrawCommands(std::function<void(void)> cmd, TextureKey rt) = 0;
+
+protected:
+	std::map<std::string, std::vector<std::function<void(void)>>> commands_;
 };
 

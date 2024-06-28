@@ -61,20 +61,9 @@ void CollisionManager::RayHitFlyBlocks()
 			if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 			{
 				//引き寄せる
-				auto flyblock = fbc->Parent()->GetComponent("FlyBlock");
-				flyblock->Activate();
-				//auto flyBlock2 = flyblock->CastTo<FlyBlock>();
-				
-				/*if (a == nullptr)
-				{
-				}
-				else
-				{
-					flyblock->Activate();
-				}*/
+				auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
 
-				//flyBlock2->Activate();
-				//flyBlock2->BeginAttracting(mViewCollider->GetPos());
+				flyblock->BeginAttracting(mViewCollider->GetPos());
 			}
 
 			ConsoleWindow::Log("Ray Hit FlyBlock");
@@ -171,21 +160,32 @@ void CollisionManager::FlyBlocksHitBlocks()
 
 		for (const auto& bc : mBlockColliders)
 		{
+			auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+
 			// 押し出し
 			Vec3 pushOut = Vec3::zero;
 			if (bc->GetBodyCollider().IsTrigger(&flyBlockBodyCollider, &pushOut))
 			{
 				fbc->Parent()->CastTo<Object3D>()->position += pushOut;
+
+				if (flyblock->GetAttractedDir().Dot(-pushOut) > FlyBlock::skAttractedHittingNotEndDot)
+				{
+					flyblock->EndAttracting();
+				}
 			}
 
 			// 重力
-			if (bc->GetBodyCollider().IsTrigger(&flyBlockDownCollider))
+			if (bc->GetBodyCollider().IsTrigger(&flyBlockDownCollider) &&
+				!flyblock->GetIsAttracting())
 			{
-				auto flyBlock = fbc->Parent()->CastTo<Object3D>();
+				auto flyBlockObj3D = fbc->Parent()->CastTo<Object3D>();
 
 				float posY = bc->GetBodyCollider().pos.y;
-				float offsetY = bc->GetBodyCollider().scale.y + flyBlock->scale.y;
-				flyBlock->position.y = posY + offsetY;
+				float offsetY = bc->GetBodyCollider().scale.y + flyBlockObj3D->scale.y;
+				flyBlockObj3D->position.y = posY + offsetY;
+
+				flyblock->ZeroGravity();
+				flyblock->EndAttracting();
 			}
 		}
 	}

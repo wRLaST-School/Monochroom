@@ -67,6 +67,8 @@ public:
 
 	void DLLExport CopyComponent(IComponent* src) override;
 
+	TextureKey GetRT();
+
 	SpConstBuffer<ConstBufferDataTransform> transformCB;
 	SpConstBuffer<Float4> brightnessCB;
 	SpConstBuffer<ConstBufferDataMisc> miscCB;
@@ -96,6 +98,8 @@ public:
 	Object3D* parent = nullptr;
 
 	TextureKey texture = "";
+
+	TextureKey renderTarget = "";
 
 	Model* model = nullptr;
 

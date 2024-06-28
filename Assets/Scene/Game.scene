@@ -18,9 +18,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -2.480313301086426,
+                    "X": -1.4802601337432861,
                     "Y": 10.0,
-                    "Z": 41.537841796875
+                    "Z": 46.93381118774414
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -29,8 +29,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 1.2307965755462646,
-                    "Y": 0.5800005793571472,
+                    "X": 1.5707963705062866,
+                    "Y": 4.1731858253479,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -738,9 +738,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -3.044778347015381,
+                    "X": -0.5963984131813049,
                     "Y": 10.0,
-                    "Z": 40.67628479003906
+                    "Z": 47.46266555786133
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -749,8 +749,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 1.2307965755462646,
-                    "Y": 0.5800005793571472,
+                    "X": 1.5707963705062866,
+                    "Y": 4.1731858253479,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -791,9 +791,9 @@
                 "Name": "FlyBlock",
                 "NormalType": 0,
                 "Position": {
-                    "X": 0.0,
+                    "X": -11.461036682128906,
                     "Y": 9.0,
-                    "Z": 31.955997467041016
+                    "Z": 36.39293670654297
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -1133,6 +1133,59 @@
                     "Z": 1.0
                 },
                 "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Name": "FlyBlockCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlockCollider"
+                    },
+                    {
+                        "Name": "FlyBlock",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlock"
+                    }
+                ],
+                "Model": "cube.obj",
+                "Name": "FlyBlock2",
+                "NormalType": 0,
+                "Position": {
+                    "X": -12.079121589660645,
+                    "Y": 9.0,
+                    "Z": 42.49509811401367
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": [
+                    "FlyBlock"
+                ],
                 "Texture": "",
                 "Type": "Object3D"
             },

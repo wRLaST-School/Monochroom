@@ -48,14 +48,19 @@ void SrShadowCasterStage::PostDraw()
 
 void SrShadowCasterStage::Render()
 {
-	for (auto& cmd : commands_)
+	for (auto& rt : commands_)
 	{
-		cmd();
+		RTVManager::SetRenderTargetToTexture(rt.first);
+
+		for (auto& cmd : rt.second)
+		{
+			cmd();
+		}
 	}
 	commands_.clear();
 }
 
-void SrShadowCasterStage::DrawCommands(std::function<void(void)> cmd)
+void SrShadowCasterStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
-	commands_.push_back(cmd);
+	commands_[rt].push_back(cmd);
 }

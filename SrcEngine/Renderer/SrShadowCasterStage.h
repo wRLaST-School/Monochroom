@@ -9,8 +9,5 @@ public:
     void PostDraw();
 
     void Render();
-    void DrawCommands(std::function<void(void)> cmd);
-
-private:
-    std::vector<std::function<void(void)>> commands_;
+    void DrawCommands(std::function<void(void)> cmd, TextureKey rt);
 };

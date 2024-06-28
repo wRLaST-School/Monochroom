@@ -2,6 +2,8 @@
 #include <ScriptComponent.h>
 
 
+const float FlyBlock::skAttractedHittingNotEndDot = 0.49f;
+
 void FlyBlock::Init()
 {
 	mParent = This()->Parent()->CastTo<Object3D>();
@@ -55,11 +57,16 @@ void FlyBlock::BeginAttracting(const Vec3& endPos)
 	mIsAttracted = true;
 
 	mEasing->Reset();
+	mEasing->SetEaseTimer(kAttractedFrameMax);
+
+	mGravity->ZeroVelocity();
 }
 
 void FlyBlock::EndAttracting()
 {
 	mIsAttracted = false;
+	mBeginPos = { 0,0,0 };
+	mEndPos = { 0,0,0 };
 }
 
 RegisterScriptBody(FlyBlock);
