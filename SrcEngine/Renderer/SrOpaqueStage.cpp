@@ -52,16 +52,22 @@ void SrOpaqueStage::PostDraw()
 
 void SrOpaqueStage::Render()
 {
-	for (auto& cmd : commands_)
+	for (auto& rt : commands_)
 	{
-		cmd();
+		RTVManager::SetRenderTargetToTexture(rt.first);
+
+		for (auto& cmd : rt.second)
+		{
+			cmd();
+		}
 	}
 	commands_.clear();
 
+	RTVManager::SetRenderTargetToTexture(RTVManager::defaultRT, false);
 	LineDrawer::DrawAllLines();
 }
 
-void SrOpaqueStage::DrawCommands(std::function<void(void)> cmd)
+void SrOpaqueStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
-	commands_.push_back(cmd);
+	commands_[rt].push_back(cmd);
 }

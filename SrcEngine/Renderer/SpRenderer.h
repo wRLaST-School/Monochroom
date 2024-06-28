@@ -36,7 +36,7 @@ public:
 		StageNumMax
 	};
 
-	static void DrawCommand(std::function<void()> cmd, const Stage& stg);
+	static void DrawCommand(std::function<void()> cmd, const Stage& stg, const TextureKey& target = RTVManager::defaultRT);
 	static void RegisterAlphaObj(Object3D* obj);
 private:
 	std::unique_ptr<IRenderStage> stages_[(uint32_t)Stage::StageNumMax] = {

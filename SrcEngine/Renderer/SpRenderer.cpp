@@ -26,9 +26,9 @@ SpRenderer* SpRenderer::GetInstance()
 	return &rndr;
 }
 
-void SpRenderer::DrawCommand(std::function<void(void)> cmd, const Stage& stg)
+void SpRenderer::DrawCommand(std::function<void(void)> cmd, const Stage& stg, const TextureKey& rt)
 {
-	GetInstance()->stages_[(int32_t)stg]->DrawCommands(cmd);
+	GetInstance()->stages_[(int32_t)stg]->DrawCommands(cmd, rt);
 }
 
 void SpRenderer::RegisterAlphaObj(Object3D* obj)
