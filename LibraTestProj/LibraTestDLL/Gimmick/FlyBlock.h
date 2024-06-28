@@ -8,6 +8,9 @@
 class FlyBlock :
 	public IScriptObject
 {
+public:
+	static const float skAttractedHittingNotEndDot;
+
 private:
 	Object3D* mParent = nullptr;
 	std::unique_ptr<Gravity> mGravity = nullptr;
@@ -15,6 +18,7 @@ private:
 	bool mIsAttracted = false;
 	Vec3 mBeginPos;
 	Vec3 mEndPos;
+	Vec3 mMoveVec;
 
 	std::unique_ptr<Easing> mEasing = nullptr;
 
@@ -32,7 +36,11 @@ public:
 
 	bool GetIsAttracting() { return mIsAttracted; }
 
+	Vec3 GetAttractedDir() { return (mEndPos - mBeginPos).GetNorm(); }
+
 	void ZeroGravity() { mGravity->ZeroVelocity(); }
+	Vec3 GetMoveVec() { return mMoveVec; }
+	Gravity* GetGravity() { return mGravity.get(); }
 
 	DefDel;
 };
