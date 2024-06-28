@@ -40,7 +40,6 @@ public:
 	static void RegisterAlphaObj(Object3D* obj);
 private:
 	std::unique_ptr<IRenderStage> stages_[(uint32_t)Stage::StageNumMax] = {
-	std::unique_ptr<IRenderStage> stages_[9] = {
 		std::make_unique<SrOpaqueStage>(),
 		std::make_unique<SrAddStage>(),
 		std::make_unique<SrToonStage>(),
