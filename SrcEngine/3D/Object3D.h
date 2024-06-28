@@ -5,6 +5,7 @@
 #include <Quaternion.h>
 #include <ComponentFactory.h>
 #include <DLLDef.h>
+#include <ShadowCaster.h>
 
 struct ConstBufferDataTransform {
 	Matrix mat;//3D変換行列
@@ -104,5 +105,7 @@ public:
 
 	float distanceToCam = 0;
 	TextureKey alphaTexKey;
+
+	std::unique_ptr<ShadowCaster> shadowCaster;
 };
 

@@ -13,6 +13,8 @@
 Object3D::Object3D()
 {
 	{ transformCB.contents->mat = Matrix::Identity(); *brightnessCB.contents = { 1.0f, 1.0f, 1.0f, 1.0f }; miscCB.contents->rimColor = { 1.f, 0.f, 0.f, 1.f }; };
+
+	shadowCaster = std::make_unique<ShadowCaster>();
 }
 
 void Object3D::UpdateMatrix()
@@ -43,6 +45,8 @@ void Object3D::UpdateMatrix()
 		matLocal = matWorld;
 		matWorld *= parent->matWorld;
 	}
+
+	shadowCaster->worldMat = matWorld;
 
 	for (const auto& comp : components_)
 	{
@@ -91,18 +95,13 @@ void Object3D::Update()
 
 void Object3D::Draw()
 {
-	//float radius = Vec3(scale).GetMaxElement();
-	//bool isInside = Camera::sCurrent->CheckisInCameraInside(position, radius);
-	//if (!isInside)
-	//{
-	//	return;
-	//}
-
 	//モデルが設定されていないならなにもしない
 	if (!model)
 	{
 		return;
 	}
+
+	shadowCaster->Draw(model);
 
 	bool hasTexture = texture != "";
 

@@ -4,6 +4,23 @@
 
 void RootSignatureManager::RegisterAllRS()
 {
+#pragma region Shadow Caster RS
+	{
+		SpRootSignature* rsSC = SpRootSignature::Register("ShadowCaster");
+
+		rsSC->UseDefaultSettings();
+
+		//定数バッファ0番マテリアル
+		rsSC->params.emplace_back();
+		rsSC->params[0].ParameterType = D3D12_ROOT_PARAMETER_TYPE_CBV;
+		rsSC->params[0].Descriptor.ShaderRegister = 0;
+		rsSC->params[0].Descriptor.RegisterSpace = 0;
+		rsSC->params[0].ShaderVisibility = D3D12_SHADER_VISIBILITY_ALL;
+
+		rsSC->Create();
+	}
+#pragma endregion
+
 #pragma region 3D Default RS
 	{
 		SpRootSignature* rs3d = SpRootSignature::Register("3D");
