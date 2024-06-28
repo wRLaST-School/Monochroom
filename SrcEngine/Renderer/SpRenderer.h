@@ -12,6 +12,7 @@
 #include <SrImGuiStage.h>
 #include <SrParticleStage.h>
 #include <SrToonStage.h>
+#include <SrUIPlaneModel.h>
 #include <SrPostRenderStage.h>
 class SpRenderer
 {
@@ -30,6 +31,7 @@ public:
 		PostEffect,
 		PostRender,
 		Sprite,
+		UIPlane,
 		ImGui,
 		StageNumMax
 	};
@@ -38,6 +40,7 @@ public:
 	static void RegisterAlphaObj(Object3D* obj);
 private:
 	std::unique_ptr<IRenderStage> stages_[(uint32_t)Stage::StageNumMax] = {
+	std::unique_ptr<IRenderStage> stages_[9] = {
 		std::make_unique<SrOpaqueStage>(),
 		std::make_unique<SrAddStage>(),
 		std::make_unique<SrToonStage>(),
@@ -46,6 +49,7 @@ private:
 		std::make_unique<SrPostEffectStage>(),
 		std::make_unique<SrPostRenderStage>(),
 		std::make_unique<SrSpriteStage>(),
+		std::make_unique<SrUIPlaneModel>(),
 		std::make_unique<SrImGuiStage>(),
 	};
 };
