@@ -50,6 +50,13 @@ public:
 	void DLLExport DrawToon();
 	void DLLExport DrawToon(const TextureKey& key);
 
+	// UIPlane用
+	void DLLExport DrawUIPlane(const TextureKey& key);
+
+	//PostRender用
+	void DLLExport DrawPostRender();
+	void DLLExport DrawPostRender(const TextureKey& key);
+
 	//Inspector Window用
 	void DLLExport OnInspectorWindowDraw();
 	void DLLExport DrawGizmo();
@@ -76,6 +83,8 @@ public:
 		Add,
 		Alpha,
 		Toon,
+		UIPlane,
+		PostRender
 	} blendMode = BlendMode::Opaque;
 
 	Float3 position = { 0, 0, 0 };
