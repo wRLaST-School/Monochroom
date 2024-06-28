@@ -20,16 +20,17 @@ private:// クラス内構造体
 
     enum UIOptionNum
     {
-        CAMERA,// カメラ
-        GUID,// 説明画面
-        QUIT_TITLE,// タイトルへ戻る
+        CAMERA,     // カメラ
+        GRAPHICS,   // グラフィックス
+        SOUND,      // サウンド
     };
 
-    enum UIMenuState 
+    enum MainMenuNum
     {
-        DISABLED,// 選択されていない状態
-        SELECT,// 選択されている状態
-        PRESSED,// 押された後の状態
+        OPTIONS,        // オプション
+        GUID,           // ガイド
+        QUIT_SELECT,    // セレクトへ戻る
+        QUIT_TITLE,     // タイトルへ戻る
     };
 
     enum CameraMenuNum
@@ -37,6 +38,40 @@ private:// クラス内構造体
         MOUSESENSITIVITY_X,
         MOUSESENSITIVITY_Y,
     };
+
+    enum GraphicsMenuNum
+    {
+        POSTPROCESS,    // ポストプロセス
+        SHADOW,         // 影
+    };
+
+    enum SoundMenuNum
+    {
+        MASTER, // マスター音量
+        BGM,    // BGM音量
+        SE,     // SE音量
+    };
+
+    enum UIMenuState 
+    {
+        DISABLED,   // 選択されていない状態
+        SELECT,     // 選択されている状態
+        PRESSED,    // 押された後の状態
+    };
+
+
+
+
+
+    struct UI3DTabItemStatus
+    {
+        Object3D* planeObj;
+
+        bool IsActive;
+
+    };
+
+
 
     struct UIMenuStatus
     {
@@ -85,6 +120,9 @@ private:// クラス内構造体
 
 private:
     // メニューのステート
+
+    // UIのオブジェクト3Dの初期設定
+    void UIObj3DInit();
 
     // 親子関係の設定
     void LoadTexInit();
@@ -187,11 +225,44 @@ private:// メンバー変数
     int mNumCameraItem;
     std::vector<UIInternalItem> mCameraItems;
 
-    // テストオブジェクト
-    
+    // メニューの項目数
+    int mNumMenu;
+
+    // メニューのオプションのタブの項目数
+    int mNumOption;
+
+    // カメラの項目数
+    int mCameraOptionNum;
+
+    // グラフィックスの項目数
+    int mGraphicsOptionNum;
+
+    // サウンドの項目数
+    int mSoundOptionNum;
+
+
+    // UIの全体の親オブジェクト
+    Object3D* mMenuParentObj;
+
+    // UIのメインメニューの項目オブジェクト
+    std::vector<UI3DTabItemStatus*>mMenuUIObj;
+
+    // UIのタブメニュー項目オブジェクト
+    std::vector<UI3DTabItemStatus*>mMenuTabUIObj;
+
+
+
+    // UIのオプション画面の項目オブジェクト
+    std::vector<UI3DTabItemStatus*>mCameraUIObj;
+    std::vector<UI3DTabItemStatus*>mGraphicUIObj;
+    std::vector<UI3DTabItemStatus*>mSoundUIObj;
+
+
 
     // プレイヤーコントロール(取得用)
     PlayerControl* mPlayerControl;
+
+
 };
 RegisterScript(SuperUI);
 
