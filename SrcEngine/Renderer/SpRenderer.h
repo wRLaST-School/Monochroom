@@ -4,6 +4,7 @@
 #include <GPipelineManager.h>
 #include <RootSignatureManager.h>
 #include <IRenderStage.h>
+#include <SrShadowCasterStage.h>
 #include <SrAddStage.h>
 #include <SrAlphaStage.h>
 #include <SrOpaqueStage.h>
@@ -23,6 +24,7 @@ public:
 	static SpRenderer* GetInstance(); 
 	
 	enum class Stage {
+		ShadowCaster,
 		Opaque,
 		Add,
 		Toon,
@@ -40,6 +42,7 @@ public:
 	static void RegisterAlphaObj(Object3D* obj);
 private:
 	std::unique_ptr<IRenderStage> stages_[(uint32_t)Stage::StageNumMax] = {
+		std::make_unique<SrShadowCasterStage>(),
 		std::make_unique<SrOpaqueStage>(),
 		std::make_unique<SrAddStage>(),
 		std::make_unique<SrToonStage>(),

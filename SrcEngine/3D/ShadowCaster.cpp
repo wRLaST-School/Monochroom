@@ -1,29 +1,35 @@
 #include "ShadowCaster.h"
 #include <SpRenderer.h>
+#include <Camera.h>
 
 ShadowCaster::ShadowCaster()
 {
 	worldMat = Matrix::Identity();
-	model = nullptr;
 }
 
 void ShadowCaster::Update()
 {
 }
 
-void ShadowCaster::Draw()
+void ShadowCaster::Draw(Model* aModel)
 {
-	cbData.contents->wvpMat = worldMat;
+	if (!aModel)
+	{
+		return;
+	}
+	this->model = aModel;
 
-	//SpRenderer::DrawCommand([&]
-	//	{
-	//		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, cbData.buffer->GetGPUVirtualAddress());
+	cbData.contents->wMat = worldMat;
+	cbData.contents->vpMat = Camera::sCurrent->GetViewMat() * Camera::sCurrent->GetProjMat();
 
-	//		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
+	SpRenderer::DrawCommand([&]
+		{
+			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, cbData.buffer->GetGPUVirtualAddress());
 
-	//		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
+			GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &this->model->vbView);
 
-	//		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-	//	}, SpRenderer::Stage::ShadowCaster);
+			GetSpDX()->cmdList->IASetIndexBuffer(&this->model->ibView);
 
+			GetSpDX()->cmdList->DrawIndexedInstanced(this->model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
+		}, SpRenderer::Stage::ShadowCaster);
 }

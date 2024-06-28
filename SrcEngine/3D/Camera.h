@@ -68,6 +68,8 @@ public:
 
 	void FrustumCulling();
 
+	void UpdateViewProjMatrix();
+
 	Float3 target = { 0.0f, 0.0f, 0.0f };
 
 	//レンダーサイズ

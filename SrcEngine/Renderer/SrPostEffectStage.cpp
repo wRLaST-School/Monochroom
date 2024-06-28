@@ -4,6 +4,7 @@
 #include <SpWindow.h>
 #include <Bloom.h>
 #include <GrayScale.h>
+#include <NoEffect.h>
 
 void SrPostEffectStage::Init()
 {
@@ -14,6 +15,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RenderTexture", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "CurrentScene", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "ShadowCaster", true);
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("BloomBefore");
 	SpTextureManager::AddMasterTextureKey("BloomAfter");
@@ -22,6 +24,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("RenderTexture");
 	SpTextureManager::AddMasterTextureKey("CurrentScene");
 	SpTextureManager::AddMasterTextureKey("GrayScale");
+	SpTextureManager::AddMasterTextureKey("ShadowCaster");
 
 	BloomP1::Init();
 	BloomP2::Init();
@@ -40,6 +43,8 @@ void SrPostEffectStage::Render()
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
 	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
 	BloomFin::Effect("CurrentScene", "Bloom3rdAfter", "RenderTexture");
+
+	//NoEffect::Effect("ShadowCaster", "RenderTexture");
 }
 
 void SrPostEffectStage::DrawCommands(std::function<void(void)> cmd)

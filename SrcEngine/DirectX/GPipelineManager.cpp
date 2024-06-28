@@ -4,11 +4,30 @@
 #include "SpRootSignature.h"
 #include "Model.h"
 #include "Sprite.h"
+#include "ShadowCaster.h"
 #include <Particle.h>
 #include <LineDrawer.h>
 
 void GPipelineManager::CreateAll()
 {
+#pragma region ShadowCaster用
+	RegisterShader("ShadowCaster");
+	InitVS("ShadowCaster", "ShadowCasterVS.hlsl");
+	InitPS("ShadowCaster", "ShadowCasterPS.hlsl");
+
+	PipelineDesc scDesc;
+	scDesc.Render.InputLayout.pInputElementDescs = ShadowCasterCommon::inputLayout;
+	scDesc.Render.InputLayout.NumElements = _countof(ShadowCasterCommon::inputLayout);
+
+	scDesc.RootSignature.ptr = SpRootSignature::Get("ShadowCaster")->rootsignature.Get();
+
+	scDesc.Shader.pShader = GetShader("ShadowCaster");
+	scDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_BACK;
+
+	GPipeline::Create(scDesc, "ShadowCaster");
+
+#pragma endregion
+
 #pragma region デフォルト3D
 	RegisterShader("def");
 	InitVS("def", "BasicVS.hlsl");
