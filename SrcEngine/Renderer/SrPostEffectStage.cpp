@@ -34,12 +34,12 @@ void SrPostEffectStage::PreDraw() {};
 void SrPostEffectStage::PostDraw() {};
 void SrPostEffectStage::Render()
 {
+	GrayScale::Effect("CurrentScene", "GrayScale");
+
 	BloomP1::Effect("CurrentScene", "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
 	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
 	BloomFin::Effect("CurrentScene", "Bloom3rdAfter", "RenderTexture");
-
-	GrayScale::Effect("CurrentScene", "GrayScale");
 }
 
 void SrPostEffectStage::DrawCommands(std::function<void(void)> cmd)
