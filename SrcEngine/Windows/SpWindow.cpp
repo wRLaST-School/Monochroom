@@ -129,7 +129,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 					GetSCM()->ResizeAllBuffers();
 				}
 
-				if (GetSpDepth()->depthBuffer != nullptr)
+				if (GetSpDepth()->depthes.size())
 				{
 					GetSpDepth()->Resize();
 				}
