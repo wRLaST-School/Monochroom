@@ -49,6 +49,9 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックとガラス
 	FlyBlocksHitGlasses();
+
+	// 飛んでくるブロックと飛んでくるブロック
+	FlyBlocksHitFlyBlocks();
 }
 
 void CollisionManager::RayHitFlyBlocks()
@@ -70,7 +73,7 @@ void CollisionManager::RayHitFlyBlocks()
 				//引き寄せる
 				auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
 
-				flyblock->BeginAttracting(mViewCollider->GetPos() + Vec3{0,2.0f,0});
+				flyblock->BeginAttracting(mViewCollider->GetPos() + Vec3{ 0,2.0f,0 });
 			}
 
 			ConsoleWindow::Log("Ray Hit FlyBlock");
@@ -241,6 +244,49 @@ void CollisionManager::FlyBlocksHitGlasses()
 			}
 		}
 	}
+}
+
+void CollisionManager::FlyBlocksHitFlyBlocks()
+{
+	for (const auto& fbc1 : mFlyBlockColliders)
+	{
+		for (const auto& fbc2 : mFlyBlockColliders)
+		{
+			if (fbc1 == fbc2)
+			{
+				continue;
+			}
+
+			// ブロック1
+			auto flyBlockBodyCollider1 = fbc1->GetBodyCollider();
+			auto flyBlockMoveCollider1 = fbc1->GetMoveCollider();
+			auto flyBlockDownCollider1 = fbc1->GetDownCollider();
+
+			// ブロック2
+			auto flyBlockBodyCollider2 = fbc2->GetBodyCollider();
+			auto flyBlockMoveCollider2 = fbc2->GetMoveCollider();
+			auto flyBlockDownCollider2 = fbc2->GetDownCollider();
+
+			// 重力
+			if (flyBlockDownCollider1.IsTrigger(&flyBlockBodyCollider2))
+			{
+				auto flyBlock1 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc1->Parent());
+				if (flyBlock1->GetGravity()->GetVelocity().y <= 0.f)
+				{
+					float posY = flyBlockBodyCollider2.pos.y;
+					float offsetY = (flyBlockDownCollider1.scale.y * 2) + flyBlockBodyCollider2.scale.y;
+
+					fbc1->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+
+					flyBlock1->ZeroGravity();
+				}
+			}
+		}
+
+	}
+
+
+
 }
 
 RegisterScriptBody(CollisionManager);

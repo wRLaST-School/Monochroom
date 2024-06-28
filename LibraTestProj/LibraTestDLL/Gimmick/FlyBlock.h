@@ -40,6 +40,7 @@ public:
 
 	void ZeroGravity() { mGravity->ZeroVelocity(); }
 	Vec3 GetMoveVec() { return mMoveVec; }
+	Gravity* GetGravity() { return mGravity.get(); }
 
 	DefDel;
 };

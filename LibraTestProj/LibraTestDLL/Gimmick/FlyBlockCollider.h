@@ -12,7 +12,7 @@ private:
     Object3D* mObj;
     FlyBlock* mFlyBlock;
     SphereCollider mMoveCollider;
-    SphereCollider mBodyCollider;
+    OBBCollider mBodyCollider;
     OBBCollider mDownCollider;
 
 public:
@@ -24,8 +24,8 @@ public:
     DefDel;
 
 public:
-    SphereCollider GetBodyCollider();
     SphereCollider GetMoveCollider();
+    OBBCollider GetBodyCollider();
     OBBCollider GetDownCollider();
 
     Object3D* GetObj() { return mObj; }

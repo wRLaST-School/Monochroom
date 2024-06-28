@@ -32,6 +32,7 @@ private:
 	void FlyBlocksHitBlocks();
 	void FlyBlocksHitButtons();
 	void FlyBlocksHitGlasses();
+	void FlyBlocksHitFlyBlocks();
 
 public:
 	void Init();
