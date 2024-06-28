@@ -168,7 +168,10 @@ void CollisionManager::FlyBlocksHitBlocks()
 			{
 				fbc->Parent()->CastTo<Object3D>()->position += pushOut;
 
-				//flyblock->EndAttracting();
+				if (flyblock->GetAttractedDir().Dot(-pushOut) > FlyBlock::skAttractedHittingNotEndDot)
+				{
+					flyblock->EndAttracting();
+				}
 			}
 
 			// 重力
