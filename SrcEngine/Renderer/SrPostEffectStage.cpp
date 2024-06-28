@@ -36,7 +36,7 @@ void SrPostEffectStage::Render()
 {
 	GrayScale::Effect(RTVManager::defaultRT, "GrayScale");
 
-	//BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
+	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
 	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
 	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
