@@ -25,12 +25,14 @@ private:
 
 private:
 	void RayHitFlyBlocks();
+	void CameraInsideFlyBlocks();
 	void PlayerHitBlocks();
 	void PlayerHitButtons();
 	void PlayerHitGlasses();
 	void FlyBlocksHitBlocks();
 	void FlyBlocksHitButtons();
 	void FlyBlocksHitGlasses();
+	void FlyBlocksHitFlyBlocks();
 
 public:
 	void Init();

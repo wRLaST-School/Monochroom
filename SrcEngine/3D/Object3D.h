@@ -5,6 +5,7 @@
 #include <Quaternion.h>
 #include <ComponentFactory.h>
 #include <DLLDef.h>
+#include <ShadowCaster.h>
 
 struct ConstBufferDataTransform {
 	Matrix mat;//3D変換行列
@@ -66,6 +67,8 @@ public:
 
 	void DLLExport CopyComponent(IComponent* src) override;
 
+	TextureKey GetRT();
+
 	SpConstBuffer<ConstBufferDataTransform> transformCB;
 	SpConstBuffer<Float4> brightnessCB;
 	SpConstBuffer<ConstBufferDataMisc> miscCB;
@@ -96,9 +99,13 @@ public:
 
 	TextureKey texture = "";
 
+	TextureKey renderTarget = "";
+
 	Model* model = nullptr;
 
 	float distanceToCam = 0;
 	TextureKey alphaTexKey;
+
+	std::unique_ptr<ShadowCaster> shadowCaster;
 };
 

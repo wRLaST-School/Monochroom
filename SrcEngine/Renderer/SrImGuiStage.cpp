@@ -22,7 +22,7 @@ void SrImGuiStage::PostDraw()
 {
 }
 
-void SrImGuiStage::DrawCommands(std::function<void(void)> cmd)
+void SrImGuiStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
 	OutputDebugStringA("Draw Command Queued on Unintended Stage\n");
 }

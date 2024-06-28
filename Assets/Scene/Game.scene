@@ -18,9 +18,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -2.480313301086426,
+                    "X": -1.5951881408691406,
                     "Y": 10.0,
-                    "Z": 41.537841796875
+                    "Z": 47.413482666015625
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -29,8 +29,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 1.2307965755462646,
-                    "Y": 0.5800005793571472,
+                    "X": -1.5707963705062866,
+                    "Y": 3.0431857109069824,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -738,9 +738,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -3.044778347015381,
+                    "X": -0.5963984131813049,
                     "Y": 10.0,
-                    "Z": 40.67628479003906
+                    "Z": 47.46266555786133
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -749,8 +749,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 1.2307965755462646,
-                    "Y": 0.5800005793571472,
+                    "X": -1.5707963705062866,
+                    "Y": 1.4231857061386108,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -775,25 +775,25 @@
                 },
                 "Children": [
                     {
-                        "Name": "FlyBlockCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "FlyBlockCollider"
-                    },
-                    {
                         "Name": "FlyBlock",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "FlyBlock"
+                    },
+                    {
+                        "Name": "FlyBlockCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlockCollider"
                     }
                 ],
                 "Model": "cube.obj",
                 "Name": "FlyBlock",
                 "NormalType": 0,
                 "Position": {
-                    "X": 0.0,
-                    "Y": 9.0,
-                    "Z": 31.955997467041016
+                    "X": -11.461036682128906,
+                    "Y": 15.862800598144531,
+                    "Z": 36.39293670654297
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -861,7 +861,7 @@
                             "Z": 1.5
                         },
                         "Tags": null,
-                        "Texture": "ButtonFrame.png",
+                        "Texture": "ButtonBody.png",
                         "Type": "Object3D"
                     },
                     {
@@ -873,7 +873,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
-                        "Model": "ButtonFrame.obj",
+                        "Model": "ButtonFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
                         "Position": {
@@ -898,7 +898,7 @@
                             "Z": 1.5
                         },
                         "Tags": null,
-                        "Texture": "ButtonFrame.png",
+                        "Texture": "ButtonBody.png",
                         "Type": "Object3D"
                     },
                     {
@@ -912,8 +912,8 @@
                 "Name": "Button",
                 "Position": {
                     "X": 0.0,
-                    "Y": 8.25,
-                    "Z": 43.37300109863281
+                    "Y": 0.0,
+                    "Z": 8.652000427246094
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -2131,6 +2131,59 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Name": "FlyBlock",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlock"
+                    },
+                    {
+                        "Name": "FlyBlockCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlockCollider"
+                    }
+                ],
+                "Model": "cube.obj",
+                "Name": "FlyBlock2",
+                "NormalType": 0,
+                "Position": {
+                    "X": -11.382122039794922,
+                    "Y": 9.738801002502441,
+                    "Z": 36.6260986328125
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": [
+                    "FlyBlock"
+                ],
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
                 "Name": "GameManager",
                 "Tags": null,
                 "Type": "ScriptComponent",
@@ -2185,6 +2238,7 @@
                 "Block.obj": "Assets\\Models\\Stage\\Block\\Block.obj",
                 "Boss": "Assets/Models/Boss/boss.glb",
                 "ButtonBody.obj": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.obj",
+                "ButtonFlame.obj": "Assets\\Models\\Stage\\ButtonFlame\\ButtonFlame.obj",
                 "ButtonFrame.obj": "",
                 "Cube": "Assets/Models/cube/cube.obj",
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
@@ -2207,6 +2261,7 @@
                 "BasicParticle": "Assets/Images/circleParticle.png",
                 "Black": "Assets/Images/black.png",
                 "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
+                "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
@@ -2215,6 +2270,7 @@
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonBodyButtonBody.png": "Assets\\Models\\Stage\\ButtonBody/ButtonBody.png",
+                "asmptex:Assets\\Models\\Stage\\ButtonFlameButtonFlame.png": "Assets\\Models\\Stage\\ButtonFlame/ButtonFlame.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "black": "Assets/Images/black.png",
                 "buttonBackTex": "Assets/Images/MenuImages/ButtonBack.png",

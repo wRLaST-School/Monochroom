@@ -1,6 +1,6 @@
 #pragma once
 #include "IRenderStage.h"
-class SrPostRenderStage :
+class SrShadowCasterStage :
     public IRenderStage
 {
 public:
@@ -9,8 +9,5 @@ public:
     void PostDraw();
 
     void Render();
-    void DrawCommands(std::function<void(void)> cmd, TextureKey rt = RTVManager::defaultRT);
-
-private:
+    void DrawCommands(std::function<void(void)> cmd, TextureKey rt);
 };
-

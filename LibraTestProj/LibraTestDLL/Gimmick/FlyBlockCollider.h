@@ -3,13 +3,16 @@
 #include <Object3D.h>
 #include <SphereCollider.h>
 #include <OBBCollider.h>
+#include <FlyBlock.h>
 
 class FlyBlockCollider :
     public IScriptObject
 {
 private:
     Object3D* mObj;
-    SphereCollider mBodyCollider;
+    FlyBlock* mFlyBlock;
+    SphereCollider mMoveCollider;
+    OBBCollider mBodyCollider;
     OBBCollider mDownCollider;
 
 public:
@@ -21,7 +24,8 @@ public:
     DefDel;
 
 public:
-    SphereCollider GetBodyCollider();
+    SphereCollider GetMoveCollider();
+    OBBCollider GetBodyCollider();
     OBBCollider GetDownCollider();
 
     Object3D* GetObj() { return mObj; }

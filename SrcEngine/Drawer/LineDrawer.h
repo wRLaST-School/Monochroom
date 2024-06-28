@@ -29,7 +29,7 @@ public:
 private:
 	static std::vector<Line> lines_;
 
-	static const int32_t MAX_LINES = 1024;
+	static const int32_t MAX_LINES = 4096;
 
 	static D3D12_VERTEX_BUFFER_VIEW vbView_;
 	static Microsoft::WRL::ComPtr<ID3D12Resource> vertBuff_;

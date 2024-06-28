@@ -231,7 +231,8 @@ void LineDrawer::DrawAllLines()
 
 	GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &vbView_);
 
-	GetSpDX()->cmdList->DrawInstanced(static_cast<UINT>(lines_.size()), 1, 0, 0);
+	//GetSpDX()->cmdList->DrawInstanced(static_cast<UINT>(lines_.size()), 1, 0, 0);
+	GetSpDX()->cmdList->DrawInstanced(static_cast<UINT>(index), 1, 0, 0);
 }
 
 void LineDrawer::ClearLineData()

@@ -62,11 +62,13 @@ public:
 
 	Matrix GetBillboardMat();
 
-	bool CheckisInCameraInside(Vec3 pos, float r = 0);
+	DLLExport bool CheckisInCameraInside(Vec3 pos, float r = 0);
 
 	void OnInspectorWindowDraw();
 
 	void FrustumCulling();
+
+	void UpdateViewProjMatrix();
 
 	Float3 target = { 0.0f, 0.0f, 0.0f };
 

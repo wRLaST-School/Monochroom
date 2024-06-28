@@ -64,10 +64,13 @@ void SrAlphaStage::Render()
 {
 	for (auto itr = sortedObj_.rbegin(); itr != sortedObj_.rend(); ++itr)
 	{
+		RTVManager::SetRenderTargetToTexture((*itr)->GetRT(), false);
 		(*itr)->DrawCommands((*itr)->alphaTexKey);
 	} 
 	objects_.clear();
 	sortedObj_.clear();
+
+	RTVManager::SetRenderTargetToTexture(RTVManager::defaultRT, false);
 }
 
 void SrAlphaStage::RegisterAlphaObject(Object3D* obj)
@@ -106,7 +109,7 @@ void SrAlphaStage::SortObjects()
 	}
 }
 
-void SrAlphaStage::DrawCommands(std::function<void(void)> cmd)
+void SrAlphaStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
 	OutputDebugStringA("Draw Command Queued on Unintended Stage\n");
 }

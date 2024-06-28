@@ -85,6 +85,17 @@ void Camera::FrustumCulling()
 	frustum.CalcFrustum(this);
 }
 
+void Camera::UpdateViewProjMatrix()
+{
+	sCurrent->view = sCurrent->targetMode == CameraTargetMode::LookAt ?
+		Matrix::ViewLookAt(sCurrent->position, sCurrent->target, sCurrent->matWorld.ExtractAxisY()) :
+		Matrix::ViewLookTo(sCurrent->position, sCurrent->matWorld.ExtractAxisZ(), sCurrent->matWorld.ExtractAxisY());
+
+	sCurrent->proj = sCurrent->projectionMode == ProjectionMode::Perspective ?
+		Matrix::Projection(sCurrent->fov, (float)sCurrent->renderWidth / (float)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ) :
+		Matrix::ProjectionOrtho((int32_t)sCurrent->renderWidth, (int32_t)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ, 20);
+}
+
 void Camera::Set(Camera& camera)
 {
 	sCurrent = &camera;
@@ -119,13 +130,15 @@ void Camera::UseCurrent()
 
 	GetSpDX()->cmdList->RSSetScissorRects(1, &scissorrect);
 
-	sCurrent->view = sCurrent->targetMode == CameraTargetMode::LookAt ?
-		Matrix::ViewLookAt(sCurrent->position, sCurrent->target, sCurrent->matWorld.ExtractAxisY()) :
-		Matrix::ViewLookTo(sCurrent->position, sCurrent->matWorld.ExtractAxisZ(), sCurrent->matWorld.ExtractAxisY());
+	sCurrent->UpdateViewProjMatrix();
 
-	sCurrent->proj = sCurrent->projectionMode == ProjectionMode::Perspective ?
-		Matrix::Projection(sCurrent->fov, (float)sCurrent->renderWidth / (float)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ) :
-		Matrix::ProjectionOrtho((int32_t)sCurrent->renderWidth, (int32_t)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ, 20);
+	//sCurrent->view = sCurrent->targetMode == CameraTargetMode::LookAt ?
+	//	Matrix::ViewLookAt(sCurrent->position, sCurrent->target, sCurrent->matWorld.ExtractAxisY()) :
+	//	Matrix::ViewLookTo(sCurrent->position, sCurrent->matWorld.ExtractAxisZ(), sCurrent->matWorld.ExtractAxisY());
+	//
+	//sCurrent->proj = sCurrent->projectionMode == ProjectionMode::Perspective ?
+	//	Matrix::Projection(sCurrent->fov, (float)sCurrent->renderWidth / (float)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ) :
+	//	Matrix::ProjectionOrtho((int32_t)sCurrent->renderWidth, (int32_t)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ, 20);
 
 	sCurrent->cameraViewProjMatrixCB.contents->vproj = sCurrent->view * sCurrent->proj;
 	sCurrent->cameraViewProjMatrixCB.contents->cameraPos = sCurrent->position;

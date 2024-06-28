@@ -6,31 +6,43 @@
 
 
 class FlyBlock :
-    public IScriptObject
+	public IScriptObject
 {
+public:
+	static const float skAttractedHittingNotEndDot;
+
 private:
-    Object3D* mParent = nullptr;
-    std::unique_ptr<Gravity> mGravity = nullptr;
-    
-    bool mIsAttracted = false;
-    Vec3 mBeginPos;
-    Vec3 mEndPos;
+	Object3D* mParent = nullptr;
+	std::unique_ptr<Gravity> mGravity = nullptr;
 
-    std::unique_ptr<Easing> mEasing = nullptr;
+	bool mIsAttracted = false;
+	Vec3 mBeginPos;
+	Vec3 mEndPos;
+	Vec3 mMoveVec;
 
-    const int16_t kAttractedFrameMax = 60 * 4;
+	std::unique_ptr<Easing> mEasing = nullptr;
 
-public:
-    void Init();
-    void Update();
-    void Draw();
-    void CopyComponent(IComponent* src) { src; }
+	const int16_t kAttractedFrameMax = 60 * 2;
 
 public:
-    void BeginAttracting(const Vec3& endPos);
-    void EndAttracting();
+	void Init();
+	void Update();
+	void Draw();
+	void CopyComponent(IComponent* src) { src; }
 
-    DefDel;
+public:
+	void BeginAttracting(const Vec3& endPos);
+	void EndAttracting();
+
+	bool GetIsAttracting() { return mIsAttracted; }
+
+	Vec3 GetAttractedDir() { return (mEndPos - mBeginPos).GetNorm(); }
+
+	void ZeroGravity() { mGravity->ZeroVelocity(); }
+	Vec3 GetMoveVec() { return mMoveVec; }
+	Gravity* GetGravity() { return mGravity.get(); }
+
+	DefDel;
 };
 
 RegisterScript(FlyBlock);

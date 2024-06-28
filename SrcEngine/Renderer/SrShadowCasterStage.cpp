@@ -1,19 +1,17 @@
 #include "stdafx.h"
-#include "SrUIPlaneModel.h"
-#include <Light.h>
+#include "SrShadowCasterStage.h"
 #include <Camera.h>
 #include <RTVManager.h>
-#include <LineDrawer.h>
 
-void SrUIPlaneModel::Init()
+void SrShadowCasterStage::Init()
 {
 }
 
-void SrUIPlaneModel::PreDraw()
+void SrShadowCasterStage::PreDraw()
 {
 	SpDirectX* dx = GetSpDX();
-	dx->cmdList->SetPipelineState(GPipeline::GetState("ToonModel"));
-	dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("3D")->rootsignature.Get());
+	dx->cmdList->SetPipelineState(GPipeline::GetState("ShadowCaster"));
+	dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("ShadowCaster")->rootsignature.Get());
 
 	D3D12_VIEWPORT viewport{};
 
@@ -37,24 +35,22 @@ void SrUIPlaneModel::PreDraw()
 
 	dx->cmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	Light::Use();
-	Camera::UseCurrent();
+	Camera::sCurrent->UpdateViewProjMatrix();
 
-	//RTVManager::SetRenderTargetToTexture("BloomBefore");
+	RTVManager::SetRenderTargetToTexture("ShadowCaster");
 
-	//vector<TextureKey> rts = { "normalTest", "inverseTest" };
-	//RTVManager::SetRenderTargets(rts);
+	//Camera::UseCurrent();
 }
 
-void SrUIPlaneModel::PostDraw()
+void SrShadowCasterStage::PostDraw()
 {
 }
 
-void SrUIPlaneModel::Render()
+void SrShadowCasterStage::Render()
 {
 	for (auto& rt : commands_)
 	{
-		RTVManager::SetRenderTargetToTexture(rt.first, false);
+		RTVManager::SetRenderTargetToTexture(rt.first);
 
 		for (auto& cmd : rt.second)
 		{
@@ -64,7 +60,7 @@ void SrUIPlaneModel::Render()
 	commands_.clear();
 }
 
-void SrUIPlaneModel::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
+void SrShadowCasterStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
 	commands_[rt].push_back(cmd);
 }
