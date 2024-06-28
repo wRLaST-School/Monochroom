@@ -187,6 +187,8 @@ private:// メンバー変数
     int mNumCameraItem;
     std::vector<UIInternalItem> mCameraItems;
 
+    // テストオブジェクト
+    
 
     // プレイヤーコントロール(取得用)
     PlayerControl* mPlayerControl;

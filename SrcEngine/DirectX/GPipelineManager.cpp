@@ -147,4 +147,24 @@ void GPipelineManager::CreateAll()
 
 	GPipeline::Create(toonModelDesc, "ToonModel");
 #pragma endregion
+
+#pragma region UI板モデル
+	RegisterShader("UIPlaneModel");
+	InitVS("UIPlaneModel", "ToonModelVS.hlsl");
+	InitPS("UIPlaneModel", "ToonModelPS.hlsl");
+
+	PipelineDesc UIPlaneModelDesc;
+	UIPlaneModelDesc.Render.InputLayout.pInputElementDescs = ModelCommon::inputLayout;
+	UIPlaneModelDesc.Render.InputLayout.NumElements = _countof(ModelCommon::inputLayout);
+
+	UIPlaneModelDesc.RootSignature.ptr = SpRootSignature::Get("3D")->rootsignature.Get();
+
+	UIPlaneModelDesc.Shader.pShader = GetShader("UIPlaneModel");
+	UIPlaneModelDesc.Depth.DepthStencilState.DepthEnable = false;
+	UIPlaneModelDesc.Depth.DepthStencilState.StencilEnable = false;
+
+	UIPlaneModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
+
+	GPipeline::Create(UIPlaneModelDesc, "UIPlaneModel");
+#pragma endregion
 }

@@ -22,9 +22,6 @@ void SrSpriteStage::PreDraw()
 void SrSpriteStage::PostDraw()
 {
 	Sprite::PostSpriteDraw();
-
-	NoEffect::Effect("RenderTexture", "CurrentBuffer");
-	DockPanel::DrawViewPort();
 }
 
 void SrSpriteStage::Render()

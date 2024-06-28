@@ -2,6 +2,9 @@
 #include <ConsoleWindow.h>
 #include <GameManager.h>
 #include <PlayerControl.h>
+#include <FlyBlock.h>
+#include <Input.h>
+#include <AppOperationCommand.h>
 
 void CollisionManager::Init()
 {
@@ -55,6 +58,25 @@ void CollisionManager::RayHitFlyBlocks()
 		auto fbBodyCollider = fbc->GetBodyCollider();
 		if (rayCollider.IsTrigger(&fbBodyCollider))
 		{
+			if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
+			{
+				//引き寄せる
+				auto flyblock = fbc->Parent()->GetComponent("FlyBlock");
+				flyblock->Activate();
+				//auto flyBlock2 = flyblock->CastTo<FlyBlock>();
+				
+				/*if (a == nullptr)
+				{
+				}
+				else
+				{
+					flyblock->Activate();
+				}*/
+
+				//flyBlock2->Activate();
+				//flyBlock2->BeginAttracting(mViewCollider->GetPos());
+			}
+
 			ConsoleWindow::Log("Ray Hit FlyBlock");
 		}
 	}

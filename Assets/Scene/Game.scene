@@ -779,6 +779,12 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "FlyBlockCollider"
+                    },
+                    {
+                        "Name": "FlyBlock",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlock"
                     }
                 ],
                 "Model": "cube.obj",

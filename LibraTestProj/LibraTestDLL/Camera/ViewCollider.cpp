@@ -26,4 +26,9 @@ RayCollider ViewCollider::GetRayCollider()
 	return mRayCollider;
 }
 
+Vec3 ViewCollider::GetPos()
+{
+	return mObj->position;
+}
+
 RegisterScriptBody(ViewCollider);
