@@ -140,6 +140,14 @@ void Object3D::Draw()
 			return DrawToon();
 		}
 		break;
+	case Object3D::BlendMode::PostRender:
+		if (hasTexture) {
+			return DrawPostRender(texture);
+		}
+		else
+		{
+			return DrawPostRender();
+		}
 	default:
 		break;
 	}
@@ -294,11 +302,11 @@ void Object3D::DrawToon()
 {
 	if (model->material.size())
 	{
-		DrawAdd(model->material.front().textureKey);
+		DrawToon(model->material.front().textureKey);
 	}
 	else
 	{
-		DrawAdd("notexture");
+		DrawToon("notexture");
 	}
 }
 
@@ -325,6 +333,43 @@ void Object3D::DrawToon(const TextureKey& key)
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
 		}, SpRenderer::Stage::Toon);
+}
+
+void Object3D::DrawPostRender()
+{
+	if (model->material.size())
+	{
+		DrawPostRender(model->material.front().textureKey);
+	}
+	else
+	{
+		DrawPostRender("notexture");
+	}
+}
+
+void Object3D::DrawPostRender(const TextureKey& key)
+{
+	transformCB.contents->mat = matWorld;
+	SpRenderer::DrawCommand([&] {
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
+
+		if (model->materialCBs.size())
+			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, model->materialCBs.front().buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(2, transformCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(4, brightnessCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, model->bMatrixCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
+
+		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
+
+		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
+		}, SpRenderer::Stage::PostRender);
 }
 
 void Object3D::OnInspectorWindowDraw()
@@ -356,12 +401,13 @@ void Object3D::OnInspectorWindowDraw()
 
 	if (ImGui::CollapsingHeader("Blend Mode"))
 	{
-		int blendeModeInt = (int)blendMode;
-		ImGui::RadioButton("Opaque", &blendeModeInt, (int)BlendMode::Opaque);	ImGui::SameLine();
-		ImGui::RadioButton("Add", &blendeModeInt, (int)BlendMode::Add);			ImGui::SameLine();
-		ImGui::RadioButton("Alpha", &blendeModeInt, (int)BlendMode::Alpha);		ImGui::SameLine();
-		ImGui::RadioButton("Toon", &blendeModeInt, (int)BlendMode::Toon);
-		blendMode = (BlendMode)blendeModeInt;
+		int blendModeInt = (int)blendMode;
+		ImGui::RadioButton("Opaque", &blendModeInt, (int)BlendMode::Opaque);	ImGui::SameLine();
+		ImGui::RadioButton("Add", &blendModeInt, (int)BlendMode::Add);			ImGui::SameLine();
+		ImGui::RadioButton("Alpha", &blendModeInt, (int)BlendMode::Alpha);		ImGui::SameLine();
+		ImGui::RadioButton("Toon", &blendModeInt, (int)BlendMode::Toon);       ImGui::SameLine();
+		ImGui::RadioButton("PostRender", &blendModeInt, (int)BlendMode::PostRender);
+		blendMode = (BlendMode)blendModeInt;
 		ImGui::Separator();
 
 		ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));

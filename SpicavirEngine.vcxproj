@@ -302,6 +302,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClCompile Include="SrcEngine\Windows\SpWindow.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\StringObject.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\TestMoveObject.cpp" />
+    <ClCompile Include="SrPostRenderStage.cpp" />
     <ClCompile Include="TagWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -422,6 +423,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClInclude Include="SrcExternal\json.hpp" />
     <ClInclude Include="SrcEngine\SceneEditor\StringObject.h" />
     <ClInclude Include="SrcEngine\SceneEditor\TestMoveObject.h" />
+    <ClInclude Include="SrPostRenderStage.h" />
     <ClInclude Include="TagWindow.h" />
   </ItemGroup>
   <ItemGroup>
