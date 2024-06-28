@@ -5,9 +5,11 @@
 #include <DockPanel.h>
 #include <NoEffect.h>
 
-void SrSpriteStage::DrawCommands(std::function<void(void)> cmd)
+void SrSpriteStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
-	commands_.push_back(cmd);
+	auto itr = commands_.find(rt);
+	if (itr != commands_.end())
+		itr->second.push_back(cmd);
 }
 
 void SrSpriteStage::Init()
@@ -26,9 +28,14 @@ void SrSpriteStage::PostDraw()
 
 void SrSpriteStage::Render()
 {
-	for (auto& cmd : commands_)
+	for (auto& rt : commands_)
 	{
-		cmd();
+		RTVManager::SetRenderTargetToTexture(rt.first, false);
+
+		for (auto& cmd : rt.second)
+		{
+			cmd();
+		}
 	}
 	commands_.clear();
 

@@ -9,9 +9,8 @@ public:
     void PostDraw();
 
     void Render();
-    void DrawCommands(std::function<void(void)> cmd);
+    void DrawCommands(std::function<void(void)> cmd, TextureKey rt = RTVManager::defaultRT);
 
 private:
-    std::vector<std::function<void(void)>> commands_;
 };
 

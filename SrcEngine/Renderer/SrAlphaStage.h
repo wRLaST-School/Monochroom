@@ -10,7 +10,7 @@ public:
     void PostDraw();
 
     void Render();
-    void DrawCommands(std::function<void(void)> cmd);
+    void DrawCommands(std::function<void(void)> cmd, TextureKey rt = RTVManager::defaultRT);
 
     //Renderの最初に呼ぶ
     void SortObjects();

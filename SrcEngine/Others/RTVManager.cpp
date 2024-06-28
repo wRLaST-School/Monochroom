@@ -32,7 +32,7 @@ void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 void RTVManager::SetRenderTargetToTexture(const TextureKey& key, bool clear)
 {
 	CloseCurrentResBar();
-	GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->dsvHeap->GetCPUDescriptorHandleForHeapStart(), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
+	if (clear) GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->dsvHeap->GetCPUDescriptorHandleForHeapStart(), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
 	int32_t index = (int32_t)SpTextureManager::GetIndex(key);
 
 	SpDirectX* dx = GetSpDX();
@@ -57,7 +57,8 @@ void RTVManager::SetRenderTargetToTexture(const TextureKey& key, bool clear)
 		GetInstance().currentRTIndex_[i] = -1;
 	}
 
-	if (clear)ClearCurrentRenderTarget({ 0, 0, 0, 0 });
+	if (clear)
+		ClearCurrentRenderTarget({ 0, 0, 0, 0 });
 }
 
 void RTVManager::SetRenderTargets(const std::vector<TextureKey>& keys)

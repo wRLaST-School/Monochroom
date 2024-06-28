@@ -8,6 +8,7 @@
 #include <SpImGui.h>
 #include <Input.h>
 #include <DockPanel.h>
+#include <RTVManager.h>
 
 Object3D::Object3D()
 {
@@ -191,7 +192,7 @@ void Object3D::Draw()
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-		}, SpRenderer::Stage::Opaque);
+		}, SpRenderer::Stage::Opaque, GetRT());
 }
 
 void Object3D::Draw(const TextureKey& key)
@@ -224,7 +225,7 @@ void Object3D::Draw(const TextureKey& key)
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-		}, SpRenderer::Stage::Opaque);
+		}, SpRenderer::Stage::Opaque, GetRT());
 }
 
 void Object3D::DrawCommands(const TextureKey& key)
@@ -285,7 +286,7 @@ void Object3D::DrawAdd(const TextureKey& key)
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-		}, SpRenderer::Stage::Add);
+		}, SpRenderer::Stage::Add, GetRT());
 }
 
 void Object3D::DrawAlpha()
@@ -341,7 +342,7 @@ void Object3D::DrawToon(const TextureKey& key)
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-		}, SpRenderer::Stage::Toon);
+		}, SpRenderer::Stage::Toon, GetRT());
 }
 
 void Object3D::DrawUIPlane(const TextureKey& key)
@@ -366,7 +367,7 @@ void Object3D::DrawUIPlane(const TextureKey& key)
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-		}, SpRenderer::Stage::UIPlane);
+		}, SpRenderer::Stage::UIPlane, GetRT());
 }
 
 void Object3D::DrawPostRender()
@@ -403,7 +404,7 @@ void Object3D::DrawPostRender(const TextureKey& key)
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
 
 		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-		}, SpRenderer::Stage::PostRender);
+		}, SpRenderer::Stage::PostRender, GetRT());
 }
 
 void Object3D::OnInspectorWindowDraw()
@@ -433,7 +434,7 @@ void Object3D::OnInspectorWindowDraw()
 	}
 	ImGui::Separator();
 
-	if (ImGui::CollapsingHeader("Blend Mode"))
+	if (ImGui::CollapsingHeader("Render"))
 	{
 		int blendModeInt = (int)blendMode;
 		ImGui::RadioButton("Opaque", &blendModeInt, (int)BlendMode::Opaque);	ImGui::SameLine();
@@ -446,6 +447,8 @@ void Object3D::OnInspectorWindowDraw()
 		ImGui::Separator();
 
 		ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));
+
+		SpImGui::InputText("RenderTarget", renderTarget);
 	}
 	ImGui::Separator();
 
@@ -677,4 +680,14 @@ void Object3D::CopyComponent(IComponent* src)
 	tags = cast->tags;
 
 	UpdateMatrix();
+}
+
+TextureKey Object3D::GetRT()
+{
+	if (SpTextureManager::IsMasterTexture(renderTarget))
+	{
+		return renderTarget;
+	}
+
+	return RTVManager::defaultRT;
 }

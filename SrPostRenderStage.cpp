@@ -45,14 +45,19 @@ void SrPostRenderStage::PostDraw()
 
 void SrPostRenderStage::Render()
 {
-	for (auto& cmd : commands_)
+	for (auto& rt : commands_)
 	{
-		cmd();
+		RTVManager::SetRenderTargetToTexture(rt.first, false);
+
+		for (auto& cmd : rt.second)
+		{
+			cmd();
+		}
 	}
 	commands_.clear();
 }
 
-void SrPostRenderStage::DrawCommands(std::function<void(void)> cmd)
+void SrPostRenderStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
-	commands_.push_back(cmd);
+	commands_[rt].push_back(cmd);
 }
