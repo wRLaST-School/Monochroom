@@ -20,11 +20,13 @@ void FlyBlock::Update()
 		return;
 	}
 
+	mMoveVec = Vec3::zero;
 	if (mIsAttracted)
 	{
 		mEasing->Update();
 
 		mParent->position = mEasing->Out(mBeginPos, mEndPos);
+		mMoveVec = (mEndPos - mBeginPos).GetNorm();
 
 		if (mEasing->GetTimeRate() >= 1.0f)
 		{
@@ -41,7 +43,6 @@ void FlyBlock::Draw()
 {
 
 }
-
 
 //-----------------------------------------------------------------
 void FlyBlock::BeginAttracting(const Vec3& endPos)

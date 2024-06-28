@@ -1,15 +1,29 @@
 #include "FlyBlockCollider.h"
 #include <ScriptComponent.h>
+#include <SceneManager.h>
+#include <ConsoleWindow.h>
 
 void FlyBlockCollider::Init()
 {
 	mObj = This()->Parent()->CastTo<Object3D>();
+	mFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", mObj);
 }
 
 void FlyBlockCollider::Update()
 {
+		float r = Vec3(mObj->scale).GetMaxElement();
+	if (!mFlyBlock)
+	{
+		ConsoleWindow::Log("FlyBlock Null");
+	}
+	else
+	{
+		// 移動用
+		Vec3 moveVec = mFlyBlock->GetMoveVec();
+		mMoveCollider.Setting(Vec3(mObj->position) + moveVec, r);
+	}
+
 	// 押し戻し用
-	float r = Vec3(mObj->scale).GetMaxElement();
 	mBodyCollider.Setting(mObj->position, r);
 
 	// 重力判定用
@@ -23,12 +37,18 @@ void FlyBlockCollider::Update()
 void FlyBlockCollider::Draw()
 {
 	mBodyCollider.DrawCollider();
+	mMoveCollider.DrawCollider();
 	mDownCollider.DrawCollider();
 }
 
 SphereCollider FlyBlockCollider::GetBodyCollider()
 {
 	return mBodyCollider;
+}
+
+SphereCollider FlyBlockCollider::GetMoveCollider()
+{
+	return mMoveCollider;
 }
 
 OBBCollider FlyBlockCollider::GetDownCollider()

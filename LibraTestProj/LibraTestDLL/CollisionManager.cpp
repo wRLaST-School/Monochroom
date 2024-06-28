@@ -42,6 +42,9 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
+
+	// 飛んでくるブロックとガラス
+	FlyBlocksHitGlasses();
 }
 
 void CollisionManager::RayHitFlyBlocks()
@@ -198,7 +201,23 @@ void CollisionManager::FlyBlocksHitButtons()
 
 void CollisionManager::FlyBlocksHitGlasses()
 {
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		auto flyBlockMoveCollider = fbc->GetMoveCollider();
 
+		for (const auto& gc : mGlassColliders)
+		{
+			auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+
+			// 押し出し
+			Vec3 pushOut = Vec3::zero;
+			if (gc->GetBodyCollider().IsTrigger(&flyBlockMoveCollider, &pushOut))
+			{
+				fbc->Parent()->CastTo<Object3D>()->position += pushOut;
+				flyblock->EndAttracting();
+			}
+		}
+	}
 }
 
 RegisterScriptBody(CollisionManager);

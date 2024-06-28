@@ -18,6 +18,7 @@ private:
 	bool mIsAttracted = false;
 	Vec3 mBeginPos;
 	Vec3 mEndPos;
+	Vec3 mMoveVec;
 
 	std::unique_ptr<Easing> mEasing = nullptr;
 
@@ -38,6 +39,7 @@ public:
 	Vec3 GetAttractedDir() { return (mEndPos - mBeginPos).GetNorm(); }
 
 	void ZeroGravity() { mGravity->ZeroVelocity(); }
+	Vec3 GetMoveVec() { return mMoveVec; }
 
 	DefDel;
 };
