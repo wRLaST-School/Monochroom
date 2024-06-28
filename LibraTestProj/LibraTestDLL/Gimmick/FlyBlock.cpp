@@ -28,7 +28,7 @@ void FlyBlock::Update()
 
 		if (mEasing->GetTimeRate() >= 1.0f)
 		{
-			mIsAttracted = false;
+			EndAttracting();
 		}
 	}
 	else

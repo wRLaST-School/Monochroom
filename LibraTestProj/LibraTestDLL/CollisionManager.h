@@ -25,6 +25,7 @@ private:
 
 private:
 	void RayHitFlyBlocks();
+	void CameraInsideFlyBlocks();
 	void PlayerHitBlocks();
 	void PlayerHitButtons();
 	void PlayerHitGlasses();
