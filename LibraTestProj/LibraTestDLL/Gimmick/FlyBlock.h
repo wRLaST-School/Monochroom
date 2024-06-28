@@ -30,6 +30,10 @@ public:
 	void BeginAttracting(const Vec3& endPos);
 	void EndAttracting();
 
+	bool GetIsAttracting() { return mIsAttracted; }
+
+	void ZeroGravity() { mGravity->ZeroVelocity(); }
+
 	DefDel;
 };
 
