@@ -61,22 +61,30 @@ void CollisionManager::RayHitFlyBlocks()
 		return;
 	}
 
-	auto rayCollider = mViewCollider->GetRayCollider();
-	for (const auto& fbc : mFlyBlockColliders)
+	if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 	{
-		// レイ
-		auto fbBodyCollider = fbc->GetBodyCollider();
-		if (rayCollider.IsTrigger(&fbBodyCollider))
+		FlyBlock* flyBlock = nullptr;
+		auto rayCollider = mViewCollider->GetRayCollider();
+		float minDis = 99999.f;
+
+		for (const auto& fbc : mFlyBlockColliders)
 		{
-			if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
+			// レイ
+			auto fbBodyCollider = fbc->GetBodyCollider();
+			if (rayCollider.IsTrigger(&fbBodyCollider))
 			{
-				//引き寄せる
-				auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
-
-				flyblock->BeginAttracting(mViewCollider->GetPos() + Vec3{ 0,2.0f,0 });
+				float dis = Vec3::Distance(fbc->Parent()->CastTo<Object3D>()->position, rayCollider.r.origin);
+				if (dis < minDis)
+				{
+					flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+				}
 			}
+		}
 
-			ConsoleWindow::Log("Ray Hit FlyBlock");
+		// 一番近いFlyBlockのみ引き寄せる
+		if (flyBlock)
+		{
+			flyBlock->BeginAttracting(mViewCollider->GetPos() + Vec3{ 0,2.0f,0 });
 		}
 	}
 }
