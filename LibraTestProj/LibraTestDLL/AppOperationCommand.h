@@ -12,6 +12,8 @@ public:
 
 	bool PlayerAttractBlockCommand();
 
+	bool PlayerConfirmCommand();
+
 	bool UserDebugStopGameCommand();
 
 

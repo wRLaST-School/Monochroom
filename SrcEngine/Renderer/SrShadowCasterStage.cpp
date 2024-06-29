@@ -37,9 +37,9 @@ void SrShadowCasterStage::PreDraw()
 
 	Camera::sCurrent->UpdateViewProjMatrix();
 
-	RTVManager::SetRenderTargetToTexture("ShadowCaster");
+	//Camera::UseLightView();
 
-	//Camera::UseCurrent();
+	RTVManager::SetRenderTargetToTexture("ShadowMap");
 }
 
 void SrShadowCasterStage::PostDraw()

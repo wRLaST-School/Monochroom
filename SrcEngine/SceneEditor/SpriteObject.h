@@ -3,6 +3,7 @@
 #include <ComponentFactory.h>
 #include <Util.h>
 #include <SpTextureManager.h>
+#include <Color.h>
 
 class DockPanel;
 
@@ -30,4 +31,5 @@ public:
 private:
     Float2 position = { (float)Util::GetWinWidth() / 2, (float)Util::GetWinHeight() / 2 };
     Float3 scale = { 1.f, 1.f };
+    Color color = Color::White;
 };

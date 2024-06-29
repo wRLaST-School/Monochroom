@@ -3,6 +3,7 @@
 #include <SpDirectX.h>
 #include <SpEffekseer.h>
 #include <SpImGui.h>
+#include <DirectionalLight.h>
 
 Camera::Camera()
 {
@@ -168,6 +169,19 @@ void Camera::UseCurrent()
 	SpEffekseer::SetMatrices(efkViewMat, efkProjMat);
 
 	sCurrent->FrustumCulling();
+}
+
+void Camera::UseLightView()
+{
+	sLightView->position = sCurrent->position;
+	sLightView->rotationE = sCurrent->rotationE;
+	sLightView->view = sCurrent->targetMode == CameraTargetMode::LookAt ?
+		Matrix::ViewLookAt(sLightView->position, sLightView->target, sLightView->matWorld.ExtractAxisY()) :
+		Matrix::ViewLookTo(sLightView->position, sLightView->matWorld.ExtractAxisZ(), sLightView->matWorld.ExtractAxisY());
+
+	sLightView->proj = sLightView->projectionMode == ProjectionMode::Perspective ?
+		Matrix::Projection(sLightView->fov, (float)sLightView->renderWidth / (float)sLightView->renderHeight, sLightView->nearZ, sLightView->farZ) :
+		Matrix::ProjectionOrtho((int32_t)sLightView->renderWidth, (int32_t)sLightView->renderHeight, sLightView->nearZ, sLightView->farZ, 20);
 }
 
 Matrix Camera::GetCurrentCameraBillboardMat()

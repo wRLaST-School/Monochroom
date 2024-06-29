@@ -11,10 +11,12 @@ void SpriteObject::Update()
 
 void SpriteObject::Draw()
 {
-	SpDS::DrawRotaGraph((int32_t)position.x, (int32_t)position.y,
+	SpDS::DrawRotaGraph(position.x, position.y,
 		scale.x, scale.y,
 		0.f,
-		tex
+		tex,
+		Anchor::Center,
+		color
 	);
 }
 
@@ -24,6 +26,7 @@ void SpriteObject::OnInspectorWindowDraw()
 	ImGui::DragFloat2("Scale", &scale.x);
 
 	SpImGui::InputText("Texture", &tex, NULL);
+	ImGui::ColorEdit4("Brightness", &color.f4.x);
 
 	//gizmo
 	ImGuizmo::SetDrawlist();
@@ -66,20 +69,34 @@ void SpriteObject::OnInspectorWindowDraw()
 
 void SpriteObject::WriteParamJson(nlohmann::json& jsonObj)
 {
+	jsonObj["Name"] = name_;
 	jsonObj["Texture"] = tex;
 	jsonObj["posX"] = position.x;
 	jsonObj["posY"] = position.y;
 	jsonObj["scaleX"] = scale.x;
 	jsonObj["scaleY"] = scale.y;
+	jsonObj["Brightness"]["X"] = color.f4.x;
+	jsonObj["Brightness"]["Y"] = color.f4.y;
+	jsonObj["Brightness"]["Z"] = color.f4.z;
+	jsonObj["Brightness"]["W"] = color.f4.w;
 }
 
 void SpriteObject::ReadParamJson(const nlohmann::json& jsonObj)
 {
+	name_ = jsonObj["Name"];
 	tex = jsonObj["Texture"];
 	position.x = jsonObj["posX"];
 	position.y = jsonObj["posY"];
 	scale.x = jsonObj["scaleX"];
 	scale.y = jsonObj["scaleY"];
+
+	if (jsonObj.contains("Brightness"))
+	{
+		color.f4.x = jsonObj["Brightness"]["X"];
+		color.f4.y = jsonObj["Brightness"]["Y"];
+		color.f4.z = jsonObj["Brightness"]["Z"];
+		color.f4.w = jsonObj["Brightness"]["W"];
+	}
 }
 
 void SpriteObject::CopyComponent(IComponent* src)

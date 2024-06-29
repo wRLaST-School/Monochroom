@@ -17,6 +17,15 @@ void GameManager::Update()
 	}
 
 	ConsoleWindow::Log(std::format("GameManager::isStop : {}", isStop));
+
+	if (SceneManager::currentScene->GetName() == "Title")
+	{
+		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
+		{
+			// シーンの切り替え処理
+
+		}
+	}
 }
 
 void GameManager::Draw()
