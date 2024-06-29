@@ -6,7 +6,7 @@
 void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 {
 	CloseCurrentResBar();
-	GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->dsvHeap->GetCPUDescriptorHandleForHeapStart(), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
+	GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU(defaultRT), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
 	SpDirectX* dx = GetSpDX();
 	//リソースバリアーを書き込み可能状態に
 	dx->barrierDesc.Transition.pResource = GetSCM()->backBuffers[bbIndex].Get();
@@ -32,7 +32,7 @@ void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 void RTVManager::SetRenderTargetToTexture(const TextureKey& key, bool clear)
 {
 	CloseCurrentResBar();
-	if (clear) GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->dsvHeap->GetCPUDescriptorHandleForHeapStart(), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
+	if (clear) GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU(key), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
 	int32_t index = (int32_t)SpTextureManager::GetIndex(key);
 
 	SpDirectX* dx = GetSpDX();
@@ -141,6 +141,8 @@ void RTVManager::CreateRenderTargetTexture(float width, float height, const Text
 
 	GetSpDX()->dev->CreateRenderTargetView(SpTextureManager::GetTextureBuff(key), nullptr,
 		GetHeapCPUHandle((int32_t)SpTextureManager::GetIndex(key)));
+
+	GetSpDepth()->CreateDSV(key);
 
 	//デフォルトのリソースバリアをセット
 	//ID3D12Resource* lastRes = GetWDX()->barrierDesc.Transition.pResource;

@@ -22,13 +22,14 @@ class SceneRW;
 class SpTextureManager
 {
 private:
+public:
 	struct TexData {
 		DirectX::TexMetadata meta;
 		Float2 ratio = { 0.f, 0.f }; //xがゼロ以外なら画面比率
 		std::string filePath;
 		bool div = false;
 	};
-public:
+
 	//リソースウィンドウに一覧を表示するため
 	friend ResourceWindow;
 	//シーン情報書き込みで使用するため

@@ -167,6 +167,55 @@ void SuperUI::CopyComponent(IComponent* src)
 
 }
 
+void SuperUI::UIObj3DInit()
+{
+
+	// 項目数の初期化
+	mNumMenu = 2;
+
+	mNumOption = 3;
+
+	mCameraOptionNum = 4;
+
+	mGraphicsOptionNum = 2;
+
+	mSoundOptionNum = 3;
+
+	// シーンに配置されているオブジェクトを走査して、代入
+	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
+
+	// メインメニューの項目のオブジェクト設定
+	mMenuUIObj[OPTIONS]->planeObj		= SceneManager::FindObject<Object3D>("OptionPlane");
+	mMenuUIObj[GUID]->planeObj			= SceneManager::FindObject<Object3D>("GuidPlane");
+	mMenuUIObj[QUIT_SELECT]->planeObj	= SceneManager::FindObject<Object3D>("SelectPlane");
+	mMenuUIObj[QUIT_TITLE]->planeObj	= SceneManager::FindObject<Object3D>("QuitTitlePlane");
+
+	// オプションメニューの項目のオブジェクト設定
+	mMenuTabUIObj[CAMERA]->planeObj		= SceneManager::FindObject<Object3D>("CameraTab");
+	mMenuTabUIObj[GRAPHICS]->planeObj	= SceneManager::FindObject<Object3D>("GuidPlane");
+	mMenuTabUIObj[SOUND]->planeObj		= SceneManager::FindObject<Object3D>("SoundTab");
+
+	// カメラ項目のオブジェクト設定
+	mCameraUIObj[MOUSESENSITIVITY_X]->planeObj	= SceneManager::FindObject<Object3D>("MouseSensitivityX");
+	mCameraUIObj[MOUSESENSITIVITY_Y]->planeObj	= SceneManager::FindObject<Object3D>("MouseSensitivityY");
+
+	// グラフィックス項目のオブジェクト設定
+	mGraphicUIObj[POSTPROCESS]->planeObj	= SceneManager::FindObject<Object3D>("PostProcess");
+	mGraphicUIObj[POSTPROCESS]->planeObj	= SceneManager::FindObject<Object3D>("Shadow");
+
+	// 音量項目のオブジェクト設定
+	mSoundUIObj[MASTER]->planeObj	= SceneManager::FindObject<Object3D>("MastarVolume");
+	mSoundUIObj[BGM]->planeObj		= SceneManager::FindObject<Object3D>("BGMVolume");
+	mSoundUIObj[SE]->planeObj		= SceneManager::FindObject<Object3D>("SEVolume");
+
+
+
+	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
+	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
+	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
+
+}
+
 void SuperUI::LoadTexInit()
 {
 	SpTextureManager::LoadTexture("Assets/Images/circleParticle.png", "testTex");
