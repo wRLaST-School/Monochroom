@@ -15,7 +15,7 @@ float GetSeparateAxisLength(const Vec3& sep, const Vec3& e1, const Vec3& e2, con
 	return r1 + r2 + r3;
 }
 
-bool OBBCollider::CheckSeparationAxis(OBBCollider* other, Vec3 axis)
+float OBBCollider::CheckSeparationAxis(OBBCollider* other, Vec3 axis)
 {
 	Matrix aRotMat = rot.GetRotMat();
 	float r1 = fabsf(
@@ -31,7 +31,7 @@ bool OBBCollider::CheckSeparationAxis(OBBCollider* other, Vec3 axis)
 
 	Vec3 v = other->pos - pos;
 	float dis = fabsf(Vec3::Dot(v, axis));
-	return dis <= r1 + r2;
+	return (dis > r1 + r2) ? -1.0f : (r1 + r2 - dis);
 }
 
 bool OBBCollider::Collide(OBBCollider* other)

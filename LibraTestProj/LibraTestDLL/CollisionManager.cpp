@@ -281,12 +281,23 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 					flyBlock1->ZeroGravity();
 				}
 			}
+
+			// 押し戻し
+			Vec3 pushOut = Vec3::zero;
+			if (flyBlockBodyCollider1.IsTrigger(&flyBlockBodyCollider2, &pushOut))
+			{
+				FlyBlock* flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc1->Parent());
+				if (flyBlock)
+				{
+					if (flyBlock->GetMoveVec().GetSquaredLength() != 0)
+					{
+						fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
+						flyBlock->EndAttracting();
+					}
+				}
+			}
 		}
-
 	}
-
-
-
 }
 
 RegisterScriptBody(CollisionManager);

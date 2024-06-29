@@ -15,7 +15,7 @@ public:
 	OBBCollider();
 	void Setting(const Vec3 pos, const Quaternion rot, const Vec3 scale);
 	void DrawCollider() override;
-	bool CheckSeparationAxis(OBBCollider* other, Vec3 axis);
+	float CheckSeparationAxis(OBBCollider* other, Vec3 axis);
 
 public:
 	bool Collide(OBBCollider* other);

@@ -46,7 +46,7 @@ bool Collision::RayTriggerSphere(RayCollider* ray, SphereCollider* obb2)
 	return false;
 }
 
-bool Collision::OBBTriggerOBB(OBBCollider* obb1, OBBCollider* obb2)
+bool Collision::OBBTriggerOBB(OBBCollider* obb1, OBBCollider* obb2, Vec3* pushOut)
 {
 	if (!obb1->isActive || !obb2->isActive)
 	{
@@ -71,9 +71,17 @@ bool Collision::OBBTriggerOBB(OBBCollider* obb1, OBBCollider* obb2)
 	{
 		for (int j = 0; j < 3; ++j)
 		{
-			tempAxes[index++] = Vec3::Cross(tempAxes[i], tempAxes[j + 3]);
+			Vec3 crossAxis = Vec3::Cross(tempAxes[i], tempAxes[j + 3]);
+			if (crossAxis.GetSquaredLength() > 0.0001f) // ゼロベクトルを避けるために適切なスレッショルドを使用
+			{
+				tempAxes[index++] = crossAxis.GetNorm();
+			}
 		}
 	}
+
+	// 最小の衝突深さと対応する軸を保存
+	float minOverlap = 99999.f;
+	Vec3 smallestAxis;
 
 	for (auto axis : tempAxes)
 	{
@@ -82,12 +90,32 @@ bool Collision::OBBTriggerOBB(OBBCollider* obb1, OBBCollider* obb2)
 			continue;
 		}
 
-		if (!obb1->CheckSeparationAxis(obb2, axis))
+		float overlap = obb1->CheckSeparationAxis(obb2, axis);
+		if (overlap < 0)
 		{
 			obb1->color = Color::White;
 			obb2->color = Color::White;
 			return false;
 		}
+
+		if (overlap < minOverlap)
+		{
+			minOverlap = overlap;
+			smallestAxis = axis;
+		}
+	}
+
+	if (pushOut)
+	{
+		Vec3 deltaCenter = obb2->pos - obb1->pos;
+		// deltaCenterを使って押し戻しベクトルの方向を調整
+		if (Vec3::Dot(deltaCenter, smallestAxis) < 0)
+		{
+			smallestAxis = -smallestAxis;
+		}
+
+		// 押し戻しベクトルを計算
+		*pushOut = -smallestAxis * minOverlap;
 	}
 
 	//分離できないため当たっている
@@ -118,8 +146,6 @@ bool Collision::OBBTriggerSphere(OBBCollider* obb, SphereCollider* sphere, Vec3*
 	distanceAlongAxes.x = Util::Clamp<float>(distanceAlongAxes.x, -obb->scale.x, obb->scale.x);
 	distanceAlongAxes.y = Util::Clamp<float>(distanceAlongAxes.y, -obb->scale.y, obb->scale.y);
 	distanceAlongAxes.z = Util::Clamp<float>(distanceAlongAxes.z, -obb->scale.z, obb->scale.z);
-
-	//distanceAlongAxes.Clamp(-obb->scale, obb->scale);
 
 	closestPoint += xAxis * distanceAlongAxes.x;
 	closestPoint += yAxis * distanceAlongAxes.y;

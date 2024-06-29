@@ -35,7 +35,7 @@ bool ICollider::IsTrigger(ICollider* other, Vec3* pushOut)
 		{
 			return Collision::OBBTriggerOBB(
 				dynamic_cast<OBBCollider*>(this),
-				dynamic_cast<OBBCollider*>(other));
+				dynamic_cast<OBBCollider*>(other), pushOut);
 		}
 		else if (other->type == ColliderType::Sphere)
 		{
