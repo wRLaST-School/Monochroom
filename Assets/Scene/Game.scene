@@ -1004,12 +1004,13 @@
                                         "Type": "Object3D"
                                     }
                                 ],
-                                "Model": "",
+                                "Model": "Plane.obj",
                                 "Name": "MenuPlane",
+                                "NormalType": 0,
                                 "Position": {
                                     "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
+                                    "Y": 0.6000000238418579,
+                                    "Z": 1.0
                                 },
                                 "Rotation": {
                                     "W": 1.0,
@@ -1023,12 +1024,12 @@
                                     "Z": 0.0
                                 },
                                 "Scale": {
-                                    "X": 1.0,
-                                    "Y": 1.0,
+                                    "X": 0.4000000059604645,
+                                    "Y": 0.07999999821186066,
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "",
+                                "Texture": "white.png",
                                 "Type": "Object3D"
                             },
                             {
@@ -1268,12 +1269,13 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
-                                        "Model": "",
+                                        "Model": "Plane.obj",
                                         "Name": "CameraTab",
+                                        "NormalType": 0,
                                         "Position": {
-                                            "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "X": -0.7799999713897705,
+                                            "Y": 0.5699999928474426,
+                                            "Z": 1.0
                                         },
                                         "Rotation": {
                                             "W": 1.0,
@@ -1287,12 +1289,12 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.0,
-                                            "Y": 1.0,
+                                            "X": 0.20000000298023224,
+                                            "Y": 0.07000000029802322,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
-                                        "Texture": "",
+                                        "Texture": "white.png",
                                         "Type": "Object3D"
                                     },
                                     {
@@ -1378,12 +1380,13 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
-                                        "Model": "",
+                                        "Model": "Plane.obj",
                                         "Name": "GraohicsTab",
+                                        "NormalType": 0,
                                         "Position": {
-                                            "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.5699999928474426,
+                                            "Z": 1.0
                                         },
                                         "Rotation": {
                                             "W": 1.0,
@@ -1397,12 +1400,12 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.0,
-                                            "Y": 1.0,
+                                            "X": 0.20000000298023224,
+                                            "Y": 0.07000000029802322,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
-                                        "Texture": "",
+                                        "Texture": "white.png",
                                         "Type": "Object3D"
                                     },
                                     {
@@ -1524,12 +1527,50 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
-                                        "Model": "",
+                                        "Model": "Plane.obj",
                                         "Name": "SoundTab",
+                                        "NormalType": 0,
                                         "Position": {
+                                            "X": 0.07999999821186066,
+                                            "Y": 0.5699999928474426,
+                                            "Z": 1.0
+                                        },
+                                        "Rotation": {
+                                            "W": 1.0,
                                             "X": 0.0,
                                             "Y": 0.0,
                                             "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.20000000298023224,
+                                            "Y": 0.07000000029802322,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "white.png",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 0,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Model": "Plane.obj",
+                                        "Name": "Borad",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": -0.10000000149011612,
+                                            "Z": 1.0
                                         },
                                         "Rotation": {
                                             "W": 1.0,
@@ -1544,11 +1585,11 @@
                                         },
                                         "Scale": {
                                             "X": 1.0,
-                                            "Y": 1.0,
+                                            "Y": 0.6000000238418579,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
-                                        "Texture": "",
+                                        "Texture": "white.png",
                                         "Type": "Object3D"
                                     }
                                 ],
@@ -1636,12 +1677,13 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
-                                        "Model": "",
+                                        "Model": "Plane.obj",
                                         "Name": "GuidPlane",
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "Y": 0.3199999928474426,
+                                            "Z": 1.0
                                         },
                                         "Rotation": {
                                             "W": 1.0,
@@ -1655,12 +1697,12 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.0,
-                                            "Y": 1.0,
+                                            "X": 0.5,
+                                            "Y": 0.10000000149011612,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
-                                        "Texture": "",
+                                        "Texture": "white.png",
                                         "Type": "Object3D"
                                     },
                                     {
@@ -1710,12 +1752,13 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
-                                        "Model": "",
+                                        "Model": "Plane.obj",
                                         "Name": "OptionPlane",
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "Y": 0.05000000074505806,
+                                            "Z": 1.0
                                         },
                                         "Rotation": {
                                             "W": 1.0,
@@ -1729,12 +1772,12 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.0,
-                                            "Y": 1.0,
+                                            "X": 0.5,
+                                            "Y": 0.10000000149011612,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
-                                        "Texture": "",
+                                        "Texture": "white.png",
                                         "Type": "Object3D"
                                     },
                                     {
@@ -1784,12 +1827,13 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
-                                        "Model": "",
+                                        "Model": "Plane.obj",
                                         "Name": "QuitTitlePlane",
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "Y": -0.2199999988079071,
+                                            "Z": 1.0
                                         },
                                         "Rotation": {
                                             "W": 1.0,
@@ -1803,12 +1847,12 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.0,
-                                            "Y": 1.0,
+                                            "X": 0.5,
+                                            "Y": 0.10000000149011612,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
-                                        "Texture": "",
+                                        "Texture": "white.png",
                                         "Type": "Object3D"
                                     },
                                     {
@@ -1858,12 +1902,13 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
-                                        "Model": "",
+                                        "Model": "Plane.obj",
                                         "Name": "SelectPlane",
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "Y": -0.5,
+                                            "Z": 1.0
                                         },
                                         "Rotation": {
                                             "W": 1.0,
@@ -1877,12 +1922,12 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.0,
-                                            "Y": 1.0,
+                                            "X": 0.5,
+                                            "Y": 0.10000000149011612,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
-                                        "Texture": "",
+                                        "Texture": "white.png",
                                         "Type": "Object3D"
                                     }
                                 ],
@@ -1911,6 +1956,43 @@
                                 },
                                 "Tags": null,
                                 "Texture": "",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 0.5882353186607361,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Model": "Plane.obj",
+                                "Name": "BackBlack",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 2.0
+                                },
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 5.0,
+                                    "Y": 4.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "black",
                                 "Type": "Object3D"
                             }
                         ],
@@ -1976,7 +2058,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": true,
+                "Active": false,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -2243,6 +2325,7 @@
                 "Cube": "Assets/Models/cube/cube.obj",
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
+                "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
