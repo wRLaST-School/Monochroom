@@ -29,6 +29,9 @@ void CollisionManager::Update()
 		return;
 	}
 
+	//カメラにブロックが映っているか
+	CameraInsideFlyBlocks();
+
 	// レイと飛んでくるブロック
 	RayHitFlyBlocks();
 
@@ -44,9 +47,6 @@ void CollisionManager::Update()
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
 
-	//カメラにブロックが映っているか
-	CameraInsideFlyBlocks();
-
 	// 飛んでくるブロックとボタン
 	FlyBlocksHitButtons();
 
@@ -55,6 +55,25 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックと飛んでくるブロック
 	FlyBlocksHitFlyBlocks();
+}
+
+void CollisionManager::CameraInsideFlyBlocks()
+{
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+
+		if (flyblock->GetIsAttracting())
+		{
+			auto camera = SceneManager::FindObjectWithTag<Camera>("PlayerCamera");
+
+			//画面外に出たら落ちる
+			if (!camera->CheckisInCameraInside(fbc->Parent()->CastTo<Object3D>()->position))
+			{
+				flyblock->EndAttracting();
+			}
+		}
+	}
 }
 
 void CollisionManager::RayHitFlyBlocks()
@@ -88,25 +107,6 @@ void CollisionManager::RayHitFlyBlocks()
 		if (flyBlock)
 		{
 			flyBlock->BeginAttracting(mViewCollider->GetPos() + Vec3{ 0,2.0f,0 });
-		}
-	}
-}
-
-void CollisionManager::CameraInsideFlyBlocks()
-{
-	for (const auto& fbc : mFlyBlockColliders)
-	{
-		auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
-
-		if (flyblock->GetIsAttracting())
-		{
-			auto camera = SceneManager::FindObjectWithTag<Camera>("PlayerCamera");
-
-			//画面外に出たら落ちる
-			if (!camera->CheckisInCameraInside(fbc->Parent()->CastTo<Object3D>()->position))
-			{
-				flyblock->EndAttracting();
-			}
 		}
 	}
 }
@@ -233,14 +233,15 @@ void CollisionManager::FlyBlocksHitBlocks()
 
 void CollisionManager::FlyBlocksHitButtons()
 {
-	for (const auto& fbc : mFlyBlockColliders)
+	for (const auto& bc : mButtonColliders)
 	{
-		auto flyBlockDownCollider = fbc->GetDownCollider();
-		for (const auto& bc : mButtonColliders)
+		// 重力
+		auto buttonBodyCollider = bc->GetBodyCollider();
+		auto buttonFlameCollider = bc->GetFlameCollider();
+		for (const auto& fbc : mFlyBlockColliders)
 		{
-			// 重力
-			auto buttonBodyCollider = bc->GetBodyCollider();
-			auto buttonFlameCollider = bc->GetFlameCollider();
+			auto flyBlockDownCollider = fbc->GetDownCollider();
+
 			if (flyBlockDownCollider.IsTrigger(&buttonBodyCollider))
 			{
 				// 飛ぶブロック
@@ -258,7 +259,8 @@ void CollisionManager::FlyBlocksHitButtons()
 				///
 				/// 押す状態にする処理をここに
 				/// 
-
+				
+				break;
 			}
 			else if (flyBlockDownCollider.IsTrigger(&buttonFlameCollider))
 			{
@@ -273,6 +275,7 @@ void CollisionManager::FlyBlocksHitButtons()
 					flyBlock->ZeroGravity();
 				}
 
+				break;
 			}
 		}
 	}
