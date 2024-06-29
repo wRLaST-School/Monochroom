@@ -10,8 +10,6 @@ using namespace Input;
 
 void PlayerControl::Init()
 {
-	mGameManager = SceneManager::FindObject<GameManager>("GameManager");
-
 	parent_ = This()->Parent()->CastTo<Object3D>();
 	mGravity = std::make_unique<Gravity>();
 
@@ -104,6 +102,7 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
+	mGameManager = SceneManager::FindObject<GameManager>("GameManager");
 	if (mGameManager->GetisStop())
 	{
 		return;

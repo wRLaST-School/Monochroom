@@ -19,20 +19,20 @@ void GameManager::Update()
 
 	ConsoleWindow::Log(std::format("GameManager::isStop : {}", isStop));
 
-	if (!SceneManager::currentScene)
-	{
-		return;
-	}
+	//if (!SceneManager::currentScene)
+	//{
+	//	return;
+	//}
 
-	if (SceneManager::currentScene->GetName() == "Title")
-	{
-		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
-		{
-			// シーンの切り替え処理
-			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
-			SceneManager::WaitForLoadAndTransition();
-		}
-	}
+	//if (SceneManager::currentScene->GetName() == "Title")
+	//{
+	//	if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
+	//	{
+	//		// シーンの切り替え処理
+	//		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+	//		SceneManager::WaitForLoadAndTransition();
+	//	}
+	//}
 }
 
 void GameManager::Draw()
