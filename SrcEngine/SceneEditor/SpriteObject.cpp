@@ -83,7 +83,10 @@ void SpriteObject::WriteParamJson(nlohmann::json& jsonObj)
 
 void SpriteObject::ReadParamJson(const nlohmann::json& jsonObj)
 {
-	name_ = jsonObj["Name"];
+	if (jsonObj.contains("Name"))
+	{
+		name_ = jsonObj["Name"];
+	}
 	tex = jsonObj["Texture"];
 	position.x = jsonObj["posX"];
 	position.y = jsonObj["posY"];

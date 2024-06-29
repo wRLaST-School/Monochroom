@@ -4,11 +4,14 @@
 #include <AppOperationCommand.h>
 #include <GameManager.h>
 #include <ConsoleWindow.h>
+#include <SceneManager.h>
 
 using namespace Input;
 
 void PlayerControl::Init()
 {
+	mGameManager = SceneManager::FindObject<GameManager>("GameManager");
+
 	parent_ = This()->Parent()->CastTo<Object3D>();
 	mGravity = std::make_unique<Gravity>();
 
@@ -101,14 +104,10 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
-	ConsoleWindow::Log("PlayerControl");
-
-
-	if (GameManager::GetInstance()->GetisStop())
+	if (mGameManager->GetisStop())
 	{
 		return;
 	}
-	ConsoleWindow::Log(std::format("PlayerControl::isStop : {}", GameManager::GetInstance()->GetisStop()));
 
 	//ジャンプ
 	if (AppOperationCommand::GetInstance()->PlayerJumpCommand() && !isJump_)
