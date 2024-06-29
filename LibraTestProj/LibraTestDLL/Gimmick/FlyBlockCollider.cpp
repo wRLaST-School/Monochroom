@@ -20,7 +20,8 @@ void FlyBlockCollider::Update()
 	mBodyCollider.Setting(mObj->position, Quaternion::EulerToQuaternion(mObj->rotationE), mObj->scale);
 
 	// 重力判定用
-	Vec3 scale = Vec3(mObj->scale) * 0.5f;
+	Vec3 scale = Vec3(mObj->scale);
+	scale.y *= 0.5f;
 	Vec3 pos = Vec3(mObj->position) + Vec3(0.f, -mObj->scale.y + scale.y, 0.f);
 	Quaternion rot = Quaternion();
 	mDownCollider.Setting(pos, rot, scale);

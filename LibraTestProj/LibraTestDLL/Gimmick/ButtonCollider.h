@@ -9,11 +9,11 @@ class ButtonCollider :
 private:
     Object3D* mObj;
     OBBCollider mBodyCollider;
-    OBBCollider mFrameCollider;
+    OBBCollider mFlameCollider;
     Vec3 bodyColliderPos;
-    Vec3 FrameColliderPos;
+    Vec3 FlameColliderPos;
     Vec3 bodyColliderScale;
-    Vec3 FrameColliderScale;
+    Vec3 FlameColliderScale;
 
 public:
     void Init();
@@ -26,7 +26,7 @@ public:
 
 public:
     OBBCollider GetBodyCollider();
-    OBBCollider GetFrameCollider();
+    OBBCollider GetFlameCollider();
 };
 
 RegisterScript(ButtonCollider);

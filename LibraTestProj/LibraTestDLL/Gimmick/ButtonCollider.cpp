@@ -6,10 +6,10 @@ void ButtonCollider::Init()
 {
 	mObj = This()->Parent()->CastTo<Object3D>();
 	bodyColliderPos = Vec3(0.f,0.125f,0.f);
-	FrameColliderPos = Vec3(0.f, 0., 0.f);
+	FlameColliderPos = Vec3(0.f, 0., 0.f);
 
 	bodyColliderScale = Vec3(1.5f, 0.75f, 1.5f);
-	FrameColliderScale = Vec3(2.f, 0.375f, 2.f);
+	FlameColliderScale = Vec3(2.f, 0.375f, 2.f);
 }
 
 void ButtonCollider::Update()
@@ -18,13 +18,13 @@ void ButtonCollider::Update()
 	Quaternion rot = Quaternion::EulerToQuaternion(mObj->rotationE);
 
 	mBodyCollider.Setting(bodyColliderPos + pos, rot, Vec3::Mul(bodyColliderScale, Vec3(mObj->scale)));
-	mFrameCollider.Setting(FrameColliderPos + pos, rot, Vec3::Mul(FrameColliderScale, Vec3(mObj->scale)));
+	mFlameCollider.Setting(FlameColliderPos + pos, rot, Vec3::Mul(FlameColliderScale, Vec3(mObj->scale)));
 }
 
 void ButtonCollider::Draw()
 {
 	mBodyCollider.DrawCollider();
-	mFrameCollider.DrawCollider();
+	mFlameCollider.DrawCollider();
 }
 
 void ButtonCollider::OnInspectorWindowDraw()
@@ -33,8 +33,8 @@ void ButtonCollider::OnInspectorWindowDraw()
 	{
 		ImGui::DragFloat3("Body Pos", &bodyColliderPos.x);
 		ImGui::DragFloat3("Body Scale", &bodyColliderScale.x);
-		ImGui::DragFloat3("Frame Pos", &FrameColliderPos.x);
-		ImGui::DragFloat3("Frame Scale", &FrameColliderScale.x);
+		ImGui::DragFloat3("Flame Pos", &FlameColliderPos.x);
+		ImGui::DragFloat3("Flame Scale", &FlameColliderScale.x);
 	}
 }
 
@@ -43,9 +43,9 @@ OBBCollider ButtonCollider::GetBodyCollider()
 	return mBodyCollider;
 }
 
-OBBCollider ButtonCollider::GetFrameCollider()
+OBBCollider ButtonCollider::GetFlameCollider()
 {
-	return mFrameCollider;
+	return mFlameCollider;
 }
 
 RegisterScriptBody(ButtonCollider);

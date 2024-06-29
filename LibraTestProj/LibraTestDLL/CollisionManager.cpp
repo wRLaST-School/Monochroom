@@ -47,6 +47,9 @@ void CollisionManager::Update()
 	//カメラにブロックが映っているか
 	CameraInsideFlyBlocks();
 
+	// 飛んでくるブロックとボタン
+	FlyBlocksHitButtons();
+
 	// 飛んでくるブロックとガラス
 	FlyBlocksHitGlasses();
 
@@ -159,12 +162,12 @@ void CollisionManager::PlayerHitButtons()
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
 		}
-		else if (bc->GetFrameCollider().IsTrigger(&playerDownCollider))
+		else if (bc->GetFlameCollider().IsTrigger(&playerDownCollider))
 		{
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
 
-			float posY = bc->GetFrameCollider().pos.y;
-			float offsetY = bc->GetFrameCollider().scale.y + player->scale.y * 2;
+			float posY = bc->GetFlameCollider().pos.y;
+			float offsetY = bc->GetFlameCollider().scale.y + player->scale.y * 2;
 			player->position.y = posY + offsetY;
 
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
@@ -230,7 +233,49 @@ void CollisionManager::FlyBlocksHitBlocks()
 
 void CollisionManager::FlyBlocksHitButtons()
 {
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		auto flyBlockDownCollider = fbc->GetDownCollider();
+		for (const auto& bc : mButtonColliders)
+		{
+			// 重力
+			auto buttonBodyCollider = bc->GetBodyCollider();
+			auto buttonFlameCollider = bc->GetFlameCollider();
+			if (flyBlockDownCollider.IsTrigger(&buttonBodyCollider))
+			{
+				// 飛ぶブロック
+				auto flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+				if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
+				{
+					float posY = buttonBodyCollider.pos.y;
+					float offsetY = (flyBlockDownCollider.scale.y * 2) + buttonBodyCollider.scale.y;
 
+					fbc->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+					flyBlock->ZeroGravity();
+				}
+
+				// ボタン
+				///
+				/// 押す状態にする処理をここに
+				/// 
+
+			}
+			else if (flyBlockDownCollider.IsTrigger(&buttonFlameCollider))
+			{
+				// 飛ぶブロック
+				auto flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+				if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
+				{
+					float posY = buttonFlameCollider.pos.y;
+					float offsetY = (flyBlockDownCollider.scale.y * 2) + buttonFlameCollider.scale.y;
+
+					fbc->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+					flyBlock->ZeroGravity();
+				}
+
+			}
+		}
+	}
 }
 
 void CollisionManager::FlyBlocksHitGlasses()
