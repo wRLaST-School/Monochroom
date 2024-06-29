@@ -48,6 +48,8 @@ public:
 
 	static DLLExport void ReleaseScene();
 
+	static DLLExport IScene* GetCurrentScene();
+
 	enum class LoadState {
 		NotInProgress,
 		Loading,

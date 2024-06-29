@@ -187,6 +187,11 @@ void SceneManager::ReleaseScene()
 	nextScene.reset();
 }
 
+IScene* SceneManager::GetCurrentScene()
+{
+	return currentScene.get();
+}
+
 SceneManager::LoadState SceneManager::GetLoadState()
 {
 	return loadState;
