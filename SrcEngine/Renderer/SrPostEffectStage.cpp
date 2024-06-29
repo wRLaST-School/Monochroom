@@ -15,7 +15,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RenderTexture", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "CurrentScene", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
-	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "ShadowCaster", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "ShadowMap", true);
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("BloomBefore");
 	SpTextureManager::AddMasterTextureKey("BloomAfter");
@@ -24,7 +24,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("RenderTexture");
 	SpTextureManager::AddMasterTextureKey("CurrentScene");
 	SpTextureManager::AddMasterTextureKey("GrayScale");
-	SpTextureManager::AddMasterTextureKey("ShadowCaster");
+	SpTextureManager::AddMasterTextureKey("ShadowMap");
 
 	BloomP1::Init();
 	BloomP2::Init();
@@ -44,7 +44,7 @@ void SrPostEffectStage::Render()
 	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
 	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
 
-	//NoEffect::Effect("ShadowCaster", "RenderTexture");
+	//NoEffect::Effect("ShadowMap", "RenderTexture");
 }
 
 void SrPostEffectStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)

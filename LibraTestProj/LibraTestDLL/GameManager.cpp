@@ -1,4 +1,5 @@
 #include "GameManager.h"
+#include <SceneFromFile.h>
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
 #include <AppOperationCommand.h>
@@ -17,6 +18,16 @@ void GameManager::Update()
 	}
 
 	ConsoleWindow::Log(std::format("GameManager::isStop : {}", isStop));
+
+	if (SceneManager::currentScene->GetName() == "Title")
+	{
+		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
+		{
+			// シーンの切り替え処理
+			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+			SceneManager::WaitForLoadAndTransition();
+		}
+	}
 }
 
 void GameManager::Draw()
@@ -46,7 +57,7 @@ void GameManager::SetIsStop(bool IsStop)
 
 GameManager* GameManager::GetInstance()
 {
-	static GameManager* instance = SceneManager::FindObject<GameManager>("GameManager");;
+	GameManager* instance = SceneManager::FindObject<GameManager>("GameManager");
 	return instance;
 }
 

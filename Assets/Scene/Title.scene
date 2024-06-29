@@ -4,10 +4,13 @@
             {
                 "Children": [
                     {
+                        "Name": "ScriptComponent",
+                        "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TitleCamera"
                     }
                 ],
+                "Name": "Camera",
                 "Position": {
                     "X": -3.934691905975342,
                     "Y": -1.1190816164016724,
@@ -29,16 +32,26 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Tags": null,
                 "Type": "Camera",
                 "UseQuaternionRot": 1
             },
             {
+                "Active": true,
                 "BlendMode": 0,
-                "Model": "cube.obj",
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Model": "skydome.obj",
+                "Name": "Skydome",
+                "NormalType": 0,
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
-                    "Z": -4.03244686126709
+                    "Z": 0.0
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -56,16 +69,26 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Texture": "",
+                "Tags": null,
+                "Texture": "Stars.png",
                 "Type": "Object3D"
             },
             {
+                "Active": true,
                 "BlendMode": 0,
-                "Model": "skydome.obj",
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Model": "Goggles.obj",
+                "Name": "Goggles",
+                "NormalType": 0,
                 "Position": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.11360955238342285
+                    "X": 5.25,
+                    "Y": -3.5,
+                    "Z": -3.0
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -74,17 +97,40 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
+                    "X": 0.2617993950843811,
+                    "Y": 0.4363323152065277,
                     "Z": 0.0
                 },
                 "Scale": {
+                    "X": 1.9999998807907104,
+                    "Y": 1.9999982118606567,
+                    "Z": 1.9999994039535522
+                },
+                "Tags": null,
+                "Texture": "Goggles.png",
+                "Type": "Object3D"
+            },
+            {
+                "Name": "GameManager",
+                "Tags": null,
+                "Type": "ScriptComponent",
+                "filePath": "GameManager"
+            },
+            {
+                "Brightness": {
+                    "W": 1.0,
                     "X": 1.0,
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Texture": "Stars.png",
-                "Type": "Object3D"
+                "Name": "TitleName",
+                "Tags": null,
+                "Texture": "TitleName.png",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 280.0,
+                "scaleX": 3.0,
+                "scaleY": 3.0
             }
         ],
         "EfkEffects": [
@@ -92,6 +138,7 @@
         ],
         "Models": [
             {
+                "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
             }
@@ -99,10 +146,14 @@
         "Sounds": [
             {}
         ],
+        "Tags": null,
         "Textures": [
             {
                 "Black": "Assets/Images/black.png",
+                "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
+                "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png"
             }
         ],
