@@ -21,6 +21,11 @@ void SceneFromFile::Init()
 {
 	for (auto& c : components_)
 	{
+		AwakeAllChildComponents(c.second.get());
+	}
+
+	for (auto& c : components_)
+	{
 		InitAllChildComponents(c.second.get());
 	}
 }

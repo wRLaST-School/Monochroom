@@ -89,8 +89,10 @@ public:
 	virtual DLLExport std::string GetClassString() = 0;
 
 	//コンポーネント共通で自動で呼ばれる処理
+	virtual DLLExport void Awake();
 	virtual DLLExport void Init();
 	virtual DLLExport void Update();
+	virtual DLLExport void LateUpdate();
 	virtual DLLExport void Draw();
 
 	DLLExport void PrepDelete();
@@ -105,8 +107,10 @@ public:
 
 	virtual void CopyComponent(IComponent* src) = 0;
 
+	static void AwakeAllChildComponents(IComponent* parent);
 	static void InitAllChildComponents(IComponent* parent);
 	static void UpdateAllChildComponents(IComponent* parent);
+	static void LateUpdateAllChildComponents(IComponent* parent);
 	static void DrawAllChildComponents(IComponent* parent);
 
 	//読み書きに使う関数

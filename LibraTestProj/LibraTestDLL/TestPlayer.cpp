@@ -11,6 +11,11 @@
 #include <format>
 #include <ConsoleWindow.h>
 
+void TestPlayer::Awake()
+{
+	OutputDebugStringA("TestPlayer Awake");
+}
+
 void TestPlayer::Init()
 {
 	OutputDebugStringA(std::format("TestPlayer Initialize, size: {}\n", sizeof(TestPlayer)).c_str());
