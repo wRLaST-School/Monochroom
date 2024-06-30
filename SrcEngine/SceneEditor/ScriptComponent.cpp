@@ -9,9 +9,7 @@
 
 void ScriptComponent::Init()
 {
-	LoadDLL();
-
-	if (dllobj_.GetComponent()) dllobj_.GetComponent()->Init();
+	LoadDLL(true);
 }
 
 void ScriptComponent::Update()
@@ -31,6 +29,8 @@ void ScriptComponent::OnInspectorWindowDraw()
 	if (SpImGui::InputText("Class Name", &className, ImGuiInputTextFlags_::ImGuiInputTextFlags_EnterReturnsTrue))
 	{
 		Init();
+		dllobj_.GetComponent()->Awake();
+		dllobj_.GetComponent()->Init();
 	};
 
 	if (ImGui::Button("Compile"))
@@ -59,6 +59,16 @@ void ScriptComponent::CopyComponent(IComponent* src)
 	ScriptComponent* cast = dynamic_cast<ScriptComponent*>(src);
 	name_ = cast->name_;
 	className = cast->className;
+}
+
+void ScriptComponent::AwakeScript()
+{
+	if (dllobj_.GetComponent()) dllobj_.GetComponent()->Awake();
+}
+
+void ScriptComponent::InitScript()
+{
+	if (dllobj_.GetComponent()) dllobj_.GetComponent()->Init();
 }
 
 Libra::DLLObject* ScriptComponent::GetObj()
@@ -101,11 +111,17 @@ void ScriptComponent::CompileScript()
 
 	//スクリプトコンポーネントを全て保持してdllobjをfree
 	for (auto& c : scriptcomps) {
-		c->LoadDLL();
+		c->LoadDLL(true);
+	}
+	for (auto& c : scriptcomps) {
+		c->AwakeScript();
+	}
+	for (auto& c : scriptcomps) {
+		c->InitScript();
 	}
 }
 
-void ScriptComponent::LoadDLL()
+void ScriptComponent::LoadDLL(bool noInit)
 {
 	//読み込み処理
 	dllobj_.LoadDLL(className);
@@ -113,7 +129,7 @@ void ScriptComponent::LoadDLL()
 	if (dllobj_.GetComponent()) dllobj_.GetComponent()->body = this;
 	else OutputDebugStringA(std::format("No Such Class Found. Class Name: {}\n", className).c_str());
 
-	if (dllobj_.GetComponent()) {
+	if (!noInit && dllobj_.GetComponent()) {
 		dllobj_.GetComponent()->Awake();
 		dllobj_.GetComponent()->Init();
 	}

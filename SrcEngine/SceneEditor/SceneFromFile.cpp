@@ -2,6 +2,8 @@
 #include "SceneFromFile.h"
 #include <SceneRW.h>
 #include <DockPanel.h>
+#include <SceneManager.h>
+#include <ScriptComponent.h>
 
 SceneFromFile::SceneFromFile(std::string filePath)
 {
@@ -27,6 +29,15 @@ void SceneFromFile::Init()
 	for (auto& c : components_)
 	{
 		InitAllChildComponents(c.second.get());
+	}
+
+	auto scripts = SceneManager::FindScripts();
+
+	for (auto& s : scripts) {
+		s->CastTo<ScriptComponent>()->AwakeScript();
+	}
+	for (auto& s : scripts) {
+		s->CastTo<ScriptComponent>()->InitScript();
 	}
 }
 

@@ -74,6 +74,7 @@ private:
 
 	static DLLExport void FindObjectsTagExport(const std::string& tag, eastl::list<IComponent*>* pList);
 	static DLLExport void FindObjectsTagRecursive(const std::string& tag, IComponent* component, eastl::list<IComponent*>* pList);
+
 public:
 	template<typename T>
 	inline static T* FindObject(const std::string& name)
@@ -147,6 +148,8 @@ public:
 	//非同期でのシーン読み込みを行わずに直接シーン切り替えをする(バグ起きがちなので注意)
 	template <class NextScene, class... Args> static void InstantTransition(Args... args);
 
+	static DLLExport eastl::list<IComponent*> FindScripts();
+	static DLLExport void FindScriptsRecursive(IComponent* component, eastl::list<IComponent*>* pList);
 private:
 	SceneManager();
 	~SceneManager() {};
