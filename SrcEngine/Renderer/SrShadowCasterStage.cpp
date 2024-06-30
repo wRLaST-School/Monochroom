@@ -3,8 +3,14 @@
 #include <Camera.h>
 #include <RTVManager.h>
 
+std::unique_ptr<Camera> SrShadowCasterStage::lightCamera = nullptr;
+
 void SrShadowCasterStage::Init()
 {
+	lightCamera = std::make_unique<Camera>();
+	lightCamera->UseDefaultParams();
+	lightCamera->renderWidth = 1920.f;
+	lightCamera->renderHeight = 1080.f;
 }
 
 void SrShadowCasterStage::PreDraw()
@@ -36,8 +42,7 @@ void SrShadowCasterStage::PreDraw()
 	dx->cmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	Camera::sCurrent->UpdateViewProjMatrix();
-
-	//Camera::UseLightView();
+	//lightCamera->UpdateViewProjMatrix();
 
 	RTVManager::SetRenderTargetToTexture("ShadowMap");
 }

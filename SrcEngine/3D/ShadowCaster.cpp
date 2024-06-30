@@ -1,6 +1,7 @@
 #include "ShadowCaster.h"
 #include <SpRenderer.h>
 #include <Camera.h>
+#include <SrShadowCasterStage.h>
 
 ShadowCaster::ShadowCaster()
 {
@@ -20,7 +21,13 @@ void ShadowCaster::Draw(Model* aModel)
 	this->model = aModel;
 
 	cbData.contents->wMat = worldMat;
-	cbData.contents->vpMat = Camera::sCurrent->GetViewMat() * Camera::sCurrent->GetProjMat();
+	//cbData.contents->vpMat =
+	//	SrShadowCasterStage::lightCamera->GetViewMat() *
+	//	SrShadowCasterStage::lightCamera->GetProjMat();
+
+	cbData.contents->vpMat =
+		Camera::sCurrent->GetViewMat() *
+		Camera::sCurrent->GetProjMat();
 
 	SpRenderer::DrawCommand([&]
 		{

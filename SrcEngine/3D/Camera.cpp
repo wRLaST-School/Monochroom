@@ -61,7 +61,7 @@ bool Camera::CheckisInCameraInside(Vec3 pos, float r)
 	for (int i = 0; i < 4; i++)
 	{
 		float dot = Vec3::Dot(frustum.normal[i], toPlaneNorm);
-		if (dot > r*2)
+		if (dot > r * 2)
 		{
 			isInside = false;
 			break;
@@ -88,13 +88,13 @@ void Camera::FrustumCulling()
 
 void Camera::UpdateViewProjMatrix()
 {
-	sCurrent->view = sCurrent->targetMode == CameraTargetMode::LookAt ?
-		Matrix::ViewLookAt(sCurrent->position, sCurrent->target, sCurrent->matWorld.ExtractAxisY()) :
-		Matrix::ViewLookTo(sCurrent->position, sCurrent->matWorld.ExtractAxisZ(), sCurrent->matWorld.ExtractAxisY());
+	view = targetMode == CameraTargetMode::LookAt ?
+		Matrix::ViewLookAt(position, target, matWorld.ExtractAxisY()) :
+		Matrix::ViewLookTo(position, matWorld.ExtractAxisZ(), matWorld.ExtractAxisY());
 
-	sCurrent->proj = sCurrent->projectionMode == ProjectionMode::Perspective ?
-		Matrix::Projection(sCurrent->fov, (float)sCurrent->renderWidth / (float)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ) :
-		Matrix::ProjectionOrtho((int32_t)sCurrent->renderWidth, (int32_t)sCurrent->renderHeight, sCurrent->nearZ, sCurrent->farZ, 20);
+	proj = projectionMode == ProjectionMode::Perspective ?
+		Matrix::Projection(fov, (float)renderWidth / (float)renderHeight, nearZ, farZ) :
+		Matrix::ProjectionOrtho((int32_t)renderWidth, (int32_t)renderHeight, nearZ, farZ, 20);
 }
 
 void Camera::Set(Camera& camera)
@@ -169,19 +169,6 @@ void Camera::UseCurrent()
 	SpEffekseer::SetMatrices(efkViewMat, efkProjMat);
 
 	sCurrent->FrustumCulling();
-}
-
-void Camera::UseLightView()
-{
-	sLightView->position = sCurrent->position;
-	sLightView->rotationE = sCurrent->rotationE;
-	sLightView->view = sCurrent->targetMode == CameraTargetMode::LookAt ?
-		Matrix::ViewLookAt(sLightView->position, sLightView->target, sLightView->matWorld.ExtractAxisY()) :
-		Matrix::ViewLookTo(sLightView->position, sLightView->matWorld.ExtractAxisZ(), sLightView->matWorld.ExtractAxisY());
-
-	sLightView->proj = sLightView->projectionMode == ProjectionMode::Perspective ?
-		Matrix::Projection(sLightView->fov, (float)sLightView->renderWidth / (float)sLightView->renderHeight, sLightView->nearZ, sLightView->farZ) :
-		Matrix::ProjectionOrtho((int32_t)sLightView->renderWidth, (int32_t)sLightView->renderHeight, sLightView->nearZ, sLightView->farZ, 20);
 }
 
 Matrix Camera::GetCurrentCameraBillboardMat()

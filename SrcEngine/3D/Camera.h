@@ -88,9 +88,7 @@ public:
 
 	static DLLExport void Set(Camera& camera);
 	inline static Camera* sCurrent = nullptr;
-	inline static Camera* sLightView = nullptr;
 	static void UseCurrent();
-	static void UseLightView();
 
 	static DLLExport Matrix GetCurrentCameraBillboardMat();
 

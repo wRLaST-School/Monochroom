@@ -170,17 +170,35 @@ void SpFramework::Run()
 					ImGui::Checkbox("Show Hit Box", &GameManager::sShowHitBoxes);
 					ImGui::Checkbox("Pause Game", &GameManager::sDebugTimeStop);
 
-					ImGui::PushItemWidth(120.0f);
-					ImGui::DragFloat3("Position", &Camera::sCurrent->position.x);
-					ImGui::PopItemWidth();
+					if (ImGui::CollapsingHeader("Current Camera", ImGuiTreeNodeFlags_DefaultOpen))
+					{
+						ImGui::PushItemWidth(150.0f);
+						ImGui::DragFloat3("Position", &Camera::sCurrent->position.x);
+						ImGui::PopItemWidth();
 
-					ImGui::PushItemWidth(40.0f);
-					SpImGui::DragAngle("##rotEX", &Camera::sCurrent->rotationE.x);
-					ImGui::SameLine();
-					SpImGui::DragAngle("##rotEY", &Camera::sCurrent->rotationE.y);
-					ImGui::SameLine();
-					SpImGui::DragAngle("Rotation", &Camera::sCurrent->rotationE.z);
-					ImGui::PopItemWidth();
+						ImGui::PushItemWidth(40.0f);
+						SpImGui::DragAngle("##rotEX", &Camera::sCurrent->rotationE.x);
+						ImGui::SameLine();
+						SpImGui::DragAngle("##rotEY", &Camera::sCurrent->rotationE.y);
+						ImGui::SameLine();
+						SpImGui::DragAngle("Rotation", &Camera::sCurrent->rotationE.z);
+						ImGui::PopItemWidth();
+					}
+
+					if (ImGui::CollapsingHeader("Light Camera", ImGuiTreeNodeFlags_DefaultOpen))
+					{
+						ImGui::PushItemWidth(150.0f);
+						ImGui::DragFloat3("Position", &SrShadowCasterStage::lightCamera->position.x);
+						ImGui::PopItemWidth();
+
+						ImGui::PushItemWidth(40.0f);
+						SpImGui::DragAngle("##rotEX", &SrShadowCasterStage::lightCamera->rotationE.x);
+						ImGui::SameLine();
+						SpImGui::DragAngle("##rotEY", &SrShadowCasterStage::lightCamera->rotationE.y);
+						ImGui::SameLine();
+						SpImGui::DragAngle("Rotation", &SrShadowCasterStage::lightCamera->rotationE.z);
+						ImGui::PopItemWidth();
+					}
 				}
 				ImGui::End();
 				});
@@ -212,7 +230,7 @@ void SpFramework::Run()
 
 	/*バックアップの処理*/
 	std::string currentTime = Util::GetCurrentTimerString();
-	std::string path = "BackUp/" + SceneManager::currentScene->GetName()+"_" + currentTime + ".scene";
+	std::string path = "BackUp/" + SceneManager::currentScene->GetName() + "_" + currentTime + ".scene";
 	SceneRW::SaveScene(SceneManager::currentScene.get(), path);
 
 	/*ループここまで*/

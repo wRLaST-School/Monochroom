@@ -2286,12 +2286,12 @@
                 },
                 "Name": "SpriteObject",
                 "Tags": null,
-                "Texture": "white.png",
+                "Texture": "ShadowMap",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,
-                "scaleX": 20.0,
-                "scaleY": 20.0
+                "scaleX": 1.0,
+                "scaleY": 1.0
             }
         ],
         "EfkEffects": [

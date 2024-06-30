@@ -49,7 +49,6 @@ void SrPostEffectStage::Render()
 	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
 	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
 
-
 	//NoEffect::Effect("ShadowMap", "RenderTexture");
 }
 
