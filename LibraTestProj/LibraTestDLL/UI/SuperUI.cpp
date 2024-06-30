@@ -50,12 +50,12 @@ void SuperUI::Update()
 {
 	
 	// もしTABキーを押したらメニューを開け閉めする
-	if (Input::Key::Triggered(DIK_TAB)) 
+	if (Input::Key::Triggered(DIK_ESCAPE)) 
 	{
 		ConsoleWindow::Log("TAB押された。");
 		if (mIsDisplayUI) 
 		{
-			GameManager::GetInstance()->SetIsStop(false);
+			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(false);
 			mIsOpenUIMenu = false;
 			mIsMomentOpenMenu = false;
 			mIsDisplayUI = false;
@@ -65,7 +65,7 @@ void SuperUI::Update()
 		}
 		else 
 		{
-			GameManager::GetInstance()->SetIsStop(true);
+			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(true);
 			mIsMomentOpenMenu = true;
 			mIsDisplayUI = true;
 

@@ -4,6 +4,7 @@
 #include <AppOperationCommand.h>
 #include <GameManager.h>
 #include <ConsoleWindow.h>
+#include <SceneManager.h>
 
 using namespace Input;
 
@@ -101,14 +102,11 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
-	ConsoleWindow::Log("PlayerControl");
-
-
-	if (GameManager::GetInstance()->GetisStop())
+	mGameManager = SceneManager::FindObject<GameManager>("GameManager");
+	if (mGameManager->GetisStop())
 	{
 		return;
 	}
-	ConsoleWindow::Log(std::format("PlayerControl::isStop : {}", GameManager::GetInstance()->GetisStop()));
 
 	//ジャンプ
 	if (AppOperationCommand::GetInstance()->PlayerJumpCommand() && !isJump_)

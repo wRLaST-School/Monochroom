@@ -19,15 +19,20 @@ void GameManager::Update()
 
 	ConsoleWindow::Log(std::format("GameManager::isStop : {}", isStop));
 
-	if (SceneManager::currentScene->GetName() == "Title")
-	{
-		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
-		{
-			// シーンの切り替え処理
-			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
-			SceneManager::WaitForLoadAndTransition();
-		}
-	}
+	//if (!SceneManager::currentScene)
+	//{
+	//	return;
+	//}
+
+	//if (SceneManager::GetCurrentScene()->GetName() == "Title")
+	//{
+	//	if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
+	//	{
+	//		// シーンの切り替え処理
+	//		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+	//		SceneManager::WaitForLoadAndTransition();
+	//	}
+	//}
 }
 
 void GameManager::Draw()
@@ -53,12 +58,6 @@ bool GameManager::GetisStop()
 void GameManager::SetIsStop(bool IsStop)
 {
 	isStop = IsStop;
-}
-
-GameManager* GameManager::GetInstance()
-{
-	GameManager* instance = SceneManager::FindObject<GameManager>("GameManager");
-	return instance;
 }
 
 RegisterScriptBody(GameManager);

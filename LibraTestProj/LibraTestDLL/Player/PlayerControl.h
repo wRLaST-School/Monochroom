@@ -2,6 +2,7 @@
 #include "IScriptObject.h"
 #include <Object3D.h>
 #include <Gravity.h>
+#include <GameManager.h>
 #include <memory>
 
 class PlayerControl :
@@ -9,6 +10,7 @@ class PlayerControl :
 {
 private:
 	std::unique_ptr<Gravity> mGravity;
+	GameManager* mGameManager;
 
 	const Vec3 JUMP_POWER = { 0,0.056f,0 };
 
