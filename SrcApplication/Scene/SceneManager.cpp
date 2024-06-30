@@ -39,6 +39,8 @@ void SceneManager::Update()
 	if (!GameManager::sDebugTimeStop)
 	{
 		IComponent::UpdateAllChildComponents(currentScene.get());
+
+		IComponent::LateUpdateAllChildComponents(currentScene.get());
 	}
 	else
 	{
