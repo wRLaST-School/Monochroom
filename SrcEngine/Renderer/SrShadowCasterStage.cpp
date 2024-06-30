@@ -55,7 +55,7 @@ void SrShadowCasterStage::Render()
 {
 	for (auto& rt : commands_)
 	{
-		RTVManager::SetRenderTargetToTexture(rt.first);
+		//RTVManager::SetRenderTargetToTexture(rt.first);
 
 		for (auto& cmd : rt.second)
 		{
