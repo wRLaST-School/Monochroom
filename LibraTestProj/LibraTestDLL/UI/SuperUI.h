@@ -29,8 +29,8 @@ private:// クラス内構造体
     {
         OPTIONS,        // オプション
         GUID,           // ガイド
-        QUIT_SELECT,    // セレクトへ戻る
         QUIT_TITLE,     // タイトルへ戻る
+        QUIT_SELECT,    // セレクトへ戻る
     };
 
     enum CameraMenuNum
@@ -69,6 +69,20 @@ private:// クラス内構造体
 
         bool IsActive;
 
+        // UIのオプションのそれぞれの状態
+        UIMenuState state;
+
+        // 選択された時に変化するスケール量
+        Vec3 scaleChangeValue;
+
+        // 現在のカラー
+        Color correntColor;
+
+        // 現在のボタンカラー
+        Color buttonColor;
+
+        // 現在ンのメニュー内部のテキストカラー
+        Color textCurrentColor;
     };
 
 
@@ -124,6 +138,9 @@ private:
     // UIのオブジェクト3Dの初期設定
     void UIObj3DInit();
 
+    // UIのオブジェクト3Dの更新処理
+    void UIObj3DUpdate();
+
     // 親子関係の設定
     void LoadTexInit();
 
@@ -159,33 +176,6 @@ private:// メンバー変数
     // UIが表示するかどうか
     bool mIsDisplayUI;
 
-    // オプションメイン項目の親座標
-    Vec2 mUiOptionBasePos;
-
-    // オプションそれぞれの項目の親座標
-    Vec2 mUiOptionItemBasePos;
-
-    // イージング
-    std::vector<Easing> mEaseUIMenu;
-    Easing mTextAlphaEase;
-
-    // UIの項目数
-    int32_t mNumOfUIOption;
-
-    // UIのメインメニュー項目
-    std::vector<Object3D*>mUIMainMenuObjs;
-
-    // UIの変化するスケール配列
-    std::vector<UIMenuStatus> mUIStatus;
-
-    int mUiWaitTimeInterval = 20;
-    int mUiWaitTimer = 0;
-
-    // UIの項目の全体共通の初期座標
-    float mUICommonBasePos;
-
-    float mUICommonSpacePos;
-
     // UIの現在の項目をNUM型に保存
     int mUICurrentNum;
 
@@ -215,15 +205,8 @@ private:// メンバー変数
     Color mUITextBeforeColor;
     Color mUITextAfterColor;
 
-    // UIのメニュー内部のテキストパラメータ
-    Vec2 mUITextBasePos;
-
     // カメラメニューの感度のパラメータ
     Vec2 mCameraSensitivity;
-
-    // カメラの内部項目
-    int mNumCameraItem;
-    std::vector<UIInternalItem> mCameraItems;
 
     // メニューの項目数
     int mNumMenu;
@@ -250,7 +233,8 @@ private:// メンバー変数
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus*>mMenuTabUIObj;
 
-
+    // UIのメニュー項目にアクセスしたときの演出
+    bool IsActiveOption;
 
     // UIのオプション画面の項目オブジェクト
     std::vector<UI3DTabItemStatus*>mCameraUIObj;
