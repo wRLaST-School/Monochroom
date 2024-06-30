@@ -534,6 +534,9 @@
     <ClCompile Include="SrcEngine\Renderer\SrShadowCasterStage.cpp">
       <Filter>Engine\ソースファイル\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="SrcEngine\PostEffect\GaussianBlur.cpp">
+      <Filter>Engine\ソースファイル\PostEffect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\Others\Essentials.h">
@@ -905,6 +908,9 @@
     <ClInclude Include="SrcEngine\Renderer\SrShadowCasterStage.h">
       <Filter>Engine\ヘッダーファイル\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="SrcEngine\PostEffect\GaussianBlur.h">
+      <Filter>Engine\ヘッダーファイル\PostEffect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shaders\BasicPS.hlsl">
@@ -994,6 +1000,12 @@
     <FxCompile Include="Assets\Shaders\ShadowCasterVS.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\GaussianBlurPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\GaussianBlurVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Basic.hlsli">
@@ -1041,6 +1053,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Assets\Shaders\ShadowCaster.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\GaussianBlur.hlsli">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

@@ -4,6 +4,7 @@
 #include <SpWindow.h>
 #include <Bloom.h>
 #include <GrayScale.h>
+#include <GaussianBlur.h>
 #include <NoEffect.h>
 
 void SrPostEffectStage::Init()
@@ -16,6 +17,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "CurrentScene", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "ShadowMap", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GaussianBlur", true);
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("BloomBefore");
 	SpTextureManager::AddMasterTextureKey("BloomAfter");
@@ -25,12 +27,14 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("CurrentScene");
 	SpTextureManager::AddMasterTextureKey("GrayScale");
 	SpTextureManager::AddMasterTextureKey("ShadowMap");
+	SpTextureManager::AddMasterTextureKey("GaussianBlur");
 
 	BloomP1::Init();
 	BloomP2::Init();
 	BloomP3::Init();
 	BloomFin::Init();
 	GrayScale::Init();
+	GaussianBlur::Init();
 }
 
 void SrPostEffectStage::PreDraw() {};
@@ -38,11 +42,13 @@ void SrPostEffectStage::PostDraw() {};
 void SrPostEffectStage::Render()
 {
 	GrayScale::Effect(RTVManager::defaultRT, "GrayScale");
+	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
 
 	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
 	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
 	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
+
 
 	//NoEffect::Effect("ShadowMap", "RenderTexture");
 }
