@@ -130,11 +130,19 @@ DLLExport void IComponent::AddTag(const std::string& tag)
 	tags.push_back(tag);
 }
 
+void IComponent::Awake()
+{
+}
+
 void IComponent::Init()
 {
 }
 
 void IComponent::Update()
+{
+}
+
+void IComponent::LateUpdate()
 {
 }
 
@@ -193,6 +201,19 @@ bool IComponent::IsScript()
 	return dynamic_cast<ScriptComponent*>(this) ? true : false;
 }
 
+void IComponent::AwakeAllChildComponents(IComponent* parent)
+{
+	parent->Awake();
+
+	if (parent->components_.size())
+	{
+		for (auto& c : parent->components_)
+		{
+			AwakeAllChildComponents(c.second.get());
+		}
+	}
+}
+
 void IComponent::InitAllChildComponents(IComponent* parent)
 {
 	parent->Init();
@@ -230,6 +251,32 @@ void IComponent::UpdateAllChildComponents(IComponent* parent)
 	}
 
 	parent->Update();
+}
+
+void IComponent::LateUpdateAllChildComponents(IComponent* parent)
+{
+	parent->childRemovedNewItr_.reset();
+
+	if (!parent->active) { return; }
+
+	if (parent->components_.size())
+	{
+		for (auto itr = parent->components_.begin(); itr != parent->components_.end();)
+		{
+			LateUpdateAllChildComponents(itr->second.get());
+			if (parent->childRemovedNewItr_)
+			{
+				itr = parent->childRemovedNewItr_.value();
+				parent->childRemovedNewItr_.reset();
+			}
+			else
+			{
+				itr++;
+			}
+		}
+	}
+
+	parent->LateUpdate();
 }
 
 void IComponent::DrawAllChildComponents(IComponent* parent)

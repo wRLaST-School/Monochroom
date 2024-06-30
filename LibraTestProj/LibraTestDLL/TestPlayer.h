@@ -7,6 +7,7 @@ class TestPlayer :
     public IScriptObject
 {
 public:
+    void Awake()override;
     void Init();
     void Update();
     void Draw();

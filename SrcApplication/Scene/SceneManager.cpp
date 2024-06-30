@@ -39,6 +39,8 @@ void SceneManager::Update()
 	if (!GameManager::sDebugTimeStop)
 	{
 		IComponent::UpdateAllChildComponents(currentScene.get());
+
+		IComponent::LateUpdateAllChildComponents(currentScene.get());
 	}
 	else
 	{
@@ -190,6 +192,11 @@ void SceneManager::ReleaseScene()
 IScene* SceneManager::GetCurrentScene()
 {
 	return currentScene.get();
+}
+
+std::unique_ptr<IScene>* SceneManager::GetNextScenePP()
+{
+	return &nextScene;
 }
 
 SceneManager::LoadState SceneManager::GetLoadState()

@@ -2278,6 +2278,13 @@
                 "filePath": "CollisionManager"
             },
             {
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "SpriteObject",
                 "Tags": null,
                 "Texture": "white.png",
                 "Type": "SpriteObject",

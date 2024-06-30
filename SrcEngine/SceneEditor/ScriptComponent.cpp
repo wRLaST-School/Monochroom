@@ -113,5 +113,8 @@ void ScriptComponent::LoadDLL()
 	if (dllobj_.GetComponent()) dllobj_.GetComponent()->body = this;
 	else OutputDebugStringA(std::format("No Such Class Found. Class Name: {}\n", className).c_str());
 
-	if (dllobj_.GetComponent()) dllobj_.GetComponent()->Init();
+	if (dllobj_.GetComponent()) {
+		dllobj_.GetComponent()->Awake();
+		dllobj_.GetComponent()->Init();
+	}
 }
