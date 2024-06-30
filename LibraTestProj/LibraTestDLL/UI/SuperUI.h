@@ -27,8 +27,8 @@ private:// クラス内構造体
 
     enum MainMenuNum
     {
-        OPTIONS,        // オプション
         GUID,           // ガイド
+        OPTIONS,        // オプション
         QUIT_TITLE,     // タイトルへ戻る
         QUIT_SELECT,    // セレクトへ戻る
     };
@@ -229,6 +229,8 @@ private:// メンバー変数
 
     // UIのメインメニューの項目オブジェクト
     std::vector<UI3DTabItemStatus*>mMenuUIObj;
+
+    Object3D* mTabsParentObj;
 
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus*>mMenuTabUIObj;
