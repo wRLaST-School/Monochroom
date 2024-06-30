@@ -11,6 +11,7 @@
 #include <GameManager.h>
 #include <SceneRW.h>
 #include <SceneFromFile.h>
+#include <ScriptComponent.h>
 
 void SceneManager::Init()
 {
@@ -226,5 +227,27 @@ void SceneManager::UpdateLoadState()
 	{
 		loadState = LoadState::Loaded;
 		loadFinished = false;
+	}
+}
+
+eastl::list<IComponent*> SceneManager::FindScripts()
+{
+	eastl::list<IComponent*> foundList;
+
+	FindScriptsRecursive(GetCurrentScene(), &foundList);
+
+	return foundList;
+}
+
+void SceneManager::FindScriptsRecursive(IComponent* component, eastl::list<IComponent*>* pList)
+{
+	for (const auto& comp : component->GetAllComponents())
+	{
+		if (comp.second->CastTo<ScriptComponent>())
+		{
+			pList->emplace_back(comp.second.get());
+		}
+
+		FindScriptsRecursive(comp.second.get(), pList);
 	}
 }

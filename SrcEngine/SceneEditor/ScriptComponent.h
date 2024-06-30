@@ -19,11 +19,14 @@ public:
 
     void CopyComponent(IComponent* src) override;
 
+    void AwakeScript();
+    void InitScript();
+
     Libra::DLLObject* GetObj();
 
 private:
     void CompileScript();
-    void LoadDLL();
+    void LoadDLL(bool noInit = false);
 
     std::string className;
 

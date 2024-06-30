@@ -10,6 +10,7 @@
 #include <ScriptComponent.h>
 #include <format>
 #include <ConsoleWindow.h>
+#include <SceneManager.h>
 
 void TestPlayer::Awake()
 {
@@ -20,6 +21,8 @@ void TestPlayer::Init()
 {
 	OutputDebugStringA(std::format("TestPlayer Initialize, size: {}\n", sizeof(TestPlayer)).c_str());
 	name_ = "TestPlayer";
+
+	SceneManager::FindObjectWithTag<IComponent>("FlyBlock");
 }
 
 void TestPlayer::Update()
