@@ -24,7 +24,7 @@ void GameManager::Update()
 	//	return;
 	//}
 
-	//if (SceneManager::currentScene->GetName() == "Title")
+	//if (SceneManager::GetCurrentScene()->GetName() == "Title")
 	//{
 	//	if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
 	//	{

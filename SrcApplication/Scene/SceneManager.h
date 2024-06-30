@@ -24,7 +24,7 @@ public:
 			return;
 		}
 
-		nextScene = std::make_unique<NextScene>(args...);
+		*GetNextScenePP() = std::make_unique<NextScene>(args...);
 
 		loadState = LoadState::Loading;
 
@@ -33,7 +33,7 @@ public:
 			ModelManager::PreLoadNewScene();
 			SoundManager::PreLoadNewScene();
 			SpEffekseer::PreLoadNewScene();
-			nextScene->LoadResources();
+			(*GetNextScenePP())->LoadResources();
 			loadFinished = true;
 			});
 	};
@@ -49,6 +49,7 @@ public:
 	static DLLExport void ReleaseScene();
 
 	static DLLExport IScene* GetCurrentScene();
+	static DLLExport std::unique_ptr<IScene>* GetNextScenePP();
 
 	enum class LoadState {
 		NotInProgress,

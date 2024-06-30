@@ -192,6 +192,11 @@ IScene* SceneManager::GetCurrentScene()
 	return currentScene.get();
 }
 
+std::unique_ptr<IScene>* SceneManager::GetNextScenePP()
+{
+	return &nextScene;
+}
+
 SceneManager::LoadState SceneManager::GetLoadState()
 {
 	return loadState;
