@@ -19,12 +19,14 @@ void GameManager::Update()
 
 	ConsoleWindow::Log(std::format("GameManager::isStop : {}", isStop));
 
-	//if (!SceneManager::currentScene)
+	//if (!SceneManager::GetCurrentScene())
 	//{
+	//	ConsoleWindow::Log("SceneManager::GetCurrentScene is null");
+
 	//	return;
 	//}
 
-	//if (SceneManager::currentScene->GetName() == "Title")
+	//if (SceneManager::GetCurrentScene()->GetName() == "Title")
 	//{
 	//	if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
 	//	{
@@ -58,6 +60,12 @@ bool GameManager::GetisStop()
 void GameManager::SetIsStop(bool IsStop)
 {
 	isStop = IsStop;
+}
+
+GameManager* GameManager::GetInstance()
+{
+	GameManager* instance = SceneManager::FindObject<GameManager>("GameManager");
+	return instance;
 }
 
 RegisterScriptBody(GameManager);
