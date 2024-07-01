@@ -7,6 +7,7 @@
 void GameManager::Init()
 {
 	mPlayer = SceneManager::FindObject<Object3D>("Player");
+	mCamera = SceneManager::FindObject<Camera>("Camera");
 	isStop = false;
 }
 
@@ -25,8 +26,6 @@ void GameManager::Update()
 
 		return;
 	}
-
-
 
 	if (SceneManager::GetCurrentScene()->GetName() == "Title")
 	{
@@ -52,6 +51,11 @@ void GameManager::CopyComponent(IComponent* src)
 Object3D* GameManager::GetPlayer()
 {
 	return mPlayer;
+}
+
+Camera* GameManager::GetCamera()
+{
+	return mCamera;
 }
 
 bool GameManager::GetisStop()

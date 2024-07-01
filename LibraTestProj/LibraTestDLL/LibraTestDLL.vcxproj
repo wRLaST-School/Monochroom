@@ -24,6 +24,7 @@
     <ClInclude Include="Gimmick\GlassCollider.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
+    <ClInclude Include="StageButton.h" />
     <ClInclude Include="UI\SuperUI.h" />
     <ClInclude Include="Bases.h" />
     <ClInclude Include="IScriptObject.h" />
@@ -49,6 +50,7 @@
     <ClCompile Include="Gimmick\GlassCollider.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
+    <ClCompile Include="StageButton.cpp" />
     <ClCompile Include="UI\SuperUI.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />

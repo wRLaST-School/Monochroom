@@ -6,13 +6,14 @@
 #include <Input.h>
 #include <AppOperationCommand.h>
 #include <Camera.h>
+#include <StageButton.h>
 
 void CollisionManager::Init()
 {
 	auto camera = SceneManager::FindObject<Object3D>("Camera");
 	mViewCollider = SceneManager::FindChildObject<ViewCollider>("ViewCollider", camera);
 
-	auto player = SceneManager::FindObject<Object3D>("Player");
+	auto player = GameManager::GetInstance()->GetPlayer();
 	mPlayerCollider = SceneManager::FindChildObject<PlayerCollider>("PlayerCollider", player);
 
 	mBlockColliders = FindColliderList<BlockCollider>("Block", "BlockCollider");
@@ -150,7 +151,13 @@ void CollisionManager::PlayerHitButtons()
 
 	for (const auto& bc : mButtonColliders)
 	{
+		//ステージ内のボタン
+		auto button = bc->Parent()->CastTo<Object3D>();
+		auto stageButton = SceneManager::FindChildObject<StageButton>("StageButton", button);
+
+
 		// 重力
+		//body
 		if (bc->GetBodyCollider().IsTrigger(&playerDownCollider))
 		{
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
@@ -161,7 +168,11 @@ void CollisionManager::PlayerHitButtons()
 
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
+
+			//ボタンへこませる
+			stageButton->BeginPushingButton();
 		}
+		//frame
 		else if (bc->GetFlameCollider().IsTrigger(&playerDownCollider))
 		{
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
@@ -173,6 +184,7 @@ void CollisionManager::PlayerHitButtons()
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
 		}
+		
 	}
 }
 
@@ -235,6 +247,10 @@ void CollisionManager::FlyBlocksHitButtons()
 {
 	for (const auto& bc : mButtonColliders)
 	{
+		//ステージ内のボタン
+		auto button = bc->Parent()->CastTo<Object3D>();
+		auto stageButton = SceneManager::FindChildObject<StageButton>("StageButton", button);
+
 		// 重力
 		auto buttonBodyCollider = bc->GetBodyCollider();
 		auto buttonFlameCollider = bc->GetFlameCollider();
@@ -255,11 +271,9 @@ void CollisionManager::FlyBlocksHitButtons()
 					flyBlock->ZeroGravity();
 				}
 
-				// ボタン
-				///
-				/// 押す状態にする処理をここに
-				/// 
-				
+				// ボタン凹ませる
+				stageButton->BeginPushingButton();
+
 				break;
 			}
 			else if (flyBlockDownCollider.IsTrigger(&buttonFlameCollider))

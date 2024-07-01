@@ -102,8 +102,7 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
-	mGameManager = SceneManager::FindObject<GameManager>("GameManager");
-	if (mGameManager->GetisStop())
+	if (GameManager::GetInstance()->GetisStop())
 	{
 		return;
 	}
