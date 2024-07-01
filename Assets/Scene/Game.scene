@@ -45,7 +45,7 @@
                 "UseQuaternionRot": 0
             },
             {
-                "Active": true,
+                "Active": false,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -563,11 +563,11 @@
                     }
                 ],
                 "Model": "",
-                "Name": "StageBloks",
+                "Name": "StageBlocks",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
-                    "Z": 0.0
+                    "Z": -25.0
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -2040,7 +2040,7 @@
                 "Name": "UI",
                 "Position": {
                     "X": 0.0,
-                    "Y": 0.0,
+                    "Y": 8.986001014709473,
                     "Z": 0.0
                 },
                 "Rotation": {
@@ -2292,7 +2292,7 @@
                 },
                 "Name": "SpriteObject",
                 "Tags": null,
-                "Texture": "ShadowMap_depth_",
+                "Texture": "ShadowMap",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,

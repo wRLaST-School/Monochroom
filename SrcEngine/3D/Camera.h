@@ -4,6 +4,7 @@
 struct ConstBufferDataVProj {
 	Matrix vproj;
 	Matrix billboardMat;
+	Matrix lightViewProjMat = Matrix::Identity();
 	Float3 cameraPos;
 };
 

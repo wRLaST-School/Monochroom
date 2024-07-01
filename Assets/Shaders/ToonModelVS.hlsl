@@ -56,18 +56,16 @@ SkinOutput ComputeSkin(VSInput input)
 
 VSOutput main(VSInput input)
 {
-	//float3 lightDir = normalize(float3(1, -1, 1));
-	//float3 lightColor = float3(1.0f, 1.0f, 1.0f);
-    
     SkinOutput skinned = ComputeSkin(input);
 
 	float4 wnormal = normalize(mul(mat, float4(skinned.normal, 0)));
-    //float4 wnormal = float4(normal, 0);
 	float4 wpos = mul(mat, skinned.pos);
+    float4 spos = mul(lightViewProjMat, wpos);
 
 	VSOutput output;
 	output.svpos = mul(mul(vpmat, mat), skinned.pos);
 	output.worldpos = wpos;
+    output.shadowpos = mul(mul(lightViewProjMat, mat), skinned.pos);
 	output.normal = wnormal.xyz;
 	output.uv = input.uv;
 

@@ -219,6 +219,8 @@ void Object3D::Draw(const TextureKey& key)
 
 		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("dissolveMap"));
 
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(9, SpTextureManager::GetGPUDescHandle("Black"));
+
 		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
 
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
@@ -335,6 +337,10 @@ void Object3D::DrawToon(const TextureKey& key)
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, model->bMatrixCB.buffer->GetGPUVirtualAddress());
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("Black"));
+
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(9, SpTextureManager::GetGPUDescHandle("ShadowMap_depth_"));
 
 		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
 

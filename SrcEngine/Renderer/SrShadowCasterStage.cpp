@@ -11,6 +11,7 @@ void SrShadowCasterStage::Init()
 	lightCamera->UseDefaultParams();
 	lightCamera->renderWidth = 1920.f;
 	lightCamera->renderHeight = 1080.f;
+	lightCamera->projectionMode = ProjectionMode::Orthographic;
 }
 
 void SrShadowCasterStage::PreDraw()
@@ -41,8 +42,9 @@ void SrShadowCasterStage::PreDraw()
 
 	dx->cmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	Camera::sCurrent->UpdateViewProjMatrix();
-	//lightCamera->UpdateViewProjMatrix();
+	//Camera::sCurrent->UpdateViewProjMatrix();
+	lightCamera->UpdateMatrix();
+	lightCamera->UpdateViewProjMatrix();
 
 	RTVManager::SetRenderTargetToTexture("ShadowMap");
 }

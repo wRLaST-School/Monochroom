@@ -4,6 +4,7 @@
 #include <SpEffekseer.h>
 #include <SpImGui.h>
 #include <DirectionalLight.h>
+#include <SrShadowCasterStage.h>
 
 Camera::Camera()
 {
@@ -145,6 +146,8 @@ void Camera::UseCurrent()
 	sCurrent->cameraViewProjMatrixCB.contents->cameraPos = sCurrent->position;
 
 	sCurrent->cameraViewProjMatrixCB.contents->billboardMat = GetCurrentCameraBillboardMat();
+	sCurrent->cameraViewProjMatrixCB.contents->lightViewProjMat =
+		SrShadowCasterStage::lightCamera->GetViewMat() * SrShadowCasterStage::lightCamera->GetProjMat();
 
 	GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(3, sCurrent->cameraViewProjMatrixCB.buffer->GetGPUVirtualAddress());
 

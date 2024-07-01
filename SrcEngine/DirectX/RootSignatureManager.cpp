@@ -40,6 +40,14 @@ void RootSignatureManager::RegisterAllRS()
 		descRange2.RegisterSpace = 0;
 		descRange2.OffsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND;
 
+		// シャドウマップ用
+		D3D12_DESCRIPTOR_RANGE descRange3{};
+		descRange3.NumDescriptors = 1;
+		descRange3.RangeType = D3D12_DESCRIPTOR_RANGE_TYPE_SRV;
+		descRange3.BaseShaderRegister = 2;
+		descRange3.RegisterSpace = 0;
+		descRange3.OffsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND;
+
 		//定数バッファ0番マテリアル
 		rs3d->params.emplace_back();
 		rs3d->params[0].ParameterType = D3D12_ROOT_PARAMETER_TYPE_CBV;
@@ -102,6 +110,13 @@ void RootSignatureManager::RegisterAllRS()
 		rs3d->params[8].DescriptorTable.pDescriptorRanges = &descRange2;
 		rs3d->params[8].DescriptorTable.NumDescriptorRanges = 1;
 		rs3d->params[8].ShaderVisibility = D3D12_SHADER_VISIBILITY_ALL;
+
+		//テクスチャレジスタ2番シャドウマップ
+		rs3d->params.emplace_back();
+		rs3d->params[9].ParameterType = D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE;
+		rs3d->params[9].DescriptorTable.pDescriptorRanges = &descRange3;
+		rs3d->params[9].DescriptorTable.NumDescriptorRanges = 1;
+		rs3d->params[9].ShaderVisibility = D3D12_SHADER_VISIBILITY_ALL;
 
 		rs3d->Create();
 	}
