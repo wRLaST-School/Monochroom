@@ -2286,7 +2286,7 @@
                 },
                 "Name": "SpriteObject",
                 "Tags": null,
-                "Texture": "ShadowMap",
+                "Texture": "ShadowMap_depth_",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,
