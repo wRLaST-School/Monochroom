@@ -77,7 +77,6 @@ void SpFramework::Init()
 	InitSpSCM();
 
 	SpTextureManager::Create();
-	InitSpDepth();
 
 	RootSignatureManager::RegisterAllRS();
 
@@ -93,6 +92,9 @@ void SpFramework::Init()
 
 	//Init Textures
 	SpTextureManager::Init();
+
+	//Init Depth
+	InitSpDepth();
 
 	//Init Line Drawer
 	LineDrawer::Init();

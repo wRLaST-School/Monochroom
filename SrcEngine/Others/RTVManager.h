@@ -6,9 +6,11 @@ class RTVManager
 public:
 	static DLLExport void SetRenderTargetToBackBuffer(UINT bbIndex);
 	static DLLExport void SetRenderTargetToTexture(const TextureKey& key, bool clear = true);
-	static DLLExport void SetRenderTargets(const std::vector<TextureKey>& keys);
 	static DLLExport void SetRenderTargetToCurrentBB();
 
+	// Depth非対応
+	static DLLExport void SetRenderTargets(const std::vector<TextureKey>& keys);
+	
 	static DLLExport void CreateRenderTargetTexture(int32_t width, int32_t height, const TextureKey& key);
 	static DLLExport void CreateRenderTargetTexture(float width, float height, const TextureKey& key, bool useScreenRatio = false);
 	static void CreateHeaps();
@@ -31,6 +33,7 @@ public:
 
 private:
 	int32_t currentRTIndex_[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
+	int32_t currentRTDepthIndex_[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
 
 	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> rtvHeaps_ = nullptr;
 	D3D12_DESCRIPTOR_HEAP_DESC heapDesc_{};

@@ -142,10 +142,7 @@ void SpDirectX::PreDrawCommands()
 void SpDirectX::PostDrawCommands()
 {
 	//リソースバリアーを戻す
-	barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_RENDER_TARGET;
-	barrierDesc.Transition.StateAfter = D3D12_RESOURCE_STATE_PRESENT;
-
-	cmdList->ResourceBarrier(1, &barrierDesc);
+	RTVManager::CloseCurrentResBar();
 
 	RTVManager::GetInstance().isAllResBarClosed = true;
 }
