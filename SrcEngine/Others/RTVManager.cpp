@@ -2,6 +2,7 @@
 #include "SpDirectX.h"
 #include "SpSwapChainManager.h"
 #include "SpDepth.h"
+#include <format>
 
 void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 {
@@ -13,7 +14,7 @@ void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 	dx->barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE;
 	dx->barrierDesc.Transition.StateAfter = D3D12_RESOURCE_STATE_DEPTH_WRITE;
 	dx->cmdList->ResourceBarrier(1, &dx->barrierDesc);
-
+	
 	GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU("system_depth_default_bb"), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
 
 	//リソースバリアーを書き込み可能状態に
