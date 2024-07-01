@@ -12,7 +12,7 @@ void CollisionManager::Init()
 	auto camera = SceneManager::FindObject<Object3D>("Camera");
 	mViewCollider = SceneManager::FindChildObject<ViewCollider>("ViewCollider", camera);
 
-	auto player = SceneManager::FindObject<Object3D>("Player");
+	auto player = GameManager::GetInstance()->GetPlayer();
 	mPlayerCollider = SceneManager::FindChildObject<PlayerCollider>("PlayerCollider", player);
 
 	mBlockColliders = FindColliderList<BlockCollider>("Block", "BlockCollider");

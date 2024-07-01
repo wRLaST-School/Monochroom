@@ -51,8 +51,8 @@ void SuperUI::Update()
 {
 	//mMenuParentObj->position.x += 0.05f;
 	//mMenuParentObj->Update();
-	mTabsParentObj->rotationE.y += 0.05f;
-	mTabsParentObj->Update();
+	//mTabsParentObj->rotationE.y += 0.05f;
+	//mTabsParentObj->Update();
 	// もしTABキーを押したらメニューを開け閉めする
 	if (Input::Key::Triggered(DIK_ESCAPE)) 
 	{
