@@ -7,6 +7,8 @@
 #include <AppOperationCommand.h>
 #include <Camera.h>
 #include <StageButton.h>
+#include <StageDoor.h>
+
 
 void CollisionManager::Init()
 {
@@ -171,6 +173,20 @@ void CollisionManager::PlayerHitButtons()
 
 			//ボタンへこませる
 			stageButton->BeginPushingButton();
+
+			//同じタグを持つドアがあれば開ける
+			for (auto& door : SceneManager::FindObjectsWithTag<Object3D>("StageDoor"))
+			{
+				std::string str = button->GetSameTag(*door->CastTo<IComponent>());
+
+				ConsoleWindow::Log("Door Open!!");
+
+				if (str.size())
+				{
+					auto linkDoor = SceneManager::FindChildObject<StageDoor>("StageDoor",door);
+					linkDoor->OpenDoor();
+				}
+			}
 		}
 		//frame
 		else if (bc->GetFlameCollider().IsTrigger(&playerDownCollider))
@@ -273,6 +289,19 @@ void CollisionManager::FlyBlocksHitButtons()
 
 				// ボタン凹ませる
 				stageButton->BeginPushingButton();
+
+				//同じタグを持つドアがあれば開ける
+				for (auto& door : SceneManager::FindObjectsWithTag<Object3D>("StageDoor"))
+				{
+					std::string str = button->GetSameTag(*door->CastTo<IComponent>());
+
+					if (str.size())
+					{
+						ConsoleWindow::Log("Door Open!!");
+						auto linkDoor = SceneManager::FindChildObject<StageDoor>("StageDoor", door);
+						linkDoor->OpenDoor();
+					}
+				}
 
 				break;
 			}

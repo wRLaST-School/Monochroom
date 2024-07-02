@@ -13,6 +13,7 @@
 
 using namespace nlohmann;
 
+
 IComponent* IComponent::AddComponent(const std::string& key, eastl::unique_ptr<IComponent> component)
 {
 	auto itr = components_.insert(eastl::make_pair(key, eastl::move(component)));
@@ -123,6 +124,39 @@ DLLExport bool IComponent::FindTag(const std::string& tag)
 	}
 
 	return false;
+}
+
+std::string IComponent::GetSameTag(const IComponent& component)
+{
+	for (auto& t : tags)
+	{
+		for (auto& cTag : component.tags)
+		{
+			if (cTag == t)
+			{
+				return t;
+			}
+		}
+	}
+
+	return "";
+}
+
+std::string IComponent::FindStringTag(const std::string& tag)
+{
+	std::string ansS = "";
+
+	for (auto& t : tags)
+	{
+		size_t sPos = t.find(tag);
+		if (sPos != std::string::npos)
+		{
+			ansS = t;
+			break;
+		}
+	}
+
+	return ansS;
 }
 
 DLLExport void IComponent::AddTag(const std::string& tag)
