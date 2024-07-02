@@ -5,9 +5,10 @@
 #include <RootSignatureManager.h>
 #include <IRenderStage.h>
 #include <SrShadowCasterStage.h>
+#include <SrSilhouetteStage.h>
+#include <SrOpaqueStage.h>
 #include <SrAddStage.h>
 #include <SrAlphaStage.h>
-#include <SrOpaqueStage.h>
 #include <SrSpriteStage.h>
 #include <SrPostEffectStage.h>
 #include <SrImGuiStage.h>
@@ -28,6 +29,7 @@ public:
 		Opaque,
 		Add,
 		Toon,
+		Silhouette,
 		Alpha,
 		Particle,
 		PostEffect,
@@ -46,6 +48,7 @@ private:
 		std::make_unique<SrOpaqueStage>(),
 		std::make_unique<SrAddStage>(),
 		std::make_unique<SrToonStage>(),
+		std::make_unique<SrSilhouetteStage>(),
 		std::make_unique<SrAlphaStage>(),
 		std::make_unique<SrParticleStage>(),
 		std::make_unique<SrPostEffectStage>(),

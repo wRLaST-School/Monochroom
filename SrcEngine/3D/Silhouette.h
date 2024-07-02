@@ -3,7 +3,7 @@
 #include "Model.h"
 #include <Quaternion.h>
 
-namespace ShadowCasterCommon {
+namespace SilhouetteObjCommon {
 	// 頂点レイアウト
 	static D3D12_INPUT_ELEMENT_DESC inputLayout[] = {
 		{
@@ -14,7 +14,7 @@ namespace ShadowCasterCommon {
 	};
 }
 
-class ShadowCaster
+class Silhouette
 {
 private:
 	SpConstBuffer<ConstBufferData> cbData;
@@ -24,7 +24,7 @@ public:
 	Model* model;
 
 public:
-	DLLExport ShadowCaster();
+	DLLExport Silhouette();
 	void Update();
 	void Draw(Model* aModel);
 };

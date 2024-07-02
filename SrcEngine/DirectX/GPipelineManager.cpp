@@ -28,6 +28,27 @@ void GPipelineManager::CreateAll()
 
 #pragma endregion
 
+#pragma region シルエット用
+	RegisterShader("Silhouette");
+	InitVS("Silhouette", "SilhouetteVS.hlsl");
+	InitPS("Silhouette", "SilhouettePS.hlsl");
+
+	PipelineDesc silhouetteDesc;
+	silhouetteDesc.Render.InputLayout.pInputElementDescs = ModelCommon::inputLayout;
+	silhouetteDesc.Render.InputLayout.NumElements = _countof(ModelCommon::inputLayout);
+
+	silhouetteDesc.RootSignature.ptr = SpRootSignature::Get("Silhouette")->rootsignature.Get();
+
+	silhouetteDesc.Shader.pShader = GetShader("Silhouette");
+	silhouetteDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_BACK;
+
+	silhouetteDesc.Depth.DepthStencilState.DepthEnable = true;
+	silhouetteDesc.Depth.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ZERO;
+	silhouetteDesc.Depth.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_GREATER;
+
+	GPipeline::Create(silhouetteDesc, "Silhouette");
+#pragma endregion
+
 #pragma region デフォルト3D
 	RegisterShader("def");
 	InitVS("def", "BasicVS.hlsl");
@@ -186,4 +207,6 @@ void GPipelineManager::CreateAll()
 
 	GPipeline::Create(UIPlaneModelDesc, "UIPlaneModel");
 #pragma endregion
+
+
 }
