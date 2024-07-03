@@ -44,7 +44,7 @@ void SpDepth::Resize()
 
 		dsvDesc.Format = DXGI_FORMAT_D32_FLOAT_S8X24_UINT;
 		dsvDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
-		GetSpDX()->dev->CreateDepthStencilView(dt.resource, &dsvDesc, dsvHeap->GetCPUDescriptorHandleForHeapStart());
+		GetSpDX()->dev->CreateDepthStencilView(dt.resource, &dsvDesc, GetHandleCPU(key));
 	}
 }
 
