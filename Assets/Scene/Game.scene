@@ -2356,8 +2356,8 @@
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 530.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
+                "scaleX": 0.5,
+                "scaleY": 0.5
             },
             {
                 "Brightness": {

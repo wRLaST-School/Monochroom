@@ -8,7 +8,7 @@ static const float _FresnelMin = 1.0f;
 static const float _FresnelMax = 1.0f;
 static const float3 _FresnelColor = float3(1.0f, 1.0f, 1.0f);
 static const float3 _ShadowColor = float3(0.25f, 0.25f, 0.25f);
-static const float _ShadowBias = 0.001f;
+static const float _ShadowBias = 0.0001f;
 
 Texture2D<float4> tex : register(t0);
 Texture2D<float4> dissolveTex : register(t1);
@@ -73,7 +73,7 @@ float CalcShadowPFC(float4 spos)
     
     float shadowFactor = 0;
     float shiftNum = 3;
-    float shiftWidth = 0.00005f;
+    float shiftWidth = 0.001f;
     float count = 0;
     [unroll]
     for (float py = -shiftNum / 2; py <= shiftNum / 2; py++)
@@ -92,7 +92,7 @@ float CalcShadowPFC(float4 spos)
             float shadowDepth = shadowMap.Sample(smp, pickUV).r;
             if (shadowDepth + _ShadowBias < z)
             {
-                shadowFactor += 0.75f;
+                shadowFactor += 0.25f;
             }
             count++;
         }
