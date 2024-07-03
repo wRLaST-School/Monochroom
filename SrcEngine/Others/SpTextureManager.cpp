@@ -823,8 +823,15 @@ TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FOR
 	Float2 ratio = { 1.f, 1.f };
 	textureResourceDesc =
 		CD3DX12_RESOURCE_DESC::Tex2D(format, (UINT)(ratio.x * GetSpWindow()->width), (UINT)(ratio.y * GetSpWindow()->height), 1, 1, 1, 0, resourceFlag);
-
-	if (format != DXGI_FORMAT_R32_FLOAT_X8X24_TYPELESS)
+	SpTextureManager::GetInstance().texDataMap_.Access(
+		[&](auto& map) {
+			TexMetadata& pTexMeta = map[key].meta;
+			pTexMeta = TexMetadata{};
+			pTexMeta.width = (size_t)(ratio.x * GetSpWindow()->width);
+			pTexMeta.height = (size_t)(ratio.y * GetSpWindow()->height);
+		}
+	);
+	if (format != DXGI_FORMAT_D32_FLOAT_S8X24_UINT)
 	{
 		D3D12_CLEAR_VALUE clval = { format, {0, 0, 0, 0} };
 
@@ -838,13 +845,17 @@ TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FOR
 	}
 	else
 	{
+		CD3DX12_CLEAR_VALUE clval(DXGI_FORMAT_D32_FLOAT_S8X24_UINT, 1.0f, 0);
+		CD3DX12_CLEAR_VALUE* pclval = &clval;
+
 		GetSpDX()->dev->CreateCommittedResource(
 			&texHeapProp,
 			D3D12_HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES,
 			&textureResourceDesc,
-			D3D12_RESOURCE_STATE_GENERIC_READ,
-			nullptr,
-			IID_PPV_ARGS(&GetInstance().texBuffs[index]));
+			D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE, //D3D12_RESOURCE_STATE_DEPTH_WRITE,  
+			pclval,
+			IID_PPV_ARGS(&GetInstance().texBuffs[index])
+		);
 	}
 	//シェーダーリソースビューの生成
 	D3D12_CPU_DESCRIPTOR_HANDLE heapHandle;
@@ -853,6 +864,7 @@ TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FOR
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc{};
 	srvDesc.Format = textureResourceDesc.Format;
+	if (srvDesc.Format == DXGI_FORMAT_D32_FLOAT_S8X24_UINT) srvDesc.Format = DXGI_FORMAT_R32_FLOAT_X8X24_TYPELESS;
 	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
 	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
 	srvDesc.Texture2D.MipLevels = textureResourceDesc.MipLevels;

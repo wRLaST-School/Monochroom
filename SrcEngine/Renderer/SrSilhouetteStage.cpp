@@ -1,24 +1,17 @@
 #include "stdafx.h"
-#include "SrShadowCasterStage.h"
+#include "SrSilhouetteStage.h"
 #include <Camera.h>
 #include <RTVManager.h>
 
-std::unique_ptr<Camera> SrShadowCasterStage::lightCamera = nullptr;
-
-void SrShadowCasterStage::Init()
+void SrSilhouetteStage::Init()
 {
-	lightCamera = std::make_unique<Camera>();
-	lightCamera->UseDefaultParams();
-	lightCamera->renderWidth = 1920.f;
-	lightCamera->renderHeight = 1080.f;
-	lightCamera->projectionMode = ProjectionMode::Orthographic;
 }
 
-void SrShadowCasterStage::PreDraw()
+void SrSilhouetteStage::PreDraw()
 {
 	SpDirectX* dx = GetSpDX();
-	dx->cmdList->SetPipelineState(GPipeline::GetState("ShadowCaster"));
-	dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("ShadowCaster")->rootsignature.Get());
+	dx->cmdList->SetPipelineState(GPipeline::GetState("Silhouette"));
+	dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("Silhouette")->rootsignature.Get());
 
 	D3D12_VIEWPORT viewport{};
 
@@ -42,22 +35,20 @@ void SrShadowCasterStage::PreDraw()
 
 	dx->cmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	//Camera::sCurrent->UpdateViewProjMatrix();
-	lightCamera->UpdateMatrix();
-	lightCamera->UpdateViewProjMatrix();
+	Camera::sCurrent->UpdateViewProjMatrix();
 
-	RTVManager::SetRenderTargetToTexture("ShadowMap");
+	//RTVManager::SetRenderTargetToTexture("CurrentScene");
 }
 
-void SrShadowCasterStage::PostDraw()
+void SrSilhouetteStage::PostDraw()
 {
 }
 
-void SrShadowCasterStage::Render()
+void SrSilhouetteStage::Render()
 {
 	for (auto& rt : commands_)
 	{
-		//RTVManager::SetRenderTargetToTexture(rt.first);
+		RTVManager::SetRenderTargetToTexture(rt.first, false);
 
 		for (auto& cmd : rt.second)
 		{
@@ -67,7 +58,7 @@ void SrShadowCasterStage::Render()
 	commands_.clear();
 }
 
-void SrShadowCasterStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
+void SrSilhouetteStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
 	commands_[rt].push_back(cmd);
 }

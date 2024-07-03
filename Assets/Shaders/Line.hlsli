@@ -10,6 +10,7 @@ cbuffer cbuff2 : register(b2)
 {
     matrix vpmat;
     matrix billboardMat;
+    matrix lightViewProjMat;
     float3 cameraPos;
 }
 

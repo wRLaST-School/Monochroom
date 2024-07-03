@@ -15,6 +15,7 @@ Object3D::Object3D()
 	{ transformCB.contents->mat = Matrix::Identity(); *brightnessCB.contents = { 1.0f, 1.0f, 1.0f, 1.0f }; miscCB.contents->rimColor = { 1.f, 0.f, 0.f, 1.f }; };
 
 	shadowCaster = std::make_unique<ShadowCaster>();
+	silhouette = std::make_unique<Silhouette>();
 }
 
 void Object3D::UpdateMatrix()
@@ -47,6 +48,9 @@ void Object3D::UpdateMatrix()
 	}
 
 	shadowCaster->worldMat = matWorld;
+
+	if (useSilhouette)
+		silhouette->worldMat = matWorld;
 
 	for (const auto& comp : components_)
 	{
@@ -102,6 +106,12 @@ void Object3D::Draw()
 	}
 
 	shadowCaster->Draw(model);
+
+	if (useSilhouette)
+	{
+		silhouette->Draw(model);
+		return;
+	}
 
 	bool hasTexture = texture != "";
 
@@ -218,6 +228,8 @@ void Object3D::Draw(const TextureKey& key)
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
 
 		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("dissolveMap"));
+
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(9, SpTextureManager::GetGPUDescHandle("Black"));
 
 		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
 
@@ -336,6 +348,10 @@ void Object3D::DrawToon(const TextureKey& key)
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
 
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("Black"));
+
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(9, SpTextureManager::GetGPUDescHandle("ShadowMap_depth_"));
+
 		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
 
 		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
@@ -439,13 +455,15 @@ void Object3D::OnInspectorWindowDraw()
 		ImGui::RadioButton("Opaque", &blendModeInt, (int)BlendMode::Opaque);	ImGui::SameLine();
 		ImGui::RadioButton("Add", &blendModeInt, (int)BlendMode::Add);			ImGui::SameLine();
 		ImGui::RadioButton("Alpha", &blendModeInt, (int)BlendMode::Alpha);		ImGui::SameLine();
-		ImGui::RadioButton("Toon", &blendModeInt, (int)BlendMode::Toon);       
+		ImGui::RadioButton("Toon", &blendModeInt, (int)BlendMode::Toon);
 		ImGui::RadioButton("PostRender", &blendModeInt, (int)BlendMode::PostRender); ImGui::SameLine();
 		ImGui::RadioButton("UIPlane", &blendModeInt, (int)BlendMode::UIPlane);
 		blendMode = (BlendMode)blendModeInt;
 		ImGui::Separator();
 
 		ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));
+
+		ImGui::Checkbox("Use Silhouette", &useSilhouette);
 
 		SpImGui::InputText("RenderTarget", renderTarget);
 	}

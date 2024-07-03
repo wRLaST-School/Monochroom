@@ -15,6 +15,7 @@ cbuffer cbuff2 : register(b2)
 {
 	matrix vpmat;
     matrix billboardMat;
+    matrix lightViewProjMat;
 	float3 cameraPos;
 }
 
@@ -59,6 +60,7 @@ struct VSOutput
 {
 	float4 svpos : SV_POSITION;
 	float4 worldpos : POSITION;
+    float4 shadowpos : POSITIONT1;
 	float3 normal : NORMAL;
 	float2 uv :TEXCOORD;
 };

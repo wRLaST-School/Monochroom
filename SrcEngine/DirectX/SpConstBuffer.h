@@ -101,3 +101,9 @@ namespace RootParamIndex {
 		Max
 	};
 }
+
+struct ConstBufferData
+{
+	Matrix wMat; // 3D変換行列
+	Matrix vpMat; // 3D変換行列
+};

@@ -124,6 +124,28 @@ void SpDS::SetPreDrawFunc(function<void(void)> prop)
 	sCommands.insert(eastl::pair<int32_t, function<void(void)>>(sGraphCount, prop));
 }
 
+void SpDS::DepthTextureCheck()
+{
+	sCommands.insert(eastl::pair<int32_t, function<void(void)>>(sGraphCount, [&] {
+		//パイプライン変更
+		auto dx = GetSpDX();
+
+		dx->cmdList->SetPipelineState(GPipeline::GetState("2dDepthCheck"));
+		dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("2D")->rootsignature.Get());
+		}));
+}
+
+void SpDS::DepthTextureCheckEnd()
+{
+	sCommands.insert(eastl::pair<int32_t, function<void(void)>>(sGraphCount, [&] {
+		//パイプライン変更
+		auto dx = GetSpDX();
+
+		dx->cmdList->SetPipelineState(GPipeline::GetState("2d"));
+		dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("2D")->rootsignature.Get());
+		}));
+}
+
 void SpDS::DrawBoxLine(int32_t x, int32_t y, int32_t width, int32_t height, const Color& color, float thickness, const  Anchor& anchor)
 {
 	anchor;

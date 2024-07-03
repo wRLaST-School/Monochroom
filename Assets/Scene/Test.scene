@@ -29,10 +29,24 @@
                 "UseQuaternionRot": 1
             },
             {
+                "Active": true,
                 "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
                 "Children": [
                     {
+                        "Active": true,
                         "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
                         "Children": [
                             {
                                 "Name": "ScriptComponent",

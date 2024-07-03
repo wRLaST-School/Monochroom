@@ -83,6 +83,8 @@ public:
 	const DLLExport std::string& GetName();
 
 	DLLExport bool FindTag(const std::string& tag);
+	DLLExport std::string GetSameTag(const IComponent& component);
+	DLLExport std::string FindStringTag(const std::string& tag);
 	DLLExport void AddTag(const std::string& tag);
 
 	//コンポーネントのクラス名を取得
@@ -147,6 +149,7 @@ public:
 	friend HierarchyPanel;
 	friend InspectorWindow;
 	friend TagWindow;
+
 protected:
 	std::string name_ = "";
 

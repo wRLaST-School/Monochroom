@@ -2,12 +2,21 @@
 #include "SpDirectX.h"
 #include "SpSwapChainManager.h"
 #include "SpDepth.h"
+#include <format>
 
 void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 {
-	CloseCurrentResBar();
-	GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU(defaultRT), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
+	CloseCurrentResBar();	//Depthの処理	
 	SpDirectX* dx = GetSpDX();
+
+	//State変更
+	dx->barrierDesc.Transition.pResource = SpTextureManager::GetTextureBuff("system_depth_default_bb_depth_");
+	dx->barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE;
+	dx->barrierDesc.Transition.StateAfter = D3D12_RESOURCE_STATE_DEPTH_WRITE;
+	dx->cmdList->ResourceBarrier(1, &dx->barrierDesc);
+	
+	GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU("system_depth_default_bb"), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
+
 	//リソースバリアーを書き込み可能状態に
 	dx->barrierDesc.Transition.pResource = GetSCM()->backBuffers[bbIndex].Get();
 	dx->barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_PRESENT;
@@ -18,7 +27,7 @@ void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 
 	CD3DX12_CPU_DESCRIPTOR_HANDLE rtvH = CD3DX12_CPU_DESCRIPTOR_HANDLE(GetInstance().GetHeapCPUHandle(GetInstance().numRT - 2),
 		bbIndex, GetSpDX()->dev->GetDescriptorHandleIncrementSize(GetInstance().heapDesc_.Type));
-	D3D12_CPU_DESCRIPTOR_HANDLE dsvH = GetSpDepth()->dsvHeap->GetCPUDescriptorHandleForHeapStart();
+	D3D12_CPU_DESCRIPTOR_HANDLE dsvH = GetSpDepth()->GetHandleCPU("system_depth_default_bb");
 	GetSpDX()->cmdList->OMSetRenderTargets(1, &rtvH, false, &dsvH);
 
 	GetInstance().currentRTIndex_[0] = GetInstance().numRT - 2 + bbIndex;
@@ -27,15 +36,33 @@ void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 	{
 		GetInstance().currentRTIndex_[i] = -1;
 	}
+
+	GetInstance().currentRTDepthIndex_[0] = SpTextureManager::GetIndex("system_depth_default_bb_depth_");
+
+	for (int32_t i = 1; i < 8; i++)
+	{
+		GetInstance().currentRTDepthIndex_[i] = -1;
+	}
 }
 
 void RTVManager::SetRenderTargetToTexture(const TextureKey& key, bool clear)
 {
 	CloseCurrentResBar();
-	if (clear) GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU(key), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
-	int32_t index = (int32_t)SpTextureManager::GetIndex(key);
-
 	SpDirectX* dx = GetSpDX();
+
+	//Depthの処理
+	//State変更
+	dx->barrierDesc.Transition.pResource = SpTextureManager::GetTextureBuff(key + "_depth_");
+	dx->barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE;
+	dx->barrierDesc.Transition.StateAfter = D3D12_RESOURCE_STATE_DEPTH_WRITE;
+	dx->cmdList->ResourceBarrier(1, &dx->barrierDesc);
+
+	//クリア
+	if (clear) GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU(key), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
+	
+	int32_t index = (int32_t)SpTextureManager::GetIndex(key);
+	int32_t depthIndex = (int32_t)SpTextureManager::GetIndex(key + "_depth_");
+
 	//リソースバリアーを書き込み可能状態に
 	dx->barrierDesc.Transition.pResource = SpTextureManager::GetTextureBuff(key);
 	dx->barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE;
@@ -44,8 +71,7 @@ void RTVManager::SetRenderTargetToTexture(const TextureKey& key, bool clear)
 
 	GetInstance().isAllResBarClosed = false;
 
-	//TODO:専用のDSVを用意
-	D3D12_CPU_DESCRIPTOR_HANDLE dsvH = GetSpDepth()->dsvHeap->GetCPUDescriptorHandleForHeapStart();
+	D3D12_CPU_DESCRIPTOR_HANDLE dsvH = GetSpDepth()->GetHandleCPU(key);
 
 	auto cpuhnd = (GetInstance().GetHeapCPUHandle(index));
 	D3D12_CPU_DESCRIPTOR_HANDLE* pcpuhnd = &cpuhnd;
@@ -55,6 +81,11 @@ void RTVManager::SetRenderTargetToTexture(const TextureKey& key, bool clear)
 	for (int32_t i = 1; i < 8; i++)
 	{
 		GetInstance().currentRTIndex_[i] = -1;
+	}
+	GetInstance().currentRTDepthIndex_[0] = depthIndex;
+	for (int32_t i = 1; i < 8; i++)
+	{
+		GetInstance().currentRTDepthIndex_[i] = -1;
 	}
 
 	if (clear)
@@ -204,6 +235,16 @@ void RTVManager::CloseCurrentResBar()
 		{
 			continue;
 		}
+
+		//Depthリソースバリアーを戻す
+		GetSpDX()->barrierDesc.Transition.pResource 
+			= SpTextureManager::GetInstance()
+			.texBuffs[GetInstance().currentRTDepthIndex_[i]].Get();
+
+		GetSpDX()->barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_DEPTH_WRITE;
+		GetSpDX()->barrierDesc.Transition.StateAfter = D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE;
+
+		GetSpDX()->cmdList->ResourceBarrier(1, &GetSpDX()->barrierDesc);
 
 		if (index >= GetInstance().numRT - 2)
 		{

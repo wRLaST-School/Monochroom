@@ -1,18 +1,18 @@
-#include "ShadowCaster.h"
+#include "Silhouette.h"
 #include <SpRenderer.h>
 #include <Camera.h>
-#include <SrShadowCasterStage.h>
+#include <SrSilhouetteStage.h>
 
-ShadowCaster::ShadowCaster()
+Silhouette::Silhouette()
 {
 	worldMat = Matrix::Identity();
 }
 
-void ShadowCaster::Update()
+void Silhouette::Update()
 {
 }
 
-void ShadowCaster::Draw(Model* aModel)
+void Silhouette::Draw(Model* aModel)
 {
 	if (!aModel)
 	{
@@ -22,12 +22,8 @@ void ShadowCaster::Draw(Model* aModel)
 
 	cbData.contents->wMat = worldMat;
 	cbData.contents->vpMat =
-		SrShadowCasterStage::lightCamera->GetViewMat() *
-		SrShadowCasterStage::lightCamera->GetProjMat();
-
-	//cbData.contents->vpMat =
-	//	Camera::sCurrent->GetViewMat() *
-	//	Camera::sCurrent->GetProjMat();
+		Camera::sCurrent->GetViewMat() *
+		Camera::sCurrent->GetProjMat();
 
 	SpRenderer::DrawCommand([&]
 		{
@@ -38,5 +34,5 @@ void ShadowCaster::Draw(Model* aModel)
 			GetSpDX()->cmdList->IASetIndexBuffer(&this->model->ibView);
 
 			GetSpDX()->cmdList->DrawIndexedInstanced(this->model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
-		}, SpRenderer::Stage::ShadowCaster);
+		}, SpRenderer::Stage::Silhouette);
 }

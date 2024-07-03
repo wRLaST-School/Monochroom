@@ -28,6 +28,27 @@ void GPipelineManager::CreateAll()
 
 #pragma endregion
 
+#pragma region シルエット用
+	RegisterShader("Silhouette");
+	InitVS("Silhouette", "SilhouetteVS.hlsl");
+	InitPS("Silhouette", "SilhouettePS.hlsl");
+
+	PipelineDesc silhouetteDesc;
+	silhouetteDesc.Render.InputLayout.pInputElementDescs = ModelCommon::inputLayout;
+	silhouetteDesc.Render.InputLayout.NumElements = _countof(ModelCommon::inputLayout);
+
+	silhouetteDesc.RootSignature.ptr = SpRootSignature::Get("Silhouette")->rootsignature.Get();
+
+	silhouetteDesc.Shader.pShader = GetShader("Silhouette");
+	silhouetteDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_BACK;
+
+	silhouetteDesc.Depth.DepthStencilState.DepthEnable = true;
+	silhouetteDesc.Depth.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ZERO;
+	silhouetteDesc.Depth.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_GREATER;
+
+	GPipeline::Create(silhouetteDesc, "Silhouette");
+#pragma endregion
+
 #pragma region デフォルト3D
 	RegisterShader("def");
 	InitVS("def", "BasicVS.hlsl");
@@ -123,6 +144,28 @@ void GPipelineManager::CreateAll()
 	GPipeline::Create(pl2dDesc, "2d");
 #pragma endregion
 
+#pragma region Depth2D
+	RegisterShader("2dDepthCheck");
+	InitVS("2dDepthCheck", "DepthVS.hlsl");
+	InitPS("2dDepthCheck", "DepthPS.hlsl");
+
+	PipelineDesc pl2dDepthDesc;
+	pl2dDepthDesc.Render.InputLayout.pInputElementDescs = SpriteCommon::inputLayout2D;
+	pl2dDepthDesc.Render.InputLayout.NumElements = _countof(SpriteCommon::inputLayout2D);
+
+	pl2dDepthDesc.RootSignature.ptr = SpRootSignature::Get("2D")->rootsignature.Get();
+
+	pl2dDepthDesc.Shader.pShader = GetShader("2dDepthCheck");
+
+	pl2dDepthDesc.Depth.DepthStencilState = CD3DX12_DEPTH_STENCIL_DESC(D3D12_DEFAULT);
+	pl2dDepthDesc.Depth.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_ALWAYS;
+	pl2dDepthDesc.Depth.DepthStencilState.DepthEnable = false;
+	pl2dDepthDesc.Render.RasterizerState = CD3DX12_RASTERIZER_DESC(D3D12_DEFAULT);
+	pl2dDepthDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
+
+	GPipeline::Create(pl2dDepthDesc, "2dDepthCheck");
+#pragma endregion
+
 #pragma region レンダーターゲット2つ
 	RegisterShader("defd");
 	InitVS("defd", "BasicInvVS.hlsl");
@@ -186,4 +229,6 @@ void GPipelineManager::CreateAll()
 
 	GPipeline::Create(UIPlaneModelDesc, "UIPlaneModel");
 #pragma endregion
+
+
 }

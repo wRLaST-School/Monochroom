@@ -6,6 +6,7 @@
 #include <ComponentFactory.h>
 #include <DLLDef.h>
 #include <ShadowCaster.h>
+#include <Silhouette.h>
 
 struct ConstBufferDataTransform {
 	Matrix mat;//3D変換行列
@@ -106,6 +107,9 @@ public:
 	float distanceToCam = 0;
 	TextureKey alphaTexKey;
 
+	bool useSilhouette = false;
+
 	std::unique_ptr<ShadowCaster> shadowCaster;
+	std::unique_ptr<Silhouette> silhouette;
 };
 

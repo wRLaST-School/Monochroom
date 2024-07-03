@@ -5,5 +5,7 @@
     "Player",
     "FlyBlock",
     "Button",
-    "Glass"
+    "Glass",
+    "DB1",
+    "StageDoor"
 ]

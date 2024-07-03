@@ -3,6 +3,8 @@
 #include "SpDirectX.h"
 #include <SpTextureManager.h>
 #include <RTVManager.h>
+#include <Util.h>
+#include <format>
 
 SpDepth wdp;
 
@@ -14,7 +16,7 @@ void SpDepth::Init()
 	dsvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_DSV;
 	GetSpDX()->dev->CreateDescriptorHeap(&dsvHeapDesc, IID_PPV_ARGS(&dsvHeap));
 
-	CreateDSV(RTVManager::defaultRT);
+	CreateDSV("system_depth_default_bb");
 }
 
 void SpDepth::Resize()
@@ -31,44 +33,24 @@ void SpDepth::Resize()
 
 		dt.index = index;
 
-		SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_R32_FLOAT_X8X24_TYPELESS, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
+		SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_D32_FLOAT_S8X24_UINT, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
 
 		SpTextureManager::AddMasterTextureKey((key + "_depth_"));
 
-		D3D12_RESOURCE_DESC dResDesc = CD3DX12_RESOURCE_DESC::Tex2D(
-			DXGI_FORMAT_D32_FLOAT_S8X24_UINT,
-			(UINT64)(GetSpWindow()->width * (SpTextureManager::GetTextureData(key).ratio.x ? SpTextureManager::GetTextureData(key).ratio.x : 1.f)),
-			(UINT)(GetSpWindow()->height * (SpTextureManager::GetTextureData(key).ratio.y ? SpTextureManager::GetTextureData(key).ratio.y : 1.f)),
-			1, 0, 1, 0,
-			D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL
-		);
+		dt.resource = SpTextureManager::GetInstance().texBuffs[SpTextureManager::GetIndex(key + "_depth_")].Get();
 
-		CD3DX12_HEAP_PROPERTIES htp(D3D12_HEAP_TYPE_DEFAULT);
-		CD3DX12_HEAP_PROPERTIES* phtp = &htp;
-
-		CD3DX12_CLEAR_VALUE clval(DXGI_FORMAT_D32_FLOAT_S8X24_UINT, 1.0f, 0);
-		CD3DX12_CLEAR_VALUE* pclval = &clval;
-
-		GetSpDX()->dev->CreateCommittedResource(
-			phtp,
-			D3D12_HEAP_FLAG_NONE,
-			&dResDesc,
-			D3D12_RESOURCE_STATE_DEPTH_WRITE,
-			pclval,
-			IID_PPV_ARGS(&dt.resource)
-		);
 		dt.resource->SetName(L"DEPTH BUFF");
 		D3D12_DEPTH_STENCIL_VIEW_DESC dsvDesc{};
 
 		dsvDesc.Format = DXGI_FORMAT_D32_FLOAT_S8X24_UINT;
 		dsvDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
-		GetSpDX()->dev->CreateDepthStencilView(dt.resource, &dsvDesc, dsvHeap->GetCPUDescriptorHandleForHeapStart());
+		GetSpDX()->dev->CreateDepthStencilView(dt.resource, &dsvDesc, GetHandleCPU(key));
 	}
 }
 
 void SpDepth::CreateDSV(std::string key)
 {
-	depthes.insert(eastl::pair<std::string, SpDepthForTex>(key, SpDepthForTex()));
+	depthes.insert(std::pair<std::string, SpDepthForTex>(key, SpDepthForTex()));
 
 	auto& dt = depthes[key];
 	dt.resource = SpTextureManager::GetTextureBuff(
@@ -77,38 +59,19 @@ void SpDepth::CreateDSV(std::string key)
 
 	dt.index = index;
 
-	SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_R32_FLOAT_X8X24_TYPELESS, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
+	SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_D32_FLOAT_S8X24_UINT, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
 
 	SpTextureManager::AddMasterTextureKey((key + "_depth_"));
 
-	D3D12_RESOURCE_DESC dResDesc = CD3DX12_RESOURCE_DESC::Tex2D(
-		DXGI_FORMAT_D32_FLOAT_S8X24_UINT,
-		(UINT64)(GetSpWindow()->width * (SpTextureManager::GetTextureData(key).ratio.x ? SpTextureManager::GetTextureData(key).ratio.x :1.f)),
-		(UINT)(GetSpWindow()->height * (SpTextureManager::GetTextureData(key).ratio.y ? SpTextureManager::GetTextureData(key).ratio.y : 1.f)),
-		1, 0, 1, 0,
-		D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL
-	);
+	dt.resource = SpTextureManager::GetInstance().texBuffs[SpTextureManager::GetIndex(key + "_depth_")].Get();
 
-	CD3DX12_HEAP_PROPERTIES htp(D3D12_HEAP_TYPE_DEFAULT);
-	CD3DX12_HEAP_PROPERTIES* phtp = &htp;
-
-	CD3DX12_CLEAR_VALUE clval(DXGI_FORMAT_D32_FLOAT_S8X24_UINT, 1.0f, 0);
-	CD3DX12_CLEAR_VALUE* pclval = &clval;
-
-	GetSpDX()->dev->CreateCommittedResource(
-		phtp,
-		D3D12_HEAP_FLAG_NONE,
-		&dResDesc,
-		D3D12_RESOURCE_STATE_DEPTH_WRITE,
-		pclval,
-		IID_PPV_ARGS(&dt.resource)
-	);
-	dt.resource->SetName(L"DEPTH BUFF");
+	dt.resource->SetName(Util::StrToWStr(std::format("DEPTH:{}_depth_", key)).c_str());
 	D3D12_DEPTH_STENCIL_VIEW_DESC dsvDesc{};
 
 	dsvDesc.Format = DXGI_FORMAT_D32_FLOAT_S8X24_UINT;
 	dsvDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
-	GetSpDX()->dev->CreateDepthStencilView(dt.resource, &dsvDesc, dsvHeap->GetCPUDescriptorHandleForHeapStart());
+	GetSpDX()->dev->CreateDepthStencilView(dt.resource, &dsvDesc, GetHandleCPU(key));
+	index++;
 }
 
 D3D12_CPU_DESCRIPTOR_HANDLE SpDepth::GetHandleCPU(std::string key)

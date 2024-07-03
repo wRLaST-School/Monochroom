@@ -13,7 +13,7 @@ public:
 	D3D12_CPU_DESCRIPTOR_HANDLE GetHandleCPU(std::string key);
 	D3D12_GPU_DESCRIPTOR_HANDLE GetHandleGPU(std::string key);
 
-	eastl::map<std::string, SpDepthForTex> depthes;
+	std::map<std::string, SpDepthForTex> depthes;
 	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> dsvHeap = nullptr;
 
 	size_t index = 0;

@@ -390,3 +390,5 @@ CMakeLists.txt
 /Resources/Compiled
 /SpicavirEngineGame.dll
 /zlibd1.dll
+/EASTL.dll
+/imgui.dll

@@ -11,6 +11,11 @@ void SpriteObject::Update()
 
 void SpriteObject::Draw()
 {
+	if (depthCheck)
+	{
+		SpDS::DepthTextureCheck();
+	}
+
 	SpDS::DrawRotaGraph(position.x, position.y,
 		scale.x, scale.y,
 		0.f,
@@ -18,6 +23,12 @@ void SpriteObject::Draw()
 		Anchor::Center,
 		color
 	);
+
+	if (depthCheck)
+	{
+		SpDS::DepthTextureCheckEnd();
+	}
+
 }
 
 void SpriteObject::OnInspectorWindowDraw()
@@ -27,6 +38,8 @@ void SpriteObject::OnInspectorWindowDraw()
 
 	SpImGui::InputText("Texture", &tex, NULL);
 	ImGui::ColorEdit4("Brightness", &color.f4.x);
+
+	ImGui::Checkbox("Depth Check", &depthCheck);
 
 	//gizmo
 	ImGuizmo::SetDrawlist();

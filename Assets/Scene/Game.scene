@@ -18,9 +18,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -1.5951881408691406,
-                    "Y": 10.0,
-                    "Z": 47.413482666015625
+                    "X": -19.1290283203125,
+                    "Y": 10.226499557495117,
+                    "Z": 44.99348831176758
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -29,8 +29,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -1.5707963705062866,
-                    "Y": 3.0431857109069824,
+                    "X": 1.5707963705062866,
+                    "Y": 2.5331850051879883,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -45,7 +45,7 @@
                 "UseQuaternionRot": 0
             },
             {
-                "Active": true,
+                "Active": false,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -563,11 +563,11 @@
                     }
                 ],
                 "Model": "",
-                "Name": "StageBloks",
+                "Name": "StageBlocks",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
-                    "Z": 0.0
+                    "Z": -25.0
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -738,9 +738,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -0.5963984131813049,
-                    "Y": 10.0,
-                    "Z": 47.46266555786133
+                    "X": -19.717737197875977,
+                    "Y": 10.226499557495117,
+                    "Z": 45.83866500854492
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -749,12 +749,12 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -1.5707963705062866,
-                    "Y": 1.4231857061386108,
+                    "X": 1.5707963705062866,
+                    "Y": 2.5331850051879883,
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 1.0,
+                    "X": 0.9999999403953552,
                     "Y": 1.0,
                     "Z": 1.0
                 },
@@ -791,9 +791,9 @@
                 "Name": "FlyBlock",
                 "NormalType": 0,
                 "Position": {
-                    "X": -11.461036682128906,
-                    "Y": 15.862800598144531,
-                    "Z": 36.39293670654297
+                    "X": -17.102561950683594,
+                    "Y": 9.0,
+                    "Z": 41.77442169189453
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -906,14 +906,20 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "ButtonCollider"
+                    },
+                    {
+                        "Name": "StageButton",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "StageButton"
                     }
                 ],
                 "Model": "",
                 "Name": "Button",
                 "Position": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 8.652000427246094
+                    "X": -19.921001434326172,
+                    "Y": 8.038999557495117,
+                    "Z": 48.272003173828125
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -932,7 +938,8 @@
                     "Z": 0.75
                 },
                 "Tags": [
-                    "Button"
+                    "Button",
+                    "DB1"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -2034,7 +2041,7 @@
                 "Name": "UI",
                 "Position": {
                     "X": 0.0,
-                    "Y": 0.0,
+                    "Y": 8.986001014709473,
                     "Z": 0.0
                 },
                 "Rotation": {
@@ -2058,7 +2065,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": false,
+                "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -2183,14 +2190,20 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "DoorCollider"
+                    },
+                    {
+                        "Name": "StageDoor",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "StageDoor"
                     }
                 ],
                 "Model": "",
                 "Name": "Door",
                 "Position": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
+                    "X": -19.11400032043457,
+                    "Y": 7.155999183654785,
+                    "Z": 52.65400314331055
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -2208,7 +2221,10 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Tags": null,
+                "Tags": [
+                    "DB1",
+                    "StageDoor"
+                ],
                 "Texture": "",
                 "Type": "Object3D"
             },
@@ -2239,9 +2255,9 @@
                 "Name": "FlyBlock2",
                 "NormalType": 0,
                 "Position": {
-                    "X": -11.382122039794922,
-                    "Y": 9.738801002502441,
-                    "Z": 36.6260986328125
+                    "X": -11.543167114257813,
+                    "Y": 9.0,
+                    "Z": 36.77173614501953
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -2286,12 +2302,28 @@
                 },
                 "Name": "SpriteObject",
                 "Tags": null,
-                "Texture": "ShadowMap_depth_",
+                "Texture": "ShadowMap",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
+            },
+            {
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "Cursor",
+                "Tags": null,
+                "Texture": "white.png",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 530.5,
+                "scaleX": 10.0,
+                "scaleY": 10.0
             }
         ],
         "EfkEffects": [
