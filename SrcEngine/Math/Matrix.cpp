@@ -2,9 +2,9 @@
 #include <math.h>
 #include <stdexcept>
 
-Matrix::Matrix():Matrix(1.0f, 0.0f, 0.0f, 0.0f, 
-	0.0f, 1.0f, 0.0f, 0.0f, 
-	0.0f, 0.0f, 1.0f, 0.0f, 
+Matrix::Matrix() :Matrix(1.0f, 0.0f, 0.0f, 0.0f,
+	0.0f, 1.0f, 0.0f, 0.0f,
+	0.0f, 0.0f, 1.0f, 0.0f,
 	0.0f, 0.0f, 0.0f, 1.0f)
 {
 
@@ -18,7 +18,7 @@ Matrix::Matrix(Float4 r0, Float4 r1, Float4 r2, Float4 r3)
 	r[3] = r3;
 }
 
-Matrix::Matrix(const Float4* pf44Array):Matrix(pf44Array[0], pf44Array[1], pf44Array[2], pf44Array[3])
+Matrix::Matrix(const Float4* pf44Array) :Matrix(pf44Array[0], pf44Array[1], pf44Array[2], pf44Array[3])
 {
 }
 
@@ -248,9 +248,23 @@ Matrix Matrix::ProjectionOrtho(int32_t width, int32_t height, float nearZ, float
 	return Matrix(
 		2.0f * multiplier / width, 0, 0, 0,
 		0, 2.0f * multiplier / height, 0, 0,
-		0, 0, 1/(farZ - nearZ), 0,
+		0, 0, 1 / (farZ - nearZ), 0,
 		0, 0, nearZ / (nearZ - farZ), 1
 	);
+}
+
+Matrix Matrix::ProjectionOrtho(float left, float right, float top, float bottom, float nearZ, float farZ)
+{
+	Matrix orthoGrphic = Matrix::Identity();
+	orthoGrphic[0][0] = 2 / (right - left);
+	orthoGrphic[1][1] = 2 / (top - bottom);
+	orthoGrphic[2][2] = 1 / (farZ - nearZ);
+
+	orthoGrphic[3][0] = (left + right) / (left - right);
+	orthoGrphic[3][1] = (top + bottom) / (bottom - top);
+	orthoGrphic[3][2] = -nearZ / (farZ - nearZ);
+
+	return orthoGrphic;
 }
 
 Matrix Matrix::RotX(float rad)
@@ -280,7 +294,7 @@ Matrix Matrix::operator-() const
 		for (int32_t j = 0; j < 4; j++) {
 			temp[i][j] = r[i][j];
 
-			if(i == j)temp[i][4 + j] = 1;
+			if (i == j)temp[i][4 + j] = 1;
 		}
 	}
 
@@ -344,17 +358,17 @@ Matrix Matrix::operator-(const Matrix& m) const
 		r[0][1] - m[0][1],
 		r[0][2] - m[0][2],
 		r[0][3] - m[0][3],
-				
+
 		r[1][0] - m[1][0],
 		r[1][1] - m[1][1],
 		r[1][2] - m[1][2],
 		r[1][3] - m[1][3],
-				
+
 		r[2][0] - m[2][0],
 		r[2][1] - m[2][1],
 		r[2][2] - m[2][2],
 		r[2][3] - m[2][3],
-				
+
 		r[3][0] - m[3][0],
 		r[3][1] - m[3][1],
 		r[3][2] - m[3][2],
@@ -403,7 +417,7 @@ Matrix& Matrix::operator+=(const Matrix& m)
 	r[2][1] += m[2][1];
 	r[2][2] += m[2][2];
 	r[2][3] += m[2][3];
-					  
+
 	r[3][0] += m[3][0];
 	r[3][1] += m[3][1];
 	r[3][2] += m[3][2];
@@ -418,17 +432,17 @@ Matrix& Matrix::operator-=(const Matrix& m)
 	r[0][1] -= m[0][1];
 	r[0][2] -= m[0][2];
 	r[0][3] -= m[0][3];
-			
+
 	r[1][0] -= m[1][0];
 	r[1][1] -= m[1][1];
 	r[1][2] -= m[1][2];
 	r[1][3] -= m[1][3];
-			
+
 	r[2][0] -= m[2][0];
 	r[2][1] -= m[2][1];
 	r[2][2] -= m[2][2];
 	r[2][3] -= m[2][3];
-			
+
 	r[3][0] -= m[3][0];
 	r[3][1] -= m[3][1];
 	r[3][2] -= m[3][2];
@@ -501,13 +515,13 @@ Matrix Matrix::RotArbitrary(Vec3 axis, float rad)
 		0,
 
 		2 * X.y - 2 * Z.y,
-		1 - 2 * X.x - 2*Z.x,
-		2*Y.z + 2* X.w,
+		1 - 2 * X.x - 2 * Z.x,
+		2 * Y.z + 2 * X.w,
 		0,
 
-		2* X.z + 2* Y.x,
-		2*Y.z - 2*X.w,
-		1- 2*X.x - 2*Y.y,
+		2 * X.z + 2 * Y.x,
+		2 * Y.z - 2 * X.w,
+		1 - 2 * X.x - 2 * Y.y,
 		0,
 
 		0, 0, 0, 1
