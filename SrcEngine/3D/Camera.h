@@ -70,6 +70,7 @@ public:
 	void FrustumCulling();
 
 	void UpdateViewProjMatrix();
+	void UpdateLightViewProjMatrix();
 
 	Float3 target = { 0.0f, 0.0f, 0.0f };
 
@@ -104,4 +105,12 @@ private:
 	Matrix view;
 	Matrix proj;
 	Frustum frustum;
+
+public:
+	// シャドウマップ用
+	float left = 0;
+	float right = 1920;
+	float top = 0;
+	float bottom = 1080;
+	float rectRate = 1.0f;
 };

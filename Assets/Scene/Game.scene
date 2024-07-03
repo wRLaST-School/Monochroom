@@ -945,7 +945,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": true,
+                "Active": false,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -2302,10 +2302,10 @@
                 },
                 "Name": "SpriteObject",
                 "Tags": null,
-                "Texture": "ShadowMap",
+                "Texture": "ShadowMap_depth_",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 540.0,
+                "posY": 530.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -2374,6 +2374,7 @@
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
             }
         ],
+        "Name": "Scene",
         "Sounds": [
             {}
         ],

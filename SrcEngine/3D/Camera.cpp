@@ -98,6 +98,17 @@ void Camera::UpdateViewProjMatrix()
 		Matrix::ProjectionOrtho((int32_t)renderWidth, (int32_t)renderHeight, nearZ, farZ, 20);
 }
 
+void Camera::UpdateLightViewProjMatrix()
+{
+	view = targetMode == CameraTargetMode::LookAt ?
+		Matrix::ViewLookAt(position, target, matWorld.ExtractAxisY()) :
+		Matrix::ViewLookTo(position, matWorld.ExtractAxisZ(), matWorld.ExtractAxisY());
+
+	proj = projectionMode == ProjectionMode::Perspective ?
+		Matrix::Projection(fov, (float)renderWidth / (float)renderHeight, nearZ, farZ) :
+		Matrix::ProjectionOrtho(left * rectRate, right * rectRate, top * rectRate, bottom * rectRate, nearZ, farZ);
+}
+
 void Camera::Set(Camera& camera)
 {
 	sCurrent = &camera;

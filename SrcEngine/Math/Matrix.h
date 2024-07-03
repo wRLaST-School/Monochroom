@@ -86,6 +86,7 @@ public:
 	static Matrix Projection(float fov, float aspectRatio, float nearZ, float farZ);
 	static Matrix Projection(int32_t windowWidth, int32_t windowHeight);
 	static Matrix ProjectionOrtho(int32_t width, int32_t height, float nearZ, float farZ, float multiplier = 1.0f);
+	static Matrix ProjectionOrtho(float left, float right, float top, float bottom, float nearZ, float farZ);
 
 	static Matrix RotX(float rad);
 	static Matrix RotY(float rad);
