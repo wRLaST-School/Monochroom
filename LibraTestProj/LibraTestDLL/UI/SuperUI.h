@@ -4,6 +4,10 @@
 #include "Easing.h"
 #include <Color.h>
 #include "PlayerControl.h"
+#include "IUITab.h"
+#include "CameraTab.h"
+#include "GraphicsTab.h"
+#include "SoundTab.h"
 
 class SuperUI :
     public IScriptObject
@@ -31,25 +35,6 @@ private:// クラス内構造体
         OPTIONS,        // オプション
         QUIT_TITLE,     // タイトルへ戻る
         QUIT_SELECT,    // セレクトへ戻る
-    };
-
-    enum CameraMenuNum
-    {
-        MOUSESENSITIVITY_X,
-        MOUSESENSITIVITY_Y,
-    };
-
-    enum GraphicsMenuNum
-    {
-        POSTPROCESS,    // ポストプロセス
-        SHADOW,         // 影
-    };
-
-    enum SoundMenuNum
-    {
-        MASTER, // マスター音量
-        BGM,    // BGM音量
-        SE,     // SE音量
     };
 
     enum UIMenuState 
@@ -153,6 +138,12 @@ private:
     // UIの項目の更新処理
     void UIOptionsUpdate();
 
+    // UIのメインメニューの更新処理
+    void UIMainMenuUpdate();
+
+    // UIのタブメニューの更新処理
+    void UITabMenuUpdate();
+
     // カメラメニューの更新処理
     void CameraMenuUpdate();
 
@@ -164,6 +155,21 @@ private:
 
     // 戻るメニューの描画
     void QuitMenuDraw();
+
+    // UIのメニューオンにした時の初期化
+    void UIMainMenuOnReset();
+
+    // UIのメニューオンにした時の初期化
+    void UIMainMenuOffReset();
+
+    // UIのタブメニューオンにした時の初期化
+    void UITabMenuOn();
+
+    // UIのタブメニューオフにしたときの初期化
+    void UITabMenuOff();
+
+    // カメラメニューの時の初期化
+    void UICameraTabOn();
 
 private:// メンバー変数
 
@@ -214,18 +220,12 @@ private:// メンバー変数
     // メニューのオプションのタブの項目数
     int mNumOption;
 
-    // カメラの項目数
-    int mCameraOptionNum;
-
-    // グラフィックスの項目数
-    int mGraphicsOptionNum;
-
-    // サウンドの項目数
-    int mSoundOptionNum;
-
-
     // UIの全体の親オブジェクト
     std::unique_ptr<Object3D> mMenuParentObj;
+
+    std::unique_ptr<Object3D> mMenuPlaneObj;
+
+    std::unique_ptr<Object3D> mPlanesParentObj;
 
     // UIのメインメニューの項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuUIObj;
@@ -237,13 +237,16 @@ private:// メンバー変数
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuTabUIObj;
 
+    // UIタブ項目内のオブジェクト
+    std::vector<IUITab> mTabItems;
+
+    std::unique_ptr<CameraTab> mCameraItem;
+    std::unique_ptr<GraphicsTab> mGpraphicsItem;
+    std::unique_ptr<SoundTab> mSoundItem;
+
+
     // UIのメニュー項目にアクセスしたときの演出
     bool IsActiveOption;
-
-    // UIのオプション画面の項目オブジェクト
-    std::vector<UI3DTabItemStatus>mCameraUIObj;
-    std::vector<UI3DTabItemStatus>mGraphicUIObj;
-    std::vector<UI3DTabItemStatus>mSoundUIObj;
 
     // UIのタブのイージング
     Easing mUITabEase;
@@ -257,6 +260,12 @@ private:// メンバー変数
     float mTabBoardRotaBefore;
 
     float mTabEaseTimeLimit;
+
+    // UIのタブのオンフラグ
+    bool IsUITabOn;
+
+    // 現在のタブのメニュー番号
+    int mCurrentTabNum;
 
     // プレイヤーコントロール(取得用)
     PlayerControl* mPlayerControl;

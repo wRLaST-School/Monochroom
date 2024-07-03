@@ -8,7 +8,7 @@
 #include <ConsoleWindow.h>
 #include "GameManager.h"
 
-float DegreeToRadian(float angle) 
+float DegreeToRadian(float angle)
 {
 	float radian = angle * (float)(PI / 180);
 
@@ -29,14 +29,14 @@ void SuperUI::Init()
 
 	mUICurrentNum = 0;
 
-	mUIDesabledScale = { 0.6f ,0.1f};
+	mUIDesabledScale = { 0.6f ,0.1f };
 	mUISelectScale = { 0.7f ,0.12f };
 
 	mDesabledColor = { 200,0,0 };
 	mSelectColor = { 255,255,255 };
 	mPressedColor = { 150,225,255 };
 
-	mDesabledTextColor = {215,215,215};
+	mDesabledTextColor = { 215,215,215 };
 	mSelectTextColor = { 255,255,255 };
 	mPressedTextColor = { 255,255,255 };
 
@@ -61,50 +61,47 @@ void SuperUI::Update()
 	//mMenuParentObj->position.x += 0.05f;
 	//mMenuParentObj->Update();
 	// もしTABキーを押したらメニューを開け閉めする
-	if (Input::Key::Triggered(DIK_ESCAPE)) 
+	if (Input::Key::Triggered(DIK_ESCAPE))
 	{
 		ConsoleWindow::Log("TAB押された。");
-		if (mIsDisplayUI) 
+		if (mIsDisplayUI)
 		{
 			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(false);
 			mIsOpenUIMenu = false;
 			mIsMomentOpenMenu = false;
 			mIsDisplayUI = false;
 			ResetOption();
-			//Input::Mouse::HideCursor();
+			UIMainMenuOffReset();
 			ConsoleWindow::Log("メニューを閉じた");
 		}
-		else 
+		else
 		{
 			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(true);
 			mIsMomentOpenMenu = true;
 			mIsDisplayUI = true;
+			UIMainMenuOnReset();
 
-			
-			//if (Input::Mouse::GetShowCursor() == false) {
-			//	//Input::Mouse::ShowCursorM();
-			//}
 			ConsoleWindow::Log("メニューを開いた");
 		}
 	}
 
 	// メニューが開いた瞬間 
-	if (mIsMomentOpenMenu) 
+	if (mIsMomentOpenMenu)
 	{
 		MomentMenuReset();
 	}
 
-	if (mIsDisplayUI) 
+	if (mIsDisplayUI)
 	{
 		UIObj3DUpdate();
 		ConsoleWindow::Log("メニューを開いた");
 	}
 
 	// メニューがオンになったら
-	if (mIsOpenUIMenu) 
+	if (mIsOpenUIMenu)
 	{
-		
-		
+
+
 
 
 		UIOptionsUpdate();
@@ -130,12 +127,6 @@ void SuperUI::UIObj3DInit()
 
 	mNumOption = 3;
 
-	mCameraOptionNum = 4;
-
-	mGraphicsOptionNum = 2;
-
-	mSoundOptionNum = 3;
-
 	mTabRotaAfter = -10;
 
 	mTabRotaBefore = 0;
@@ -146,6 +137,10 @@ void SuperUI::UIObj3DInit()
 
 	mTabEaseTimeLimit = 30;
 
+	IsUITabOn = false;
+
+	mCurrentTabNum = 0;
+
 	mUITabEase.SetEaseTimer((int32_t)mTabEaseTimeLimit);
 
 	mUITabBoardEase.SetEaseTimer((int32_t)(mTabEaseTimeLimit * 1.5f));
@@ -153,153 +148,54 @@ void SuperUI::UIObj3DInit()
 	// メニューのリストをリサイズ
 	mMenuUIObj.resize(mNumMenu);
 	mMenuTabUIObj.resize(mNumOption);
-	mCameraUIObj.resize(mCameraOptionNum);
-	mGraphicUIObj.resize(mGraphicsOptionNum);
-	mSoundUIObj.resize(mSoundOptionNum);
+	mTabItems.resize(mNumOption);
+	
 
 	// シーンに配置されているオブジェクトを走査して、代入
 
 	mMenuParentObj = std::make_unique<Object3D>();
 	mTabsParentObj = std::make_unique<Object3D>();
 	mTabBoardObj = std::make_unique<Object3D>();
+	mMenuPlaneObj = std::make_unique<Object3D>();
+	mPlanesParentObj = std::make_unique<Object3D>();
+
+	mCameraItem = std::make_unique<CameraTab>();
+	mGpraphicsItem = std::make_unique<GraphicsTab>();
+	mSoundItem = std::make_unique<SoundTab>();
+
+	mTabItems.push_back(*mCameraItem.get());
+	mTabItems.push_back(*mGpraphicsItem.get());
+	mTabItems.push_back(*mSoundItem.get());
+
+	for (size_t i = 0; i < mNumOption; i++)
+	{
+		mTabItems[i].Init();
+	}
+
 	mMenuParentObj.reset(SceneManager::FindObject<Object3D>("UIParentObj"));
 	mTabsParentObj.reset(SceneManager::FindObject<Object3D>("Tabs"));
 	mTabBoardObj.reset(SceneManager::FindObject<Object3D>("Board"));
+	mMenuPlaneObj.reset(SceneManager::FindObject<Object3D>("MenuPlane"));
+	mPlanesParentObj.reset(SceneManager::FindObject<Object3D>("Planes"));
 
 	// メインメニューの項目のオブジェクト設定
-	mMenuUIObj[GUID].planeObj			=SceneManager::FindObject<Object3D>("GuidPlane");
-	mMenuUIObj[OPTIONS].planeObj		=SceneManager::FindObject<Object3D>("OptionPlane");
-	mMenuUIObj[QUIT_SELECT].planeObj	=SceneManager::FindObject<Object3D>("SelectPlane");
-	mMenuUIObj[QUIT_TITLE].planeObj		=SceneManager::FindObject<Object3D>("QuitTitlePlane");
+	mMenuUIObj[GUID].planeObj = SceneManager::FindObject<Object3D>("GuidPlane");
+	mMenuUIObj[OPTIONS].planeObj = SceneManager::FindObject<Object3D>("OptionPlane");
+	mMenuUIObj[QUIT_SELECT].planeObj = SceneManager::FindObject<Object3D>("SelectPlane");
+	mMenuUIObj[QUIT_TITLE].planeObj = SceneManager::FindObject<Object3D>("QuitTitlePlane");
 
 	// オプションメニューの項目のオブジェクト設定
-	mMenuTabUIObj[CAMERA].planeObj		= SceneManager::FindObject<Object3D>("CameraTab");
-	mMenuTabUIObj[GRAPHICS].planeObj	= SceneManager::FindObject<Object3D>("GraohicsTab");
-	mMenuTabUIObj[SOUND].planeObj		= SceneManager::FindObject<Object3D>("SoundTab");
-
-	// カメラ項目のオブジェクト設定
-	mCameraUIObj[MOUSESENSITIVITY_X].planeObj	= SceneManager::FindObject<Object3D>("MouseSensitivityX");
-	mCameraUIObj[MOUSESENSITIVITY_Y].planeObj	= SceneManager::FindObject<Object3D>("MouseSensitivityY");
-
-	// グラフィックス項目のオブジェクト設定
-	mGraphicUIObj[POSTPROCESS].planeObj	= SceneManager::FindObject<Object3D>("PostProcess");
-	mGraphicUIObj[POSTPROCESS].planeObj	= SceneManager::FindObject<Object3D>("Shadow");
-
-	// 音量項目のオブジェクト設定
-	mSoundUIObj[MASTER].planeObj	= SceneManager::FindObject<Object3D>("MastarVolume");
-	mSoundUIObj[BGM].planeObj		= SceneManager::FindObject<Object3D>("BGMVolume");
-	mSoundUIObj[SE].planeObj		= SceneManager::FindObject<Object3D>("SEVolume");
-
+	mMenuTabUIObj[CAMERA].planeObj = SceneManager::FindObject<Object3D>("CameraTab");
+	mMenuTabUIObj[GRAPHICS].planeObj = SceneManager::FindObject<Object3D>("GraohicsTab");
+	mMenuTabUIObj[SOUND].planeObj = SceneManager::FindObject<Object3D>("SoundTab");
 }
 
 void SuperUI::UIObj3DUpdate()
 {
 
-	for (size_t i = 0; i < mNumMenu; i++)
-	{		// 選択されたときとそうではないとき
-		if (mMenuUIObj[mUICurrentNum].state != PRESSED)
-		{
-			mMenuUIObj[mUICurrentNum].state = SELECT;
-			ConsoleWindow::Log(std::format("今のメニュー番号:{}\n", mUICurrentNum));
+	UIMainMenuUpdate();
 
-			if (Input::Key::Triggered(DIK_Z))
-			{
-				mMenuUIObj[mUICurrentNum].state = PRESSED;
-				IsActiveOption = true;
-			}
-
-			// 項目のナンバーを変更
-			if (Input::Key::Triggered(DIK_W))
-			{
-				mUICurrentNum--;
-				if (mUICurrentNum <= 0)
-				{
-					mUICurrentNum = 0;
-				}
-				mMenuUIObj[mUICurrentNum].state = SELECT;
-
-				break;
-			}
-			if (Input::Key::Triggered(DIK_S))
-			{
-				mUICurrentNum++;
-				if (mUICurrentNum >= mNumMenu - 1)
-				{
-					mUICurrentNum = mNumMenu - 1;
-				}
-				mMenuUIObj[mUICurrentNum].state = SELECT;
-				break;
-			}
-		}
-		else
-		{
-			if (Input::Key::Triggered(DIK_X))
-			{
-				mUIBoardCurrentColor = mDesabledColor;
-				mMenuUIObj[mUICurrentNum].state = SELECT;
-				//mUIStatus[mUICurrentNum].IsPressedAlpha = false;
-				mMenuUIObj[mUICurrentNum].textCurrentColor = mUITextBeforeColor;
-			}
-		}
-	}
-
-	for (size_t i = 0; i < mNumMenu; i++)
-	{
-		// 選択されたときとそうではないとき
-		if (mMenuUIObj[i].state != PRESSED)
-		{
-			if (i != mUICurrentNum)
-			{
-				mMenuUIObj[i].state = DISABLED;
-			}
-		}
-
-		switch (mMenuUIObj[i].state)
-		{
-		case DISABLED:
-			mMenuUIObj[i].scaleChangeValue = mUIDesabledScale;
-			mMenuUIObj[i].correntColor = mDesabledTextColor;
-			mMenuUIObj[i].buttonColor = mDesabledColor;
-			break;
-		case SELECT:
-			mMenuUIObj[i].scaleChangeValue = mUISelectScale;
-			mMenuUIObj[i].correntColor = mSelectTextColor;
-			mMenuUIObj[i].buttonColor = mSelectColor;
-			break;
-		case PRESSED:
-			
-			
-
-			break;
-		}
-
-		mMenuUIObj[i].planeObj->scale = mMenuUIObj[i].scaleChangeValue;
-		*mMenuUIObj[i].planeObj->brightnessCB.contents = mMenuUIObj[i].buttonColor.f4;
-		ConsoleWindow::Log(std::format("今のメニューカラー:{},{},{},{}\n", mMenuUIObj[i].buttonColor.f4.x, mMenuUIObj[i].buttonColor.f4.y, mMenuUIObj[i].buttonColor.f4.z, mMenuUIObj[i].buttonColor.f4.w));
-		mMenuUIObj[i].planeObj->Update();
-	}
-	
-	// オプション項目がオンの時
-	if (IsActiveOption)
-	{
-		mUITabEase.Update();
-		mUITabBoardEase.Update();
-
-		mTabsParentObj->rotationE.y = mUITabEase.In(DegreeToRadian(mTabRotaAfter), DegreeToRadian(mTabRotaBefore));
-		mTabBoardObj->rotationE.y= mUITabBoardEase.In(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
-
-		mTabsParentObj->Update();
-		mTabBoardObj->Update();
-
-		ConsoleWindow::Log(std::format("オプション項目オン:{}\n", mTabsParentObj->rotationE.y));
-		if (mUITabBoardEase.GetisEnd())
-		{
-			IsActiveOption = false;
-
-			mUITabEase.Reset();
-			mUITabBoardEase.Reset();
-		}
-	}
+	UITabMenuUpdate();
 }
 
 void SuperUI::LoadTexInit()
@@ -467,6 +363,175 @@ void SuperUI::UIOptionsUpdate()
 
 }
 
+void SuperUI::UIMainMenuUpdate()
+{
+	for (size_t i = 0; i < mNumMenu; i++)
+	{		// 選択されたときとそうではないとき
+		if (mMenuUIObj[mUICurrentNum].state != PRESSED)
+		{
+			mMenuUIObj[mUICurrentNum].state = SELECT;
+			ConsoleWindow::Log(std::format("今のメニュー番号:{}\n", mUICurrentNum));
+
+			if (Input::Key::Triggered(DIK_Z))
+			{
+				UITabMenuOn();
+			}
+
+			// 項目のナンバーを変更
+			if (Input::Key::Triggered(DIK_W))
+			{
+				mUICurrentNum--;
+				if (mUICurrentNum <= 0)
+				{
+					mUICurrentNum = 0;
+				}
+				mMenuUIObj[mUICurrentNum].state = SELECT;
+
+				break;
+			}
+			if (Input::Key::Triggered(DIK_S))
+			{
+				mUICurrentNum++;
+				if (mUICurrentNum >= mNumMenu - 1)
+				{
+					mUICurrentNum = mNumMenu - 1;
+				}
+				mMenuUIObj[mUICurrentNum].state = SELECT;
+				break;
+			}
+		}
+		else
+		{
+			if (Input::Key::Triggered(DIK_X))
+			{
+				UITabMenuOff();
+			}
+		}
+	}
+
+	for (size_t i = 0; i < mNumMenu; i++)
+	{
+		// 選択されたときとそうではないとき
+		if (mMenuUIObj[i].state != PRESSED)
+		{
+			if (i != mUICurrentNum)
+			{
+				mMenuUIObj[i].state = DISABLED;
+			}
+		}
+
+		switch (mMenuUIObj[i].state)
+		{
+		case DISABLED:
+			mMenuUIObj[i].scaleChangeValue = mUIDesabledScale;
+			mMenuUIObj[i].correntColor = mDesabledTextColor;
+			mMenuUIObj[i].buttonColor = mDesabledColor;
+			break;
+		case SELECT:
+			mMenuUIObj[i].scaleChangeValue = mUISelectScale;
+			mMenuUIObj[i].correntColor = mSelectTextColor;
+			mMenuUIObj[i].buttonColor = mSelectColor;
+			break;
+		case PRESSED:
+			IsUITabOn = true;
+
+
+			break;
+		}
+
+		mMenuUIObj[i].planeObj->scale = mMenuUIObj[i].scaleChangeValue;
+		*mMenuUIObj[i].planeObj->brightnessCB.contents = mMenuUIObj[i].buttonColor.f4;
+		ConsoleWindow::Log(std::format("今のメニューカラー:{},{},{},{}\n", mMenuUIObj[i].buttonColor.f4.x, mMenuUIObj[i].buttonColor.f4.y, mMenuUIObj[i].buttonColor.f4.z, mMenuUIObj[i].buttonColor.f4.w));
+		mMenuUIObj[i].planeObj->Update();
+	}
+
+	// オプション項目がオンの時
+	if (IsActiveOption)
+	{
+		mUITabEase.Update();
+		mUITabBoardEase.Update();
+
+		mTabsParentObj->rotationE.y = mUITabEase.In(DegreeToRadian(mTabRotaAfter), DegreeToRadian(mTabRotaBefore));
+		mTabBoardObj->rotationE.y = mUITabBoardEase.In(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
+
+		mTabsParentObj->Update();
+		mTabBoardObj->Update();
+
+		if (mUITabBoardEase.GetisEnd())
+		{
+			IsActiveOption = false;
+			mUITabEase.Reset();
+			mUITabBoardEase.Reset();
+		}
+	}
+}
+
+void SuperUI::UITabMenuUpdate()
+{
+	// タブメニューがオンの時
+	if (IsUITabOn)
+	{
+		mMenuTabUIObj[mCurrentTabNum].state = SELECT;
+
+		if (Input::Key::Triggered(DIK_A))
+		{
+			mCurrentTabNum--;
+
+			if (mCurrentTabNum <= 0)
+			{
+				mCurrentTabNum = 0;
+			}
+
+			mMenuTabUIObj[mCurrentTabNum].state = SELECT;
+		}
+
+		if (Input::Key::Triggered(DIK_D))
+		{
+			mCurrentTabNum++;
+
+			if (mCurrentTabNum >= mNumOption - 1)
+			{
+				mCurrentTabNum = mNumOption - 1;
+			}
+
+			mMenuTabUIObj[mCurrentTabNum].state = SELECT;
+		}
+
+		for (size_t i = 0; i < mNumOption; i++)
+		{
+			// 選択されたときとそうではないとき
+
+			if (i != mCurrentTabNum)
+			{
+				mMenuTabUIObj[i].state = DISABLED;
+			}
+
+
+			switch (mMenuTabUIObj[i].state)
+			{
+			case DISABLED:
+				mMenuTabUIObj[i].scaleChangeValue = mUIDesabledScale;
+				mMenuTabUIObj[i].buttonColor = mDesabledColor;
+				mMenuTabUIObj[i].IsActive = false;
+				break;
+			case SELECT:
+				mMenuTabUIObj[i].scaleChangeValue = mUISelectScale;
+				mMenuTabUIObj[i].buttonColor = mSelectColor;
+				mMenuTabUIObj[i].IsActive = true;
+				break;
+			default:
+				break;
+			}
+
+			//mMenuTabUIObj[i].planeObj->scale = mMenuTabUIObj[i].scaleChangeValue;
+			*mMenuTabUIObj[i].planeObj->brightnessCB.contents = mMenuTabUIObj[i].buttonColor.f4;
+			mMenuTabUIObj[i].planeObj->Update();
+		}
+	}
+
+
+}
+
 void SuperUI::CameraMenuUpdate()
 {
 	//if (mUIStatus[CAMERA].state == PRESSED) 
@@ -524,6 +589,49 @@ void SuperUI::QuitMenuDraw()
 	//		0.8f, 0.8f, 0, "quitTextTex",
 	//		Anchor::Center, mUIStatus[QUIT_TITLE].textCurrentColor);
 	//}
+}
+
+void SuperUI::UIMainMenuOnReset()
+{
+	mMenuParentObj->Activate();
+}
+
+void SuperUI::UIMainMenuOffReset()
+{
+	mMenuParentObj->Deactivate();
+}
+
+void SuperUI::UITabMenuOn()
+{
+	mMenuUIObj[mUICurrentNum].state = PRESSED;
+	IsActiveOption = true;
+
+	// メインメニュー関連をオフ
+	mMenuPlaneObj->Deactivate();
+	mPlanesParentObj->Deactivate();
+
+	// タブをオン
+	mTabsParentObj->Activate();
+
+	mCurrentTabNum = 0;
+
+	mTabItems[mCurrentTabNum].OnUpdate();
+}
+
+void SuperUI::UITabMenuOff()
+{
+	mUIBoardCurrentColor = mDesabledColor;
+	mMenuUIObj[mUICurrentNum].state = SELECT;
+	IsUITabOn = false;
+	mCurrentTabNum = 0;
+	mMenuUIObj[mUICurrentNum].textCurrentColor = mUITextBeforeColor;
+
+	// メインメニュー関連をオフ
+	mMenuPlaneObj->Activate();
+	mPlanesParentObj->Activate();
+
+	// タブをオフ
+	mTabsParentObj->Deactivate();
 }
 
 RegisterScriptBody(SuperUI);

@@ -43,6 +43,12 @@
     <Filter Include="ヘッダー ファイル\Util">
       <UniqueIdentifier>{6874f44a-9503-4725-9dea-fb7dab05b7a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\UI\Tabs">
+      <UniqueIdentifier>{882bd247-c880-42f9-a31e-1ca2ca8732e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\UI\Tabs">
+      <UniqueIdentifier>{4a135411-411e-44ec-b163-f1eeac5c08c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IScriptObject.h">
@@ -120,6 +126,18 @@
     <ClInclude Include="StageDoor.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="UI\IUITab.h">
+      <Filter>ヘッダー ファイル\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\CameraTab.h">
+      <Filter>ヘッダー ファイル\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsTab.h">
+      <Filter>ヘッダー ファイル\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundTab.h">
+      <Filter>ヘッダー ファイル\UI\Tabs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -193,6 +211,18 @@
     </ClCompile>
     <ClCompile Include="StageDoor.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\IUITab.cpp">
+      <Filter>ソース ファイル\UI\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraTab.cpp">
+      <Filter>ソース ファイル\UI\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsTab.cpp">
+      <Filter>ソース ファイル\UI\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundTab.cpp">
+      <Filter>ソース ファイル\UI\Tabs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

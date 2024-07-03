@@ -22,10 +22,14 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Gimmick\FlyBlockCollider.h" />
     <ClInclude Include="Gimmick\GlassCollider.h" />
+    <ClInclude Include="GraphicsTab.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
+    <ClInclude Include="SoundTab.h" />
     <ClInclude Include="StageButton.h" />
     <ClInclude Include="StageDoor.h" />
+    <ClInclude Include="UI\CameraTab.h" />
+    <ClInclude Include="UI\IUITab.h" />
     <ClInclude Include="UI\SuperUI.h" />
     <ClInclude Include="Bases.h" />
     <ClInclude Include="IScriptObject.h" />
@@ -40,6 +44,7 @@
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="CameraTab.cpp" />
     <ClCompile Include="Gimmick\ButtonCollider.cpp" />
     <ClCompile Include="Gimmick\DoorCollider.cpp" />
     <ClCompile Include="Gimmick\FlyBlock.cpp" />
@@ -49,10 +54,13 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Gimmick\FlyBlockCollider.cpp" />
     <ClCompile Include="Gimmick\GlassCollider.cpp" />
+    <ClCompile Include="GraphicsTab.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
+    <ClCompile Include="SoundTab.cpp" />
     <ClCompile Include="StageButton.cpp" />
     <ClCompile Include="StageDoor.cpp" />
+    <ClCompile Include="UI\IUITab.cpp" />
     <ClCompile Include="UI\SuperUI.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
     <ClCompile Include="TestObject.cpp" />
