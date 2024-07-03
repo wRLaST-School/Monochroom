@@ -173,6 +173,8 @@ void SceneRW::LoadScene(IScene* scene, std::string filePath)
 		}
 	}
 
+	scene->ReadCommonParamJson(deserialized.front());
+
 	file.close();
 }
 
