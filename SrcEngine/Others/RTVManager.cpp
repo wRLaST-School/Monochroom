@@ -173,7 +173,7 @@ void RTVManager::CreateRenderTargetTexture(float width, float height, const Text
 	GetSpDX()->dev->CreateRenderTargetView(SpTextureManager::GetTextureBuff(key), nullptr,
 		GetHeapCPUHandle((int32_t)SpTextureManager::GetIndex(key)));
 
-	GetSpDepth()->CreateDSV(key);
+	GetSpDepth()->CreateDSV(key, width, height);
 
 	//デフォルトのリソースバリアをセット
 	//ID3D12Resource* lastRes = GetWDX()->barrierDesc.Transition.pResource;
