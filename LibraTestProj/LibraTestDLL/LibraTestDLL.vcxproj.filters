@@ -120,6 +120,9 @@
     <ClInclude Include="StageDoor.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="SponePoint.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -192,6 +195,9 @@
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="StageDoor.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="SponePoint.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>

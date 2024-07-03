@@ -18,9 +18,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -20.324190139770508,
-                    "Y": 10.226499557495117,
-                    "Z": 45.04354476928711
+                    "X": -11.479235649108887,
+                    "Y": 10.0,
+                    "Z": 44.32526779174805
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -29,8 +29,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -0.10079634189605713,
-                    "Y": 3.7931854724884033,
+                    "X": -1.5707963705062866,
+                    "Y": 0.4800003170967102,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -738,9 +738,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -19.717737197875977,
-                    "Y": 10.226499557495117,
-                    "Z": 45.83866500854492
+                    "X": -11.949861526489258,
+                    "Y": 10.0,
+                    "Z": 43.442935943603516
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -749,8 +749,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.10079634189605713,
-                    "Y": 3.7931854724884033,
+                    "X": -1.5707963705062866,
+                    "Y": 0.47000032663345337,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -759,7 +759,8 @@
                     "Z": 1.0
                 },
                 "Tags": [
-                    "Player"
+                    "Player",
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -812,7 +813,8 @@
                     "Z": 1.0
                 },
                 "Tags": [
-                    "FlyBlock"
+                    "FlyBlock",
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -939,7 +941,8 @@
                 },
                 "Tags": [
                     "Button",
-                    "DB1"
+                    "DB1",
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -2223,7 +2226,8 @@
                 },
                 "Tags": [
                     "DB1",
-                    "StageDoor"
+                    "StageDoor",
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -2276,9 +2280,55 @@
                     "Z": 1.0
                 },
                 "Tags": [
-                    "FlyBlock"
+                    "FlyBlock",
+                    "Stage"
                 ],
                 "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 5,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Name": "SponePoint",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "SponePoint"
+                    }
+                ],
+                "Model": "cube.obj",
+                "Name": "SponePoint",
+                "NormalType": 0,
+                "Position": {
+                    "X": 7.64900016784668,
+                    "Y": 9.38800048828125,
+                    "Z": 42.733001708984375
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "buttonBackTex",
                 "Type": "Object3D"
             },
             {
