@@ -738,9 +738,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -11.949861526489258,
-                    "Y": 10.0,
-                    "Z": 43.442935943603516
+                    "X": 7.64900016784668,
+                    "Y": 9.38800048828125,
+                    "Z": 42.733001708984375
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -749,8 +749,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -1.5707963705062866,
-                    "Y": 0.47000032663345337,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -948,7 +948,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": false,
+                "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -2288,7 +2288,7 @@
             },
             {
                 "Active": true,
-                "BlendMode": 5,
+                "BlendMode": 3,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -2350,7 +2350,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Name": "SpriteObject",
+                "Name": "ShadowMap",
                 "Tags": null,
                 "Texture": "ShadowMap_depth_",
                 "Type": "SpriteObject",
@@ -2374,6 +2374,22 @@
                 "posY": 530.5,
                 "scaleX": 10.0,
                 "scaleY": 10.0
+            },
+            {
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "GrayScale",
+                "Tags": null,
+                "Texture": "GrayScale",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 540.0,
+                "scaleX": 1.0,
+                "scaleY": 1.0
             }
         ],
         "EfkEffects": [

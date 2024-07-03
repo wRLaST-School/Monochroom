@@ -30,7 +30,7 @@ void SrSpriteStage::Render()
 {
 	for (auto& rt : commands_)
 	{
-		RTVManager::SetRenderTargetToTexture(rt.first, false);
+		//RTVManager::SetRenderTargetToTexture(rt.first, false);
 
 		for (auto& cmd : rt.second)
 		{
