@@ -9,16 +9,16 @@ void SrShadowCasterStage::Init()
 {
 	lightCamera = std::make_unique<Camera>();
 	lightCamera->UseDefaultParams();
-	lightCamera->renderWidth = 1920.f;
-	lightCamera->renderHeight = 1080.f;
+	lightCamera->renderWidth = 1920.f * 2.f;
+	lightCamera->renderHeight = 1080.f * 2.f;
 	lightCamera->projectionMode = ProjectionMode::Orthographic;
 
-	lightCamera->position = Vec3(0, 30, 0);
-	lightCamera->rotationE = ConvertAngleToRadian(Vec3(40, 330, 0));
+	lightCamera->position = Vec3(-20, 30, 30);
+	lightCamera->rotationE = ConvertAngleToRadian(Vec3(40, 125, 0));
 	lightCamera->left = -960;
 	lightCamera->right = +960;
-	lightCamera->top = -540;
-	lightCamera->bottom = +540;
+	lightCamera->top = +540;
+	lightCamera->bottom = -540;
 	lightCamera->rectRate = 0.0625f;
 }
 
@@ -30,8 +30,8 @@ void SrShadowCasterStage::PreDraw()
 
 	D3D12_VIEWPORT viewport{};
 
-	viewport.Width = (FLOAT)GetSpWindow()->width;
-	viewport.Height = (FLOAT)GetSpWindow()->height;
+	viewport.Width = (FLOAT)GetSpWindow()->width * 2.f;
+	viewport.Height = (FLOAT)GetSpWindow()->height * 2.f;
 	viewport.TopLeftX = 0;
 	viewport.TopLeftY = 0;
 	viewport.MinDepth = 0.0f;
@@ -42,9 +42,9 @@ void SrShadowCasterStage::PreDraw()
 	D3D12_RECT scissorrect{};
 
 	scissorrect.left = 0;                                       // 切り抜き座標左
-	scissorrect.right = scissorrect.left + GetSpWindow()->width;        // 切り抜き座標右
+	scissorrect.right = scissorrect.left + GetSpWindow()->width * 2;        // 切り抜き座標右
 	scissorrect.top = 0;                                        // 切り抜き座標上
-	scissorrect.bottom = scissorrect.top + GetSpWindow()->height;       // 切り抜き座標下
+	scissorrect.bottom = scissorrect.top + GetSpWindow()->height * 2;       // 切り抜き座標下
 
 	dx->cmdList->RSSetScissorRects(1, &scissorrect);
 

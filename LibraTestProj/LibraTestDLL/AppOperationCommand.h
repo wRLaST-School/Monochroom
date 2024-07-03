@@ -14,6 +14,8 @@ public:
 
 	bool PlayerConfirmCommand();
 
+	bool ReStartCommand();
+
 	bool UserDebugStopGameCommand();
 
 

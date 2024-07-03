@@ -262,7 +262,7 @@ Matrix Matrix::ProjectionOrtho(float left, float right, float top, float bottom,
 
 	orthoGrphic[3][0] = (left + right) / (left - right);
 	orthoGrphic[3][1] = (top + bottom) / (bottom - top);
-	orthoGrphic[3][2] = -nearZ / (farZ - nearZ);
+	orthoGrphic[3][2] = nearZ / (nearZ - farZ);
 
 	return orthoGrphic;
 }
