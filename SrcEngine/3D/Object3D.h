@@ -109,6 +109,8 @@ public:
 
 	bool useSilhouette = false;
 
+	bool disableDraw = false;
+
 	std::unique_ptr<ShadowCaster> shadowCaster;
 	std::unique_ptr<Silhouette> silhouette;
 };
