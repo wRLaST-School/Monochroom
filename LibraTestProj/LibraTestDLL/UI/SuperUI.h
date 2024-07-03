@@ -225,25 +225,38 @@ private:// メンバー変数
 
 
     // UIの全体の親オブジェクト
-    Object3D* mMenuParentObj;
+    std::unique_ptr<Object3D> mMenuParentObj;
 
     // UIのメインメニューの項目オブジェクト
-    std::vector<UI3DTabItemStatus*>mMenuUIObj;
+    std::vector<UI3DTabItemStatus>mMenuUIObj;
 
-    Object3D* mTabsParentObj;
+    std::unique_ptr<Object3D> mTabsParentObj;
+
+    std::unique_ptr<Object3D> mTabBoardObj;
 
     // UIのタブメニュー項目オブジェクト
-    std::vector<UI3DTabItemStatus*>mMenuTabUIObj;
+    std::vector<UI3DTabItemStatus>mMenuTabUIObj;
 
     // UIのメニュー項目にアクセスしたときの演出
     bool IsActiveOption;
 
     // UIのオプション画面の項目オブジェクト
-    std::vector<UI3DTabItemStatus*>mCameraUIObj;
-    std::vector<UI3DTabItemStatus*>mGraphicUIObj;
-    std::vector<UI3DTabItemStatus*>mSoundUIObj;
+    std::vector<UI3DTabItemStatus>mCameraUIObj;
+    std::vector<UI3DTabItemStatus>mGraphicUIObj;
+    std::vector<UI3DTabItemStatus>mSoundUIObj;
 
+    // UIのタブのイージング
+    Easing mUITabEase;
+    Easing mUITabBoardEase;
 
+    // UIイージングパラメータ
+    float mTabRotaAfter;
+    float mTabRotaBefore;
+
+    float mTabBoardRotaAfter;
+    float mTabBoardRotaBefore;
+
+    float mTabEaseTimeLimit;
 
     // プレイヤーコントロール(取得用)
     PlayerControl* mPlayerControl;

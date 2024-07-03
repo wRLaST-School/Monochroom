@@ -959,7 +959,7 @@
                         "Children": [
                             {
                                 "Active": true,
-                                "BlendMode": 0,
+                                "BlendMode": 4,
                                 "Brightness": {
                                     "W": 1.0,
                                     "X": 1.0,
@@ -969,7 +969,7 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1044,7 +1044,7 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1054,7 +1054,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1090,7 +1090,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1126,7 +1126,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1162,7 +1162,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1198,7 +1198,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1234,7 +1234,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1299,7 +1299,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1309,7 +1309,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1345,7 +1345,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1410,7 +1410,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1420,7 +1420,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1456,7 +1456,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1492,7 +1492,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1557,7 +1557,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1565,7 +1565,7 @@
                                             "Z": 1.0
                                         },
                                         "Model": "Plane.obj",
-                                        "Name": "Borad",
+                                        "Name": "Board",
                                         "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
@@ -1632,7 +1632,7 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1642,7 +1642,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1707,7 +1707,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1717,7 +1717,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1782,7 +1782,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1792,7 +1792,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1857,7 +1857,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1867,7 +1867,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
