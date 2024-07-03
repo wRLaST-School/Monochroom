@@ -812,7 +812,7 @@ TextureKey SpTextureManager::CreateResourceWithoutView(const TextureKey& key)
 	throw std::out_of_range("out of texture resource");
 }
 
-TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FORMAT format, D3D12_HEAP_TYPE heaptype, D3D12_RESOURCE_FLAGS resourceFlag)
+TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FORMAT format, D3D12_HEAP_TYPE heaptype, D3D12_RESOURCE_FLAGS resourceFlag, float dx, float dy)
 {
 	D3D12_RESOURCE_DESC textureResourceDesc;
 
@@ -820,7 +820,7 @@ TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FOR
 
 	CD3DX12_HEAP_PROPERTIES texHeapProp = CD3DX12_HEAP_PROPERTIES(heaptype);
 
-	Float2 ratio = { 1.f, 1.f };
+	Float2 ratio = { dx, dy };
 	textureResourceDesc =
 		CD3DX12_RESOURCE_DESC::Tex2D(format, (UINT)(ratio.x * GetSpWindow()->width), (UINT)(ratio.y * GetSpWindow()->height), 1, 1, 1, 0, resourceFlag);
 	SpTextureManager::GetInstance().texDataMap_.Access(

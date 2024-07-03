@@ -16,7 +16,7 @@ void SpDepth::Init()
 	dsvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_DSV;
 	GetSpDX()->dev->CreateDescriptorHeap(&dsvHeapDesc, IID_PPV_ARGS(&dsvHeap));
 
-	CreateDSV("system_depth_default_bb");
+	CreateDSV("system_depth_default_bb", 1.f, 1.f);
 }
 
 void SpDepth::Resize()
@@ -48,7 +48,7 @@ void SpDepth::Resize()
 	}
 }
 
-void SpDepth::CreateDSV(std::string key)
+void SpDepth::CreateDSV(std::string key, float dx, float dy)
 {
 	depthes.insert(std::pair<std::string, SpDepthForTex>(key, SpDepthForTex()));
 
@@ -59,7 +59,7 @@ void SpDepth::CreateDSV(std::string key)
 
 	dt.index = index;
 
-	SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_D32_FLOAT_S8X24_UINT, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
+	SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_D32_FLOAT_S8X24_UINT, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL, dx, dy);
 
 	SpTextureManager::AddMasterTextureKey((key + "_depth_"));
 
