@@ -14,7 +14,7 @@ void ButtonCollider::Init()
 
 void ButtonCollider::Update()
 {
-	Vec3 pos = Vec3(mObj->position);
+	Vec3 pos = Vec3(mObj->matWorld.ExtractTranslation());
 	Quaternion rot = Quaternion::EulerToQuaternion(mObj->rotationE);
 
 	mBodyCollider.Setting(bodyColliderPos + pos, rot, Vec3::Mul(bodyColliderScale, Vec3(mObj->scale)));
