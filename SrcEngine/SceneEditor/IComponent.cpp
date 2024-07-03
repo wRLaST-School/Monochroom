@@ -336,17 +336,25 @@ void IComponent::WriteCommonParamJson(nlohmann::json& jsonObj)
 	{
 		arr.push_back(t);
 	}
+
+	jsonObj["Name"] = name_;
 }
 
 void IComponent::ReadCommonParamJson(const nlohmann::json& paramsObject)
 {
-	if (paramsObject.At("Tags").is_null()) return;
-
-	const nlohmann::json& arr = paramsObject["Tags"];
-
-	for (auto& t : arr)
+	if (!paramsObject.At("Tags").is_null())
 	{
-		tags.push_back(t);
+		const nlohmann::json& arr = paramsObject["Tags"];
+
+		for (auto& t : arr)
+		{
+			tags.push_back(t);
+		}
+	}
+
+	if (!paramsObject.At("Name").is_null())
+	{
+		name_ = paramsObject["Name"];
 	}
 }
 
