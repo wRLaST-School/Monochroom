@@ -4,6 +4,8 @@ std::map<std::string, GPipeline> psoMap;
 
 void GPipeline::InitDesc(const PipelineDesc& desc)
 {
+	mDesc = desc;
+
 	// グラフィックスパイプライン設定
 	psod.VS.pShaderBytecode = desc.Shader.pShader->vsBlob->GetBufferPointer();
 	psod.VS.BytecodeLength = desc.Shader.pShader->vsBlob->GetBufferSize();
@@ -105,6 +107,15 @@ void GPipeline::Create(const PipelineDesc& desc, const std::string& id)
 	GPipeline* ptr = &psoMap[id];
 	ptr->InitDesc(desc);
 	ptr->Create();
+	ptr->shaderID = desc.Shader.pShader->id;
+	ptr->psoID = id;
+}
+
+void GPipeline::ReCreate(const std::string& id)
+{
+	GPipeline* ptr = &psoMap[id];
+	ptr->InitDesc(ptr->mDesc);
+	ptr->Create();
 }
 
 void GPipeline::Create()
@@ -161,4 +172,9 @@ PipelineDesc::Blend::BlendDesc PipelineUtil::Blend::GetBlendMode(BlendMode blend
 	}
 
 	return desc;
+}
+
+std::map<std::string, GPipeline>* GetPSOMap()
+{
+	return &psoMap;
 }

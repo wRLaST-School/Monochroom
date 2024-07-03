@@ -49,6 +49,8 @@ float4 GaussianBlur(Texture2D<float4> tex, float2 uv, float sigma, float loopNum
 
 float4 main(VSOutput input) : SV_TARGET
 {
+    //return float4(1,0,0,1);
+
     const float sigma = 0.005f;
     const float loopNum = 5;
     float4 gaussianBlur = GaussianBlur(tex, input.uv, sigma, loopNum);

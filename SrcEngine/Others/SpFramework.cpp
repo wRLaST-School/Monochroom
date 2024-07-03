@@ -140,6 +140,8 @@ void SpFramework::Run()
 
 		SceneManager::DrawBack();
 
+		PipelineWindow::ReCompileGPipeline();
+
 		/*更新処理*/
 		SceneManager::Update();
 		SpEffekseer::Update();

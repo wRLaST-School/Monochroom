@@ -14,6 +14,7 @@ private:
 private:
 	bool mIsOpen;
 	TabState tabState;
+	static std::optional<std::string> sPipelineID;
 
 private:
 	void PipelineTabStateDraw();
@@ -24,6 +25,7 @@ public:
 	PipelineWindow();
 	void DrawWindow();
 	static void SDraw();
+	static void ReCompileGPipeline();
 
 public:
 	// セッター
