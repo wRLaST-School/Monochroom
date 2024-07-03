@@ -12,9 +12,9 @@ void SrUIPlaneModel::Init()
 void SrUIPlaneModel::PreDraw()
 {
 	SpDirectX* dx = GetSpDX();
-	dx->cmdList->SetPipelineState(GPipeline::GetState("ToonModel"));
+	dx->cmdList->SetPipelineState(GPipeline::GetState("UIPlaneModel"));
 	dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("3D")->rootsignature.Get());
-
+	
 	D3D12_VIEWPORT viewport{};
 
 	viewport.Width = (FLOAT)GetSpWindow()->width;
@@ -40,6 +40,8 @@ void SrUIPlaneModel::PreDraw()
 	Light::Use();
 	Camera::UseCurrent();
 
+	RTVManager::SetRenderTargetToTexture("RenderTexture", false);
+
 	//RTVManager::SetRenderTargetToTexture("BloomBefore");
 
 	//vector<TextureKey> rts = { "normalTest", "inverseTest" };
@@ -54,7 +56,7 @@ void SrUIPlaneModel::Render()
 {
 	for (auto& rt : commands_)
 	{
-		RTVManager::SetRenderTargetToTexture(rt.first, false);
+		//RTVManager::SetRenderTargetToTexture(rt.first, false);
 
 		for (auto& cmd : rt.second)
 		{
