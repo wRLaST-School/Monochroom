@@ -28,6 +28,9 @@ public:
 	static DLLExport void SetRenderTarget(const TextureKey& key);
 	static DLLExport void SetPreDrawFunc(std::function<void(void)> prop);
 
+	static DLLExport void DepthTextureCheck();
+	static DLLExport void DepthTextureCheckEnd();
+
 	static DLLExport void DrawBoxLine(int32_t x, int32_t y, int32_t width, int32_t height,
 		const Color& color, float thickness, const  Anchor& anchor = Anchor::Center);
 

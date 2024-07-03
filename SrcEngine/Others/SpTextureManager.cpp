@@ -823,7 +823,14 @@ TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FOR
 	Float2 ratio = { 1.f, 1.f };
 	textureResourceDesc =
 		CD3DX12_RESOURCE_DESC::Tex2D(format, (UINT)(ratio.x * GetSpWindow()->width), (UINT)(ratio.y * GetSpWindow()->height), 1, 1, 1, 0, resourceFlag);
-
+	SpTextureManager::GetInstance().texDataMap_.Access(
+		[&](auto& map) {
+			TexMetadata& pTexMeta = map[key].meta;
+			pTexMeta = TexMetadata{};
+			pTexMeta.width = (size_t)(ratio.x * GetSpWindow()->width);
+			pTexMeta.height = (size_t)(ratio.y * GetSpWindow()->height);
+		}
+	);
 	if (format != DXGI_FORMAT_D32_FLOAT_S8X24_UINT)
 	{
 		D3D12_CLEAR_VALUE clval = { format, {0, 0, 0, 0} };

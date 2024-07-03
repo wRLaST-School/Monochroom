@@ -1024,6 +1024,12 @@
     <FxCompile Include="Assets\Shaders\SilhouetteVS.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\DepthVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\DepthPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Basic.hlsli">
@@ -1077,6 +1083,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Assets\Shaders\Silhouette.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\Depth.hlsli">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
