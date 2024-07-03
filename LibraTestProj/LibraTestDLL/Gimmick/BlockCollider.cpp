@@ -8,7 +8,7 @@ void BlockCollider::Init()
 
 void BlockCollider::Update()
 {
-	Vec3 pos = Vec3(mObj->position);
+	Vec3 pos = Vec3(mObj->matWorld.ExtractTranslation());
 	Quaternion rot = Quaternion::EulerToQuaternion(mObj->rotationE);
 	Vec3 scale = mObj->scale;
 	mBodyCollider.Setting(pos, rot, scale);

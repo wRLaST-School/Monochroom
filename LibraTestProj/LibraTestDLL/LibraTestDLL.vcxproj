@@ -25,6 +25,7 @@
     <ClInclude Include="GraphicsTab.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
+    <ClInclude Include="SponePoint.h" />
     <ClInclude Include="SoundTab.h" />
     <ClInclude Include="StageButton.h" />
     <ClInclude Include="StageDoor.h" />
@@ -57,6 +58,7 @@
     <ClCompile Include="GraphicsTab.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
+    <ClCompile Include="SponePoint.cpp" />
     <ClCompile Include="SoundTab.cpp" />
     <ClCompile Include="StageButton.cpp" />
     <ClCompile Include="StageDoor.cpp" />

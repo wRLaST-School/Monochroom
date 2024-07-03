@@ -38,6 +38,11 @@ bool AppOperationCommand::PlayerConfirmCommand()
 	return Mouse::Triggered(Click::Left) || Pad::Triggered(Button::A);
 }
 
+bool AppOperationCommand::ReStartCommand()
+{
+	return Key::Triggered(DIK_R);
+}
+
 bool AppOperationCommand::UserDebugStopGameCommand()
 {
 	return Key::Triggered(DIK_F5);

@@ -105,6 +105,10 @@ void Object3D::Draw()
 		return;
 	}
 
+	//描画無効ならなにもしない
+	if (disableDraw)
+		return;
+
 	shadowCaster->Draw(model);
 
 	if (useSilhouette)
@@ -459,6 +463,7 @@ void Object3D::OnInspectorWindowDraw()
 		ImGui::RadioButton("PostRender", &blendModeInt, (int)BlendMode::PostRender); ImGui::SameLine();
 		ImGui::RadioButton("UIPlane", &blendModeInt, (int)BlendMode::UIPlane);
 		blendMode = (BlendMode)blendModeInt;
+		ImGui::Checkbox("Disable Draw", &disableDraw);
 		ImGui::Separator();
 
 		ImGui::ColorEdit4("Brightness", reinterpret_cast<float*>(brightnessCB.contents));
@@ -594,7 +599,10 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	{
 		active = jsonObject["Active"];
 	}
-
+	if (jsonObject.contains("DisableDraw"))
+	{
+		disableDraw = jsonObject["DisableDraw"];
+	}
 	position.x = jsonObject["Position"]["X"];
 	position.y = jsonObject["Position"]["Y"];
 	position.z = jsonObject["Position"]["Z"];
@@ -641,6 +649,7 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 {
 	jsonObject["Name"] = name_;
 	jsonObject["Active"] = active;
+	jsonObject["DisableDraw"] = disableDraw;
 
 	jsonObject["Position"]["X"] = position.x;
 	jsonObject["Position"]["Y"] = position.y;

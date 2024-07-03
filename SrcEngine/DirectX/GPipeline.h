@@ -92,6 +92,7 @@ class GPipeline
 {
 public:
 	static void Create(const PipelineDesc& desc, const std::string& id);
+	static void ReCreate(const std::string& id);
 	static D3D12_GRAPHICS_PIPELINE_STATE_DESC* GetDesc(const std::string& id);
 	static ID3D12PipelineState* GetState(const std::string& id);
 	static GPipeline* GetGPipeline(const std::string& id);
@@ -99,14 +100,18 @@ public:
 	GPipeline() {};
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC psod{};
 	Microsoft::WRL::ComPtr<ID3D12PipelineState> pso = nullptr;
+	PipelineDesc mDesc;
+	std::string shaderID;
+	std::string psoID;
 
 private:
 	void Create();
+	void ReCreate();
 
 private:
 	void InitDesc(const PipelineDesc& desc);
 
 };
 
-
+std::map<std::string, GPipeline>* GetPSOMap();
 

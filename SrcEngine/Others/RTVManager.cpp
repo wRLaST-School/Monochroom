@@ -6,6 +6,8 @@
 
 void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 {
+	if ((int32_t)(GetInstance().numRT - 2 + bbIndex) == GetInstance().currentRTIndex_[0]) return;
+
 	CloseCurrentResBar();	//Depthの処理	
 	SpDirectX* dx = GetSpDX();
 
@@ -47,6 +49,8 @@ void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 
 void RTVManager::SetRenderTargetToTexture(const TextureKey& key, bool clear)
 {
+	if ((int32_t)SpTextureManager::GetIndex(key) == GetInstance().currentRTIndex_[0]) return;
+
 	CloseCurrentResBar();
 	SpDirectX* dx = GetSpDX();
 
@@ -173,7 +177,7 @@ void RTVManager::CreateRenderTargetTexture(float width, float height, const Text
 	GetSpDX()->dev->CreateRenderTargetView(SpTextureManager::GetTextureBuff(key), nullptr,
 		GetHeapCPUHandle((int32_t)SpTextureManager::GetIndex(key)));
 
-	GetSpDepth()->CreateDSV(key);
+	GetSpDepth()->CreateDSV(key, width, height);
 
 	//デフォルトのリソースバリアをセット
 	//ID3D12Resource* lastRes = GetWDX()->barrierDesc.Transition.pResource;

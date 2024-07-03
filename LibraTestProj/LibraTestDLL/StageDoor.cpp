@@ -55,7 +55,8 @@ void StageDoor::OpClDoorInternal(const Vec3& sPosL, const Vec3& ePosL,
 	const Vec3& sPosR, const Vec3& ePosR, bool isClosing)
 {
 	if ((mIsClosing == isClosing && mIsMoving) ||
-		(!mIsMoving && mIsClosing == isClosing))
+		(!mIsMoving && mIsClosing == isClosing)||
+		mIsMoving)
 	{
 		return;
 	}

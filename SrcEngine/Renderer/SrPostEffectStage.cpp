@@ -16,8 +16,8 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RenderTexture", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "CurrentScene", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
-	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "ShadowMap", true);
-	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GaussianBlur", true);
+	RTVManager::CreateRenderTargetTexture(2.f, 2.f, "ShadowMap", true);
+	RTVManager::CreateRenderTargetTexture(0.5f, 0.5f, "GaussianBlur", true);
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("BloomBefore");
 	SpTextureManager::AddMasterTextureKey("BloomAfter");

@@ -7,6 +7,11 @@ map<string, SpShader> shaderMap;
 
 void SpShader::InitVS(const string& vsPath)
 {
+	if (vsPath.empty())
+	{
+		return;
+	}
+
 	string shaderFolder = "Assets/Shaders/";
 	string vsPath_ = shaderFolder + vsPath;
 	//シェーダーの読み込みとコンパイル
@@ -36,10 +41,17 @@ void SpShader::InitVS(const string& vsPath)
 		OutputDebugStringA(errstr.c_str());
 		exit(1);
 	}
+
+	vspath = vsPath;
 }
 
 void SpShader::InitPS(const string& psPath)
 {
+	if (psPath.empty())
+	{
+		return;
+	}
+
 	string shaderFolder = "Assets/Shaders/";
 	string psPath_ = shaderFolder + psPath;
 	//シェーダーの読み込みとコンパイル
@@ -70,10 +82,17 @@ void SpShader::InitPS(const string& psPath)
 		OutputDebugStringA(errstr.c_str());
 		exit(1);
 	}
+
+	pspath = psPath;
 }
 
 void SpShader::InitGS(const string& gsPath)
 {
+	if (gsPath.empty())
+	{
+		return;
+	}
+
 	string shaderFolder = "Assets/Shaders/";
 	string gsPath_ = shaderFolder + gsPath;
 	//シェーダーの読み込みとコンパイル
@@ -103,11 +122,14 @@ void SpShader::InitGS(const string& gsPath)
 		OutputDebugStringA(errstr.c_str());
 		exit(1);
 	}
+
+	gspath = gsPath;
 }
 
 void RegisterShader(const string& id)
 {
 	shaderMap[id] = SpShader();
+	shaderMap[id].id = id;
 }
 
 void RegisterShader(SpShader* shader, const std::string& id)
@@ -138,4 +160,18 @@ SpShader* GetShader(const string& id)
 		return nullptr;
 	}
 	return &shaderMap[id];
+}
+
+bool ReCompile(const std::string& id)
+{
+	if (shaderMap.find(id) == shaderMap.end())
+	{
+		return false;
+	}
+
+	shaderMap[id].InitVS(shaderMap[id].vspath);
+	shaderMap[id].InitGS(shaderMap[id].gspath);
+	shaderMap[id].InitPS(shaderMap[id].pspath);
+
+	return true;
 }

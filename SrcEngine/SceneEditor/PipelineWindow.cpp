@@ -5,9 +5,11 @@
 #include <Model.h>
 #include <Sprite.h>
 
+std::optional<std::string> PipelineWindow::sPipelineID;
+
 PipelineWindow::PipelineWindow()
 {
-	mIsOpen = false;
+	mIsOpen = true;
 }
 
 void PipelineWindow::DrawWindow()
@@ -193,27 +195,74 @@ void PipelineWindow::RootSignatureTabStateDraw()
 
 void PipelineWindow::ShaderTabStateDraw()
 {
-	static std::string vsPath;
-	SpImGui::InputText("VS Path", vsPath);
-	static std::string psPath;
-	SpImGui::InputText("PS Path", psPath);
-	static std::string gsPath;
-	SpImGui::InputText("GS Path", gsPath);
+	//static std::string vsPath;
+	//SpImGui::InputText("VS Path", vsPath);
+	//static std::string psPath;
+	//SpImGui::InputText("PS Path", psPath);
+	//static std::string gsPath;
+	//SpImGui::InputText("GS Path", gsPath);
 
-	static std::string shaderID;
-	SpImGui::InputText("Shader ID", shaderID);
-	if (ImGui::Button("Register", ImVec2(128, 32)))
+	//static std::string shaderRegisteID;
+	//SpImGui::InputText("Shader Registe ID", shaderRegisteID);
+	//if (ImGui::Button("Register", ImVec2(128, 32)))
+	//{
+	//	RegisterShader(shaderRegisteID);
+	//	InitVS(shaderRegisteID, vsPath);
+	//	InitPS(shaderRegisteID, psPath);
+	//	InitGS(shaderRegisteID, gsPath);
+	//}
+
+	//ImGui::Separator();
+
+	static std::string shaderCompileID;
+	static std::string message;
+	static bool flag = false;
+	SpImGui::InputText("Shader Compile ID", shaderCompileID);
+	if (ImGui::Button("Compile", ImVec2(128, 32)))
 	{
-		RegisterShader(shaderID);
-		InitVS(shaderID, vsPath);
-		InitPS(shaderID, psPath);
-		InitGS(shaderID, gsPath);
+		message.clear();
+		flag = ReCompile(shaderCompileID);
+
+		// コンパイル成功したなら
+		if (flag)
+		{
+			for (const auto& pso : *GetPSOMap())
+			{
+				if (pso.second.shaderID == shaderCompileID)
+				{
+					sPipelineID = pso.second.psoID;
+				}
+			}
+		}
+	}
+
+	if (flag)
+	{
+		message = "Compilation was successful.";
+		ImGui::Text(message.c_str());
+	}
+	else
+	{
+		message = "Compilation failed";
+		ImGui::Text(message.c_str());
 	}
 }
 
 void PipelineWindow::SDraw()
 {
 	GetInstance()->DrawWindow();
+}
+
+void PipelineWindow::ReCompileGPipeline()
+{
+	if (!sPipelineID.has_value())
+	{
+		return;
+	}
+
+	GPipeline::ReCreate(sPipelineID.value());
+
+	sPipelineID.reset();
 }
 
 void PipelineWindow::SetisOpen(bool isOpen)

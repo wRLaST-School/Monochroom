@@ -140,6 +140,8 @@ void SpFramework::Run()
 
 		SceneManager::DrawBack();
 
+		PipelineWindow::ReCompileGPipeline();
+
 		/*更新処理*/
 		SceneManager::Update();
 		SpEffekseer::Update();
@@ -174,7 +176,7 @@ void SpFramework::Run()
 
 					if (ImGui::CollapsingHeader("Current Camera", ImGuiTreeNodeFlags_DefaultOpen))
 					{
-						ImGui::PushItemWidth(150.0f);
+						ImGui::PushItemWidth(140.0f);
 						ImGui::DragFloat3("Position", &Camera::sCurrent->position.x);
 						ImGui::PopItemWidth();
 
@@ -189,17 +191,35 @@ void SpFramework::Run()
 
 					if (ImGui::CollapsingHeader("Light Camera", ImGuiTreeNodeFlags_DefaultOpen))
 					{
-						ImGui::PushItemWidth(150.0f);
-						ImGui::DragFloat3("Position", &SrShadowCasterStage::lightCamera->position.x);
+						ImGui::PushItemWidth(140.0f);
+						ImGui::DragFloat3("L Position", &SrShadowCasterStage::lightCamera->position.x);
 						ImGui::PopItemWidth();
 
 						ImGui::PushItemWidth(40.0f);
-						SpImGui::DragAngle("##rotEX", &SrShadowCasterStage::lightCamera->rotationE.x);
+						SpImGui::DragAngle("##lrotEX", &SrShadowCasterStage::lightCamera->rotationE.x);
 						ImGui::SameLine();
-						SpImGui::DragAngle("##rotEY", &SrShadowCasterStage::lightCamera->rotationE.y);
+						SpImGui::DragAngle("##lrotEY", &SrShadowCasterStage::lightCamera->rotationE.y);
 						ImGui::SameLine();
-						SpImGui::DragAngle("Rotation", &SrShadowCasterStage::lightCamera->rotationE.z);
+						SpImGui::DragAngle("L Rotation", &SrShadowCasterStage::lightCamera->rotationE.z);
 						ImGui::PopItemWidth();
+
+						ImGui::PushItemWidth(60.0f);
+						ImGui::DragFloat("##left", &SrShadowCasterStage::lightCamera->left);
+						ImGui::SameLine();
+						ImGui::DragFloat("Left & Right", &SrShadowCasterStage::lightCamera->right);
+
+						ImGui::DragFloat("##Top", &SrShadowCasterStage::lightCamera->top);
+						ImGui::SameLine();
+						ImGui::DragFloat("Top & Bottom", &SrShadowCasterStage::lightCamera->bottom);
+
+						ImGui::PopItemWidth();
+
+						ImGui::PushItemWidth(120.0f);
+						ImGui::DragFloat("Rect Rate", &SrShadowCasterStage::lightCamera->rectRate);
+						ImGui::PopItemWidth();
+
+
+
 					}
 				}
 				ImGui::End();
