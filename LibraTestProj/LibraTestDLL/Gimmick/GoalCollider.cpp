@@ -18,4 +18,9 @@ void GoalCollider::Draw()
 	mClearCollider.DrawCollider();
 }
 
+SphereCollider GoalCollider::GetClearCollider()
+{
+	return mClearCollider;
+}
+
 RegisterScriptBody(GoalCollider);

@@ -17,6 +17,10 @@ public:
 	void CopyComponent(IComponent* src) { src; }
 
 	DefDel;
+
+public:
+	SphereCollider GetClearCollider();
+
 };
 
 RegisterScript(GoalCollider);

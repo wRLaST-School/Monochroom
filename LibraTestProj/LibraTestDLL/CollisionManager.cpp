@@ -21,6 +21,7 @@ void CollisionManager::Init()
 	mFlyBlockColliders = FindColliderList<FlyBlockCollider>("FlyBlock", "FlyBlockCollider");
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
+	mGoalColliders = FindColliderList<GoalCollider>("Goal", "GoalCollider");
 }
 
 void CollisionManager::Update()
@@ -45,6 +46,9 @@ void CollisionManager::Update()
 
 	// プレイヤーとガラス
 	PlayerHitGlasses();
+
+	// プレイヤーとゴール
+	PlayerHitGoals();
 
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
@@ -214,6 +218,22 @@ void CollisionManager::PlayerHitGlasses()
 		if (gc->GetBodyCollider().IsTrigger(&playerBodyCollider, &pushOut))
 		{
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+	}
+}
+
+void CollisionManager::PlayerHitGoals()
+{
+	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
+
+	for (const auto& gc : mGoalColliders)
+	{
+		Vec3 diff = playerBodyCollider.pos - gc->GetClearCollider().pos;
+		diff.y = 0;
+
+		if (diff.GetLength() <= 0.1f)
+		{
+			ConsoleWindow::Log("Goal");
 		}
 	}
 }
