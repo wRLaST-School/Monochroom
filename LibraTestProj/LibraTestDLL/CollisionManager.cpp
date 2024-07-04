@@ -9,7 +9,6 @@
 #include <StageButton.h>
 #include <StageDoor.h>
 
-
 void CollisionManager::Init()
 {
 	auto camera = SceneManager::FindObject<Object3D>("Camera");

@@ -141,6 +141,12 @@
     <ClInclude Include="SoundTab.h">
       <Filter>ヘッダー ファイル\UI\Tabs</Filter>
     </ClInclude>
+    <ClInclude Include="Gimmick\TransparentCollider.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Gimmick\GoalCollider.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -229,6 +235,12 @@
     </ClCompile>
     <ClCompile Include="SoundTab.cpp">
       <Filter>ソース ファイル\UI\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="Gimmick\GoalCollider.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Gimmick\TransparentCollider.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
