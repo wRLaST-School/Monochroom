@@ -754,9 +754,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -21.320892333984375,
-                    "Y": 10.0,
-                    "Z": 42.31417465209961
+                    "X": 7.64900016784668,
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -968,7 +968,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": true,
+                "Active": false,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -2369,7 +2369,7 @@
                 "Position": {
                     "X": 7.64900016784668,
                     "Y": 9.38800048828125,
-                    "Z": 42.733001708984375
+                    "Z": 22.032001495361328
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -2389,6 +2389,54 @@
                 },
                 "Tags": null,
                 "Texture": "buttonBackTex",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Name": "GoalCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "GoalCollider"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "Sphere",
+                "Name": "Goal",
+                "NormalType": 0,
+                "Position": {
+                    "X": 0.0,
+                    "Y": 12.339000701904297,
+                    "Z": 14.693000793457031
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": [
+                    "Goal"
+                ],
+                "Texture": "white.png",
                 "Type": "Object3D"
             },
             {

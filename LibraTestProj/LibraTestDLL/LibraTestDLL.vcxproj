@@ -22,6 +22,8 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Gimmick\FlyBlockCollider.h" />
     <ClInclude Include="Gimmick\GlassCollider.h" />
+    <ClInclude Include="Gimmick\GoalCollider.h" />
+    <ClInclude Include="Gimmick\TransparentCollider.h" />
     <ClInclude Include="GraphicsTab.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
@@ -55,6 +57,8 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Gimmick\FlyBlockCollider.cpp" />
     <ClCompile Include="Gimmick\GlassCollider.cpp" />
+    <ClCompile Include="Gimmick\GoalCollider.cpp" />
+    <ClCompile Include="Gimmick\TransparentCollider.cpp" />
     <ClCompile Include="GraphicsTab.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
