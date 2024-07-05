@@ -19,11 +19,11 @@ void FirstPersonCamera::Update()
 		return;
 	}
 
-	Vec3 frontOffset;
-	frontOffset.x = -(OFFSET.x * cosf(parentObj->rotationE.y) - OFFSET.z * sinf(parentObj->rotationE.y));
-	frontOffset.z = OFFSET.x * sinf(parentObj->rotationE.y) + OFFSET.z * cosf(parentObj->rotationE.y);
+	//Vec3 frontOffset;
+	//frontOffset.x = -(OFFSET.x * cosf(parentObj->rotationE.y) - OFFSET.z * sinf(parentObj->rotationE.y));
+	//frontOffset.z = OFFSET.x * sinf(parentObj->rotationE.y) + OFFSET.z * cosf(parentObj->rotationE.y);
 
-	parentObj->position = Vec3(player->position) + frontOffset;
+	parentObj->position = Vec3(player->position) /*+ frontOffset*/;
 	parentObj->rotationE = Vec3(player->rotationE);
 }
 

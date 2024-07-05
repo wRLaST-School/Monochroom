@@ -20,7 +20,7 @@ private:
 	const float MOVE_SPEED_MAX = 1.2f;
 	const float MOVE_ATTEN = 0.87f;
 
-	const float ANGLE_LIMIT = PIf / 2.0f;
+	const float ANGLE_LIMIT = PIf / 2.3f;
 	const float MOUSE_ROT_SPEED = 0.01f;
 
 	const Vec3 FRONT_VEC_TEMP = { 0,0,1.0f };
@@ -53,6 +53,8 @@ public:
 	// マウスの感度取得や設定
 	Vec2 GetMouseSensitivity();
 	void SetMouseSensitivity(Vec2 mouseSensitivity);
+
+	const Vec3& GetFrontVec() { return frontVec_; }
 
 	void GravityToZero();
 	Gravity* GetGravity();

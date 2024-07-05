@@ -9,6 +9,7 @@
 
 void SrPostEffectStage::Init()
 {
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "NormalMap", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BloomBefore", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BloomAfter", true);
 	RTVManager::CreateRenderTargetTexture(.5f, 1.f, "Bloom2ndAfter", true);
@@ -18,10 +19,11 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
 	RTVManager::CreateRenderTargetTexture(2.f, 2.f, "ShadowMap", true);
 	RTVManager::CreateRenderTargetTexture(0.5f, 0.5f, "GaussianBlur", true);
-	RTVManager::CreateRenderTargetTexture(1.f, 1.0f, "LeftLens", true);
 	RTVManager::CreateRenderTargetTexture(1.0f, 1.0f, "UI", true);
-
+	RTVManager::CreateRenderTargetTexture(1.f, 1.0f, "LeftLens", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAO", true);
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
+	SpTextureManager::AddMasterTextureKey("NormalMap");
 	SpTextureManager::AddMasterTextureKey("BloomBefore");
 	SpTextureManager::AddMasterTextureKey("BloomAfter");
 	SpTextureManager::AddMasterTextureKey("Bloom2ndAfter");
@@ -33,6 +35,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("GaussianBlur");
 	SpTextureManager::AddMasterTextureKey("LeftLens");
 	SpTextureManager::AddMasterTextureKey("UI");
+	SpTextureManager::AddMasterTextureKey("SSAO");
 
 	BloomP1::Init();
 	BloomP2::Init();

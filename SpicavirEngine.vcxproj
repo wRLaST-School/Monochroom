@@ -191,6 +191,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SrcEngine\3D\DebugCamera.cpp" />
+    <ClCompile Include="SrcEngine\3D\NormalCaster.cpp" />
     <ClCompile Include="SrcEngine\3D\ShadowCaster.cpp" />
     <ClCompile Include="SrcEngine\3D\Silhouette.cpp" />
     <ClCompile Include="SrcEngine\Collider\Collision.cpp" />
@@ -305,6 +306,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClCompile Include="SrcEngine\Scene\IScene.cpp" />
     <ClCompile Include="SrcEngine\FileCreater.cpp" />
     <ClCompile Include="SrcEngine\Sound\SoundManager.cpp" />
+    <ClCompile Include="SrcEngine\SrNormalCasterStage.cpp" />
     <ClCompile Include="SrcEngine\Windows\SpWindow.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\StringObject.cpp" />
     <ClCompile Include="SrcEngine\SceneEditor\TestMoveObject.cpp" />
@@ -313,6 +315,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\3D\DebugCamera.h" />
+    <ClInclude Include="SrcEngine\3D\NormalCaster.h" />
     <ClInclude Include="SrcEngine\3D\ShadowCaster.h" />
     <ClInclude Include="SrcEngine\3D\Silhouette.h" />
     <ClInclude Include="SrcEngine\Collider\Collision.h" />
@@ -431,6 +434,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClInclude Include="SrcEngine\Scene\IScene.h" />
     <ClInclude Include="SrcEngine\FileCreater.h" />
     <ClInclude Include="SrcEngine\Sound\SoundManager.h" />
+    <ClInclude Include="SrcEngine\SrNormalCasterStage.h" />
     <ClInclude Include="SrcEngine\Windows\SpWindow.h" />
     <ClInclude Include="SrcExternal\json.hpp" />
     <ClInclude Include="SrcEngine\SceneEditor\StringObject.h" />
@@ -622,6 +626,22 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\NormalCasterPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\NormalCasterVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
     <FxCompile Include="Assets\Shaders\ParticleGS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Geometry</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Geometry</ShaderType>
@@ -694,6 +714,22 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\SSAOPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\SSAOVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
     <FxCompile Include="Assets\Shaders\ToonModelPS.hlsl">
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
@@ -756,6 +792,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <None Include="Assets\Shaders\GrayScale.hlsli" />
     <None Include="Assets\Shaders\Line.hlsli" />
     <None Include="Assets\Shaders\NoLight.hlsli" />
+    <None Include="Assets\Shaders\NormalCaster.hlsli" />
     <None Include="Assets\Shaders\Particle.hlsli">
       <FileType>Document</FileType>
     </None>
@@ -764,6 +801,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <None Include="Assets\Shaders\ShadowCaster.hlsli" />
     <None Include="Assets\Shaders\Silhouette.hlsli" />
     <None Include="Assets\Shaders\Sprite.hlsli" />
+    <None Include="Assets\Shaders\SSAO.hlsli" />
     <None Include="Assets\Shaders\ToonModel.hlsli" />
     <None Include="cpp.hint" />
   </ItemGroup>
