@@ -97,12 +97,8 @@ void SpDirectX::PreDrawCommands()
 
 	//画面クリア
 	Float4 clearColor = { 0.1f, 0.25f, 0.5f, 0.0f };
-	D3D12_CPU_DESCRIPTOR_HANDLE dsvH = GetSpDepth()->dsvHeap->GetCPUDescriptorHandleForHeapStart();
 	RTVManager::SetRenderTargetToBackBuffer(bbIndex);
 	RTVManager::ClearCurrentRenderTarget(clearColor);
-	GetSpDX()->cmdList->ClearDepthStencilView(dsvH, D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
-
-	RTVManager::SetRenderTargetToBackBuffer(bbIndex);
 	/*描画処理*/
 	GetSpDX()->cmdList->SetPipelineState(GPipeline::GetState("def"));
 	GetSpDX()->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("3D")->rootsignature.Get());
