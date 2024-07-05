@@ -21,5 +21,5 @@ float4 main(VSOutput input) : SV_TARGET
 	
     //clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
     
-    return float4
+    return calcRim(input, (float4(tex.Sample(smp, input.uv)) * brightness));
 }
