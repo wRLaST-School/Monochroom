@@ -15,6 +15,7 @@ Object3D::Object3D()
 	{ transformCB.contents->mat = Matrix::Identity(); *brightnessCB.contents = { 1.0f, 1.0f, 1.0f, 1.0f }; miscCB.contents->rimColor = { 1.f, 0.f, 0.f, 1.f }; };
 
 	shadowCaster = std::make_unique<ShadowCaster>();
+	normalCaster = std::make_unique<NormalCaster>();
 	silhouette = std::make_unique<Silhouette>();
 }
 
@@ -48,6 +49,7 @@ void Object3D::UpdateMatrix()
 	}
 
 	shadowCaster->worldMat = matWorld;
+	normalCaster->worldMat = matWorld;
 
 	if (useSilhouette)
 		silhouette->worldMat = matWorld;
@@ -110,6 +112,7 @@ void Object3D::Draw()
 		return;
 
 	shadowCaster->Draw(model);
+	normalCaster->Draw(model);
 
 	if (useSilhouette)
 	{

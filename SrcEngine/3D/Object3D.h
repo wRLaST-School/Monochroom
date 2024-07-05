@@ -6,6 +6,7 @@
 #include <ComponentFactory.h>
 #include <DLLDef.h>
 #include <ShadowCaster.h>
+#include <NormalCaster.h>
 #include <Silhouette.h>
 
 struct ConstBufferDataTransform {
@@ -112,6 +113,7 @@ public:
 	bool disableDraw = false;
 
 	std::unique_ptr<ShadowCaster> shadowCaster;
+	std::unique_ptr<NormalCaster> normalCaster;
 	std::unique_ptr<Silhouette> silhouette;
 };
 

@@ -5,6 +5,7 @@
 #include "Model.h"
 #include "Sprite.h"
 #include "ShadowCaster.h"
+#include "NormalCaster.h"
 #include <Particle.h>
 #include <LineDrawer.h>
 
@@ -27,6 +28,25 @@ void GPipelineManager::CreateAll()
 	GPipeline::Create(scDesc, "ShadowCaster");
 
 #pragma endregion
+
+#pragma region NormalCaster用
+	RegisterShader("NormalCaster");
+	InitVS("NormalCaster", "NormalCasterVS.hlsl");
+	InitPS("NormalCaster", "NormalCasterPS.hlsl");
+
+	PipelineDesc ncDesc;
+	ncDesc.Render.InputLayout.pInputElementDescs = NormalCasterCommon::inputLayout;
+	ncDesc.Render.InputLayout.NumElements = _countof(NormalCasterCommon::inputLayout);
+
+	ncDesc.RootSignature.ptr = SpRootSignature::Get("NormalCaster")->rootsignature.Get();
+
+	ncDesc.Shader.pShader = GetShader("NormalCaster");
+	ncDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_BACK;
+
+	GPipeline::Create(ncDesc, "NormalCaster");
+
+#pragma endregion
+
 
 #pragma region シルエット用
 	RegisterShader("Silhouette");
