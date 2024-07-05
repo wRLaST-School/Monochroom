@@ -1,5 +1,9 @@
 #pragma once
 #include <string>
+#include <DLLDef.h>
+#include <Float3.h>
+#include <Float4.h>
+
 struct ColorInt {
 	int32_t r;
 	int32_t g;

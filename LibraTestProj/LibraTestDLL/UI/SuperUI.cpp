@@ -620,6 +620,8 @@ void SuperUI::UITabMenuOn()
 
 void SuperUI::UITabMenuOff()
 {
+	mTabItems[mCurrentTabNum].OffUpdate();
+
 	mUIBoardCurrentColor = mDesabledColor;
 	mMenuUIObj[mUICurrentNum].state = SELECT;
 	IsUITabOn = false;

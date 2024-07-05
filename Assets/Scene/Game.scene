@@ -18,9 +18,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -20.2934513092041,
+                    "X": -21.342483520507813,
                     "Y": 10.0,
-                    "Z": 42.38673400878906
+                    "Z": 41.31440734863281
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -29,8 +29,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 1.5707963705062866,
-                    "Y": 1.4999998807907104,
+                    "X": 1.5207964181900024,
+                    "Y": 3.1631851196289063,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -53,6 +53,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "yuka",
                 "NormalType": 0,
@@ -108,6 +109,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -155,6 +157,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -202,6 +205,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -249,6 +253,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -296,6 +301,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -343,6 +349,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -390,6 +397,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -437,6 +445,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -484,6 +493,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -531,6 +541,7 @@
                                 "filePath": "BlockCollider"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -562,6 +573,7 @@
                         "Type": "Object3D"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "",
                 "Name": "StageBlocks",
                 "Position": {
@@ -606,6 +618,7 @@
                         "filePath": "GlassCollider"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "Cube",
                 "Name": "Glass",
                 "NormalType": 0,
@@ -655,6 +668,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
+                        "DisableDraw": false,
                         "Model": "Goggles.obj",
                         "Name": "Goggles",
                         "NormalType": 0,
@@ -692,6 +706,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
+                        "DisableDraw": false,
                         "Model": "cube.obj",
                         "Name": "Debug Cube",
                         "NormalType": 0,
@@ -735,6 +750,7 @@
                         "filePath": "PlayerControl"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "",
                 "Name": "Player",
                 "Position": {
@@ -749,8 +765,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 1.5707963705062866,
-                    "Y": 1.5099998712539673,
+                    "X": 1.5207964181900024,
+                    "Y": 3.1631851196289063,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -788,6 +804,7 @@
                         "filePath": "FlyBlockCollider"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "FlyBlock",
                 "NormalType": 0,
@@ -838,6 +855,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
+                        "DisableDraw": false,
                         "Model": "ButtonBody.obj",
                         "Name": "Body",
                         "NormalType": 1,
@@ -875,6 +893,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
+                        "DisableDraw": false,
                         "Model": "ButtonFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
@@ -916,6 +935,7 @@
                         "filePath": "StageButton"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "",
                 "Name": "Button",
                 "Position": {
@@ -986,6 +1006,7 @@
                                             "Y": 1.0,
                                             "Z": 1.0
                                         },
+                                        "DisableDraw": false,
                                         "Model": "",
                                         "Name": "MenuText",
                                         "Position": {
@@ -1014,6 +1035,7 @@
                                         "Type": "Object3D"
                                     }
                                 ],
+                                "DisableDraw": false,
                                 "Model": "Plane.obj",
                                 "Name": "MenuPlane",
                                 "NormalType": 0,
@@ -1043,7 +1065,7 @@
                                 "Type": "Object3D"
                             },
                             {
-                                "Active": false,
+                                "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -1071,6 +1093,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "MouseText",
                                                 "Position": {
@@ -1107,6 +1130,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "PadText",
                                                 "Position": {
@@ -1143,8 +1167,10 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
-                                                "Model": "",
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
                                                 "Name": "MouseSensitivityX",
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -1179,8 +1205,10 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
-                                                "Model": "",
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
                                                 "Name": "MouseSensitivityY",
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -1215,8 +1243,10 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
-                                                "Model": "",
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
                                                 "Name": "PadSensitivityX",
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -1251,8 +1281,10 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
-                                                "Model": "",
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
                                                 "Name": "PadSensitivityY",
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -1279,6 +1311,7 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "CameraTab",
                                         "NormalType": 0,
@@ -1312,9 +1345,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.7843137383460999,
+                                            "Y": 0.0,
+                                            "Z": 0.0
                                         },
                                         "Children": [
                                             {
@@ -1326,6 +1359,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "PostProcess",
                                                 "Position": {
@@ -1362,6 +1396,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "Shadow",
                                                 "Position": {
@@ -1390,6 +1425,7 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "GraohicsTab",
                                         "NormalType": 0,
@@ -1423,9 +1459,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.7843137383460999,
+                                            "Y": 0.0,
+                                            "Z": 0.0
                                         },
                                         "Children": [
                                             {
@@ -1437,6 +1473,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "MastarVolume",
                                                 "Position": {
@@ -1473,6 +1510,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "BGMVolume",
                                                 "Position": {
@@ -1509,6 +1547,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "SEVolume",
                                                 "Position": {
@@ -1537,6 +1576,7 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "SoundTab",
                                         "NormalType": 0,
@@ -1574,6 +1614,7 @@
                                             "Y": 1.0,
                                             "Z": 1.0
                                         },
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "Board",
                                         "NormalType": 0,
@@ -1603,6 +1644,7 @@
                                         "Type": "Object3D"
                                     }
                                 ],
+                                "DisableDraw": false,
                                 "Model": "",
                                 "Name": "Tabs",
                                 "Position": {
@@ -1631,7 +1673,7 @@
                                 "Type": "Object3D"
                             },
                             {
-                                "Active": true,
+                                "Active": false,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -1659,6 +1701,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "GuidText",
                                                 "Position": {
@@ -1687,6 +1730,7 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "GuidPlane",
                                         "NormalType": 0,
@@ -1734,6 +1778,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "OptionText",
                                                 "Position": {
@@ -1762,6 +1807,7 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "OptionPlane",
                                         "NormalType": 0,
@@ -1809,6 +1855,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "QuitTitleText",
                                                 "Position": {
@@ -1837,6 +1884,7 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "QuitTitlePlane",
                                         "NormalType": 0,
@@ -1884,6 +1932,7 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "DisableDraw": false,
                                                 "Model": "",
                                                 "Name": "SelectText",
                                                 "Position": {
@@ -1912,6 +1961,7 @@
                                                 "Type": "Object3D"
                                             }
                                         ],
+                                        "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "SelectPlane",
                                         "NormalType": 0,
@@ -1941,6 +1991,7 @@
                                         "Type": "Object3D"
                                     }
                                 ],
+                                "DisableDraw": false,
                                 "Model": "",
                                 "Name": "Planes",
                                 "Position": {
@@ -1977,6 +2028,7 @@
                                     "Y": 1.0,
                                     "Z": 1.0
                                 },
+                                "DisableDraw": false,
                                 "Model": "Plane.obj",
                                 "Name": "BackBlack",
                                 "NormalType": 0,
@@ -2006,6 +2058,7 @@
                                 "Type": "Object3D"
                             }
                         ],
+                        "DisableDraw": false,
                         "Model": "",
                         "Name": "UIParentObj",
                         "Position": {
@@ -2040,6 +2093,7 @@
                         "filePath": "SuperUI"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "",
                 "Name": "UI",
                 "Position": {
@@ -2086,6 +2140,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
+                        "DisableDraw": false,
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
                         "NormalType": 0,
@@ -2123,6 +2178,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
+                        "DisableDraw": false,
                         "Model": "cube",
                         "Name": "Left",
                         "NormalType": 0,
@@ -2160,6 +2216,7 @@
                             "Y": 1.0,
                             "Z": 1.0
                         },
+                        "DisableDraw": false,
                         "Model": "cube",
                         "Name": "Right",
                         "NormalType": 0,
@@ -2201,6 +2258,7 @@
                         "filePath": "StageDoor"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "",
                 "Name": "Door",
                 "Position": {
@@ -2255,6 +2313,7 @@
                         "filePath": "FlyBlockCollider"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "FlyBlock2",
                 "NormalType": 0,
@@ -2303,6 +2362,7 @@
                         "filePath": "SponePoint"
                     }
                 ],
+                "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "SponePoint",
                 "NormalType": 0,
