@@ -45,6 +45,7 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "DisableDraw": false,
                 "Model": "skydome.obj",
                 "Name": "Skydome",
                 "NormalType": 0,
@@ -53,6 +54,7 @@
                     "Y": 0.0,
                     "Z": 0.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -82,6 +84,87 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "LeftLens.obj",
+                        "Name": "LeftLens",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": -0.75,
+                            "Z": -2.75
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "LeftLens",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": false,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "LeftLens.obj",
+                        "Name": "Object3D",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": -0.75,
+                            "Z": -2.700000047683716
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "white.png",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": false,
                 "Model": "Goggles.obj",
                 "Name": "Goggles",
                 "NormalType": 0,
@@ -90,6 +173,7 @@
                     "Y": -3.5,
                     "Z": -3.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -108,6 +192,45 @@
                 },
                 "Tags": null,
                 "Texture": "Goggles.png",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "DisableDraw": false,
+                "Model": "Plane.obj",
+                "Name": "Press Space",
+                "NormalType": 0,
+                "Position": {
+                    "X": -3.0,
+                    "Y": 2.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "LeftLens",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.1745329350233078,
+                    "Z": 1.6580629348754883
+                },
+                "Scale": {
+                    "X": -1.0,
+                    "Y": -9.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "PressSpace.png",
                 "Type": "Object3D"
             },
             {
@@ -171,6 +294,7 @@
                 "Cube": "Assets/Models/cube/cube.obj",
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
+                "LeftLens.obj": "Assets\\Models\\LeftLens\\LeftLens.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
@@ -194,6 +318,7 @@
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",

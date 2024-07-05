@@ -8,6 +8,7 @@
 #include <ButtonCollider.h>
 #include <GlassCollider.h>
 #include <GoalCollider.h>
+#include <GoggleCollider.h>
 
 class CollisionManager :
 	public IScriptObject
@@ -20,6 +21,7 @@ private:
 	std::vector<ButtonCollider*> mButtonColliders;
 	std::vector<GlassCollider*> mGlassColliders;
 	std::vector<GoalCollider*> mGoalColliders;
+	std::vector<GoggleCollider*> mGoggleColliders;
 
 private:
 	template<typename T>
@@ -28,6 +30,7 @@ private:
 private:
 	void CameraInsideFlyBlocks();
 	void RayHitFlyBlocks();
+	void RayHitGoggle();
 	void PlayerHitBlocks();
 	void PlayerHitButtons();
 	void PlayerHitGlasses();
@@ -36,6 +39,7 @@ private:
 	void FlyBlocksHitButtons();
 	void FlyBlocksHitGlasses();
 	void FlyBlocksHitFlyBlocks();
+	void FlyBlocksHitGoals();
 
 public:
 	void Init();

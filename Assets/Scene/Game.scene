@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 6.7349395751953125,
+                    "X": -19.750932693481445,
                     "Y": 10.0,
-                    "Z": 22.598909378051758
+                    "Z": 18.548030853271484
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -1.439202904701233,
-                    "Y": 5.110000133514404,
+                    "X": -1.5707963705062866,
+                    "Y": 1.1299989223480225,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -66,6 +66,7 @@
                     "Y": -7.332832336425781,
                     "Z": 0.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -123,6 +124,7 @@
                             "Y": 8.0,
                             "Z": 56.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -172,6 +174,7 @@
                             "Y": 8.0,
                             "Z": 56.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -221,6 +224,7 @@
                             "Y": 8.0,
                             "Z": 46.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -270,6 +274,7 @@
                             "Y": 4.0,
                             "Z": 50.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -319,6 +324,7 @@
                             "Y": 4.0,
                             "Z": 50.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -368,6 +374,7 @@
                             "Y": 4.0,
                             "Z": 42.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -417,6 +424,7 @@
                             "Y": 4.0,
                             "Z": 42.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -466,6 +474,7 @@
                             "Y": 4.0,
                             "Z": 34.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -515,6 +524,7 @@
                             "Y": 4.0,
                             "Z": 34.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -564,6 +574,7 @@
                             "Y": 8.0,
                             "Z": 46.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -595,6 +606,7 @@
                     "Y": 0.0,
                     "Z": -25.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -642,6 +654,7 @@
                     "Y": 9.04800033569336,
                     "Z": 33.71800231933594
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -692,6 +705,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -730,6 +744,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -771,10 +786,11 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 7.64900016784668,
+                    "X": 6.848000526428223,
                     "Y": 9.38800048828125,
                     "Z": 22.032001495361328
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -828,10 +844,11 @@
                 "Name": "FlyBlock",
                 "NormalType": 0,
                 "Position": {
-                    "X": -20.787933349609375,
-                    "Y": 9.538999557495117,
-                    "Z": 23.057533264160156
+                    "X": -13.188179016113281,
+                    "Y": 9.0,
+                    "Z": 21.061031341552734
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -880,9 +897,10 @@
                         "NormalType": 1,
                         "Position": {
                             "X": 0.0,
-                            "Y": -0.6100000143051147,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -921,6 +939,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -964,6 +983,7 @@
                     "Y": 8.038999557495117,
                     "Z": 22.016002655029297
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -1035,6 +1055,7 @@
                                             "Y": 0.0,
                                             "Z": 0.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1065,6 +1086,7 @@
                                     "Y": 0.6000000238418579,
                                     "Z": 1.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -1161,6 +1183,7 @@
                                                     "Y": -5.0,
                                                     "Z": -0.10000000149011612
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1199,6 +1222,7 @@
                                                     "Y": -6.599999904632568,
                                                     "Z": -0.10000000149011612
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1237,6 +1261,7 @@
                                                     "Y": -3.200000047683716,
                                                     "Z": -0.10000000149011612
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1275,6 +1300,7 @@
                                                     "Y": -9.0,
                                                     "Z": -0.10000000149011612
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1313,6 +1339,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1351,6 +1378,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1381,6 +1409,7 @@
                                             "Y": 0.5699999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1428,6 +1457,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1465,6 +1495,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1495,6 +1526,7 @@
                                             "Y": 0.5699999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1542,6 +1574,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1579,6 +1612,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1616,6 +1650,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1646,6 +1681,7 @@
                                             "Y": 0.5699999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1665,6 +1701,45 @@
                                         "Tags": null,
                                         "Texture": "white.png",
                                         "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 4,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Board",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": -0.10000000149011612,
+                                            "Z": 1.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 1.0,
+                                            "Y": 0.6000000238418579,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "white.png",
+                                        "Type": "Object3D"
                                     }
                                 ],
                                 "DisableDraw": false,
@@ -1675,6 +1750,7 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -1732,6 +1808,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1762,6 +1839,7 @@
                                             "Y": 0.3199999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1809,6 +1887,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1839,6 +1918,7 @@
                                             "Y": 0.05000000074505806,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1886,6 +1966,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1916,6 +1997,7 @@
                                             "Y": -0.2199999988079071,
                                             "Z": 0.8999999761581421
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1963,6 +2045,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1993,6 +2076,7 @@
                                             "Y": -0.5,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -2022,6 +2106,7 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -2060,6 +2145,7 @@
                                     "Y": 0.0,
                                     "Z": 2.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -2089,6 +2175,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2142,6 +2229,7 @@
                     "Y": 8.986001014709473,
                     "Z": 0.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2190,6 +2278,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2224,10 +2313,11 @@
                         "Name": "Left",
                         "NormalType": 0,
                         "Position": {
-                            "X": -27.0,
+                            "X": -1.0,
                             "Y": 2.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2262,10 +2352,11 @@
                         "Name": "Right",
                         "NormalType": 0,
                         "Position": {
-                            "X": 27.0,
+                            "X": 1.0,
                             "Y": 2.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2309,6 +2400,7 @@
                     "Y": 7.990999221801758,
                     "Z": 26.514001846313477
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2367,6 +2459,7 @@
                     "Y": 9.0,
                     "Z": 16.016754150390625
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2413,10 +2506,11 @@
                 "Name": "SponePoint",
                 "NormalType": 0,
                 "Position": {
-                    "X": 7.64900016784668,
+                    "X": 6.848000526428223,
                     "Y": 9.38800048828125,
                     "Z": 22.032001495361328
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2456,14 +2550,15 @@
                     }
                 ],
                 "DisableDraw": false,
-                "Model": "Sphere",
+                "Model": "Goal.obj",
                 "Name": "Goal",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": 0.0,
-                    "Y": 12.339000701904297,
-                    "Z": 14.693000793457031
+                    "Y": 8.0,
+                    "Z": 15.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2483,7 +2578,61 @@
                 "Tags": [
                     "Goal"
                 ],
-                "Texture": "white.png",
+                "Texture": "Goal.png",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Name": "GoggleCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "GoggleCollider"
+                    },
+                    {
+                        "Name": "GoggleScr",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "GoggleScr"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "Goggles.obj",
+                "Name": "Goggle",
+                "NormalType": 0,
+                "Position": {
+                    "X": 6.338000297546387,
+                    "Y": 8.482000350952148,
+                    "Z": 7.183000564575195
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": -3.159046173095703,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 0.3500000238418579,
+                    "Y": 0.3500000238418579,
+                    "Z": 0.3500000238418579
+                },
+                "Tags": [
+                    "Goggle"
+                ],
+                "Texture": "",
                 "Type": "Object3D"
             },
             {
@@ -2589,6 +2738,7 @@
                 "ButtonFrame.obj": "",
                 "Cube": "Assets/Models/cube/cube.obj",
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
+                "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
@@ -2612,11 +2762,13 @@
                 "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
+                "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
+                "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
                 "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonBodyButtonBody.png": "Assets\\Models\\Stage\\ButtonBody/ButtonBody.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonFlameButtonFlame.png": "Assets\\Models\\Stage\\ButtonFlame/ButtonFlame.png",

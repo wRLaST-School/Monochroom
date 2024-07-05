@@ -33,6 +33,11 @@ bool AppOperationCommand::PlayerAttractBlockCommand()
 	return Mouse::Triggered(Click::Left) || Pad::Triggered(Button::X);
 }
 
+bool AppOperationCommand::PlayerGetGoggleCommand()
+{
+	return Mouse::Triggered(Click::Left) || Pad::Triggered(Button::X);
+}
+
 bool AppOperationCommand::PlayerConfirmCommand()
 {
 	return Mouse::Triggered(Click::Left) || Pad::Triggered(Button::A);

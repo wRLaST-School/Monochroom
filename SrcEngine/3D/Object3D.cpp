@@ -600,6 +600,10 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	{
 		disableDraw = jsonObject["DisableDraw"];
 	}
+	if (jsonObject.contains("RenderTarget"))
+	{
+		renderTarget = jsonObject["RenderTarget"];
+	}
 	position.x = jsonObject["Position"]["X"];
 	position.y = jsonObject["Position"]["Y"];
 	position.z = jsonObject["Position"]["Z"];
@@ -682,6 +686,7 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	}
 
 	jsonObject["BlendMode"] = (int)blendMode;
+	jsonObject["RenderTarget"] = renderTarget;
 }
 
 void Object3D::CopyComponent(IComponent* src)
