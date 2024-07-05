@@ -1,15 +1,19 @@
 [
     {
+        "Active": true,
         "Children": [
             {
+                "Active": true,
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "FirstPersonCamera",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "FirstPersonCamera"
                     },
                     {
+                        "Active": true,
                         "Name": "ViewCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -104,6 +108,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -153,6 +158,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -202,6 +208,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -251,6 +258,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -300,6 +308,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -349,6 +358,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -398,6 +408,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -447,6 +458,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -496,6 +508,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -545,6 +558,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "BlockCollider",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -624,6 +638,7 @@
                 },
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "GlassCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -753,12 +768,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "Name": "PlayerCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "PlayerCollider"
                     },
                     {
+                        "Active": true,
                         "Name": "PlayerControl",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -808,12 +825,14 @@
                 },
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "FlyBlock",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "FlyBlock"
                     },
                     {
+                        "Active": true,
                         "Name": "FlyBlockCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -942,12 +961,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "Name": "ButtonCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "ButtonCollider"
                     },
                     {
+                        "Active": true,
                         "Name": "StageButton",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -1009,7 +1030,7 @@
                         "Children": [
                             {
                                 "Active": true,
-                                "BlendMode": 4,
+                                "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
                                     "X": 1.0,
@@ -1019,7 +1040,7 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1098,7 +1119,46 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Board",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": -0.10000000149011612,
+                                            "Z": 1.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 1.0,
+                                            "Y": 0.6000000238418579,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "white.png",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1108,97 +1168,21 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
+                                                    "X": 0.9111968278884888,
                                                     "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "DisableDraw": false,
-                                                "Model": "",
-                                                "Name": "MouseText",
-                                                "Position": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
                                                     "Z": 0.0
-                                                },
-                                                "RenderTarget": "",
-                                                "Rotation": {
-                                                    "W": 1.0,
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "RotationEuler": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "Scale": {
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "Tags": null,
-                                                "Texture": "",
-                                                "Type": "Object3D"
-                                            },
-                                            {
-                                                "Active": true,
-                                                "BlendMode": 4,
-                                                "Brightness": {
-                                                    "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "DisableDraw": false,
-                                                "Model": "",
-                                                "Name": "PadText",
-                                                "Position": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "RenderTarget": "",
-                                                "Rotation": {
-                                                    "W": 1.0,
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "RotationEuler": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "Scale": {
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "Tags": null,
-                                                "Texture": "",
-                                                "Type": "Object3D"
-                                            },
-                                            {
-                                                "Active": true,
-                                                "BlendMode": 4,
-                                                "Brightness": {
-                                                    "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "MouseSensitivityX",
                                                 "NormalType": 0,
                                                 "Position": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
+                                                    "X": 0.800000011920929,
+                                                    "Y": -5.0,
+                                                    "Z": -0.10000000149011612
                                                 },
                                                 "RenderTarget": "",
                                                 "Rotation": {
@@ -1213,31 +1197,109 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
+                                                    "X": 0.8999999761581421,
+                                                    "Y": 0.6000000238418579,
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
-                                                "Texture": "",
+                                                "Texture": "white.png",
                                                 "Type": "Object3D"
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "Y": 0.9975700974464417,
+                                                    "Z": 0.3706563711166382
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "MouseSensitivityY",
                                                 "NormalType": 0,
                                                 "Position": {
+                                                    "X": 0.800000011920929,
+                                                    "Y": -6.599999904632568,
+                                                    "Z": -0.10000000149011612
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
                                                     "X": 0.0,
                                                     "Y": 0.0,
                                                     "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.8999999761581421,
+                                                    "Y": 0.6000000238418579,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 0,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 1.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "MouseText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.4000000059604645,
+                                                    "Y": -3.200000047683716,
+                                                    "Z": -0.10000000149011612
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.800000011920929,
+                                                    "Y": 0.5,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 0,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 1.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "PadText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.4000000059604645,
+                                                    "Y": -9.0,
+                                                    "Z": -0.10000000149011612
                                                 },
                                                 "RenderTarget": "",
                                                 "Rotation": {
@@ -1257,12 +1319,12 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
-                                                "Texture": "",
+                                                "Texture": "white.png",
                                                 "Type": "Object3D"
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1296,12 +1358,12 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
-                                                "Texture": "",
+                                                "Texture": "white.png",
                                                 "Type": "Object3D"
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1335,7 +1397,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
-                                                "Texture": "",
+                                                "Texture": "white.png",
                                                 "Type": "Object3D"
                                             }
                                         ],
@@ -1371,7 +1433,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 0.7843137383460999,
@@ -1381,7 +1443,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1419,7 +1481,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1488,7 +1550,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 0.7843137383460999,
@@ -1498,7 +1560,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1536,7 +1598,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1574,7 +1636,7 @@
                                             },
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1711,7 +1773,7 @@
                                 "Type": "Object3D"
                             },
                             {
-                                "Active": false,
+                                "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -1722,7 +1784,7 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1732,7 +1794,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1801,7 +1863,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 0.7843137383460999,
@@ -1880,12 +1942,12 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 0.7843137383460999,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
                                         },
                                         "Children": [
                                             {
@@ -1934,7 +1996,7 @@
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.2199999988079071,
-                                            "Z": 1.0
+                                            "Z": 0.8999999761581421
                                         },
                                         "RenderTarget": "",
                                         "Rotation": {
@@ -2068,7 +2130,7 @@
                             },
                             {
                                 "Active": true,
-                                "BlendMode": 4,
+                                "BlendMode": 0,
                                 "Brightness": {
                                     "W": 0.5882353186607361,
                                     "X": 1.0,
@@ -2136,10 +2198,28 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "Name": "UIScript",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "SuperUI"
+                    },
+                    {
+                        "Active": true,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Name": "UIRenderTex",
+                        "Tags": null,
+                        "Texture": "UI",
+                        "Type": "SpriteObject",
+                        "posX": 960.0,
+                        "posY": 540.0,
+                        "scaleX": 1.0,
+                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -2299,12 +2379,14 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "Name": "DoorCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "DoorCollider"
                     },
                     {
+                        "Active": true,
                         "Name": "StageDoor",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -2355,12 +2437,14 @@
                 },
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "FlyBlock",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "FlyBlock"
                     },
                     {
+                        "Active": true,
                         "Name": "FlyBlockCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -2411,6 +2495,7 @@
                 },
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "SponePoint",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -2458,6 +2543,7 @@
                 },
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "GoalCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -2507,12 +2593,14 @@
                 },
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "GoggleCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "GoggleCollider"
                     },
                     {
+                        "Active": true,
                         "Name": "GoggleScr",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -2528,6 +2616,7 @@
                     "Y": 8.482000350952148,
                     "Z": 7.183000564575195
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2551,18 +2640,21 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
                 "Name": "GameManager",
                 "Tags": null,
                 "Type": "ScriptComponent",
                 "filePath": "GameManager"
             },
             {
+                "Active": true,
                 "Name": "CollisionManager",
                 "Tags": null,
                 "Type": "ScriptComponent",
                 "filePath": "CollisionManager"
             },
             {
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -2579,6 +2671,7 @@
                 "scaleY": 0.5
             },
             {
+                "Active": true,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -2595,6 +2688,7 @@
                 "scaleY": 10.0
             },
             {
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -2604,6 +2698,23 @@
                 "Name": "GrayScale",
                 "Tags": null,
                 "Texture": "GrayScale",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 540.0,
+                "scaleX": 1.0,
+                "scaleY": 1.0
+            },
+            {
+                "Active": true,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "NormalMap",
+                "Tags": null,
+                "Texture": "NormalMap",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,

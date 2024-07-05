@@ -232,8 +232,8 @@ void GPipelineManager::CreateAll()
 
 #pragma region UI板モデル
 	RegisterShader("UIPlaneModel");
-	InitVS("UIPlaneModel", "ToonModelVS.hlsl");
-	InitPS("UIPlaneModel", "ToonModelPS.hlsl");
+	InitVS("UIPlaneModel", "NoLightVS.hlsl");
+	InitPS("UIPlaneModel", "NoLightPS.hlsl");
 
 	PipelineDesc UIPlaneModelDesc;
 	UIPlaneModelDesc.Render.InputLayout.pInputElementDescs = ModelCommon::inputLayout;

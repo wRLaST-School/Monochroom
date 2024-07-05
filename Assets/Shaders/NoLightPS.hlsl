@@ -17,9 +17,9 @@ float4 calcRim(VSOutput i, float4 color)
 
 float4 main(VSOutput input) : SV_TARGET
 {
-    float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
+    //float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
 	
-    clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
+    //clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
     
     return calcRim(input, (float4(tex.Sample(smp, input.uv)) * brightness));
 }

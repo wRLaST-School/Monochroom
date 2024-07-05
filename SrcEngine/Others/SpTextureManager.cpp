@@ -829,6 +829,8 @@ TextureKey SpTextureManager::CreateSRVOnResource(const TextureKey& key, DXGI_FOR
 			pTexMeta = TexMetadata{};
 			pTexMeta.width = (size_t)(ratio.x * GetSpWindow()->width);
 			pTexMeta.height = (size_t)(ratio.y * GetSpWindow()->height);
+
+			map[key].ratio = ratio;
 		}
 	);
 	if (format != DXGI_FORMAT_D32_FLOAT_S8X24_UINT)
@@ -881,7 +883,8 @@ void SpTextureManager::ResizeScreenTextures()
 		[&](auto& map) {
 			for (auto& c : map)
 			{
-				if (c.second.ratio.x != 0)
+				std::string key = c.first;
+				if (c.second.ratio.x != 0 && !key.ends_with("_depth_"))
 				{
 					resizing.insert(c);
 				}

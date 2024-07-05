@@ -598,10 +598,7 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	{
 		name_ = jsonObject["Name"];
 	}
-	if (jsonObject.contains("Active"))
-	{
-		active = jsonObject["Active"];
-	}
+
 	if (jsonObject.contains("DisableDraw"))
 	{
 		disableDraw = jsonObject["DisableDraw"];
@@ -650,12 +647,16 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 			normalType = jsonObject["NormalType"];
 		}
 	}
+
+	if (jsonObject.contains("RenderTarget"))
+	{
+		renderTarget = jsonObject["RenderTarget"];
+	}
 }
 
 void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 {
 	jsonObject["Name"] = name_;
-	jsonObject["Active"] = active;
 	jsonObject["DisableDraw"] = disableDraw;
 
 	jsonObject["Position"]["X"] = position.x;

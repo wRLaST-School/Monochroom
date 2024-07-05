@@ -19,7 +19,8 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
 	RTVManager::CreateRenderTargetTexture(2.f, 2.f, "ShadowMap", true);
 	RTVManager::CreateRenderTargetTexture(0.5f, 0.5f, "GaussianBlur", true);
-	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "LeftLens", true);
+	RTVManager::CreateRenderTargetTexture(1.0f, 1.0f, "UI", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.0f, "LeftLens", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAO", true);
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
@@ -33,6 +34,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("ShadowMap");
 	SpTextureManager::AddMasterTextureKey("GaussianBlur");
 	SpTextureManager::AddMasterTextureKey("LeftLens");
+	SpTextureManager::AddMasterTextureKey("UI");
 	SpTextureManager::AddMasterTextureKey("SSAO");
 
 	BloomP1::Init();
@@ -55,7 +57,7 @@ void SrPostEffectStage::Render()
 	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
 	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
 
-	//NoEffect::Effect("ShadowMap_depth_", "RenderTexture");
+	NoEffect::Effect("UI", "RenderTexture");
 }
 
 void SrPostEffectStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
