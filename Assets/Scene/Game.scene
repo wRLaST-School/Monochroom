@@ -62,6 +62,7 @@
                     "Y": -7.332832336425781,
                     "Z": 0.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -118,6 +119,7 @@
                             "Y": 8.0,
                             "Z": 56.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -166,6 +168,7 @@
                             "Y": 8.0,
                             "Z": 56.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -214,6 +217,7 @@
                             "Y": 8.0,
                             "Z": 46.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -262,6 +266,7 @@
                             "Y": 4.0,
                             "Z": 50.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -310,6 +315,7 @@
                             "Y": 4.0,
                             "Z": 50.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -358,6 +364,7 @@
                             "Y": 4.0,
                             "Z": 42.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -406,6 +413,7 @@
                             "Y": 4.0,
                             "Z": 42.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -454,6 +462,7 @@
                             "Y": 4.0,
                             "Z": 34.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -502,6 +511,7 @@
                             "Y": 4.0,
                             "Z": 34.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -550,6 +560,7 @@
                             "Y": 8.0,
                             "Z": 46.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -581,6 +592,7 @@
                     "Y": 0.0,
                     "Z": -25.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -627,6 +639,7 @@
                     "Y": 9.04800033569336,
                     "Z": 33.71800231933594
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -677,6 +690,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -715,6 +729,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -754,10 +769,11 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -15.851417541503906,
-                    "Y": 10.0,
-                    "Z": 15.455057144165039
+                    "X": 7.64900016784668,
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -765,8 +781,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.3507966101169586,
-                    "Y": 6.243185043334961,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -813,6 +829,7 @@
                     "Y": 9.538999557495117,
                     "Z": 23.057533264160156
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -864,6 +881,7 @@
                             "Y": -0.6100000143051147,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -902,6 +920,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -943,6 +962,7 @@
                     "Y": 8.038999557495117,
                     "Z": 22.016002655029297
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -1014,6 +1034,7 @@
                                             "Y": 0.0,
                                             "Z": 0.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1044,6 +1065,7 @@
                                     "Y": 0.6000000238418579,
                                     "Z": 1.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -1101,6 +1123,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1138,6 +1161,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1176,6 +1200,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1214,6 +1239,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1252,6 +1278,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1290,6 +1317,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1320,6 +1348,7 @@
                                             "Y": 0.5699999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1367,6 +1396,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1404,6 +1434,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1434,6 +1465,7 @@
                                             "Y": 0.5699999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1481,6 +1513,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1518,6 +1551,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1555,6 +1589,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1585,6 +1620,7 @@
                                             "Y": 0.5699999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1623,6 +1659,7 @@
                                             "Y": -0.10000000149011612,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1652,6 +1689,7 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -1709,6 +1747,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1739,6 +1778,7 @@
                                             "Y": 0.3199999928474426,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1786,6 +1826,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1816,6 +1857,7 @@
                                             "Y": 0.05000000074505806,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1863,6 +1905,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1893,6 +1936,7 @@
                                             "Y": -0.2199999988079071,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1940,6 +1984,7 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "RenderTarget": "",
                                                 "Rotation": {
                                                     "W": 1.0,
                                                     "X": 0.0,
@@ -1970,6 +2015,7 @@
                                             "Y": -0.5,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1999,6 +2045,7 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -2037,6 +2084,7 @@
                                     "Y": 0.0,
                                     "Z": 2.0
                                 },
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -2066,6 +2114,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2101,6 +2150,7 @@
                     "Y": 8.986001014709473,
                     "Z": 0.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2149,6 +2199,7 @@
                             "Y": 0.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2187,6 +2238,7 @@
                             "Y": 2.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2225,6 +2277,7 @@
                             "Y": 2.0,
                             "Z": 0.0
                         },
+                        "RenderTarget": "",
                         "Rotation": {
                             "W": 1.0,
                             "X": 0.0,
@@ -2266,6 +2319,7 @@
                     "Y": 7.990999221801758,
                     "Z": 26.514001846313477
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2322,6 +2376,7 @@
                     "Y": 9.0,
                     "Z": 16.016754150390625
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2371,6 +2426,7 @@
                     "Y": 9.38800048828125,
                     "Z": 22.032001495361328
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2409,14 +2465,15 @@
                     }
                 ],
                 "DisableDraw": false,
-                "Model": "Sphere",
+                "Model": "Goal.obj",
                 "Name": "Goal",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": 0.0,
-                    "Y": 12.339000701904297,
-                    "Z": 14.693000793457031
+                    "Y": 8.0,
+                    "Z": 15.0
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
@@ -2436,7 +2493,7 @@
                 "Tags": [
                     "Goal"
                 ],
-                "Texture": "white.png",
+                "Texture": "Goal.png",
                 "Type": "Object3D"
             },
             {
@@ -2537,6 +2594,7 @@
                 "ButtonFrame.obj": "",
                 "Cube": "Assets/Models/cube/cube.obj",
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
+                "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
@@ -2560,11 +2618,13 @@
                 "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
+                "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
+                "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
                 "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonBodyButtonBody.png": "Assets\\Models\\Stage\\ButtonBody/ButtonBody.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonFlameButtonFlame.png": "Assets\\Models\\Stage\\ButtonFlame/ButtonFlame.png",
