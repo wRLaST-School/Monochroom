@@ -1086,7 +1086,7 @@
                                     "Y": 0.6000000238418579,
                                     "Z": 1.0
                                 },
-                                "RenderTarget": "",
+                                "RenderTarget": "UI",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -1135,6 +1135,7 @@
                                             "Y": -0.10000000149011612,
                                             "Z": 1.0
                                         },
+                                        "RenderTarget": "",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1409,7 +1410,7 @@
                                             "Y": 0.5699999928474426,
                                             "Z": 1.0
                                         },
-                                        "RenderTarget": "",
+                                        "RenderTarget": "UI",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1704,7 +1705,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1783,7 +1784,7 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1837,9 +1838,9 @@
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.3199999928474426,
-                                            "Z": 1.0
+                                            "Z": 0.800000011920929
                                         },
-                                        "RenderTarget": "",
+                                        "RenderTarget": "UI",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1862,7 +1863,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 0.7843137383460999,
@@ -1872,7 +1873,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1915,10 +1916,10 @@
                                         "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
-                                            "Y": 0.05000000074505806,
-                                            "Z": 1.0
+                                            "Y": 0.3199999928474426,
+                                            "Z": 0.8999999761581421
                                         },
-                                        "RenderTarget": "",
+                                        "RenderTarget": "UI",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -1951,7 +1952,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -1997,7 +1998,7 @@
                                             "Y": -0.2199999988079071,
                                             "Z": 0.8999999761581421
                                         },
-                                        "RenderTarget": "",
+                                        "RenderTarget": "UI",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -2020,7 +2021,7 @@
                                     },
                                     {
                                         "Active": true,
-                                        "BlendMode": 4,
+                                        "BlendMode": 0,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 0.7843137383460999,
@@ -2030,7 +2031,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 4,
+                                                "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -2074,9 +2075,9 @@
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.5,
-                                            "Z": 1.0
+                                            "Z": 0.8999999761581421
                                         },
-                                        "RenderTarget": "",
+                                        "RenderTarget": "UI",
                                         "Rotation": {
                                             "W": 1.0,
                                             "X": 0.0,
@@ -2592,12 +2593,14 @@
                 },
                 "Children": [
                     {
+                        "Active": true,
                         "Name": "GoggleCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "GoggleCollider"
                     },
                     {
+                        "Active": true,
                         "Name": "GoggleScr",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -2613,6 +2616,7 @@
                     "Y": 8.482000350952148,
                     "Z": 7.183000564575195
                 },
+                "RenderTarget": "",
                 "Rotation": {
                     "W": 1.0,
                     "X": 0.0,
