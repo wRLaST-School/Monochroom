@@ -23,4 +23,9 @@ SphereCollider GoalCollider::GetClearCollider()
 	return mClearCollider;
 }
 
+OBBCollider GoalCollider::GetBodyCollider()
+{
+	return mBodyCollider;
+}
+
 RegisterScriptBody(GoalCollider);

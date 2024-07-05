@@ -1,6 +1,7 @@
 #pragma once
 #include "IScriptObject.h"
 #include <SphereCollider.h>
+#include <OBBCollider.h>
 #include <Object3D.h>
 
 class GoalCollider :
@@ -9,6 +10,7 @@ class GoalCollider :
 private:
 	Object3D* mObj;
 	SphereCollider mClearCollider;
+	OBBCollider mBodyCollider;
 
 public:
 	void Init();
@@ -20,6 +22,7 @@ public:
 
 public:
 	SphereCollider GetClearCollider();
+	OBBCollider GetBodyCollider();
 
 };
 

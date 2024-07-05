@@ -67,6 +67,9 @@ void CollisionManager::Update()
 
 	//プレイヤーとゴーグル
 	RayHitGoggle();
+
+	// 飛んでくるブロックとゴール
+	FlyBlocksHitGoals();
 }
 
 void CollisionManager::CameraInsideFlyBlocks()
@@ -459,6 +462,32 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 					if (flyBlock->GetMoveVec().GetSquaredLength() != 0)
 					{
 						fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
+						flyBlock->EndAttracting();
+					}
+				}
+			}
+		}
+	}
+}
+
+void CollisionManager::FlyBlocksHitGoals()
+{
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		for (const auto& gc : mGoalColliders)
+		{
+			// 押し戻し
+			Vec3 pushOut = Vec3::zero;
+
+			auto goalBodyCollider = gc->GetBodyCollider();
+			if (fbc->GetBodyCollider().IsTrigger(&goalBodyCollider, &pushOut))
+			{
+				FlyBlock* flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+				if (flyBlock)
+				{
+					if (flyBlock->GetMoveVec().GetSquaredLength() != 0)
+					{
+						fbc->Parent()->CastTo<Object3D>()->position += pushOut;
 						flyBlock->EndAttracting();
 					}
 				}

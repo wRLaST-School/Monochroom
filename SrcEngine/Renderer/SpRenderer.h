@@ -5,6 +5,7 @@
 #include <RootSignatureManager.h>
 #include <IRenderStage.h>
 #include <SrShadowCasterStage.h>
+#include <SrNormalCasterStage.h>
 #include <SrSilhouetteStage.h>
 #include <SrOpaqueStage.h>
 #include <SrAddStage.h>
@@ -26,6 +27,7 @@ public:
 	
 	enum class Stage {
 		ShadowCaster,
+		NormalCaster,
 		Opaque,
 		Add,
 		Toon,
@@ -45,6 +47,7 @@ public:
 private:
 	std::unique_ptr<IRenderStage> stages_[(uint32_t)Stage::StageNumMax] = {
 		std::make_unique<SrShadowCasterStage>(),
+		std::make_unique<SrNormalCasterStage>(),
 		std::make_unique<SrOpaqueStage>(),
 		std::make_unique<SrAddStage>(),
 		std::make_unique<SrToonStage>(),

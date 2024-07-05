@@ -21,11 +21,12 @@ void SpDepth::Init()
 
 void SpDepth::Resize()
 {
+	index = 0;
 	for (auto& d : depthes) {
-		SpTextureManager::Release(d.first + "_depth_");
-
 		auto dt = d.second;
 		auto key = d.first;
+
+		SpTextureManager::Release(d.first + "_depth_");
 
 		dt.resource = SpTextureManager::GetTextureBuff(
 			SpTextureManager::CreateResourceWithoutView((key + "_depth_"))
@@ -33,18 +34,35 @@ void SpDepth::Resize()
 
 		dt.index = index;
 
-		SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_D32_FLOAT_S8X24_UINT, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
+		SpTextureManager::TexData data;
+
+		if (key != "system_depth_default_bb")
+		{
+			data = SpTextureManager::GetTextureData(key);
+		}
+		else
+		{
+			data.ratio.x = 1.f;
+			data.ratio.y = 1.f;
+		}
+
+		float dx = data.ratio.x;
+		float dy = data.ratio.y;
+
+		SpTextureManager::CreateSRVOnResource((key + "_depth_"), DXGI_FORMAT_D32_FLOAT_S8X24_UINT, D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL, dx, dy);
 
 		SpTextureManager::AddMasterTextureKey((key + "_depth_"));
 
 		dt.resource = SpTextureManager::GetInstance().texBuffs[SpTextureManager::GetIndex(key + "_depth_")].Get();
 
-		dt.resource->SetName(L"DEPTH BUFF");
+		dt.resource->SetName(Util::StrToWStr(std::format("DEPTH:{}_depth_", key)).c_str());
 		D3D12_DEPTH_STENCIL_VIEW_DESC dsvDesc{};
 
 		dsvDesc.Format = DXGI_FORMAT_D32_FLOAT_S8X24_UINT;
 		dsvDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
 		GetSpDX()->dev->CreateDepthStencilView(dt.resource, &dsvDesc, GetHandleCPU(key));
+
+		index++;
 	}
 }
 
