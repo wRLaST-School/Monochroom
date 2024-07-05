@@ -9,6 +9,7 @@
 #include <StageButton.h>
 #include <StageDoor.h>
 #include <GoggleScr.h>
+#include <PlayerGoggle.h>
 
 void CollisionManager::Init()
 {
@@ -157,8 +158,10 @@ void CollisionManager::RayHitGoggle()
 		if (goggleScr)
 		{
 			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
-
 			goggleScr->GettedPlayer(player);
+
+			auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
+			playerGoggle->SetIsHavingGoggle(true);
 		}
 	}
 }

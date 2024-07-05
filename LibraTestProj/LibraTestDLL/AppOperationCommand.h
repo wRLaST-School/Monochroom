@@ -13,6 +13,8 @@ public:
 	bool PlayerAttractBlockCommand();
 	bool PlayerGetGoggleCommand();
 
+	bool PlayerEquipGoggleCommand();
+
 	bool PlayerConfirmCommand();
 
 	bool ReStartCommand();

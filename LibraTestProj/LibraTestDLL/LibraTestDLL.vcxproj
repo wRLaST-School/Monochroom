@@ -27,6 +27,7 @@
     <ClInclude Include="GoggleCollider.h" />
     <ClInclude Include="GoggleScr.h" />
     <ClInclude Include="GraphicsTab.h" />
+    <ClInclude Include="PlayerGoggle.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
     <ClInclude Include="SponePoint.h" />
@@ -64,6 +65,7 @@
     <ClCompile Include="GoggleCollider.cpp" />
     <ClCompile Include="GoggleScr.cpp" />
     <ClCompile Include="GraphicsTab.cpp" />
+    <ClCompile Include="PlayerGoggle.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
     <ClCompile Include="SponePoint.cpp" />

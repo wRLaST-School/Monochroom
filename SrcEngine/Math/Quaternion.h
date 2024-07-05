@@ -166,4 +166,4 @@ public:
 	static Vec3 AnyAxisRotation(const Vec3 vec, const Vec3 axis, const float radian);
 };
 
-Vec3 operator *(Vec3 v, Quaternion q);
+DLLExport Vec3 operator *(Vec3 v, Quaternion q);
