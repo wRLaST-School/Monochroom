@@ -11,6 +11,7 @@ public:
 	Vec3 PlayerAngleCommand();
 
 	bool PlayerAttractBlockCommand();
+	bool PlayerGetGoggleCommand();
 
 	bool PlayerConfirmCommand();
 
