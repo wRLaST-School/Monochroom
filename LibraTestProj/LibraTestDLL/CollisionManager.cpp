@@ -8,6 +8,7 @@
 #include <Camera.h>
 #include <StageButton.h>
 #include <StageDoor.h>
+#include <GoggleScr.h>
 
 void CollisionManager::Init()
 {
@@ -22,6 +23,7 @@ void CollisionManager::Init()
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
 	mGoalColliders = FindColliderList<GoalCollider>("Goal", "GoalCollider");
+	mGoggleColliders = FindColliderList<GoggleCollider>("Goggle", "GoggleCollider");
 }
 
 void CollisionManager::Update()
@@ -61,6 +63,9 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックと飛んでくるブロック
 	FlyBlocksHitFlyBlocks();
+
+	//プレイヤーとゴーグル
+	RayHitGoggle();
 }
 
 void CollisionManager::CameraInsideFlyBlocks()
@@ -89,6 +94,7 @@ void CollisionManager::RayHitFlyBlocks()
 		return;
 	}
 
+	//引き寄せ
 	if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 	{
 		FlyBlock* flyBlock = nullptr;
@@ -113,6 +119,46 @@ void CollisionManager::RayHitFlyBlocks()
 		if (flyBlock)
 		{
 			flyBlock->BeginAttracting(mViewCollider->GetPos() + Vec3{ 0,2.0f,0 });
+		}
+	}
+}
+
+void CollisionManager::RayHitGoggle()
+{
+	if (!mViewCollider)
+	{
+		return;
+	}
+
+	//ゴーグル取得
+	if (AppOperationCommand::GetInstance()->PlayerGetGoggleCommand())
+	{
+		GoggleScr* goggleScr = nullptr;
+		auto rayCollider = mViewCollider->GetRayCollider();
+		float minDis = 99999.f;
+
+		for (const auto& gc : mGoggleColliders)
+		{
+			ConsoleWindow::Log("GoggleIsHere");
+
+			// レイ
+			auto gscCollider = gc->GetSphereCollider();
+			if (rayCollider.IsTrigger(&gscCollider))
+			{
+				float dis = Vec3::Distance(gc->Parent()->CastTo<Object3D>()->position, rayCollider.r.origin);
+				if (dis < minDis)
+				{
+					goggleScr = SceneManager::FindChildObject<GoggleScr>("GoggleScr", gc->Parent());
+				}
+			}
+		}
+
+		// ゴーグルをプレイヤーと紐づけ(親子関係
+		if (goggleScr)
+		{
+			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+
+			goggleScr->GettedPlayer(player);
 		}
 	}
 }
