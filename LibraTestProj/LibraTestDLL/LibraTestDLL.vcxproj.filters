@@ -147,6 +147,12 @@
     <ClInclude Include="Gimmick\GoalCollider.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="GoggleCollider.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="GoggleScr.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -240,6 +246,12 @@
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="Gimmick\TransparentCollider.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="GoggleCollider.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="GoggleScr.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>

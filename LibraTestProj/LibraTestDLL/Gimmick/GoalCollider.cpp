@@ -3,7 +3,7 @@
 
 void GoalCollider::Init()
 {
-	mObj = This()->CastTo<Object3D>();
+	mObj = This()->Parent()->CastTo<Object3D>();
 }
 
 void GoalCollider::Update()
@@ -21,6 +21,11 @@ void GoalCollider::Draw()
 SphereCollider GoalCollider::GetClearCollider()
 {
 	return mClearCollider;
+}
+
+OBBCollider GoalCollider::GetBodyCollider()
+{
+	return mBodyCollider;
 }
 
 RegisterScriptBody(GoalCollider);

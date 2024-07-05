@@ -594,6 +594,24 @@ void SuperUI::QuitMenuDraw()
 void SuperUI::UIMainMenuOnReset()
 {
 	mMenuParentObj->Activate();
+
+	// メインメニュー関連をオン
+	mMenuPlaneObj->Activate();
+	mPlanesParentObj->Activate();
+	mUICurrentNum = 0;
+	mMenuUIObj[mUICurrentNum].state = SELECT;
+
+	// タブをオフ
+	mTabsParentObj->Deactivate();
+
+	// タブ番号をリセット
+	mCurrentTabNum = 0;
+
+	IsUITabOn = false;
+	IsActiveOption = false;
+
+	mUITabEase.Reset();
+	mUITabBoardEase.Reset();
 }
 
 void SuperUI::UIMainMenuOffReset()

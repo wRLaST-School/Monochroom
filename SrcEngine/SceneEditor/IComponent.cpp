@@ -338,6 +338,7 @@ void IComponent::WriteCommonParamJson(nlohmann::json& jsonObj)
 	}
 
 	jsonObj["Name"] = name_;
+	jsonObj["Active"] = active;
 }
 
 void IComponent::ReadCommonParamJson(const nlohmann::json& paramsObject)
@@ -355,6 +356,10 @@ void IComponent::ReadCommonParamJson(const nlohmann::json& paramsObject)
 	if (!paramsObject.At("Name").is_null())
 	{
 		name_ = paramsObject["Name"];
+	}
+	if (paramsObject.contains("Active"))
+	{
+		active = paramsObject["Active"];
 	}
 }
 
