@@ -9,10 +9,14 @@
 #include <GlassCollider.h>
 #include <GoalCollider.h>
 #include <GoggleCollider.h>
+#include <PlayerGoggle.h>
 
 class CollisionManager :
 	public IScriptObject
 {
+private:
+	PlayerGoggle* mPlayerGoggle;
+
 private:
 	ViewCollider* mViewCollider;
 	PlayerCollider* mPlayerCollider;

@@ -18,6 +18,7 @@ void CollisionManager::Init()
 
 	auto player = GameManager::GetInstance()->GetPlayer();
 	mPlayerCollider = SceneManager::FindChildObject<PlayerCollider>("PlayerCollider", player);
+	mPlayerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
 
 	mBlockColliders = FindColliderList<BlockCollider>("Block", "BlockCollider");
 	mFlyBlockColliders = FindColliderList<FlyBlockCollider>("FlyBlock", "FlyBlockCollider");
@@ -35,6 +36,8 @@ void CollisionManager::Update()
 		return;
 	}
 
+	bool isEquipGoggle = mPlayerGoggle->GetIsEquipGoggle();
+
 	//カメラにブロックが映っているか
 	CameraInsideFlyBlocks();
 
@@ -47,8 +50,11 @@ void CollisionManager::Update()
 	// プレイヤーとボタン
 	PlayerHitButtons();
 
-	// プレイヤーとガラス
-	PlayerHitGlasses();
+	if (!isEquipGoggle)
+	{
+		// プレイヤーとガラス
+		PlayerHitGlasses();
+	}
 
 	// プレイヤーとゴール
 	PlayerHitGoals();
@@ -59,8 +65,11 @@ void CollisionManager::Update()
 	// 飛んでくるブロックとボタン
 	FlyBlocksHitButtons();
 
-	// 飛んでくるブロックとガラス
-	FlyBlocksHitGlasses();
+	if (!isEquipGoggle)
+	{
+		// 飛んでくるブロックとガラス
+		FlyBlocksHitGlasses();
+	}
 
 	// 飛んでくるブロックと飛んでくるブロック
 	FlyBlocksHitFlyBlocks();
@@ -238,7 +247,7 @@ void CollisionManager::PlayerHitButtons()
 
 				if (str.size())
 				{
-					auto linkDoor = SceneManager::FindChildObject<StageDoor>("StageDoor",door);
+					auto linkDoor = SceneManager::FindChildObject<StageDoor>("StageDoor", door);
 					linkDoor->OpenDoor();
 				}
 			}
@@ -255,7 +264,7 @@ void CollisionManager::PlayerHitButtons()
 			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
 			playerControl->GravityToZero();
 		}
-		
+
 	}
 }
 
