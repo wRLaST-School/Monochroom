@@ -21,13 +21,25 @@ public:
 
 private:
 
+    // サウンドの選択されてないスケール
+    Vec3 mGraphicsNoneSelectScale;
+    Vec3 mGraphicsSelectScale;
+
+    // それぞれの項目の変化値
+    std::vector<bool> mGraphicsFlags;
+
+    float mGraphicsDefuValue;
+    float mGraphicsMaxValue;
+
     // グラフィックスの項目数
     int mGraphicsOptionNum;
 
     // グラフィックス項目の現在の項目番号
     int mCurrentNum;
 
+    std::unique_ptr<Object3D> mItemsParentObj;
+
     // グラフィックスメニューオブジェクト
-    std::vector<UI3DTabItemStatus>mGraphicUIObj;
+    std::vector<UI3DTabItemStatus>mGraphicsUIObj;
 };
 

@@ -238,11 +238,11 @@ private:// メンバー変数
     std::vector<UI3DTabItemStatus>mMenuTabUIObj;
 
     // UIタブ項目内のオブジェクト
-    std::vector<IUITab> mTabItems;
+    std::vector<IUITab*> mTabItems;
 
-    std::unique_ptr<CameraTab> mCameraItem;
-    std::unique_ptr<GraphicsTab> mGpraphicsItem;
-    std::unique_ptr<SoundTab> mSoundItem;
+    CameraTab mCameraItem;
+    GraphicsTab mGpraphicsItem;
+    SoundTab mSoundItem;
 
 
     // UIのメニュー項目にアクセスしたときの演出

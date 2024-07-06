@@ -159,17 +159,17 @@ void SuperUI::UIObj3DInit()
 	mMenuPlaneObj = std::make_unique<Object3D>();
 	mPlanesParentObj = std::make_unique<Object3D>();
 
-	mCameraItem = std::make_unique<CameraTab>();
-	mGpraphicsItem = std::make_unique<GraphicsTab>();
-	mSoundItem = std::make_unique<SoundTab>();
+	//mCameraItem.Init();
+	//mGpraphicsItem.Init();
+	//mSoundItem.Init();
 
-	mTabItems.push_back(*mCameraItem.get());
-	mTabItems.push_back(*mGpraphicsItem.get());
-	mTabItems.push_back(*mSoundItem.get());
+	mTabItems[CAMERA] = &mCameraItem;
+	mTabItems[GRAPHICS] = &mGpraphicsItem;
+	mTabItems[SOUND] = &mSoundItem;
 
 	for (size_t i = 0; i < mNumOption; i++)
 	{
-		mTabItems[i].Init();
+		mTabItems[i]->Init();
 	}
 
 	mMenuParentObj.reset(SceneManager::FindObject<Object3D>("UIParentObj"));
@@ -186,7 +186,7 @@ void SuperUI::UIObj3DInit()
 
 	// オプションメニューの項目のオブジェクト設定
 	mMenuTabUIObj[CAMERA].planeObj = SceneManager::FindObject<Object3D>("CameraTab");
-	mMenuTabUIObj[GRAPHICS].planeObj = SceneManager::FindObject<Object3D>("GraohicsTab");
+	mMenuTabUIObj[GRAPHICS].planeObj = SceneManager::FindObject<Object3D>("GraphicsTab");
 	mMenuTabUIObj[SOUND].planeObj = SceneManager::FindObject<Object3D>("SoundTab");
 }
 
@@ -438,7 +438,6 @@ void SuperUI::UIMainMenuUpdate()
 
 			break;
 		}
-
 		mMenuUIObj[i].planeObj->scale = mMenuUIObj[i].scaleChangeValue;
 		*mMenuUIObj[i].planeObj->brightnessCB.contents = mMenuUIObj[i].buttonColor.f4;
 		ConsoleWindow::Log(std::format("今のメニューカラー:{},{},{},{}\n", mMenuUIObj[i].buttonColor.f4.x, mMenuUIObj[i].buttonColor.f4.y, mMenuUIObj[i].buttonColor.f4.z, mMenuUIObj[i].buttonColor.f4.w));
@@ -472,8 +471,8 @@ void SuperUI::UITabMenuUpdate()
 	if (IsUITabOn)
 	{
 		mMenuTabUIObj[mCurrentTabNum].state = SELECT;
-
-		if (Input::Key::Triggered(DIK_A))
+		mTabItems[mCurrentTabNum]->Update();
+		if (Input::Key::Triggered(DIK_Q))
 		{
 			mCurrentTabNum--;
 
@@ -483,9 +482,10 @@ void SuperUI::UITabMenuUpdate()
 			}
 
 			mMenuTabUIObj[mCurrentTabNum].state = SELECT;
+			mTabItems[mCurrentTabNum]->OnUpdate();
 		}
 
-		if (Input::Key::Triggered(DIK_D))
+		if (Input::Key::Triggered(DIK_E))
 		{
 			mCurrentTabNum++;
 
@@ -495,6 +495,7 @@ void SuperUI::UITabMenuUpdate()
 			}
 
 			mMenuTabUIObj[mCurrentTabNum].state = SELECT;
+			mTabItems[mCurrentTabNum]->OnUpdate();
 		}
 
 		for (size_t i = 0; i < mNumOption; i++)
@@ -504,6 +505,7 @@ void SuperUI::UITabMenuUpdate()
 			if (i != mCurrentTabNum)
 			{
 				mMenuTabUIObj[i].state = DISABLED;
+				mTabItems[i]->OffUpdate();
 			}
 
 
@@ -633,12 +635,12 @@ void SuperUI::UITabMenuOn()
 
 	mCurrentTabNum = 0;
 
-	mTabItems[mCurrentTabNum].OnUpdate();
+	mTabItems[mCurrentTabNum]->OnUpdate();
 }
 
 void SuperUI::UITabMenuOff()
 {
-	mTabItems[mCurrentTabNum].OffUpdate();
+	mTabItems[mCurrentTabNum]->OffUpdate();
 
 	mUIBoardCurrentColor = mDesabledColor;
 	mMenuUIObj[mUICurrentNum].state = SELECT;
