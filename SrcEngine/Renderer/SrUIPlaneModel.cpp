@@ -13,7 +13,7 @@ void SrUIPlaneModel::PreDraw()
 {
 	SpDirectX* dx = GetSpDX();
 	dx->cmdList->SetPipelineState(GPipeline::GetState("UIPlaneModel"));
-	dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("3D")->rootsignature.Get());
+	dx->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("NoLight3D")->rootsignature.Get());
 	
 	D3D12_VIEWPORT viewport{};
 

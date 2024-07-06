@@ -22,11 +22,23 @@ public:
 
 private:
 
+    // サウンドの選択されてないスケール
+    Vec3 mSoundNoneSelectScale;
+    Vec3 mSoundSelectScale;
+
+    // それぞれの項目の変化値
+    std::vector<float> mSoundSensivity;
+
+    float mSoundDefuValue;
+    float mSoundMaxValue;
+
     // サウンドの項目数
     int mSoundOptionNum;
 
     // サウンド項目の現在の項目番号
     int mCurrentNum;
+
+    std::unique_ptr<Object3D> mItemsParentObj;
 
     // サウンドメニューオブジェクト
     std::vector<UI3DTabItemStatus>mSoundUIObj;

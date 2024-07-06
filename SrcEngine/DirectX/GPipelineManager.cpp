@@ -239,10 +239,10 @@ void GPipelineManager::CreateAll()
 	UIPlaneModelDesc.Render.InputLayout.pInputElementDescs = ModelCommon::inputLayout;
 	UIPlaneModelDesc.Render.InputLayout.NumElements = _countof(ModelCommon::inputLayout);
 
-	UIPlaneModelDesc.RootSignature.ptr = SpRootSignature::Get("3D")->rootsignature.Get();
+	UIPlaneModelDesc.RootSignature.ptr = SpRootSignature::Get("NoLight3D")->rootsignature.Get();
 
 	UIPlaneModelDesc.Shader.pShader = GetShader("UIPlaneModel");
-	UIPlaneModelDesc.Depth.DepthStencilState.DepthEnable = false;
+	UIPlaneModelDesc.Depth.DepthStencilState.DepthEnable = true;
 	UIPlaneModelDesc.Depth.DepthStencilState.StencilEnable = false;
 
 	UIPlaneModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
