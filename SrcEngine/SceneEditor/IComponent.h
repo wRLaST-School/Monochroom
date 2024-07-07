@@ -86,6 +86,7 @@ public:
 	DLLExport std::string GetSameTag(const IComponent& component);
 	DLLExport std::string FindStringTag(const std::string& tag);
 	DLLExport void AddTag(const std::string& tag);
+	DLLExport std::string GetTag(const uint32_t index);
 
 	//コンポーネントのクラス名を取得
 	virtual DLLExport std::string GetClassString() = 0;
@@ -141,7 +142,7 @@ public:
 
 	template <class Type>
 	Type* CastToScript();
-	
+
 	virtual ~IComponent() {
 	};
 
@@ -167,7 +168,7 @@ private:
 	std::optional<std::string> addingTag;
 
 	bool deleting = false;
-	
+
 	std::optional<eastl::multimap<std::string, eastl::unique_ptr<IComponent>>::iterator> childRemovedNewItr_;
 };
 

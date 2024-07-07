@@ -156,6 +156,9 @@
     <ClInclude Include="PlayerGoggle.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Gimmick\StageGoal.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -259,6 +262,9 @@
     </ClCompile>
     <ClCompile Include="PlayerGoggle.cpp">
       <Filter>ソース ファイル\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Gimmick\StageGoal.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

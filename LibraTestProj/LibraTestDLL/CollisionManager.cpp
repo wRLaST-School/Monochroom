@@ -10,6 +10,7 @@
 #include <StageDoor.h>
 #include <GoggleScr.h>
 #include <PlayerGoggle.h>
+#include <StageGoal.h>
 
 void CollisionManager::Init()
 {
@@ -292,9 +293,17 @@ void CollisionManager::PlayerHitGoals()
 		Vec3 diff = playerBodyCollider.pos - gc->GetClearCollider().pos;
 		diff.y = 0;
 
-		if (diff.GetLength() <= 0.1f)
+		if (diff.GetLength() <= 0.5f)
 		{
-			ConsoleWindow::Log("Goal");
+			auto goal = gc->Parent();
+			auto stageGoal = SceneManager::FindChildObject<StageGoal>("StageGoal", goal);
+
+			if (stageGoal->clearState == StageGoal::None)
+			{
+				stageGoal->clearState = StageGoal::ChangeScene;
+			}
+			ConsoleWindow::Log("Hit Goal");
+
 		}
 	}
 }

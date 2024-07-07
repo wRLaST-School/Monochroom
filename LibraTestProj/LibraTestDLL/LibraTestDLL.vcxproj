@@ -23,6 +23,7 @@
     <ClInclude Include="Gimmick\FlyBlockCollider.h" />
     <ClInclude Include="Gimmick\GlassCollider.h" />
     <ClInclude Include="Gimmick\GoalCollider.h" />
+    <ClInclude Include="Gimmick\StageGoal.h" />
     <ClInclude Include="Gimmick\TransparentCollider.h" />
     <ClInclude Include="GoggleCollider.h" />
     <ClInclude Include="GoggleScr.h" />
@@ -61,6 +62,7 @@
     <ClCompile Include="Gimmick\FlyBlockCollider.cpp" />
     <ClCompile Include="Gimmick\GlassCollider.cpp" />
     <ClCompile Include="Gimmick\GoalCollider.cpp" />
+    <ClCompile Include="Gimmick\StageGoal.cpp" />
     <ClCompile Include="Gimmick\TransparentCollider.cpp" />
     <ClCompile Include="GoggleCollider.cpp" />
     <ClCompile Include="GoggleScr.cpp" />

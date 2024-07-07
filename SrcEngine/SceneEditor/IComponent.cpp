@@ -164,6 +164,28 @@ DLLExport void IComponent::AddTag(const std::string& tag)
 	tags.push_back(tag);
 }
 
+std::string IComponent::GetTag(const uint32_t index)
+{
+	std::string result = std::string();
+	if (index < 0 || index >= tags.size())
+	{
+		return result;
+	}
+
+	uint32_t i = 0;
+	for (auto& t : tags)
+	{
+		if (i == index)
+		{
+			result = t;
+			break;
+		}
+		i++;
+	}
+
+	return result;
+}
+
 void IComponent::Awake()
 {
 }
