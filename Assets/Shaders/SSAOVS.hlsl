@@ -8,11 +8,9 @@ VSOutput main(float4 pos : POSITION, float2 uv : TEXCOORD)
     output.svpos = pos;
     output.uv = uv;
 
-    //float2 screenPos = uv * screenSize;
-    //float2 ndcPos = 2.0f * screenPos.x / screenSize.x - 1.0f;
-
-    //ndcX = 2.0f * screenX / screenWidth - 1.0f;
-    //ndcY = 1.0f - 2.0f * screenY / screenHeight;
-
+    float2 screenPos = uv * screenSize;
+    float2 ndcPos = 2.0 * (screenPos / screenSize) - 1.0;
+    float4 clipSpacePos = float4(ndcPos.x, -ndcPos.y, 0.0, 1.0);
+    output.viewVec = clipSpacePos.xy;
     return output;
 }

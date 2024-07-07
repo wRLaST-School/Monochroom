@@ -5,7 +5,7 @@ SamplerState smp : register(s0);
 
 float4 main(VSOutput input) : SV_TARGET
 {
-    return float4(1,0,0,1);
+    return float4(1, 0, 0, 1);
 
     //const float sigma = 0.0025f;
     //const float loopNum = 5;
