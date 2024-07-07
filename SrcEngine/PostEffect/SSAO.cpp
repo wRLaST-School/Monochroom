@@ -3,6 +3,9 @@
 #include <GPipeline.h>
 #include <Camera.h>
 
+SpConstBuffer<SSAOData> SSAO::cb(true);
+std::string SSAO::name;
+
 void SSAO::Init()
 {
 	name = "SSAO";
