@@ -4,7 +4,8 @@
 
 struct SSAOData
 {
-	Matrix invViewProjMat;
+	Matrix projMat;
+	Matrix invProjMat;
 };
 
 class SSAO :

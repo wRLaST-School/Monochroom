@@ -2,6 +2,7 @@
 #include <SpRootSignature.h>
 #include <GPipeline.h>
 #include <Camera.h>
+#include <SpTextureManager.h>
 
 SpConstBuffer<SSAOData> SSAO::cb(true);
 std::string SSAO::name;
@@ -10,7 +11,7 @@ void SSAO::Init()
 {
 	name = "SSAO";
 
-	RegisterRS(name);
+	// RSはManagerの方で作成した
 	RegisterPipeline(name);
 
 	cb.Create();
@@ -18,8 +19,19 @@ void SSAO::Init()
 
 void SSAO::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 {
-	Matrix viewProj = Camera::sCurrent->GetViewMat() * Camera::sCurrent->GetProjMat();
-	cb.contents->invViewProjMat = -viewProj;
+	//Matrix viewMat = Camera::sCurrent->GetViewMat();
+	Matrix projMat = Camera::sCurrent->GetProjMat();
+	cb.contents->projMat = projMat;
+	cb.contents->invProjMat = -projMat;
 
-	IPostEffector::Effect(baseTex, targetTex, name, [&]() {GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, cb.buffer->GetGPUVirtualAddress()); });
+	IPostEffector::Effect(baseTex, targetTex, name,
+		[&]()
+		{
+			// CB
+			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, cb.buffer->GetGPUVirtualAddress());
+
+			// SR
+			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(2, SpTextureManager::GetGPUDescHandle(baseTex + "_depth_"));
+			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(3, SpTextureManager::GetGPUDescHandle("NormalMap"));
+		});
 }
