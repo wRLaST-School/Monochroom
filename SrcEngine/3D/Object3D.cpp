@@ -492,14 +492,28 @@ void Object3D::OnInspectorWindowDraw()
 
 	if (ImGui::CollapsingHeader("Model"))
 	{
-		if (ImGui::RadioButton("Default", &normalType, 0))
+		if (model)
 		{
-			model->MappingVertex();
+			ImGui::Text("ModelName");
+			ImGui::Text("%s", model->key.c_str());
+			ImGui::SameLine();
+
+			if (ImGui::Button("Reset")) {
+				model = nullptr;
+			}
 		}
-		ImGui::SameLine();
-		if (ImGui::RadioButton("Smoothing", &normalType, 1))
+
+		if (model)
 		{
-			model->MappingSmoothing();
+			if (ImGui::RadioButton("Default", &normalType, 0))
+			{
+				model->MappingVertex();
+			}
+			ImGui::SameLine();
+			if (ImGui::RadioButton("Smoothing", &normalType, 1))
+			{
+				model->MappingSmoothing();
+			}
 		}
 	}
 	ImGui::Separator();

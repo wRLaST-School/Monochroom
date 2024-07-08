@@ -794,8 +794,8 @@
                 "Name": "Player",
                 "Position": {
                     "X": 6.848000526428223,
-                    "Y": 10.0,
-                    "Z": 22.193330764770508
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -805,8 +805,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -1.3659099340438843,
-                    "Y": 5.790000915527344,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2816,6 +2816,23 @@
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,
+                "scaleX": 1.0,
+                "scaleY": 1.0
+            },
+            {
+                "Active": false,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "SSAO",
+                "Tags": null,
+                "Texture": "SSAOF",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 534.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             }

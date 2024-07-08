@@ -5,6 +5,7 @@
 #include <Bloom.h>
 #include <GrayScale.h>
 #include <GaussianBlur.h>
+#include <SSAO.h>
 #include <NoEffect.h>
 
 void SrPostEffectStage::Init()
@@ -22,6 +23,8 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.0f, 1.0f, "UI", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.0f, "LeftLens", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAO", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAOF", true);
+	
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
 	SpTextureManager::AddMasterTextureKey("BloomBefore");
@@ -36,6 +39,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("LeftLens");
 	SpTextureManager::AddMasterTextureKey("UI");
 	SpTextureManager::AddMasterTextureKey("SSAO");
+	SpTextureManager::AddMasterTextureKey("SSAOF");
 
 	BloomP1::Init();
 	BloomP2::Init();
@@ -43,6 +47,7 @@ void SrPostEffectStage::Init()
 	BloomFin::Init();
 	GrayScale::Init();
 	GaussianBlur::Init();
+	SSAO::Init();
 }
 
 void SrPostEffectStage::PreDraw() {};
@@ -51,6 +56,8 @@ void SrPostEffectStage::Render()
 {
 	GrayScale::Effect(RTVManager::defaultRT, "GrayScale");
 	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
+	SSAO::EffectAO(RTVManager::defaultRT, "SSAO");
+	SSAO::EffectBilateralFilter(RTVManager::defaultRT, "SSAO", "SSAOF");
 
 	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
