@@ -110,6 +110,8 @@ public:
 
 	bool useSilhouette = false;
 
+	bool queueModelReset = false;
+
 	bool disableDraw = false;
 
 	std::unique_ptr<ShadowCaster> shadowCaster;
