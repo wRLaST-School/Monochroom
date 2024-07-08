@@ -1060,6 +1060,12 @@
     <FxCompile Include="Assets\Shaders\NormalCasterVS.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\BilateralFilterPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\BilateralFilterVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Basic.hlsli">
@@ -1122,6 +1128,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Assets\Shaders\NormalCaster.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\BilateralFilter.hlsli">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

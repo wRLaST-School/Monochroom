@@ -5,7 +5,7 @@ Texture2D<float4> depthTex : register(t1);
 Texture2D<float4> normalMap : register(t2);
 SamplerState smp : register(s0);
 
-static const float _AOStrength = 1.2f;
+static const float _AOStrength = 0.7f;
 static const int _SampleKernelCount = 16;
 static const float _SampleKeneralRadius = 1.4f;
 static const float _RangeStrength = 0.015f;
@@ -76,7 +76,7 @@ float4 main(VSOutput input) : SV_TARGET
     ao /= _SampleKernelCount;
     ao = max(0.0, 1 - ao * _AOStrength);
     
-    float4 mainCol = tex.Sample(smp, input.uv);
+    //float4 mainCol = tex.Sample(smp, input.uv);
     
-    return float4(mainCol.rgb * ao.xxx, 1.f);
+    return float4(/*mainCol.rgb * */ao.xxx, 1.f);
 }

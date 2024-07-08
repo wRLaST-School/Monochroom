@@ -2829,7 +2829,7 @@
                 },
                 "Name": "SSAO",
                 "Tags": null,
-                "Texture": "SSAO",
+                "Texture": "SSAOF",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 534.0,
