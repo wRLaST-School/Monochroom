@@ -2,6 +2,7 @@
 #include "SpWindow.h"
 #include "SpDirectX.h"
 #include "RTVManager.h"
+#include <format>
 
 SpSwapChainManager scm;
 
@@ -63,6 +64,9 @@ void SpSwapChainManager::ResizeAllBuffers()
 	{
 		swapchain->GetBuffer(i, IID_PPV_ARGS(&backBuffers[i]));
 
+		backBuffers[i]->SetName(std::format(L"BB_{}", i).c_str());
+
+		OutputDebugStringA(std::format("Resizing Buffers. RTV Heap Index: {}\n", RTVManager::GetInstance().numRT - 2 + i).c_str());
 		GetSpDX()->dev->CreateRenderTargetView(backBuffers[i].Get(), nullptr, RTVManager::GetHeapCPUHandle(RTVManager::GetInstance().numRT - 2 + i));
 	}
 }
