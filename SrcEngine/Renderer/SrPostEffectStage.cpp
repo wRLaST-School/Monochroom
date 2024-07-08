@@ -5,6 +5,7 @@
 #include <Bloom.h>
 #include <GrayScale.h>
 #include <GaussianBlur.h>
+#include <SSAO.h>
 #include <NoEffect.h>
 
 void SrPostEffectStage::Init()
@@ -43,6 +44,7 @@ void SrPostEffectStage::Init()
 	BloomFin::Init();
 	GrayScale::Init();
 	GaussianBlur::Init();
+	SSAO::Init();
 }
 
 void SrPostEffectStage::PreDraw() {};
@@ -51,6 +53,7 @@ void SrPostEffectStage::Render()
 {
 	GrayScale::Effect(RTVManager::defaultRT, "GrayScale");
 	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
+	SSAO::Effect(RTVManager::defaultRT, "SSAO");
 
 	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
