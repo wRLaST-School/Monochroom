@@ -1,0 +1,455 @@
+[
+    {
+        "Active": true,
+        "Children": [
+            {
+                "Active": true,
+                "Name": "Camera",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": -10.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Type": "Camera",
+                "UseQuaternionRot": 0
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "BackPanel",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 1.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 15.0,
+                            "Y": 10.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "white.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "Stage1-1",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Black",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "Stage1-2",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 4.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Black",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "Stage1-3",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 8.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Black",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "",
+                        "Name": "Stage1",
+                        "Position": {
+                            "X": -10.028000831604004,
+                            "Y": 4.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "Stage2-1",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Black",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "Stage2-2",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 4.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Black",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "Stage2-3",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 8.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Black",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "",
+                        "Name": "Stage2",
+                        "Position": {
+                            "X": -10.0,
+                            "Y": 1.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "StageSelectPanel",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "Name": "ScriptComponent",
+                "Tags": null,
+                "Type": "ScriptComponent",
+                "filePath": "SelectPanel"
+            }
+        ],
+        "EfkEffects": [
+            {}
+        ],
+        "Models": [
+            {
+                "Plane.obj": "Assets\\Models\\Plane\\Plane.obj"
+            }
+        ],
+        "Name": "Scene",
+        "Sounds": [
+            {}
+        ],
+        "Tags": null,
+        "Textures": [
+            {
+                "Black": "Assets/Images/black.png",
+                "white.png": "Assets\\Images\\white.png"
+            }
+        ],
+        "Type": "IScene"
+    }
+]

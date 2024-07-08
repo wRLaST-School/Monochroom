@@ -49,6 +49,12 @@
     <Filter Include="ソース ファイル\UI\Tabs">
       <UniqueIdentifier>{4a135411-411e-44ec-b163-f1eeac5c08c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\StageSelect">
+      <UniqueIdentifier>{fd9e9c73-ecca-430c-984f-b79646961a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\StageSelect">
+      <UniqueIdentifier>{c0141b55-9e90-4d46-af4f-2f854f227645}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IScriptObject.h">
@@ -159,6 +165,9 @@
     <ClInclude Include="Gimmick\StageGoal.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="StageSelect\SelectPanel.h">
+      <Filter>ヘッダー ファイル\StageSelect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -265,6 +274,9 @@
     </ClCompile>
     <ClCompile Include="Gimmick\StageGoal.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectPanel.cpp">
+      <Filter>ソース ファイル\StageSelect</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

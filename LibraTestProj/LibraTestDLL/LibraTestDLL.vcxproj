@@ -35,6 +35,7 @@
     <ClInclude Include="SoundTab.h" />
     <ClInclude Include="StageButton.h" />
     <ClInclude Include="StageDoor.h" />
+    <ClInclude Include="StageSelect\SelectPanel.h" />
     <ClInclude Include="UI\CameraTab.h" />
     <ClInclude Include="UI\IUITab.h" />
     <ClInclude Include="UI\SuperUI.h" />
@@ -70,6 +71,7 @@
     <ClCompile Include="PlayerGoggle.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
+    <ClCompile Include="SelectPanel.cpp" />
     <ClCompile Include="SponePoint.cpp" />
     <ClCompile Include="SoundTab.cpp" />
     <ClCompile Include="StageButton.cpp" />
@@ -120,13 +122,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)..\..\Resources\Compiled\</OutDir>
-    <IncludePath>$(ProjectDir)Util;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Util;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)StageSelect;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
     <TargetName>ScriptsD</TargetName>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)..\..\Resources\Compiled\$(Configuration)\</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)..\..\Resources\Compiled\</OutDir>
-    <IncludePath>$(ProjectDir)Util;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Util;$(ProjectDir)Camera;$(ProjectDir)UI;$(ProjectDir)StageSelect;$(ProjectDir)Gimmick;$(ProjectDir)Player;$(ProjectDir);$(ProjectDir)..\..\SrcEngine\Sound\;$(ProjectDir)..\..\SrcEngine\2D\;$(ProjectDir)..\..\SrcEngine\3D\;$(ProjectDir)..\..\SrcEngine\Collider\;$(ProjectDir)..\..\SrcEngine\DirectX\;$(ProjectDir)..\..\SrcEngine\Light\;$(ProjectDir)..\..\SrcEngine\Math\;$(ProjectDir)..\..\SrcEngine\Others\;$(ProjectDir)..\..\SrcEngine\Scene\;$(ProjectDir)..\..\SrcEngine\Particle\;$(ProjectDir)..\..\SrcEngine\Windows\;$(ProjectDir)..\..\SrcApplication\Scene;$(ProjectDir)..\..\SrcApplication\Others;$(ProjectDir)..\..\;$(ProjectDir)..\..\SrcApplication\Particle;$(ProjectDir)..\..\SrcApplication;$(ProjectDir)..\..\SrcEngine\ImGui;$(ProjectDir)..\..\SrcEngine\ImGuiLibs;$(ProjectDir)..\..\SrcImgui\imgui\ImGuiLibs;$(ProjectDir)..\..\SrcEngine\PostEffect;$(ProjectDir)..\..\SrcEngine\Drawer;$(ProjectDir)..\..\SrcExternal\Assimp\include;$(ProjectDir)..\..\SrcEngine\Renderer;$(ProjectDir)..\..\SrcEngine\BehaviorTree;$(ProjectDir)..\..\SrcEngine\Compute;$(ProjectDir)..\..\SrcEngine\SceneEditor;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(IncludePath)</IncludePath>
     <TargetName>Scripts</TargetName>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)..\..\Resources\Compiled\$(Configuration)\</LibraryPath>
   </PropertyGroup>
