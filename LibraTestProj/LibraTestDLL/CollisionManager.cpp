@@ -483,16 +483,15 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 			{
 				if (flyBlock1)
 				{
-					if (flyBlock2->GetAttractVec().GetLength())
+					if (flyBlock1->GetAttractVec().GetLength())
 					{
-						flyBlock1->SetAttractVec(flyBlock2->GetAttractVec());
-					}
-					else if (flyBlock1->GetAttractVec().GetLength())
-					{
+						//下のブロックの引き寄せベクトルをこちらにも適用
 						flyBlock2->SetAttractVec(flyBlock1->GetAttractVec());
 					}
-					else 
+					else if (!flyBlock2->GetAttractVec().GetLength() &&
+						!flyBlock1->GetGravity())
 					{
+						ConsoleWindow::Log("END!");
 						fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
 						flyBlock1->EndAttracting();
 					}
