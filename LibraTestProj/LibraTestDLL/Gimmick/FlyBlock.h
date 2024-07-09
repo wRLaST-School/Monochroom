@@ -18,11 +18,15 @@ private:
 	bool mIsAttracted = false;
 	Vec3 mBeginPos;
 	Vec3 mEndPos;
-	Vec3 mMoveVec;
 
 	std::unique_ptr<Easing> mEasing = nullptr;
 
 	const int16_t kAttractedFrameMax = 60 * 2;
+
+	//自分の下にいるブロックの引き寄せのべくとるとかで使う
+	Vec3 mAttractParentVec = { 0,0,0 };
+
+	Vec3 mOldAttractPos = { 0,0,0 };
 
 public:
 	void Init();
@@ -39,8 +43,11 @@ public:
 	Vec3 GetAttractedDir() { return (mEndPos - mBeginPos).GetNorm(); }
 
 	void ZeroGravity() { mGravity->ZeroVelocity(); }
-	Vec3 GetMoveVec() { return mMoveVec; }
 	Gravity* GetGravity() { return mGravity.get(); }
+
+public:
+	void SetAttractVec(const Vec3& vec) { mAttractParentVec = vec; }
+	const Vec3& GetAttractVec() { return mAttractParentVec; }
 
 	DefDel;
 };
