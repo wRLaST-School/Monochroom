@@ -71,11 +71,11 @@
     <ClCompile Include="PlayerGoggle.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
-    <ClCompile Include="SelectPanel.cpp" />
     <ClCompile Include="SponePoint.cpp" />
     <ClCompile Include="SoundTab.cpp" />
     <ClCompile Include="StageButton.cpp" />
     <ClCompile Include="StageDoor.cpp" />
+    <ClCompile Include="StageSelect\SelectPanel.cpp" />
     <ClCompile Include="UI\IUITab.cpp" />
     <ClCompile Include="UI\SuperUI.cpp" />
     <ClCompile Include="IScriptObject.cpp" />
