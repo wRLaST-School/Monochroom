@@ -14,6 +14,8 @@ public:
 
 	DXGI_SWAP_CHAIN_DESC1 swapchainDesc{};
 
+	bool resized = false;
+
 public:
 	void Init();
 	void WaitForRender();

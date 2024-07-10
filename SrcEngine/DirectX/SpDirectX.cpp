@@ -93,12 +93,12 @@ bool SpDirectX::StartFrame()
 void SpDirectX::PreDrawCommands()
 {
 	//バックバッファ番号を取得(0か1)
-	UINT bbIndex = GetSCM()->swapchain->GetCurrentBackBufferIndex();
+	//UINT bbIndex = GetSCM()->swapchain->GetCurrentBackBufferIndex();
 
 	//画面クリア
 	Float4 clearColor = { 0.1f, 0.25f, 0.5f, 0.0f };
-	RTVManager::SetRenderTargetToBackBuffer(bbIndex);
-	RTVManager::ClearCurrentRenderTarget(clearColor);
+	//RTVManager::SetRenderTargetToBackBuffer(bbIndex);
+	//RTVManager::ClearCurrentRenderTarget(clearColor);
 	/*描画処理*/
 	GetSpDX()->cmdList->SetPipelineState(GPipeline::GetState("def"));
 	GetSpDX()->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("3D")->rootsignature.Get());

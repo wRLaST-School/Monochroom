@@ -455,16 +455,23 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 			auto flyBlockMoveCollider2 = fbc2->GetMoveCollider();
 			auto flyBlockDownCollider2 = fbc2->GetDownCollider();
 
+			//自分
+			auto flyBlock1 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc1->Parent());
+			//相手
+			auto flyBlock2 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc2->Parent());
+
 			// 重力
 			if (flyBlockDownCollider1.IsTrigger(&flyBlockBodyCollider2))
 			{
-				auto flyBlock1 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc1->Parent());
 				if (flyBlock1->GetGravity()->GetVelocity().y <= 0.f)
 				{
 					float posY = flyBlockBodyCollider2.pos.y;
 					float offsetY = (flyBlockDownCollider1.scale.y * 2) + flyBlockBodyCollider2.scale.y;
 
 					fbc1->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+
+					//下のブロックの引き寄せベクトルをこちらにも適用
+					flyBlock1->SetAttractVec(flyBlock2->GetAttractVec());
 
 					flyBlock1->ZeroGravity();
 				}
@@ -474,19 +481,26 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 			Vec3 pushOut = Vec3::zero;
 			if (flyBlockBodyCollider1.IsTrigger(&flyBlockBodyCollider2, &pushOut))
 			{
-				FlyBlock* flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc1->Parent());
-				if (flyBlock)
+				if (flyBlock1)
 				{
-					if (flyBlock->GetMoveVec().GetSquaredLength() != 0)
+					if (flyBlock1->GetAttractVec().GetLength())
 					{
+						//下のブロックの引き寄せベクトルをこちらにも適用
+						flyBlock2->SetAttractVec(flyBlock1->GetAttractVec());
+					}
+					else if (!flyBlock2->GetAttractVec().GetLength() &&
+						!flyBlock1->GetGravity())
+					{
+						ConsoleWindow::Log("END!");
 						fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
-						flyBlock->EndAttracting();
+						flyBlock1->EndAttracting();
 					}
 				}
 			}
 		}
 	}
 }
+
 
 void CollisionManager::FlyBlocksHitGoals()
 {
@@ -503,7 +517,7 @@ void CollisionManager::FlyBlocksHitGoals()
 				FlyBlock* flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
 				if (flyBlock)
 				{
-					if (flyBlock->GetMoveVec().GetSquaredLength() != 0)
+					if (flyBlock->GetAttractVec().GetSquaredLength() != 0)
 					{
 						fbc->Parent()->CastTo<Object3D>()->position += pushOut;
 						flyBlock->EndAttracting();

@@ -1,5 +1,6 @@
 #include "FlyBlock.h"
 #include <ScriptComponent.h>
+#include <ConsoleWindow.h>
 
 
 const float FlyBlock::skAttractedHittingNotEndDot = 0.49f;
@@ -9,6 +10,8 @@ void FlyBlock::Init()
 	mParent = This()->Parent()->CastTo<Object3D>();
 	mEasing = std::make_unique<Easing>();
 	mGravity = std::make_unique<Gravity>();
+
+	mAttractParentVec = { 0,0,0 };
 
 	mEasing->SetEaseTimer(kAttractedFrameMax);
 }
@@ -20,20 +23,27 @@ void FlyBlock::Update()
 		return;
 	}
 
-	mMoveVec = Vec3::zero;
 	if (mIsAttracted)
 	{
 		mEasing->Update();
 
+		mOldAttractPos = mParent->position;
+
 		mParent->position = mEasing->Out(mBeginPos, mEndPos);
-		mMoveVec = (mEndPos - mBeginPos).GetNorm();
+		mAttractParentVec = Vec3{ mParent->position.x,mParent->position.y,mParent->position.z } - mOldAttractPos;
 
 		if (mEasing->GetTimeRate() >= 1.0f)
 		{
+			mAttractParentVec = Vec3::zero;
 			EndAttracting();
 		}
 	}
-	else
+	else if (mAttractParentVec.GetLength())
+	{
+		mParent->position += mAttractParentVec;
+	}
+	
+	if(!mIsAttracted)
 	{
 		mParent->position += mGravity->CalcGravity();
 	}
@@ -68,6 +78,7 @@ void FlyBlock::EndAttracting()
 	mIsAttracted = false;
 	mBeginPos = { 0,0,0 };
 	mEndPos = { 0,0,0 };
+	mAttractParentVec = { 0,0,0 };
 }
 
 RegisterScriptBody(FlyBlock);

@@ -13,7 +13,7 @@ void FlyBlockCollider::Update()
 {
 	// 移動用
 	float r = Vec3(mObj->scale).GetMaxElement();
-	Vec3 moveVec = mFlyBlock->GetMoveVec();
+	Vec3 moveVec = mFlyBlock->GetAttractVec();
 	mMoveCollider.Setting(Vec3(mObj->position) + moveVec, r);
 
 	// 押し戻し用

@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -1.3659099340438843,
-                    "Y": 5.780000686645508,
+                    "X": -0.6340898871421814,
+                    "Y": 2.839998722076416,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -794,8 +794,8 @@
                 "Name": "Player",
                 "Position": {
                     "X": 6.848000526428223,
-                    "Y": 9.38800048828125,
-                    "Z": 22.032001495361328
+                    "Y": 10.0,
+                    "Z": 22.193330764770508
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -805,8 +805,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": -0.6340898871421814,
+                    "Y": 2.8899986743927,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -851,9 +851,9 @@
                 "Name": "FlyBlock",
                 "NormalType": 0,
                 "Position": {
-                    "X": -13.188179016113281,
-                    "Y": 9.0,
-                    "Z": 21.061031341552734
+                    "X": -3.791886568069458,
+                    "Y": 10.995100021362305,
+                    "Z": 21.4373779296875
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1026,7 +1026,7 @@
                 },
                 "Children": [
                     {
-                        "Active": false,
+                        "Active": true,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -2545,9 +2545,9 @@
                 "Name": "FlyBlock2",
                 "NormalType": 0,
                 "Position": {
-                    "X": -7.42832612991333,
+                    "X": -3.977074384689331,
                     "Y": 9.0,
-                    "Z": 16.016754150390625
+                    "Z": 20.932140350341797
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -2733,6 +2733,64 @@
                 },
                 "Tags": [
                     "Goggle"
+                ],
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "Name": "FlyBlock",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlock"
+                    },
+                    {
+                        "Active": true,
+                        "Name": "FlyBlockCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlockCollider"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "cube.obj",
+                "Name": "FlyBlock3",
+                "NormalType": 0,
+                "Position": {
+                    "X": -3.862178325653076,
+                    "Y": 12.99020004272461,
+                    "Z": 21.35003089904785
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": [
+                    "FlyBlock",
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"

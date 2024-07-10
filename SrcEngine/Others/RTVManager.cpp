@@ -19,11 +19,23 @@ void RTVManager::SetRenderTargetToBackBuffer(UINT bbIndex)
 	
 	GetSpDX()->cmdList->ClearDepthStencilView(GetSpDepth()->GetHandleCPU("system_depth_default_bb"), D3D12_CLEAR_FLAG_DEPTH, 1.0, 0, 0, nullptr);
 
+	if (GetSCM()->resized)
+	{
+		OutputDebugStringA(std::format("Buffer Resized. Changing Resource State of BB {} \n", bbIndex).c_str());
+	}
 	//リソースバリアーを書き込み可能状態に
 	dx->barrierDesc.Transition.pResource = GetSCM()->backBuffers[bbIndex].Get();
 	dx->barrierDesc.Transition.StateBefore = D3D12_RESOURCE_STATE_PRESENT;
 	dx->barrierDesc.Transition.StateAfter = D3D12_RESOURCE_STATE_RENDER_TARGET;
 	dx->cmdList->ResourceBarrier(1, &dx->barrierDesc);
+	if (!GetSCM()->resized)
+	{
+		
+	}
+	else
+	{
+		GetSCM()->resized = false;
+	}
 
 	GetInstance().isAllResBarClosed = false;
 
