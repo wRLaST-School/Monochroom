@@ -8,26 +8,31 @@
 
 void SelectPanel::Init()
 {
-	mSelectMaxNum = { 3,2 };
+	mSelectMaxNumY = 3;
+	mSelectMaxNumX.resize(mSelectMaxNumY);
+
+	mSelectMaxNumX[Stage1] = 3;
+	mSelectMaxNumX[Stage2] = 4;
+
 	mSelectCurrentNum = { 0,0 };
 
-	mStageNumObj.resize((int)mSelectMaxNum.y);
-	mStageNumState.resize((int)mSelectMaxNum.y);
+	mStageNumObj.resize(mSelectMaxNumY);
+	mStageNumState.resize(mSelectMaxNumY);
 
 	mDisabledPanelScale = { 1,1,1 };
 	mSelectPanelScale = {1.1f,1.1f,1};
 	mPressedPanelScale = {1,1,1};
 
 
-	for (size_t i = 0; i < mSelectMaxNum.y; i++)
+	for (size_t i = 0; i < mSelectMaxNumY; i++)
 	{
-		mStageNumObj[i].resize((int)mSelectMaxNum.x);
-		mStageNumState[i].resize((int)mSelectMaxNum.x);
+		mStageNumObj[i].resize(mSelectMaxNumX[i]);
+		mStageNumState[i].resize(mSelectMaxNumX[i]);
 	}
 
-	for (size_t i = 0; i < mSelectMaxNum.y; i++)
+	for (size_t i = 0; i < mSelectMaxNumY; i++)
 	{
-		for (size_t j = 0; j < mSelectMaxNum.x; j++)
+		for (size_t j = 0; j < mSelectMaxNumX[i]; j++)
 		{
 			std::string stageFirstName = "Stage";
 			std::string stageBaseNum = std::to_string(i + 1) + "-" + std::to_string(j + 1);
@@ -48,14 +53,14 @@ void SelectPanel::Update()
 
 	if(Input::Key::Triggered(DIK_A))
 	{
-		if (mSelectCurrentNum.x > 0) 
+		if (mSelectCurrentNum.x > 0)
 		{
 			mSelectCurrentNum.x--;
 		}
 	}
 	if (Input::Key::Triggered(DIK_D))
 	{
-		if (mSelectCurrentNum.x < mSelectMaxNum.x - 1)
+		if (mSelectCurrentNum.x < mSelectMaxNumX[(int)mSelectCurrentNum.y] - 1)
 		{
 			mSelectCurrentNum.x++;
 		}
@@ -66,22 +71,27 @@ void SelectPanel::Update()
 		if (mSelectCurrentNum.y > 0)
 		{
 			mSelectCurrentNum.y--;
+
+			CheckNumOver();
 		}
 	}
 	if (Input::Key::Triggered(DIK_S))
 	{
-		if (mSelectCurrentNum.y < mSelectMaxNum.y - 1)
+		if (mSelectCurrentNum.y < mSelectMaxNumY - 1)
 		{
 			mSelectCurrentNum.y++;
+
+			CheckNumOver();
 		}
 	}
 
 	mStageNumState[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x] = SELECT;
+
 	ConsoleWindow::Log(std::format("ステージ現在番号：Y,{} X,{}", mSelectCurrentNum.y, mSelectCurrentNum.x));
 
-	for (size_t i = 0; i <  mSelectMaxNum.y; i++)
+	for (size_t i = 0; i < mSelectMaxNumY; i++)
 	{
-		for (size_t j = 0; j < mSelectMaxNum.x; j++)
+		for (size_t j = 0; j < mSelectMaxNumX[i]; j++)
 		{
 			if (i != mSelectCurrentNum.y ||
 				j != mSelectCurrentNum.x)
@@ -119,6 +129,15 @@ void SelectPanel::OnInspectorWindowDraw()
 
 void SelectPanel::CopyComponent(IComponent* src)
 {
+}
+
+void SelectPanel::CheckNumOver()
+{
+	// 上下した時のステージのサイズを調整
+	if ((mSelectCurrentNum.x + 1) > mSelectMaxNumX[(int)mSelectCurrentNum.y])
+	{
+		mSelectCurrentNum.x = (float)(mSelectMaxNumX[(int)mSelectCurrentNum.y] - 1);
+	}
 }
 
 RegisterScriptBody(SelectPanel);
