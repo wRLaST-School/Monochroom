@@ -4,6 +4,7 @@
 #include <AppOperationCommand.h>
 #include <GoggleScr.h>
 #include <SceneManager.h>
+#include <SpriteObject.h>
 
 
 void PlayerGoggle::Init()
@@ -33,6 +34,16 @@ void PlayerGoggle::Update()
 			ConsoleWindow::Log("ChangeEquip");
 
 			mIsEquipGoggle = !mIsEquipGoggle;
+
+			auto glayScale = SceneManager::FindObject<IComponent>("GrayScale");
+			if (mIsEquipGoggle)
+			{
+				glayScale->Activate();
+			}
+			else
+			{
+				glayScale->Deactivate();
+			}
 
 			//着脱
 			goggleScr->TakeOnOff(mIsEquipGoggle);
