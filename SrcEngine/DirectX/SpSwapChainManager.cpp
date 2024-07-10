@@ -51,6 +51,10 @@ void SpSwapChainManager::WaitForRender()
 
 void SpSwapChainManager::ResizeAllBuffers()
 {
+	if (swapchain->GetCurrentBackBufferIndex() != 0)
+	{
+		resized = true;
+	}
 	SpWindow* spw = GetSpWindow();
 	for (auto& bb : backBuffers)
 	{
