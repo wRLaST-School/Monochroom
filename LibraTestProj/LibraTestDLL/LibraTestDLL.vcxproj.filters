@@ -275,7 +275,7 @@
     <ClCompile Include="Gimmick\StageGoal.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
-    <ClCompile Include="SelectPanel.cpp">
+    <ClCompile Include="StageSelect\SelectPanel.cpp">
       <Filter>ソース ファイル\StageSelect</Filter>
     </ClCompile>
   </ItemGroup>
