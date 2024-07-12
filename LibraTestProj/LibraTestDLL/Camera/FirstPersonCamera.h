@@ -10,6 +10,8 @@ private:
     Object3D* parentObj;
     const Vec3 OFFSET = Vec3(0, 0, 1);
 
+    bool isSet = false;
+
 public:
     void Init();
     void Update();

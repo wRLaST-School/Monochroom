@@ -3,14 +3,22 @@
 #include <ScriptComponent.h>
 #include <Input.h>
 #include <SceneManager.h>
+#include <Camera.h>
 
 void FirstPersonCamera::Init()
 {
+	isSet = false;
 }
 
 void FirstPersonCamera::Update()
 {
 	parentObj = This()->Parent()->CastTo<Object3D>();
+
+	if (!isSet)
+	{
+		isSet = true;
+		Camera::Set(*parentObj->CastTo<Camera>());
+	}
 
 	player = SceneManager::FindObject<Object3D>("Player");
 	if (!player || !parentObj)
