@@ -13,13 +13,13 @@ void SrShadowCasterStage::Init()
 	lightCamera->renderHeight = 1080.f * 2.f;
 	lightCamera->projectionMode = ProjectionMode::Orthographic;
 
-	lightCamera->position = Vec3(-20, 30, 30);
+	lightCamera->position = Vec3(-100, 90, 80);
 	lightCamera->rotationE = ConvertAngleToRadian(Vec3(40, 125, 0));
 	lightCamera->left = -960;
 	lightCamera->right = +960;
 	lightCamera->top = +540;
 	lightCamera->bottom = -540;
-	lightCamera->rectRate = 0.0625f;
+	lightCamera->rectRate = 0.3f;
 }
 
 void SrShadowCasterStage::PreDraw()
