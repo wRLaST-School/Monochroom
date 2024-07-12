@@ -2893,6 +2893,23 @@
                 "posY": 534.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
+            },
+            {
+                "Active": true,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "BlinkTransition",
+                "Tags": null,
+                "Texture": "BlinkTransition",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 540.0,
+                "scaleX": 1.0,
+                "scaleY": 1.0
             }
         ],
         "EfkEffects": [

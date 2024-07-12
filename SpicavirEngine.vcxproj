@@ -195,6 +195,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClCompile Include="SrcEngine\3D\ShadowCaster.cpp" />
     <ClCompile Include="SrcEngine\3D\Silhouette.cpp" />
     <ClCompile Include="SrcEngine\Collider\Collision.cpp" />
+    <ClCompile Include="SrcEngine\PostEffect\BlinkTransition.cpp" />
     <ClCompile Include="SrcEngine\PostEffect\GaussianBlur.cpp" />
     <ClCompile Include="SrcEngine\PostEffect\GrayScale.cpp" />
     <ClCompile Include="SrcEngine\PostEffect\SSAO.cpp" />
@@ -320,6 +321,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClInclude Include="SrcEngine\3D\ShadowCaster.h" />
     <ClInclude Include="SrcEngine\3D\Silhouette.h" />
     <ClInclude Include="SrcEngine\Collider\Collision.h" />
+    <ClInclude Include="SrcEngine\PostEffect\BlinkTransition.h" />
     <ClInclude Include="SrcEngine\PostEffect\GaussianBlur.h" />
     <ClInclude Include="SrcEngine\PostEffect\GrayScale.h" />
     <ClInclude Include="SrcEngine\PostEffect\SSAO.h" />
@@ -494,6 +496,22 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
     </FxCompile>
     <FxCompile Include="Assets\Shaders\BilateralFilterVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\BlinkTransitionPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\BlinkTransitionVS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Vertex</ShaderType>
@@ -802,6 +820,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <None Include="Assets\Shaders\Basic.hlsli" />
     <None Include="Assets\Shaders\BasicInv.hlsli" />
     <None Include="Assets\Shaders\BilateralFilter.hlsli" />
+    <None Include="Assets\Shaders\BlinkTransition.hlsli" />
     <None Include="Assets\Shaders\BloomP1.hlsli" />
     <None Include="Assets\Shaders\BloomP2.hlsli" />
     <None Include="Assets\Shaders\BloomP3.hlsli" />
