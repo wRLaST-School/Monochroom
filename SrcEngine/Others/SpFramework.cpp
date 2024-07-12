@@ -33,6 +33,7 @@
 #include <SceneRW.h>
 #include <Util.h>
 #include <TagWindow.h>
+#include <BlinkTransition.h>
 
 void SpFramework::Init()
 {
@@ -217,10 +218,14 @@ void SpFramework::Run()
 						ImGui::PushItemWidth(120.0f);
 						ImGui::DragFloat("Rect Rate", &SrShadowCasterStage::lightCamera->rectRate);
 						ImGui::PopItemWidth();
-
-
-
 					}
+				
+					if (ImGui::CollapsingHeader("BlinTransition"))
+					{
+						ImGui::DragFloat("Time", &BlinkTransition::cb.contents->effectTime, 0.01f);
+						ImGui::DragFloat("Time Max", &BlinkTransition::cb.contents->effectTimeMax, 0.01f);
+					}
+				
 				}
 				ImGui::End();
 				});
