@@ -8,6 +8,7 @@
 #include <SSAO.h>
 #include <NoEffect.h>
 #include <BlinkTransition.h>
+#include <RGBShift.h>
 
 void SrPostEffectStage::Init()
 {
@@ -26,6 +27,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAO", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAOF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BlinkTransition", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShift", true);
 	
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
@@ -43,6 +45,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("SSAO");
 	SpTextureManager::AddMasterTextureKey("SSAOF");
 	SpTextureManager::AddMasterTextureKey("BlinkTransition");
+	SpTextureManager::AddMasterTextureKey("RGBShift");
 
 	BloomP1::Init();
 	BloomP2::Init();
@@ -52,6 +55,7 @@ void SrPostEffectStage::Init()
 	GaussianBlur::Init();
 	SSAO::Init();
 	BlinkTransition::Init();
+	RGBShift::Init();
 }
 
 void SrPostEffectStage::PreDraw() {};
@@ -63,6 +67,7 @@ void SrPostEffectStage::Render()
 	SSAO::EffectAO(RTVManager::defaultRT, "SSAO");
 	SSAO::EffectBilateralFilter(RTVManager::defaultRT, "SSAO", "SSAOF");
 	BlinkTransition::Effect(RTVManager::defaultRT, "BlinkTransition");
+	RGBShift::Effect(RTVManager::defaultRT, "RGBShift");
 
 	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");

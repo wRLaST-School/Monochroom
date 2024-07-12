@@ -1,7 +1,9 @@
 [
     {
+        "Active": true,
         "Children": [
             {
+                "Active": true,
                 "Name": "Camera",
                 "Position": {
                     "X": 0.0,
@@ -49,6 +51,7 @@
                         },
                         "Children": [
                             {
+                                "Active": true,
                                 "Name": "ScriptComponent",
                                 "Tags": null,
                                 "Type": "ScriptComponent",
@@ -86,6 +89,7 @@
                         "Type": "Object3D"
                     },
                     {
+                        "Active": true,
                         "Name": "ScriptComponent",
                         "Tags": null,
                         "Type": "ScriptComponent",
@@ -123,20 +127,22 @@
                 "Type": "Object3D"
             },
             {
+                "Active": true,
                 "Name": "PointLight",
                 "Tags": null,
                 "Type": "PointLight"
             },
             {
+                "Active": true,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Name": "SpriteObject",
+                "Name": "RGBShift",
                 "Tags": null,
-                "Texture": "NormalMap",
+                "Texture": "RGBShift",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,
