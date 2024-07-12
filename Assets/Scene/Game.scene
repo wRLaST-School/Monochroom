@@ -2797,6 +2797,204 @@
             },
             {
                 "Active": true,
+                "BlendMode": 3,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 3,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "stage1_pipe.obj",
+                                "Name": "Pipe",
+                                "NormalType": 1,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "stage1_pipe.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 2,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "Plane",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 45.0,
+                                    "Z": 135.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 50.0,
+                                    "Y": 30.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "white.png",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "stage1.obj",
+                        "Name": "StageObj",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "stage1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 0.7915058135986328,
+                            "Z": 0.7915058135986328
+                        },
+                        "DisableDraw": false,
+                        "Model": "skydome.obj",
+                        "Name": "Skydome",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 5.0,
+                            "Y": 5.0,
+                            "Z": 5.0
+                        },
+                        "Tags": null,
+                        "Texture": "white.png",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "BackGround",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "stage1.png",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
                 "Name": "GameManager",
                 "Tags": null,
                 "Type": "ScriptComponent",
@@ -2895,7 +3093,7 @@
                 "scaleY": 1.0
             },
             {
-                "Active": true,
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -2958,7 +3156,9 @@
                 "cube": "Assets/Models/Cube/Cube.obj",
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
                 "floor": "Assets/Models/Floor.glb",
-                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
+                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
+                "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
+                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj"
             }
         ],
         "Name": "Game",
@@ -2991,6 +3191,8 @@
                 "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
                 "menuTextTex": "Assets/Images/MenuImages/MenuText.png",
                 "quitTextTex": "Assets/Images/MenuImages/QuitText.png",
+                "stage1.png": "Assets\\Models\\stage1\\stage1.png",
+                "stage1_pipe.png": "Assets\\Models\\stage1_pipe\\stage1_pipe.png",
                 "testTex": "Assets/Images/circleParticle.png",
                 "white.png": "Assets\\Images\\white.png"
             }
