@@ -42,6 +42,366 @@
                 "Children": [
                     {
                         "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "TV2.obj",
+                        "Name": "flyTVTex",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -1.7119998931884766,
+                            "Y": 2.931999921798706,
+                            "Z": 4.034000396728516
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": -0.1745329350233078,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.5,
+                            "Y": 1.5,
+                            "Z": 0.9999995231628418
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "TV2.obj",
+                        "Name": "flyTVTex",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 2.3600001335144043,
+                            "Y": 4.410000324249268,
+                            "Z": 4.247000217437744
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 0.9999995231628418
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "TV2.obj",
+                        "Name": "flyTVTex",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 5.6060004234313965,
+                            "Y": 3.002000331878662,
+                            "Z": 4.247000217437744
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.2000000476837158,
+                            "Y": 1.2000000476837158,
+                            "Z": 1.2000000476837158
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "TV2.obj",
+                        "Name": "flyTVTex",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 9.225000381469727,
+                            "Y": 4.326000213623047,
+                            "Z": 3.06600022315979
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.6283185482025146,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.1999998092651367,
+                            "Y": 1.2000000476837158,
+                            "Z": 1.1999998092651367
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "FlyTexTVs",
+                "Position": {
+                    "X": -2.677000045776367,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -56,7 +416,7 @@
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
-                            "Z": 1.0
+                            "Z": 6.186000347137451
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -91,15 +451,134 @@
                         "Children": [
                             {
                                 "Active": true,
-                                "BlendMode": 0,
+                                "BlendMode": 3,
                                 "Brightness": {
                                     "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
                                 },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 0.9806950092315674,
+                                            "Y": 0.07572934776544571,
+                                            "Z": 0.07572934776544571
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Hyphen",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.968999981880188,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.20000000298023224,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "hyphen",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "StageNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "one",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "SubNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "one",
+                                        "Type": "Object3D"
+                                    }
+                                ],
                                 "DisableDraw": false,
-                                "Model": "Plane.obj",
+                                "Model": "button.obj",
                                 "Name": "Stage1-1",
                                 "NormalType": 0,
                                 "Position": {
@@ -120,29 +599,148 @@
                                     "Z": 0.0
                                 },
                                 "Scale": {
-                                    "X": 1.0,
-                                    "Y": 1.0,
+                                    "X": 1.100000023841858,
+                                    "Y": 1.100000023841858,
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "Black",
+                                "Texture": "button.png",
                                 "Type": "Object3D"
                             },
                             {
                                 "Active": true,
-                                "BlendMode": 0,
+                                "BlendMode": 3,
                                 "Brightness": {
                                     "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
                                 },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Hyphen",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.968999981880188,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.20000000298023224,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "hyphen",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "StageNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "one",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "SubNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "two",
+                                        "Type": "Object3D"
+                                    }
+                                ],
                                 "DisableDraw": false,
-                                "Model": "Plane.obj",
+                                "Model": "button.obj",
                                 "Name": "Stage1-2",
                                 "NormalType": 0,
                                 "Position": {
-                                    "X": 4.0,
+                                    "X": 2.5,
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
@@ -164,24 +762,143 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "Black",
+                                "Texture": "button.png",
                                 "Type": "Object3D"
                             },
                             {
                                 "Active": true,
-                                "BlendMode": 0,
+                                "BlendMode": 3,
                                 "Brightness": {
                                     "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
                                 },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Hyphen",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.968999981880188,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.20000000298023224,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "hyphen",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "StageNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "one",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "SubNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "three",
+                                        "Type": "Object3D"
+                                    }
+                                ],
                                 "DisableDraw": false,
-                                "Model": "Plane.obj",
+                                "Model": "button.obj",
                                 "Name": "Stage1-3",
                                 "NormalType": 0,
                                 "Position": {
-                                    "X": 8.0,
+                                    "X": 5.0,
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
@@ -203,7 +920,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "Black",
+                                "Texture": "button.png",
                                 "Type": "Object3D"
                             }
                         ],
@@ -211,8 +928,759 @@
                         "Model": "",
                         "Name": "Stage1",
                         "Position": {
-                            "X": -10.028000831604004,
-                            "Y": 4.0,
+                            "X": 0.6499999761581421,
+                            "Y": 0.7599999904632568,
+                            "Z": -1.75
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": -0.2617993950843811,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.05000000074505806,
+                            "Y": 0.10000000149011612,
+                            "Z": 0.05000000074505806
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 3,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Hyphen",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.968999981880188,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.20000000298023224,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "hyphen",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "StageNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "two",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "SubNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "one",
+                                        "Type": "Object3D"
+                                    }
+                                ],
+                                "DisableDraw": false,
+                                "Model": "button.obj",
+                                "Name": "Stage2-1",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": -0.10000000149011612,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "button.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 3,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Hyphen",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.968999981880188,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.20000000298023224,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "hyphen",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "StageNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "two",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "SubNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "two",
+                                        "Type": "Object3D"
+                                    }
+                                ],
+                                "DisableDraw": false,
+                                "Model": "button.obj",
+                                "Name": "Stage2-2",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 2.5,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "button.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 3,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Hyphen",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.968999981880188,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.20000000298023224,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "hyphen",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "StageNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "two",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "SubNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "three",
+                                        "Type": "Object3D"
+                                    }
+                                ],
+                                "DisableDraw": false,
+                                "Model": "button.obj",
+                                "Name": "Stage2-3",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 5.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "button.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 3,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "Hyphen",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.968999981880188,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.20000000298023224,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "hyphen",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "StageNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": -0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "two",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 3,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "Plane.obj",
+                                        "Name": "SubNum",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.3499999940395355,
+                                            "Y": 0.9700000286102295,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 1.5707963705062866,
+                                            "Y": -1.5707963705062866,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.4000000059604645,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "four",
+                                        "Type": "Object3D"
+                                    }
+                                ],
+                                "DisableDraw": false,
+                                "Model": "button.obj",
+                                "Name": "Stage2-4",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 7.5,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "button.png",
+                                "Type": "Object3D"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "",
+                        "Name": "Stage2",
+                        "Position": {
+                            "X": 0.6499999761581421,
+                            "Y": 0.7200000286102295,
+                            "Z": -1.899999976158142
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": -0.2617993950843811,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.05000000074505806,
+                            "Y": 0.10000000149011612,
+                            "Z": 0.05000000074505806
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "StageSelectPanel",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 3,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 0.6486486196517944,
+                            "Y": 0.8575602173805237,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "door.obj",
+                        "Name": "Door",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -233,9 +1701,363 @@
                             "Z": 1.0
                         },
                         "Tags": null,
-                        "Texture": "",
+                        "Texture": "door.png",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "Goal.obj",
+                "Name": "Capsule",
+                "NormalType": 0,
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.9410000443458557
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "goal.png",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 3,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "DisableDraw": false,
+                "Model": "panel.obj",
+                "Name": "PanelObj",
+                "NormalType": 0,
+                "Position": {
+                    "X": 1.0,
+                    "Y": 0.0,
+                    "Z": -2.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 0.5,
+                    "Y": 0.5,
+                    "Z": 0.5
+                },
+                "Tags": null,
+                "Texture": "panel.png",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 3,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "DisableDraw": false,
+                "Model": "Plane.obj",
+                "Name": "Floor",
+                "NormalType": 0,
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 1.5707963705062866,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 10.0,
+                    "Y": 10.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "white.png",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV1.obj",
+                        "Name": "flyTV",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -8.022001266479492,
+                            "Y": 3.8529999256134033,
+                            "Z": 2.255000114440918
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": -0.7330383062362671,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.5,
+                            "Y": 0.5,
+                            "Z": 0.5
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
                         "Type": "Object3D"
                     },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV1.obj",
+                        "Name": "flyTV",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 7.953000545501709,
+                            "Y": 2.3509998321533203,
+                            "Z": 3.4130001068115234
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.7330383062362671,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.699999988079071,
+                            "Y": 0.699999988079071,
+                            "Z": 0.699999988079071
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV1.obj",
+                        "Name": "flyTV",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 5.703999996185303,
+                            "Y": 1.7979998588562012,
+                            "Z": 3.364000082015991
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.05235987901687622,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.4999999403953552,
+                            "Y": 0.5,
+                            "Z": 0.4999999403953552
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV1.obj",
+                        "Name": "flyTV",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -7.0150017738342285,
+                            "Y": 5.033999919891357,
+                            "Z": 2.572999954223633
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": -0.15707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.5,
+                            "Y": 0.5,
+                            "Z": 0.5
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV1.obj",
+                        "Name": "flyTV",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -7.226002216339111,
+                            "Y": 2.3919997215270996,
+                            "Z": 3.0830001831054688
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": -0.471238911151886,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.5,
+                            "Y": 0.5,
+                            "Z": 0.5
+                        },
+                        "Tags": null,
+                        "Texture": "TV1.png",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "FlyTVs",
+                "Position": {
+                    "X": -0.5230000019073486,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
                     {
                         "Active": true,
                         "BlendMode": 0,
@@ -256,8 +2078,8 @@
                                     "Z": 1.0
                                 },
                                 "DisableDraw": false,
-                                "Model": "Plane.obj",
-                                "Name": "Stage2-1",
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
                                 "NormalType": 0,
                                 "Position": {
                                     "X": 0.0,
@@ -282,133 +2104,134 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "Black",
-                                "Type": "Object3D"
-                            },
-                            {
-                                "Active": true,
-                                "BlendMode": 0,
-                                "Brightness": {
-                                    "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
-                                },
-                                "DisableDraw": false,
-                                "Model": "Plane.obj",
-                                "Name": "Stage2-2",
-                                "NormalType": 0,
-                                "Position": {
-                                    "X": 4.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "RenderTarget": "",
-                                "Rotation": {
-                                    "W": 1.0,
-                                    "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "RotationEuler": {
-                                    "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "Scale": {
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
-                                },
-                                "Tags": null,
-                                "Texture": "Black",
-                                "Type": "Object3D"
-                            },
-                            {
-                                "Active": true,
-                                "BlendMode": 0,
-                                "Brightness": {
-                                    "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
-                                },
-                                "DisableDraw": false,
-                                "Model": "Plane.obj",
-                                "Name": "Stage2-3",
-                                "NormalType": 0,
-                                "Position": {
-                                    "X": 8.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "RenderTarget": "",
-                                "Rotation": {
-                                    "W": 1.0,
-                                    "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "RotationEuler": {
-                                    "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "Scale": {
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
-                                },
-                                "Tags": null,
-                                "Texture": "Black",
-                                "Type": "Object3D"
-                            },
-                            {
-                                "Active": true,
-                                "BlendMode": 0,
-                                "Brightness": {
-                                    "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
-                                },
-                                "DisableDraw": false,
-                                "Model": "Plane.obj",
-                                "Name": "Stage2-4",
-                                "NormalType": 0,
-                                "Position": {
-                                    "X": 12.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "RenderTarget": "",
-                                "Rotation": {
-                                    "W": 1.0,
-                                    "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "RotationEuler": {
-                                    "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
-                                },
-                                "Scale": {
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
-                                },
-                                "Tags": null,
-                                "Texture": "Black",
+                                "Texture": "TVScreen.png",
                                 "Type": "Object3D"
                             }
                         ],
                         "DisableDraw": false,
-                        "Model": "",
-                        "Name": "Stage2",
+                        "Model": "TV3.obj",
+                        "Name": "GoundTV",
+                        "NormalType": 0,
                         "Position": {
-                            "X": -10.0,
+                            "X": 0.5090000629425049,
+                            "Y": 2.001000165939331,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 0.8360000848770142,
+                            "Y": 0.8670002818107605,
+                            "Z": 0.9320001602172852
+                        },
+                        "Tags": null,
+                        "Texture": "TV3.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
                             "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV3.obj",
+                        "Name": "Object3D",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -0.6210000514984131,
+                            "Y": 0.0,
+                            "Z": 0.2380000203847885
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.40142571926116943,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "TV3.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV3.obj",
+                        "Name": "Object3D",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 2.0850000381469727,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": -0.15707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "TV3.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "TV3.obj",
+                        "Name": "Object3D",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -3.996000051498413,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -429,13 +2252,51 @@
                             "Z": 1.0
                         },
                         "Tags": null,
-                        "Texture": "",
+                        "Texture": "TV3.png",
                         "Type": "Object3D"
                     }
                 ],
                 "DisableDraw": false,
                 "Model": "",
-                "Name": "StageSelectPanel",
+                "Name": "GoundTVs",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "GoundTexTVs",
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -475,7 +2336,15 @@
         ],
         "Models": [
             {
-                "Plane.obj": "Assets\\Models\\Plane\\Plane.obj"
+                "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
+                "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
+                "TV1.obj": "Assets\\Models\\TV1\\TV1.obj",
+                "TV2.obj": "Assets\\Models\\TV2\\TV2.obj",
+                "TV3.obj": "Assets\\Models\\TV3\\TV3.obj",
+                "TVScreen.obj": "Assets\\Models\\TVScreen\\TVScreen.obj",
+                "button.obj": "Assets\\Models\\button\\button.obj",
+                "door.obj": "Assets\\Models\\door\\door.obj",
+                "panel.obj": "Assets\\Models\\panel\\panel.obj"
             }
         ],
         "Name": "Scene",
@@ -486,6 +2355,20 @@
         "Textures": [
             {
                 "Black": "Assets/Images/black.png",
+                "TV1.png": "Assets\\Models\\TV1\\TV1.png",
+                "TV3.png": "Assets\\Models\\TV3\\TV3.png",
+                "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
+                "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
+                "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
+                "asmptex:Assets\\Models\\TV2TV2.png": "Assets\\Models\\TV2/TV2.png",
+                "asmptex:Assets\\Models\\TV3TV3.png": "Assets\\Models\\TV3/TV3.png",
+                "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
+                "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
+                "button.png": "Assets\\Models\\button\\button.png",
+                "door.png": "Assets\\Models\\door\\door.png",
+                "goal.png": "Assets\\Models\\Goal\\goal.png",
+                "hyphen": "Assets/Images/hyphen.png",
+                "panel.png": "Assets\\Models\\panel\\panel.png",
                 "white.png": "Assets\\Images\\white.png"
             }
         ],

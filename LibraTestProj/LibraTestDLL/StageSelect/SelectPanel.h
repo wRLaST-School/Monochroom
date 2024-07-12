@@ -21,6 +21,44 @@ private:
 		Stage2,
 		Stage3,
 	};
+
+	enum Number
+	{
+		ZERO,
+		ONE,
+		TWO,
+		THREE,
+		FOUR,
+		FIVE,
+		SIX,
+		SEVEN,
+		EIGHT,
+		NINE,
+	};
+
+	struct StageButton
+	{
+		// 本体のオブジェクト
+		Object3D* buttonObj;
+
+		// ナンバーの板オブジェ
+		Object3D* stageBaseNumObj;
+
+		Object3D* hyphenObj;
+
+		Object3D* stageSubNumObj;
+
+		PanelState state;
+	};
+
+	enum SelectState
+	{
+		TITLE,
+		SELECTSTAGE,
+		CAMERAMOVE,
+		STAGECHAGE,
+	};
+
 public:
 	void Init();
 	void Update();
@@ -31,11 +69,13 @@ public:
     DefDel;
 private:
 	void CheckNumOver();
+
+	void InitTex();
 private:
 
 	// ステージセレクト時に選択用のオブジェクト
-	std::vector<std::vector<Object3D*>> mStageNumObj;
-	std::vector<std::vector<PanelState>> mStageNumState;
+	std::vector<std::vector<StageButton>> mStageNum;
+	//std::vector<std::vector<PanelState>> mStageNumState;
 
 	// ステージセレクト二次元配列 X Y 番号
 	int mSelectMaxNumY;
@@ -47,5 +87,13 @@ private:
 	Vec3 mDisabledPanelScale;
 	Vec3 mSelectPanelScale;
 	Vec3 mPressedPanelScale;
+
+	// 数字番号
+	int mNumObjMax;
+
+	Vec2 mNumTexSize;
+
+	TextureKey mHyphenTex;
+	std::vector<TextureKey> mNumberTex;
 };
 RegisterScript(SelectPanel);

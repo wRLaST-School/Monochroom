@@ -5,6 +5,7 @@
 #include <Input.h>
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
+#include <SpTextureManager.h>
 
 void SelectPanel::Init()
 {
@@ -16,18 +17,40 @@ void SelectPanel::Init()
 
 	mSelectCurrentNum = { 0,0 };
 
-	mStageNumObj.resize(mSelectMaxNumY);
-	mStageNumState.resize(mSelectMaxNumY);
+	mStageNum.resize(mSelectMaxNumY);
 
 	mDisabledPanelScale = { 1,1,1 };
-	mSelectPanelScale = {1.1f,1.1f,1};
-	mPressedPanelScale = {1,1,1};
+	mSelectPanelScale = { 1.1f,1.1f,1 };
+	mPressedPanelScale = { 1,1,1 };
 
+	mNumObjMax = 10;
+
+	mNumberTex.resize(mNumObjMax);
+
+	mNumberTex = {
+		"zero",
+		"one",
+		"two",
+		"three",
+		"four",
+		"five",
+		"six",
+		"seven",
+		"eight",
+		"nine"
+	};
+	mHyphenTex = "hyphen";
+
+	mNumTexSize = { 320,320 };
+
+	// テクスチャ切り分け
+	SpTextureManager::LoadDiv("Assets/Images/numbers1.png", (int)mNumTexSize.x, (int)mNumTexSize.y, 10, 1, mNumberTex);
+
+	SpTextureManager::LoadTexture("Assets/Images/hyphen.png", mHyphenTex);
 
 	for (size_t i = 0; i < mSelectMaxNumY; i++)
 	{
-		mStageNumObj[i].resize(mSelectMaxNumX[i]);
-		mStageNumState[i].resize(mSelectMaxNumX[i]);
+		mStageNum[i].resize(mSelectMaxNumX[i]);
 	}
 
 	for (size_t i = 0; i < mSelectMaxNumY; i++)
@@ -39,19 +62,27 @@ void SelectPanel::Init()
 
 			std::string stageName = stageFirstName + stageBaseNum;
 
-			mStageNumObj[i][j] = SceneManager::FindObject<Object3D>(stageName);
-			mStageNumState[i][j] = DISABLED;
+			mStageNum[i][j].buttonObj = SceneManager::FindObject<Object3D>(stageName);
+			mStageNum[i][j].state = DISABLED;
+
+			// ステージ番号の板ポリの初期化
+			mStageNum[i][j].stageBaseNumObj = SceneManager::FindChildObject<Object3D>("StageNum", mStageNum[i][j].buttonObj);
+			mStageNum[i][j].stageSubNumObj = SceneManager::FindChildObject<Object3D>("SubNum", mStageNum[i][j].buttonObj);
+			mStageNum[i][j].hyphenObj = SceneManager::FindChildObject<Object3D>("Hyphen", mStageNum[i][j].buttonObj);
+
+			mStageNum[i][j].stageBaseNumObj->texture = mNumberTex[i + 1];
+			mStageNum[i][j].stageSubNumObj->texture = mNumberTex[j + 1];
+			mStageNum[i][j].hyphenObj->texture = mHyphenTex;
 		}
-		
 	}
-	
+
 }
 
 void SelectPanel::Update()
 {
-	
 
-	if(Input::Key::Triggered(DIK_A))
+
+	if (Input::Key::Triggered(DIK_A))
 	{
 		if (mSelectCurrentNum.x > 0)
 		{
@@ -85,7 +116,7 @@ void SelectPanel::Update()
 		}
 	}
 
-	mStageNumState[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x] = SELECT;
+	mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = SELECT;
 
 	ConsoleWindow::Log(std::format("ステージ現在番号：Y,{} X,{}", mSelectCurrentNum.y, mSelectCurrentNum.x));
 
@@ -96,23 +127,23 @@ void SelectPanel::Update()
 			if (i != mSelectCurrentNum.y ||
 				j != mSelectCurrentNum.x)
 			{
-				mStageNumState[i][j] = DISABLED;
+				mStageNum[i][j].state = DISABLED;
 			}
 
-			switch (mStageNumState[i][j])
+			switch (mStageNum[i][j].state)
 			{
 			case DISABLED:
-				mStageNumObj[i][j]->scale = mDisabledPanelScale;
+				mStageNum[i][j].buttonObj->scale = mDisabledPanelScale;
 				break;
 			case SELECT:
-				mStageNumObj[i][j]->scale = mSelectPanelScale;
+				mStageNum[i][j].buttonObj->scale = mSelectPanelScale;
 				break;
 			case PRESSED:
-				mStageNumObj[i][j]->scale = mPressedPanelScale;
+				mStageNum[i][j].buttonObj->scale = mPressedPanelScale;
 				break;
 			}
 
-			mStageNumObj[i][j]->Update();
+			mStageNum[i][j].buttonObj->Update();
 		}
 	}
 
@@ -138,6 +169,11 @@ void SelectPanel::CheckNumOver()
 	{
 		mSelectCurrentNum.x = (float)(mSelectMaxNumX[(int)mSelectCurrentNum.y] - 1);
 	}
+}
+
+void SelectPanel::InitTex()
+{
+
 }
 
 RegisterScriptBody(SelectPanel);
