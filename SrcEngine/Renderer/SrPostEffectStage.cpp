@@ -9,6 +9,7 @@
 #include <NoEffect.h>
 #include <BlinkTransition.h>
 #include <RGBShift.h>
+#include <StageGenerating.h>
 
 void SrPostEffectStage::Init()
 {
@@ -28,7 +29,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAOF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BlinkTransition", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShift", true);
-	
+
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
 	SpTextureManager::AddMasterTextureKey("BloomBefore");
@@ -56,6 +57,7 @@ void SrPostEffectStage::Init()
 	SSAO::Init();
 	BlinkTransition::Init();
 	RGBShift::Init();
+	StageGenerating::Init();
 }
 
 void SrPostEffectStage::PreDraw() {};
@@ -68,6 +70,7 @@ void SrPostEffectStage::Render()
 	SSAO::EffectBilateralFilter(RTVManager::defaultRT, "SSAO", "SSAOF");
 	BlinkTransition::Effect(RTVManager::defaultRT, "BlinkTransition");
 	RGBShift::Effect(RTVManager::defaultRT, "RGBShift");
+	StageGenerating::Effect(RTVManager::defaultRT);
 
 	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");

@@ -128,12 +128,92 @@
             },
             {
                 "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "Plane",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.10000000149011612
+                        },
+                        "RenderTarget": "Plane",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D"
+                    }
+                ],
+                "DisableDraw": true,
+                "Model": "Plane.obj",
+                "Name": "PlaneAlpha",
+                "NormalType": 0,
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": -21.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 1.5707963705062866
+                },
+                "Scale": {
+                    "X": 500.0,
+                    "Y": 500.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
                 "Name": "PointLight",
                 "Tags": null,
                 "Type": "PointLight"
             },
             {
-                "Active": true,
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -146,8 +226,25 @@
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,
-                "scaleX": 2.0,
-                "scaleY": 2.0
+                "scaleX": 1.0,
+                "scaleY": 1.0
+            },
+            {
+                "Active": true,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "StageGenerating",
+                "Tags": null,
+                "Texture": "StageGenerating",
+                "Type": "SpriteObject",
+                "posX": 958.0,
+                "posY": 530.5,
+                "scaleX": 1.0,
+                "scaleY": 1.0
             }
         ],
         "EfkEffects": [
@@ -215,6 +312,7 @@
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
+                "TestTex.png": "Assets\\Images\\TestTex.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",

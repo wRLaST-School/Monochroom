@@ -21,7 +21,7 @@ float BlockNoise(float2 uv, float density)
 
 float4 main(VSOutput input) : SV_TARGET
 {
-    float noise = BlockNoise(float2(timer * 0.01f, input.uv.y + frac(timer) * 0.01f), 32) * 2.f - 1.f;
+    float noise = BlockNoise(float2(timer * 0.1f, input.uv.y + frac(timer) * 0.01f), 32) * 2.f - 1.f;
     noise += Random(input.uv.xx) * 0.3f;
     
     float2 uv = input.uv;
