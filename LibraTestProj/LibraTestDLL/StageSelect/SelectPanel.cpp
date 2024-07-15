@@ -80,8 +80,6 @@ void SelectPanel::Init()
 
 void SelectPanel::Update()
 {
-
-
 	if (Input::Key::Triggered(DIK_A))
 	{
 		if (mSelectCurrentNum.x > 0)

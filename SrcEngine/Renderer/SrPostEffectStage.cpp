@@ -29,6 +29,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAOF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BlinkTransition", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShift", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftTex", true);
 
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
@@ -47,6 +48,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("SSAOF");
 	SpTextureManager::AddMasterTextureKey("BlinkTransition");
 	SpTextureManager::AddMasterTextureKey("RGBShift");
+	SpTextureManager::AddMasterTextureKey("RGBShiftTex");
 
 	BloomP1::Init();
 	BloomP2::Init();
@@ -71,6 +73,7 @@ void SrPostEffectStage::Render()
 	BlinkTransition::Effect(RTVManager::defaultRT, "BlinkTransition");
 	RGBShift::Effect(RTVManager::defaultRT, "RGBShift");
 	StageGenerating::Effect(RTVManager::defaultRT);
+	RGBShift::Effect("RGBShiftTex", "RGBShift");
 
 	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
 	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
@@ -78,6 +81,7 @@ void SrPostEffectStage::Render()
 	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
 
 	NoEffect::Effect("UI", "RenderTexture");
+	
 }
 
 void SrPostEffectStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
