@@ -10,6 +10,7 @@
 #include <BlinkTransition.h>
 #include <RGBShift.h>
 #include <StageGenerating.h>
+#include <KawaseBloom.h>
 
 void SrPostEffectStage::Init()
 {
@@ -18,6 +19,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BloomAfter", true);
 	RTVManager::CreateRenderTargetTexture(.5f, 1.f, "Bloom2ndAfter", true);
 	RTVManager::CreateRenderTargetTexture(.5f, .5f, "Bloom3rdAfter", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BloomF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RenderTexture", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "CurrentScene", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
@@ -79,18 +81,18 @@ void SrPostEffectStage::Render()
 
 	//
 	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
-	RGBShift::Effect(RTVManager::defaultRT, "RGBShift");
+	RGBShift::Effect("RGBShiftTex", "RGBShift");
 
 	// グレースケール
 	GrayScale::Effect("KawaseBloomP3", "GrayScale");
-	StageGenerating::Effect(RTVManager::defaultRT);
-	RGBShift::Effect("RGBShiftTex", "RGBShift");
+	//StageGenerating::Effect(RTVManager::defaultRT, "StageGenerater");
+	//RGBShift::Effect("RGBShiftTex", "RGBShift");
 
 	// 最後
 	BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
 
 	NoEffect::Effect("BlinkTransition", "RenderTexture");
-	NoEffect::Effect("UI", "RenderTexture");
+	//NoEffect::Effect("UI", "RenderTexture");
 	
 }
 
