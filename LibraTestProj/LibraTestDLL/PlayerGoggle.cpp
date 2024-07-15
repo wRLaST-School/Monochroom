@@ -36,13 +36,26 @@ void PlayerGoggle::Update()
 			mIsEquipGoggle = !mIsEquipGoggle;
 
 			auto glayScale = SceneManager::FindObject<IComponent>("GrayScale");
+			auto flyBlocks = SceneManager::FindObjectsWithTag<Object3D>("FlyBlock");
+
 			if (mIsEquipGoggle)
 			{
 				glayScale->Activate();
+
+				for (auto& fb : flyBlocks)
+				{
+					ConsoleWindow::Log("SILETTO");
+					fb->useSilhouette = true;
+				}
 			}
 			else
 			{
 				glayScale->Deactivate();
+
+				for (auto& fb : flyBlocks)
+				{
+					fb->useSilhouette = false;
+				}
 			}
 
 			//着脱

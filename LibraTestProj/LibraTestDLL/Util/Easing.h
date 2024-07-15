@@ -79,5 +79,8 @@ public:
 	float InBack(const float startPos, const float endPos);
 	Vec2 InBack(const Vec2 startPos, const Vec2 endPos);
 	Vec3 InBack(const Vec3 startPos, const Vec3 endPos);
+
+public:
+	static Vec3 Lerp(const Vec3 startPos, const Vec3 endPos, float ratio);
 };
 

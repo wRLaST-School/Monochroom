@@ -10,8 +10,7 @@ void GoggleScr::Init()
 	mIsMoving = false;
 
 	mEasing = std::make_unique<Easing>();
-
-	mEasing->SetEaseTimer(kMoveTime);
+	mEasing->SetEaseType(EaseType::InOut);
 
 	mLocalPos = kNormalPos;
 }
@@ -20,6 +19,11 @@ void GoggleScr::Update()
 {
 	if (mOwner)
 	{
+		//プレイヤーの向いてる方向へのベクトル
+		auto q = Quaternion::EulerToQuaternion(mOwner->rotationE);
+		Vec3 frontVec = mLocalPos * q;
+		Vec3 currentPos = Vec3{ mOwner->position.x,mOwner->position.y,mOwner->position.z } + Vec3{ frontVec.x, frontVec.y, frontVec.z };
+
 		//着脱中
 		if (mIsMoving)
 		{
@@ -29,19 +33,25 @@ void GoggleScr::Update()
 
 			mLocalPos = mEasing->Out(mStartPos, mEndPos);
 
+			//徐々に透明に
+			if (mIsEquip)
+			{
+				mAlpha = 1.0f - mEasing->GetTimeRate();
+			}
+			else
+			{
+				mAlpha = mEasing->GetTimeRate();
+			}
+			mParent->brightnessCB.contents->w = mAlpha;
+
 			if (mEasing->GetTimeRate() >= 1.0f)
 			{
+				mParent->brightnessCB.contents->w = 0;
 				mIsMoving = false;
 			}
 		}
 
-		//
-		auto q = Quaternion::EulerToQuaternion(mOwner->rotationE);
-		Vec3 frontVec = mLocalPos * q;
-
-
-		Vec3 pos = Vec3{ mOwner->position.x,mOwner->position.y,mOwner->position.z } + Vec3{ frontVec.x, frontVec.y, frontVec.z };
-		mParent->position = { pos.x,pos.y,pos.z };
+		mParent->position = { currentPos.x,currentPos.y,currentPos.z };
 
 		mParent->rotationE = { -mOwner->rotationE.x,mOwner->rotationE.y + kRotOffsetY,mOwner->rotationE.z };
 	}
@@ -59,16 +69,36 @@ void GoggleScr::GettedPlayer(Object3D* owner)
 
 void GoggleScr::TakeOnOff(bool isEquip)
 {
+	float easingPow = 1.0f;
+	EaseType eType = EaseType::Lerp;
+	int eTimer = 0;
+
 	if (isEquip)
 	{
 		mStartPos = kNormalPos;
 		mEndPos = kEquipPos;
+		eTimer = (kOnMoveTime);
+		eType = (EaseType::Out);
+		easingPow = 3.0f;
 	}
 	else
 	{
 		mEndPos = kNormalPos;
 		mStartPos = kEquipPos;
+		eTimer = (kOffMoveTime);
+		eType = (EaseType::InOut);
+		easingPow = 2.0f;
 	}
+
+	mEasing->SetEaseTimer(eTimer);
+	mEasing->SetEaseType(eType);
+	mEasing->SetPowNum(easingPow);
+
+	mParent->blendMode = Object3D::BlendMode::Alpha;
+
+	mIsEquip = isEquip;
+
+	mParent->Activate();
 
 	mIsMoving = true;
 
