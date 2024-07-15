@@ -73,6 +73,8 @@ private:
 	void InitTex();
 private:
 
+	// メイン
+
 	// ステージセレクト時に選択用のオブジェクト
 	std::vector<std::vector<StageButton>> mStageNum;
 	//std::vector<std::vector<PanelState>> mStageNumState;

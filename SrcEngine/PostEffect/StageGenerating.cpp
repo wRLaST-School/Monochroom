@@ -71,12 +71,12 @@ void StageGenerating::Init()
 	SpTextureManager::AddMasterTextureKey("Plane");
 }
 
-void StageGenerating::Effect(const TextureKey& baseTex)
+void StageGenerating::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 {
-	IPostEffector::Effect(baseTex, "StageGenerating", "StageGenerating", [&]()
+	IPostEffector::Effect(baseTex, targetTex, "StageGenerating", [&]()
 		{
 			// SR
-			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(2, SpTextureManager::GetGPUDescHandle(baseTex + "_depth_"));
+			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(2, SpTextureManager::GetGPUDescHandle(RTVManager::defaultRT + "_depth_"));
 			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(3, SpTextureManager::GetGPUDescHandle("Plane_depth_"));
 		});
 }
