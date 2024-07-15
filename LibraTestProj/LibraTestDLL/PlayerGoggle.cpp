@@ -37,15 +37,20 @@ void PlayerGoggle::Update()
 
 			auto glayScale = SceneManager::FindObject<IComponent>("GrayScale");
 			auto flyBlocks = SceneManager::FindObjectsWithTag<Object3D>("FlyBlock");
+			auto glasses = SceneManager::FindObjectsWithTag<Object3D>("Glass");
 
+			//装着後か外した後か
 			if (mIsEquipGoggle)
 			{
 				glayScale->Activate();
 
 				for (auto& fb : flyBlocks)
 				{
-					ConsoleWindow::Log("SILETTO");
 					fb->useSilhouette = true;
+				}
+				for (auto& glass : glasses)
+				{
+					glass->Deactivate();
 				}
 			}
 			else
@@ -55,6 +60,10 @@ void PlayerGoggle::Update()
 				for (auto& fb : flyBlocks)
 				{
 					fb->useSilhouette = false;
+				}
+				for (auto& glass : glasses)
+				{
+					glass->Activate();
 				}
 			}
 

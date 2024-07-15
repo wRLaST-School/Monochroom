@@ -44,6 +44,7 @@ void GoggleScr::Update()
 			}
 			mParent->brightnessCB.contents->w = mAlpha;
 
+			//終了
 			if (mEasing->GetTimeRate() >= 1.0f)
 			{
 				mParent->brightnessCB.contents->w = 0;
