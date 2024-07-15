@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -1.3659099340438843,
-                    "Y": 5.599999904632568,
+                    "X": 0.3440900444984436,
+                    "Y": 1.4523900747299194,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -794,8 +794,8 @@
                 "Name": "Player",
                 "Position": {
                     "X": 6.848000526428223,
-                    "Y": 10.0,
-                    "Z": 22.193330764770508
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -805,8 +805,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -1.3659099340438843,
-                    "Y": 5.739999771118164,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3095,7 +3095,7 @@
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
-                    "Z": 286.0
+                    "Z": 330.0
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3179,7 +3179,7 @@
                 "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 540.0,
+                "posY": 547.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -3191,9 +3191,9 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Name": "NormalMap",
+                "Name": "KawaseBloomP3",
                 "Tags": null,
-                "Texture": "NormalMap",
+                "Texture": "KawaseBloomP3",
                 "Type": "SpriteObject",
                 "posX": 960.0,
                 "posY": 540.0,
@@ -3235,7 +3235,7 @@
                 "scaleY": 1.0
             },
             {
-                "Active": true,
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -3294,10 +3294,17 @@
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
+                "TV1.obj": "Assets\\Models\\TV1\\TV1.obj",
+                "TV2.obj": "Assets\\Models\\TV2\\TV2.obj",
+                "TV3.obj": "Assets\\Models\\TV3\\TV3.obj",
+                "TVScreen.obj": "Assets\\Models\\TVScreen\\TVScreen.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
+                "button.obj": "Assets\\Models\\button\\button.obj",
                 "cube": "Assets/Models/Cube/Cube.obj",
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
+                "door.obj": "Assets\\Models\\door\\door.obj",
                 "floor": "Assets/Models/Floor.glb",
+                "panel.obj": "Assets\\Models\\panel\\panel.obj",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
                 "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
                 "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj"
@@ -3319,6 +3326,9 @@
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
+                "TV1.png": "Assets\\Models\\TV1\\TV1.png",
+                "TV3.png": "Assets\\Models\\TV3\\TV3.png",
+                "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TestTex.png": "Assets\\Images\\TestTex.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
@@ -3326,13 +3336,23 @@
                 "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonBodyButtonBody.png": "Assets\\Models\\Stage\\ButtonBody/ButtonBody.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonFlameButtonFlame.png": "Assets\\Models\\Stage\\ButtonFlame/ButtonFlame.png",
+                "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
+                "asmptex:Assets\\Models\\TV2TV2.png": "Assets\\Models\\TV2/TV2.png",
+                "asmptex:Assets\\Models\\TV3TV3.png": "Assets\\Models\\TV3/TV3.png",
+                "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
+                "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "black": "Assets/Images/black.png",
+                "button.png": "Assets\\Models\\button\\button.png",
                 "buttonBackTex": "Assets/Images/MenuImages/ButtonBack.png",
                 "cameraTextTex": "Assets/Images/MenuImages/CameraText.png",
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
+                "door.png": "Assets\\Models\\door\\door.png",
+                "goal.png": "Assets\\Models\\Goal\\goal.png",
                 "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
+                "hyphen": "Assets/Images/hyphen.png",
                 "menuTextTex": "Assets/Images/MenuImages/MenuText.png",
+                "panel.png": "Assets\\Models\\panel\\panel.png",
                 "quitTextTex": "Assets/Images/MenuImages/QuitText.png",
                 "stage1.png": "Assets\\Models\\stage1\\stage1.png",
                 "stage1_pipe.png": "Assets\\Models\\stage1_pipe\\stage1_pipe.png",

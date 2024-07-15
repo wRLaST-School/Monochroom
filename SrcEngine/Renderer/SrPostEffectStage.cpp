@@ -10,6 +10,7 @@
 #include <BlinkTransition.h>
 #include <RGBShift.h>
 #include <StageGenerating.h>
+#include <KawaseBloom.h>
 
 void SrPostEffectStage::Init()
 {
@@ -18,6 +19,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BloomAfter", true);
 	RTVManager::CreateRenderTargetTexture(.5f, 1.f, "Bloom2ndAfter", true);
 	RTVManager::CreateRenderTargetTexture(.5f, .5f, "Bloom3rdAfter", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BloomF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RenderTexture", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "CurrentScene", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "GrayScale", true);
@@ -58,26 +60,34 @@ void SrPostEffectStage::Init()
 	BlinkTransition::Init();
 	RGBShift::Init();
 	StageGenerating::Init();
+	KawaseBloom::Init();
 }
 
 void SrPostEffectStage::PreDraw() {};
 void SrPostEffectStage::PostDraw() {};
 void SrPostEffectStage::Render()
 {
-	GrayScale::Effect(RTVManager::defaultRT, "GrayScale");
-	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
+	// SSAO
 	SSAO::EffectAO(RTVManager::defaultRT, "SSAO");
 	SSAO::EffectBilateralFilter(RTVManager::defaultRT, "SSAO", "SSAOF");
-	BlinkTransition::Effect(RTVManager::defaultRT, "BlinkTransition");
+
+	// ステージ生成
+	StageGenerating::Effect(RTVManager::defaultRT, "StageGenerating");
+
+	// ブルーム
+	KawaseBloom::Effect("StageGenerating", "KawaseBloomP3");
+
+	//
+	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
 	RGBShift::Effect(RTVManager::defaultRT, "RGBShift");
-	StageGenerating::Effect(RTVManager::defaultRT);
 
-	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
-	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
-	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
-	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
+	// グレースケール
+	GrayScale::Effect("KawaseBloomP3", "GrayScale");
 
-	NoEffect::Effect("UI", "RenderTexture");
+	// 最後
+	BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
+
+	NoEffect::Effect("BlinkTransition", "RenderTexture");
 }
 
 void SrPostEffectStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
