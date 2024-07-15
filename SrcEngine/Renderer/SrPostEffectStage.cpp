@@ -60,26 +60,36 @@ void SrPostEffectStage::Init()
 	BlinkTransition::Init();
 	RGBShift::Init();
 	StageGenerating::Init();
+	KawaseBloom::Init();
 }
 
 void SrPostEffectStage::PreDraw() {};
 void SrPostEffectStage::PostDraw() {};
 void SrPostEffectStage::Render()
 {
-	GrayScale::Effect(RTVManager::defaultRT, "GrayScale");
-	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
+	// SSAO
 	SSAO::EffectAO(RTVManager::defaultRT, "SSAO");
 	SSAO::EffectBilateralFilter(RTVManager::defaultRT, "SSAO", "SSAOF");
-	BlinkTransition::Effect(RTVManager::defaultRT, "BlinkTransition");
+
+	// ステージ生成
+	StageGenerating::Effect(RTVManager::defaultRT, "StageGenerating");
+
+	// ブルーム
+	KawaseBloom::Effect("StageGenerating", "KawaseBloomP3");
+
+	//
+	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
 	RGBShift::Effect(RTVManager::defaultRT, "RGBShift");
+
+	// グレースケール
+	GrayScale::Effect("KawaseBloomP3", "GrayScale");
 	StageGenerating::Effect(RTVManager::defaultRT);
 	RGBShift::Effect("RGBShiftTex", "RGBShift");
 
-	BloomP1::Effect(RTVManager::defaultRT, "BloomAfter");
-	BloomP2::Effect("BloomAfter", "Bloom2ndAfter");
-	BloomP3::Effect("Bloom2ndAfter", "Bloom3rdAfter");
-	BloomFin::Effect(RTVManager::defaultRT, "Bloom3rdAfter", "RenderTexture");
+	// 最後
+	BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
 
+	NoEffect::Effect("BlinkTransition", "RenderTexture");
 	NoEffect::Effect("UI", "RenderTexture");
 	
 }
