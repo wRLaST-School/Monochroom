@@ -128,7 +128,7 @@
             },
             {
                 "Active": true,
-                "BlendMode": 0,
+                "BlendMode": 2,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -152,7 +152,7 @@
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
-                            "Z": 0.10000000149011612
+                            "Z": 0.009999999776482582
                         },
                         "RenderTarget": "Plane",
                         "Rotation": {
@@ -162,7 +162,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": -0.6108652949333191,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -176,14 +176,14 @@
                         "Type": "Object3D"
                     }
                 ],
-                "DisableDraw": true,
+                "DisableDraw": false,
                 "Model": "Plane.obj",
                 "Name": "PlaneAlpha",
                 "NormalType": 0,
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
-                    "Z": -21.0
+                    "Z": -17.18199920654297
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -198,12 +198,12 @@
                     "Z": 1.5707963705062866
                 },
                 "Scale": {
-                    "X": 500.0,
+                    "X": 499.9999694824219,
                     "Y": 500.0,
-                    "Z": 1.0
+                    "Z": 0.999999463558197
                 },
                 "Tags": null,
-                "Texture": "",
+                "Texture": "TestTex.png",
                 "Type": "Object3D"
             },
             {
