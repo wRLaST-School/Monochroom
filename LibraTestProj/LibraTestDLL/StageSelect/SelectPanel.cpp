@@ -7,9 +7,17 @@
 #include <ConsoleWindow.h>
 #include <SpTextureManager.h>
 
+Vec3 DegreeToRadian(Vec3& angle)
+{
+
+	Vec3 radian = angle * (float)(PI / 180);
+
+	return radian;
+}
+
 void SelectPanel::Init()
 {
-	mSelectMaxNumY = 3;
+	mSelectMaxNumY = 2;
 	mSelectMaxNumX.resize(mSelectMaxNumY);
 
 	mSelectMaxNumX[Stage1] = 3;
@@ -42,6 +50,18 @@ void SelectPanel::Init()
 	mHyphenTex = "hyphen";
 
 	mNumTexSize = { 320,320 };
+
+	mTitleCameraFirstPos = Vec3(-4, 4.68f, 2);
+	mTitleCameraFirstRota = { 0, -10, 0 };
+	mTitleCameraFirstRota = DegreeToRadian(mTitleCameraFirstRota);
+
+
+	// カメラのセット
+	mCameraObj = SceneManager::FindObject<Object3D>("Camera");
+
+	mCameraObj->position = mTitleCameraFirstPos;
+	mCameraObj->rotationE = mTitleCameraFirstRota;
+	mCameraObj->Update();
 
 	// テクスチャ切り分け
 	SpTextureManager::LoadDiv("Assets/Images/numbers1.png", (int)mNumTexSize.x, (int)mNumTexSize.y, 10, 1, mNumberTex);
@@ -76,9 +96,85 @@ void SelectPanel::Init()
 		}
 	}
 
+	mTitleCameraMovePos.push_back(mTitleCameraFirstPos);
+	mTitleCameraMovePos.push_back(Vec3(0, 2, -5));
+	mTitleCameraMovePos.push_back(Vec3(1, 2, -4));
+	mTitleCameraMovePos.push_back(Vec3(1.6f, 1.1f, -2.73f)); 
+
+	mTitleCameraMoveRota.push_back(mTitleCameraFirstRota);
+	mTitleCameraMoveRota.push_back(Vec3(0, 0, 0));
+	mTitleCameraMoveRota.push_back(Vec3(25, 15, 0));
+	mTitleCameraMoveRota.push_back(Vec3(65, 0, 0));
+
+	mSelectState = TITLE;
+
+	mTitleMoveTime = 0;
+	mTitleMoveTimeMax = 60 * 6;
+
 }
 
 void SelectPanel::Update()
+{
+	switch (mSelectState)
+	{
+	case SelectPanel::TITLE:
+		TitleUpdate();
+		break;
+	case SelectPanel::SELECTSTAGE:
+		SelectStageUpdate();
+		break;
+	case SelectPanel::MOVETOCAPCEL:
+
+		break;
+	case SelectPanel::STAGECHAGE:
+
+		break;
+	}
+}
+
+void SelectPanel::Draw()
+{
+}
+
+void SelectPanel::OnInspectorWindowDraw()
+{
+}
+
+void SelectPanel::CopyComponent(IComponent* src)
+{
+}
+
+void SelectPanel::TitleUpdate()
+{
+	if (Input::Key::Triggered(DIK_SPACE))
+	{
+		IsTitleToSelect = true;
+	}
+
+	if (IsTitleToSelect)
+	{
+		mTitleMoveTime++;
+		float timeRite = mTitleMoveTime / mTitleMoveTimeMax;
+
+		// スプライン曲線でカメラ座標と回転を変更
+		mCameraObj->position = Vec3::Spline(mTitleCameraMovePos, timeRite);
+
+		Vec3 rota = Vec3::Spline(mTitleCameraMoveRota, timeRite);
+		mCameraObj->rotationE = DegreeToRadian(rota);
+
+		mCameraObj->Update();
+
+		// 移動が終了したら
+		if (timeRite >= 1.0f)
+		{
+			IsTitleToSelect = false;
+			mSelectState = SELECTSTAGE;
+			ConsoleWindow::Log("タイトルカメラ移動終了");
+		}
+	}
+}
+
+void SelectPanel::SelectStageUpdate()
 {
 	if (Input::Key::Triggered(DIK_A))
 	{
@@ -148,15 +244,11 @@ void SelectPanel::Update()
 	ConsoleWindow::Log("ステージ番号オブジェを更新");
 }
 
-void SelectPanel::Draw()
+void SelectPanel::MoveToCapcelUpdate()
 {
 }
 
-void SelectPanel::OnInspectorWindowDraw()
-{
-}
-
-void SelectPanel::CopyComponent(IComponent* src)
+void SelectPanel::StageChangeUpdate()
 {
 }
 
