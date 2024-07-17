@@ -8,6 +8,7 @@ void GoggleScr::Init()
 	mParent = This()->Parent()->CastTo<Object3D>();
 
 	mIsMoving = false;
+	mIsEquip = false;
 
 	mEasing = std::make_unique<Easing>();
 	mEasing->SetEaseType(EaseType::InOut);

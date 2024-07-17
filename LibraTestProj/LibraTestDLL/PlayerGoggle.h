@@ -7,6 +7,7 @@ class PlayerGoggle :
 private:
 	bool mIsHavingGoggle = false;
 	bool mIsEquipGoggle = false;
+	bool mIsGoggleChangeWaiting = false;
 
 public:
 	void Init();
