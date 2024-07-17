@@ -44,6 +44,9 @@ public:
 
     void TakeOnOff(bool isEquip);
 
+    bool GetIsEquip() { return mIsEquip; }
+    bool GetIsMoving() { return mIsMoving; }
+
     DefDel;
 };
 

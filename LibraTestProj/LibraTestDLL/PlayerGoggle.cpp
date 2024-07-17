@@ -35,12 +35,20 @@ void PlayerGoggle::Update()
 
 			mIsEquipGoggle = !mIsEquipGoggle;
 
-			auto glayScale = SceneManager::FindObject<IComponent>("GrayScale");
-			auto flyBlocks = SceneManager::FindObjectsWithTag<Object3D>("FlyBlock");
-			auto glasses = SceneManager::FindObjectsWithTag<Object3D>("Glass");
+			mIsGoggleChangeWaiting = true;
 
+			//着脱
+			goggleScr->TakeOnOff(mIsEquipGoggle);
+		}
+
+		//ゴーグルが完全に装着されたら
+		auto glayScale = SceneManager::FindObject<IComponent>("GrayScale");
+		auto flyBlocks = SceneManager::FindObjectsWithTag<Object3D>("FlyBlock");
+		auto glasses = SceneManager::FindObjectsWithTag<Object3D>("Glass");
+		if (mIsGoggleChangeWaiting)
+		{
 			//装着後か外した後か
-			if (mIsEquipGoggle)
+			if (goggleScr->GetIsEquip() && !goggleScr->GetIsMoving())
 			{
 				glayScale->Activate();
 
@@ -52,8 +60,9 @@ void PlayerGoggle::Update()
 				{
 					glass->Deactivate();
 				}
+				mIsGoggleChangeWaiting = false;
 			}
-			else
+			else if(goggleScr->GetIsMoving() && !goggleScr->GetIsEquip())
 			{
 				glayScale->Deactivate();
 
@@ -65,10 +74,8 @@ void PlayerGoggle::Update()
 				{
 					glass->Activate();
 				}
+				mIsGoggleChangeWaiting = false;
 			}
-
-			//着脱
-			goggleScr->TakeOnOff(mIsEquipGoggle);
 		}
 	}
 }
