@@ -586,7 +586,7 @@ void Object3D::DrawGizmo()
 	Matrix mat = matWorld;
 	if (parent != nullptr)
 	{
-		mat = matLocal;
+		mat = matWorld;
 	}
 
 
@@ -602,6 +602,12 @@ void Object3D::DrawGizmo()
 		//rotationE += deltaRot;
 
 		Float3 rot;
+
+		if (parent)
+		{
+			mat *= -parent->matWorld;
+		}
+
 		mat.DecomposeTransform(&position, &rot, &scale);
 		UpdateMatrix();
 	}

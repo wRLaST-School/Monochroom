@@ -251,3 +251,11 @@ Vec3 Easing::InBack(const Vec3 startPos, const Vec3 endPos)
 	Vec3 dis = endPos - startPos;
 	return dis * powf(mTimeRate, mPowNum) * ((back1 + 1.0f) * mTimeRate - back1) + startPos;
 }
+
+
+
+Vec3 Easing::Lerp(const Vec3 startPos, const Vec3 endPos, float ratio)
+{
+	Vec3 dis = endPos - startPos;
+	return dis * ratio + startPos;
+}

@@ -17,7 +17,7 @@ float4 calcRim(VSOutput i, float4 color)
 
 float4 main(VSOutput input) : SV_TARGET
 {
-    return float4(brightness.rgb, 1.0f);
+    //return float4(brightness.rgb, 1.0f);
     
     float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
 	

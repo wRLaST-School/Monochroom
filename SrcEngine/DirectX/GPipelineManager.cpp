@@ -241,11 +241,16 @@ void GPipelineManager::CreateAll()
 
 	UIPlaneModelDesc.RootSignature.ptr = SpRootSignature::Get("NoLight3D")->rootsignature.Get();
 
+	UIPlaneModelDesc.Blend->Desc.BlendOp = D3D12_BLEND_OP_ADD;
+	UIPlaneModelDesc.Blend->Desc.SrcBlend = D3D12_BLEND_SRC_ALPHA;
+	UIPlaneModelDesc.Blend->Desc.DestBlend = D3D12_BLEND_INV_SRC_ALPHA;
+
 	UIPlaneModelDesc.Shader.pShader = GetShader("UIPlaneModel");
 	UIPlaneModelDesc.Depth.DepthStencilState.DepthEnable = true;
 	UIPlaneModelDesc.Depth.DepthStencilState.StencilEnable = false;
+	//UIPlaneModelDesc.Depth.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ZERO;
 
-	UIPlaneModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
+	UIPlaneModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_BACK;
 
 	GPipeline::Create(UIPlaneModelDesc, "UIPlaneModel");
 #pragma endregion

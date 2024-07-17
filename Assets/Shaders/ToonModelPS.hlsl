@@ -8,7 +8,7 @@ static const float _FresnelMin = 1.0f;
 static const float _FresnelMax = 1.0f;
 static const float3 _FresnelColor = float3(1.0f, 1.0f, 1.0f);
 static const float3 _ShadowColor = float3(0.25f, 0.25f, 0.25f);
-static const float _ShadowBias = 0.0001f;
+static const float _ShadowBias = 0.001f;
 
 Texture2D<float4> tex : register(t0);
 Texture2D<float4> dissolveTex : register(t1);
@@ -30,7 +30,7 @@ float4 main(VSOutput input) : SV_TARGET
     float NdotL = dot(N, L);
     float3 diffuse = 0.5f + NdotL * 0.5f;
     float3 dRate = smoothstep(_LightingCutoff, _LightingCutoff + _FalloffAmount, diffuse);
-    diffuse = dRate * m_diffuse + (1 - dRate) * _ShadowColor;
+    diffuse = dRate + (1 - dRate) * _ShadowColor;
 	
 	// Specular
     float3 V = normalize(cameraPos - input.worldpos.xyz);
@@ -45,7 +45,7 @@ float4 main(VSOutput input) : SV_TARGET
     fresnel *= _FresnelColor;
 
     float4 shadeCol;
-    shadeCol.rgb = (diffuse + specular + fresnel) * lightColor.rgb;
+    shadeCol.rgb = (diffuse /*+ specular*/ + fresnel) * lightColor.rgb;
     shadeCol.a = 1.0f;
 
     float shadow = CalcShadowPFC(input.shadowpos);
@@ -73,7 +73,7 @@ float CalcShadowPFC(float4 spos)
     
     float shadowFactor = 0;
     float shiftNum = 3;
-    float shiftWidth = 0.001f;
+    float shiftWidth = 0.0001f;
     float count = 0;
     [unroll]
     for (float py = -shiftNum / 2; py <= shiftNum / 2; py++)
@@ -92,7 +92,7 @@ float CalcShadowPFC(float4 spos)
             float shadowDepth = shadowMap.Sample(smp, pickUV).r;
             if (shadowDepth + _ShadowBias < z)
             {
-                shadowFactor += 0.25f;
+                shadowFactor += 0.35f;
             }
             count++;
         }

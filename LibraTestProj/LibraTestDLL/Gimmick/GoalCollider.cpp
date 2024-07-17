@@ -8,6 +8,11 @@ void GoalCollider::Init()
 
 void GoalCollider::Update()
 {
+	if (!mObj)
+	{
+		return;
+	}
+
 	Vec3 pos = mObj->position;
 	float r = 1.0f;
 	mClearCollider.Setting(pos, r);

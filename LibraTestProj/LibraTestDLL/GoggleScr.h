@@ -10,8 +10,8 @@ private:
     Object3D* mParent = nullptr;
     Object3D* mOwner = nullptr;
 
-    const Vec3 kNormalPos = { 0,1.5f,0.0f };
-    const Vec3 kEquipPos = { 0,0.01f,-0.22f };
+    const Vec3 kNormalPos = { 0,1.1f,-0.42f };
+    const Vec3 kEquipPos = { 0,-0.1f,-0.42f };
 
     const float kRotOffsetY = PIf;
 
@@ -21,11 +21,15 @@ private:
 
     Vec3 mOwnerFrontVec = { 0,0,0 };
 
+    float mAlpha = 0;
+
     bool mIsMoving = false;
+    bool mIsEquip = false;
 
     std::unique_ptr<Easing>mEasing = nullptr;
 
-    const int kMoveTime = 40;
+    const int kOnMoveTime = 40;
+    const int kOffMoveTime = 32;
 
 public:
     void Init();
@@ -39,6 +43,9 @@ public:
     void SetOwnerFrontVec(const Vec3& front) { mOwnerFrontVec = front; }
 
     void TakeOnOff(bool isEquip);
+
+    bool GetIsEquip() { return mIsEquip; }
+    bool GetIsMoving() { return mIsMoving; }
 
     DefDel;
 };

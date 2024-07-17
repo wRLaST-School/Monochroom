@@ -168,6 +168,9 @@
     <ClInclude Include="StageSelect\SelectPanel.h">
       <Filter>ヘッダー ファイル\StageSelect</Filter>
     </ClInclude>
+    <ClInclude Include="StageGenerating.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -277,6 +280,9 @@
     </ClCompile>
     <ClCompile Include="StageSelect\SelectPanel.cpp">
       <Filter>ソース ファイル\StageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="StageGenerating.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

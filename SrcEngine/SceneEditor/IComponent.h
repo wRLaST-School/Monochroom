@@ -110,11 +110,11 @@ public:
 
 	virtual void CopyComponent(IComponent* src) = 0;
 
-	static void AwakeAllChildComponents(IComponent* parent);
-	static void InitAllChildComponents(IComponent* parent);
-	static void UpdateAllChildComponents(IComponent* parent);
-	static void LateUpdateAllChildComponents(IComponent* parent);
-	static void DrawAllChildComponents(IComponent* parent);
+	static DLLExport void AwakeAllChildComponents(IComponent* parent);
+	static DLLExport void InitAllChildComponents(IComponent* parent);
+	static DLLExport void UpdateAllChildComponents(IComponent* parent);
+	static DLLExport void LateUpdateAllChildComponents(IComponent* parent);
+	static DLLExport void DrawAllChildComponents(IComponent* parent);
 
 	//読み書きに使う関数
 	/*

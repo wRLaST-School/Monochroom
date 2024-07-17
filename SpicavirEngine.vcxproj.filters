@@ -552,6 +552,18 @@
     <ClCompile Include="SrcEngine\PostEffect\SSAO.cpp">
       <Filter>未分類\ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="SrcEngine\PostEffect\BlinkTransition.cpp">
+      <Filter>未分類\ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SrcEngine\PostEffect\RGBShift.cpp">
+      <Filter>未分類\ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SrcEngine\PostEffect\StageGenerating.cpp">
+      <Filter>未分類\ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SrcEngine\PostEffect\KawaseBloom.cpp">
+      <Filter>未分類\ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\Others\Essentials.h">
@@ -941,6 +953,18 @@
     <ClInclude Include="SrcEngine\PostEffect\SSAO.h">
       <Filter>未分類\ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="SrcEngine\PostEffect\BlinkTransition.h">
+      <Filter>未分類\ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SrcEngine\PostEffect\RGBShift.h">
+      <Filter>未分類\ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SrcEngine\PostEffect\StageGenerating.h">
+      <Filter>未分類\ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SrcEngine\PostEffect\KawaseBloom.h">
+      <Filter>未分類\ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shaders\BasicPS.hlsl">
@@ -1066,6 +1090,42 @@
     <FxCompile Include="Assets\Shaders\BilateralFilterVS.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\BlinkTransitionPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\BlinkTransitionVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\RGBShiftVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\RGBShiftPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\StageGeneratingPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\StageGeneratingVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\KawaseBloomP1PS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\KawaseBloomP1VS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\KawaseBloomP2PS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\KawaseBloomP2VS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\KawaseBloomP3PS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\KawaseBloomP3VS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Basic.hlsli">
@@ -1131,6 +1191,24 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Assets\Shaders\BilateralFilter.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\BlinkTransition.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\RGBShift.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\StageGenerating.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\KawaseBloomP1.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\KawaseBloomP2.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Assets\Shaders\KawaseBloomP3.hlsli">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
