@@ -167,6 +167,7 @@ void SelectPanel::TitleUpdate()
 		// 移動が終了したら
 		if (timeRite >= 1.0f)
 		{
+			mTitleMoveTime = 0;
 			IsTitleToSelect = false;
 			mSelectState = SELECTSTAGE;
 			ConsoleWindow::Log("タイトルカメラ移動終了");
