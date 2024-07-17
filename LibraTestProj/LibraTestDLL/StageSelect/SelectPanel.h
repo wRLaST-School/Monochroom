@@ -55,7 +55,7 @@ private:
 	{
 		TITLE,
 		SELECTSTAGE,
-		CAMERAMOVE,
+		MOVETOCAPCEL,
 		STAGECHAGE,
 	};
 
@@ -68,12 +68,26 @@ public:
 
     DefDel;
 private:
+
+	// タイトル？の更新処理
+	void TitleUpdate();
+
+	// セレクトパネルの更新処理
+	void SelectStageUpdate();
+
+	// カプセルに移動の更新処理
+	void MoveToCapcelUpdate();
+
+	// ステージチェンジの更新処理
+	void StageChangeUpdate();
+
 	void CheckNumOver();
 
 	void InitTex();
 private:
 
-	// メイン
+	// メインカメラ
+	Object3D* mCameraObj;
 
 	// ステージセレクト時に選択用のオブジェクト
 	std::vector<std::vector<StageButton>> mStageNum;
@@ -97,5 +111,20 @@ private:
 
 	TextureKey mHyphenTex;
 	std::vector<TextureKey> mNumberTex;
+
+	// セレクトシーンのステート
+	SelectState mSelectState;
+
+	// タイトルカメラ移動の配列
+	Vec3 mTitleCameraFirstPos;
+	Vec3 mTitleCameraFirstRota;
+
+	std::vector<Vec3> mTitleCameraMovePos;
+	std::vector<Vec3> mTitleCameraMoveRota;
+
+	bool IsTitleToSelect;
+	float mTitleMoveTime;
+	float mTitleMoveTimeMax;
+
 };
 RegisterScript(SelectPanel);
