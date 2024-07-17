@@ -17,9 +17,13 @@ void HierarchyPanel::Draw()
 
 void HierarchyPanel::OnImGuiRender()
 {
-	itemIndex = 0;
+	itemIndexByName.clear();
 	if (ImGui::Begin("Hierarchy"))
 	{
+		ImGui::Checkbox("Reorder", &reorder);
+
+		ImGui::Separator();
+
 		ShowItemRecursive(SceneManager::currentScene.get());
 
 		PopWindow();
@@ -67,8 +71,10 @@ void HierarchyPanel::OnImGuiRender()
 
 void HierarchyPanel::ShowItemRecursive(IComponent* current)
 {
-	std::string taggedName = current->name_ + std::string("##") + std::to_string(itemIndex);
-	itemIndex++;
+	//同じ名前ならIndexを加算
+	itemIndexByName[current->name_]++;
+
+	std::string taggedName = current->name_ + std::string("##") + std::to_string(itemIndexByName[current->name_]);
 
 	ImGuiTreeNodeFlags nodeFlags = ImGuiTreeNodeFlags_None;
 
@@ -89,10 +95,24 @@ void HierarchyPanel::ShowItemRecursive(IComponent* current)
 	bool treeNodeTriggered = ImGui::TreeNodeEx(taggedName.c_str(), nodeFlags);
 	ImGui::PopStyleColor(1); // 3つのスタイルカラーをポップ
 
-	if (ImGui::BeginDragDropSource())
+	if (reorder)
 	{
-		ImGui::SetDragDropPayload("HIERARCHY_ITEM_COMPONENT", &current, sizeof(IComponent**), ImGuiCond_Once);
-		ImGui::EndDragDropSource();
+		if (ImGui::BeginDragDropSource())
+		{
+			ImGui::SetDragDropPayload("HIERARCHY_ITEM_COMPONENT_REORDER", 
+				&current, 
+				sizeof(IComponent**), 
+				ImGuiCond_Once);
+			ImGui::EndDragDropSource();
+		}
+	}
+	else
+	{
+		if (ImGui::BeginDragDropSource())
+		{
+			ImGui::SetDragDropPayload("HIERARCHY_ITEM_COMPONENT", &current, sizeof(IComponent**), ImGuiCond_Once);
+			ImGui::EndDragDropSource();
+		}
 	}
 
 	DragDropTarget(current);
@@ -121,6 +141,7 @@ void HierarchyPanel::DragDropTarget(IComponent* current)
 		DDTargetTexture(current);
 		DDTargetModel(current);
 		DDTargetReParent(current);
+		DDTargetReOrder(current);
 
 		ImGui::EndDragDropTarget();
 	}
@@ -180,6 +201,34 @@ void HierarchyPanel::DDTargetReParent(IComponent* current)
 		{
 			castChild->parent = castCurrent;
 		}
+	}
+}
+
+void HierarchyPanel::DDTargetReOrder(IComponent* current)
+{
+	const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("HIERARCHY_ITEM_COMPONENT_REORDER");
+
+	if (payload) {
+		IComponent* cmp = *reinterpret_cast<IComponent**>(payload->Data);
+		if (cmp == nullptr) return;
+		if (cmp == current) return;
+		if (current->parent_ != cmp->parent_) return;
+
+		auto moveitr = current->parent_->components_.end();
+		auto curitr = current->parent_->components_.end();
+
+		for (auto itr = current->parent_->components_.begin(); itr != current->parent_->components_.end(); itr++)
+		{
+			if (itr->get() == cmp) { moveitr = itr; continue; }
+			if (itr->get() == current) { curitr = itr; continue; }
+		}
+
+		if (moveitr == current->parent_->components_.end()) return;
+		if (curitr == current->parent_->components_.end()) return;
+
+		eastl::unique_ptr<IComponent> temp = eastl::move(*moveitr);
+		current->parent_->components_.insert(curitr, eastl::move(temp));
+		current->parent_->components_.erase(moveitr);
 	}
 }
 
