@@ -54,7 +54,7 @@ public:
 	DLLExport void RemoveComponent(IComponent* ptr);
 
 	//指定したキーのコンポーネントを全て削除
-	DLLExport void ClearComponentWithKey(const std::string& key);
+	//DLLExport void ClearComponentWithKey(const std::string& key);
 
 	//全てのコンポーネントを削除
 	DLLExport void ClearAllComponents();
@@ -77,7 +77,7 @@ public:
 	template <class Type> eastl::list<Type*> GetComponents(const std::string& key);
 
 	//全てのコンポーネントを取得
-	const DLLExport eastl::multimap<std::string, eastl::unique_ptr<IComponent>>& GetAllComponents();
+	const DLLExport eastl::list<eastl::unique_ptr<IComponent>>& GetAllComponents();
 
 	//つけられている名前を取得
 	const DLLExport std::string& GetName();
@@ -154,7 +154,7 @@ public:
 protected:
 	std::string name_ = "";
 
-	eastl::multimap<std::string, eastl::unique_ptr<IComponent>> components_;
+	eastl::list<eastl::unique_ptr<IComponent>> components_;
 
 	bool active = true;
 
@@ -169,25 +169,25 @@ private:
 
 	bool deleting = false;
 
-	std::optional<eastl::multimap<std::string, eastl::unique_ptr<IComponent>>::iterator> childRemovedNewItr_;
+	std::optional<eastl::list<eastl::unique_ptr<IComponent>>::iterator> childRemovedNewItr_;
 };
 
 template<class Type, class ...Args>
 inline Type* IComponent::AddComponent(const std::string& key, Args ...args)
 {
-	auto itr = components_.insert(eastl::make_pair(key, eastl::move(eastl::make_unique<Type>(args...))));
-	itr->second->name_ = itr->first;
-	itr->second->parent_ = this;
+	components_.emplace_back(eastl::move(eastl::make_unique<Type>(args...)));
+	auto& back = components_.back();
+	back->name_ = key;
+	back->parent_ = this;
 
-	return dynamic_cast<Type*>(itr->second.get());
+	return dynamic_cast<Type*>(back.get());
 }
 
 template<class Type>
 inline Type* IComponent::GetComponent(const std::string& key)
 {
-	auto c = components_.find(key);
-	if (c == components_.end()) return nullptr;
-	return c->second.get()->CastToScript<Type>();
+	auto c = GetComponent(key);
+	return c.get()->CastToScript<Type>();
 }
 
 template<class Type>
@@ -195,12 +195,12 @@ inline eastl::list<Type*> IComponent::GetComponents(const std::string& key)
 {
 	eastl::list<Type*> hitComponents;
 
-	size_t count = components_.count(key);
-	auto itr = components_.find(key);
-	for (size_t i = 0; i < count; i++)
+	for (auto& c : components_)
 	{
-		hitComponents.emplace_back(itr->second.get()->CastToScript<Type>());
-		itr++;
+		if (c->name_ == key)
+		{
+			hitComponents.emplace_back(c.get()->CastToScript<Type>());
+		}
 	}
 
 	return hitComponents;

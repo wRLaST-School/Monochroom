@@ -88,7 +88,7 @@ void ScriptComponent::CompileScript()
 		{
 			for (auto itr = components.begin(); itr != components.end(); itr++)
 			{
-				GetAllScriptCompsRecursive(list, itr->second.get());
+				GetAllScriptCompsRecursive(list, itr->get());
 			}
 		}
 

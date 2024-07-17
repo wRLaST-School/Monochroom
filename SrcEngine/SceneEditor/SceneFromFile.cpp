@@ -23,12 +23,12 @@ void SceneFromFile::Init()
 {
 	for (auto& c : components_)
 	{
-		AwakeAllChildComponents(c.second.get());
+		AwakeAllChildComponents(c.get());
 	}
 
 	for (auto& c : components_)
 	{
-		InitAllChildComponents(c.second.get());
+		InitAllChildComponents(c.get());
 	}
 
 	auto scripts = SceneManager::FindScripts();

@@ -107,7 +107,7 @@ void HierarchyPanel::ShowItemRecursive(IComponent* current)
 	{
 		for (auto& child : current->components_)
 		{
-			ShowItemRecursive(child.second.get());
+			ShowItemRecursive(child.get());
 		}
 
 		ImGui::TreePop();

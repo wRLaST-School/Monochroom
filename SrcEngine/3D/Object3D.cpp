@@ -56,7 +56,7 @@ void Object3D::UpdateMatrix()
 
 	for (const auto& comp : components_)
 	{
-		Object3D* cast = dynamic_cast<Object3D*>(comp.second.get());
+		Object3D* cast = dynamic_cast<Object3D*>(comp.get());
 		if (cast)
 		{
 			cast->UpdateMatrix();

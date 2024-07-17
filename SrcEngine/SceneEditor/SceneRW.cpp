@@ -98,7 +98,7 @@ void SceneRW::SaveScene(IScene* scene, std::string filePath)
 		current->WriteCommonParamJson(curObj);
 		for (auto& c : current->GetAllComponents())
 		{
-			processNode(curObj["Children"], c.second.get());
+			processNode(curObj["Children"], c.get());
 		}
 
 		parentJsonObj.push_back(curObj);
