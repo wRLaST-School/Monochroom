@@ -77,7 +77,8 @@ void SrPostEffectStage::Render()
 	StageGenerating::Effect(RTVManager::defaultRT, "StageGenerating");
 
 	// ブルーム
-	KawaseBloom::Effect("StageGenerating", "KawaseBloomP3");
+	TextureKey kawaseBloomBaseTex = StageGenerating::info.isDraw ? "StageGenerating" : RTVManager::defaultRT;
+	KawaseBloom::Effect(kawaseBloomBaseTex, "KawaseBloomP3");
 
 	//
 	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
@@ -93,7 +94,7 @@ void SrPostEffectStage::Render()
 
 	NoEffect::Effect("BlinkTransition", "RenderTexture");
 	//NoEffect::Effect("UI", "RenderTexture");
-	
+
 }
 
 void SrPostEffectStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)

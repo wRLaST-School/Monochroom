@@ -8,12 +8,28 @@ struct BlinkTransitionCB
 	float effectTimeMax;
 };
 
+struct BlinkTransitionInfo
+{
+	float speed;
+	bool isInEnd;
+	bool isOutEnd;
+	bool isStart;
+};
+
 class BlinkTransition : public IPostEffector
 {
+public:
+	DLLExport static BlinkTransitionInfo info;
+
 public:
 	static SpConstBuffer<BlinkTransitionCB> cb;
 	static void Init();
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
+
+public:
+	DLLExport static void Start();
+	DLLExport static void TransitionIn();
+	DLLExport static void TransitionOut();
 
 };
 

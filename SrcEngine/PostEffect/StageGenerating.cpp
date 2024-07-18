@@ -2,6 +2,8 @@
 #include <GPipeline.h>
 #include <SpRootSignature.h>
 
+StageGeenratingInfo StageGenerating::info;
+
 void StageGenerating::CreateRS()
 {
 	SpRootSignature* rs = SpRootSignature::Register("StageGenerating");
@@ -73,6 +75,11 @@ void StageGenerating::Init()
 
 void StageGenerating::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 {
+	if (!info.isDraw)
+	{
+		return;
+	}
+
 	IPostEffector::Effect(baseTex, targetTex, "StageGenerating", [&]()
 		{
 			// SR

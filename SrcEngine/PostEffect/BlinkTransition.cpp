@@ -2,6 +2,7 @@
 #include <GPipeline.h>
 
 SpConstBuffer<BlinkTransitionCB> BlinkTransition::cb(true);
+BlinkTransitionInfo BlinkTransition::info;
 
 void BlinkTransition::Init()
 {
@@ -12,6 +13,11 @@ void BlinkTransition::Init()
 	cb.Create();
 	cb.contents->effectTime = 0.f;
 	cb.contents->effectTimeMax = 2.61f;
+
+	info.speed = 0.01f;
+	info.isInEnd = false;
+	info.isOutEnd = false;
+	info.isStart = false;
 }
 
 void BlinkTransition::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
@@ -21,4 +27,53 @@ void BlinkTransition::Effect(const TextureKey& baseTex, const TextureKey& target
 		{
 			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, cb.buffer->GetGPUVirtualAddress());
 		});
+}
+
+void BlinkTransition::Start()
+{
+	cb.contents->effectTime = 0.f;
+	info.isInEnd = false;
+	info.isOutEnd = false;
+
+	info.isStart = true;
+}
+
+void BlinkTransition::TransitionIn()
+{
+	if (info.isStart == false)
+	{
+		return;
+	}
+
+	if (info.isInEnd == false)
+	{
+		cb.contents->effectTime += info.speed;
+	}
+
+	if (cb.contents->effectTime >= cb.contents->effectTimeMax)
+	{
+		cb.contents->effectTime = cb.contents->effectTimeMax;
+		info.isInEnd = true;
+	}
+}
+
+void BlinkTransition::TransitionOut()
+{
+	if (info.isStart == false)
+	{
+		return;
+	}
+
+	if (info.isInEnd == false || info.isOutEnd == true)
+	{
+		return;
+	}
+
+	cb.contents->effectTime -= info.speed;
+	if (cb.contents->effectTime <= 0.f)
+	{
+		cb.contents->effectTime = 0.f;
+		info.isInEnd = false;
+		info.isOutEnd = true;
+	}
 }
