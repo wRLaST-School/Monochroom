@@ -1,16 +1,25 @@
 #pragma once
 #include "IScriptObject.h"
+#include <Object3D.h>
+#include <OBBCollider.h>
 
 class TransparentCollider :
-    public IScriptObject
+	public IScriptObject
 {
 public:
-    void Init();
-    void Update();
-    void Draw();
-    void CopyComponent(IComponent* src) { src; }
+	Object3D* mObj;
+	OBBCollider mBodyCollider;
 
-    DefDel;
+public:
+	void Init();
+	void Update();
+	void Draw();
+	void CopyComponent(IComponent* src) { src; }
+
+	DefDel;
+
+public:
+	OBBCollider GetBodyCollider();
 };
 
 RegisterScript(TransparentCollider);

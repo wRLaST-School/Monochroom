@@ -27,6 +27,7 @@ void CollisionManager::Init()
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
 	mGoalColliders = FindColliderList<GoalCollider>("Goal", "GoalCollider");
 	mGoggleColliders = FindColliderList<GoggleCollider>("Goggle", "GoggleCollider");
+	mTransparentColliders = FindColliderList<TransparentCollider>("Transparent", "TransparentCollider");
 }
 
 void CollisionManager::Update()
@@ -59,6 +60,9 @@ void CollisionManager::Update()
 
 	// プレイヤーとゴール
 	PlayerHitGoals();
+
+	// プレイヤーと透明の壁
+	PlayerHitTransparents();
 
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
@@ -304,6 +308,21 @@ void CollisionManager::PlayerHitGoals()
 			}
 			ConsoleWindow::Log("Hit Goal");
 
+		}
+	}
+}
+
+void CollisionManager::PlayerHitTransparents()
+{
+	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
+
+	for (const auto& tc : mTransparentColliders)
+	{
+		// 押し出し
+		Vec3 pushOut = Vec3::zero;
+		if (tc->GetBodyCollider().IsTrigger(&playerBodyCollider, &pushOut))
+		{
+			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 		}
 	}
 }

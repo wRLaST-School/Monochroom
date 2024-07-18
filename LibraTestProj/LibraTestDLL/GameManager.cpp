@@ -62,6 +62,8 @@ void GameManager::Update()
 	}
 
 	BlinkTransition::TransitionIn();
+
+	// シーン切り替え終わった時にOut
 	//BlinkTransition::TransitionOut();
 }
 

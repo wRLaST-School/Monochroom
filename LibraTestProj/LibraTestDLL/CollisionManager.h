@@ -9,6 +9,7 @@
 #include <GlassCollider.h>
 #include <GoalCollider.h>
 #include <GoggleCollider.h>
+#include <TransparentCollider.h>
 #include <PlayerGoggle.h>
 
 class CollisionManager :
@@ -26,6 +27,7 @@ private:
 	std::vector<GlassCollider*> mGlassColliders;
 	std::vector<GoalCollider*> mGoalColliders;
 	std::vector<GoggleCollider*> mGoggleColliders;
+	std::vector<TransparentCollider*> mTransparentColliders;
 
 private:
 	template<typename T>
@@ -39,6 +41,7 @@ private:
 	void PlayerHitButtons();
 	void PlayerHitGlasses();
 	void PlayerHitGoals();
+	void PlayerHitTransparents();
 	void FlyBlocksHitBlocks();
 	void FlyBlocksHitButtons();
 	void FlyBlocksHitGlasses();
