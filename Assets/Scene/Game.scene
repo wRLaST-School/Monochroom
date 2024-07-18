@@ -3170,7 +3170,7 @@
                 "scaleY": 10.0
             },
             {
-                "Active": true,
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
