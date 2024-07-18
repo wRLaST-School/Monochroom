@@ -4,7 +4,7 @@
 
 struct GrayScaleInfo
 {
-	bool isDraw = true;
+	bool isDraw = false;
 	Vec2 offset;
 };
 
@@ -16,7 +16,7 @@ struct GraySclaeCB
 class GrayScale : public IPostEffector
 {
 public:
-	static GrayScaleInfo info;
+	DLLExport static GrayScaleInfo info;
 	static SpConstBuffer<GraySclaeCB> cb;
 
 public:
