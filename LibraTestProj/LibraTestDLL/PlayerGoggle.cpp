@@ -5,6 +5,7 @@
 #include <GoggleScr.h>
 #include <SceneManager.h>
 #include <SpriteObject.h>
+#include <GrayScale.h>
 
 
 void PlayerGoggle::Init()
@@ -34,6 +35,7 @@ void PlayerGoggle::Update()
 			ConsoleWindow::Log("ChangeEquip");
 
 			mIsEquipGoggle = !mIsEquipGoggle;
+			GrayScale::info.isDraw = mIsEquipGoggle;
 
 			mIsGoggleChangeWaiting = true;
 
@@ -62,7 +64,7 @@ void PlayerGoggle::Update()
 				}
 				mIsGoggleChangeWaiting = false;
 			}
-			else if(goggleScr->GetIsMoving() && !goggleScr->GetIsEquip())
+			else if (goggleScr->GetIsMoving() && !goggleScr->GetIsEquip())
 			{
 				glayScale->Deactivate();
 

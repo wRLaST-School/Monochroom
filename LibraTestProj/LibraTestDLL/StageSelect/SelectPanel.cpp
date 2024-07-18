@@ -29,7 +29,7 @@ void SelectPanel::Init()
 
 	mDisabledPanelScale = { 1,1,1 };
 	mSelectPanelScale = { 1.1f,1.1f,1 };
-	mPressedPanelScale = { 1,1,1 };
+	mPressedPanelScale = { 0.9f,0.9f,0.9f };
 
 	mNumObjMax = 10;
 
@@ -55,6 +55,9 @@ void SelectPanel::Init()
 	mTitleCameraFirstRota = { 0, -10, 0 };
 	mTitleCameraFirstRota = DegreeToRadian(mTitleCameraFirstRota);
 
+	mSceneChangeCameraFirstPos = Vec3(1.6f, 1.1f, -2.73f);
+	mSceneChangeCameraFirstRota = Vec3(65, 0, 0);
+	mSceneChangeCameraFirstRota= DegreeToRadian(mSceneChangeCameraFirstRota);
 
 	// カメラのセット
 	mCameraObj = SceneManager::FindObject<Object3D>("Camera");
@@ -96,21 +99,35 @@ void SelectPanel::Init()
 		}
 	}
 
+	// タイトルのカメラ配列設定
 	mTitleCameraMovePos.push_back(mTitleCameraFirstPos);
 	mTitleCameraMovePos.push_back(Vec3(0, 2, -5));
 	mTitleCameraMovePos.push_back(Vec3(1, 2, -4));
-	mTitleCameraMovePos.push_back(Vec3(1.6f, 1.1f, -2.73f)); 
+	mTitleCameraMovePos.push_back(mSceneChangeCameraFirstPos);
 
-	mTitleCameraMoveRota.push_back(mTitleCameraFirstRota);
+	mTitleCameraMoveRota.push_back(Vec3( 0, -10, 0 ));
 	mTitleCameraMoveRota.push_back(Vec3(0, 0, 0));
 	mTitleCameraMoveRota.push_back(Vec3(25, 15, 0));
 	mTitleCameraMoveRota.push_back(Vec3(65, 0, 0));
+
+	// シーンチェンジのカメラ配列設定
+	mSceneChangeCameraMovePos.push_back(mSceneChangeCameraFirstPos);
+	mSceneChangeCameraMovePos.push_back(Vec3(1, 2, -4.5f));
+	mSceneChangeCameraMovePos.push_back(Vec3(0, 1.8f, -2.5f));
+	mSceneChangeCameraMovePos.push_back(Vec3(0, 2, -0.1f));
+
+	mSceneChangeCameraMoveRota.push_back(Vec3(65, 0, 0));
+	mSceneChangeCameraMoveRota.push_back(Vec3(30, -60, 0));
+	mSceneChangeCameraMoveRota.push_back(Vec3(15, -10, 0));
+	mSceneChangeCameraMoveRota.push_back(Vec3(10, 0, 0));
 
 	mSelectState = TITLE;
 
 	mTitleMoveTime = 0;
 	mTitleMoveTimeMax = 60 * 6;
 
+	mSceneChangeCameraTime = 0;
+	mSceneChangeCameraTimeMax = 60 * 5;
 }
 
 void SelectPanel::Update()
@@ -124,7 +141,7 @@ void SelectPanel::Update()
 		SelectStageUpdate();
 		break;
 	case SelectPanel::MOVETOCAPCEL:
-
+		MoveToCapcelUpdate();
 		break;
 	case SelectPanel::STAGECHAGE:
 
@@ -211,7 +228,16 @@ void SelectPanel::SelectStageUpdate()
 		}
 	}
 
-	mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = SELECT;
+	if (mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state != PRESSED)
+	{
+		mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = SELECT;
+
+		if (Input::Key::Triggered(DIK_Z))
+		{
+			mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = PRESSED;
+		}
+	}
+	
 
 	ConsoleWindow::Log(std::format("ステージ現在番号：Y,{} X,{}", mSelectCurrentNum.y, mSelectCurrentNum.x));
 
@@ -232,9 +258,11 @@ void SelectPanel::SelectStageUpdate()
 				break;
 			case SELECT:
 				mStageNum[i][j].buttonObj->scale = mSelectPanelScale;
+
 				break;
 			case PRESSED:
 				mStageNum[i][j].buttonObj->scale = mPressedPanelScale;
+				mSelectState = MOVETOCAPCEL;
 				break;
 			}
 
@@ -247,6 +275,24 @@ void SelectPanel::SelectStageUpdate()
 
 void SelectPanel::MoveToCapcelUpdate()
 {
+	mSceneChangeCameraTime++;
+	float timeRite = mSceneChangeCameraTime / mSceneChangeCameraTimeMax;
+
+	// スプライン曲線でカメラ座標と回転を変更
+	mCameraObj->position = Vec3::Spline(mSceneChangeCameraMovePos, timeRite);
+
+	Vec3 rota = Vec3::Spline(mSceneChangeCameraMoveRota, timeRite);
+	mCameraObj->rotationE = DegreeToRadian(rota);
+
+	mCameraObj->Update();
+
+	// 移動が終了したら
+	if (timeRite >= 1.0f)
+	{
+		mSceneChangeCameraTime = 0;
+		mSelectState = STAGECHAGE;
+		ConsoleWindow::Log("シーンチェンジカメラ移動終了");
+	}
 }
 
 void SelectPanel::StageChangeUpdate()

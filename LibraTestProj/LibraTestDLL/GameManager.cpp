@@ -3,12 +3,19 @@
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
 #include <AppOperationCommand.h>
+#include <StageGenerating.h>
+#include <BlinkTransition.h>
 
 void GameManager::Init()
 {
 	mPlayer = SceneManager::FindObject<Object3D>("Player");
 	mCamera = SceneManager::FindObject<Camera>("Camera");
 	isStop = false;
+
+	if (SceneManager::GetCurrentScene()->GetName() == "Title")
+	{
+		StageGenerating::info.isDraw = false;
+	}
 }
 
 void GameManager::Update()
@@ -31,6 +38,14 @@ void GameManager::Update()
 	{
 		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
 		{
+			if (BlinkTransition::info.isInEnd)
+			{
+				BlinkTransition::Start();
+			}
+		}
+
+		if (BlinkTransition::info.isInEnd)
+		{
 			// シーンの切り替え処理
 			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			SceneManager::WaitForLoadAndTransition();
@@ -45,6 +60,11 @@ void GameManager::Update()
 		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/" + sceneName + ".scene");
 		SceneManager::WaitForLoadAndTransition();
 	}
+
+	BlinkTransition::TransitionIn();
+
+	// シーン切り替え終わった時にOut
+	//BlinkTransition::TransitionOut();
 }
 
 void GameManager::Draw()

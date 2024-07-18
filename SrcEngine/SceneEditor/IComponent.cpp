@@ -16,11 +16,12 @@ using namespace nlohmann;
 
 IComponent* IComponent::AddComponent(const std::string& key, eastl::unique_ptr<IComponent> component)
 {
-	auto itr = components_.insert(eastl::make_pair(key, eastl::move(component)));
-	itr->second->name_ = itr->first;
-	itr->second->parent_ = this;
+	components_.emplace_back(eastl::move(component));
+	auto& back = components_.back();
+	back->name_ = key;
+	back->parent_ = this;
 
-	return itr->second.get();
+	return back.get();
 }
 
 //void IComponent::CopyComponent(IComponent* src)
@@ -43,9 +44,9 @@ void IComponent::ChangeParent(IComponent* newParent)
 {
 	for (auto itr = parent_->components_.begin(); itr != parent_->components_.end(); itr++)
 	{
-		if ((*itr).second.get() == this)
+		if ((*itr).get() == this)
 		{
-			newParent->components_.emplace(name_, std::move((itr->second)));
+			newParent->components_.emplace_back(std::move((*itr)));
 			parent_->components_.erase(itr);
 			parent_ = newParent;
 			return;
@@ -55,14 +56,9 @@ void IComponent::ChangeParent(IComponent* newParent)
 
 void IComponent::RemoveComponent(const std::string& key)
 {
-	childRemovedNewItr_ = components_.erase(components_.find(key));
-}
-
-void IComponent::RemoveComponent(IComponent* ptr)
-{
 	for (auto itr = components_.begin(); itr != components_.end(); itr++)
 	{
-		if (itr->second.get() == ptr)
+		if ((*itr)->name_ == key)
 		{
 			childRemovedNewItr_ = components_.erase(itr);
 			return;
@@ -70,10 +66,29 @@ void IComponent::RemoveComponent(IComponent* ptr)
 	}
 }
 
-void IComponent::ClearComponentWithKey(const std::string& key)
+void IComponent::RemoveComponent(IComponent* ptr)
 {
-	components_.erase(key);
+	for (auto itr = components_.begin(); itr != components_.end(); itr++)
+	{
+		if (itr->get() == ptr)
+		{
+			childRemovedNewItr_ = components_.erase(itr);
+			return;
+		}
+	}
 }
+//
+//void IComponent::ClearComponentWithKey(const std::string& key)
+//{
+//	for (auto itr = components_.begin(); itr != components_.end(); itr++)
+//	{
+//		if ((*itr)->name_ == key)
+//		{
+//			childRemovedNewItr_ = components_.erase(itr);
+//			return;
+//		}
+//	}
+//}
 
 void IComponent::ClearAllComponents()
 {
@@ -82,19 +97,27 @@ void IComponent::ClearAllComponents()
 
 IComponent* IComponent::GetComponent(const std::string& key)
 {
-	return components_.find(key)->second.get();
+	for (auto& c : components_)
+	{
+		if (c->name_ == key)
+		{
+			return c.get();
+		}
+	}
+
+	return nullptr;
 }
 
 eastl::list<IComponent*> IComponent::GetComponents(const std::string& key)
 {
 	eastl::list<IComponent*> hitComponents;
 
-	auto count = components_.count(key);
-	auto itr = components_.find(key);
-	for (size_t i = 0; i < count; i++)
+	for (auto& c : components_)
 	{
-		hitComponents.emplace_back(itr->second.get());
-		itr++;
+		if (c->name_ == key)
+		{
+			hitComponents.emplace_back(c.get());
+		}
 	}
 
 	return hitComponents;
@@ -105,7 +128,7 @@ IComponent* IComponent::Parent()
 	return parent_;
 }
 
-const eastl::multimap<std::string, eastl::unique_ptr<IComponent>>& IComponent::GetAllComponents()
+const eastl::list<eastl::unique_ptr<IComponent>>& IComponent::GetAllComponents()
 {
 	return components_;
 }
@@ -224,7 +247,7 @@ bool IComponent::CheckDelete()
 
 	for (auto& c : components_)
 	{
-		if (c.second->CheckDelete()) {
+		if (c->CheckDelete()) {
 			return true;
 		};
 	}
@@ -265,7 +288,7 @@ void IComponent::AwakeAllChildComponents(IComponent* parent)
 	{
 		for (auto& c : parent->components_)
 		{
-			AwakeAllChildComponents(c.second.get());
+			AwakeAllChildComponents(c.get());
 		}
 	}
 }
@@ -278,7 +301,7 @@ void IComponent::InitAllChildComponents(IComponent* parent)
 	{
 		for (auto& c : parent->components_)
 		{
-			InitAllChildComponents(c.second.get());
+			InitAllChildComponents(c.get());
 		}
 	}
 }
@@ -293,7 +316,7 @@ void IComponent::UpdateAllChildComponents(IComponent* parent)
 	{
 		for (auto itr = parent->components_.begin(); itr != parent->components_.end();)
 		{
-			UpdateAllChildComponents(itr->second.get());
+			UpdateAllChildComponents(itr->get());
 			if (parent->childRemovedNewItr_)
 			{
 				itr = parent->childRemovedNewItr_.value();
@@ -319,7 +342,7 @@ void IComponent::LateUpdateAllChildComponents(IComponent* parent)
 	{
 		for (auto itr = parent->components_.begin(); itr != parent->components_.end();)
 		{
-			LateUpdateAllChildComponents(itr->second.get());
+			LateUpdateAllChildComponents(itr->get());
 			if (parent->childRemovedNewItr_)
 			{
 				itr = parent->childRemovedNewItr_.value();
@@ -345,7 +368,7 @@ void IComponent::DrawAllChildComponents(IComponent* parent)
 	{
 		for (auto& c : parent->components_)
 		{
-			DrawAllChildComponents(c.second.get());
+			DrawAllChildComponents(c.get());
 		}
 	}
 }

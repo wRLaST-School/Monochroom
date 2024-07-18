@@ -19,7 +19,7 @@ void ComponentFactory::CopyComponent(IComponent* src, IComponent* parent)
 	const auto& allComponents = src->GetAllComponents();
 	for (const auto& comp : allComponents)
 	{
-		CopyComponent(comp.second.get(), dest);
+		CopyComponent(comp.get(), dest);
 
 		//classString = comp.second->GetClassString();
 		//AddChildComponent(dest, classString, classString);

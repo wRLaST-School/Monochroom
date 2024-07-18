@@ -64,7 +64,7 @@ void GPipelineManager::CreateAll()
 
 	silhouetteDesc.Depth.DepthStencilState.DepthEnable = true;
 	silhouetteDesc.Depth.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ZERO;
-	silhouetteDesc.Depth.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_GREATER;
+	silhouetteDesc.Depth.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_ALWAYS;
 
 	GPipeline::Create(silhouetteDesc, "Silhouette");
 #pragma endregion

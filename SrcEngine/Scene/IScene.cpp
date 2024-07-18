@@ -4,7 +4,7 @@ void IScene::UpdateAllComponents()
 {
 	for (auto& component : components_)
 	{
-		component.second->Update();
+		component->Update();
 	}
 }
 
@@ -12,6 +12,6 @@ void IScene::DrawAllComponents()
 {
 	for (auto& component : components_)
 	{
-		component.second->Draw();
+		component->Draw();
 	}
 }

@@ -61,6 +61,12 @@ public:
 	 */
 	void DDTargetReParent(IComponent* current);
 	/**
+	 * @brief ドラッグドロップ受付結果が他のコンポーネントかつ移動前にSHIFTが押されていて順番を変更する場合
+	 *
+	 * @param current 対象コンポーネント
+	 */
+	void DDTargetReOrder(IComponent* current);
+	/**
 	 * @brief Static描画関数
 	 * 
 	 */
@@ -71,10 +77,10 @@ public:
 
 private:
 
-	int32_t itemIndex = 0;
+	eastl::map<std::string, int32_t> itemIndexByName;
 	IComponent* selected;
 	IComponent* copy;
-
+	bool reorder = false;
 public://singleton
 	HierarchyPanel(const HierarchyPanel&) = delete;
 	HierarchyPanel(HierarchyPanel&&) = delete;

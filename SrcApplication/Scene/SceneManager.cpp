@@ -63,12 +63,12 @@ DLLExport IComponent* SceneManager::FindObjectRecursive(const std::string& name,
 {
 	for (const auto& comp : component->GetAllComponents())
 	{
-		if (comp.second->GetName() == name)
+		if (comp->GetName() == name)
 		{
-			return comp.second.get();
+			return comp.get();
 		}
 
-		IComponent* found = FindObjectRecursive(name, comp.second.get());
+		IComponent* found = FindObjectRecursive(name, comp.get());
 		if (found)
 		{
 			return found;
@@ -92,12 +92,12 @@ DLLExport IComponent* SceneManager::FindObjectTagRecursive(const std::string& ta
 {
 	for (const auto& comp : component->GetAllComponents())
 	{
-		if (comp.second->FindTag(tag))
+		if (comp->FindTag(tag))
 		{
-			return comp.second.get();
+			return comp.get();
 		}
 
-		IComponent* found = FindObjectTagRecursive(tag, comp.second.get());
+		IComponent* found = FindObjectTagRecursive(tag, comp.get());
 		if (found)
 		{
 			return found;
@@ -116,12 +116,12 @@ DLLExport void SceneManager::FindObjectsTagRecursive(const std::string& tag, ICo
 {
 	for (const auto& comp : component->GetAllComponents())
 	{
-		if (comp.second->FindTag(tag))
+		if (comp->FindTag(tag))
 		{
-			pList->emplace_back(comp.second.get());
+			pList->emplace_back(comp.get());
 		}
 
-		FindObjectsTagRecursive(tag, comp.second.get(), pList);
+		FindObjectsTagRecursive(tag, comp.get(), pList);
 	}
 }
 
@@ -243,11 +243,11 @@ void SceneManager::FindScriptsRecursive(IComponent* component, eastl::list<IComp
 {
 	for (const auto& comp : component->GetAllComponents())
 	{
-		if (comp.second->CastTo<ScriptComponent>())
+		if (comp->CastTo<ScriptComponent>())
 		{
-			pList->emplace_back(comp.second.get());
+			pList->emplace_back(comp.get());
 		}
 
-		FindScriptsRecursive(comp.second.get(), pList);
+		FindScriptsRecursive(comp.get(), pList);
 	}
 }

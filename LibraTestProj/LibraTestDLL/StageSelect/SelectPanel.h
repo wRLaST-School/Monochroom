@@ -122,9 +122,18 @@ private:
 	std::vector<Vec3> mTitleCameraMovePos;
 	std::vector<Vec3> mTitleCameraMoveRota;
 
+	// シーンチェンジカメラ移動の配列
+	Vec3 mSceneChangeCameraFirstPos;
+	Vec3 mSceneChangeCameraFirstRota;
+
+	std::vector<Vec3> mSceneChangeCameraMovePos;
+	std::vector<Vec3> mSceneChangeCameraMoveRota;
+
 	bool IsTitleToSelect;
 	float mTitleMoveTime;
 	float mTitleMoveTimeMax;
 
+	float mSceneChangeCameraTime;
+	float mSceneChangeCameraTimeMax;
 };
 RegisterScript(SelectPanel);

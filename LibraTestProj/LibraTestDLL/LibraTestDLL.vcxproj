@@ -35,7 +35,6 @@
     <ClInclude Include="SoundTab.h" />
     <ClInclude Include="StageButton.h" />
     <ClInclude Include="StageDoor.h" />
-    <ClInclude Include="StageGenerating.h" />
     <ClInclude Include="StageSelect\SelectPanel.h" />
     <ClInclude Include="UI\CameraTab.h" />
     <ClInclude Include="UI\IUITab.h" />
@@ -76,7 +75,6 @@
     <ClCompile Include="SoundTab.cpp" />
     <ClCompile Include="StageButton.cpp" />
     <ClCompile Include="StageDoor.cpp" />
-    <ClCompile Include="StageGenerating.cpp" />
     <ClCompile Include="StageSelect\SelectPanel.cpp" />
     <ClCompile Include="UI\IUITab.cpp" />
     <ClCompile Include="UI\SuperUI.cpp" />
