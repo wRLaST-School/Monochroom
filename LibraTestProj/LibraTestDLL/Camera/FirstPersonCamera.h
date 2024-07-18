@@ -16,8 +16,8 @@ private:
 
     float mTimer = 0;
 
-    const float kMoveWigglePosLength = 0.0393f;
-    const float kMoveWigglePosSpeed = 0.41f;
+    const float kMoveWigglePosLength = 0.042f;
+    const float kMoveWigglePosSpeed = 0.375f;
     const float kMoveWiggleRotLength = PIf * 0.0009f;
     const float kMoveWiggleRotSpeed = 0.35f;
 
