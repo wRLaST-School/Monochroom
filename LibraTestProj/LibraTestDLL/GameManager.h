@@ -2,6 +2,7 @@
 #include "IScriptObject.h"
 #include <Object3D.h>
 #include <Camera.h>
+#include <StageGenerater.h>
 #include <vector>
 
 class GameManager :
@@ -10,9 +11,12 @@ class GameManager :
 private:
 	Object3D* mPlayer;
 	Camera* mCamera;
+	StageGenerater* mStageGenerater;
 	bool isStop;
+	static bool mIsChangeScene;
 
 public:
+	void Awake();
 	void Init();
 	void Update();
 	void Draw();
@@ -23,6 +27,8 @@ public:
 public:
 	Object3D* GetPlayer();
 	Camera* GetCamera();
+	StageGenerater* GetStageGenerater();
+
 	bool GetisStop();
 
 	// ゲーム一時停止の設定

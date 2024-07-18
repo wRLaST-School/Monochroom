@@ -793,9 +793,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 1.2073701620101929,
-                    "Y": 10.0,
-                    "Z": 5.5143609046936035
+                    "X": 6.848000526428223,
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -805,8 +805,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.6659095883369446,
-                    "Y": 3.1331841945648193,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3084,19 +3084,21 @@
                     },
                     {
                         "Active": true,
-                        "Name": "Script",
-                        "Tags": null,
+                        "Name": "StageGenerater",
+                        "Tags": [
+                            "StageGenerater"
+                        ],
                         "Type": "ScriptComponent",
-                        "filePath": "StageGenerating"
+                        "filePath": "StageGenerater"
                     }
                 ],
                 "DisableDraw": false,
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 330.0
+                    "X": 6.848001003265381,
+                    "Y": 9.38800048828125,
+                    "Z": 2.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3107,7 +3109,7 @@
                 },
                 "RotationEuler": {
                     "X": 0.0,
-                    "Y": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {

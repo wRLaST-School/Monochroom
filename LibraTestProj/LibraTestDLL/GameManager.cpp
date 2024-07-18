@@ -6,16 +6,27 @@
 #include <StageGenerating.h>
 #include <BlinkTransition.h>
 
-void GameManager::Init()
+bool GameManager::mIsChangeScene = false;
+
+void GameManager::Awake()
 {
 	mPlayer = SceneManager::FindObject<Object3D>("Player");
 	mCamera = SceneManager::FindObject<Camera>("Camera");
+	mStageGenerater = SceneManager::FindObjectWithTag<StageGenerater>("StageGenerater");
 	isStop = false;
 
 	if (SceneManager::GetCurrentScene()->GetName() == "Title")
 	{
 		StageGenerating::info.isDraw = false;
 	}
+	else
+	{
+		StageGenerating::info.isDraw = true;
+	}
+}
+
+void GameManager::Init()
+{
 }
 
 void GameManager::Update()
@@ -38,9 +49,14 @@ void GameManager::Update()
 	{
 		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
 		{
-			if (BlinkTransition::info.isInEnd)
+			//// シーンの切り替え処理
+			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+			//SceneManager::WaitForLoadAndTransition();
+
+			if (!mIsChangeScene)
 			{
 				BlinkTransition::Start();
+				mIsChangeScene = true;
 			}
 		}
 
@@ -51,20 +67,45 @@ void GameManager::Update()
 			SceneManager::WaitForLoadAndTransition();
 		}
 	}
-
-	std::string sceneName = SceneManager::GetCurrentScene()->GetName();
-	ConsoleWindow::Log(sceneName);
-	if (AppOperationCommand::GetInstance()->ReStartCommand())
+	else if (SceneManager::GetCurrentScene()->GetName() == "StageSelect")
 	{
-		// シーンの切り替え処理
-		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/" + sceneName + ".scene");
-		SceneManager::WaitForLoadAndTransition();
+
+	}
+	else
+	{
+		if (!mStageGenerater)
+		{
+			ConsoleWindow::Log("mStageGenerater is null");
+			return;
+		}
+
+		// ステージ生成
+		mStageGenerater->Start();
+
+		// リセット
+		std::string sceneName = SceneManager::GetCurrentScene()->GetName();
+		if (AppOperationCommand::GetInstance()->ReStartCommand())
+		{
+			// シーンの切り替え処理
+			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/" + sceneName + ".scene");
+			SceneManager::WaitForLoadAndTransition();
+		}
 	}
 
+	ConsoleWindow::Log("GameManager: isActive");
 	BlinkTransition::TransitionIn();
+	if (SceneManager::GetLoadState() == SceneManager::LoadState::NotInProgress)
+	{
+		if (mIsChangeScene == true)
+		{
+			BlinkTransition::TransitionOut();
 
-	// シーン切り替え終わった時にOut
-	//BlinkTransition::TransitionOut();
+			if (BlinkTransition::info.isOutEnd)
+			{
+				mIsChangeScene = false;
+			}
+		}
+	}
 }
 
 void GameManager::Draw()
@@ -85,6 +126,11 @@ Object3D* GameManager::GetPlayer()
 Camera* GameManager::GetCamera()
 {
 	return mCamera;
+}
+
+StageGenerater* GameManager::GetStageGenerater()
+{
+	return mStageGenerater;
 }
 
 bool GameManager::GetisStop()
