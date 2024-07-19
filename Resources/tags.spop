@@ -13,5 +13,6 @@
     "Goggle",
     "Stage1",
     "Transparent",
-    "StageGenerater"
+    "StageGenerater",
+    "GoggleCollider"
 ]

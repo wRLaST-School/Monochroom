@@ -20,6 +20,16 @@ void BlinkTransition::Init()
 	info.isStart = false;
 }
 
+void BlinkTransition::Reset()
+{
+	cb.contents->effectTime = 0.f;
+	cb.contents->effectTimeMax = 2.61f;
+	info.speed = 0.01f;
+	info.isInEnd = false;
+	info.isOutEnd = false;
+	info.isStart = false;
+}
+
 void BlinkTransition::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 {
 	IPostEffector::Effect(baseTex, targetTex, "BlinkTransition",

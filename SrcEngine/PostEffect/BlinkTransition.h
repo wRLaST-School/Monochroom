@@ -24,6 +24,7 @@ public:
 public:
 	static SpConstBuffer<BlinkTransitionCB> cb;
 	static void Init();
+	DLLExport static void Reset();
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
 
 public:
