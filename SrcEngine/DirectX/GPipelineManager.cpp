@@ -255,5 +255,23 @@ void GPipelineManager::CreateAll()
 	GPipeline::Create(UIPlaneModelDesc, "UIPlaneModel");
 #pragma endregion
 
+	
 
+#pragma region 透明な壁
+
+	RegisterShader("TransparentWall");
+	InitVS("TransparentWall", "TransparentWallVS.hlsl");
+	InitPS("TransparentWall", "TransparentWallPS.hlsl");
+
+	PipelineDesc transparentWallDesc;
+	transparentWallDesc.Render.InputLayout.pInputElementDescs = ModelCommon::inputLayout;
+	transparentWallDesc.Render.InputLayout.NumElements = _countof(ModelCommon::inputLayout);
+
+	transparentWallDesc.RootSignature.ptr = SpRootSignature::Get("3D")->rootsignature.Get();
+
+	transparentWallDesc.Shader.pShader = GetShader("TransparentWall");
+	transparentWallDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
+
+	GPipeline::Create(transparentWallDesc, "TransparentWall");
+#pragma endregion
 }

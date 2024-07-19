@@ -231,20 +231,42 @@
             },
             {
                 "Active": true,
+                "BlendMode": 6,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Name": "StageGenerating",
+                "DisableDraw": false,
+                "Model": "Plane.obj",
+                "Name": "Plane",
+                "NormalType": 0,
+                "Position": {
+                    "X": 0.0,
+                    "Y": 3.448000192642212,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
                 "Tags": null,
-                "Texture": "StageGenerating",
-                "Type": "SpriteObject",
-                "posX": 958.0,
-                "posY": 530.5,
-                "scaleX": 1.0,
-                "scaleY": 1.0
+                "Texture": "",
+                "Type": "Object3D"
             }
         ],
         "EfkEffects": [

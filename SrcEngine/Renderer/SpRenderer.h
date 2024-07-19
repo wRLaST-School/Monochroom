@@ -17,6 +17,7 @@
 #include <SrToonStage.h>
 #include <SrUIPlaneModel.h>
 #include <SrPostRenderStage.h>
+#include <SrTransparentWallStage.h>
 class SpRenderer
 {
 public:
@@ -33,6 +34,7 @@ public:
 		Toon,
 		Silhouette,
 		Alpha,
+		TransparentWall,
 		Particle,
 		PostEffect,
 		PostRender,
@@ -53,6 +55,7 @@ private:
 		std::make_unique<SrToonStage>(),
 		std::make_unique<SrSilhouetteStage>(),
 		std::make_unique<SrAlphaStage>(),
+		std::make_unique<SrTransparentWallStage>(),
 		std::make_unique<SrParticleStage>(),
 		std::make_unique<SrPostEffectStage>(),
 		std::make_unique<SrPostRenderStage>(),
