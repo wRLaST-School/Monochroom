@@ -17,6 +17,7 @@ Object3D::Object3D()
 	shadowCaster = std::make_unique<ShadowCaster>();
 	normalCaster = std::make_unique<NormalCaster>();
 	silhouette = std::make_unique<Silhouette>();
+	holographicCaster = std::make_unique<HolographicCaster>();
 }
 
 void Object3D::UpdateMatrix()
@@ -50,6 +51,7 @@ void Object3D::UpdateMatrix()
 
 	shadowCaster->worldMat = matWorld;
 	normalCaster->worldMat = matWorld;
+	holographicCaster->worldMat = matWorld;
 
 	if (useSilhouette)
 		silhouette->worldMat = matWorld;
@@ -113,6 +115,7 @@ void Object3D::Draw()
 
 	shadowCaster->Draw(model);
 	normalCaster->Draw(model);
+	holographicCaster->Draw(model, texture);
 
 	if (useSilhouette)
 	{
