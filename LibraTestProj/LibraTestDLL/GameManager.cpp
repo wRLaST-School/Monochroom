@@ -5,6 +5,7 @@
 #include <AppOperationCommand.h>
 #include <StageGenerating.h>
 #include <BlinkTransition.h>
+#include <Input.h>
 
 bool GameManager::mIsChangeScene = false;
 
@@ -81,6 +82,16 @@ void GameManager::Update()
 		{
 			ConsoleWindow::Log("mStageGenerater is null");
 			return;
+		}
+
+		if (isStop == false)
+		{
+			Input::Mouse::SetPos(Float2(960, 540));
+			Input::Mouse::HideCursor();
+		}
+		else
+		{
+			Input::Mouse::ShowCursorM();
 		}
 
 		// ステージ生成

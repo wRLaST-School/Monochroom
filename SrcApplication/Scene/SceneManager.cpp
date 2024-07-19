@@ -46,6 +46,7 @@ void SceneManager::Update()
 	else
 	{
 		debugCamera->Update();
+		Input::Mouse::ShowCursorM();
 	}
 }
 

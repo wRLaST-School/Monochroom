@@ -23,7 +23,7 @@ bool AppOperationCommand::PlayerJumpCommand()
 
 Vec3 AppOperationCommand::PlayerAngleCommand()
 {
-	Vec2 mouseMove = Mouse::GetInstance()->GetMouseMove();
+	Vec2 mouseMove = Mouse::GetInstance()->GetVel();
 
 	return Vec3(mouseMove.x, mouseMove.y,0);
 }

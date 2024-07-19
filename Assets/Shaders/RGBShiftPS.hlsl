@@ -28,11 +28,12 @@ float4 main(VSOutput input) : SV_TARGET
     float randomValue = Random(float2(input.uv.y, timer * 0.01f));
     uv.x += randomValue * sin(-sin(_GlitchIntensity) * 0.5f) * sin(-sin(noise) * 0.2f) * frac(timer);
     
-    float r = tex.Sample(smp, uv + shiftR);
-    float g = tex.Sample(smp, uv + shiftG);
-    float b = tex.Sample(smp, uv + shiftB);
+    float r = tex.Sample(smp, uv + shiftR).r;
+    float g = tex.Sample(smp, uv + shiftG).g;
+    float b = tex.Sample(smp, uv + shiftB).b;
     
     float3 shift = float3(r, g, b);
-    return float4(shift, 1);
+    
+    return float4(shift.rgb, 1);
     
 }
