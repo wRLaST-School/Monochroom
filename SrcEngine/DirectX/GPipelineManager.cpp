@@ -8,6 +8,7 @@
 #include "NormalCaster.h"
 #include <Particle.h>
 #include <LineDrawer.h>
+#include <HolographicCaster.h>
 
 void GPipelineManager::CreateAll()
 {
@@ -273,5 +274,23 @@ void GPipelineManager::CreateAll()
 	transparentWallDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
 
 	GPipeline::Create(transparentWallDesc, "TransparentWall");
+#pragma endregion
+
+#pragma region HolographicCaster
+
+	RegisterShader("HolographicCaster");
+	InitVS("HolographicCaster", "HolographicCasterVS.hlsl");
+	InitPS("HolographicCaster", "HolographicCasterPS.hlsl");
+
+	PipelineDesc holographicCasterDesc;
+	holographicCasterDesc.Render.InputLayout.pInputElementDescs = HolographicCasterCommon::inputLayout;
+	holographicCasterDesc.Render.InputLayout.NumElements = _countof(HolographicCasterCommon::inputLayout);
+
+	holographicCasterDesc.RootSignature.ptr = SpRootSignature::Get("HolographicCaster")->rootsignature.Get();
+
+	holographicCasterDesc.Shader.pShader = GetShader("HolographicCaster");
+	holographicCasterDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
+
+	GPipeline::Create(holographicCasterDesc, "HolographicCaster");
 #pragma endregion
 }

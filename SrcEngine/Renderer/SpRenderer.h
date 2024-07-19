@@ -17,6 +17,7 @@
 #include <SrToonStage.h>
 #include <SrUIPlaneModel.h>
 #include <SrPostRenderStage.h>
+#include <SrHolographicCasterStage.h>
 #include <SrTransparentWallStage.h>
 class SpRenderer
 {
@@ -29,6 +30,7 @@ public:
 	enum class Stage {
 		ShadowCaster,
 		NormalCaster,
+		HolographicCaster,
 		Opaque,
 		Add,
 		Toon,
@@ -50,6 +52,7 @@ private:
 	std::unique_ptr<IRenderStage> stages_[(uint32_t)Stage::StageNumMax] = {
 		std::make_unique<SrShadowCasterStage>(),
 		std::make_unique<SrNormalCasterStage>(),
+		std::make_unique<SrHolographicCasterStage>(),
 		std::make_unique<SrOpaqueStage>(),
 		std::make_unique<SrAddStage>(),
 		std::make_unique<SrToonStage>(),
