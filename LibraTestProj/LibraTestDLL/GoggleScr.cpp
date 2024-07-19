@@ -1,11 +1,26 @@
 #include "GoggleScr.h"
 #include <ScriptComponent.h>
 #include <ConsoleWindow.h>
+#include <SceneManager.h>
 
 
 void GoggleScr::Init()
 {
 	mParent = This()->Parent()->CastTo<Object3D>();
+	mLensL = SceneManager::FindChildObject<Object3D>("LensL", mParent);
+	mLensR = SceneManager::FindChildObject<Object3D>("LensR", mParent);
+	mLensL->blendMode = Object3D::BlendMode::Alpha;
+	mLensR->blendMode = Object3D::BlendMode::Alpha;
+
+	mLensR->brightnessCB.contents->x =kLensColor.x;
+	mLensR->brightnessCB.contents->y =kLensColor.y;
+	mLensR->brightnessCB.contents->z =kLensColor.z;
+	mLensR->brightnessCB.contents->w = kLensAlpha;
+
+	mLensL->brightnessCB.contents->x =kLensColor.x;
+	mLensL->brightnessCB.contents->y =kLensColor.y;
+	mLensL->brightnessCB.contents->z =kLensColor.z;
+	mLensL->brightnessCB.contents->w = kLensAlpha;
 
 	mIsMoving = false;
 	mIsEquip = false;

@@ -8,10 +8,15 @@ class GoggleScr :
 {
 private:
     Object3D* mParent = nullptr;
+    Object3D* mLensL = nullptr;
+    Object3D* mLensR = nullptr;
     Object3D* mOwner = nullptr;
 
-    const Vec3 kNormalPos = { 0,1.1f,-0.42f };
-    const Vec3 kEquipPos = { 0,-0.1f,-0.42f };
+    const Vec3 kLensColor = { 0.3f,0.3f,0.3f };
+    const float kLensAlpha = 0.7f;
+
+    const Vec3 kNormalPos = { 0,1.1f,0.42f };
+    const Vec3 kEquipPos = { 0,-0.3f,0.42f };
 
     const float kRotOffsetY = PIf;
 
