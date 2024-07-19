@@ -107,6 +107,9 @@ private:
 	void CheckNumOver();
 
 	void InitTex();
+
+	// リセット
+	void Reset();
 private:
 
 	// メインカメラ

@@ -43,6 +43,9 @@ void SelectPanel::Init()
 
 	mNumTexSize = { 320,320 };
 
+	mCapsuleDefuY = -2.6f;
+	mCapsuleEndY = 0;
+
 	mTitleCameraFirstPos = Vec3(-4, 4.68f, 2);
 	mTitleCameraFirstRota = { 0, -10, 0 };
 	mTitleCameraFirstRota = DegreeToRadianVec3(mTitleCameraFirstRota);
@@ -60,15 +63,19 @@ void SelectPanel::Init()
 
 	// ゴーグルのセット
 	mGoggleObj.reset(SceneManager::FindObject<Object3D>("Goggle"));
+	mGoggleObj->brightnessCB.contents->w = 0;
 
 	// カプセルのセット
 	mCapsuleObj.reset(SceneManager::FindObject<Object3D>("CapsuleDoor"));
+	mCapsuleObj->position.y = mCapsuleDefuY;
 
 	// タイトルの文字のセット
 	mTitleTextObj.reset(SceneManager::FindObject<Object3D>("TitleText"));
+	mTitleTextObj->brightnessCB.contents->w = 0;
 
 	// タイトルのロゴのセット
 	mTitleRogoObj.reset(SceneManager::FindObject<Object3D>("FirstScreen"));
+	mTitleRogoObj->brightnessCB.contents->w = 0;
 
 	mTitleTextSinDefuPosY = 1.3f;
 	mTitleTextSinSwingPosY = 0.02f;
@@ -80,8 +87,7 @@ void SelectPanel::Init()
 	mGoggleSinSwingRotaZ = 15;
 	mGoggleSinSwingRotaZ = DegreeToRadian(mGoggleSinSwingRotaZ);
 
-	mCapsuleDefuY = -2.6f;
-	mCapsuleEndY = 0;
+
 
 	mTitleSinTimer = 0;
 	mTitleSinTimeMax = 180;
@@ -142,6 +148,7 @@ void SelectPanel::Init()
 	mSceneChangeCameraMoveRota.push_back(Vec3(10, 0, 0));
 
 	mSelectState = TITLE;
+	mTitleState = ROGO;
 
 	mTitleMoveTime = 0;
 	mTitleMoveTimeMax = 60 * 6;
@@ -150,14 +157,16 @@ void SelectPanel::Init()
 	mSceneChangeCameraTimeMax = 60 * 5;
 
 	mEaseCapsule.SetEaseTimer(60 * 3);
-
-	mTitleState = ROGO;
-
 	mEaseAlpha.SetEaseTimer((int)(60 * 1.5f));
 }
 
 void SelectPanel::Update()
 {
+	if (Input::Key::Triggered(DIK_R))
+	{
+		Reset();
+	}
+
 	mTitleSinTimer++;
 	if (mTitleSinTimer >= mTitleSinTimeMax)
 	{
@@ -444,5 +453,43 @@ void SelectPanel::InitTex()
 {
 
 }
+
+void SelectPanel::Reset()
+{
+	mTitleState = ROGO;
+	mSelectState = TITLE;
+
+	mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = DISABLED;
+
+	mSelectCurrentNum = { 0,0 };
+
+	mCameraObj->position = mTitleCameraFirstPos;
+	mCameraObj->rotationE = mTitleCameraFirstRota;
+	mCameraObj->Update();
+
+	IsAlphaOn = false;
+	IsTitleToSelect = false;
+
+	mTitleSinTimer = 0;
+
+	mTitleMoveTime = 0;
+	mSceneChangeCameraTime = 0;
+
+	mEaseCapsule.Reset();
+	mEaseAlpha.Reset();
+
+	mGoggleObj->brightnessCB.contents->w = 0;
+	mTitleTextObj->brightnessCB.contents->w = 0;
+	mTitleRogoObj->brightnessCB.contents->w = 0;
+
+	mCapsuleObj->position.y = mCapsuleDefuY;
+
+	mGoggleObj->Update();
+	mTitleTextObj->Update();
+	mTitleRogoObj->Update();
+	mCapsuleObj->Update();
+}
+
+	
 
 RegisterScriptBody(SelectPanel);
