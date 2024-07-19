@@ -19,14 +19,14 @@ public:
 	//非同期で次のシーンの読み込みを開始する
 	template <class NextScene, class... Args> static void LoadScene(Args... args)
 	{
-		if (loadState != LoadState::NotInProgress)
+		if (GetLoadState() != LoadState::NotInProgress)
 		{
 			return;
 		}
 
 		*GetNextScenePP() = std::make_unique<NextScene>(args...);
 
-		loadState = LoadState::Loading;
+		SetLoadState(LoadState::Loading);
 
 		ftr = std::async(std::launch::async, [&] {
 			SpTextureManager::PreLoadNewScene();
@@ -34,7 +34,7 @@ public:
 			SoundManager::PreLoadNewScene();
 			SpEffekseer::PreLoadNewScene();
 			(*GetNextScenePP())->LoadResources();
-			loadFinished = true;
+			SetLoadFinished();
 			});
 	};
 
@@ -58,6 +58,7 @@ public:
 	};
 	//現在のシーン読み込みの状態を取得
 	static DLLExport LoadState GetLoadState();
+	static DLLExport void SetLoadState(LoadState loadState);
 
 	static DLLExport IScene* GetScene();
 
@@ -138,6 +139,7 @@ private:
 	//ロードの状態、毎フレームの最初に更新される
 	inline static LoadState loadState;
 	//こっちはリアルタイム更新、次フレームの最初にリセット
+	DLLExport static void SetLoadFinished();
 	inline static bool loadFinished;
 	static DLLExport void UpdateLoadState();
 	inline static bool transitionQueued;

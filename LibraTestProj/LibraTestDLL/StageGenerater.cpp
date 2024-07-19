@@ -27,10 +27,10 @@ void StageGenerater::Update()
 	{
 		return;
 	}
-	const float moveSpeed = 1.5f;
+	const float moveSpeed = 0.25f;
 	mObj->position += mMoveVec.Norm() * moveSpeed;
 
-	Vec3 end = mMoveVec * 330;
+	Vec3 end = mMoveVec * 100;
 	float dis = Vec3::Distance(mObj->position, end);
 
 	if (dis <= moveSpeed)

@@ -5,6 +5,7 @@
 #include <AppOperationCommand.h>
 #include <StageGenerating.h>
 #include <BlinkTransition.h>
+#include <Input.h>
 
 bool GameManager::mIsChangeScene = false;
 
@@ -18,6 +19,8 @@ void GameManager::Awake()
 	if (SceneManager::GetCurrentScene()->GetName() == "Title")
 	{
 		StageGenerating::info.isDraw = false;
+		mIsChangeScene = false;
+		BlinkTransition::Reset();
 	}
 	else
 	{
@@ -53,6 +56,8 @@ void GameManager::Update()
 			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			//SceneManager::WaitForLoadAndTransition();
 
+			OutputDebugStringA("SceneChangeClick\n");
+
 			if (!mIsChangeScene)
 			{
 				BlinkTransition::Start();
@@ -77,6 +82,16 @@ void GameManager::Update()
 		{
 			ConsoleWindow::Log("mStageGenerater is null");
 			return;
+		}
+
+		if (isStop == false)
+		{
+			Input::Mouse::SetPos(Float2(960, 540));
+			Input::Mouse::HideCursor();
+		}
+		else
+		{
+			Input::Mouse::ShowCursorM();
 		}
 
 		// ステージ生成

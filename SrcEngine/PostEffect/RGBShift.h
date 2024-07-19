@@ -19,7 +19,7 @@ private:
 
 public:
 	static SpConstBuffer<RGBShiftCB> cb;
-
+	static void CreateRS();
 	static void Init();
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
 };
