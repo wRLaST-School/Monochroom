@@ -7,8 +7,8 @@
                 "Name": "Camera",
                 "Position": {
                     "X": 0.0,
-                    "Y": 0.0,
-                    "Z": -10.0
+                    "Y": 1.9999998807907104,
+                    "Z": -0.10000014305114746
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -17,8 +17,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
+                    "X": 0.1745329350233078,
+                    "Y": 4.993427182853338e-08,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1708,15 +1708,95 @@
                                     "Z": 1.0
                                 },
                                 "DisableDraw": false,
+                                "Model": "Goggles.obj",
+                                "Name": "Goggle",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": -0.1208031177520752,
+                                    "Y": 0.7628427743911743,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": -7.0,
+                                    "X": 23.0,
+                                    "Y": 474.923583984375,
+                                    "Z": -0.9612617492675781
+                                },
+                                "RotationEuler": {
+                                    "X": -0.19455485045909882,
+                                    "Y": 288.9111022949219,
+                                    "Z": 0.0872664675116539
+                                },
+                                "Scale": {
+                                    "X": 0.15000000596046448,
+                                    "Y": 0.15000000596046448,
+                                    "Z": 0.15000002086162567
+                                },
+                                "Tags": null,
+                                "Texture": "Goggles.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
                                 "Model": "TVScreen.obj",
-                                "Name": "Screen",
+                                "Name": "TitleText",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": -0.04167532920837402,
+                                    "Y": 1.2851370573043823,
+                                    "Z": 1.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0000001192092896,
+                                    "Y": 0.20000001788139343,
+                                    "Z": 0.9999990463256836
+                                },
+                                "Tags": [
+                                    "TvScreen"
+                                ],
+                                "Texture": "TitleName.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 0.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "FirstScreen",
                                 "NormalType": 0,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
-                                "RenderTarget": "RGBShiftTex",
+                                "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -1741,8 +1821,8 @@
                             }
                         ],
                         "DisableDraw": false,
-                        "Model": "TV2.obj",
-                        "Name": "flyTVTex",
+                        "Model": "TVBlack.obj",
+                        "Name": "TitleflyTVTex",
                         "NormalType": 0,
                         "Position": {
                             "X": -1.7119998931884766,
@@ -1767,7 +1847,7 @@
                             "Z": 0.9999995231628418
                         },
                         "Tags": null,
-                        "Texture": "TV1.png",
+                        "Texture": "TV2Black.png",
                         "Type": "Object3D"
                     },
                     {
@@ -2230,7 +2310,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2269,7 +2349,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2304,8 +2384,8 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.100000023841858,
-                                            "Y": 1.100000023841858,
+                                            "X": 1.0,
+                                            "Y": 1.0,
                                             "Z": 1.0
                                         },
                                         "Tags": null,
@@ -2388,7 +2468,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2427,7 +2507,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2546,7 +2626,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2585,7 +2665,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2744,7 +2824,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2783,7 +2863,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2902,7 +2982,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2941,7 +3021,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2976,9 +3056,9 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.8999999761581421,
+                                            "Y": 0.8999999761581421,
+                                            "Z": 0.8999999761581421
                                         },
                                         "Tags": null,
                                         "Texture": "button.png",
@@ -3060,7 +3140,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3099,7 +3179,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3218,7 +3298,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3257,7 +3337,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3404,18 +3484,18 @@
                         "Active": true,
                         "BlendMode": 3,
                         "Brightness": {
-                            "W": 1.0,
-                            "X": 0.6486486196517944,
-                            "Y": 0.8575602173805237,
+                            "W": 0.7843137383460999,
+                            "X": 0.6470588445663452,
+                            "Y": 0.8588235378265381,
                             "Z": 1.0
                         },
                         "DisableDraw": false,
                         "Model": "door.obj",
-                        "Name": "Door",
+                        "Name": "CapsuleDoor",
                         "NormalType": 0,
                         "Position": {
                             "X": 0.0,
-                            "Y": -2.5999999046325684,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -4898,10 +4978,12 @@
         "Models": [
             {
                 "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
+                "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "TV1.obj": "Assets\\Models\\TV1\\TV1.obj",
                 "TV2.obj": "Assets\\Models\\TV2\\TV2.obj",
                 "TV3.obj": "Assets\\Models\\TV3\\TV3.obj",
+                "TVBlack.obj": "Assets\\Models\\TVBlack\\TVBlack.obj",
                 "TVScreen.obj": "Assets\\Models\\TVScreen\\TVScreen.obj",
                 "button.obj": "Assets\\Models\\button\\button.obj",
                 "door.obj": "Assets\\Models\\door\\door.obj",
@@ -4916,13 +4998,18 @@
         "Textures": [
             {
                 "Black": "Assets/Images/black.png",
+                "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
+                "TV2Black.png": "Assets\\Models\\TVBlack\\TV2Black.png",
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
+                "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
+                "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
                 "asmptex:Assets\\Models\\TV2TV2.png": "Assets\\Models\\TV2/TV2.png",
                 "asmptex:Assets\\Models\\TV3TV3.png": "Assets\\Models\\TV3/TV3.png",
+                "asmptex:Assets\\Models\\TVBlackTV2Black.png": "Assets\\Models\\TVBlack/TV2Black.png",
                 "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "button.png": "Assets\\Models\\button\\button.png",

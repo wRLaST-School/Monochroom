@@ -3,6 +3,7 @@
 #include <Object3D.h>
 #include <Vec2.h>
 #include <Vec3.h>
+#include "Easing.h"
 
 class SelectPanel :
     public IScriptObject
@@ -51,6 +52,12 @@ private:
 		PanelState state;
 	};
 
+	enum TitleState
+	{
+		ROGO,
+		NORMAL,
+	};
+
 	enum SelectState
 	{
 		TITLE,
@@ -68,6 +75,22 @@ public:
 
     DefDel;
 private:
+
+	float DegreeToRadian(float angle);
+
+	Vec3 DegreeToRadianVec3(Vec3& angle);
+
+	float Sin_ZeroToOne(float defuValue, float maxCount, float nowCount, float swingWidth);
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="defuValue">基準となるもの</param>
+	/// <param name="maxCount">最大に到達するまでの時間</param>
+	/// <param name="nowCount">今の時間</param>
+	/// <param name="swingWidth">ふり幅</param>
+	/// <returns></returns>
+	Vec3 Sin_ZeroToOne(Vec3 defuValue, float maxCount, float nowCount, Vec3 swingWidth);
 
 	// タイトル？の更新処理
 	void TitleUpdate();
@@ -88,6 +111,18 @@ private:
 
 	// メインカメラ
 	Object3D* mCameraObj;
+
+	// タイトルフォントオブジェクト
+	std::unique_ptr<Object3D> mTitleTextObj;
+
+	// タイトルロゴオブジェクト
+	std::unique_ptr<Object3D> mTitleRogoObj;
+
+	// タイトル用のゴーグルオブジェクト
+	std::unique_ptr<Object3D> mGoggleObj;
+
+	// カプセルのオブジェクト
+	std::unique_ptr<Object3D> mCapsuleObj;
 
 	// ステージセレクト時に選択用のオブジェクト
 	std::vector<std::vector<StageButton>> mStageNum;
@@ -129,11 +164,32 @@ private:
 	std::vector<Vec3> mSceneChangeCameraMovePos;
 	std::vector<Vec3> mSceneChangeCameraMoveRota;
 
+	TitleState mTitleState;
+
 	bool IsTitleToSelect;
 	float mTitleMoveTime;
 	float mTitleMoveTimeMax;
 
 	float mSceneChangeCameraTime;
 	float mSceneChangeCameraTimeMax;
+
+	float mTitleTextSinDefuPosY;
+	float mTitleTextSinSwingPosY;
+
+	float mGoggleSinDefuPosY;
+	float mGoggleSinSwingPosY;
+
+	float mGoggleSinDefuRotaZ;
+	float mGoggleSinSwingRotaZ;
+
+	float mTitleSinTimer;
+	float mTitleSinTimeMax;
+
+	Easing mEaseAlpha;
+	bool IsAlphaOn;
+
+	Easing mEaseCapsule;
+	float mCapsuleDefuY;
+	float mCapsuleEndY;
 };
 RegisterScript(SelectPanel);
