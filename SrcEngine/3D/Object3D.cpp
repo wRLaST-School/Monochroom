@@ -174,6 +174,15 @@ void Object3D::Draw()
 			return DrawToon();
 		}
 		break;
+	case Object3D::BlendMode::TransparentWall:
+		if (hasTexture) {
+			return DrawTransparentWall(texture);
+		}
+		else
+		{
+			return DrawTransparentWall();
+		}
+		break;
 	default:
 		break;
 	}
@@ -430,6 +439,47 @@ void Object3D::DrawPostRender(const TextureKey& key)
 		}, SpRenderer::Stage::PostRender, GetRT());
 }
 
+void Object3D::DrawTransparentWall()
+{
+	if (model->material.size())
+	{
+		DrawTransparentWall(model->material.front().textureKey);
+	}
+	else
+	{
+		DrawTransparentWall("notexture");
+	}
+}
+
+void Object3D::DrawTransparentWall(const TextureKey& key)
+{
+	transformCB.contents->mat = matWorld;
+	SpRenderer::DrawCommand([&] {
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
+
+		if (model->materialCBs.size())
+			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, model->materialCBs.front().buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(2, transformCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(4, brightnessCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(6, model->bMatrixCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
+
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("Black"));
+
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(9, SpTextureManager::GetGPUDescHandle("ShadowMap_depth_"));
+
+		GetSpDX()->cmdList->IASetVertexBuffers(0, 1, &model->vbView);
+
+		GetSpDX()->cmdList->IASetIndexBuffer(&model->ibView);
+
+		GetSpDX()->cmdList->DrawIndexedInstanced(model->ibView.SizeInBytes / sizeof(uint32_t), 1, 0, 0, 0);
+		}, SpRenderer::Stage::TransparentWall, GetRT());
+}
+
 void Object3D::OnInspectorWindowDraw()
 {
 	if (ImGui::CollapsingHeader("Transform"))
@@ -466,6 +516,7 @@ void Object3D::OnInspectorWindowDraw()
 		ImGui::RadioButton("Toon", &blendModeInt, (int)BlendMode::Toon);
 		ImGui::RadioButton("PostRender", &blendModeInt, (int)BlendMode::PostRender); ImGui::SameLine();
 		ImGui::RadioButton("UIPlane", &blendModeInt, (int)BlendMode::UIPlane);
+		ImGui::RadioButton("TransparentWall", &blendModeInt, (int)BlendMode::TransparentWall);
 		blendMode = (BlendMode)blendModeInt;
 		ImGui::Checkbox("Disable Draw", &disableDraw);
 		ImGui::Separator();

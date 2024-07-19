@@ -1,5 +1,6 @@
 #include "GrayScale.h"
 #include <GPipeline.h>
+#include <SceneManager.h>
 
 GrayScaleInfo GrayScale::info;
 SpConstBuffer<GraySclaeCB> GrayScale::cb(true);

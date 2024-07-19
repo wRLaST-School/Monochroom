@@ -46,6 +46,7 @@ void SceneManager::Update()
 	else
 	{
 		debugCamera->Update();
+		Input::Mouse::ShowCursorM();
 	}
 }
 
@@ -205,6 +206,11 @@ SceneManager::LoadState SceneManager::GetLoadState()
 	return loadState;
 }
 
+void SceneManager::SetLoadState(LoadState argLoadState)
+{
+	loadState = argLoadState;
+}
+
 IScene* SceneManager::GetScene()
 {
 	return currentScene.get();
@@ -219,6 +225,11 @@ template <class NextScene, class... Args> void SceneManager::InstantTransition(A
 	currentScene->LoadResources();
 	currentScene->Init();
 	FrameRate::InitMark();
+}
+
+void SceneManager::SetLoadFinished()
+{
+	loadFinished = true;
 }
 
 void SceneManager::UpdateLoadState()

@@ -102,11 +102,11 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
-	//if (GameManager::GetInstance()->GetisStop() /*||
-	//	!GameManager::GetInstance()->GetStageGenerater()->GetisEnd()*/)
-	//{
-	//	return;
-	//}
+	if (GameManager::GetInstance()->GetisStop()/* ||
+		!GameManager::GetInstance()->GetStageGenerater()->GetisEnd()*/)
+	{
+		return;
+	}
 
 	//ジャンプ
 	if (AppOperationCommand::GetInstance()->PlayerJumpCommand() && !isJump_)

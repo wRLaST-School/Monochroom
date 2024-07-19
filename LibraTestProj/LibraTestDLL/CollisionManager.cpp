@@ -354,11 +354,14 @@ void CollisionManager::FlyBlocksHitBlocks()
 			if (bc->GetBodyCollider().IsTrigger(&flyBlockDownCollider) &&
 				!flyblock->GetIsAttracting())
 			{
-				auto flyBlockObj3D = fbc->Parent()->CastTo<Object3D>();
+				if (flyblock->GetAttractVec().GetLength() == 0)
+				{
+					auto flyBlockObj3D = fbc->Parent()->CastTo<Object3D>();
 
-				float posY = bc->GetBodyCollider().pos.y;
-				float offsetY = bc->GetBodyCollider().scale.y + flyBlockObj3D->scale.y;
-				flyBlockObj3D->position.y = posY + offsetY;
+					float posY = bc->GetBodyCollider().pos.y;
+					float offsetY = bc->GetBodyCollider().scale.y + flyBlockObj3D->scale.y;
+					flyBlockObj3D->position.y = posY + offsetY;
+				}
 
 				flyblock->ZeroGravity();
 				flyblock->EndAttracting();
@@ -507,7 +510,7 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 				if (flyBlock1)
 				{
 					ConsoleWindow::Log("END!");
-					fbc1->Parent()->CastTo<Object3D>()->position += pushOut ;
+					fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
 				}
 			}
 		}
