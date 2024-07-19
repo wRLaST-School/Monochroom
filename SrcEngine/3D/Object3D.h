@@ -8,6 +8,7 @@
 #include <ShadowCaster.h>
 #include <NormalCaster.h>
 #include <Silhouette.h>
+#include <HolographicCaster.h>
 
 struct ConstBufferDataTransform {
 	Matrix mat;//3D変換行列
@@ -120,5 +121,7 @@ public:
 	std::unique_ptr<ShadowCaster> shadowCaster;
 	std::unique_ptr<NormalCaster> normalCaster;
 	std::unique_ptr<Silhouette> silhouette;
+	std::unique_ptr<HolographicCaster> holographicCaster;
+	
 };
 

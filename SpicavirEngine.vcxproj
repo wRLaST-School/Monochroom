@@ -191,6 +191,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SrcEngine\3D\DebugCamera.cpp" />
+    <ClCompile Include="SrcEngine\3D\HolographicCaster.cpp" />
     <ClCompile Include="SrcEngine\3D\NormalCaster.cpp" />
     <ClCompile Include="SrcEngine\3D\ShadowCaster.cpp" />
     <ClCompile Include="SrcEngine\3D\Silhouette.cpp" />
@@ -202,6 +203,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClCompile Include="SrcEngine\PostEffect\RGBShift.cpp" />
     <ClCompile Include="SrcEngine\PostEffect\SSAO.cpp" />
     <ClCompile Include="SrcEngine\PostEffect\StageGenerating.cpp" />
+    <ClCompile Include="SrcEngine\Renderer\SrHolographicCasterStage.cpp" />
     <ClCompile Include="SrcEngine\Renderer\SrShadowCasterStage.cpp" />
     <ClCompile Include="SrcEngine\Renderer\SrSilhouetteStage.cpp" />
     <ClCompile Include="SrcEngine\Renderer\SrToonStage.cpp" />
@@ -321,6 +323,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SrcEngine\3D\DebugCamera.h" />
+    <ClInclude Include="SrcEngine\3D\HolographicCaster.h" />
     <ClInclude Include="SrcEngine\3D\NormalCaster.h" />
     <ClInclude Include="SrcEngine\3D\ShadowCaster.h" />
     <ClInclude Include="SrcEngine\3D\Silhouette.h" />
@@ -332,6 +335,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <ClInclude Include="SrcEngine\PostEffect\RGBShift.h" />
     <ClInclude Include="SrcEngine\PostEffect\SSAO.h" />
     <ClInclude Include="SrcEngine\PostEffect\StageGenerating.h" />
+    <ClInclude Include="SrcEngine\Renderer\SrHolographicCasterStage.h" />
     <ClInclude Include="SrcEngine\Renderer\SrShadowCasterStage.h" />
     <ClInclude Include="SrcEngine\Renderer\SrSilhouetteStage.h" />
     <ClInclude Include="SrcEngine\Renderer\SrToonStage.h" />
@@ -648,6 +652,22 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
     </FxCompile>
+    <FxCompile Include="Assets\Shaders\HolographicCasterPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\HolographicCasterVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug_No_Iterator_Check|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
     <FxCompile Include="Assets\Shaders\KawaseBloomP1PS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
@@ -949,6 +969,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     <None Include="Assets\Shaders\Finalize.hlsli" />
     <None Include="Assets\Shaders\GaussianBlur.hlsli" />
     <None Include="Assets\Shaders\GrayScale.hlsli" />
+    <None Include="Assets\Shaders\HolographicCaster.hlsli" />
     <None Include="Assets\Shaders\KawaseBloomP1.hlsli" />
     <None Include="Assets\Shaders\KawaseBloomP2.hlsli" />
     <None Include="Assets\Shaders\KawaseBloomP3.hlsli" />

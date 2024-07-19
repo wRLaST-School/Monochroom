@@ -100,6 +100,7 @@ void ScriptComponent::CompileScript()
 
 	GetAllScriptCompsRecursive(scriptcomps, SceneManager::currentScene.get());
 
+	//スクリプトコンポーネントを全て保持してdllobjをfree
 	for (auto& c : scriptcomps) {
 		if (c->dllobj_.GetModule())
 			c->dllobj_.Free();
@@ -107,9 +108,8 @@ void ScriptComponent::CompileScript()
 
 	//コンパイル処理
 	//Libra::Compiler::Compile(filePath, compileDest);
-	CPPCompiler::Compile();
 
-	//スクリプトコンポーネントを全て保持してdllobjをfree
+	CPPCompiler::Compile();
 	for (auto& c : scriptcomps) {
 		c->LoadDLL(true);
 	}
