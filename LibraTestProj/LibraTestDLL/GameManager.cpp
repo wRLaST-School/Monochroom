@@ -18,6 +18,8 @@ void GameManager::Awake()
 	if (SceneManager::GetCurrentScene()->GetName() == "Title")
 	{
 		StageGenerating::info.isDraw = false;
+		mIsChangeScene = false;
+		BlinkTransition::Reset();
 	}
 	else
 	{
@@ -52,6 +54,8 @@ void GameManager::Update()
 			//// シーンの切り替え処理
 			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			//SceneManager::WaitForLoadAndTransition();
+
+			OutputDebugStringA("SceneChangeClick\n");
 
 			if (!mIsChangeScene)
 			{
