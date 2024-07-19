@@ -30,8 +30,10 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAO", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "SSAOF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "BlinkTransition", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftTarget", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShift", true);
-	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftTex", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftF", true);
+	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftMask", true);
 
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
@@ -50,7 +52,9 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("SSAOF");
 	SpTextureManager::AddMasterTextureKey("BlinkTransition");
 	SpTextureManager::AddMasterTextureKey("RGBShift");
-	SpTextureManager::AddMasterTextureKey("RGBShiftTex");
+	SpTextureManager::AddMasterTextureKey("RGBShiftTarget");
+	SpTextureManager::AddMasterTextureKey("RGBShiftF");
+	SpTextureManager::AddMasterTextureKey("RGBShiftMask");
 
 	BloomP1::Init();
 	BloomP2::Init();
@@ -82,7 +86,7 @@ void SrPostEffectStage::Render()
 
 	//
 	GaussianBlur::Effect(RTVManager::defaultRT, "GaussianBlur");
-	RGBShift::Effect("RGBShiftTex", "RGBShift");
+	RGBShift::Effect("RGBShiftTarget", "RGBShiftF");
 
 	// グレースケール
 	GrayScale::Effect("KawaseBloomP3", "GrayScale");
