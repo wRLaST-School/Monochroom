@@ -2,6 +2,7 @@
 #include "DebugCamera.h"
 #include <Input.h>
 #include <GameManager.h>
+#include <ConsoleWindow.h>
 
 using namespace Input;
 
@@ -17,6 +18,7 @@ void DebugCamera::Update()
 {
 	if (GameManager::sDebugTimeStop)
 	{
+		ConsoleWindow::Log("SET_DEBUG_CAMERA");
 		Camera::Set(*debugCamera.get());
 	}
 

@@ -14,6 +14,8 @@ private:
 	Object3D* mPlane;
 	Vec3 mMoveVec;
 	float mMoveSpeed;
+
+	Vec3 mEnd;
 public:
 	void Init();
 	void Update();

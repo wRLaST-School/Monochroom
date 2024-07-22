@@ -3,32 +3,32 @@
 #include <ScriptComponent.h>
 #include <Input.h>
 #include <SceneManager.h>
-#include <Camera.h>
 #include <AppOperationCommand.h>
 #include <GameManager.h>
-
+#include <ConsoleWindow.h>
 
 void FirstPersonCamera::Init()
 {
 	isSet = false;
 
-	auto pCamera = This()->Parent()->CastTo<Camera>();
-	Camera::Set(*pCamera);
+	mParentObj = This()->Parent()->CastTo<Camera>();
+	Camera::Set(*mParentObj);
+
+	CameraUpdate();
 }
 
 void FirstPersonCamera::Update()
 {
-	//親オブジェクト
-	mParentObj = This()->Parent()->CastTo<Object3D>();
-
 	//デバッグ画面なら
 	if (GameManager::GetInstance()->GetisStop())
 	{
 		return;
 	}
-	else
+	else if(!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
 	{
-		Camera::Set(*mParentObj->CastTo<Camera>());
+		ConsoleWindow::Log("PLAYER_CAMERA_SET");
+		CameraUpdate();
+		Camera::Set(*mParentObj);
 	}
 	//ステージ演出中なら
 	if (!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
@@ -42,6 +42,11 @@ void FirstPersonCamera::Update()
 		isSet = true;
 	}
 
+	CameraUpdate();
+}
+
+void FirstPersonCamera::CameraUpdate()
+{
 	//プレイヤーオブジェクト
 	player = SceneManager::FindObject<Object3D>("Player");
 	if (!player || !mParentObj)
@@ -68,6 +73,13 @@ void FirstPersonCamera::Update()
 
 	mParentObj->position = Vec3(player->position) + Vec3(0, kMoveWiggleOffsetPos, 0);
 	mParentObj->rotationE = Vec3(player->rotationE) + Vec3(0, 0, kMoveWiggleOffsetRot);
+}
+
+void FirstPersonCamera::CameraPosRotUpdateOnly()
+{
+	player = SceneManager::FindObject<Object3D>("Player");
+	mParentObj->position = Vec3(player->position);
+	mParentObj->rotationE = Vec3(player->rotationE);
 }
 
 void FirstPersonCamera::Draw()
