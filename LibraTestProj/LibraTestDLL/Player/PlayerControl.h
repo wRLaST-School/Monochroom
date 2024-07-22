@@ -54,6 +54,11 @@ public:
 	Vec2 GetMouseSensitivity();
 	void SetMouseSensitivity(Vec2 mouseSensitivity);
 
+	Vec3 GetMoveVec() {
+		return moveVec_
+			;
+	}
+
 	const Vec3& GetFrontVec() { return frontVec_; }
 
 	void GravityToZero();

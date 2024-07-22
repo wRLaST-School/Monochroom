@@ -13,7 +13,7 @@ private:
 	Object3D* mPlaneAlpha;
 	Object3D* mPlane;
 	Vec3 mMoveVec;
-
+	float mMoveSpeed;
 public:
 	void Init();
 	void Update();

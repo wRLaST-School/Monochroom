@@ -169,7 +169,7 @@ void SingleCamTestScene::DrawBack()
 
 void SingleCamTestScene::Draw3D()
 {
-	Camera::Set(camera);
+	//Camera::Set(camera);
 
 	//pane2.DrawAlpha("white");
 	pane.Draw("white");

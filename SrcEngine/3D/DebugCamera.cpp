@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "DebugCamera.h"
 #include <Input.h>
+#include <GameManager.h>
 
 using namespace Input;
 
@@ -14,6 +15,11 @@ DebugCamera::DebugCamera() :
 
 void DebugCamera::Update()
 {
+	if (GameManager::sDebugTimeStop)
+	{
+		Camera::Set(*debugCamera.get());
+	}
+
 	static Vec3 target = Vec3::zero;
 
 	Vec2 mouseMove =
@@ -136,5 +142,4 @@ void DebugCamera::Update()
 
 	}
 	debugCamera->UpdateMatrix();
-	Camera::Set(*debugCamera.get());
 }
