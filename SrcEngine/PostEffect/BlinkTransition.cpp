@@ -85,5 +85,6 @@ void BlinkTransition::TransitionOut()
 		cb.contents->effectTime = 0.f;
 		info.isInEnd = false;
 		info.isOutEnd = true;
+		info.isStart = false;
 	}
 }

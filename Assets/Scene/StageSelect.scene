@@ -18,7 +18,7 @@
                 },
                 "RotationEuler": {
                     "X": 0.0,
-                    "Y": -0.1745329201221466,
+                    "Y": -0.1745329350233078,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -50,6 +50,47 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": [
+                                    "TvScreen"
+                                ],
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -137,9 +178,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.2857142686843872,
+                                    "Y": 0.2857142686843872,
+                                    "Z": 0.2857142686843872
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -170,7 +211,7 @@
                                 "Tags": [
                                     "TvScreen"
                                 ],
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -214,6 +255,47 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": [
+                                    "TvScreen"
+                                ],
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -301,9 +383,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.3281853199005127,
+                                    "Y": 0.3281853199005127,
+                                    "Z": 0.3281853199005127
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -334,7 +416,7 @@
                                 "Tags": [
                                     "TvScreen"
                                 ],
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -396,7 +478,7 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
-                                "RenderTarget": "",
+                                "RenderTarget": "RGBShiftTarget",
                                 "Rotation": {
                                     "W": 1.0,
                                     "X": 0.0,
@@ -414,6 +496,47 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": [
+                                    "TvScreen"
+                                ],
                                 "Texture": "TVScreen.png",
                                 "Type": "Object3D"
                             }
@@ -516,6 +639,45 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
                                 "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
@@ -583,9 +745,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.41698843240737915,
+                                    "Y": 0.3992784917354584,
+                                    "Z": 0.3992784917354584
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -614,7 +776,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "testTex",
                                 "Type": "Object3D"
                             }
                         ],
@@ -658,6 +820,45 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -756,6 +957,45 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
                                 "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
@@ -818,6 +1058,45 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -916,6 +1195,45 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
                                 "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
@@ -983,9 +1301,48 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.7451737523078918,
+                                    "Y": 0.7451737523078918,
+                                    "Z": 0.7451737523078918
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Stars.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -1014,7 +1371,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "white.png",
                                 "Type": "Object3D"
                             }
                         ],
@@ -1063,9 +1420,48 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.6332046389579773,
+                                    "Y": 0.6332046389579773,
+                                    "Z": 0.6332046389579773
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "BasicParticle",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 0.24324321746826172,
+                                    "Y": 0.24324321746826172,
+                                    "Z": 0.24324321746826172
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -1094,7 +1490,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -1143,9 +1539,48 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.45559847354888916,
+                                    "Y": 0.45559847354888916,
+                                    "Z": 0.45559847354888916
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Stars.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 0.15830117464065552,
+                                    "Y": 0.15830117464065552,
+                                    "Z": 0.15830117464065552
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -1174,7 +1609,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "button.png",
                                 "Type": "Object3D"
                             }
                         ],
@@ -1263,9 +1698,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.32046329975128174,
+                                    "Y": 0.32046329975128174,
+                                    "Z": 0.32046329975128174
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -1294,7 +1729,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -1338,6 +1773,45 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -1456,6 +1930,45 @@
                                 "Tags": null,
                                 "Texture": "TVScreen.png",
                                 "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
                             }
                         ],
                         "DisableDraw": false,
@@ -1503,9 +2016,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.4478764533996582,
+                                    "Y": 0.4478764533996582,
+                                    "Z": 0.4478764533996582
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -1534,7 +2047,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -1578,6 +2091,45 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -1708,8 +2260,88 @@
                                     "Z": 1.0
                                 },
                                 "DisableDraw": false,
+                                "Model": "Goggles.obj",
+                                "Name": "Goggle",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": -0.1208031177520752,
+                                    "Y": 0.7965121865272522,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": -7.0,
+                                    "X": 23.0,
+                                    "Y": 474.923583984375,
+                                    "Z": -0.9612617492675781
+                                },
+                                "RotationEuler": {
+                                    "X": -0.018262185156345367,
+                                    "Y": 1942.3135986328125,
+                                    "Z": 0.0872664675116539
+                                },
+                                "Scale": {
+                                    "X": 0.15000000596046448,
+                                    "Y": 0.15000000596046448,
+                                    "Z": 0.15000002086162567
+                                },
+                                "Tags": null,
+                                "Texture": "Goggles.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
                                 "Model": "TVScreen.obj",
-                                "Name": "Screen",
+                                "Name": "TitleText",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": -0.04167532920837402,
+                                    "Y": 1.2986048460006714,
+                                    "Z": 1.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0000001192092896,
+                                    "Y": 0.20000001788139343,
+                                    "Z": 0.9999990463256836
+                                },
+                                "Tags": [
+                                    "TvScreen"
+                                ],
+                                "Texture": "TitleName.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 0.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "FirstScreen",
                                 "NormalType": 0,
                                 "Position": {
                                     "X": 0.0,
@@ -1782,8 +2414,8 @@
                             }
                         ],
                         "DisableDraw": false,
-                        "Model": "TV2.obj",
-                        "Name": "flyTVTex",
+                        "Model": "TVBlack.obj",
+                        "Name": "TitleflyTVTex",
                         "NormalType": 0,
                         "Position": {
                             "X": -1.7119998931884766,
@@ -1808,7 +2440,7 @@
                             "Z": 0.9999995231628418
                         },
                         "Tags": null,
-                        "Texture": "TV1.png",
+                        "Texture": "TV2Black.png",
                         "Type": "Object3D"
                     },
                     {
@@ -2085,6 +2717,47 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": [
+                                    "TvScreen"
+                                ],
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
                                 "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
@@ -2193,9 +2866,9 @@
                         "Name": "BackPanel",
                         "NormalType": 0,
                         "Position": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 6.186000347137451
+                            "X": 11.585000038146973,
+                            "Y": -0.1230001449584961,
+                            "Z": -13.43900203704834
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -2206,7 +2879,7 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
@@ -2353,7 +3026,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2392,7 +3065,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2427,9 +3100,9 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 1.100000023841858,
-                                            "Y": 1.100000023841858,
-                                            "Z": 1.0
+                                            "X": 0.8999999761581421,
+                                            "Y": 0.8999999761581421,
+                                            "Z": 0.8999999761581421
                                         },
                                         "Tags": null,
                                         "Texture": "button.png",
@@ -2511,7 +3184,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2550,7 +3223,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2669,7 +3342,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2708,7 +3381,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2867,7 +3540,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -2906,7 +3579,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3025,7 +3698,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3064,7 +3737,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3183,7 +3856,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3222,7 +3895,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3341,7 +4014,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3380,7 +4053,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 1.5707963705062866,
-                                                    "Y": -1.5707963705062866,
+                                                    "Y": 0.0,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -3482,6 +4155,84 @@
                         "Tags": null,
                         "Texture": "",
                         "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "BackPanel",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 6.185999870300293
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 30.0,
+                            "Y": 20.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "white.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "BackPanel",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -11.550000190734863,
+                            "Y": -0.1230001449584961,
+                            "Z": -13.43900203704834
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 30.0,
+                            "Y": 20.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "white.png",
+                        "Type": "Object3D"
                     }
                 ],
                 "DisableDraw": false,
@@ -3527,14 +4278,14 @@
                         "Active": true,
                         "BlendMode": 3,
                         "Brightness": {
-                            "W": 1.0,
-                            "X": 0.6486486196517944,
-                            "Y": 0.8575602173805237,
+                            "W": 0.7843137383460999,
+                            "X": 0.6470588445663452,
+                            "Y": 0.8588235378265381,
                             "Z": 1.0
                         },
                         "DisableDraw": false,
                         "Model": "door.obj",
-                        "Name": "Door",
+                        "Name": "CapsuleDoor",
                         "NormalType": 0,
                         "Position": {
                             "X": 0.0,
@@ -3663,7 +4414,7 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 10.0,
+                    "X": 30.0,
                     "Y": 10.0,
                     "Z": 1.0
                 },
@@ -3696,9 +4447,48 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.46332043409347534,
+                                    "Y": 0.46332043409347534,
+                                    "Z": 0.46332043409347534
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "BasicParticle",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 0.4864864945411682,
+                                    "Y": 0.4864864945411682,
+                                    "Z": 0.4864864945411682
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -3727,7 +4517,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "white.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -3776,9 +4566,48 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.5096524953842163,
+                                    "Y": 0.5096524953842163,
+                                    "Z": 0.5096524953842163
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Stars.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 0.28185325860977173,
+                                    "Y": 0.28185325860977173,
+                                    "Z": 0.28185325860977173
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -3807,7 +4636,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "white.png",
+                                "Texture": "Stars.png",
                                 "Type": "Object3D"
                             }
                         ],
@@ -3856,9 +4685,48 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.48262548446655273,
+                                    "Y": 0.48262548446655273,
+                                    "Z": 0.48262548446655273
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "BasicParticle",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -3936,6 +4804,45 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.4749034643173218,
+                                    "Y": 0.4749034643173218,
+                                    "Z": 0.4749034643173218
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "Stars.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -3967,7 +4874,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "white.png",
+                                "Texture": "Stars.png",
                                 "Type": "Object3D"
                             }
                         ],
@@ -4016,9 +4923,48 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
+                                    "X": 0.8957529067993164,
+                                    "Y": 0.8957529067993164,
+                                    "Z": 0.8957529067993164
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "BasicParticle",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -4047,7 +4993,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "white.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -4187,6 +5133,45 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
                                 "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
@@ -4254,9 +5239,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.3011583089828491,
+                                    "Y": 0.2988327443599701,
+                                    "Z": 0.2988327443599701
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -4285,7 +5270,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -4329,6 +5314,45 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -4445,7 +5469,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "white.png",
                                 "Type": "Object3D"
                             }
                         ],
@@ -4489,6 +5513,45 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -4627,6 +5690,45 @@
                                     "Y": 0.0,
                                     "Z": 0.0
                                 },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
                                 "RenderTarget": "",
                                 "Rotation": {
                                     "W": 1.0,
@@ -4689,6 +5791,45 @@
                             "Z": 1.0
                         },
                         "Children": [
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
+                            },
                             {
                                 "Active": true,
                                 "BlendMode": 0,
@@ -4807,6 +5948,45 @@
                                 "Tags": null,
                                 "Texture": "TVScreen.png",
                                 "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "TVScreen.obj",
+                                "Name": "Screen",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "RGBShiftTarget",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "TVScreen.png",
+                                "Type": "Object3D"
                             }
                         ],
                         "DisableDraw": false,
@@ -4854,9 +6034,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.49420851469039917,
+                                    "Y": 0.49420851469039917,
+                                    "Z": 0.49420851469039917
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -4885,7 +6065,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -4934,9 +6114,9 @@
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
-                                    "X": 1.0,
-                                    "Y": 1.0,
-                                    "Z": 1.0
+                                    "X": 0.3822394013404846,
+                                    "Y": 0.3822394013404846,
+                                    "Z": 0.3822394013404846
                                 },
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
@@ -4965,7 +6145,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
-                                "Texture": "TVScreen.png",
+                                "Texture": "BasicParticle",
                                 "Type": "Object3D"
                             }
                         ],
@@ -5049,7 +6229,7 @@
                 "Texture": "RGBShiftF",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 462.0,
+                "posY": 540.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             }
@@ -5099,6 +6279,7 @@
                 "TV1.obj": "Assets\\Models\\TV1\\TV1.obj",
                 "TV2.obj": "Assets\\Models\\TV2\\TV2.obj",
                 "TV3.obj": "Assets\\Models\\TV3\\TV3.obj",
+                "TVBlack.obj": "Assets\\Models\\TVBlack\\TVBlack.obj",
                 "TVScreen.obj": "Assets\\Models\\TVScreen\\TVScreen.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
                 "button.obj": "Assets\\Models\\button\\button.obj",
@@ -5129,9 +6310,11 @@
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
+                "TV2Black.png": "Assets\\Models\\TVBlack\\TV2Black.png",
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TestTex.png": "Assets\\Images\\TestTex.png",
+                "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
@@ -5141,6 +6324,7 @@
                 "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
                 "asmptex:Assets\\Models\\TV2TV2.png": "Assets\\Models\\TV2/TV2.png",
                 "asmptex:Assets\\Models\\TV3TV3.png": "Assets\\Models\\TV3/TV3.png",
+                "asmptex:Assets\\Models\\TVBlackTV2Black.png": "Assets\\Models\\TVBlack/TV2Black.png",
                 "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",

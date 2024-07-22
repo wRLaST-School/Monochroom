@@ -38,6 +38,36 @@ void RootSignatureManager::RegisterAllRS()
 	}
 #pragma endregion
 
+#pragma region Holographic Caster RS
+	{
+		SpRootSignature* rsSC = SpRootSignature::Register("HolographicCaster");
+
+		rsSC->UseDefaultSettings();
+
+		D3D12_DESCRIPTOR_RANGE descRange{};
+		descRange.NumDescriptors = 1;
+		descRange.RangeType = D3D12_DESCRIPTOR_RANGE_TYPE_SRV;
+		descRange.BaseShaderRegister = 0;
+		descRange.OffsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND;
+
+		//定数バッファ0番マテリアル
+		rsSC->params.emplace_back();
+		rsSC->params[0].ParameterType = D3D12_ROOT_PARAMETER_TYPE_CBV;
+		rsSC->params[0].Descriptor.ShaderRegister = 0;
+		rsSC->params[0].Descriptor.RegisterSpace = 0;
+		rsSC->params[0].ShaderVisibility = D3D12_SHADER_VISIBILITY_ALL;
+
+		//テクスチャレジスタ1番ディゾルブテクスチャ
+		rsSC->params.emplace_back();
+		rsSC->params[1].ParameterType = D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE;
+		rsSC->params[1].DescriptorTable.pDescriptorRanges = &descRange;
+		rsSC->params[1].DescriptorTable.NumDescriptorRanges = 1;
+		rsSC->params[1].ShaderVisibility = D3D12_SHADER_VISIBILITY_ALL;
+
+		rsSC->Create();
+	}
+#pragma endregion
+
 #pragma region Silhouette RS
 	{
 		SpRootSignature* rsSC = SpRootSignature::Register("Silhouette");

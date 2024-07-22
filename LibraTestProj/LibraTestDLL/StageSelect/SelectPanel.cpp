@@ -7,14 +7,6 @@
 #include <ConsoleWindow.h>
 #include <SpTextureManager.h>
 
-Vec3 DegreeToRadian(Vec3& angle)
-{
-
-	Vec3 radian = angle * (float)(PI / 180);
-
-	return radian;
-}
-
 void SelectPanel::Init()
 {
 	mSelectMaxNumY = 2;
@@ -51,13 +43,16 @@ void SelectPanel::Init()
 
 	mNumTexSize = { 320,320 };
 
+	mCapsuleDefuY = -2.6f;
+	mCapsuleEndY = 0;
+
 	mTitleCameraFirstPos = Vec3(-4, 4.68f, 2);
 	mTitleCameraFirstRota = { 0, -10, 0 };
-	mTitleCameraFirstRota = DegreeToRadian(mTitleCameraFirstRota);
+	mTitleCameraFirstRota = DegreeToRadianVec3(mTitleCameraFirstRota);
 
 	mSceneChangeCameraFirstPos = Vec3(1.6f, 1.1f, -2.73f);
 	mSceneChangeCameraFirstRota = Vec3(65, 0, 0);
-	mSceneChangeCameraFirstRota= DegreeToRadian(mSceneChangeCameraFirstRota);
+	mSceneChangeCameraFirstRota= DegreeToRadianVec3(mSceneChangeCameraFirstRota);
 
 	// カメラのセット
 	mCameraObj = SceneManager::FindObject<Object3D>("Camera");
@@ -65,6 +60,37 @@ void SelectPanel::Init()
 	mCameraObj->position = mTitleCameraFirstPos;
 	mCameraObj->rotationE = mTitleCameraFirstRota;
 	mCameraObj->Update();
+
+	// ゴーグルのセット
+	mGoggleObj.reset(SceneManager::FindObject<Object3D>("Goggle"));
+	mGoggleObj->brightnessCB.contents->w = 0;
+
+	// カプセルのセット
+	mCapsuleObj.reset(SceneManager::FindObject<Object3D>("CapsuleDoor"));
+	mCapsuleObj->position.y = mCapsuleDefuY;
+
+	// タイトルの文字のセット
+	mTitleTextObj.reset(SceneManager::FindObject<Object3D>("TitleText"));
+	mTitleTextObj->brightnessCB.contents->w = 0;
+
+	// タイトルのロゴのセット
+	mTitleRogoObj.reset(SceneManager::FindObject<Object3D>("FirstScreen"));
+	mTitleRogoObj->brightnessCB.contents->w = 0;
+
+	mTitleTextSinDefuPosY = 1.3f;
+	mTitleTextSinSwingPosY = 0.02f;
+
+	mGoggleSinDefuPosY = 0.8f;
+	mGoggleSinSwingPosY = 0.05f;
+
+	mGoggleSinDefuRotaZ = 0;
+	mGoggleSinSwingRotaZ = 15;
+	mGoggleSinSwingRotaZ = DegreeToRadian(mGoggleSinSwingRotaZ);
+
+
+
+	mTitleSinTimer = 0;
+	mTitleSinTimeMax = 180;
 
 	// テクスチャ切り分け
 	SpTextureManager::LoadDiv("Assets/Images/numbers1.png", (int)mNumTexSize.x, (int)mNumTexSize.y, 10, 1, mNumberTex);
@@ -122,16 +148,40 @@ void SelectPanel::Init()
 	mSceneChangeCameraMoveRota.push_back(Vec3(10, 0, 0));
 
 	mSelectState = TITLE;
+	mTitleState = ROGO;
 
 	mTitleMoveTime = 0;
 	mTitleMoveTimeMax = 60 * 6;
 
 	mSceneChangeCameraTime = 0;
 	mSceneChangeCameraTimeMax = 60 * 5;
+
+	mEaseCapsule.SetEaseTimer(60 * 3);
+	mEaseAlpha.SetEaseTimer((int)(60 * 1.5f));
 }
 
 void SelectPanel::Update()
 {
+	if (Input::Key::Triggered(DIK_R))
+	{
+		Reset();
+	}
+
+	mTitleSinTimer++;
+	if (mTitleSinTimer >= mTitleSinTimeMax)
+	{
+		mTitleSinTimer = 0;
+	}
+
+	mTitleTextObj->position.y = Sin_ZeroToOne(mTitleTextSinDefuPosY, mTitleSinTimeMax, mTitleSinTimer, mTitleTextSinSwingPosY);
+
+	mGoggleObj->position.y = Sin_ZeroToOne(mGoggleSinDefuPosY, mTitleSinTimeMax, mTitleSinTimer, mGoggleSinSwingPosY);
+	mGoggleObj->rotationE.y += DegreeToRadian(2.0f);
+	mGoggleObj->rotationE.x = Sin_ZeroToOne(mGoggleSinDefuRotaZ, mTitleSinTimeMax, mTitleSinTimer, mGoggleSinSwingRotaZ);
+
+	mTitleTextObj->Update();
+	mGoggleObj->Update();
+
 	switch (mSelectState)
 	{
 	case SelectPanel::TITLE:
@@ -144,7 +194,7 @@ void SelectPanel::Update()
 		MoveToCapcelUpdate();
 		break;
 	case SelectPanel::STAGECHAGE:
-
+		StageChangeUpdate();
 		break;
 	}
 }
@@ -161,35 +211,115 @@ void SelectPanel::CopyComponent(IComponent* src)
 {
 }
 
+float SelectPanel::DegreeToRadian(float angle)
+{
+	float radian = angle * (float)(PI / 180);
+
+	return radian;
+}
+
+Vec3 SelectPanel::DegreeToRadianVec3(Vec3& angle)
+{
+	Vec3 radian = angle * (float)(PI / 180);
+
+	return radian;
+}
+
+float  SelectPanel::Sin_ZeroToOne(float defuValue, float maxCount, float nowCount, float swingWidth)
+{
+	float result = defuValue + swingWidth * (sin((float)PI * 2 / maxCount * nowCount));
+	return result;
+}
+
+Vec3 SelectPanel::Sin_ZeroToOne(Vec3 defuValue, float maxCount, float nowCount, Vec3 swingWidth)
+{
+	float x = defuValue.x + sin((float)PI * 2 / maxCount * nowCount) * swingWidth.x;
+	float y = defuValue.y + sin((float)PI * 2 / maxCount * nowCount) * swingWidth.y;
+	float z = defuValue.z + sin((float)PI * 2 / maxCount * nowCount) * swingWidth.z;
+
+	return Vec3(x, y, z);
+}
+
 void SelectPanel::TitleUpdate()
 {
-	if (Input::Key::Triggered(DIK_SPACE))
+	switch (mTitleState)
 	{
-		IsTitleToSelect = true;
-	}
+	case SelectPanel::ROGO:
 
-	if (IsTitleToSelect)
-	{
-		mTitleMoveTime++;
-		float timeRite = mTitleMoveTime / mTitleMoveTimeMax;
-
-		// スプライン曲線でカメラ座標と回転を変更
-		mCameraObj->position = Vec3::Spline(mTitleCameraMovePos, timeRite);
-
-		Vec3 rota = Vec3::Spline(mTitleCameraMoveRota, timeRite);
-		mCameraObj->rotationE = DegreeToRadian(rota);
-
-		mCameraObj->Update();
-
-		// 移動が終了したら
-		if (timeRite >= 1.0f)
+		if (!IsAlphaOn)
 		{
-			mTitleMoveTime = 0;
-			IsTitleToSelect = false;
-			mSelectState = SELECTSTAGE;
-			ConsoleWindow::Log("タイトルカメラ移動終了");
+			mEaseAlpha.Update();
+			mTitleRogoObj->brightnessCB.contents->w = mEaseAlpha.In(0, 1);
+
+			if (mEaseAlpha.GetisEnd())
+			{
+				mEaseAlpha.Reset();
+				IsAlphaOn = true;
+			}
 		}
+		else
+		{
+			mEaseAlpha.Update();
+			mTitleRogoObj->brightnessCB.contents->w = mEaseAlpha.In(1, 0);
+			if (mEaseAlpha.GetisEnd())
+			{
+				mEaseAlpha.Reset();
+				IsAlphaOn = false;
+				mTitleState = NORMAL;
+			}
+		}
+
+
+		break;
+	case SelectPanel::NORMAL:
+		if (!IsAlphaOn)
+		{
+			mEaseAlpha.Update();
+			mGoggleObj->brightnessCB.contents->w = mEaseAlpha.In(0, 1);
+			mTitleTextObj->brightnessCB.contents->w = mEaseAlpha.In(0, 1);
+
+			if (mEaseAlpha.GetisEnd())
+			{
+				mEaseAlpha.Reset();
+				IsAlphaOn = true;
+			}
+		}
+
+		if (Input::Key::Triggered(DIK_SPACE))
+		{
+			IsTitleToSelect = true;
+			
+		}
+
+		if (IsTitleToSelect)
+		{
+			mTitleMoveTime++;
+			float timeRite = mTitleMoveTime / mTitleMoveTimeMax;
+
+			// スプライン曲線でカメラ座標と回転を変更
+			mCameraObj->position = Vec3::Spline(mTitleCameraMovePos, timeRite);
+
+			Vec3 rota = Vec3::Spline(mTitleCameraMoveRota, timeRite);
+			mCameraObj->rotationE = DegreeToRadianVec3(rota);
+
+			mCameraObj->Update();
+
+			// 移動が終了したら
+			if (timeRite >= 1.0f)
+			{
+				mTitleMoveTime = 0;
+				IsTitleToSelect = false;
+				IsAlphaOn = false;
+				mSelectState = SELECTSTAGE;
+				ConsoleWindow::Log("タイトルカメラ移動終了");
+			}
+		}
+
+		break;
 	}
+
+	mTitleRogoObj->Update();
+	mGoggleObj->Update();
 }
 
 void SelectPanel::SelectStageUpdate()
@@ -282,7 +412,7 @@ void SelectPanel::MoveToCapcelUpdate()
 	mCameraObj->position = Vec3::Spline(mSceneChangeCameraMovePos, timeRite);
 
 	Vec3 rota = Vec3::Spline(mSceneChangeCameraMoveRota, timeRite);
-	mCameraObj->rotationE = DegreeToRadian(rota);
+	mCameraObj->rotationE = DegreeToRadianVec3(rota);
 
 	mCameraObj->Update();
 
@@ -297,6 +427,17 @@ void SelectPanel::MoveToCapcelUpdate()
 
 void SelectPanel::StageChangeUpdate()
 {
+	mEaseCapsule.Update();
+	
+	// カプセルのオブジェクトを上げて、ステージに移動
+	mCapsuleObj->position.y = mEaseCapsule.In(mCapsuleDefuY, mCapsuleEndY);
+	mCapsuleObj->Update();
+
+	// 終了したらステージに移動
+	if (mEaseCapsule.GetisEnd())
+	{
+
+	}
 }
 
 void SelectPanel::CheckNumOver()
@@ -312,5 +453,43 @@ void SelectPanel::InitTex()
 {
 
 }
+
+void SelectPanel::Reset()
+{
+	mTitleState = ROGO;
+	mSelectState = TITLE;
+
+	mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = DISABLED;
+
+	mSelectCurrentNum = { 0,0 };
+
+	mCameraObj->position = mTitleCameraFirstPos;
+	mCameraObj->rotationE = mTitleCameraFirstRota;
+	mCameraObj->Update();
+
+	IsAlphaOn = false;
+	IsTitleToSelect = false;
+
+	mTitleSinTimer = 0;
+
+	mTitleMoveTime = 0;
+	mSceneChangeCameraTime = 0;
+
+	mEaseCapsule.Reset();
+	mEaseAlpha.Reset();
+
+	mGoggleObj->brightnessCB.contents->w = 0;
+	mTitleTextObj->brightnessCB.contents->w = 0;
+	mTitleRogoObj->brightnessCB.contents->w = 0;
+
+	mCapsuleObj->position.y = mCapsuleDefuY;
+
+	mGoggleObj->Update();
+	mTitleTextObj->Update();
+	mTitleRogoObj->Update();
+	mCapsuleObj->Update();
+}
+
+	
 
 RegisterScriptBody(SelectPanel);

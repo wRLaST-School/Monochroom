@@ -19,8 +19,8 @@ void FirstPersonCamera::Update()
 	if (!isSet)
 	{
 		isSet = true;
-		Camera::Set(*parentObj->CastTo<Camera>());
 	}
+	Camera::Set(*parentObj->CastTo<Camera>());
 
 	player = SceneManager::FindObject<Object3D>("Player");
 	if (!player || !parentObj)
