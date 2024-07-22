@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 6.911880970001221,
-                    "Y": 10.040453910827637,
-                    "Z": 9.14258861541748
+                    "X": 6.848000526428223,
+                    "Y": 9.948929786682129,
+                    "Z": 22.193330764770508
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,9 +33,9 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.20999972522258759,
-                    "Y": 4.303183555603027,
-                    "Z": -0.0010337951825931668
+                    "X": -0.2799999713897705,
+                    "Y": 3.9031856060028076,
+                    "Z": 0.0028260766994208097
                 },
                 "Scale": {
                     "X": 1.0,
@@ -793,9 +793,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 6.911880970001221,
+                    "X": 6.848000526428223,
                     "Y": 10.0,
-                    "Z": 9.14258861541748
+                    "Z": 22.193330764770508
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -805,8 +805,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.20999972522258759,
-                    "Y": 4.303183555603027,
+                    "X": -0.2799999713897705,
+                    "Y": 3.9031856060028076,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -852,7 +852,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": -3.831240177154541,
-                    "Y": 10.980400085449219,
+                    "Y": 10.99020004272461,
                     "Z": 21.408416748046875
                 },
                 "RenderTarget": "",
@@ -1016,7 +1016,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": false,
+                "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -1072,6 +1072,399 @@
                                 },
                                 "Tags": null,
                                 "Texture": "black",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Children": [
+                                    {
+                                        "Active": false,
+                                        "BlendMode": 0,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Children": [
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 1.0,
+                                                    "Y": 1.0,
+                                                    "Z": 1.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "Back",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 1.0
+                                                },
+                                                "RenderTarget": "UI",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.800000011920929,
+                                                    "Y": 0.6000000238418579,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "GuidBackText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": -0.46000000834465027,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.20000000298023224,
+                                                    "Y": 0.05000000074505806,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "GuidTex",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.07000000029802322,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.699999988079071,
+                                                    "Y": 0.44999998807907104,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            }
+                                        ],
+                                        "DisableDraw": false,
+                                        "Model": "",
+                                        "Name": "GuidMenu",
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": false,
+                                        "BlendMode": 0,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Children": [
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 1.0,
+                                                    "Y": 1.0,
+                                                    "Z": 1.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "Back",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 1.0
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.800000011920929,
+                                                    "Y": 0.6000000238418579,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.07722008228302002,
+                                                    "Y": 0.07722008228302002,
+                                                    "Z": 0.07722008228302002
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "Text1",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.20000000298023224,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.5,
+                                                    "Y": 0.10000000149011612,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "YesText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": -0.25,
+                                                    "Y": -0.2199999988079071,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.15000000596046448,
+                                                    "Y": 0.05000000074505806,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "NoText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.25,
+                                                    "Y": -0.2200002670288086,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.1599999964237213,
+                                                    "Y": 0.05999999865889549,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            }
+                                        ],
+                                        "DisableDraw": false,
+                                        "Model": "",
+                                        "Name": "QuitTitleMenu",
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "",
+                                        "Type": "Object3D"
+                                    }
+                                ],
+                                "DisableDraw": false,
+                                "Model": "",
+                                "Name": "OtherMenu",
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "",
                                 "Type": "Object3D"
                             },
                             {
@@ -1915,9 +2308,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.7843137383460999,
+                                            "Y": 0.0,
+                                            "Z": 0.0
                                         },
                                         "Children": [
                                             {
@@ -1982,8 +2375,8 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 0.699999988079071,
-                                            "Y": 0.11999999731779099,
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.10000000149011612,
                                             "Z": 0.0
                                         },
                                         "Tags": null,
@@ -2074,9 +2467,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 0.7843137383460999,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
                                         },
                                         "Children": [
                                             {
@@ -2140,87 +2533,8 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 0.6000000238418579,
-                                            "Y": 0.10000000149011612,
-                                            "Z": 0.0
-                                        },
-                                        "Tags": null,
-                                        "Texture": "white.png",
-                                        "Type": "Object3D"
-                                    },
-                                    {
-                                        "Active": true,
-                                        "BlendMode": 4,
-                                        "Brightness": {
-                                            "W": 1.0,
-                                            "X": 0.7843137383460999,
-                                            "Y": 0.0,
-                                            "Z": 0.0
-                                        },
-                                        "Children": [
-                                            {
-                                                "Active": true,
-                                                "BlendMode": 0,
-                                                "Brightness": {
-                                                    "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "DisableDraw": false,
-                                                "Model": "",
-                                                "Name": "SelectText",
-                                                "Position": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "RenderTarget": "UI",
-                                                "Rotation": {
-                                                    "W": 1.0,
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "RotationEuler": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "Scale": {
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "Tags": null,
-                                                "Texture": "",
-                                                "Type": "Object3D"
-                                            }
-                                        ],
-                                        "DisableDraw": false,
-                                        "Model": "Plane.obj",
-                                        "Name": "SelectPlane",
-                                        "NormalType": 0,
-                                        "Position": {
-                                            "X": 0.0,
-                                            "Y": -0.5,
-                                            "Z": 0.8999999761581421
-                                        },
-                                        "RenderTarget": "UI",
-                                        "Rotation": {
-                                            "W": 1.0,
-                                            "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
-                                        },
-                                        "RotationEuler": {
-                                            "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
-                                        },
-                                        "Scale": {
-                                            "X": 0.6000000238418579,
-                                            "Y": 0.10000000149011612,
+                                            "X": 0.699999988079071,
+                                            "Y": 0.11999999731779099,
                                             "Z": 0.0
                                         },
                                         "Tags": null,
@@ -2295,7 +2609,7 @@
                         "filePath": "SuperUI"
                     },
                     {
-                        "Active": true,
+                        "Active": false,
                         "Brightness": {
                             "W": 1.0,
                             "X": 1.0,
@@ -2547,7 +2861,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": -4.189398765563965,
-                    "Y": 9.0,
+                    "Y": 8.995100021362305,
                     "Z": 20.7918643951416
                 },
                 "RenderTarget": "",
@@ -2712,7 +3026,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": -3.862178325653076,
-                    "Y": 13.019599914550781,
+                    "Y": 13.0,
                     "Z": 21.35003089904785
                 },
                 "RenderTarget": "",
@@ -3039,9 +3353,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -911.2874755859375,
+                    "X": -435.4443359375,
                     "Y": 9.383100509643555,
-                    "Z": 764.5188598632813
+                    "Z": -31.299999237060547
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3051,8 +3365,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.2800000011920929,
-                    "Y": 5.392388820648193,
+                    "X": -0.009999999776482582,
+                    "Y": 4.592389106750488,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3432,6 +3746,7 @@
                 "TV1.obj": "Assets\\Models\\TV1\\TV1.obj",
                 "TV2.obj": "Assets\\Models\\TV2\\TV2.obj",
                 "TV3.obj": "Assets\\Models\\TV3\\TV3.obj",
+                "TVBlack.obj": "Assets\\Models\\TVBlack\\TVBlack.obj",
                 "TVScreen.obj": "Assets\\Models\\TVScreen\\TVScreen.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
                 "button.obj": "Assets\\Models\\button\\button.obj",
@@ -3463,9 +3778,11 @@
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
+                "TV2Black.png": "Assets\\Models\\TVBlack\\TV2Black.png",
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TestTex.png": "Assets\\Images\\TestTex.png",
+                "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
@@ -3475,6 +3792,7 @@
                 "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
                 "asmptex:Assets\\Models\\TV2TV2.png": "Assets\\Models\\TV2/TV2.png",
                 "asmptex:Assets\\Models\\TV3TV3.png": "Assets\\Models\\TV3/TV3.png",
+                "asmptex:Assets\\Models\\TVBlackTV2Black.png": "Assets\\Models\\TVBlack/TV2Black.png",
                 "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",

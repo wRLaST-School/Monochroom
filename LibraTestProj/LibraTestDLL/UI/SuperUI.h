@@ -34,7 +34,6 @@ private:// クラス内構造体
         GUID,           // ガイド
         OPTIONS,        // オプション
         QUIT_TITLE,     // タイトルへ戻る
-        QUIT_SELECT,    // セレクトへ戻る
     };
 
     enum UIMenuState 
@@ -44,7 +43,11 @@ private:// クラス内構造体
         PRESSED,    // 押された後の状態
     };
 
-
+    enum UIQuitTitle
+    {
+        Yes,
+        No,
+    };
 
 
 
@@ -129,32 +132,14 @@ private:
     // 親子関係の設定
     void LoadTexInit();
 
-    // メニューが開いた瞬間のリセット
-    void MomentMenuReset();
-
-    // オプションのリセット
-    void ResetOption();
-
-    // UIの項目の更新処理
-    void UIOptionsUpdate();
-
     // UIのメインメニューの更新処理
     void UIMainMenuUpdate();
 
     // UIのタブメニューの更新処理
     void UITabMenuUpdate();
 
-    // カメラメニューの更新処理
-    void CameraMenuUpdate();
-
-    // カメラメニューの描画
-    void CameraMenuDraw();
-
-    // ガイドメニューの描画
-    void GuidMenuDraw();
-
-    // 戻るメニューの描画
-    void QuitMenuDraw();
+    // UIのタイトルへ戻るメニューの更新処理
+    void UITitleMenuUpdate();
 
     // UIのメニューオンにした時の初期化
     void UIMainMenuOnReset();
@@ -168,8 +153,17 @@ private:
     // UIのタブメニューオフにしたときの初期化
     void UITabMenuOff();
 
-    // カメラメニューの時の初期化
-    void UICameraTabOn();
+    // UIのガイドメニューオンにしたときの初期化
+    void UIGuidMenuOn();
+
+    // UIのガイドメニューオフにしたときの初期化
+    void UIGuidMenuOff();
+
+    // UIのタイトルへ戻るメニューオンにしたときの初期化
+    void UIQuitTitleMenuOn();
+
+    // UIのタイトルへ戻るメニューオフにしたときの初期化
+    void UIQuitTitleMenuOff();
 
 private:// メンバー変数
 
@@ -220,6 +214,9 @@ private:// メンバー変数
     // メニューのオプションのタブの項目数
     int mNumOption;
 
+    // メインカメラのオブジェクトを借りて来る
+    std::unique_ptr<Object3D> mMainCameraObj;
+
     // UIの全体の親オブジェクト
     std::unique_ptr<Object3D> mMenuParentObj;
 
@@ -244,6 +241,18 @@ private:// メンバー変数
     GraphicsTab mGpraphicsItem;
     SoundTab mSoundItem;
 
+    // UIガイド関連オブジェ
+    std::unique_ptr<Object3D> mGuidParentObj;
+
+
+    // UIタイトルへ戻る関連オブジェ
+    std::unique_ptr<Object3D> mQuitTitleParentObj;
+    std::vector<UI3DTabItemStatus>mQuitTextObjs;
+    Vec3 mQuitTitleSelectScale;
+    Vec3 mQuitTitleDisabledScale;
+
+    // タイトルへ戻るかどうかのフラグ
+    bool IsBackToTitle;
 
     // UIのメニュー項目にアクセスしたときの演出
     bool IsActiveOption;
@@ -263,6 +272,12 @@ private:// メンバー変数
 
     // UIのタブのオンフラグ
     bool IsUITabOn;
+
+    // UIのガイドメニューオンフラグ
+    bool IsGuidOn;
+
+    // UIのタイトルへ戻るオンフラグ
+    bool IsQuitTitleOn;
 
     // 現在のタブのメニュー番号
     int mCurrentTabNum;
