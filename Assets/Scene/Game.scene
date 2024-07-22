@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 6.911880970001221,
-                    "Y": 10.040453910827637,
-                    "Z": 9.14258861541748
+                    "X": 6.848000526428223,
+                    "Y": 10.21697998046875,
+                    "Z": 22.193330764770508
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,9 +33,9 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.20999972522258759,
-                    "Y": 4.303183555603027,
-                    "Z": -0.0010337951825931668
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
+                    "Z": 0.0
                 },
                 "Scale": {
                     "X": 1.0,
@@ -793,9 +793,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 6.911880970001221,
-                    "Y": 10.0,
-                    "Z": 9.14258861541748
+                    "X": 6.848000526428223,
+                    "Y": 10.21697998046875,
+                    "Z": 22.193330764770508
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -805,8 +805,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.20999972522258759,
-                    "Y": 4.303183555603027,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2712,7 +2712,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": -3.862178325653076,
-                    "Y": 13.019599914550781,
+                    "Y": 13.029399871826172,
                     "Z": 21.35003089904785
                 },
                 "RenderTarget": "",
@@ -2973,7 +2973,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": -0.2617993950843811,
+                            "X": -0.7853981852531433,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -3012,7 +3012,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": -0.7853981852531433,
                             "Y": 0.0,
                             "Z": 1.5707963705062866
                         },
@@ -3039,9 +3039,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -911.2874755859375,
-                    "Y": 9.383100509643555,
-                    "Z": 764.5188598632813
+                    "X": -42.5207633972168,
+                    "Y": 109.84388732910156,
+                    "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3051,8 +3051,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.2800000011920929,
-                    "Y": 5.392388820648193,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3424,6 +3424,7 @@
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
                 "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
+                "LeftLens.obj": "Assets\\Models\\LeftLens\\LeftLens.obj",
                 "LensL.obj": "Assets\\Models\\LensL\\LensL.obj",
                 "LensR.obj": "Assets\\Models\\LensR\\LensR.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
@@ -3460,12 +3461,14 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TestTex.png": "Assets\\Images\\TestTex.png",
+                "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",

@@ -24,7 +24,7 @@ void BlinkTransition::Reset()
 {
 	cb.contents->effectTime = 0.f;
 	cb.contents->effectTimeMax = 2.61f;
-	info.speed = 0.01f;
+	info.speed = 0.025f;
 	info.isInEnd = false;
 	info.isOutEnd = false;
 	info.isStart = false;
@@ -80,11 +80,14 @@ void BlinkTransition::TransitionOut()
 	}
 
 	cb.contents->effectTime -= info.speed;
-	if (cb.contents->effectTime <= 0.f)
+	if (cb.contents->effectTime <= 0.1f)
 	{
-		cb.contents->effectTime = 0.f;
 		info.isInEnd = false;
 		info.isOutEnd = true;
 		info.isStart = false;
+	}
+	if (cb.contents->effectTime <= 0.0f)
+	{
+		cb.contents->effectTime = 0.f;
 	}
 }
