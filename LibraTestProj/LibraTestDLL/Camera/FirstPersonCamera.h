@@ -9,7 +9,7 @@ class FirstPersonCamera :
 {
 private:
     Object3D* player;
-    Object3D* parentObj;
+    Object3D* mParentObj;
     const Vec3 OFFSET = Vec3(0, 0, 1);
 
     float mMoveLength = 0;
