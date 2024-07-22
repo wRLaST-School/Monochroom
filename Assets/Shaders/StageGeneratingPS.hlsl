@@ -5,6 +5,8 @@ Texture2D<float4> depthTex : register(t1);
 Texture2D<float4> planeTex : register(t2);
 SamplerState smp : register(s0);
 
+static const float _Threshold = 0.5f;
+
 float GrayScale(float4 col)
 {
     return 0.2125 * col.r + 0.7154 * col.g + 0.0721 * col.b;
@@ -56,7 +58,8 @@ float Sobel(Texture2D<float4> tex, float2 uv, float2 pixelSize)
     }
 
     float edge = abs(edgeX) + abs(edgeY);
-    return edge;
+    float result = (edge > _Threshold) ? 1.0 : 0.0;
+    return result;
 }
 
 float4 main(VSOutput input) : SV_TARGET
@@ -65,7 +68,7 @@ float4 main(VSOutput input) : SV_TARGET
     float depth = depthTex.Sample(smp, input.uv).r;
     float plane = planeTex.Sample(smp, input.uv).r;
     
-    float4 eage = (Sobel(tex, input.uv, 0.0015f) * (float4(1, 0, 1, 0)));
+    float4 eage = (Sobel(tex, input.uv, 0.0015f) * (float4(0.2f, 0.3f, 0.9f, 0)));
     
     float4 result = plane;
     result.rgb = depth < plane ? mainCol.rgb :/* mainCol.rgb * */eage.rgb;
