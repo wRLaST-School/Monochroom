@@ -20,7 +20,7 @@ void StageGenerater::Init()
 	mIsEnd = false;
 
 	mObj->position.y = -10000;
-	mMoveSpeed = 0.25f;
+	mMoveSpeed = 0.05f;
 }
 
 void StageGenerater::Update()
@@ -39,11 +39,15 @@ void StageGenerater::Update()
 
 	float dis = Vec3::Distance(mObj->position, mEnd);
 
-	if (dis <= mMoveSpeed*1.1f)
+	if (dis <= 100.f)
+	{
+		mIsEnd = true;
+	}
+
+	if (dis <= mMoveSpeed * 1.1f)
 	{
 		mObj->position = mEnd;
 		mIsStart = false;
-		mIsEnd = true;
 	}
 }
 
@@ -65,10 +69,10 @@ void StageGenerater::Start()
 	Object3D* player = GameManager::GetInstance()->GetPlayer();
 
 	mMoveVec = Vec3(sinf(player->rotationE.y), 0.5f, cosf(player->rotationE.y));
-	mObj->position = Vec3(player->position) + mMoveVec.Norm() * 5;
+	mObj->position = Vec3(player->position) + mMoveVec.Norm() * 0.25f;
 	mObj->rotationE = player->rotationE;
 
-	mEnd =  mMoveVec * 100 + mObj->position;
+	mEnd = mMoveVec * 200 + mObj->position;
 }
 
 bool StageGenerater::GetisEnd()
