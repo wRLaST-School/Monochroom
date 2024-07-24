@@ -3,6 +3,8 @@
 #include <SceneManager.h>
 #include <SceneFromFile.h>
 #include <IComponent.h>
+#include <GameManager.h>
+#include <ConsoleWindow.h>
 #include "AppOperationCommand.h"
 
 void SponePoint::Init()
@@ -24,6 +26,13 @@ void SponePoint::Update()
 
 	//	//SponePlayer();
 	//}
+
+	if (GameManager::GetInstance()->GetisStop() &&
+		!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
+	{
+		ConsoleWindow::Log("SPONE_PLAYER");
+		SponePlayer();
+	}
 }
 
 void SponePoint::Draw()

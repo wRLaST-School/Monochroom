@@ -14,14 +14,15 @@ void PlayerControl::Init()
 	mGravity = std::make_unique<Gravity>();
 
 	mMouseSensitivity = { 1,1 };
-	//parent_->rotationE.z = 180.0f;
 
 	mGravity->ZeroVelocity();
 	mGravity->SetUseGravity(true);
 
-	//
-	CameraUpdate();
-	MoveUpdate();
+	frontVec_ = FRONT_VEC_TEMP;
+
+	DirectionUpdate();
+
+	mIsPrepairingCamera = false;
 }
 
 //-------------------------------------------
@@ -65,7 +66,7 @@ void PlayerControl::MoveUpdate()
 
 
 //-------------------------------------------------------------------------------
-void PlayerControl::CameraUpdate()
+void PlayerControl::DirectionUpdate()
 {
 	Vec3 mouseMoveVec = AppOperationCommand::GetInstance()->PlayerAngleCommand();
 
@@ -106,8 +107,23 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
-	if (GameManager::GetInstance()->GetisStop() ||
-		!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
+	//デバッグ画面なら
+	if (GameManager::GetInstance()->GetisStop())
+	{
+		return;
+	}
+	else if (!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
+	{
+		ConsoleWindow::Log("PLAYER_CAMERA_SET2");
+		//ステージ演出のために一回だけ更新しないとおかしくなる
+		if (!mIsPrepairingCamera)
+		{
+			mIsPrepairingCamera = true;
+			DirectionUpdate();
+		}
+	}
+	//ステージ演出中なら
+	if (!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
 	{
 		return;
 	}
@@ -124,7 +140,7 @@ void PlayerControl::Update()
 	JumpUpdate();
 
 	//
-	CameraUpdate();
+	DirectionUpdate();
 
 	//移動更新
 	MoveUpdate();

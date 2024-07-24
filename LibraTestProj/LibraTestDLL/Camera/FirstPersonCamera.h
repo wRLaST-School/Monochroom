@@ -2,6 +2,7 @@
 #include "IScriptObject.h"
 #include <Object3D.h>
 #include <Util/Timer.h>
+#include <Camera.h>
 
 
 class FirstPersonCamera :
@@ -9,7 +10,7 @@ class FirstPersonCamera :
 {
 private:
     Object3D* player;
-    Object3D* mParentObj;
+    Camera* mParentObj;
     const Vec3 OFFSET = Vec3(0, 0, 1);
 
     float mMoveLength = 0;
@@ -26,6 +27,8 @@ private:
 public:
     void Init();
     void Update();
+    void CameraUpdate();
+    void CameraPosRotUpdateOnly();
     void Draw();
     void CopyComponent(IComponent* src);
 
