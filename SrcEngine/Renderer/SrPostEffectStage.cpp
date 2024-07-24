@@ -11,6 +11,7 @@
 #include <RGBShift.h>
 #include <StageGenerating.h>
 #include <KawaseBloom.h>
+#include <SceneManager.h>
 
 void SrPostEffectStage::Init()
 {
@@ -95,8 +96,18 @@ void SrPostEffectStage::Render()
 	//StageGenerating::Effect(RTVManager::defaultRT, "StageGenerater");
 	//RGBShift::Effect("RGBShiftTex", "RGBShift");
 
-	// 最後
-	BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
+	if (SceneManager::currentScene->GetName() == "Title" ||
+		SceneManager::currentScene->GetName() == "StageSelect")
+	{
+		BlinkTransition::Effect("RGBShiftF", "BlinkTransition");
+
+	}
+	else
+	{
+		// 最後
+		BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
+
+	}
 
 	NoEffect::Effect("BlinkTransition", "RenderTexture");
 	//NoEffect::Effect("UI", "RenderTexture");
