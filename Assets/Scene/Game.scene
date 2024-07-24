@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -13.932315826416016,
-                    "Y": 10.0,
-                    "Z": 22.193330764770508
+                    "X": -13.95300006866455,
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -794,7 +794,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": -13.95300006866455,
-                    "Y": 10.0,
+                    "Y": 9.38800048828125,
                     "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
@@ -1026,7 +1026,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -1547,7 +1547,7 @@
                                 "Type": "Object3D"
                             },
                             {
-                                "Active": false,
+                                "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -1585,6 +1585,47 @@
                                                             "Y": 1.0,
                                                             "Z": 0.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D"
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityX",
@@ -2294,7 +2335,7 @@
                                 "Type": "Object3D"
                             },
                             {
-                                "Active": true,
+                                "Active": false,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -3354,7 +3395,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": -80.69953155517578,
-                    "Y": 42.761268615722656,
+                    "Y": -10000.0,
                     "Z": 22.032001495361328
                 },
                 "RenderTarget": "",

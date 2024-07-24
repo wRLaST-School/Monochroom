@@ -6,9 +6,9 @@
                 "Active": true,
                 "Name": "Camera",
                 "Position": {
-                    "X": -4.0,
-                    "Y": 4.679999828338623,
-                    "Z": 2.0
+                    "X": 0.0,
+                    "Y": 1.9999998807907104,
+                    "Z": -0.10000014305114746
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -17,8 +17,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": -0.1745329201221466,
+                    "X": 0.1745329350233078,
+                    "Y": 4.993427182853338e-08,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2254,7 +2254,7 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 0.0,
+                                    "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -2265,7 +2265,7 @@
                                 "NormalType": 0,
                                 "Position": {
                                     "X": -0.1208031177520752,
-                                    "Y": 0.7965121865272522,
+                                    "Y": 0.7595491409301758,
                                     "Z": 0.0
                                 },
                                 "RenderTarget": "RGBShiftTarget",
@@ -2276,8 +2276,8 @@
                                     "Z": -0.9612617492675781
                                 },
                                 "RotationEuler": {
-                                    "X": -0.018262185156345367,
-                                    "Y": 1942.3135986328125,
+                                    "X": -0.21180018782615662,
+                                    "Y": 2439.880859375,
                                     "Z": 0.0872664675116539
                                 },
                                 "Scale": {
@@ -2293,7 +2293,7 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 0.0,
+                                    "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -2304,7 +2304,7 @@
                                 "NormalType": 0,
                                 "Position": {
                                     "X": -0.04167532920837402,
-                                    "Y": 1.2986048460006714,
+                                    "Y": 1.283819556236267,
                                     "Z": 1.0
                                 },
                                 "RenderTarget": "RGBShiftTarget",
@@ -4289,7 +4289,7 @@
                         "NormalType": 0,
                         "Position": {
                             "X": 0.0,
-                            "Y": -2.5999999046325684,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -6232,6 +6232,13 @@
                 "posY": 540.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
+            },
+            {
+                "Active": true,
+                "Name": "GameManager",
+                "Tags": null,
+                "Type": "ScriptComponent",
+                "filePath": "GameManager"
             }
         ],
         "EfkEffects": [
@@ -6293,7 +6300,7 @@
                 "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj"
             }
         ],
-        "Name": "Scene",
+        "Name": "StageSelect",
         "Sounds": [
             {}
         ],
