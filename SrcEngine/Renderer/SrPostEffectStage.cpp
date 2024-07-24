@@ -35,6 +35,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftMask", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "HolographicCaster", true);
+	SpTextureManager::LoadTexture("Assets/Images/goggle.png", "Goggle_Mask");
 
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
@@ -57,6 +58,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("RGBShiftF");
 	SpTextureManager::AddMasterTextureKey("RGBShiftMask");
 	SpTextureManager::AddMasterTextureKey("HolographicCaster");
+	SpTextureManager::AddMasterTextureKey("Goggle_Mask");
 
 	BloomP1::Init();
 	BloomP2::Init();

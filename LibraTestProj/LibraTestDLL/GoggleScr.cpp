@@ -25,6 +25,8 @@ void GoggleScr::Init()
 	mIsMoving = false;
 	mIsEquip = false;
 
+	mParent->brightnessCB.contents->w = 1.0f;
+
 	mEasing = std::make_unique<Easing>();
 	mEasing->SetEaseType(EaseType::InOut);
 
