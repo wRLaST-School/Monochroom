@@ -13,7 +13,19 @@ void CameraTab::Init()
 	mCameraOptionNum = 4;
 
 	mCameraSensivity.resize(mCameraOptionNum);
-
+	mNumberTex.resize(10);
+	mNumberTex = {
+		"zero",
+		"one",
+		"two",
+		"three",
+		"four",
+		"five",
+		"six",
+		"seven",
+		"eight",
+		"nine"
+	};
 	mCameraNoneSelectScale = { 0.9f,0.6f,1 };
 	mCameraSelectScale = { 1,0.8f,1 };
 
@@ -30,6 +42,13 @@ void CameraTab::Init()
 	mCameraUIObj[MOUSESENSITIVITY_Y].planeObj = SceneManager::FindObject<Object3D>("MouseSensitivityY");
 	mCameraUIObj[PADSENSITIVITY_X].planeObj = SceneManager::FindObject<Object3D>("PadSensitivityX");
 	mCameraUIObj[PADSENSITIVITY_Y].planeObj = SceneManager::FindObject<Object3D>("PadSensitivityY");
+
+	SpTextureManager::LoadDiv("Assets/Images/numbers1.png", (int)320, (int)320, 10, 1, mNumberTex);
+
+	for (size_t i = 0; i < mCameraOptionNum; i++)
+	{
+		mCameraUIObj[0].numObj = SceneManager::FindChildObject<Object3D>("Num", mCameraUIObj[0].planeObj);
+	}
 }
 
 void CameraTab::Update()
@@ -89,8 +108,12 @@ void CameraTab::Update()
 			break;
 		}
 
+		mCameraUIObj[0].numObj->texture = mNumberTex[(int)mCameraSensivity[0]];
+
+		//mCameraUIObj[i].numObj->Update();
 		mCameraUIObj[i].planeObj->Update();
 	}
+
 
 	ConsoleWindow::Log(std::format("カメラアイテム値:{},{}\n", mCurrentNum, mCameraSensivity[mCurrentNum]));
 }

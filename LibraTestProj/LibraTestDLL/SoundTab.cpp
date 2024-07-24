@@ -18,7 +18,7 @@ void SoundTab::Init()
 	mSoundSelectScale = { 1,0.8f,1 };
 
 	mSoundDefuValue = 1;
-	mSoundMaxValue = 10;
+	mSoundMaxValue = 5;
 
 	mSoundUIObj.resize(mSoundOptionNum);
 

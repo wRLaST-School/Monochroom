@@ -165,7 +165,7 @@ void SuperUI::UIObj3DInit()
 	mMainCameraObj.reset(SceneManager::FindObject<Object3D>("Camera"));
 
 	mMenuParentObj.reset(SceneManager::FindObject<Object3D>("UIParentObj"));
-	//mMenuParentObj->parent = mMainCameraObj.get();
+	mMenuParentObj->parent = mMainCameraObj.get();
 	mMenuParentObj->Deactivate();
 
 	mTabsParentObj.reset(SceneManager::FindObject<Object3D>("Tabs"));

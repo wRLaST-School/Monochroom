@@ -40,7 +40,8 @@ private:
     int mCurrentNum;
 
     std::unique_ptr<Object3D> mItemsParentObj;
-
+    // 番号のテクスチャ
+    std::vector<TextureKey> mNumberTex;
     // カメラメニューオブジェクト
     std::vector<UI3DTabItemStatus>mCameraUIObj;
 

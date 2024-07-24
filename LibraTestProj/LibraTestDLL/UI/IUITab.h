@@ -16,6 +16,8 @@ protected:
     {
         Object3D* planeObj;
 
+        Object3D* numObj;
+
         bool IsActive;
 
         // UIのオプションのそれぞれの状態
