@@ -211,6 +211,16 @@ void SelectPanel::CopyComponent(IComponent* src)
 {
 }
 
+bool SelectPanel::GetIsChangeScene()
+{
+	return IsChangeStage;
+}
+
+void SelectPanel::SetIsChangeScene(bool IsChage)
+{
+	IsChangeStage = IsChage;
+}
+
 float SelectPanel::DegreeToRadian(float angle)
 {
 	float radian = angle * (float)(PI / 180);
@@ -436,7 +446,7 @@ void SelectPanel::StageChangeUpdate()
 	// 終了したらステージに移動
 	if (mEaseCapsule.GetisEnd())
 	{
-
+		IsChangeStage = true;
 	}
 }
 

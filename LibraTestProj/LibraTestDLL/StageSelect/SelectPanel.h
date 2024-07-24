@@ -73,6 +73,13 @@ public:
 	void OnInspectorWindowDraw() override;
 	void CopyComponent(IComponent* src);
 
+public:
+	// シーンチェンジフラグの取得
+	bool GetIsChangeScene();
+
+	// シーンチェンジフラグの設定
+	void SetIsChangeScene(bool IsChage);
+
     DefDel;
 private:
 
@@ -190,6 +197,7 @@ private:
 
 	Easing mEaseAlpha;
 	bool IsAlphaOn;
+	bool IsChangeStage;
 
 	Easing mEaseCapsule;
 	float mCapsuleDefuY;

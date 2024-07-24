@@ -18,7 +18,7 @@
                 },
                 "RotationEuler": {
                     "X": 0.0,
-                    "Y": -0.1745329350233078,
+                    "Y": -0.1745329201221466,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2254,7 +2254,7 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 1.0,
+                                    "W": 0.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -2293,7 +2293,7 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 1.0,
+                                    "W": 0.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -6211,7 +6211,7 @@
             },
             {
                 "Active": true,
-                "Name": "ScriptComponent",
+                "Name": "SelectScript",
                 "Tags": null,
                 "Type": "ScriptComponent",
                 "filePath": "SelectPanel"
