@@ -14,9 +14,13 @@ void GameManager::Awake()
 	mPlayer = SceneManager::FindObject<Object3D>("Player");
 	mCamera = SceneManager::FindObject<Camera>("Camera");
 	mStageGenerater = SceneManager::FindObjectWithTag<StageGenerater>("StageGenerater");
+	mSelectPanel= SceneManager::FindObject<SelectPanel>("SelectScript");
+
+
 	isStop = false;
 
-	if (SceneManager::GetCurrentScene()->GetName() == "Title")
+	if (SceneManager::GetCurrentScene()->GetName() == "Title"||
+		SceneManager::GetCurrentScene()->GetName() == "StageSelect")
 	{
 		StageGenerating::info.isDraw = false;
 		mIsChangeScene = false;
@@ -74,7 +78,33 @@ void GameManager::Update()
 	}
 	else if (SceneManager::GetCurrentScene()->GetName() == "StageSelect")
 	{
+		ConsoleWindow::Log("Select Is Set");
+		if (!mSelectPanel)
+		{
+			ConsoleWindow::Log("mSelectPanel is null");
+			return;
+		}
+		if (mSelectPanel->GetIsChangeScene())
+		{
+			//// シーンの切り替え処理
+			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+			//SceneManager::WaitForLoadAndTransition();
 
+			OutputDebugStringA("SceneChangeClick\n");
+
+			if (!mIsChangeScene)
+			{
+				BlinkTransition::Start();
+				mIsChangeScene = true;
+			}
+		}
+
+		if (BlinkTransition::info.isInEnd)
+		{
+			// シーンの切り替え処理
+			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+			SceneManager::WaitForLoadAndTransition();
+		}
 	}
 	else
 	{
