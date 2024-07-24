@@ -46,13 +46,13 @@ void SelectPanel::Init()
 	mCapsuleDefuY = -2.6f;
 	mCapsuleEndY = 0;
 
-	mTitleCameraFirstPos = Vec3(-4, 4.68f, 2);
+	mTitleCameraFirstPos = Vec3(-4.3f, 4.48f, 2.75f);
 	mTitleCameraFirstRota = { 0, -10, 0 };
 	mTitleCameraFirstRota = DegreeToRadianVec3(mTitleCameraFirstRota);
 
 	mSceneChangeCameraFirstPos = Vec3(1.6f, 1.1f, -2.73f);
 	mSceneChangeCameraFirstRota = Vec3(65, 0, 0);
-	mSceneChangeCameraFirstRota= DegreeToRadianVec3(mSceneChangeCameraFirstRota);
+	mSceneChangeCameraFirstRota = DegreeToRadianVec3(mSceneChangeCameraFirstRota);
 
 	// カメラのセット
 	mCameraObj = SceneManager::FindObject<Object3D>("Camera");
@@ -64,6 +64,8 @@ void SelectPanel::Init()
 	// ゴーグルのセット
 	mGoggleObj.reset(SceneManager::FindObject<Object3D>("Goggle"));
 	mGoggleObj->brightnessCB.contents->w = 0;
+
+	mLeftLensObj = SceneManager::FindObject<Object3D>("LeftLens");
 
 	// カプセルのセット
 	mCapsuleObj.reset(SceneManager::FindObject<Object3D>("CapsuleDoor"));
@@ -131,7 +133,7 @@ void SelectPanel::Init()
 	mTitleCameraMovePos.push_back(Vec3(1, 2, -4));
 	mTitleCameraMovePos.push_back(mSceneChangeCameraFirstPos);
 
-	mTitleCameraMoveRota.push_back(Vec3( 0, -10, 0 ));
+	mTitleCameraMoveRota.push_back(Vec3(0, -10, 0));
 	mTitleCameraMoveRota.push_back(Vec3(0, 0, 0));
 	mTitleCameraMoveRota.push_back(Vec3(25, 15, 0));
 	mTitleCameraMoveRota.push_back(Vec3(65, 0, 0));
@@ -167,17 +169,17 @@ void SelectPanel::Update()
 		Reset();
 	}
 
-	mTitleSinTimer++;
-	if (mTitleSinTimer >= mTitleSinTimeMax)
-	{
-		mTitleSinTimer = 0;
-	}
+	//mTitleSinTimer++;
+	//if (mTitleSinTimer >= mTitleSinTimeMax)
+	//{
+	//	mTitleSinTimer = 0;
+	//}
 
-	mTitleTextObj->position.y = Sin_ZeroToOne(mTitleTextSinDefuPosY, mTitleSinTimeMax, mTitleSinTimer, mTitleTextSinSwingPosY);
+	//mTitleTextObj->position.y = Sin_ZeroToOne(mTitleTextSinDefuPosY, mTitleSinTimeMax, mTitleSinTimer, mTitleTextSinSwingPosY);
 
-	mGoggleObj->position.y = Sin_ZeroToOne(mGoggleSinDefuPosY, mTitleSinTimeMax, mTitleSinTimer, mGoggleSinSwingPosY);
-	mGoggleObj->rotationE.y += DegreeToRadian(2.0f);
-	mGoggleObj->rotationE.x = Sin_ZeroToOne(mGoggleSinDefuRotaZ, mTitleSinTimeMax, mTitleSinTimer, mGoggleSinSwingRotaZ);
+	//mGoggleObj->position.y = Sin_ZeroToOne(mGoggleSinDefuPosY, mTitleSinTimeMax, mTitleSinTimer, mGoggleSinSwingPosY);
+	//mGoggleObj->rotationE.y += DegreeToRadian(2.0f);
+	//mGoggleObj->rotationE.x = Sin_ZeroToOne(mGoggleSinDefuRotaZ, mTitleSinTimeMax, mTitleSinTimer, mGoggleSinSwingRotaZ);
 
 	mTitleTextObj->Update();
 	mGoggleObj->Update();
@@ -285,8 +287,10 @@ void SelectPanel::TitleUpdate()
 		if (!IsAlphaOn)
 		{
 			mEaseAlpha.Update();
-			mGoggleObj->brightnessCB.contents->w = mEaseAlpha.In(0, 1);
-			mTitleTextObj->brightnessCB.contents->w = mEaseAlpha.In(0, 1);
+			float alpha = mEaseAlpha.In(0, 1);
+			mGoggleObj->brightnessCB.contents->w = alpha;
+			mTitleTextObj->brightnessCB.contents->w = alpha;
+			mLeftLensObj->brightnessCB.contents->w = alpha;
 
 			if (mEaseAlpha.GetisEnd())
 			{
@@ -298,7 +302,7 @@ void SelectPanel::TitleUpdate()
 		if (Input::Key::Triggered(DIK_SPACE))
 		{
 			IsTitleToSelect = true;
-			
+
 		}
 
 		if (IsTitleToSelect)
@@ -377,7 +381,7 @@ void SelectPanel::SelectStageUpdate()
 			mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = PRESSED;
 		}
 	}
-	
+
 
 	ConsoleWindow::Log(std::format("ステージ現在番号：Y,{} X,{}", mSelectCurrentNum.y, mSelectCurrentNum.x));
 
@@ -438,7 +442,7 @@ void SelectPanel::MoveToCapcelUpdate()
 void SelectPanel::StageChangeUpdate()
 {
 	mEaseCapsule.Update();
-	
+
 	// カプセルのオブジェクトを上げて、ステージに移動
 	mCapsuleObj->position.y = mEaseCapsule.In(mCapsuleDefuY, mCapsuleEndY);
 	mCapsuleObj->Update();
@@ -500,6 +504,6 @@ void SelectPanel::Reset()
 	mCapsuleObj->Update();
 }
 
-	
+
 
 RegisterScriptBody(SelectPanel);

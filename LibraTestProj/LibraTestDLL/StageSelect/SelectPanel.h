@@ -6,7 +6,7 @@
 #include "Easing.h"
 
 class SelectPanel :
-    public IScriptObject
+	public IScriptObject
 {
 private:
 	enum PanelState
@@ -80,7 +80,7 @@ public:
 	// シーンチェンジフラグの設定
 	void SetIsChangeScene(bool IsChage);
 
-    DefDel;
+	DefDel;
 private:
 
 	float DegreeToRadian(float angle);
@@ -130,6 +130,7 @@ private:
 
 	// タイトル用のゴーグルオブジェクト
 	std::unique_ptr<Object3D> mGoggleObj;
+	Object3D* mLeftLensObj;
 
 	// カプセルのオブジェクト
 	std::unique_ptr<Object3D> mCapsuleObj;

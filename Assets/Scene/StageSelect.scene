@@ -6,9 +6,9 @@
                 "Active": true,
                 "Name": "Camera",
                 "Position": {
-                    "X": -4.0,
-                    "Y": 4.679999828338623,
-                    "Z": 2.0
+                    "X": -4.300000190734863,
+                    "Y": 4.480000019073486,
+                    "Z": 2.75
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -18,7 +18,7 @@
                 },
                 "RotationEuler": {
                     "X": 0.0,
-                    "Y": -0.1745329201221466,
+                    "Y": -0.1745329350233078,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2254,19 +2254,60 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 0.0,
+                                    "W": 0.9666666388511658,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
                                 },
+                                "Children": [
+                                    {
+                                        "Active": true,
+                                        "BlendMode": 0,
+                                        "Brightness": {
+                                            "W": 0.9666666388511658,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "DisableDraw": false,
+                                        "Model": "LensR.obj",
+                                        "Name": "LeftLens",
+                                        "NormalType": 0,
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": -0.7000007629394531,
+                                            "Z": -2.75
+                                        },
+                                        "RenderTarget": "RGBShiftTarget",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": -1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "LeftLens",
+                                        "Type": "Object3D"
+                                    }
+                                ],
                                 "DisableDraw": false,
                                 "Model": "Goggles.obj",
                                 "Name": "Goggle",
                                 "NormalType": 0,
                                 "Position": {
-                                    "X": -0.1208031177520752,
-                                    "Y": 0.7965121865272522,
-                                    "Z": 0.0
+                                    "X": 0.5,
+                                    "Y": 0.699999988079071,
+                                    "Z": -0.5
                                 },
                                 "RenderTarget": "RGBShiftTarget",
                                 "Rotation": {
@@ -2276,9 +2317,9 @@
                                     "Z": -0.9612617492675781
                                 },
                                 "RotationEuler": {
-                                    "X": -0.018262185156345367,
-                                    "Y": 1942.3135986328125,
-                                    "Z": 0.0872664675116539
+                                    "X": 0.1745329350233078,
+                                    "Y": 0.6981317400932312,
+                                    "Z": 0.0
                                 },
                                 "Scale": {
                                     "X": 0.15000000596046448,
@@ -2293,7 +2334,7 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 0.0,
+                                    "W": 0.9666666388511658,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -2304,8 +2345,8 @@
                                 "NormalType": 0,
                                 "Position": {
                                     "X": -0.04167532920837402,
-                                    "Y": 1.2986048460006714,
-                                    "Z": 1.0
+                                    "Y": 1.25,
+                                    "Z": 0.9999995231628418
                                 },
                                 "RenderTarget": "RGBShiftTarget",
                                 "Rotation": {
@@ -2320,9 +2361,9 @@
                                     "Z": 0.0
                                 },
                                 "Scale": {
-                                    "X": 1.0000001192092896,
+                                    "X": 1.0,
                                     "Y": 0.20000001788139343,
-                                    "Z": 0.9999990463256836
+                                    "Z": 1.25
                                 },
                                 "Tags": [
                                     "TvScreen"
@@ -2344,9 +2385,9 @@
                                 "Name": "FirstScreen",
                                 "NormalType": 0,
                                 "Position": {
-                                    "X": 0.0,
-                                    "Y": 0.0,
-                                    "Z": 0.0
+                                    "X": -0.10000000149011612,
+                                    "Y": -0.10000000149011612,
+                                    "Z": 0.5
                                 },
                                 "RenderTarget": "RGBShiftTarget",
                                 "Rotation": {
@@ -2410,6 +2451,45 @@
                                     "TvScreen"
                                 ],
                                 "Texture": "white",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": true,
+                                "BlendMode": 2,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "DisableDraw": false,
+                                "Model": "Plane.obj",
+                                "Name": "StartText",
+                                "NormalType": 0,
+                                "Position": {
+                                    "X": -0.25,
+                                    "Y": 1.2000000476837158,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "LeftLens",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": -0.7504915595054626,
+                                    "Y": 0.0872664675116539,
+                                    "Z": 0.01745329238474369
+                                },
+                                "Scale": {
+                                    "X": -0.75,
+                                    "Y": -0.125,
+                                    "Z": 0.75
+                                },
+                                "Tags": null,
+                                "Texture": "PressSpace.png",
                                 "Type": "Object3D"
                             }
                         ],
@@ -6273,6 +6353,7 @@
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
                 "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
+                "LensR.obj": "Assets\\Models\\LensR\\LensR.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
@@ -6307,6 +6388,7 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
