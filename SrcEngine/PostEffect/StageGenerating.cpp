@@ -1,6 +1,7 @@
 #include "StageGenerating.h"
 #include <GPipeline.h>
 #include <SpRootSignature.h>
+#include <SceneManager.h>
 
 StageGeenratingInfo StageGenerating::info;
 
@@ -75,6 +76,13 @@ void StageGenerating::Init()
 
 void StageGenerating::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 {
+	if (SceneManager::currentScene->GetName() == "Title" ||
+		SceneManager::currentScene->GetName() == "StageSelect")
+	{
+		info.isDraw = false;
+		return;
+	}
+
 	if (!info.isDraw)
 	{
 		return;

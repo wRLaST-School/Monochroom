@@ -628,7 +628,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": false,
+                "Active": true,
                 "BlendMode": 2,
                 "Brightness": {
                     "W": 0.4117647111415863,
@@ -3468,7 +3468,7 @@
                 "scaleY": 10.0
             },
             {
-                "Active": true,
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -3604,9 +3604,9 @@
             },
             {
                 "Active": true,
-                "BlendMode": 0,
+                "BlendMode": 2,
                 "Brightness": {
-                    "W": 1.0,
+                    "W": 0.0,
                     "X": 1.0,
                     "Y": 1.0,
                     "Z": 1.0
@@ -3712,9 +3712,9 @@
                 "Name": "Goggle",
                 "NormalType": 0,
                 "Position": {
-                    "X": 6.14300012588501,
-                    "Y": 8.520444869995117,
-                    "Z": 6.126999855041504
+                    "X": -10.706071853637695,
+                    "Y": 10.959108352661133,
+                    "Z": 11.399971961975098
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3724,8 +3724,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 2.844886541366577,
+                    "X": -0.2540901005268097,
+                    "Y": 6.811592102050781,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3846,6 +3846,7 @@
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
                 "door.png": "Assets\\Models\\door\\door.png",
                 "goal.png": "Assets\\Models\\Goal\\goal.png",
+                "goggle.png": "Assets\\Images\\goggle.png",
                 "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
                 "hyphen": "Assets/Images/hyphen.png",
                 "menuTextTex": "Assets/Images/MenuImages/MenuText.png",

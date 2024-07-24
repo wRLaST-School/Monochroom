@@ -27,7 +27,7 @@ void FirstPersonCamera::Update()
 	else if(!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
 	{
 		ConsoleWindow::Log("PLAYER_CAMERA_SET");
-		CameraUpdate();
+		CameraPosRotUpdateOnly();
 		Camera::Set(*mParentObj);
 	}
 	//ステージ演出中なら
