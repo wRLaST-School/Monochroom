@@ -26,6 +26,10 @@ void GoggleScr::Init()
 	mIsEquip = false;
 
 	mParent->brightnessCB.contents->w = 1.0f;
+	mLensL->brightnessCB.contents->w = 1.0f;
+	mLensR->brightnessCB.contents->w = 1.0f;
+
+	mParent->blendMode = Object3D::BlendMode::Opaque;
 
 	mEasing = std::make_unique<Easing>();
 	mEasing->SetEaseType(EaseType::InOut);
@@ -37,6 +41,10 @@ void GoggleScr::Update()
 {
 	if (mOwner)
 	{
+		mParent->brightnessCB.contents->w = 0;
+		mLensL->brightnessCB.contents->w = 0;
+		mLensR->brightnessCB.contents->w = 0;
+
 		//プレイヤーの向いてる方向へのベクトル
 		auto q = Quaternion::EulerToQuaternion(mOwner->rotationE);
 		Vec3 frontVec = mLocalPos * q;
@@ -51,16 +59,16 @@ void GoggleScr::Update()
 
 			mLocalPos = mEasing->Out(mStartPos, mEndPos);
 
-			//徐々に透明に
-			if (mIsEquip)
-			{
-				mAlpha = 1.0f - mEasing->GetTimeRate();
-			}
-			else
-			{
-				mAlpha = mEasing->GetTimeRate();
-			}
-			mParent->brightnessCB.contents->w = mAlpha;
+			////徐々に透明に
+			//if (mIsEquip)
+			//{
+			//	mAlpha = 1.0f - mEasing->GetTimeRate();
+			//}
+			//else
+			//{
+			//	mAlpha = mEasing->GetTimeRate();
+			//}
+			//mParent->brightnessCB.contents->w = mAlpha;
 
 			//終了
 			if (mEasing->GetTimeRate() >= 1.0f)
