@@ -17,8 +17,6 @@ struct GrayScaleInfo
 struct GraySclaeCB
 {
 	Vec2 offset;
-	float grayEffectRatio;
-	float a;
 	Vec2 grayPoint1;
 	Vec2 grayPoint2;
 	float grayEffectRadius;
@@ -41,6 +39,8 @@ public:
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
 
 public:
-	static void BeginGrayEffect(bool isEquip);
+	DLLExport static void BeginGrayEffect(bool isEquip);
+
+private:
 	static void GrayEffectUpdate();
 };

@@ -63,16 +63,17 @@ void GrayScale::Init()
 
 void GrayScale::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 {
+	GrayEffectUpdate();
+
 	if (info.isDraw)
 	{
 		GraySclaeCB cbdata;
 		cbdata.offset = info.kOffsetUV * info.offsetRatio;
-		cbdata.grayEffectRatio = info.grayEffectRatio;
 		cbdata.grayPoint1 = info.kGrayPoint1;
 		cbdata.grayPoint2 = info.kGrayPoint2;
-		cbdata.grayEffectRadius = info.kGrayWindowSize.x / 1.5f * info.grayEffectRatio;
-
-		ConsoleWindow::LogVec3("GRAY_OFFSET:", cbdata.offset);
+		cbdata.grayEffectRadius = info.kGrayWindowSize.x / 1.6f /
+			info.kGrayWindowSize.x * info.grayEffectRatio;
+		ConsoleWindow::LogVec3("grayEffectRadius", { cbdata.grayEffectRadius, 0,0 });
 
 		*cb.contents = cbdata;
 

@@ -65,6 +65,9 @@ void PlayerGoggle::Update()
 					glass->Deactivate();
 				}
 				mIsGoggleChangeWaiting = false;
+
+				//グレースケールの演出
+				GrayScale::BeginGrayEffect(true);
 			}
 			else if (goggleScr->GetIsMoving() && !goggleScr->GetIsEquip())
 			{
@@ -78,6 +81,9 @@ void PlayerGoggle::Update()
 					glass->Activate();
 				}
 				mIsGoggleChangeWaiting = false;
+
+				//グレースケールの演出
+				GrayScale::BeginGrayEffect(false);
 			}
 		}
 	}
