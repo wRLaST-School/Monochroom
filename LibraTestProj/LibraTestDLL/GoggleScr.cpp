@@ -92,6 +92,9 @@ void GoggleScr::Draw()
 void GoggleScr::GettedPlayer(Object3D* owner)
 {
 	mOwner = owner;
+
+	mEasing->Reset();
+	mIsEquip = true;
 }
 
 void GoggleScr::TakeOnOff(bool isEquip)
@@ -130,6 +133,19 @@ void GoggleScr::TakeOnOff(bool isEquip)
 	mIsMoving = true;
 
 	mEasing->Reset();
+}
+
+float GoggleScr::GetPosRatio()
+{
+	float ratio = mEasing->GetTimeRate();
+
+	if (mIsEquip)
+	{
+		ratio = 1.0f - ratio;
+	}
+
+
+	return ratio;
 }
 
 RegisterScriptBody(GoggleScr);

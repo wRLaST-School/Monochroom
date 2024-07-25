@@ -18,6 +18,8 @@ void PlayerGoggle::Update()
 {
 	if (mIsHavingGoggle)
 	{
+		GrayScale::info.isDraw = true;
+
 		if (mIsEquipGoggle)
 		{
 			ConsoleWindow::Log("EquipGoggle");
@@ -27,7 +29,7 @@ void PlayerGoggle::Update()
 
 		auto goggleObj = SceneManager::FindObject<Object3D>("Goggle");
 		auto goggleScr = SceneManager::FindChildObject<GoggleScr>("GoggleScr", goggleObj);
-
+		auto grayScaleICom = SceneManager::FindObject<IComponent>("GrayScale");
 
 		//ゴーグルの着脱
 		if (AppOperationCommand::GetInstance()->PlayerEquipGoggleCommand())
@@ -35,7 +37,6 @@ void PlayerGoggle::Update()
 			ConsoleWindow::Log("ChangeEquip");
 
 			mIsEquipGoggle = !mIsEquipGoggle;
-			GrayScale::info.isDraw = mIsEquipGoggle;
 
 			mIsGoggleChangeWaiting = true;
 
@@ -43,8 +44,10 @@ void PlayerGoggle::Update()
 			goggleScr->TakeOnOff(mIsEquipGoggle);
 		}
 
+		//ゴーグルのモデルと画像の方の位置を合わせるため
+		GrayScale::info.offsetRatio = goggleScr->GetPosRatio();
+
 		//ゴーグルが完全に装着されたら
-		auto glayScale = SceneManager::FindObject<IComponent>("GrayScale");
 		auto flyBlocks = SceneManager::FindObjectsWithTag<Object3D>("FlyBlock");
 		auto glasses = SceneManager::FindObjectsWithTag<Object3D>("Glass");
 		if (mIsGoggleChangeWaiting)
@@ -52,7 +55,6 @@ void PlayerGoggle::Update()
 			//装着後か外した後か
 			if (goggleScr->GetIsEquip() && !goggleScr->GetIsMoving())
 			{
-				glayScale->Activate();
 
 				for (auto& fb : flyBlocks)
 				{
@@ -66,7 +68,6 @@ void PlayerGoggle::Update()
 			}
 			else if (goggleScr->GetIsMoving() && !goggleScr->GetIsEquip())
 			{
-				glayScale->Deactivate();
 
 				for (auto& fb : flyBlocks)
 				{

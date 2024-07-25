@@ -48,9 +48,12 @@ public:
     void SetOwnerFrontVec(const Vec3& front) { mOwnerFrontVec = front; }
 
     void TakeOnOff(bool isEquip);
+    void Equip();
 
     bool GetIsEquip() { return mIsEquip; }
     bool GetIsMoving() { return mIsMoving; }
+
+    float GetPosRatio();
 
     DefDel;
 };
