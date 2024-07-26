@@ -358,7 +358,7 @@ void SuperUI::UITabMenuUpdate()
 	if (IsUITabOn)
 	{
 		mMenuTabUIObj[mCurrentTabNum].state = SELECT;
-		mTabItems[mCurrentTabNum]->Update();
+		mTabItems[mCurrentTabNum]->MenuUpdate();
 		if (Input::Key::Triggered(DIK_Q))
 		{
 			mCurrentTabNum--;

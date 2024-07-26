@@ -1,8 +1,9 @@
 #pragma once
 #include <Color.h>
 #include <Object3D.h>
+#include "IScriptObject.h"
 
-class IUITab
+class IUITab: public IScriptObject
 {
 protected:
     enum UIMenuState
@@ -17,6 +18,8 @@ protected:
         Object3D* planeObj;
 
         Object3D* numObj;
+
+
 
         bool IsActive;
 
@@ -37,10 +40,13 @@ protected:
     };
 
 public:
-	virtual void Init() {};
-	virtual void Update() {};
-	virtual void Draw() {};
+    void Init() {};
+    void Update() {};
+    void Draw() {};
+    void CopyComponent(IComponent* src) {};
 
+    virtual void MenuUpdate() {};
+    DefDel;
 	virtual void OnUpdate() {};
 	virtual void OffUpdate() {};
 };

@@ -29,51 +29,86 @@ void SoundTab::Init()
 	mSoundUIObj[MASTER].planeObj = SceneManager::FindObject<Object3D>("MastarVolume");
 	mSoundUIObj[BGM].planeObj = SceneManager::FindObject<Object3D>("BGMVolume");
 	mSoundUIObj[SE].planeObj = SceneManager::FindObject<Object3D>("SEVolume");
+
+	mNumberTex.resize(10);
+	mNumberTex = {
+		"zero",
+		"one",
+		"two",
+		"three",
+		"four",
+		"five",
+		"six",
+		"seven",
+		"eight",
+		"nine"
+	};
+
+	for (size_t i = 0; i < mSoundOptionNum; i++)
+	{
+		mSoundSensivity[i] = 1;
+		mSoundUIObj[i].numObj = SceneManager::FindChildObject<Object3D>("Num", mSoundUIObj[i].planeObj);
+	}
+
+	mSoundCurrentNum = 0;
 }
 
 void SoundTab::Update()
 {
-	mSoundUIObj[mCurrentNum].state = SELECT;
+
+}
+
+void SoundTab::Draw()
+{
+}
+
+void SoundTab::CopyComponent(IComponent* src)
+{
+}
+
+void SoundTab::MenuUpdate()
+{
+	mSoundUIObj[mSoundCurrentNum].state = SELECT;
 
 	if (Input::Key::Triggered(DIK_W))
 	{
-		mCurrentNum--;
-		if (mCurrentNum <= 0)
+		mSoundCurrentNum--;
+		if (mSoundCurrentNum <= 0)
 		{
-			mCurrentNum = 0;
+			mSoundCurrentNum = 0;
 		}
-		mSoundUIObj[mCurrentNum].state = SELECT;
+		mSoundUIObj[mSoundCurrentNum].state = SELECT;
 	}
 	if (Input::Key::Triggered(DIK_S))
 	{
-		mCurrentNum++;
-		if (mCurrentNum >= mSoundOptionNum - 1)
+		mSoundCurrentNum++;
+		if (mSoundCurrentNum >= mSoundOptionNum - 1)
 		{
-			mCurrentNum = mSoundOptionNum - 1;
+			mSoundCurrentNum = mSoundOptionNum - 1;
 		}
-		mSoundUIObj[mCurrentNum].state = SELECT;
+		mSoundUIObj[mSoundCurrentNum].state = SELECT;
 	}
 
 	if (Input::Key::Triggered(DIK_A))
 	{
-		if (mSoundSensivity[mCurrentNum] > mSoundDefuValue)
+		if (mSoundSensivity[mSoundCurrentNum] > mSoundDefuValue)
 		{
-			mSoundSensivity[mCurrentNum]--;
+			mSoundSensivity[mSoundCurrentNum]--;
 		}
 	}
 
 	if (Input::Key::Triggered(DIK_D))
 	{
-		if (mSoundSensivity[mCurrentNum] < mSoundMaxValue)
+		if (mSoundSensivity[mSoundCurrentNum] < mSoundMaxValue)
 		{
-			mSoundSensivity[mCurrentNum]++;
+			mSoundSensivity[mSoundCurrentNum]++;
 		}
 	}
 
 	// それぞれの項目が選ばれているかどうか
 	for (size_t i = 0; i < mSoundOptionNum; i++)
 	{
-		if (i != mCurrentNum)
+		if (i != mSoundCurrentNum)
 		{
 			mSoundUIObj[i].state = DISABLED;
 		}
@@ -88,26 +123,26 @@ void SoundTab::Update()
 			break;
 		}
 
+		mSoundUIObj[i].numObj->texture = mNumberTex[(int)mSoundSensivity[i]];
+
+		mSoundUIObj[i].numObj->Update();
+
 		mSoundUIObj[i].planeObj->Update();
 	}
 
-	ConsoleWindow::Log(std::format("サウンドアイテム値:{},{}\n", mCurrentNum, mSoundSensivity[mCurrentNum]));
-}
-
-void SoundTab::Draw()
-{
+	ConsoleWindow::Log(std::format("サウンドアイテム値:{},{}\n", mSoundCurrentNum, mSoundSensivity[mSoundCurrentNum]));
 }
 
 void SoundTab::OnUpdate()
 {
 	mItemsParentObj->Activate();
-	
-	mCurrentNum = 0;
+	mSoundCurrentNum = 0;
+	MenuUpdate();
 }
 
 void SoundTab::OffUpdate()
 {
 	mItemsParentObj->Deactivate();
 
-	mCurrentNum = 0;
 }
+RegisterScriptBody(SoundTab);

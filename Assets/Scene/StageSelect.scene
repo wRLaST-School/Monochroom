@@ -6,9 +6,9 @@
                 "Active": true,
                 "Name": "Camera",
                 "Position": {
-                    "X": -4.300000190734863,
-                    "Y": 4.480000019073486,
-                    "Z": 2.75
+                    "X": 1.600000023841858,
+                    "Y": 1.1000001430511475,
+                    "Z": -2.7300000190734863
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -17,8 +17,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": -0.1745329201221466,
+                    "X": 1.134463906288147,
+                    "Y": 3.3289513368117696e-08,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2254,7 +2254,7 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 0.9111111164093018,
+                                    "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -2264,7 +2264,7 @@
                                         "Active": true,
                                         "BlendMode": 0,
                                         "Brightness": {
-                                            "W": 0.9111111164093018,
+                                            "W": 1.0,
                                             "X": 1.0,
                                             "Y": 1.0,
                                             "Z": 1.0
@@ -2334,7 +2334,7 @@
                                 "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
-                                    "W": 0.9111111164093018,
+                                    "W": 1.0,
                                     "X": 1.0,
                                     "Y": 1.0,
                                     "Z": 1.0
@@ -3036,8 +3036,8 @@
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "Y": 0.3137255012989044,
+                                            "Z": 0.3137255012989044
                                         },
                                         "Children": [
                                             {
@@ -3045,9 +3045,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 0.9806950092315674,
-                                                    "Y": 0.07572934776544571,
-                                                    "Z": 0.07572934776544571
+                                                    "X": 1.0,
+                                                    "Y": 0.8588235378265381,
+                                                    "Z": 0.8588235378265381
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3071,7 +3071,7 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 0.6000000238418579,
+                                                    "X": 0.4000000059604645,
                                                     "Y": 0.20000000298023224,
                                                     "Z": 1.0
                                                 },
@@ -3085,8 +3085,8 @@
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
+                                                    "Y": 0.8588235378265381,
+                                                    "Z": 0.8588235378265381
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3124,8 +3124,8 @@
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
+                                                    "Y": 0.8588235378265381,
+                                                    "Z": 0.8588235378265381
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3180,9 +3180,9 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 0.8999999761581421,
-                                            "Y": 0.8999999761581421,
-                                            "Z": 0.8999999761581421
+                                            "X": 1.100000023841858,
+                                            "Y": 1.100000023841858,
+                                            "Z": 1.0
                                         },
                                         "Tags": null,
                                         "Texture": "button.png",
@@ -3193,9 +3193,9 @@
                                         "BlendMode": 3,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.6274510025978088,
+                                            "Y": 0.21568627655506134,
+                                            "Z": 0.21568627655506134
                                         },
                                         "Children": [
                                             {
@@ -3203,9 +3203,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3229,7 +3229,7 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 0.6000000238418579,
+                                                    "X": 0.4000000059604645,
                                                     "Y": 0.20000000298023224,
                                                     "Z": 1.0
                                                 },
@@ -3242,9 +3242,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3281,9 +3281,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3351,9 +3351,9 @@
                                         "BlendMode": 3,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.6274510025978088,
+                                            "Y": 0.21568627655506134,
+                                            "Z": 0.21568627655506134
                                         },
                                         "Children": [
                                             {
@@ -3361,9 +3361,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3387,7 +3387,7 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 0.6000000238418579,
+                                                    "X": 0.4000000059604645,
                                                     "Y": 0.20000000298023224,
                                                     "Z": 1.0
                                                 },
@@ -3400,9 +3400,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3439,9 +3439,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3549,9 +3549,9 @@
                                         "BlendMode": 3,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.6274510025978088,
+                                            "Y": 0.21568627655506134,
+                                            "Z": 0.21568627655506134
                                         },
                                         "Children": [
                                             {
@@ -3559,9 +3559,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3585,7 +3585,7 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 0.6000000238418579,
+                                                    "X": 0.4000000059604645,
                                                     "Y": 0.20000000298023224,
                                                     "Z": 1.0
                                                 },
@@ -3598,9 +3598,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3637,9 +3637,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3707,9 +3707,9 @@
                                         "BlendMode": 3,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.6274510025978088,
+                                            "Y": 0.21568627655506134,
+                                            "Z": 0.21568627655506134
                                         },
                                         "Children": [
                                             {
@@ -3717,9 +3717,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3743,7 +3743,7 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 0.6000000238418579,
+                                                    "X": 0.4000000059604645,
                                                     "Y": 0.20000000298023224,
                                                     "Z": 1.0
                                                 },
@@ -3756,9 +3756,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3795,9 +3795,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3865,9 +3865,9 @@
                                         "BlendMode": 3,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.6274510025978088,
+                                            "Y": 0.21568627655506134,
+                                            "Z": 0.21568627655506134
                                         },
                                         "Children": [
                                             {
@@ -3875,9 +3875,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3901,7 +3901,7 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 0.6000000238418579,
+                                                    "X": 0.4000000059604645,
                                                     "Y": 0.20000000298023224,
                                                     "Z": 1.0
                                                 },
@@ -3914,9 +3914,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -3953,9 +3953,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -4023,9 +4023,9 @@
                                         "BlendMode": 3,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.6274510025978088,
+                                            "Y": 0.21568627655506134,
+                                            "Z": 0.21568627655506134
                                         },
                                         "Children": [
                                             {
@@ -4033,9 +4033,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -4059,7 +4059,7 @@
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
-                                                    "X": 0.6000000238418579,
+                                                    "X": 0.4000000059604645,
                                                     "Y": 0.20000000298023224,
                                                     "Z": 1.0
                                                 },
@@ -4072,9 +4072,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -4111,9 +4111,9 @@
                                                 "BlendMode": 3,
                                                 "Brightness": {
                                                     "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
+                                                    "X": 0.7843137383460999,
+                                                    "Y": 0.5098039507865906,
+                                                    "Z": 0.5098039507865906
                                                 },
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
@@ -6360,6 +6360,8 @@
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
                 "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
+                "LeftLens.obj": "Assets\\Models\\LeftLens\\LeftLens.obj",
+                "LensL.obj": "Assets\\Models\\LensL\\LensL.obj",
                 "LensR.obj": "Assets\\Models\\LensR\\LensR.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
@@ -6375,6 +6377,7 @@
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
                 "door.obj": "Assets\\Models\\door\\door.obj",
                 "floor": "Assets/Models/Floor.glb",
+                "gogle.obj": "Assets\\Models\\gogle\\gogle.obj",
                 "panel.obj": "Assets\\Models\\panel\\panel.obj",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
                 "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
@@ -6424,6 +6427,7 @@
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
                 "door.png": "Assets\\Models\\door\\door.png",
                 "goal.png": "Assets\\Models\\Goal\\goal.png",
+                "goggle.png": "Assets\\Images\\goggle.png",
                 "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
                 "hyphen": "Assets/Images/hyphen.png",
                 "menuTextTex": "Assets/Images/MenuImages/MenuText.png",

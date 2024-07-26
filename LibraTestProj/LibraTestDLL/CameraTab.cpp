@@ -47,53 +47,71 @@ void CameraTab::Init()
 
 	for (size_t i = 0; i < mCameraOptionNum; i++)
 	{
-		mCameraUIObj[0].numObj = SceneManager::FindChildObject<Object3D>("Num", mCameraUIObj[0].planeObj);
+		mCameraSensivity[i] = 1;
+		mCameraUIObj[i].numObj = SceneManager::FindChildObject<Object3D>("Num", mCameraUIObj[i].planeObj);
 	}
+
+	mCameraCurrentNum = 0;
 }
 
 void CameraTab::Update()
 {
-	mCameraUIObj[mCurrentNum].state = SELECT;
+	//mMouseSensivity = { 5,mCameraSensivity[MOUSESENSITIVITY_Y] };
+	ConsoleWindow::Log(std::format("カメラアイテム値: {},{}\n", mCameraCurrentNum, mCameraSensivity[mCameraCurrentNum]));
+	mPadSensivity = { mCameraSensivity[PADSENSITIVITY_X],mCameraSensivity[PADSENSITIVITY_Y] };
+}
+
+void CameraTab::Draw()
+{
+}
+
+void CameraTab::CopyComponent(IComponent* src)
+{
+}
+
+void CameraTab::MenuUpdate()
+{
+	mCameraUIObj[mCameraCurrentNum].state = SELECT;
 
 	if (Input::Key::Triggered(DIK_W))
 	{
-		mCurrentNum--;
-		if (mCurrentNum <= 0)
+		mCameraCurrentNum--;
+		if (mCameraCurrentNum <= 0)
 		{
-			mCurrentNum = 0;
+			mCameraCurrentNum = 0;
 		}
-		mCameraUIObj[mCurrentNum].state = SELECT;
+		mCameraUIObj[mCameraCurrentNum].state = SELECT;
 	}
 	if (Input::Key::Triggered(DIK_S))
 	{
-		mCurrentNum++;
-		if (mCurrentNum >= mCameraOptionNum - 1)
+		mCameraCurrentNum++;
+		if (mCameraCurrentNum >= mCameraOptionNum - 1)
 		{
-			mCurrentNum = mCameraOptionNum - 1;
+			mCameraCurrentNum = mCameraOptionNum - 1;
 		}
-		mCameraUIObj[mCurrentNum].state = SELECT;
+		mCameraUIObj[mCameraCurrentNum].state = SELECT;
 	}
 
 	if (Input::Key::Triggered(DIK_A))
 	{
-		if (mCameraSensivity[mCurrentNum] > mCameraDefuValue)
+		if (mCameraSensivity[mCameraCurrentNum] > mCameraDefuValue)
 		{
-			mCameraSensivity[mCurrentNum]--;
+			mCameraSensivity[mCameraCurrentNum]--;
 		}
 	}
 
 	if (Input::Key::Triggered(DIK_D))
 	{
-		if (mCameraSensivity[mCurrentNum] < mCameraMaxValue)
+		if (mCameraSensivity[mCameraCurrentNum] < mCameraMaxValue)
 		{
-			mCameraSensivity[mCurrentNum]++;
+			mCameraSensivity[mCameraCurrentNum]++;
 		}
 	}
 
 	// それぞれの項目が選ばれているかどうか
 	for (size_t i = 0; i < mCameraOptionNum; i++)
 	{
-		if (i != mCurrentNum) 
+		if (i != mCameraCurrentNum)
 		{
 			mCameraUIObj[i].state = DISABLED;
 		}
@@ -108,30 +126,42 @@ void CameraTab::Update()
 			break;
 		}
 
-		mCameraUIObj[0].numObj->texture = mNumberTex[(int)mCameraSensivity[0]];
+		mCameraUIObj[i].numObj->texture = mNumberTex[(int)mCameraSensivity[i]];
 
-		//mCameraUIObj[i].numObj->Update();
+		mCameraUIObj[i].numObj->Update();
 		mCameraUIObj[i].planeObj->Update();
 	}
 
+	mMouseSensivity = { mCameraSensivity[MOUSESENSITIVITY_X],mCameraSensivity[MOUSESENSITIVITY_Y] };
+	mPadSensivity = { mCameraSensivity[PADSENSITIVITY_X],mCameraSensivity[PADSENSITIVITY_Y] };
 
-	ConsoleWindow::Log(std::format("カメラアイテム値:{},{}\n", mCurrentNum, mCameraSensivity[mCurrentNum]));
-}
-
-void CameraTab::Draw()
-{
+	
 }
 
 void CameraTab::OnUpdate()
 {
 	mItemsParentObj->Activate();
-	
-	mCurrentNum = 0;
+	mCameraCurrentNum = 0;
+	//MenuUpdate();
 }
 
 void CameraTab::OffUpdate()
 {
 	mItemsParentObj->Deactivate();
-
-	mCurrentNum = 0;
 }
+
+Vec2 CameraTab::GetMouseSensivity()
+{
+	Vec2 result = mMouseSensivity;
+
+	return result;
+}
+
+Vec2 CameraTab::GetPadSensivity()
+{
+	Vec2 result = mPadSensivity;
+
+	return result;
+}
+
+RegisterScriptBody(CameraTab);

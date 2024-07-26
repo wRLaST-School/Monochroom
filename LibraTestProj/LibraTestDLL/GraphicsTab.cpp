@@ -29,41 +29,79 @@ void GraphicsTab::Init()
 	// グラフィックス項目のオブジェクト設定
 	mGraphicsUIObj[POSTPROCESS].planeObj = SceneManager::FindObject<Object3D>("PostProcess");
 	mGraphicsUIObj[SHADOW].planeObj = SceneManager::FindObject<Object3D>("Shadow");
+
+	// オンオフオブジェクト
+	mOnPlaneObj.resize(mGraphicsOptionNum);
+	mOffPlaneObj.resize(mGraphicsOptionNum);
+
+	for (size_t i = 0; i < mGraphicsOptionNum; i++)
+	{
+		mOnPlaneObj[i] = SceneManager::FindChildObject<Object3D>("OnPlane", mGraphicsUIObj[i].planeObj);
+		mOffPlaneObj[i] = SceneManager::FindChildObject<Object3D>("OffPlane", mGraphicsUIObj[i].planeObj);
+		mGraphicsFlags[i] = true;
+	}
+
+	mSelectColor = { 1.0f,1.0f,1.0f,1.0f };
+	mDisabledColor = { 0.8f,0.8f,0.8f,1.0f };
+
+	mGraphicsCurrentNum = 0;
 }
 
 void GraphicsTab::Update()
 {
 
-	mGraphicsUIObj[mCurrentNum].state = SELECT;
+
+}
+
+void GraphicsTab::Draw()
+{
+}
+
+void GraphicsTab::CopyComponent(IComponent* src)
+{
+}
+
+void GraphicsTab::MenuUpdate()
+{
+	mGraphicsUIObj[mGraphicsCurrentNum].state = SELECT;
 
 	if (Input::Key::Triggered(DIK_W))
 	{
-		mCurrentNum--;
-		if (mCurrentNum <= 0)
+		mGraphicsCurrentNum--;
+		if (mGraphicsCurrentNum <= 0)
 		{
-			mCurrentNum = 0;
+			mGraphicsCurrentNum = 0;
 		}
-		mGraphicsUIObj[mCurrentNum].state = SELECT;
+		mGraphicsUIObj[mGraphicsCurrentNum].state = SELECT;
 	}
 	if (Input::Key::Triggered(DIK_S))
 	{
-		mCurrentNum++;
-		if (mCurrentNum >= mGraphicsOptionNum - 1)
+		mGraphicsCurrentNum++;
+		if (mGraphicsCurrentNum >= mGraphicsOptionNum - 1)
 		{
-			mCurrentNum = mGraphicsOptionNum - 1;
+			mGraphicsCurrentNum = mGraphicsOptionNum - 1;
 		}
-		mGraphicsUIObj[mCurrentNum].state = SELECT;
+		mGraphicsUIObj[mGraphicsCurrentNum].state = SELECT;
 	}
 
-	if (Input::Key::Triggered(DIK_SPACE))
+	// フラグのオンオフ
+	if (Input::Key::Triggered(DIK_A))
 	{
-		mGraphicsFlags[mCurrentNum] = !mGraphicsFlags[mCurrentNum];
+		mGraphicsFlags[mGraphicsCurrentNum] = true;
+
+
+	}
+
+	if (Input::Key::Triggered(DIK_D))
+	{
+		mGraphicsFlags[mGraphicsCurrentNum] = false;
+
 	}
 
 	// それぞれの項目が選ばれているかどうか
 	for (size_t i = 0; i < mGraphicsOptionNum; i++)
 	{
-		if (i != mCurrentNum)
+		if (i != mGraphicsCurrentNum)
 		{
 			mGraphicsUIObj[i].state = DISABLED;
 		}
@@ -78,27 +116,35 @@ void GraphicsTab::Update()
 			break;
 		}
 
+		if (mGraphicsFlags[i])
+		{
+			*mOnPlaneObj[i]->brightnessCB.contents = mSelectColor.f4;
+			*mOffPlaneObj[i]->brightnessCB.contents = mDisabledColor.f4;
+		}
+		else
+		{
+			*mOnPlaneObj[i]->brightnessCB.contents = mDisabledColor.f4;
+			*mOffPlaneObj[i]->brightnessCB.contents = mSelectColor.f4;
+		}
+		mOnPlaneObj[i]->Update();
+		mOffPlaneObj[i]->Update();
+
 		mGraphicsUIObj[i].planeObj->Update();
 	}
 
-	int flagValue = mGraphicsFlags[mCurrentNum];
-	ConsoleWindow::Log(std::format("サウンドアイテム値:{}:{}\n", mCurrentNum, flagValue));
-}
-
-void GraphicsTab::Draw()
-{
+	int flagValue = mGraphicsFlags[mGraphicsCurrentNum];
+	ConsoleWindow::Log(std::format("グラフィックアイテム値:{}:{}\n", mGraphicsCurrentNum, flagValue));
 }
 
 void GraphicsTab::OnUpdate()
 {
 	mItemsParentObj->Activate();
-	
-	mCurrentNum = 0;
+	mGraphicsCurrentNum = 0;
+	MenuUpdate();
 }
 
 void GraphicsTab::OffUpdate()
 {
 	mItemsParentObj->Deactivate();
-
-	mCurrentNum = 0;
 }
+RegisterScriptBody(GraphicsTab);

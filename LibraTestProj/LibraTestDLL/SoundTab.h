@@ -16,6 +16,9 @@ public:
     void Init()  override;
     void Update()  override;
     void Draw()  override;
+    void CopyComponent(IComponent* src) override;
+
+    void MenuUpdate()override;
 
     void OnUpdate()  override;
     void OffUpdate()  override;
@@ -36,11 +39,15 @@ private:
     int mSoundOptionNum;
 
     // サウンド項目の現在の項目番号
-    int mCurrentNum;
+    int mSoundCurrentNum;
 
     std::unique_ptr<Object3D> mItemsParentObj;
 
     // サウンドメニューオブジェクト
     std::vector<UI3DTabItemStatus>mSoundUIObj;
+
+    // 番号のテクスチャ
+    std::vector<TextureKey> mNumberTex;
 };
 
+RegisterScript(SoundTab);

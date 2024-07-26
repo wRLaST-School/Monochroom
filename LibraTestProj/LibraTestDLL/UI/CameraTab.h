@@ -17,6 +17,9 @@ public:
     void Init()  override;
     void Update()  override;
     void Draw()  override;
+    void CopyComponent(IComponent* src) override;
+
+    void MenuUpdate()override;
 
     void OnUpdate()  override;
     void OffUpdate()  override;
@@ -30,6 +33,9 @@ private:
     // それぞれの項目の変化値
     std::vector<float> mCameraSensivity;
 
+    Vec2 mMouseSensivity = { 1,1 };
+    Vec2 mPadSensivity = { 1,1 };
+
     float mCameraDefuValue;
     float mCameraMaxValue;
 
@@ -37,7 +43,7 @@ private:
     int mCameraOptionNum;
 
     // カメラ項目の現在の項目番号
-    int mCurrentNum;
+    int mCameraCurrentNum;
 
     std::unique_ptr<Object3D> mItemsParentObj;
     // 番号のテクスチャ
@@ -45,5 +51,11 @@ private:
     // カメラメニューオブジェクト
     std::vector<UI3DTabItemStatus>mCameraUIObj;
 
+
+public:
+    Vec2 GetMouseSensivity();
+
+    Vec2 GetPadSensivity();
 };
 
+RegisterScript(CameraTab);

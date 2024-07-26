@@ -203,5 +203,11 @@ private:
 	Easing mEaseCapsule;
 	float mCapsuleDefuY;
 	float mCapsuleEndY;
+
+	Color mButtonDisabledColor;
+	Color mButtonSelectColor;
+
+	Color mTextDisabledColor;
+	Color mTextSelectColor;
 };
 RegisterScript(SelectPanel);
