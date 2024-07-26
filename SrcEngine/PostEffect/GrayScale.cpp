@@ -8,6 +8,7 @@ GrayScaleInfo GrayScale::info;
 SpConstBuffer<GraySclaeCB> GrayScale::cb(true);
 
 int32_t GrayScale::mGrayEffectTime = 0;
+int32_t GrayScale::mGrayEffectTimeMax = 40;
 bool GrayScale::mIsEquip = false;
 bool GrayScale::mIsGrayEffect = false;
 
@@ -59,6 +60,8 @@ void GrayScale::Init()
 	RegisterPipeline(name);
 
 	cb.Create();
+
+	info.Init();
 }
 
 void GrayScale::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
@@ -88,11 +91,12 @@ void GrayScale::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 
 
 //-------------------------------------------------------------------------------------------------------
-void GrayScale::BeginGrayEffect(bool isEquip)
+void GrayScale::BeginGrayEffect(bool isEquip, int32_t effectTime)
 {
 	mIsEquip = isEquip;
 	mIsGrayEffect = true;
 	mGrayEffectTime = 0;
+	mGrayEffectTimeMax = effectTime;
 }
 
 void GrayScale::GrayEffectUpdate()
@@ -107,13 +111,13 @@ void GrayScale::GrayEffectUpdate()
 		}
 		else
 		{
-			time = kGrayEffectTimeMax - mGrayEffectTime;
+			time = mGrayEffectTimeMax - mGrayEffectTime;
 		}
 
-		info.grayEffectRatio = (float)time / (float)kGrayEffectTimeMax;
+		info.grayEffectRatio = (float)time / (float)mGrayEffectTimeMax;
 
 
-		if (mGrayEffectTime >= kGrayEffectTimeMax)
+		if (mGrayEffectTime >= mGrayEffectTimeMax)
 		{
 			mIsGrayEffect = false;
 		}

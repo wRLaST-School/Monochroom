@@ -8,7 +8,7 @@ class SponePoint :
 private:
     Object3D* mParent = nullptr;
 
-    const float kResponeYMin = -70.0f;
+    const float kResponeYMin = -50.0f;
 
 public:
     void Init();

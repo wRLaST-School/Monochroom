@@ -24,6 +24,7 @@ void TestObject::Update()
 	obbCollider.Setting(Vec3::zero, Quaternion::EulerToQuaternion(Float3(0, 0, 0)), Vec3(1, 1, 1));
 	sphereCollider.pos = obj->position;
 	sphereCollider.r = 2.f;
+	int a = 0;
 
 	//if (obbCollider.IsTrigger(&sphereCollider))
 	//{

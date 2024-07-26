@@ -3702,7 +3702,7 @@
                 "scaleY": 10.0
             },
             {
-                "Active": false,
+                "Active": true,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,

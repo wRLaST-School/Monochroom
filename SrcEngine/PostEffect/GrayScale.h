@@ -12,6 +12,14 @@ struct GrayScaleInfo
 	const Vec2 kGrayPoint1 = { 230 / kGrayWindowSize.x,340 / kGrayWindowSize.y };
 	const Vec2 kGrayPoint2 = { 1040 / kGrayWindowSize.x,340 / kGrayWindowSize.y };
 	const float kGrayEffectRadius = 500.0f / kGrayWindowSize.x;
+
+public:
+	void Init()
+	{
+		isDraw = false;
+		offsetRatio = 0;
+		grayEffectRatio = 0;
+	}
 };
 
 struct GraySclaeCB
@@ -26,7 +34,7 @@ class GrayScale : public IPostEffector
 {
 private:
 	static int32_t mGrayEffectTime;
-	static const int32_t kGrayEffectTimeMax = 40;
+	static int32_t mGrayEffectTimeMax;
 	static bool mIsEquip;
 	static bool mIsGrayEffect;
 
@@ -39,7 +47,8 @@ public:
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
 
 public:
-	DLLExport static void BeginGrayEffect(bool isEquip);
+	DLLExport static void BeginGrayEffect(bool isEquip, int32_t effectTime);
+	DLLExport static bool GetIsEffect() { return mIsGrayEffect; }
 
 private:
 	static void GrayEffectUpdate();

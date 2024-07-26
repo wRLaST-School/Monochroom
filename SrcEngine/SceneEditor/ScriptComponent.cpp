@@ -76,6 +76,11 @@ Libra::DLLObject* ScriptComponent::GetObj()
 	return &dllobj_;
 }
 
+ScriptComponent::~ScriptComponent()
+{
+	dllobj_.Del();
+}
+
 void ScriptComponent::CompileScript()
 {
 	//スクリプトコンポーネントを全て保持してdllobjをfree
@@ -96,7 +101,7 @@ void ScriptComponent::CompileScript()
 		if (castedParent) {
 			list.push_back(castedParent);
 		}
-		};
+	};
 
 	GetAllScriptCompsRecursive(scriptcomps, SceneManager::currentScene.get());
 
