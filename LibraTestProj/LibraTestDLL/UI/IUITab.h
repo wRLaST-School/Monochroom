@@ -40,13 +40,13 @@ protected:
     };
 
 public:
-    void Init() {};
-    void Update() {};
-    void Draw() {};
-    void CopyComponent(IComponent* src) {};
+    virtual void Init() {};
+    virtual void Update() {};
+    virtual void Draw() {};
+    virtual void CopyComponent(IComponent* src) {};
 
-    virtual void MenuUpdate() {};
     DefDel;
+    virtual void MenuUpdate() {};
 	virtual void OnUpdate() {};
 	virtual void OffUpdate() {};
 };

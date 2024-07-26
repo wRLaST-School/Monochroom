@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.812388896942139,
+                    "X": 0.07408992201089859,
+                    "Y": 4.5323896408081055,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -852,8 +852,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": 0.074089914560318,
+                    "Y": 4.5323896408081055,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -902,7 +902,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": 5.068127155303955,
-                    "Y": 8.994205474853516,
+                    "Y": 8.992696762084961,
                     "Z": 22.062511444091797
                 },
                 "RenderTarget": "",
@@ -1086,7 +1086,7 @@
                 },
                 "Children": [
                     {
-                        "Active": false,
+                        "Active": true,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -1666,7 +1666,7 @@
                                         },
                                         "Children": [
                                             {
-                                                "Active": false,
+                                                "Active": true,
                                                 "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
@@ -1723,8 +1723,9 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
-                                                                "Texture": "one",
-                                                                "Type": "Object3D"
+                                                                "Texture": "three",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -1736,6 +1737,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
                                                                 "NormalType": 0,
@@ -1763,7 +1766,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -1775,6 +1779,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
                                                                 "NormalType": 0,
@@ -1802,7 +1808,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
@@ -1829,8 +1836,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "Scale": {
-                                                            "X": 1.0,
-                                                            "Y": 0.800000011920929,
+                                                            "X": 0.8999999761581421,
+                                                            "Y": 0.6000000238418579,
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
@@ -1858,6 +1865,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
                                                                 "NormalType": 0,
@@ -1884,8 +1893,9 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
-                                                                "Texture": "one",
-                                                                "Type": "Object3D"
+                                                                "Texture": "four",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -1897,6 +1907,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
                                                                 "NormalType": 0,
@@ -1924,7 +1936,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -1936,6 +1949,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
                                                                 "NormalType": 0,
@@ -1963,7 +1978,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
@@ -1990,8 +2006,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "Scale": {
-                                                            "X": 0.8999999761581421,
-                                                            "Y": 0.6000000238418579,
+                                                            "X": 1.0,
+                                                            "Y": 0.800000011920929,
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
@@ -2061,6 +2077,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
                                                                 "NormalType": 0,
@@ -2088,7 +2106,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2100,6 +2119,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
                                                                 "NormalType": 0,
@@ -2127,7 +2148,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2139,6 +2161,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
                                                                 "NormalType": 0,
@@ -2166,10 +2190,13 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityX",
                                                         "NormalType": 0,
@@ -2220,6 +2247,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
                                                                 "NormalType": 0,
@@ -2247,7 +2276,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2259,6 +2289,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
                                                                 "NormalType": 0,
@@ -2286,7 +2318,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2298,6 +2331,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
                                                                 "NormalType": 0,
@@ -2325,10 +2360,13 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityY",
                                                         "NormalType": 0,
@@ -2464,6 +2502,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OnPlane",
                                                                 "NormalType": 0,
@@ -2491,7 +2531,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2503,6 +2544,8 @@
                                                                     "Z": 0.800000011920929
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OffPlane",
                                                                 "NormalType": 0,
@@ -2530,10 +2573,13 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PostProcess",
                                                         "NormalType": 0,
@@ -2584,6 +2630,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OnPlane",
                                                                 "NormalType": 0,
@@ -2611,7 +2659,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2623,6 +2672,8 @@
                                                                     "Z": 0.800000011920929
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OffPlane",
                                                                 "NormalType": 0,
@@ -2650,7 +2701,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
@@ -2720,7 +2772,7 @@
                                                 "UseMyselfDissolveStrength": false
                                             },
                                             {
-                                                "Active": true,
+                                                "Active": false,
                                                 "BlendMode": 0,
                                                 "Brightness": {
                                                     "W": 1.0,
@@ -2749,6 +2801,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
                                                                 "NormalType": 0,
@@ -2776,7 +2830,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "two",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2788,6 +2843,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
                                                                 "NormalType": 0,
@@ -2815,7 +2872,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2827,6 +2885,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
                                                                 "NormalType": 0,
@@ -2854,10 +2914,13 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "BGMVolume",
                                                         "NormalType": 0,
@@ -2885,7 +2948,8 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -2907,6 +2971,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
                                                                 "NormalType": 0,
@@ -2934,7 +3000,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2946,6 +3013,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
                                                                 "NormalType": 0,
@@ -2973,7 +3042,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -2985,6 +3055,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
                                                                 "NormalType": 0,
@@ -3012,10 +3084,13 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MastarVolume",
                                                         "NormalType": 0,
@@ -3066,6 +3141,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
                                                                 "NormalType": 0,
@@ -3093,7 +3170,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -3105,6 +3183,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
                                                                 "NormalType": 0,
@@ -3132,7 +3212,8 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             },
                                                             {
                                                                 "Active": true,
@@ -3144,6 +3225,8 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
                                                                 "NormalType": 0,
@@ -3171,10 +3254,13 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
-                                                                "Type": "Object3D"
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
                                                             }
                                                         ],
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "SEVolume",
                                                         "NormalType": 0,
@@ -3277,9 +3363,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 0.7843137383460999,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
                                         },
                                         "DisableDraw": false,
                                         "DissolveStrength": 1.25,
@@ -3361,9 +3447,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.7843137383460999,
+                                            "Y": 0.0,
+                                            "Z": 0.0
                                         },
                                         "DisableDraw": false,
                                         "DissolveStrength": 1.25,
@@ -3820,6 +3906,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "",
                         "Name": "TabsScripts",
                         "Position": {
@@ -3846,7 +3934,8 @@
                         },
                         "Tags": null,
                         "Texture": "",
-                        "Type": "Object3D"
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     }
                 ],
                 "DisableDraw": false,
@@ -4275,7 +4364,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": 5.579809188842773,
-                    "Y": 10.997543334960938,
+                    "Y": 11.002403259277344,
                     "Z": 22.06081199645996
                 },
                 "RenderTarget": "",
@@ -4626,9 +4715,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -74.7516098022461,
-                    "Y": 39.78730773925781,
-                    "Z": 22.032001495361328
+                    "X": -192.9187774658203,
+                    "Y": 98.94252014160156,
+                    "Z": 14.869559288024902
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4638,8 +4727,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": -0.029999999329447746,
+                    "Y": 4.672389030456543,
                     "Z": 0.0
                 },
                 "Scale": {

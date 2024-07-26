@@ -152,10 +152,13 @@ void SuperUI::UIObj3DInit()
 	//mCameraItem.Init();
 	//mGpraphicsItem.Init();
 	//mSoundItem.Init();
+	mCameraItem = SceneManager::FindObject<CameraTab>("CameraTabScript"); 
+	mGpraphicsItem = SceneManager::FindObject<GraphicsTab>("GraphicsTabScript");
+	mSoundItem = SceneManager::FindObject<SoundTab>("SoundTabScript");
 
-	mTabItems[CAMERA] = &mCameraItem;
-	mTabItems[GRAPHICS] = &mGpraphicsItem;
-	mTabItems[SOUND] = &mSoundItem;
+	mTabItems[CAMERA] = mCameraItem;
+	mTabItems[GRAPHICS] = mGpraphicsItem;
+	mTabItems[SOUND] = mSoundItem;
 
 	for (size_t i = 0; i < mNumOption; i++)
 	{
@@ -417,8 +420,6 @@ void SuperUI::UITabMenuUpdate()
 			mMenuTabUIObj[i].planeObj->Update();
 		}
 	}
-
-
 }
 
 void SuperUI::UITitleMenuUpdate()

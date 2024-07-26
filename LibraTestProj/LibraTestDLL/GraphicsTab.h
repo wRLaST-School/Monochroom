@@ -40,7 +40,7 @@ private:
     // グラフィックス項目の現在の項目番号
     int mGraphicsCurrentNum;
 
-    std::unique_ptr<Object3D> mItemsParentObj;
+    Object3D* mItemsParentObj;
 
     std::vector<Object3D*> mOnPlaneObj;
     std::vector<Object3D*> mOffPlaneObj;

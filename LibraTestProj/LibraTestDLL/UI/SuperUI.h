@@ -237,9 +237,9 @@ private:// メンバー変数
     // UIタブ項目内のオブジェクト
     std::vector<IUITab*> mTabItems;
 
-    CameraTab mCameraItem;
-    GraphicsTab mGpraphicsItem;
-    SoundTab mSoundItem;
+    CameraTab* mCameraItem;
+    GraphicsTab* mGpraphicsItem;
+    SoundTab* mSoundItem;
 
     // UIガイド関連オブジェ
     std::unique_ptr<Object3D> mGuidParentObj;

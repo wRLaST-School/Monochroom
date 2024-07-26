@@ -34,8 +34,7 @@ void CameraTab::Init()
 
 	mCameraUIObj.resize(mCameraOptionNum);
 
-	mItemsParentObj = std::make_unique<Object3D>();
-	mItemsParentObj.reset(SceneManager::FindObject<Object3D>("CameraTabItems"));
+	mItemsParentObj = SceneManager::FindObject<Object3D>("CameraTabItems");
 
 	// カメラ項目のオブジェクト設定
 	mCameraUIObj[MOUSESENSITIVITY_X].planeObj = SceneManager::FindObject<Object3D>("MouseSensitivityX");
@@ -56,9 +55,7 @@ void CameraTab::Init()
 
 void CameraTab::Update()
 {
-	//mMouseSensivity = { 5,mCameraSensivity[MOUSESENSITIVITY_Y] };
-	ConsoleWindow::Log(std::format("カメラアイテム値: {},{}\n", mCameraCurrentNum, mCameraSensivity[mCameraCurrentNum]));
-	mPadSensivity = { mCameraSensivity[PADSENSITIVITY_X],mCameraSensivity[PADSENSITIVITY_Y] };
+
 }
 
 void CameraTab::Draw()
@@ -135,14 +132,14 @@ void CameraTab::MenuUpdate()
 	mMouseSensivity = { mCameraSensivity[MOUSESENSITIVITY_X],mCameraSensivity[MOUSESENSITIVITY_Y] };
 	mPadSensivity = { mCameraSensivity[PADSENSITIVITY_X],mCameraSensivity[PADSENSITIVITY_Y] };
 
-	
+	ConsoleWindow::Log(std::format("カメラアイテム値: {},{}\n", mCameraCurrentNum, mCameraSensivity[mCameraCurrentNum]));
 }
 
 void CameraTab::OnUpdate()
 {
 	mItemsParentObj->Activate();
 	mCameraCurrentNum = 0;
-	//MenuUpdate();
+	MenuUpdate();
 }
 
 void CameraTab::OffUpdate()
