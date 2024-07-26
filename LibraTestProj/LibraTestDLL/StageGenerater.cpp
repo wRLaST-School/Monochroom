@@ -77,6 +77,7 @@ void StageGenerater::Start()
 
 bool StageGenerater::GetisEnd()
 {
+	if (this == nullptr) return false;
 	return mIsEnd;
 }
 

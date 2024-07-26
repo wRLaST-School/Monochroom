@@ -79,6 +79,7 @@ public:
 	static Matrix Identity();
 
 	static Matrix ViewLookTo(Float3 eyePos, Vec3 zVec, Vec3 up = Vec3(0.0f, 1.0f, 0.0f));
+	static Matrix ViewLookTo(Matrix cameraWorld);
 	static Matrix ViewLookAt(Float3 eye, Float3 target, Vec3 up = Vec3(0.0f, 1.0f, 0.0f));
 	//逆行列を取得するだけ(カメラの行列からビューに変換)
 	static Matrix View(Matrix camera);

@@ -5,6 +5,8 @@
 #include "RayCollider.h"
 #include "TextDrawer.h"
 #include <LineDrawer.h>
+#include <SceneFromFile.h>
+#include <SceneManager.h>
 
 void TestScene::LoadResources()
 {
@@ -21,7 +23,8 @@ void TestScene::Init()
 
 void TestScene::Update()
 {
-
+	SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Title.scene");
+	SceneManager::WaitForLoadAndTransition();
 }
 
 void TestScene::DrawBack()

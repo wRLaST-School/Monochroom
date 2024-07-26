@@ -122,8 +122,7 @@ void SpFramework::Init()
 	AssetBrowser::LoadResources();
 
 	//Register Components to Factory
-	CustomComponentRegisterer::CallRegisters();
-}
+	CustomComponentRegisterer::CallRegisters();}
 
 void SpFramework::Run()
 {

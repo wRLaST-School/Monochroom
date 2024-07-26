@@ -2,7 +2,7 @@
 /*****************************************************************//**
  * @file   SpTextureManager.h
  * @brief  テクスチャの読み込みや取得に関するヘッダー
- * 
+ *
  * @author Wrelf
  *********************************************************************/
 #include "Essentials.h"
@@ -39,13 +39,13 @@ public:
 	static void Init();
 	/**
 	 * @brief テクスチャの読み込み
-	 * 
+	 *
 	 * @param filePath ファイルパス
 	 * @param key テクスチャの登録キー
 	 * @return 登録したキー
 	 */
 	static DLLExport TextureKey LoadTexture(const std::string& filePath, const TextureKey& key);
-	
+
 	/**
 	* @brief テクスチャの読み込み
 	*
@@ -54,10 +54,10 @@ public:
 	* @return 登録したキー
 	*/
 	static DLLExport TextureKey LoadTextureWithUniqueKey(const std::string& filePath, const TextureKey& key);
-	
+
 	/**
 	 * @brief ダミーテクスチャの生成
-	 * 
+	 *
 	 * @param width 横幅
 	 * @param height 縦幅
 	 * @param key テクスチャの登録キー
@@ -66,7 +66,7 @@ public:
 	 * @return 登録したキー
 	 */
 	static DLLExport TextureKey CreateDummyTexture(float width, float height, const TextureKey& key, bool initAsRenderTarget = true, bool useRatio = false);
-	
+
 	/**
 	 * @brief ダミーテクスチャの生成
 	 *
@@ -81,7 +81,7 @@ public:
 
 	/**
 	 * @brief テキスト描画用ダミーテクスチャの生成
-	 * 
+	 *
 	 * @param width 横幅
 	 * @param height 縦幅
 	 * @param key テクスチャの登録キー
@@ -91,7 +91,7 @@ public:
 
 	/**
 	 * @brief 画像の分割読み込み
-	 * 
+	 *
 	 * @param filePath ファイルパス
 	 * @param widthPer 一つあたりの横幅
 	 * @param heightPer 一つあたりの縦幅
@@ -100,10 +100,10 @@ public:
 	 * @param keys 登録するキーの配列
 	 */
 	static DLLExport void LoadDiv(const std::string& filePath, int32_t widthPer, int32_t heightPer, int32_t qx, int32_t qy, const std::vector<TextureKey>& keys);
-	
+
 	/**
 	 * @brief 画像の分割読み込み(一つのみ)
-	 * 
+	 *
 	 * @param filePath ファイルパス
 	 * @param originX 原点x
 	 * @param originY 原点y
@@ -114,9 +114,19 @@ public:
 	 */
 	static DLLExport TextureKey LoadSingleDiv(std::string filePath, int32_t originX, int32_t originY, int32_t width, int32_t height, const TextureKey& key);
 
+	/**
+	* @brief テクスチャの読み込み
+	*
+	* @param filePath ファイルパス
+	* @param key テクスチャの登録キー
+	* @return 登録したキー
+	*/
+	static DLLExport TextureKey CreateNoiceTexture(const uint32_t width, const uint32_t height, const uint32_t blockSize, const TextureKey& key);
+
+
 	static TextureKey CreateResourceWithoutView(const TextureKey& key);
 
-	static TextureKey CreateSRVOnResource(const TextureKey& key,DXGI_FORMAT format = DXGI_FORMAT_R8G8B8A8_UNORM, D3D12_HEAP_TYPE heaptype = D3D12_HEAP_TYPE_CUSTOM, D3D12_RESOURCE_FLAGS resourceFlag = D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET, float dx = 1.f, float dy = 1.f);
+	static TextureKey CreateSRVOnResource(const TextureKey& key, DXGI_FORMAT format = DXGI_FORMAT_R8G8B8A8_UNORM, D3D12_HEAP_TYPE heaptype = D3D12_HEAP_TYPE_CUSTOM, D3D12_RESOURCE_FLAGS resourceFlag = D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET, float dx = 1.f, float dy = 1.f);
 
 	static void ResizeScreenTextures();
 

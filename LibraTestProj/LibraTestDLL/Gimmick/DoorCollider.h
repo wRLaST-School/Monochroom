@@ -4,26 +4,30 @@
 #include <OBBCollider.h>
 
 class DoorCollider :
-    public IScriptObject
+	public IScriptObject
 {
 private:
-    Object3D* mObj;
-    Object3D* mLeft;
-    Object3D* mRight;
-    OBBCollider mLeftCollider;
-    OBBCollider mRightCollider;
-    Vec3 leftColliderPos;
-    Vec3 rightColliderPos;
-    Vec3 colliderScale;
+	Object3D* mObj;
+	Object3D* mLeft;
+	Object3D* mRight;
+	OBBCollider mLeftCollider;
+	OBBCollider mRightCollider;
+	Vec3 leftColliderPos;
+	Vec3 rightColliderPos;
+	Vec3 colliderScale;
 
 public:
-    void Init();
-    void Update();
-    void Draw();
-    void OnInspectorWindowDraw();
-    void CopyComponent(IComponent* src) { src; }
+	void Init();
+	void Update();
+	void Draw();
+	void OnInspectorWindowDraw();
+	void CopyComponent(IComponent* src) { src; }
 
-    DefDel;
+	DefDel;
+
+public:
+	OBBCollider GetLeftCollider();
+	OBBCollider GetRightCollider();
 };
 
 RegisterScript(DoorCollider);
