@@ -632,9 +632,9 @@ void Object3D::DrawGizmo()
 	float snap[3] = { 0.001f,0.001f,0.001f };
 	if (Input::Key::Down(DIK_LSHIFT))
 	{
-		snap[0] = 0.1f;
-		snap[1] = 0.1f;
-		snap[2] = 0.1f;
+		snap[0] = 1.0f;
+		snap[1] = 1.0f;
+		snap[2] = 1.0f;
 	}
 
 	Matrix mat = matWorld;
