@@ -60,6 +60,8 @@ void GrayScale::Init()
 	RegisterPipeline(name);
 
 	cb.Create();
+
+	info.Init();
 }
 
 void GrayScale::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
