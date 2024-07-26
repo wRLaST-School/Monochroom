@@ -89,9 +89,13 @@ void Camera::FrustumCulling()
 
 void Camera::UpdateViewProjMatrix()
 {
+	if (rotationE.y == PIf / 2 || rotationE.y == PIf / 2 * 3) { 
+		rotationE.y += 0.1f; 
+	}
+
 	view = targetMode == CameraTargetMode::LookAt ?
 		Matrix::ViewLookAt(position, target, matWorld.ExtractAxisY()) :
-		Matrix::ViewLookTo(position, matWorld.ExtractAxisZ(), matWorld.ExtractAxisY());
+		Matrix::ViewLookTo(matWorld);
 
 	proj = projectionMode == ProjectionMode::Perspective ?
 		Matrix::Projection(fov, (float)renderWidth / (float)renderHeight, nearZ, farZ) :
@@ -102,7 +106,7 @@ void Camera::UpdateLightViewProjMatrix()
 {
 	view = targetMode == CameraTargetMode::LookAt ?
 		Matrix::ViewLookAt(position, target, matWorld.ExtractAxisY()) :
-		Matrix::ViewLookTo(position, matWorld.ExtractAxisZ(), matWorld.ExtractAxisY());
+		Matrix::ViewLookTo(matWorld);
 
 	proj = projectionMode == ProjectionMode::Perspective ?
 		Matrix::Projection(fov, (float)renderWidth / (float)renderHeight, nearZ, farZ) :
@@ -275,7 +279,7 @@ Float3 Camera::GetWorldPosFromScreen(const Float2& screen, float depth)
 
 	Matrix vMat = targetMode == CameraTargetMode::LookAt ?
 		Matrix::ViewLookAt(position, target, matWorld.ExtractAxisY()) :
-		Matrix::ViewLookTo(position, matWorld.ExtractAxisZ(), matWorld.ExtractAxisY());
+		Matrix::ViewLookTo(matWorld);
 
 	Matrix pMat = projectionMode == ProjectionMode::Perspective ?
 		Matrix::Projection(fov, (float)renderWidth / (float)renderHeight, nearZ, farZ) :
@@ -333,7 +337,7 @@ Ray Camera::GetScreenPosRay(const Float2& screen)
 
 	Matrix vMat = targetMode == CameraTargetMode::LookAt ?
 		Matrix::ViewLookAt(position, target, matWorld.ExtractAxisY()) :
-		Matrix::ViewLookTo(position, matWorld.ExtractAxisZ(), matWorld.ExtractAxisY());
+		Matrix::ViewLookTo(matWorld);
 
 	Matrix pMat = projectionMode == ProjectionMode::Perspective ?
 		Matrix::Projection(fov, (float)renderWidth / (float)renderHeight, nearZ, farZ) :
