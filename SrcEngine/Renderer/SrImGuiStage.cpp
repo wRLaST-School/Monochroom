@@ -3,12 +3,14 @@
 #include <SpImGui.h>
 #include <NoEffect.h>
 #include <DockPanel.h>
+#include <LineDrawer.h>
 void SrImGuiStage::Init()
 {
 }
 
 void SrImGuiStage::PreDraw()
 {
+	LineDrawer::DrawAllLines();
 	NoEffect::Effect("RenderTexture", "CurrentBuffer");
 	DockPanel::DrawViewPort();
 }

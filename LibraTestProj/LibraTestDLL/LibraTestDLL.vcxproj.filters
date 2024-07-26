@@ -171,6 +171,9 @@
     <ClInclude Include="StageGenerater.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerGoggleState.h">
+      <Filter>ヘッダー ファイル\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -283,6 +286,9 @@
     </ClCompile>
     <ClCompile Include="StageGenerater.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerGoggleState.cpp">
+      <Filter>ソース ファイル\Player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

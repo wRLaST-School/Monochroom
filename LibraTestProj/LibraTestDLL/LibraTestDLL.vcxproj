@@ -29,6 +29,7 @@
     <ClInclude Include="GoggleScr.h" />
     <ClInclude Include="GraphicsTab.h" />
     <ClInclude Include="PlayerGoggle.h" />
+    <ClInclude Include="PlayerGoggleState.h" />
     <ClInclude Include="Player\PlayerCollider.h" />
     <ClInclude Include="Player\PlayerControl.h" />
     <ClInclude Include="SponePoint.h" />
@@ -70,6 +71,7 @@
     <ClCompile Include="GoggleScr.cpp" />
     <ClCompile Include="GraphicsTab.cpp" />
     <ClCompile Include="PlayerGoggle.cpp" />
+    <ClCompile Include="PlayerGoggleState.cpp" />
     <ClCompile Include="Player\PlayerCollider.cpp" />
     <ClCompile Include="Player\PlayerControl.cpp" />
     <ClCompile Include="SponePoint.cpp" />
