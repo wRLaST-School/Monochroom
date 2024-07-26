@@ -26,7 +26,7 @@ class GrayScale : public IPostEffector
 {
 private:
 	static int32_t mGrayEffectTime;
-	static const int32_t kGrayEffectTimeMax = 40;
+	static int32_t mGrayEffectTimeMax;
 	static bool mIsEquip;
 	static bool mIsGrayEffect;
 
@@ -39,7 +39,8 @@ public:
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
 
 public:
-	DLLExport static void BeginGrayEffect(bool isEquip);
+	DLLExport static void BeginGrayEffect(bool isEquip, int32_t effectTime);
+	DLLExport static bool GetIsEffect() { return mIsGrayEffect; }
 
 private:
 	static void GrayEffectUpdate();

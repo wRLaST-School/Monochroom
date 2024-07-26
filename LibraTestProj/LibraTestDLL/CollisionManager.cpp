@@ -38,7 +38,7 @@ void CollisionManager::Update()
 		return;
 	}
 
-	bool isEquipGoggle = mPlayerGoggle->GetIsEquipGoggle();
+	bool isEquipGoggle = mPlayerGoggle->GetFinishedEquipGoggle();
 
 	//カメラにブロックが映っているか
 	CameraInsideFlyBlocks();
@@ -178,7 +178,7 @@ void CollisionManager::RayHitGoggle()
 			goggleScr->GettedPlayer(player);
 
 			auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
-			playerGoggle->SetIsHavingGoggle(true);
+			playerGoggle->GettedGoggle();
 		}
 	}
 }
