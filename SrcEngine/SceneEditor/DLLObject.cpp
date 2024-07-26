@@ -30,8 +30,9 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
     //生成済みの場合はリセット
     if (component_)
     {
-        delete component_;
-        OutputDebugStringA(std::format("Deleting Instance {}\n", className).c_str());
+       //delete component_;
+       //OutputDebugStringA(std::format("Deleting Instance {}\n", className).c_str());
+        component_ = nullptr;
     }
 
     component_ = instantiateFunc();
