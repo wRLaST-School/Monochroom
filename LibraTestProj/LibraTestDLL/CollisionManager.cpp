@@ -28,6 +28,7 @@ void CollisionManager::Init()
 	mGoalColliders = FindColliderList<GoalCollider>("Goal", "GoalCollider");
 	mGoggleColliders = FindColliderList<GoggleCollider>("Goggle", "GoggleCollider");
 	mTransparentColliders = FindColliderList<TransparentCollider>("Transparent", "TransparentCollider");
+	mDoorColliders = FindColliderList<DoorCollider>("StageDoor", "DoorCollider");
 }
 
 void CollisionManager::Update()
@@ -64,6 +65,9 @@ void CollisionManager::Update()
 	// プレイヤーと透明の壁
 	PlayerHitTransparents();
 
+	// プレイヤーとドア
+	PlayerHitDoors();
+
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
 
@@ -84,6 +88,9 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックとゴール
 	FlyBlocksHitGoals();
+
+	// 飛ぶブロックトドアの当たり判定
+	FlyBlocksHitDoors();
 }
 
 void CollisionManager::CameraInsideFlyBlocks()
@@ -327,6 +334,25 @@ void CollisionManager::PlayerHitTransparents()
 	}
 }
 
+void CollisionManager::PlayerHitDoors()
+{
+	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
+
+	for (const auto& dc : mDoorColliders)
+	{
+		// 押し出し
+		Vec3 pushOut = Vec3::zero;
+		if (dc->GetLeftCollider().IsTrigger(&playerBodyCollider, &pushOut))
+		{
+			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+		if (dc->GetRightCollider().IsTrigger(&playerBodyCollider, &pushOut))
+		{
+			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+	}
+}
+
 void CollisionManager::FlyBlocksHitBlocks()
 {
 	for (const auto& fbc : mFlyBlockColliders)
@@ -517,7 +543,6 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 	}
 }
 
-
 void CollisionManager::FlyBlocksHitGoals()
 {
 	for (const auto& fbc : mFlyBlockColliders)
@@ -539,6 +564,28 @@ void CollisionManager::FlyBlocksHitGoals()
 						flyBlock->EndAttracting();
 					}
 				}
+			}
+		}
+	}
+}
+
+void CollisionManager::FlyBlocksHitDoors()
+{
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		for (const auto& dc : mDoorColliders)
+		{
+			auto flyBlockBodyCollider = fbc->GetBodyCollider();
+
+			// 押し出し
+			Vec3 pushOut = Vec3::zero;
+			if (dc->GetLeftCollider().IsTrigger(&flyBlockBodyCollider, &pushOut))
+			{
+				mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+			}
+			if (dc->GetRightCollider().IsTrigger(&flyBlockBodyCollider, &pushOut))
+			{
+				mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 			}
 		}
 	}

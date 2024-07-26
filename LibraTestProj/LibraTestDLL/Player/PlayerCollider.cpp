@@ -12,7 +12,7 @@ void PlayerCollider::Update()
 {
 	// 押し戻し用
 	float r = Vec3(mObj->scale).GetMaxElement();
-	mBodyCollider.Setting(mObj->position, r * 2);
+	mBodyCollider.Setting(mObj->position, r);
 
 	// 重力判定用
 	Quaternion rot = Quaternion();
