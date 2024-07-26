@@ -166,8 +166,7 @@ void SceneManager::ConfirmTransition()
 {
 	if (transitionQueued)
 	{
-		currentScene.release();
-		currentScene = nullptr;
+		currentScene.reset(nullptr);
 		currentScene.swap(nextScene);
 
 		currentScene->Init();

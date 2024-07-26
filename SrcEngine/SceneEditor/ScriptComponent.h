@@ -24,6 +24,8 @@ public:
 
     Libra::DLLObject* GetObj();
 
+    ~ScriptComponent();
+
 private:
     void CompileScript();
     void LoadDLL(bool noInit = false);
