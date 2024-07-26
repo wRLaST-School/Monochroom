@@ -29,6 +29,7 @@ void GameManager::Awake()
 	else
 	{
 		StageGenerating::info.isDraw = true;
+		SpTextureManager::CreateNoiceTexture(128, 128, 16, "NoiceTexture");
 	}
 }
 

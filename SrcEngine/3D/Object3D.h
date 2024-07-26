@@ -109,6 +109,8 @@ public:
 
 	TextureKey renderTarget = "";
 
+	TextureKey dissolveTex = "";
+
 	Model* model = nullptr;
 
 	float distanceToCam = 0;
@@ -123,5 +125,7 @@ public:
 	std::unique_ptr<Silhouette> silhouette;
 	std::unique_ptr<HolographicCaster> holographicCaster;
 	
+	DLLExport static float dissolveStrength;
+	bool isUseMyselfDissolveStrength;
 };
 
