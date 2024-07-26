@@ -11,6 +11,7 @@
 #include <RGBShift.h>
 #include <StageGenerating.h>
 #include <KawaseBloom.h>
+#include <SceneManager.h>
 
 void SrPostEffectStage::Init()
 {
@@ -35,6 +36,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftF", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftMask", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "HolographicCaster", true);
+	SpTextureManager::LoadTexture("Assets/Images/goggle.png", "Goggle_Mask");
 
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");
@@ -57,6 +59,7 @@ void SrPostEffectStage::Init()
 	SpTextureManager::AddMasterTextureKey("RGBShiftF");
 	SpTextureManager::AddMasterTextureKey("RGBShiftMask");
 	SpTextureManager::AddMasterTextureKey("HolographicCaster");
+	SpTextureManager::AddMasterTextureKey("Goggle_Mask");
 
 	BloomP1::Init();
 	BloomP2::Init();
@@ -95,8 +98,18 @@ void SrPostEffectStage::Render()
 	//StageGenerating::Effect(RTVManager::defaultRT, "StageGenerater");
 	//RGBShift::Effect("RGBShiftTex", "RGBShift");
 
-	// 最後
-	BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
+	if (SceneManager::currentScene->GetName() == "Title" ||
+		SceneManager::currentScene->GetName() == "StageSelect")
+	{
+		BlinkTransition::Effect("RGBShiftF", "BlinkTransition");
+
+	}
+	else
+	{
+		// 最後
+		BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
+
+	}
 
 	NoEffect::Effect("BlinkTransition", "RenderTexture");
 	//NoEffect::Effect("UI", "RenderTexture");

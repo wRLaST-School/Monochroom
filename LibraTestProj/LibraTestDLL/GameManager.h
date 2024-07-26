@@ -4,6 +4,7 @@
 #include <Camera.h>
 #include <StageGenerater.h>
 #include <vector>
+#include "SelectPanel.h"
 
 class GameManager :
 	public IScriptObject
@@ -12,6 +13,8 @@ private:
 	Object3D* mPlayer;
 	Camera* mCamera;
 	StageGenerater* mStageGenerater;
+	SelectPanel* mSelectPanel;
+
 	bool isStop;
 	static bool mIsChangeScene;
 
@@ -28,7 +31,7 @@ public:
 	Object3D* GetPlayer();
 	Camera* GetCamera();
 	StageGenerater* GetStageGenerater();
-
+	
 	bool GetisStop();
 
 	// ゲーム一時停止の設定

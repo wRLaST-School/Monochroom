@@ -6,7 +6,7 @@
 #include "Easing.h"
 
 class SelectPanel :
-    public IScriptObject
+	public IScriptObject
 {
 private:
 	enum PanelState
@@ -73,7 +73,14 @@ public:
 	void OnInspectorWindowDraw() override;
 	void CopyComponent(IComponent* src);
 
-    DefDel;
+public:
+	// シーンチェンジフラグの取得
+	bool GetIsChangeScene();
+
+	// シーンチェンジフラグの設定
+	void SetIsChangeScene(bool IsChage);
+
+	DefDel;
 private:
 
 	float DegreeToRadian(float angle);
@@ -123,6 +130,7 @@ private:
 
 	// タイトル用のゴーグルオブジェクト
 	std::unique_ptr<Object3D> mGoggleObj;
+	Object3D* mLeftLensObj;
 
 	// カプセルのオブジェクト
 	std::unique_ptr<Object3D> mCapsuleObj;
@@ -190,6 +198,7 @@ private:
 
 	Easing mEaseAlpha;
 	bool IsAlphaOn;
+	bool IsChangeStage;
 
 	Easing mEaseCapsule;
 	float mCapsuleDefuY;

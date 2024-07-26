@@ -19,9 +19,10 @@ float4 main(VSOutput input) : SV_TARGET
 {
     //return float4(brightness.rgb, 1.0f);
     
-    float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
+    //float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
 	
-    clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
-    
-    return (float4(tex.Sample(smp, input.uv)) * brightness);
+    //clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
+    float4 texColor = tex.Sample(smp, input.uv);
+    clip(texColor.a - 0.5f);
+    return (texColor * brightness);
 }
