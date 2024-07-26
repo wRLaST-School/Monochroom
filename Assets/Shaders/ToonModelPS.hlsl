@@ -52,6 +52,21 @@ float4 main(VSOutput input) : SV_TARGET
     
     float4 texCol = tex.Sample(smp, input.uv);
     
+    float2 pixelSize = 1.0f / float2(1920.f, 1080.f);
+    float2 blockSize = float2(64.f, 64.f);
+    float2 blockUV = floor(input.uv * blockSize) / blockSize;
+    
+    float dissolveCol = dissolveTex.Sample(smp, blockUV + float2(0, dissolveStrength.x / 10.f)).r;
+    
+    //return float4(dissolveCol2, 0, 0, 1);
+    
+    float t = dissolveStrength;
+    float tsub = 0.03f;
+    
+    float drate = step(t, dissolveCol.r).xxxx;
+    float drate2 = step(t - tsub, dissolveCol.r).xxxx;
+    texCol.rgb = texCol.rgb * (1 - drate2) + (drate2 - drate) * float3(0.2f, 0.3f, 0.9f);
+    
     float4 result = texCol * shadeCol * brightness;
     result.rgb *= shadow;
     

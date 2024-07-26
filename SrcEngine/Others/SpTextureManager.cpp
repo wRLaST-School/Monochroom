@@ -765,11 +765,11 @@ TextureKey SpTextureManager::CreateNoiceTexture(const uint32_t width, const uint
 		[&](auto& map) {
 			if (map.count(key) != 0) alreadyRegistered = true;
 		});
-	if (alreadyRegistered)
-	{
-		OutputDebugStringA((string("Texture : ") + key + string(" already exists. skipping.") + string("\n")).c_str());
-		return key;
-	}
+	//if (alreadyRegistered)
+	//{
+	//	OutputDebugStringA((string("Texture : ") + key + string(" already exists. skipping.") + string("\n")).c_str());
+	//	return key;
+	//}
 	OutputDebugStringA((string("Loading : ") + key + string(" (Heap Index : ") + to_string(GetInstance().nextTexIndex_) + string(")\n")).c_str());
 	SpTextureManager& ins = GetInstance();
 	D3D12_RESOURCE_DESC texresdesc{};
