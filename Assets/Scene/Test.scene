@@ -32,7 +32,7 @@
             },
             {
                 "Active": true,
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -41,7 +41,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
@@ -59,6 +59,7 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveTex": "",
                         "Model": "cube.obj",
                         "Name": "Plane",
                         "NormalType": 0,
@@ -97,7 +98,8 @@
                     }
                 ],
                 "DisableDraw": false,
-                "Model": "cube.obj",
+                "DissolveTex": "Noice.png",
+                "Model": "stage1.obj",
                 "Name": "Object3D",
                 "NormalType": 0,
                 "Position": {
@@ -123,7 +125,7 @@
                     "Z": 1.0
                 },
                 "Tags": null,
-                "Texture": "DissolveMap.png",
+                "Texture": "stage1.png",
                 "Type": "Object3D"
             },
             {
@@ -146,6 +148,7 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveTex": "",
                         "Model": "Plane.obj",
                         "Name": "Plane",
                         "NormalType": 0,
@@ -177,6 +180,7 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveTex": "",
                 "Model": "Plane.obj",
                 "Name": "PlaneAlpha",
                 "NormalType": 0,
@@ -239,6 +243,7 @@
                     "Z": 1.0
                 },
                 "DisableDraw": false,
+                "DissolveTex": "",
                 "Model": "Plane.obj",
                 "Name": "Plane",
                 "NormalType": 0,
@@ -269,7 +274,7 @@
                 "Type": "Object3D"
             },
             {
-                "Active": true,
+                "Active": false,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -325,14 +330,28 @@
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
                 "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
+                "LeftLens.obj": "Assets\\Models\\LeftLens\\LeftLens.obj",
+                "LensL.obj": "Assets\\Models\\LensL\\LensL.obj",
+                "LensR.obj": "Assets\\Models\\LensR\\LensR.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
+                "TV1.obj": "Assets\\Models\\TV1\\TV1.obj",
+                "TV2.obj": "Assets\\Models\\TV2\\TV2.obj",
+                "TV3.obj": "Assets\\Models\\TV3\\TV3.obj",
+                "TVBlack.obj": "Assets\\Models\\TVBlack\\TVBlack.obj",
+                "TVScreen.obj": "Assets\\Models\\TVScreen\\TVScreen.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
+                "button.obj": "Assets\\Models\\button\\button.obj",
                 "cube": "Assets/Models/Cube/Cube.obj",
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
+                "door.obj": "Assets\\Models\\door\\door.obj",
                 "floor": "Assets/Models/Floor.glb",
-                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj"
+                "gogle.obj": "Assets\\Models\\gogle\\gogle.obj",
+                "panel.obj": "Assets\\Models\\panel\\panel.obj",
+                "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
+                "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
+                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj"
             }
         ],
         "Name": "Scene",
@@ -349,23 +368,44 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "Noice.png": "Assets\\Images\\Noice.png",
+                "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
+                "TV1.png": "Assets\\Models\\TV1\\TV1.png",
+                "TV2Black.png": "Assets\\Models\\TVBlack\\TV2Black.png",
+                "TV3.png": "Assets\\Models\\TV3\\TV3.png",
+                "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TestTex.png": "Assets\\Images\\TestTex.png",
+                "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
                 "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonBodyButtonBody.png": "Assets\\Models\\Stage\\ButtonBody/ButtonBody.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonFlameButtonFlame.png": "Assets\\Models\\Stage\\ButtonFlame/ButtonFlame.png",
+                "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
+                "asmptex:Assets\\Models\\TV2TV2.png": "Assets\\Models\\TV2/TV2.png",
+                "asmptex:Assets\\Models\\TV3TV3.png": "Assets\\Models\\TV3/TV3.png",
+                "asmptex:Assets\\Models\\TVBlackTV2Black.png": "Assets\\Models\\TVBlack/TV2Black.png",
+                "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
+                "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "black": "Assets/Images/black.png",
+                "button.png": "Assets\\Models\\button\\button.png",
                 "buttonBackTex": "Assets/Images/MenuImages/ButtonBack.png",
                 "cameraTextTex": "Assets/Images/MenuImages/CameraText.png",
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
+                "door.png": "Assets\\Models\\door\\door.png",
+                "goal.png": "Assets\\Models\\Goal\\goal.png",
+                "goggle.png": "Assets\\Images\\goggle.png",
                 "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
+                "hyphen": "Assets/Images/hyphen.png",
                 "menuTextTex": "Assets/Images/MenuImages/MenuText.png",
+                "panel.png": "Assets\\Models\\panel\\panel.png",
                 "quitTextTex": "Assets/Images/MenuImages/QuitText.png",
+                "stage1.png": "Assets\\Models\\stage1\\stage1.png",
+                "stage1_pipe.png": "Assets\\Models\\stage1_pipe\\stage1_pipe.png",
                 "testTex": "Assets/Images/circleParticle.png",
                 "white.png": "Assets\\Images\\white.png"
             }

@@ -27,8 +27,11 @@ void SponePoint::Update()
 	//	//SponePlayer();
 	//}
 
-	if (GameManager::GetInstance()->GetisStop() &&
-		!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
+	auto player = SceneManager::FindObject<Object3D>("Player");
+
+	if ((GameManager::GetInstance()->GetisStop() &&
+		!GameManager::GetInstance()->GetStageGenerater()->GetisEnd()) ||
+		player->position.y <= kResponeYMin)
 	{
 		ConsoleWindow::Log("SPONE_PLAYER");
 		SponePlayer();

@@ -158,6 +158,15 @@ void CollisionManager::RayHitGoggle()
 	//ゴーグル取得
 	if (AppOperationCommand::GetInstance()->PlayerGetGoggleCommand())
 	{
+		auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+		auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
+
+		if (playerGoggle->GetIsHavingGoggle())
+		{
+			return;
+		}
+
+
 		GoggleScr* goggleScr = nullptr;
 		auto rayCollider = mViewCollider->GetRayCollider();
 		float minDis = 99999.f;
@@ -181,10 +190,8 @@ void CollisionManager::RayHitGoggle()
 		// ゴーグルをプレイヤーと紐づけ(親子関係
 		if (goggleScr)
 		{
-			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
 			goggleScr->GettedPlayer(player);
 
-			auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
 			playerGoggle->GettedGoggle();
 		}
 	}

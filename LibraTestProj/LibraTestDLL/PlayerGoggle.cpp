@@ -12,6 +12,8 @@
 void PlayerGoggle::Init()
 {
 	ChangeState(std::make_unique<PlayerGoggleStateNone>());
+
+	mIsHavingGoggle = false;
 }
 
 void PlayerGoggle::Update()
@@ -27,6 +29,7 @@ void PlayerGoggle::Draw()
 //-----------------------------------------------------------------------------------------
 void PlayerGoggle::GettedGoggle()
 {
+	mIsHavingGoggle = true;
 	ChangeState(std::make_unique<PlayerGoggleStateHaving>());
 }
 

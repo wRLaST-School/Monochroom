@@ -10,9 +10,15 @@
 #include <DockPanel.h>
 #include <RTVManager.h>
 
+float Object3D::dissolveStrength = 1.25f;
+
 Object3D::Object3D()
 {
 	{ transformCB.contents->mat = Matrix::Identity(); *brightnessCB.contents = { 1.0f, 1.0f, 1.0f, 1.0f }; miscCB.contents->rimColor = { 1.f, 0.f, 0.f, 1.f }; };
+
+	miscCB.contents->dissolveStrength = 1.25f;
+	isUseMyselfDissolveStrength = false;
+	dissolveTex = "Noice.png";
 
 	shadowCaster = std::make_unique<ShadowCaster>();
 	normalCaster = std::make_unique<NormalCaster>();
@@ -112,6 +118,11 @@ void Object3D::Draw()
 	//描画無効ならなにもしない
 	if (disableDraw)
 		return;
+
+	if (!isUseMyselfDissolveStrength)
+	{
+		miscCB.contents->dissolveStrength = dissolveStrength;
+	}
 
 	shadowCaster->Draw(model);
 	normalCaster->Draw(model);
@@ -246,7 +257,7 @@ void Object3D::Draw(const TextureKey& key)
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
 
-		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("dissolveMap"));
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle(dissolveTex));
 
 		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(9, SpTextureManager::GetGPUDescHandle("Black"));
 
@@ -367,7 +378,9 @@ void Object3D::DrawToon(const TextureKey& key)
 
 		GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(7, miscCB.buffer->GetGPUVirtualAddress());
 
-		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("Black"));
+		dissolveTex = "Noice.png";
+		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle(dissolveTex));
+		//GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(8, SpTextureManager::GetGPUDescHandle("Noice.png"));
 
 		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(9, SpTextureManager::GetGPUDescHandle("ShadowMap_depth_"));
 
@@ -485,6 +498,7 @@ void Object3D::DrawTransparentWall(const TextureKey& key)
 
 void Object3D::OnInspectorWindowDraw()
 {
+
 	if (ImGui::CollapsingHeader("Transform"))
 	{
 		ImGui::DragFloat3("Translation", &position.x);
@@ -541,6 +555,15 @@ void Object3D::OnInspectorWindowDraw()
 		{
 			texture = buf;
 		};
+
+		static std::string input = dissolveTex;
+		if (SpImGui::InputText("Dissolve Tex Key", input))
+		{
+			dissolveTex = input;
+		}
+
+		ImGui::Checkbox("UseMyself", &isUseMyselfDissolveStrength);
+		ImGui::DragFloat("Disssolve", &miscCB.contents->dissolveStrength, 0.01f, 0.f, 1.25f);
 	}
 	ImGui::Separator();
 
@@ -708,6 +731,19 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	}
 
 	texture = jsonObject["Texture"];
+	if (jsonObject.contains("DissolveTex"))
+	{
+		dissolveTex = jsonObject["DissolveTex"];
+		if (jsonObject.contains("DissolveStrength"))
+		{
+			miscCB.contents->dissolveStrength = jsonObject["DissolveStrength"];
+		}
+		if (jsonObject.contains("UseMyselfDissolveStrength"))
+		{
+			isUseMyselfDissolveStrength = jsonObject["UseMyselfDissolveStrength"];
+		}
+	}
+
 	std::string modelStr = jsonObject.At("Model");
 
 	if (jsonObject.contains("BlendMode"))
@@ -757,6 +793,10 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	jsonObject["Brightness"]["W"] = brightnessCB.contents->w;
 
 	jsonObject["Texture"] = texture;
+	jsonObject["DissolveTex"] = dissolveTex;
+	jsonObject["DissolveStrength"] = miscCB.contents->dissolveStrength;
+	jsonObject["UseMyselfDissolveStrength"] = isUseMyselfDissolveStrength;
+
 
 	if (model)
 	{

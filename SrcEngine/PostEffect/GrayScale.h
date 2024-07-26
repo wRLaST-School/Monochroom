@@ -12,6 +12,14 @@ struct GrayScaleInfo
 	const Vec2 kGrayPoint1 = { 230 / kGrayWindowSize.x,340 / kGrayWindowSize.y };
 	const Vec2 kGrayPoint2 = { 1040 / kGrayWindowSize.x,340 / kGrayWindowSize.y };
 	const float kGrayEffectRadius = 500.0f / kGrayWindowSize.x;
+
+public:
+	void Init()
+	{
+		isDraw = false;
+		offsetRatio = 0;
+		grayEffectRatio = 0;
+	}
 };
 
 struct GraySclaeCB
