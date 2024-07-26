@@ -64,7 +64,7 @@ void SrOpaqueStage::Render()
 	commands_.clear();
 
 	RTVManager::SetRenderTargetToTexture(RTVManager::defaultRT, false);
-	LineDrawer::DrawAllLines();
+	//LineDrawer::DrawAllLines();
 }
 
 void SrOpaqueStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)

@@ -197,6 +197,11 @@ Matrix Matrix::ViewLookTo(Float3 eyePos, Vec3 camRZ, Vec3 up)
 	return -result;
 }
 
+Matrix Matrix::ViewLookTo(Matrix cameraWorld)
+{
+	return -cameraWorld;
+}
+
 Matrix Matrix::ViewLookAt(Float3 eye, Float3 target, Vec3 up)
 {
 	Vec3 camRZ = (Vec3)target - eye;
@@ -284,46 +289,110 @@ Matrix Matrix::RotZ(float rad)
 
 Matrix Matrix::operator-() const
 {
-	Matrix result;
-	float temp[4][8] = {};
+	//Matrix result;
+	//float temp[4][8] = {};
 
-	float a;
+	//float a;
 
-	//一時行列にコピー
+	////一時行列にコピー
+	//for (int32_t i = 0; i < 4; i++) {
+	//	for (int32_t j = 0; j < 4; j++) {
+	//		temp[i][j] = r[i][j];
+
+	//		if (i == j)temp[i][4 + j] = 1;
+	//	}
+	//}
+
+	//for (int32_t k = 0; k < 4; k++) {
+	//	a = 1 / temp[k][k];
+
+	//	for (int32_t j = 0; j < 8; j++) {
+	//		temp[k][j] *= a;
+	//	}
+
+	//	for (int32_t i = 0; i < 4; i++) {
+	//		if (i == k) {
+	//			continue;
+	//		}
+
+	//		a = -temp[i][k];
+
+	//		for (int32_t j = 0; j < 8; j++) {
+	//			temp[i][j] += temp[k][j] * a;
+	//		}
+	//	}
+	//}
+
+	//for (int32_t i = 0; i < 4; i++) {
+	//	for (int32_t j = 0; j < 4; j++) {
+	//		result[i][j] = temp[i][4 + j];
+	//	}
+	//}
+	//return result;
+	Matrix temp;
+	float mat[4][8] = { 0 };
+
 	for (int32_t i = 0; i < 4; i++) {
 		for (int32_t j = 0; j < 4; j++) {
-			temp[i][j] = r[i][j];
-
-			if (i == j)temp[i][4 + j] = 1;
+			mat[i][j] = r[i][j];
 		}
 	}
 
-	for (int32_t k = 0; k < 4; k++) {
-		a = 1 / temp[k][k];
+	mat[0][4] = 1;
+	mat[1][5] = 1;
+	mat[2][6] = 1;
+	mat[3][7] = 1;
 
-		for (int32_t j = 0; j < 8; j++) {
-			temp[k][j] *= a;
+	for (int32_t n = 0; n < 4; n++) {
+		float max = abs(mat[n][n]);
+		int32_t maxIndex = n;
+
+		for (int32_t i = n + 1; i < 4; i++) {
+			if (abs(mat[i][n]) > max) {
+				max = abs(mat[i][n]);
+				maxIndex = i;
+			}
+		}
+
+		//最大の絶対値が0
+		if (abs(mat[maxIndex][n]) <= EPSILON) {
+			return temp; 
+		}
+
+		if (n != maxIndex) {
+			for (int32_t i = 0; i < 8; i++) {
+				float f = mat[maxIndex][i];
+				mat[maxIndex][i] = mat[n][i];
+				mat[n][i] = f;
+			}
+		}
+
+		float mul = 1 / mat[n][n];
+
+		for (int32_t i = 0; i < 8; i++) {
+			mat[n][i] *= mul;
 		}
 
 		for (int32_t i = 0; i < 4; i++) {
-			if (i == k) {
+			if (n == i) {
 				continue;
 			}
 
-			a = -temp[i][k];
+			mul = -mat[i][n];
 
 			for (int32_t j = 0; j < 8; j++) {
-				temp[i][j] += temp[k][j] * a;
+				mat[i][j] += mat[n][j] * mul;
 			}
 		}
 	}
 
 	for (int32_t i = 0; i < 4; i++) {
 		for (int32_t j = 0; j < 4; j++) {
-			result[i][j] = temp[i][4 + j];
+			temp[i][j] = mat[i][j + 4];
 		}
 	}
-	return result;
+
+	return temp;
 }
 
 Matrix Matrix::operator+(const Matrix& m) const

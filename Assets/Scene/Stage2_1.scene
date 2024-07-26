@@ -4,6 +4,133 @@
         "Children": [
             {
                 "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "Plane",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0010000000474974513
+                        },
+                        "RenderTarget": "Plane",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": -0.4363323152065277,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 100.0,
+                            "Y": 100.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 2,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "PlaneAlpha",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": -0.4363323152065277,
+                            "Y": 0.0,
+                            "Z": 1.5707963705062866
+                        },
+                        "Scale": {
+                            "X": 100.0,
+                            "Y": 100.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "TestTex.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "Name": "StageGenerater",
+                        "Tags": [
+                            "StageGenerater"
+                        ],
+                        "Type": "ScriptComponent",
+                        "filePath": "StageGenerater"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "PlaneGroup",
+                "Position": {
+                    "X": -162.758056640625,
+                    "Y": -10000.0,
+                    "Z": 107.10000610351563
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": -0.17000000178813934,
+                    "Y": 5.282389163970947,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
                 "Children": [
                     {
                         "Active": true,
@@ -22,9 +149,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 6.848000526428223,
-                    "Y": 10.0,
-                    "Z": 22.193330764770508
+                    "X": -11.965999603271484,
+                    "Y": 8.994000434875488,
+                    "Z": 10.447000503540039
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +160,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.599999725818634,
-                    "Y": 4.112375259399414,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -122,7 +249,7 @@
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
-                            "Z": -30.0
+                            "Z": -4.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -133,13 +260,13 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 10.0,
+                            "X": 44.0,
                             "Y": 4.0,
-                            "Z": 16.0
+                            "Z": 21.0
                         },
                         "Tags": [
                             "Block"
@@ -170,9 +297,9 @@
                         "Name": "Block",
                         "NormalType": 0,
                         "Position": {
-                            "X": 0.0,
-                            "Y": 9.0,
-                            "Z": -32.0
+                            "X": 6.5,
+                            "Y": 8.0,
+                            "Z": 31.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -183,396 +310,46 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 2.0,
-                            "Y": 1.0,
-                            "Z": 14.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 6.0,
-                            "Z": -43.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 4.0,
-                            "Y": 2.0,
-                            "Z": 3.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 5.0,
-                            "Z": -43.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 6.0,
-                            "Y": 1.0,
-                            "Z": 3.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 21.766000747680664,
-                            "Y": 6.0,
-                            "Z": -34.763999938964844
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 2.0,
-                            "Y": 6.0,
-                            "Z": 2.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": -18.976001739501953,
-                            "Y": 6.0,
-                            "Z": -28.420997619628906
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 2.0,
-                            "Y": 6.0,
-                            "Z": 2.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": -15.227001190185547,
-                            "Y": 7.0,
-                            "Z": -42.11700439453125
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1.0,
-                            "Y": 7.0,
-                            "Z": 1.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 14.429000854492188,
-                            "Y": 7.0,
-                            "Z": -25.855003356933594
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1.0,
-                            "Y": 7.0,
-                            "Z": 1.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 8.596000671386719,
-                            "Y": 10.0,
-                            "Z": -50.121002197265625
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1.0,
-                            "Y": 10.0,
-                            "Z": 1.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": -7.718000411987305,
+                            "X": 3.0,
                             "Y": 4.0,
-                            "Z": -56.314002990722656
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 13.5,
+                            "Y": 8.0,
+                            "Z": 29.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -583,13 +360,13 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 2.0,
+                            "X": 1.0,
                             "Y": 4.0,
-                            "Z": 2.0
+                            "Z": 6.0
                         },
                         "Tags": [
                             "Block"
@@ -621,8 +398,8 @@
                         "NormalType": 0,
                         "Position": {
                             "X": 0.0,
-                            "Y": 4.0,
-                            "Z": 0.0
+                            "Y": 8.0,
+                            "Z": 21.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -633,13 +410,13 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 16.0,
-                            "Y": 6.0,
-                            "Z": 18.0
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 12.0
                         },
                         "Tags": [
                             "Block"
@@ -670,9 +447,9 @@
                         "Name": "Block",
                         "NormalType": 0,
                         "Position": {
-                            "X": -0.44200003147125244,
-                            "Y": 13.0,
-                            "Z": 3.2340011596679688
+                            "X": -13.0,
+                            "Y": 8.0,
+                            "Z": 21.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -683,12 +460,62 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 4.0,
-                            "Y": 3.0,
+                            "X": 7.0,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -8.0,
+                            "Y": 8.0,
+                            "Z": 15.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 4.0,
                             "Z": 4.0
                         },
                         "Tags": [
@@ -720,9 +547,9 @@
                         "Name": "Block",
                         "NormalType": 0,
                         "Position": {
-                            "X": 0.04300001263618469,
-                            "Y": 12.0,
-                            "Z": -1.809000015258789
+                            "X": 11.0,
+                            "Y": 8.0,
+                            "Z": 17.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -733,311 +560,11 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": -0.22689281404018402,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 4.0,
-                            "Y": 2.0,
-                            "Z": 2.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 1.0220000743865967,
-                            "Y": 11.0,
-                            "Z": -4.280002593994141
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": -0.5585053563117981,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 4.0,
-                            "Y": 1.0,
-                            "Z": 2.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": -0.8840001225471497,
-                            "Y": 17.1510009765625,
-                            "Z": 3.826000213623047
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 13.0,
-                            "Z": 33.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 16.0,
-                            "Y": 3.0,
-                            "Z": 18.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 12.0,
-                            "Y": 12.0,
-                            "Z": 13.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 2.0,
-                            "Y": 2.0,
-                            "Z": 2.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 12.0,
-                            "Y": 11.0,
-                            "Z": 9.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 2.0,
-                            "Y": 1.0,
-                            "Z": 2.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": -4.0,
-                            "Y": 20.0,
-                            "Z": 16.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 12.0,
+                            "X": 3.0,
                             "Y": 4.0,
                             "Z": 1.0
                         },
@@ -1070,9 +597,9 @@
                         "Name": "Block",
                         "NormalType": 0,
                         "Position": {
-                            "X": 2.0,
-                            "Y": 20.0,
-                            "Z": 22.0
+                            "X": 8.0,
+                            "Y": 8.0,
+                            "Z": 15.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -1083,7 +610,507 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 2.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 16.0,
+                            "Y": 8.0,
+                            "Z": 7.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
                             "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 3.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 5.0,
+                            "Y": 8.0,
+                            "Z": 5.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 11.0,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 14.0,
+                            "Y": 8.0,
+                            "Z": 4.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 2.0,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 12.0,
+                            "Y": 8.0,
+                            "Z": -13.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 8.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -0.01900005340576172,
+                            "Y": 8.0,
+                            "Z": -5.125
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 12.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -3.0,
+                            "Y": 8.0,
+                            "Z": 11.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 8.5,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 8.0,
+                            "Z": -29.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 3.0,
+                            "Y": 4.0,
+                            "Z": 6.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -11.0,
+                            "Y": 8.0,
+                            "Z": 1.5159988403320313
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 6.0,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -13.0,
+                            "Y": 8.0,
+                            "Z": 6.5
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -15.0,
+                            "Y": 8.0,
+                            "Z": -13.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
@@ -1120,9 +1147,9 @@
                         "Name": "Block",
                         "NormalType": 0,
                         "Position": {
-                            "X": -8.0,
-                            "Y": 23.5,
-                            "Z": 43.0
+                            "X": -12.569000244140625,
+                            "Y": 8.0,
+                            "Z": -30.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -1133,62 +1160,12 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 8.0,
-                            "Y": 8.0,
-                            "Z": 8.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "Texture": "Block1.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 13.5,
-                            "Y": 23.5,
-                            "Z": 36.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 2.5,
-                            "Y": 8.0,
+                            "X": 10.0,
+                            "Y": 4.0,
                             "Z": 1.0
                         },
                         "Tags": [
@@ -1220,9 +1197,9 @@
                         "Name": "Block",
                         "NormalType": 0,
                         "Position": {
-                            "X": 8.0,
-                            "Y": 26.25,
-                            "Z": 36.0
+                            "X": -3.0,
+                            "Y": 8.0,
+                            "Z": -17.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -1233,12 +1210,12 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 3.5,
-                            "Y": 5.199999809265137,
+                            "X": 12.0,
+                            "Y": 4.0,
                             "Z": 1.0
                         },
                         "Tags": [
@@ -1270,9 +1247,9 @@
                         "Name": "Block",
                         "NormalType": 0,
                         "Position": {
-                            "X": 2.0,
-                            "Y": 23.5,
-                            "Z": 36.0
+                            "X": -3.5,
+                            "Y": 8.0,
+                            "Z": -40.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -1283,13 +1260,163 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 3.0,
-                            "Y": 8.0,
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 10.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
                             "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 5.5,
+                            "Y": 8.0,
+                            "Z": -44.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 13.0,
+                            "Y": 8.0,
+                            "Z": -32.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 10.0,
+                            "Y": 4.0,
+                            "Z": 1.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 10.0,
+                            "Y": 8.0,
+                            "Z": -21.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 4.0,
+                            "Z": 4.0
                         },
                         "Tags": [
                             "Block"
@@ -1329,30 +1456,72 @@
             },
             {
                 "Active": true,
-                "BlendMode": 2,
+                "BlendMode": 0,
                 "Brightness": {
-                    "W": 0.4117647111415863,
-                    "X": 0.5254902243614197,
-                    "Y": 0.7803921699523926,
-                    "Z": 0.7607843279838562
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
                 },
                 "Children": [
                     {
                         "Active": true,
-                        "Name": "GlassCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "GlassCollider"
+                        "BlendMode": 2,
+                        "Brightness": {
+                            "W": 0.4117647111415863,
+                            "X": 0.5254902243614197,
+                            "Y": 0.7803921699523926,
+                            "Z": 0.7607843279838562
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "GlassCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "GlassCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Cube",
+                        "Name": "Glass",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -3.0,
+                            "Y": 8.0,
+                            "Z": 3.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 9.0,
+                            "Y": 4.0,
+                            "Z": 0.009999999776482582
+                        },
+                        "Tags": [
+                            "Glass"
+                        ],
+                        "Texture": "white.png",
+                        "Type": "Object3D"
                     }
                 ],
                 "DisableDraw": false,
-                "Model": "Cube",
-                "Name": "Glass",
-                "NormalType": 0,
+                "Model": "",
+                "Name": "StageGlass",
                 "Position": {
                     "X": 0.0,
-                    "Y": 16.25,
-                    "Z": -42.5
+                    "Y": 0.0,
+                    "Z": 0.0
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1367,14 +1536,320 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 3.0,
-                    "Y": 1.25,
-                    "Z": 0.009999999776482582
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
                 },
-                "Tags": [
-                    "Glass"
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
+            {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "TransparentCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "TransparentCollider"
+                            },
+                            {
+                                "Active": false,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Name": "StageGenerating",
+                                "Tags": null,
+                                "Texture": "StageGenerating",
+                                "Type": "SpriteObject",
+                                "posX": 960.0,
+                                "posY": 540.0,
+                                "scaleX": 1.0,
+                                "scaleY": 1.0
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "Transparent",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 20.0,
+                            "Y": 13.0,
+                            "Z": -29.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 44.0,
+                            "Y": 10.0,
+                            "Z": 0.009999999776482582
+                        },
+                        "Tags": [
+                            "Transparent"
+                        ],
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "TransparentCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "TransparentCollider"
+                            },
+                            {
+                                "Active": true,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Name": "SpriteObject",
+                                "Tags": null,
+                                "Texture": "StageGenerating",
+                                "Type": "SpriteObject",
+                                "posX": 960.0,
+                                "posY": 540.0,
+                                "scaleX": 1.0,
+                                "scaleY": 1.0
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "Transparent",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": -20.0,
+                            "Y": 13.0,
+                            "Z": -29.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 44.0,
+                            "Y": 10.0,
+                            "Z": 0.009999999776482582
+                        },
+                        "Tags": [
+                            "Transparent"
+                        ],
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "TransparentCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "TransparentCollider"
+                            },
+                            {
+                                "Active": true,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Name": "SpriteObject",
+                                "Tags": null,
+                                "Texture": "StageGenerating",
+                                "Type": "SpriteObject",
+                                "posX": 960.0,
+                                "posY": 540.0,
+                                "scaleX": 1.0,
+                                "scaleY": 1.0
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "Transparent",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 13.0,
+                            "Z": -73.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 20.0,
+                            "Y": 10.0,
+                            "Z": 0.009999999776482582
+                        },
+                        "Tags": [
+                            "Transparent"
+                        ],
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "TransparentCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "TransparentCollider"
+                            },
+                            {
+                                "Active": true,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Name": "SpriteObject",
+                                "Tags": null,
+                                "Texture": "StageGenerating",
+                                "Type": "SpriteObject",
+                                "posX": 960.0,
+                                "posY": 540.0,
+                                "scaleX": 1.0,
+                                "scaleY": 1.0
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "Transparent",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 13.0,
+                            "Z": 15.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 20.0,
+                            "Y": 10.0,
+                            "Z": 0.009999999776482582
+                        },
+                        "Tags": [
+                            "Transparent"
+                        ],
+                        "Texture": "",
+                        "Type": "Object3D"
+                    }
                 ],
-                "Texture": "white.png",
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "StageTransparent",
+                "Position": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
                 "Type": "Object3D"
             },
             {
@@ -1493,9 +1968,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 6.848000526428223,
-                    "Y": 9.38800048828125,
-                    "Z": 22.032001495361328
+                    "X": -11.965999603271484,
+                    "Y": 8.994000434875488,
+                    "Z": 10.447000503540039
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1551,9 +2026,9 @@
                 "Name": "FlyBlock",
                 "NormalType": 0,
                 "Position": {
-                    "X": -3.831240177154541,
-                    "Y": 10.995100021362305,
-                    "Z": 21.408416748046875
+                    "X": 5.068127155303955,
+                    "Y": -25821.205078125,
+                    "Z": 22.062511444091797
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1686,9 +2161,9 @@
                 "Model": "",
                 "Name": "Button",
                 "Position": {
-                    "X": 10.664999008178711,
-                    "Y": 16.0,
-                    "Z": -3.8399977684020996
+                    "X": -9.694999694824219,
+                    "Y": 4.099999904632568,
+                    "Z": 6.771000862121582
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1709,14 +2184,14 @@
                 },
                 "Tags": [
                     "Button",
-                    "Stage",
-                    "DB2"
+                    "DB1",
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
             },
             {
-                "Active": false,
+                "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -1726,7 +2201,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -1776,6 +2251,399 @@
                             },
                             {
                                 "Active": true,
+                                "BlendMode": 0,
+                                "Brightness": {
+                                    "W": 1.0,
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Children": [
+                                    {
+                                        "Active": false,
+                                        "BlendMode": 0,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Children": [
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 1.0,
+                                                    "Y": 1.0,
+                                                    "Z": 1.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "Back",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 1.0
+                                                },
+                                                "RenderTarget": "UI",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.800000011920929,
+                                                    "Y": 0.6000000238418579,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "GuidBackText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": -0.46000000834465027,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.20000000298023224,
+                                                    "Y": 0.05000000074505806,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "GuidTex",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.07000000029802322,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.699999988079071,
+                                                    "Y": 0.44999998807907104,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            }
+                                        ],
+                                        "DisableDraw": false,
+                                        "Model": "",
+                                        "Name": "GuidMenu",
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "",
+                                        "Type": "Object3D"
+                                    },
+                                    {
+                                        "Active": false,
+                                        "BlendMode": 0,
+                                        "Brightness": {
+                                            "W": 1.0,
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Children": [
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 1.0,
+                                                    "Y": 1.0,
+                                                    "Z": 1.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "Back",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 1.0
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.800000011920929,
+                                                    "Y": 0.6000000238418579,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.07722008228302002,
+                                                    "Y": 0.07722008228302002,
+                                                    "Z": 0.07722008228302002
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "Text1",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.0,
+                                                    "Y": 0.20000000298023224,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.5,
+                                                    "Y": 0.10000000149011612,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "YesText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": -0.25,
+                                                    "Y": -0.2199999988079071,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.15000000596046448,
+                                                    "Y": 0.05000000074505806,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            },
+                                            {
+                                                "Active": true,
+                                                "BlendMode": 4,
+                                                "Brightness": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "DisableDraw": false,
+                                                "Model": "Plane.obj",
+                                                "Name": "NoText",
+                                                "NormalType": 0,
+                                                "Position": {
+                                                    "X": 0.25,
+                                                    "Y": -0.2200002670288086,
+                                                    "Z": 0.8999999761581421
+                                                },
+                                                "RenderTarget": "",
+                                                "Rotation": {
+                                                    "W": 1.0,
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "RotationEuler": {
+                                                    "X": 0.0,
+                                                    "Y": 0.0,
+                                                    "Z": 0.0
+                                                },
+                                                "Scale": {
+                                                    "X": 0.1599999964237213,
+                                                    "Y": 0.05999999865889549,
+                                                    "Z": 1.0
+                                                },
+                                                "Tags": null,
+                                                "Texture": "white.png",
+                                                "Type": "Object3D"
+                                            }
+                                        ],
+                                        "DisableDraw": false,
+                                        "Model": "",
+                                        "Name": "QuitTitleMenu",
+                                        "Position": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RenderTarget": "",
+                                        "Rotation": {
+                                            "W": 1.0,
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "RotationEuler": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                        },
+                                        "Scale": {
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
+                                        },
+                                        "Tags": null,
+                                        "Texture": "",
+                                        "Type": "Object3D"
+                                    }
+                                ],
+                                "DisableDraw": false,
+                                "Model": "",
+                                "Name": "OtherMenu",
+                                "Position": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RenderTarget": "",
+                                "Rotation": {
+                                    "W": 1.0,
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "RotationEuler": {
+                                    "X": 0.0,
+                                    "Y": 0.0,
+                                    "Z": 0.0
+                                },
+                                "Scale": {
+                                    "X": 1.0,
+                                    "Y": 1.0,
+                                    "Z": 1.0
+                                },
+                                "Tags": null,
+                                "Texture": "",
+                                "Type": "Object3D"
+                            },
+                            {
+                                "Active": false,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -1854,7 +2722,7 @@
                                 "Type": "Object3D"
                             },
                             {
-                                "Active": false,
+                                "Active": true,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -1892,6 +2760,47 @@
                                                             "Y": 1.0,
                                                             "Z": 0.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "one",
+                                                                "Type": "Object3D"
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityX",
@@ -1914,8 +2823,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "Scale": {
-                                                            "X": 1.0,
-                                                            "Y": 0.800000011920929,
+                                                            "X": 0.8999999761581421,
+                                                            "Y": 0.6000000238418579,
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
@@ -1953,8 +2862,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "Scale": {
-                                                            "X": 0.8999999761581421,
-                                                            "Y": 0.6000000238418579,
+                                                            "X": 1.0,
+                                                            "Y": 0.800000011920929,
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
@@ -2601,7 +3510,7 @@
                                 "Type": "Object3D"
                             },
                             {
-                                "Active": true,
+                                "Active": false,
                                 "BlendMode": 0,
                                 "Brightness": {
                                     "W": 1.0,
@@ -2615,9 +3524,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.7843137383460999,
+                                            "Y": 0.0,
+                                            "Z": 0.0
                                         },
                                         "Children": [
                                             {
@@ -2682,8 +3591,8 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 0.699999988079071,
-                                            "Y": 0.11999999731779099,
+                                            "X": 0.6000000238418579,
+                                            "Y": 0.10000000149011612,
                                             "Z": 0.0
                                         },
                                         "Tags": null,
@@ -2695,9 +3604,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 0.7843137383460999,
-                                            "Y": 0.0,
-                                            "Z": 0.0
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
                                         },
                                         "Children": [
                                             {
@@ -2761,8 +3670,8 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 0.6000000238418579,
-                                            "Y": 0.10000000149011612,
+                                            "X": 0.699999988079071,
+                                            "Y": 0.11999999731779099,
                                             "Z": 0.0
                                         },
                                         "Tags": null,
@@ -2825,85 +3734,6 @@
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.2199999988079071,
-                                            "Z": 0.8999999761581421
-                                        },
-                                        "RenderTarget": "UI",
-                                        "Rotation": {
-                                            "W": 1.0,
-                                            "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
-                                        },
-                                        "RotationEuler": {
-                                            "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
-                                        },
-                                        "Scale": {
-                                            "X": 0.6000000238418579,
-                                            "Y": 0.10000000149011612,
-                                            "Z": 0.0
-                                        },
-                                        "Tags": null,
-                                        "Texture": "white.png",
-                                        "Type": "Object3D"
-                                    },
-                                    {
-                                        "Active": true,
-                                        "BlendMode": 4,
-                                        "Brightness": {
-                                            "W": 1.0,
-                                            "X": 0.7843137383460999,
-                                            "Y": 0.0,
-                                            "Z": 0.0
-                                        },
-                                        "Children": [
-                                            {
-                                                "Active": true,
-                                                "BlendMode": 0,
-                                                "Brightness": {
-                                                    "W": 1.0,
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "DisableDraw": false,
-                                                "Model": "",
-                                                "Name": "SelectText",
-                                                "Position": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "RenderTarget": "UI",
-                                                "Rotation": {
-                                                    "W": 1.0,
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "RotationEuler": {
-                                                    "X": 0.0,
-                                                    "Y": 0.0,
-                                                    "Z": 0.0
-                                                },
-                                                "Scale": {
-                                                    "X": 1.0,
-                                                    "Y": 1.0,
-                                                    "Z": 1.0
-                                                },
-                                                "Tags": null,
-                                                "Texture": "",
-                                                "Type": "Object3D"
-                                            }
-                                        ],
-                                        "DisableDraw": false,
-                                        "Model": "Plane.obj",
-                                        "Name": "SelectPlane",
-                                        "NormalType": 0,
-                                        "Position": {
-                                            "X": 0.0,
-                                            "Y": -0.5,
                                             "Z": 0.8999999761581421
                                         },
                                         "RenderTarget": "UI",
@@ -2995,7 +3825,7 @@
                         "filePath": "SuperUI"
                     },
                     {
-                        "Active": true,
+                        "Active": false,
                         "Brightness": {
                             "W": 1.0,
                             "X": 1.0,
@@ -3187,9 +4017,9 @@
                 "Model": "",
                 "Name": "Door",
                 "Position": {
-                    "X": 8.0,
-                    "Y": 16.0,
-                    "Z": 11.0
+                    "X": 6.30000114440918,
+                    "Y": 4.0,
+                    "Z": 12.0
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3200,7 +4030,7 @@
                 },
                 "RotationEuler": {
                     "X": 0.0,
-                    "Y": 0.0,
+                    "Y": 1.5707963705062866,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3209,9 +4039,9 @@
                     "Z": 1.0
                 },
                 "Tags": [
+                    "DB1",
                     "StageDoor",
-                    "Stage",
-                    "DB2"
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -3246,9 +4076,9 @@
                 "Name": "FlyBlock2",
                 "NormalType": 0,
                 "Position": {
-                    "X": 21.84360122680664,
-                    "Y": 12.893001556396484,
-                    "Z": -59.805137634277344
+                    "X": -4.189398765563965,
+                    "Y": -25821.1953125,
+                    "Z": 20.7918643951416
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3297,9 +4127,9 @@
                 "Name": "SponePoint",
                 "NormalType": 0,
                 "Position": {
-                    "X": -4.635000228881836,
-                    "Y": 5.910000324249268,
-                    "Z": -54.30399703979492
+                    "X": -11.965999603271484,
+                    "Y": 8.994000434875488,
+                    "Z": 10.447000503540039
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3354,9 +4184,9 @@
                 "Name": "Goal",
                 "NormalType": 1,
                 "Position": {
-                    "X": 8.22800064086914,
-                    "Y": 16.0,
-                    "Z": 22.1560001373291
+                    "X": 16.75,
+                    "Y": 4.14900016784668,
+                    "Z": 11.089000701904297
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3393,27 +4223,27 @@
                 "Children": [
                     {
                         "Active": true,
-                        "Name": "GoggleCollider",
+                        "Name": "FlyBlock",
                         "Tags": null,
                         "Type": "ScriptComponent",
-                        "filePath": "GoggleCollider"
+                        "filePath": "FlyBlock"
                     },
                     {
                         "Active": true,
-                        "Name": "GoggleScr",
+                        "Name": "FlyBlockCollider",
                         "Tags": null,
                         "Type": "ScriptComponent",
-                        "filePath": "GoggleScr"
+                        "filePath": "FlyBlockCollider"
                     }
                 ],
                 "DisableDraw": false,
-                "Model": "Goggles.obj",
-                "Name": "Goggle",
+                "Model": "cube.obj",
+                "Name": "FlyBlock3",
                 "NormalType": 0,
                 "Position": {
-                    "X": -0.9350005984306335,
-                    "Y": 18.312000274658203,
-                    "Z": -20.806835174560547
+                    "X": 13.5,
+                    "Y": 8.0,
+                    "Z": -12.0
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3423,17 +4253,18 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.1745329350233078,
-                    "Y": 0.01745329238474369,
+                    "X": 0.0,
+                    "Y": 0.0,
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 0.3500000238418579,
-                    "Y": 0.3500000238418579,
-                    "Z": 0.3500000238418579
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
                 },
                 "Tags": [
-                    "Goggle"
+                    "FlyBlock",
+                    "Stage"
                 ],
                 "Texture": "",
                 "Type": "Object3D"
@@ -3672,7 +4503,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": -0.2617993950843811,
+                            "X": -0.4363323152065277,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -3701,7 +4532,7 @@
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
-                            "Z": 20.0
+                            "Z": 0.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -3711,7 +4542,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": -0.4363323152065277,
                             "Y": 0.0,
                             "Z": 1.5707963705062866
                         },
@@ -3726,19 +4557,21 @@
                     },
                     {
                         "Active": true,
-                        "Name": "Script",
-                        "Tags": null,
+                        "Name": "StageGenerater",
+                        "Tags": [
+                            "StageGenerater"
+                        ],
                         "Type": "ScriptComponent",
-                        "filePath": "StageGenerating"
+                        "filePath": "StageGenerater"
                     }
                 ],
                 "DisableDraw": false,
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 330.0
+                    "X": -192.33714294433594,
+                    "Y": -10000.0,
+                    "Z": 38.13009262084961
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3748,8 +4581,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
+                    "X": -0.04999999701976776,
+                    "Y": 4.802389144897461,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3810,7 +4643,7 @@
                 "scaleY": 10.0
             },
             {
-                "Active": false,
+                "Active": true,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -3878,23 +4711,6 @@
                 "scaleY": 1.0
             },
             {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "StageGenerating",
-                "Tags": null,
-                "Texture": "StageGenerating",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
                 "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
@@ -3906,16 +4722,16 @@
                 "Children": [
                     {
                         "Active": true,
-                        "BlendMode": 3,
+                        "BlendMode": 2,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.30000001192092896,
+                            "Y": 0.30000001192092896,
+                            "Z": 0.30000001192092896
                         },
                         "DisableDraw": false,
-                        "Model": "ButtonBody.obj",
-                        "Name": "Body",
+                        "Model": "LensL.obj",
+                        "Name": "LensL",
                         "NormalType": 0,
                         "Position": {
                             "X": 0.0,
@@ -3935,184 +4751,9 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 1.5,
-                            "Y": 0.75,
-                            "Z": 1.5
-                        },
-                        "Tags": null,
-                        "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
                             "X": 1.0,
                             "Y": 1.0,
                             "Z": 1.0
-                        },
-                        "DisableDraw": false,
-                        "Model": "ButtonFlame.obj",
-                        "Name": "Flame",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1.5,
-                            "Y": 1.0,
-                            "Z": 1.5
-                        },
-                        "Tags": null,
-                        "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "Name": "ButtonCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "ButtonCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Name": "StageButton",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "StageButton"
-                    }
-                ],
-                "DisableDraw": false,
-                "Model": "",
-                "Name": "Button",
-                "Position": {
-                    "X": 0.0,
-                    "Y": 10.0,
-                    "Z": -66.50299835205078
-                },
-                "RenderTarget": "",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 0.75,
-                    "Y": 0.5,
-                    "Z": 0.75
-                },
-                "Tags": [
-                    "Button",
-                    "Stage",
-                    "DB1"
-                ],
-                "Texture": "",
-                "Type": "Object3D"
-            },
-            {
-                "Active": true,
-                "BlendMode": 0,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Children": [
-                    {
-                        "Active": true,
-                        "BlendMode": 0,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "DisableDraw": false,
-                        "Model": "DoorFlame.obj",
-                        "Name": "Flame",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 1.5707963705062866,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Tags": null,
-                        "Texture": "DissolveMap.png",
-                        "Type": "Object3D"
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 0,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "DisableDraw": false,
-                        "Model": "cube",
-                        "Name": "Left",
-                        "NormalType": 0,
-                        "Position": {
-                            "X": -1.0,
-                            "Y": 2.0,
-                            "Z": 0.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1.0,
-                            "Y": 2.0,
-                            "Z": 0.10000000149011612
                         },
                         "Tags": null,
                         "Texture": "white.png",
@@ -4120,20 +4761,20 @@
                     },
                     {
                         "Active": true,
-                        "BlendMode": 0,
+                        "BlendMode": 2,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.30000001192092896,
+                            "Y": 0.30000001192092896,
+                            "Z": 0.30000001192092896
                         },
                         "DisableDraw": false,
-                        "Model": "cube",
-                        "Name": "Right",
+                        "Model": "LensR.obj",
+                        "Name": "LensR",
                         "NormalType": 0,
                         "Position": {
-                            "X": 1.0,
-                            "Y": 2.0,
+                            "X": 0.0,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -4150,8 +4791,8 @@
                         },
                         "Scale": {
                             "X": 1.0,
-                            "Y": 2.0,
-                            "Z": 0.10000000149011612
+                            "Y": 1.0,
+                            "Z": 1.0
                         },
                         "Tags": null,
                         "Texture": "white.png",
@@ -4159,26 +4800,29 @@
                     },
                     {
                         "Active": true,
-                        "Name": "DoorCollider",
-                        "Tags": null,
+                        "Name": "GoggleCollider",
+                        "Tags": [
+                            "GoggleCollider"
+                        ],
                         "Type": "ScriptComponent",
-                        "filePath": "DoorCollider"
+                        "filePath": "GoggleCollider"
                     },
                     {
                         "Active": true,
-                        "Name": "StageDoor",
+                        "Name": "GoggleScr",
                         "Tags": null,
                         "Type": "ScriptComponent",
-                        "filePath": "StageDoor"
+                        "filePath": "GoggleScr"
                     }
                 ],
                 "DisableDraw": false,
-                "Model": "",
-                "Name": "Door",
+                "Model": "gogle.obj",
+                "Name": "Goggle",
+                "NormalType": 0,
                 "Position": {
-                    "X": 0.0,
-                    "Y": 10.0,
-                    "Z": -42.5
+                    "X": -10.706071853637695,
+                    "Y": 10.959108352661133,
+                    "Z": 11.399971961975098
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4188,121 +4832,19 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
+                    "X": -0.2540901005268097,
+                    "Y": 6.811592102050781,
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
+                    "X": 0.3499999940395355,
+                    "Y": 0.3499999940395355,
+                    "Z": 0.3499999940395355
                 },
                 "Tags": [
-                    "DB1",
-                    "StageDoor",
-                    "Stage"
+                    "Goggle"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
-            },
-            {
-                "Active": true,
-                "BlendMode": 2,
-                "Brightness": {
-                    "W": 0.4117647111415863,
-                    "X": 0.5254902243614197,
-                    "Y": 0.7803921699523926,
-                    "Z": 0.7607843279838562
-                },
-                "Children": [
-                    {
-                        "Active": true,
-                        "Name": "GlassCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "GlassCollider"
-                    }
-                ],
-                "DisableDraw": false,
-                "Model": "Cube",
-                "Name": "Glass",
-                "NormalType": 0,
-                "Position": {
-                    "X": 9.5,
-                    "Y": 13.5,
-                    "Z": -42.5
-                },
-                "RenderTarget": "",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 6.5,
-                    "Y": 4.0,
-                    "Z": 0.009999999776482582
-                },
-                "Tags": [
-                    "Glass"
-                ],
-                "Texture": "white.png",
-                "Type": "Object3D"
-            },
-            {
-                "Active": true,
-                "BlendMode": 2,
-                "Brightness": {
-                    "W": 0.4117647111415863,
-                    "X": 0.5254902243614197,
-                    "Y": 0.7803921699523926,
-                    "Z": 0.7607843279838562
-                },
-                "Children": [
-                    {
-                        "Active": true,
-                        "Name": "GlassCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "GlassCollider"
-                    }
-                ],
-                "DisableDraw": false,
-                "Model": "Cube",
-                "Name": "Glass",
-                "NormalType": 0,
-                "Position": {
-                    "X": -9.5,
-                    "Y": 13.5,
-                    "Z": -42.43299865722656
-                },
-                "RenderTarget": "",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 6.5,
-                    "Y": 4.0,
-                    "Z": 0.009999999776482582
-                },
-                "Tags": [
-                    "Glass"
-                ],
-                "Texture": "white.png",
                 "Type": "Object3D"
             }
         ],
@@ -4345,12 +4887,16 @@
                 "DoorFlame.obj": "Assets\\Models\\Stage\\DoorFlame\\DoorFlame.obj",
                 "Goal.obj": "Assets\\Models\\Goal\\Goal.obj",
                 "Goggles.obj": "Assets\\Models\\Goggles\\Goggles.obj",
+                "LeftLens.obj": "Assets\\Models\\LeftLens\\LeftLens.obj",
+                "LensL.obj": "Assets\\Models\\LensL\\LensL.obj",
+                "LensR.obj": "Assets\\Models\\LensR\\LensR.obj",
                 "Plane.obj": "Assets\\Models\\Plane\\Plane.obj",
                 "Sky": "Assets/Models/skydome/skydome.obj",
                 "Sphere": "Assets/Models/Sphere/Sphere.obj",
                 "TV1.obj": "Assets\\Models\\TV1\\TV1.obj",
                 "TV2.obj": "Assets\\Models\\TV2\\TV2.obj",
                 "TV3.obj": "Assets\\Models\\TV3\\TV3.obj",
+                "TVBlack.obj": "Assets\\Models\\TVBlack\\TVBlack.obj",
                 "TVScreen.obj": "Assets\\Models\\TVScreen\\TVScreen.obj",
                 "Triangle": "Assets/Models/triangle/triangle.obj",
                 "button.obj": "Assets\\Models\\button\\button.obj",
@@ -4358,6 +4904,7 @@
                 "cube.obj": "Assets\\Models\\cube\\cube.obj",
                 "door.obj": "Assets\\Models\\door\\door.obj",
                 "floor": "Assets/Models/Floor.glb",
+                "gogle.obj": "Assets\\Models\\gogle\\gogle.obj",
                 "panel.obj": "Assets\\Models\\panel\\panel.obj",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
                 "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
@@ -4378,12 +4925,15 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
+                "TV2Black.png": "Assets\\Models\\TVBlack\\TV2Black.png",
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TestTex.png": "Assets\\Images\\TestTex.png",
+                "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
@@ -4393,6 +4943,7 @@
                 "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
                 "asmptex:Assets\\Models\\TV2TV2.png": "Assets\\Models\\TV2/TV2.png",
                 "asmptex:Assets\\Models\\TV3TV3.png": "Assets\\Models\\TV3/TV3.png",
+                "asmptex:Assets\\Models\\TVBlackTV2Black.png": "Assets\\Models\\TVBlack/TV2Black.png",
                 "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
@@ -4403,6 +4954,7 @@
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
                 "door.png": "Assets\\Models\\door\\door.png",
                 "goal.png": "Assets\\Models\\Goal\\goal.png",
+                "goggle.png": "Assets\\Images\\goggle.png",
                 "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
                 "hyphen": "Assets/Images/hyphen.png",
                 "menuTextTex": "Assets/Images/MenuImages/MenuText.png",

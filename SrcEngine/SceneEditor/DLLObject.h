@@ -14,6 +14,8 @@ namespace Libra {
 
 		~DLLObject();
 
+		void Del();
+
 		void Free();
 
 	private:

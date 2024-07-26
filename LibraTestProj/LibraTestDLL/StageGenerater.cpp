@@ -4,16 +4,19 @@
 #include <ScriptComponent.h>
 #include <Input.h>
 #include <GameManager.h>
+#include <Util.h>
 
 void StageGenerater::Init()
 {
 	mObj = This()->Parent()->CastTo<Object3D>();
 	mPlaneAlpha = SceneManager::FindObject<Object3D>("PlaneAlpha");
 	mPlane = SceneManager::FindObject<Object3D>("Plane");
+	mStageObj = SceneManager::FindObject<Object3D>("StageObj");
 
 	Vec3 scale = Vec3(100, 100, 1);
 	mPlaneAlpha->scale = scale;
 	mPlane->scale = scale;
+	mPlane->miscCB.contents->dissolveStrength = 0.0f;
 
 	mIsStart = false;
 	mIsStarted = false;
@@ -21,6 +24,8 @@ void StageGenerater::Init()
 
 	mObj->position.y = -10000;
 	mMoveSpeed = 0.05f;
+
+	mEase.SetEaseTimer(120);
 }
 
 void StageGenerater::Update()
@@ -48,6 +53,12 @@ void StageGenerater::Update()
 	{
 		mObj->position = mEnd;
 		mIsStart = false;
+	}
+
+	mEase.Update();
+	if (!mEase.GetisEnd())
+	{
+		Object3D::dissolveStrength = mEase.Lerp(0.0f, 1.25f);
 	}
 }
 
@@ -77,6 +88,7 @@ void StageGenerater::Start()
 
 bool StageGenerater::GetisEnd()
 {
+	if (this == nullptr) return false;
 	return mIsEnd;
 }
 

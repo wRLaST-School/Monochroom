@@ -252,7 +252,7 @@ void HierarchyPanel::PopWindow()
 		{
 			if (ImGui::MenuItem(item.first.c_str()))
 			{
-				ComponentFactory::AddChildComponent(selected, item.first.c_str(), item.first.c_str());
+				ComponentFactory::AddChildComponent(SceneManager::GetCurrentScene(), item.first.c_str(), item.first.c_str());
 			}
 			ImGui::Separator();
 		}

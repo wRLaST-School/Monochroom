@@ -11,6 +11,7 @@
 #include <GoggleCollider.h>
 #include <TransparentCollider.h>
 #include <PlayerGoggle.h>
+#include <DoorCollider.h>
 
 class CollisionManager :
 	public IScriptObject
@@ -21,6 +22,7 @@ private:
 private:
 	ViewCollider* mViewCollider;
 	PlayerCollider* mPlayerCollider;
+	std::vector<DoorCollider*> mDoorColliders;
 	std::vector<BlockCollider*> mBlockColliders;
 	std::vector<FlyBlockCollider*> mFlyBlockColliders;
 	std::vector<ButtonCollider*> mButtonColliders;
@@ -42,11 +44,14 @@ private:
 	void PlayerHitGlasses();
 	void PlayerHitGoals();
 	void PlayerHitTransparents();
+	void PlayerHitDoors();
+
 	void FlyBlocksHitBlocks();
 	void FlyBlocksHitButtons();
 	void FlyBlocksHitGlasses();
 	void FlyBlocksHitFlyBlocks();
 	void FlyBlocksHitGoals();
+	void FlyBlocksHitDoors();
 
 public:
 	void Init();

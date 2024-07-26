@@ -2,6 +2,133 @@
     {
         "Active": true,
         "Children": [
+                        {
+                "Active": true,
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "Plane",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0010000000474974513
+                        },
+                        "RenderTarget": "Plane",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": -0.4363323152065277,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1000.0,
+                            "Y": 1000.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 2,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "Model": "Plane.obj",
+                        "Name": "PlaneAlpha",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": -0.4363323152065277,
+                            "Y": 0.0,
+                            "Z": 1.5707963705062866
+                        },
+                        "Scale": {
+                            "X": 100.0,
+                            "Y": 100.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "TestTex.png",
+                        "Type": "Object3D"
+                    },
+                    {
+                        "Active": true,
+                        "Name": "StageGenerater",
+                        "Tags": [
+                            "StageGenerater"
+                        ],
+                        "Type": "ScriptComponent",
+                        "filePath": "StageGenerater"
+                    }
+                ],
+                "DisableDraw": false,
+                "Model": "",
+                "Name": "PlaneGroup",
+                "Position": {
+                    "X": -192.48919677734375,
+                    "Y": -10000.0,
+                    "Z": 7.718572616577148
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 4.632389068603516,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": null,
+                "Texture": "",
+                "Type": "Object3D"
+            },
             {
                 "Active": true,
                 "Children": [

@@ -41,4 +41,14 @@ void DoorCollider::OnInspectorWindowDraw()
 	}
 }
 
+OBBCollider DoorCollider::GetLeftCollider()
+{
+	return mLeftCollider;
+}
+
+OBBCollider DoorCollider::GetRightCollider()
+{
+	return mRightCollider;
+}
+
 RegisterScriptBody(DoorCollider);

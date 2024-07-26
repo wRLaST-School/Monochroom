@@ -2,9 +2,15 @@
 #include <GPipeline.h>
 #include <SceneManager.h>
 #include <SpRootSignature.h>
+#include <ConsoleWindow.h>
 
 GrayScaleInfo GrayScale::info;
 SpConstBuffer<GraySclaeCB> GrayScale::cb(true);
+
+int32_t GrayScale::mGrayEffectTime = 0;
+int32_t GrayScale::mGrayEffectTimeMax = 40;
+bool GrayScale::mIsEquip = false;
+bool GrayScale::mIsGrayEffect = false;
 
 void GrayScale::Init()
 {
@@ -54,22 +60,68 @@ void GrayScale::Init()
 	RegisterPipeline(name);
 
 	cb.Create();
+
+	info.Init();
 }
 
 void GrayScale::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 {
+	GrayEffectUpdate();
+
 	if (info.isDraw)
 	{
 		GraySclaeCB cbdata;
-		cbdata.offset = info.offset;
+		cbdata.offset = info.kOffsetUV * info.offsetRatio;
+		cbdata.grayPoint1 = info.kGrayPoint1;
+		cbdata.grayPoint2 = info.kGrayPoint2;
+		cbdata.grayEffectRadius = info.kGrayWindowSize.x / 1.6f /
+			info.kGrayWindowSize.x * info.grayEffectRatio;
+		ConsoleWindow::LogVec3("grayEffectRadius", { cbdata.grayEffectRadius, 0,0 });
 
 		*cb.contents = cbdata;
-		 
+
 		IPostEffector::Effect(baseTex, targetTex, "GrayScale",
 			[&]()
 			{
 				GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, cb.buffer->GetGPUVirtualAddress());
 				GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(2, SpTextureManager::GetGPUDescHandle("Goggle_Mask"));
 			});
+	}
+}
+
+
+//-------------------------------------------------------------------------------------------------------
+void GrayScale::BeginGrayEffect(bool isEquip, int32_t effectTime)
+{
+	mIsEquip = isEquip;
+	mIsGrayEffect = true;
+	mGrayEffectTime = 0;
+	mGrayEffectTimeMax = effectTime;
+}
+
+void GrayScale::GrayEffectUpdate()
+{
+	if (mIsGrayEffect)
+	{
+		int32_t time = 0;
+
+		if (mIsEquip)
+		{
+			time = mGrayEffectTime;
+		}
+		else
+		{
+			time = mGrayEffectTimeMax - mGrayEffectTime;
+		}
+
+		info.grayEffectRatio = (float)time / (float)mGrayEffectTimeMax;
+
+
+		if (mGrayEffectTime >= mGrayEffectTimeMax)
+		{
+			mIsGrayEffect = false;
+		}
+
+		mGrayEffectTime++;
 	}
 }

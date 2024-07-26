@@ -9,6 +9,7 @@ class TestObject :
 private:
 	OBBCollider obbCollider;
 	SphereCollider sphereCollider;
+	//int hoge[25000000] = {};
 
 public:
 	void Init();

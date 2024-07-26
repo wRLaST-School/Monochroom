@@ -28,6 +28,7 @@ void CollisionManager::Init()
 	mGoalColliders = FindColliderList<GoalCollider>("Goal", "GoalCollider");
 	mGoggleColliders = FindColliderList<GoggleCollider>("Goggle", "GoggleCollider");
 	mTransparentColliders = FindColliderList<TransparentCollider>("Transparent", "TransparentCollider");
+	mDoorColliders = FindColliderList<DoorCollider>("StageDoor", "DoorCollider");
 }
 
 void CollisionManager::Update()
@@ -38,7 +39,7 @@ void CollisionManager::Update()
 		return;
 	}
 
-	bool isEquipGoggle = mPlayerGoggle->GetIsEquipGoggle();
+	bool isEquipGoggle = mPlayerGoggle->GetFinishedEquipGoggle();
 
 	//カメラにブロックが映っているか
 	CameraInsideFlyBlocks();
@@ -64,6 +65,9 @@ void CollisionManager::Update()
 	// プレイヤーと透明の壁
 	PlayerHitTransparents();
 
+	// プレイヤーとドア
+	PlayerHitDoors();
+
 	// 飛んでくるブロックとブロック
 	FlyBlocksHitBlocks();
 
@@ -84,6 +88,9 @@ void CollisionManager::Update()
 
 	// 飛んでくるブロックとゴール
 	FlyBlocksHitGoals();
+
+	// 飛ぶブロックトドアの当たり判定
+	FlyBlocksHitDoors();
 }
 
 void CollisionManager::CameraInsideFlyBlocks()
@@ -151,6 +158,15 @@ void CollisionManager::RayHitGoggle()
 	//ゴーグル取得
 	if (AppOperationCommand::GetInstance()->PlayerGetGoggleCommand())
 	{
+		auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+		auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
+
+		if (playerGoggle->GetIsHavingGoggle())
+		{
+			return;
+		}
+
+
 		GoggleScr* goggleScr = nullptr;
 		auto rayCollider = mViewCollider->GetRayCollider();
 		float minDis = 99999.f;
@@ -174,11 +190,9 @@ void CollisionManager::RayHitGoggle()
 		// ゴーグルをプレイヤーと紐づけ(親子関係
 		if (goggleScr)
 		{
-			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
 			goggleScr->GettedPlayer(player);
 
-			auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
-			playerGoggle->SetIsHavingGoggle(true);
+			playerGoggle->GettedGoggle();
 		}
 	}
 }
@@ -321,6 +335,25 @@ void CollisionManager::PlayerHitTransparents()
 		// 押し出し
 		Vec3 pushOut = Vec3::zero;
 		if (tc->GetBodyCollider().IsTrigger(&playerBodyCollider, &pushOut))
+		{
+			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+	}
+}
+
+void CollisionManager::PlayerHitDoors()
+{
+	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
+
+	for (const auto& dc : mDoorColliders)
+	{
+		// 押し出し
+		Vec3 pushOut = Vec3::zero;
+		if (dc->GetLeftCollider().IsTrigger(&playerBodyCollider, &pushOut))
+		{
+			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+		if (dc->GetRightCollider().IsTrigger(&playerBodyCollider, &pushOut))
 		{
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 		}
@@ -517,7 +550,6 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 	}
 }
 
-
 void CollisionManager::FlyBlocksHitGoals()
 {
 	for (const auto& fbc : mFlyBlockColliders)
@@ -539,6 +571,28 @@ void CollisionManager::FlyBlocksHitGoals()
 						flyBlock->EndAttracting();
 					}
 				}
+			}
+		}
+	}
+}
+
+void CollisionManager::FlyBlocksHitDoors()
+{
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		for (const auto& dc : mDoorColliders)
+		{
+			auto flyBlockBodyCollider = fbc->GetBodyCollider();
+
+			// 押し出し
+			Vec3 pushOut = Vec3::zero;
+			if (dc->GetLeftCollider().IsTrigger(&flyBlockBodyCollider, &pushOut))
+			{
+				mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+			}
+			if (dc->GetRightCollider().IsTrigger(&flyBlockBodyCollider, &pushOut))
+			{
+				mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
 			}
 		}
 	}

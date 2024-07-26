@@ -37,6 +37,7 @@ void SrPostEffectStage::Init()
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "RGBShiftMask", true);
 	RTVManager::CreateRenderTargetTexture(1.f, 1.f, "HolographicCaster", true);
 	SpTextureManager::LoadTexture("Assets/Images/goggle.png", "Goggle_Mask");
+	SpTextureManager::CreateNoiceTexture(128, 128, 16, "NoiceTexture");
 
 	SpTextureManager::LoadTexture("Assets/Images/black.png", "Black");
 	SpTextureManager::AddMasterTextureKey("NormalMap");

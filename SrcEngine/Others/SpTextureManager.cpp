@@ -1,6 +1,7 @@
 #include "SpTextureManager.h"
 #include "SpDirectX.h"
 #include <RTVManager.h>
+#include <Util.h>
 
 using namespace std;
 using namespace DirectX;
@@ -334,7 +335,7 @@ TextureKey SpTextureManager::CreateDummyTexture(float width, float height, const
 	CD3DX12_HEAP_PROPERTIES texHeapProp = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
 
 	D3D12_RESOURCE_DESC textureResourceDesc;
-	
+
 	if (useRatio)
 	{
 		Float2 ratio = { width, height };
@@ -387,7 +388,7 @@ TextureKey SpTextureManager::CreateDummyTexture(float width, float height, const
 				pTexData.meta.width = (size_t)(width * GetSpWindow()->width);
 				pTexData.meta.height = (size_t)(height * GetSpWindow()->height);
 
-				pTexData.ratio = {width, height};
+				pTexData.ratio = { width, height };
 			}
 		);
 	}
@@ -395,9 +396,9 @@ TextureKey SpTextureManager::CreateDummyTexture(float width, float height, const
 		SpTextureManager::GetInstance().texDataMap_.Access(
 			[&](auto& map) {
 				TexMetadata& pTexMeta = map[key].meta;
-		pTexMeta = TexMetadata{};
-		pTexMeta.width = (size_t)width;
-		pTexMeta.height = (size_t)height;
+				pTexMeta = TexMetadata{};
+				pTexMeta.width = (size_t)width;
+				pTexMeta.height = (size_t)height;
 			}
 		);
 	}
@@ -633,13 +634,13 @@ TextureKey SpTextureManager::LoadSingleDiv(string filePath, int32_t originX, int
 	ScratchImage trimed{};
 
 	trimed.Initialize2D(srcImg.GetMetadata().format, width, height, srcImg.GetMetadata().arraySize, srcImg.GetMetadata().mipLevels);
-	trimed.GetImage(0,0,0)->pixels[0] = srcImg.GetImage(0,0,0)->pixels[0];
+	trimed.GetImage(0, 0, 0)->pixels[0] = srcImg.GetImage(0, 0, 0)->pixels[0];
 
 	//size_t srcWidth = srcImg.GetMetadata().width;
 	for (int32_t y = 0; y < height; y++) {
 		for (int32_t x = 0; x < width; x++) {
-			trimed.GetImage(0, 0, 0)->pixels[x * 4 + y * trimed.GetImage(0,0,0)->rowPitch] =
-				srcImg.GetImage(0, 0, 0)->pixels[(x + originX) * 4 + (y + originY) * srcImg.GetImage(0,0,0)->rowPitch];
+			trimed.GetImage(0, 0, 0)->pixels[x * 4 + y * trimed.GetImage(0, 0, 0)->rowPitch] =
+				srcImg.GetImage(0, 0, 0)->pixels[(x + originX) * 4 + (y + originY) * srcImg.GetImage(0, 0, 0)->rowPitch];
 
 			trimed.GetImage(0, 0, 0)->pixels[x * 4 + y * trimed.GetImage(0, 0, 0)->rowPitch + 1] =
 				srcImg.GetImage(0, 0, 0)->pixels[(x + originX) * 4 + (y + originY) * srcImg.GetImage(0, 0, 0)->rowPitch + 1];
@@ -739,6 +740,170 @@ TextureKey SpTextureManager::LoadSingleDiv(string filePath, int32_t originX, int
 		[&](auto& map) {
 			map[key].meta = metadata;
 			map[key].div = false;
+		}
+	);
+
+	ins.isOccupied_[ins.nextTexIndex_] = true;
+
+	for (size_t i = 0; i < spMaxSRVCount; i++)
+	{
+		if (!ins.isOccupied_[i])
+		{
+			ins.nextTexIndex_ = i;
+			return key;
+		}
+	}
+
+	throw std::out_of_range("out of texture resource");
+}
+
+TextureKey SpTextureManager::CreateNoiceTexture(const uint32_t width, const uint32_t height, const uint32_t blockSize, const TextureKey& key)
+{
+	sPerSceneTextures[sCurrentSceneResIndex].push_back(key);
+	bool alreadyRegistered = false;
+	GetInstance().textureMap_.Access(
+		[&](auto& map) {
+			if (map.count(key) != 0) alreadyRegistered = true;
+		});
+	//if (alreadyRegistered)
+	//{
+	//	OutputDebugStringA((string("Texture : ") + key + string(" already exists. skipping.") + string("\n")).c_str());
+	//	return key;
+	//}
+	OutputDebugStringA((string("Loading : ") + key + string(" (Heap Index : ") + to_string(GetInstance().nextTexIndex_) + string(")\n")).c_str());
+	SpTextureManager& ins = GetInstance();
+	D3D12_RESOURCE_DESC texresdesc{};
+
+	HRESULT hr = S_OK;
+
+	ScratchImage image;
+	hr = image.Initialize2D(DXGI_FORMAT_R8G8B8A8_UNORM, (size_t)width, (size_t)height, 1, 1);
+	if (FAILED(hr))
+	{
+		throw std::runtime_error("Failed to initialize ScratchImage");
+	}
+
+	uint8_t* pixels = image.GetPixels();
+	size_t rowPitch = image.GetImage(0, 0, 0)->rowPitch;
+
+	//for (uint32_t y = 0; y < height; ++y)
+	//{
+	//	for (uint32_t x = 0; x < width; ++x)
+	//	{
+	//		float noiseValue = (float)Util::RNG(0, 255, true);
+
+	//		uint8_t* pixel = pixels + y * rowPitch + x * 4;
+	//		pixel[0] = static_cast<uint8_t>(noiseValue); // R
+	//		pixel[1] = static_cast<uint8_t>(noiseValue); // G
+	//		pixel[2] = static_cast<uint8_t>(noiseValue); // B
+	//		pixel[3] = 255; // A
+	//	}
+	//}
+	for (uint32_t by = 0; by < height; by += blockSize)
+	{
+		for (uint32_t bx = 0; bx < width; bx += blockSize)
+		{
+			// ブロック単位でランダム値を生成
+			float noiseValue = (float)Util::RNG(0, 255, true);
+
+			// ブロック内の各ピクセルに同じランダム値を設定
+			for (uint32_t y = 0; y < blockSize && (by + y) < height; ++y)
+			{
+				for (uint32_t x = 0; x < blockSize && (bx + x) < width; ++x)
+				{
+					uint8_t* pixel = pixels + (by + y) * rowPitch + (bx + x) * 4;
+					pixel[0] = static_cast<uint8_t>(noiseValue); // R
+					pixel[1] = static_cast<uint8_t>(noiseValue); // G
+					pixel[2] = static_cast<uint8_t>(noiseValue); // B
+					pixel[3] = 255; // A
+				}
+			}
+		}
+	}
+
+	DirectX::TexMetadata metadata;
+	metadata.width = (size_t)width;
+	metadata.height = (size_t)height;
+	metadata.depth = 1;
+	metadata.arraySize = 1;
+	metadata.mipLevels = 1;
+	metadata.miscFlags = 0;
+	metadata.format = DXGI_FORMAT_R8G8B8A8_UNORM;
+	metadata.dimension = DirectX::TEX_DIMENSION_TEXTURE2D;
+
+	//ScratchImage scratchImg;
+	//scratchImg = std::move(srcImg); // SRGBにするならmakeSRGBとConvertをここで呼ぶ
+
+	//テクスチャバッファ
+	D3D12_HEAP_PROPERTIES texHeapProp{};
+	texHeapProp.Type = D3D12_HEAP_TYPE_CUSTOM;
+	texHeapProp.CPUPageProperty = D3D12_CPU_PAGE_PROPERTY_WRITE_BACK;
+	texHeapProp.MemoryPoolPreference = D3D12_MEMORY_POOL_L0;
+
+	texresdesc.Dimension = D3D12_RESOURCE_DIMENSION_TEXTURE2D;
+	texresdesc.Format = metadata.format;
+	texresdesc.Width = metadata.width;
+	texresdesc.Height = (UINT)metadata.height;
+	texresdesc.DepthOrArraySize = (UINT16)metadata.arraySize;
+	texresdesc.MipLevels = (UINT16)metadata.mipLevels;
+	texresdesc.SampleDesc.Count = 1;
+	if (!texresdesc.Height || !texresdesc.Width || !texresdesc.DepthOrArraySize)
+	{
+		OutputDebugStringW(L"Texture Size or Depth Appeared to be Zero. Texture was not Loaded.\n");
+		return "notexture";
+	}
+	hr = GetSpDX()->dev->CreateCommittedResource(
+		&texHeapProp,
+		D3D12_HEAP_FLAG_NONE,
+		&texresdesc,
+		D3D12_RESOURCE_STATE_GENERIC_READ,
+		nullptr,
+		IID_PPV_ARGS(&ins.texBuffs[ins.nextTexIndex_]));
+
+	if (hr != S_OK)
+	{
+		return string("notexture");
+	};
+
+	ins.texBuffs[ins.nextTexIndex_]->SetName(L"TEXTURE_BUFFER");
+
+	for (size_t i = 0; i < metadata.mipLevels; i++)
+	{
+		const Image* img = image.GetImage(i, 0, 0);
+
+		ins.texBuffs[ins.nextTexIndex_]->WriteToSubresource(
+			(UINT)i,
+			nullptr,
+			img->pixels,
+			(UINT)img->rowPitch,
+			(UINT)img->slicePitch
+		);
+		assert(SUCCEEDED(hr));
+	}
+
+	//シェーダーリソースビューの生成
+	D3D12_CPU_DESCRIPTOR_HANDLE heapHandle;
+	heapHandle = ins.srvHeap->GetCPUDescriptorHandleForHeapStart();
+	heapHandle.ptr += GetSpDX()->dev->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV) * SpTextureManager::GetInstance().nextTexIndex_;
+
+	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc{};
+	srvDesc.Format = texresdesc.Format;
+	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
+	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
+	srvDesc.Texture2D.MipLevels = texresdesc.MipLevels;
+
+	GetSpDX()->dev->CreateShaderResourceView(ins.texBuffs[ins.nextTexIndex_].Get(), &srvDesc, heapHandle);
+
+	ins.textureMap_.Access(
+		[&](auto& map) {
+			map[key] = ins.nextTexIndex_;
+		}
+	);
+
+	ins.texDataMap_.Access(
+		[&](auto& map) {
+			map[key].meta = metadata;
+			//map[key].filePath = filePath;
 		}
 	);
 
@@ -925,7 +1090,7 @@ D3D12_GPU_DESCRIPTOR_HANDLE SpTextureManager::GetGPUDescHandle(const TextureKey&
 		[&](auto& map) {
 			auto p = map.find(key);
 			uint32_t index = 0;
-			if(p != map.end()) index = (uint32_t)p->second;
+			if (p != map.end()) index = (uint32_t)p->second;
 			heapHandle.ptr += GetSpDX()->dev->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV) * index;
 
 		}
