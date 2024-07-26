@@ -19,6 +19,10 @@ void FirstPersonCamera::Init()
 
 void FirstPersonCamera::Update()
 {
+	if (!GameManager::GetInstance()->GetStageGenerater()) {
+		ConsoleWindow::Log("StageGenerator is null");
+		return;
+	}
 	//デバッグ画面なら
 	if (GameManager::GetInstance()->GetisStop())
 	{
