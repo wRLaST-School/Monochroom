@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -13.95300006866455,
+                    "X": -3.468132257461548,
                     "Y": 10.0,
-                    "Z": 22.032001495361328
+                    "Z": 22.344829559326172
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.812388896942139,
+                    "X": 0.14000017940998077,
+                    "Y": 2.859999895095825,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -840,9 +840,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -13.95300006866455,
+                    "X": -3.462660551071167,
                     "Y": 10.0,
-                    "Z": 22.032001495361328
+                    "Z": 22.345176696777344
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -852,8 +852,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": 0.14000016450881958,
+                    "Y": 2.859999895095825,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -902,7 +902,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": 5.068127155303955,
-                    "Y": 8.994205474853516,
+                    "Y": 8.987756729125977,
                     "Z": 22.062511444091797
                 },
                 "RenderTarget": "",
@@ -4100,9 +4100,9 @@
                 "Name": "FlyBlock2",
                 "NormalType": 0,
                 "Position": {
-                    "X": -4.189398765563965,
-                    "Y": 9.0,
-                    "Z": 20.7918643951416
+                    "X": -4.123282432556152,
+                    "Y": 9.270548820495605,
+                    "Z": 20.934219360351563
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4182,7 +4182,7 @@
             },
             {
                 "Active": true,
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -4209,7 +4209,7 @@
                 ],
                 "DisableDraw": false,
                 "DissolveStrength": 1.25,
-                "DissolveTex": "",
+                "DissolveTex": "Noice.png",
                 "Model": "Goal.obj",
                 "Name": "Goal",
                 "NormalType": 1,
@@ -4275,7 +4275,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": 5.579809188842773,
-                    "Y": 10.997543334960938,
+                    "Y": 11.007343292236328,
                     "Z": 22.06081199645996
                 },
                 "RenderTarget": "",
@@ -4606,7 +4606,7 @@
                             "Z": 1.0
                         },
                         "Tags": null,
-                        "Texture": "TestTex.png",
+                        "Texture": "Plane.png",
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -4626,9 +4626,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -74.7516098022461,
-                    "Y": 39.78730773925781,
-                    "Z": 22.032001495361328
+                    "X": -193.06204223632813,
+                    "Y": 98.94252014160156,
+                    "Z": 22.03200340270996
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4638,7 +4638,7 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
+                    "X": 0.03999999910593033,
                     "Y": 4.71238899230957,
                     "Z": 0.0
                 },
@@ -5063,6 +5063,7 @@
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "Noice.png": "Assets\\Images\\Noice.png",
+                "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",

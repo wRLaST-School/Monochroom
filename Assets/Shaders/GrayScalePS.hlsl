@@ -13,8 +13,7 @@ float4 main(VSOutput input) : SV_TARGET
     maskPos.y = min(maskPos.y, 1.0f);
     
     //円が広がるような演出
-    maskPos += GetDirToNearEffectPos(input.uv, grayEffectRadius);
-    
+    maskPos += GetDirToNearEffectPos(input.uv, grayEffectRadius);    
     
     float4 color = tex.Sample(smp, input.uv);
     //ゴーグルのフレームか

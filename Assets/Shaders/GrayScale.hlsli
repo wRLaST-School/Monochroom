@@ -14,9 +14,8 @@ struct VSOutput
 
 
 //---------------
-
-float2 GetDirToNearEffectPos(float2 uv, float maxLength)
-{
+float2 GetNearEffectPos(float2 uv)
+{    
     float2 dir1 = grayPoint1 - uv;
     float2 dir2 = grayPoint2 - uv;
     
@@ -29,9 +28,28 @@ float2 GetDirToNearEffectPos(float2 uv, float maxLength)
     float factor = (len1 < len2) ? 1.0f : 0.0f;
     float2 result = factor * dir1 + (1.0f - factor) * dir2;
     
-    //長さの上限に収まるようにする
-    result *= min(maxLength / length(result), 1.0f);
     
-    return result;
+    return uv + result;
+}
 
+float2 GetDirToNearEffectPos(float2 uv, float maxLength)
+{
+    float2 nearEffectPos = GetNearEffectPos(uv);
+    
+    float2 result = nearEffectPos - uv;
+    
+    // 楕円形のスケーリングファクタ
+    float2 ellipseScale = float2(0.8f, 2.4f); // 横に1.5倍、縦にそのまま
+
+    // 距離を楕円形のスケールに基づいて調整
+    float2 adjustedResult = result * (ellipseScale + ellipseScale * maxLength);
+    float adjustedDistance = length(adjustedResult);
+
+    // 長さの上限に収まるようにする
+    adjustedResult *= min(maxLength / adjustedDistance, 1.0f);
+
+    // スケーリングを元に戻す
+    adjustedResult /= ellipseScale;
+
+    return adjustedResult;
 }

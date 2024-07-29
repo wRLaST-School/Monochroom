@@ -15,8 +15,8 @@ private:
 
 	bool mIsHavingGoggle = false;
 
-	const int32_t kEquipGrayEffectTime = 20;
-	const int32_t kTakeOffGrayEffectTime = 13;
+	const int32_t kEquipGrayEffectTime = 17;
+	const int32_t kTakeOffGrayEffectTime = 17;
 
 public:
 	void Init();

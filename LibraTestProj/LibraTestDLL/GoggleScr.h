@@ -34,7 +34,7 @@ private:
     std::unique_ptr<Easing>mEasing = nullptr;
 
     const int kOnMoveTime = 40;
-    const int kOffMoveTime = 32;
+    const int kOffMoveTime = 18;
 
 public:
     void Init();

@@ -54,6 +54,7 @@ cbuffer cbuff6 : register(b6)
     float4 rimColor;
     float4 rimStrength;
     float4 dissolveStrength;
+    float2 tiling;
 }
 
 struct VSOutput

@@ -114,7 +114,7 @@ void GrayScale::GrayEffectUpdate()
 			time = mGrayEffectTimeMax - mGrayEffectTime;
 		}
 
-		info.grayEffectRatio = (float)time / (float)mGrayEffectTimeMax;
+		info.grayEffectRatio = Easing::Out((float)time / (float)mGrayEffectTimeMax, 1.5f);
 
 
 		if (mGrayEffectTime >= mGrayEffectTimeMax)

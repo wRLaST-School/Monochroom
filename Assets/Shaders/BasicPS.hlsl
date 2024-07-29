@@ -19,9 +19,9 @@ float4 calcRim(GSOutput i, float4 color)
 float4 main(GSOutput input) : SV_TARGET
 {
     float4 texcolor = float4(tex.Sample(smp, input.uv));
-    float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
+    //float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
 	
-    clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
+    //clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
 
     float4 shadecolor;
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <IPostEffector.h>
 #include <SpConstBuffer.h>
+#include <Easing.h>
 
 struct GrayScaleInfo
 {
