@@ -15,6 +15,11 @@ private:
 	Object3D* mParent = nullptr;
 	std::unique_ptr<Gravity> mGravity = nullptr;
 
+	Vec3 mResponePos = { 0,0,0 };
+	Vec3 mResponeRot = { 0,0,0 };
+
+	const Vec3 kResponePos = { 0,-30.0f,0 };
+
 	bool mIsAttracted = false;
 	Vec3 mBeginPos;
 	Vec3 mEndPos;

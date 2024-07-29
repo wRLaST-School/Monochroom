@@ -11,6 +11,9 @@ void FlyBlock::Init()
 	mEasing = std::make_unique<Easing>();
 	mGravity = std::make_unique<Gravity>();
 
+	mResponePos = mParent->position;
+	mResponeRot = mParent->rotationE;
+
 	mAttractParentVec = { 0,0,0 };
 
 	mEasing->SetEaseTimer(kAttractedFrameMax);
@@ -46,6 +49,13 @@ void FlyBlock::Update()
 	if(!mIsAttracted)
 	{
 		mParent->position += mGravity->CalcGravity();
+	}
+
+	//一定以下に行ったらリスポーン
+	if (mParent->position.y <= kResponePos.y)
+	{
+		mParent->position = mResponePos;
+		mParent->rotationE = mResponeRot;
 	}
 }
 
