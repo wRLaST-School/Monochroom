@@ -20,7 +20,8 @@ void GameManager::Awake()
 	isStop = false;
 
 	if (SceneManager::GetCurrentScene()->GetName() == "Title"||
-		SceneManager::GetCurrentScene()->GetName() == "StageSelect")
+		SceneManager::GetCurrentScene()->GetName() == "StageSelect"||
+		SceneManager::GetCurrentScene()->GetName() == "Game")
 	{
 		StageGenerating::info.isDraw = false;
 		mIsChangeScene = false;
@@ -117,9 +118,6 @@ void GameManager::Update()
 	//	}
 	//	if (mUIScript->GetBackToTitle())
 	//	{
-	//		//// シーンの切り替え処理
-	//		//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
-	//		//SceneManager::WaitForLoadAndTransition();
 
 	//		OutputDebugStringA("SceneChangeClick\n");
 
@@ -133,7 +131,7 @@ void GameManager::Update()
 	//	if (BlinkTransition::info.isInEnd)
 	//	{
 	//		// シーンの切り替え処理
-	//		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/StageSelect.scene");
+	//		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Title.scene");
 	//		SceneManager::WaitForLoadAndTransition();
 	//	}
 	//}

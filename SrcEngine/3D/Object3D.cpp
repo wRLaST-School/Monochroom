@@ -10,7 +10,7 @@
 #include <DockPanel.h>
 #include <RTVManager.h>
 
-float Object3D::dissolveStrength = 0.0f;
+float Object3D::dissolveStrength = 1.25f;
 
 Object3D::Object3D()
 {
