@@ -12,7 +12,8 @@ struct GrayScaleInfo
 	const Vec2 kGrayWindowSize = { 1280.0f,720.0f };
 	const Vec2 kGrayPoint1 = { 230 / kGrayWindowSize.x,340 / kGrayWindowSize.y };
 	const Vec2 kGrayPoint2 = { 1040 / kGrayWindowSize.x,340 / kGrayWindowSize.y };
-	const float kGrayEffectRadius = 500.0f / kGrayWindowSize.x;
+	const float kGrayEffectRadius = 300.0f / kGrayWindowSize.x;
+	float time = 0;
 
 public:
 	void Init()
@@ -29,6 +30,7 @@ struct GraySclaeCB
 	Vec2 grayPoint1;
 	Vec2 grayPoint2;
 	float grayEffectRadius;
+	float time;
 };
 
 class GrayScale : public IPostEffector

@@ -72,6 +72,7 @@ void GrayScale::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 	{
 		GraySclaeCB cbdata;
 		cbdata.offset = info.kOffsetUV * info.offsetRatio;
+		cbdata.time = info.time++;
 		cbdata.grayPoint1 = info.kGrayPoint1;
 		cbdata.grayPoint2 = info.kGrayPoint2;
 		cbdata.grayEffectRadius = info.kGrayWindowSize.x / 1.6f /
