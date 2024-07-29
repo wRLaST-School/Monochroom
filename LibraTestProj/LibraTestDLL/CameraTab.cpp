@@ -34,8 +34,7 @@ void CameraTab::Init()
 
 	mCameraUIObj.resize(mCameraOptionNum);
 
-	mItemsParentObj = std::make_unique<Object3D>();
-	mItemsParentObj.reset(SceneManager::FindObject<Object3D>("CameraTabItems"));
+	mItemsParentObj = SceneManager::FindObject<Object3D>("CameraTabItems");
 
 	// カメラ項目のオブジェクト設定
 	mCameraUIObj[MOUSESENSITIVITY_X].planeObj = SceneManager::FindObject<Object3D>("MouseSensitivityX");

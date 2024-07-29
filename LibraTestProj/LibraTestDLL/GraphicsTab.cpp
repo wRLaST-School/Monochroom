@@ -23,8 +23,7 @@ void GraphicsTab::Init()
 
 	mGraphicsUIObj.resize(mGraphicsOptionNum);
 
-	mItemsParentObj = std::make_unique<Object3D>();
-	mItemsParentObj.reset(SceneManager::FindObject<Object3D>("GraphicsTabItems"));
+	mItemsParentObj = SceneManager::FindObject<Object3D>("GraphicsTabItems");
 
 	// グラフィックス項目のオブジェクト設定
 	mGraphicsUIObj[POSTPROCESS].planeObj = SceneManager::FindObject<Object3D>("PostProcess");

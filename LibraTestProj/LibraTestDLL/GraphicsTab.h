@@ -37,7 +37,7 @@ private:
     // グラフィックス項目の現在の項目番号
     int mCurrentNum;
 
-    std::unique_ptr<Object3D> mItemsParentObj;
+    Object3D* mItemsParentObj;
 
     // グラフィックスメニューオブジェクト
     std::vector<UI3DTabItemStatus>mGraphicsUIObj;

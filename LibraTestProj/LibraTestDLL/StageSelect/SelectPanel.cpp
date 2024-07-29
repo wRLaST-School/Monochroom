@@ -62,21 +62,21 @@ void SelectPanel::Init()
 	mCameraObj->Update();
 
 	// ゴーグルのセット
-	mGoggleObj.reset(SceneManager::FindObject<Object3D>("Goggle"));
+	mGoggleObj = SceneManager::FindObject<Object3D>("Goggle");
 	mGoggleObj->brightnessCB.contents->w = 0;
 
 	mLeftLensObj = SceneManager::FindObject<Object3D>("LeftLens");
 
 	// カプセルのセット
-	mCapsuleObj.reset(SceneManager::FindObject<Object3D>("CapsuleDoor"));
+	mCapsuleObj = SceneManager::FindObject<Object3D>("CapsuleDoor");
 	mCapsuleObj->position.y = mCapsuleDefuY;
 
 	// タイトルの文字のセット
-	mTitleTextObj.reset(SceneManager::FindObject<Object3D>("TitleText"));
+	mTitleTextObj = SceneManager::FindObject<Object3D>("TitleText");
 	mTitleTextObj->brightnessCB.contents->w = 0;
 
 	// タイトルのロゴのセット
-	mTitleRogoObj.reset(SceneManager::FindObject<Object3D>("FirstScreen"));
+	mTitleRogoObj = SceneManager::FindObject<Object3D>("FirstScreen");
 	mTitleRogoObj->brightnessCB.contents->w = 0;
 
 	mTitleTextSinDefuPosY = 1.3f;

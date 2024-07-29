@@ -39,7 +39,7 @@ private:
     // カメラ項目の現在の項目番号
     int mCurrentNum;
 
-    std::unique_ptr<Object3D> mItemsParentObj;
+    Object3D* mItemsParentObj;
     // 番号のテクスチャ
     std::vector<TextureKey> mNumberTex;
     // カメラメニューオブジェクト
