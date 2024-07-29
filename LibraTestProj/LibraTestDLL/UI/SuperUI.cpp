@@ -53,7 +53,7 @@ void SuperUI::Init()
 
 
 
-	//UIObj3DInit();
+	UIObj3DInit();
 	//Input::Mouse::HideCursor();
 }
 
@@ -114,11 +114,11 @@ void SuperUI::UIObj3DInit()
 
 	mNumOption = 3;
 
-	mTabRotaAfter = -10;
+	mTabRotaAfter = -540;
 
 	mTabRotaBefore = 0;
 
-	mTabBoardRotaAfter = -15;
+	mTabBoardRotaAfter = -545;
 
 	mTabBoardRotaBefore = 0;
 
