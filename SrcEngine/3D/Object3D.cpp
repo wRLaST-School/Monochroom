@@ -348,6 +348,7 @@ void Object3D::DrawAlpha()
 void Object3D::DrawAlpha(const TextureKey& key)
 {
 	transformCB.contents->mat = matWorld;
+	miscCB.contents->tiling = tiling;
 	this->alphaTexKey = key;
 	SpRenderer::RegisterAlphaObj(this);
 }
