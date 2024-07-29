@@ -205,6 +205,7 @@ void SelectPanel::Update()
 		StageChangeUpdate();
 		break;
 	}
+	ConsoleWindow::Log(mStageName);
 }
 
 void SelectPanel::Draw()
@@ -227,6 +228,11 @@ bool SelectPanel::GetIsChangeScene()
 void SelectPanel::SetIsChangeScene(bool IsChage)
 {
 	IsChangeStage = IsChage;
+}
+
+std::string SelectPanel::GetStageName()
+{
+	return mStageName;
 }
 
 float SelectPanel::DegreeToRadian(float angle)
@@ -422,6 +428,11 @@ void SelectPanel::SelectStageUpdate()
 
 				break;
 			case PRESSED:
+				std::string stageDirectory="Assets/Scene/Stage/";
+				std::string stageNum= "Stage" + std::to_string(i + 1) + "_" + std::to_string(j + 1);
+				std::string stageExtensionName = ".scene";
+				mStageName = stageDirectory + stageNum + stageExtensionName;
+
 				mStageNum[i][j].buttonObj->scale = mPressedPanelScale;
 				mSelectState = MOVETOCAPCEL;
 				break;
@@ -458,6 +469,7 @@ void SelectPanel::MoveToCapcelUpdate()
 
 void SelectPanel::StageChangeUpdate()
 {
+	
 	mEaseCapsule.Update();
 
 	// カプセルのオブジェクトを上げて、ステージに移動

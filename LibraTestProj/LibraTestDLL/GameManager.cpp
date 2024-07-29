@@ -104,7 +104,7 @@ void GameManager::Update()
 		if (BlinkTransition::info.isInEnd)
 		{
 			// シーンの切り替え処理
-			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+			SceneManager::LoadScene<SceneFromFile>(mSelectPanel->GetStageName());
 			SceneManager::WaitForLoadAndTransition();
 		}
 	}

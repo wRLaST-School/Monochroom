@@ -53,7 +53,7 @@ void SuperUI::Init()
 
 
 
-	UIObj3DInit();
+	//UIObj3DInit();
 	//Input::Mouse::HideCursor();
 }
 

@@ -80,6 +80,8 @@ public:
 	// シーンチェンジフラグの設定
 	void SetIsChangeScene(bool IsChage);
 
+	std::string GetStageName();
+
 	DefDel;
 private:
 
@@ -209,5 +211,7 @@ private:
 
 	Color mTextDisabledColor;
 	Color mTextSelectColor;
+
+	std::string mStageName;
 };
 RegisterScript(SelectPanel);
