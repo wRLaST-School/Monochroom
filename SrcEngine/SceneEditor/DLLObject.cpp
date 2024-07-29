@@ -6,6 +6,11 @@
 const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
 {
     //何か登録されてたら解放
+    if (component_)
+    {
+        delete component_;
+    }
+
     if (hModule_) { Free(); }
 
 #ifdef _DEBUG
@@ -27,13 +32,6 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
 
     if (instantiateFunc == nullptr) { return hModule_; }
 
-    //生成済みの場合はリセット
-    if (component_)
-    {
-       //delete component_;
-       //OutputDebugStringA(std::format("Deleting Instance {}\n", className).c_str());
-        component_ = nullptr;
-    }
 
     component_ = instantiateFunc();
 
@@ -54,10 +52,10 @@ IScriptObject* Libra::DLLObject::GetComponent()
 
 Libra::DLLObject::~DLLObject()
 {
-    //if (component_)
-    //{
-    //    delete component_;
-    //}
+    if (component_)
+    {
+        delete component_;
+    }
 
     OutputDebugStringA(std::format("Deleting DLL Object Instance\n").c_str());
 
@@ -70,10 +68,6 @@ void Libra::DLLObject::Del()
 }
 
 void Libra::DLLObject::Free()
-{
-    //if (component_) {
-    //    component_ = nullptr;
-    //}
-    
+{    
     FreeLibrary(hModule_);
 }
