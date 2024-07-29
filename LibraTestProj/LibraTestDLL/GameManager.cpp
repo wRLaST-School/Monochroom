@@ -15,7 +15,7 @@ void GameManager::Awake()
 	mCamera = SceneManager::FindObject<Camera>("Camera");
 	mStageGenerater = SceneManager::FindObjectWithTag<StageGenerater>("StageGenerater");
 	mSelectPanel= SceneManager::FindObject<SelectPanel>("SelectScript");
-
+	mUIScript=SceneManager::FindObject<SuperUI>("UIScript");
 
 	isStop = false;
 
@@ -107,6 +107,36 @@ void GameManager::Update()
 			SceneManager::WaitForLoadAndTransition();
 		}
 	}
+	//else if (SceneManager::GetCurrentScene()->GetName() == "Game")
+	//{
+	//	ConsoleWindow::Log("Game Is Set");
+	//	if (!mUIScript)
+	//	{
+	//		ConsoleWindow::Log("UI is null");
+	//		return;
+	//	}
+	//	if (mUIScript->GetBackToTitle())
+	//	{
+	//		//// シーンの切り替え処理
+	//		//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
+	//		//SceneManager::WaitForLoadAndTransition();
+
+	//		OutputDebugStringA("SceneChangeClick\n");
+
+	//		if (!mIsChangeScene)
+	//		{
+	//			BlinkTransition::Start();
+	//			mIsChangeScene = true;
+	//		}
+	//	}
+
+	//	if (BlinkTransition::info.isInEnd)
+	//	{
+	//		// シーンの切り替え処理
+	//		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/StageSelect.scene");
+	//		SceneManager::WaitForLoadAndTransition();
+	//	}
+	//}
 	else
 	{
 		if (!mStageGenerater)

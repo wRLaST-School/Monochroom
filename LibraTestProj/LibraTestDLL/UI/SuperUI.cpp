@@ -7,6 +7,7 @@
 #include <Input.h>
 #include <ConsoleWindow.h>
 #include "GameManager.h"
+#include "PlayerControl.h"
 
 float DegreeToRadian(float angle)
 {
@@ -98,6 +99,11 @@ void SuperUI::Draw()
 void SuperUI::CopyComponent(IComponent* src)
 {
 
+}
+
+bool SuperUI::GetBackToTitle()
+{
+	return IsBackToTitle;
 }
 
 void SuperUI::UIObj3DInit()

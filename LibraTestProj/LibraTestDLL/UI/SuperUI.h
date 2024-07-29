@@ -3,11 +3,12 @@
 #include <Object3D.h>
 #include "Easing.h"
 #include <Color.h>
-#include "PlayerControl.h"
 #include "IUITab.h"
 #include "CameraTab.h"
 #include "GraphicsTab.h"
 #include "SoundTab.h"
+
+class PlayerControl;
 
 class SuperUI :
     public IScriptObject
@@ -17,6 +18,9 @@ public:
     void Update();
     void Draw();
     void CopyComponent(IComponent* src);
+
+    // タイトルへ戻るフラグを取得
+    bool GetBackToTitle();
 
     DefDel;
 
@@ -284,8 +288,6 @@ private:// メンバー変数
 
     // プレイヤーコントロール(取得用)
     PlayerControl* mPlayerControl;
-
-
 };
 RegisterScript(SuperUI);
 
