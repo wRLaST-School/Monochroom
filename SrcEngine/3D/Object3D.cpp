@@ -738,6 +738,12 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	texture = jsonObject["Texture"];
 	if (jsonObject.contains("DissolveTex"))
 	{
+		if (jsonObject.contains("Tiling"))
+		{
+			tiling.x = jsonObject["Tiling"]["X"];
+			tiling.y = jsonObject["Tiling"]["Y"];
+		}
+
 		dissolveTex = jsonObject["DissolveTex"];
 		if (jsonObject.contains("DissolveStrength"))
 		{
@@ -798,6 +804,8 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	jsonObject["Brightness"]["W"] = brightnessCB.contents->w;
 
 	jsonObject["Texture"] = texture;
+	jsonObject["Tiling"]["X"] = tiling.x;
+	jsonObject["Tiling"]["Y"] = tiling.y;
 	jsonObject["DissolveTex"] = dissolveTex;
 	jsonObject["DissolveStrength"] = miscCB.contents->dissolveStrength;
 	jsonObject["UseMyselfDissolveStrength"] = isUseMyselfDissolveStrength;

@@ -14,14 +14,13 @@ void GameManager::Awake()
 	mPlayer = SceneManager::FindObject<Object3D>("Player");
 	mCamera = SceneManager::FindObject<Camera>("Camera");
 	mStageGenerater = SceneManager::FindObjectWithTag<StageGenerater>("StageGenerater");
-	mSelectPanel= SceneManager::FindObject<SelectPanel>("SelectScript");
-	mUIScript=SceneManager::FindObject<SuperUI>("UIScript");
+	mSelectPanel = SceneManager::FindObject<SelectPanel>("SelectScript");
+	mUIScript = SceneManager::FindObject<SuperUI>("UIScript");
 
 	isStop = false;
 
-	if (SceneManager::GetCurrentScene()->GetName() == "Title"||
-		SceneManager::GetCurrentScene()->GetName() == "StageSelect"||
-		SceneManager::GetCurrentScene()->GetName() == "Game")
+	if (SceneManager::GetCurrentScene()->GetName() == "Title" ||
+		SceneManager::GetCurrentScene()->GetName() == "StageSelect")
 	{
 		StageGenerating::info.isDraw = false;
 		mIsChangeScene = false;
@@ -30,7 +29,6 @@ void GameManager::Awake()
 	else
 	{
 		StageGenerating::info.isDraw = true;
-		SpTextureManager::CreateNoiceTexture(128, 128, 16, "NoiceTexture");
 	}
 }
 
@@ -108,35 +106,32 @@ void GameManager::Update()
 			SceneManager::WaitForLoadAndTransition();
 		}
 	}
-	//else if (SceneManager::GetCurrentScene()->GetName() == "Game")
-	//{
-	//	ConsoleWindow::Log("Game Is Set");
-	//	if (!mUIScript)
-	//	{
-	//		ConsoleWindow::Log("UI is null");
-	//		return;
-	//	}
-	//	if (mUIScript->GetBackToTitle())
-	//	{
-
-	//		OutputDebugStringA("SceneChangeClick\n");
-
-	//		if (!mIsChangeScene)
-	//		{
-	//			BlinkTransition::Start();
-	//			mIsChangeScene = true;
-	//		}
-	//	}
-
-	//	if (BlinkTransition::info.isInEnd)
-	//	{
-	//		// シーンの切り替え処理
-	//		SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Title.scene");
-	//		SceneManager::WaitForLoadAndTransition();
-	//	}
-	//}
 	else
 	{
+		ConsoleWindow::Log("Game Is Set");
+		if (!mUIScript)
+		{
+			ConsoleWindow::Log("UI is null");
+			return;
+		}
+		if (mUIScript->GetBackToTitle())
+		{
+			OutputDebugStringA("SceneChangeClick\n");
+
+			if (!mIsChangeScene)
+			{
+				BlinkTransition::Start();
+				mIsChangeScene = true;
+			}
+		}
+
+		if (BlinkTransition::info.isInEnd)
+		{
+			// シーンの切り替え処理
+			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/StageSelect.scene");
+			SceneManager::WaitForLoadAndTransition();
+		}
+
 		if (!mStageGenerater)
 		{
 			ConsoleWindow::Log("mStageGenerater is null");
