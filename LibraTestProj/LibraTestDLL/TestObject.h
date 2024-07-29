@@ -7,8 +7,8 @@ class TestObject :
 	public IScriptObject
 {
 private:
-	OBBCollider obbCollider;
-	SphereCollider sphereCollider;
+	//OBBCollider obbCollider;
+	//SphereCollider sphereCollider;
 	//int hoge[25000000] = {};
 
 public:

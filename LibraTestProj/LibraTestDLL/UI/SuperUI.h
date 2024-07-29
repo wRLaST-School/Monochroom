@@ -219,21 +219,21 @@ private:// メンバー変数
     int mNumOption;
 
     // メインカメラのオブジェクトを借りて来る
-    std::unique_ptr<Object3D> mMainCameraObj;
+    Object3D* mMainCameraObj;
 
     // UIの全体の親オブジェクト
-    std::unique_ptr<Object3D> mMenuParentObj;
+    Object3D* mMenuParentObj;
 
-    std::unique_ptr<Object3D> mMenuPlaneObj;
+    Object3D* mMenuPlaneObj;
 
-    std::unique_ptr<Object3D> mPlanesParentObj;
+    Object3D* mPlanesParentObj;
 
     // UIのメインメニューの項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuUIObj;
 
-    std::unique_ptr<Object3D> mTabsParentObj;
+    Object3D* mTabsParentObj;
 
-    std::unique_ptr<Object3D> mTabBoardObj;
+    Object3D* mTabBoardObj;
 
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuTabUIObj;
@@ -246,11 +246,11 @@ private:// メンバー変数
     SoundTab* mSoundItem;
 
     // UIガイド関連オブジェ
-    std::unique_ptr<Object3D> mGuidParentObj;
+    Object3D* mGuidParentObj;
 
 
     // UIタイトルへ戻る関連オブジェ
-    std::unique_ptr<Object3D> mQuitTitleParentObj;
+    Object3D* mQuitTitleParentObj;
     std::vector<UI3DTabItemStatus>mQuitTextObjs;
     Vec3 mQuitTitleSelectScale;
     Vec3 mQuitTitleDisabledScale;

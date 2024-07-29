@@ -78,7 +78,6 @@ Libra::DLLObject* ScriptComponent::GetObj()
 
 ScriptComponent::~ScriptComponent()
 {
-	dllobj_.Del();
 }
 
 void ScriptComponent::CompileScript()

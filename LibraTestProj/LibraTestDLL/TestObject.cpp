@@ -21,9 +21,9 @@ void TestObject::Update()
 
 	ConsoleWindow::Log(std::format("mouse pos: {}, {}", (int)mpos.x, (int)mpos.y));
 	
-	obbCollider.Setting(Vec3::zero, Quaternion::EulerToQuaternion(Float3(0, 0, 0)), Vec3(1, 1, 1));
-	sphereCollider.pos = obj->position;
-	sphereCollider.r = 2.f;
+	//obbCollider.Setting(Vec3::zero, Quaternion::EulerToQuaternion(Float3(0, 0, 0)), Vec3(1, 1, 1));
+	//sphereCollider.pos = obj->position;
+	//sphereCollider.r = 2.f;
 	int a = 0;
 
 	//if (obbCollider.IsTrigger(&sphereCollider))
@@ -34,7 +34,7 @@ void TestObject::Update()
 	if (obj)
 	{
 		float move = (float)Input::Key::Down(DIK_UP) - (float)Input::Key::Down(DIK_DOWN);
-		move *= 0.1f;
+		move *= 0.51f;
 
 		obj->position.z += move;
 
@@ -48,8 +48,8 @@ void TestObject::Update()
 
 void TestObject::Draw()
 {
-	obbCollider.DrawCollider();
-	sphereCollider.DrawCollider();
+	//obbCollider.DrawCollider();
+	//sphereCollider.DrawCollider();
 }
 
 void TestObject::OnInspectorWindowDraw()

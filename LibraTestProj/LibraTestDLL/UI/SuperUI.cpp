@@ -149,12 +149,6 @@ void SuperUI::UIObj3DInit()
 
 	// シーンに配置されているオブジェクトを走査して、代入
 
-	mMenuParentObj = std::make_unique<Object3D>();
-	mTabsParentObj = std::make_unique<Object3D>();
-	mTabBoardObj = std::make_unique<Object3D>();
-	mMenuPlaneObj = std::make_unique<Object3D>();
-	mPlanesParentObj = std::make_unique<Object3D>();
-
 	//mCameraItem.Init();
 	//mGpraphicsItem.Init();
 	//mSoundItem.Init();
@@ -171,16 +165,16 @@ void SuperUI::UIObj3DInit()
 		mTabItems[i]->Init();
 	}
 
-	mMainCameraObj.reset(SceneManager::FindObject<Object3D>("Camera"));
+	mMainCameraObj = SceneManager::FindObject<Object3D>("Camera");
 
-	mMenuParentObj.reset(SceneManager::FindObject<Object3D>("UIParentObj"));
-	mMenuParentObj->parent = mMainCameraObj.get();
+	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
+	mMenuParentObj->parent = mMainCameraObj;
 	mMenuParentObj->Deactivate();
 
-	mTabsParentObj.reset(SceneManager::FindObject<Object3D>("Tabs"));
-	mTabBoardObj.reset(SceneManager::FindObject<Object3D>("Board"));
-	mMenuPlaneObj.reset(SceneManager::FindObject<Object3D>("MenuPlane"));
-	mPlanesParentObj.reset(SceneManager::FindObject<Object3D>("Planes"));
+	mTabsParentObj=SceneManager::FindObject<Object3D>("Tabs");
+	mTabBoardObj=SceneManager::FindObject<Object3D>("Board");
+	mMenuPlaneObj = SceneManager::FindObject<Object3D>("MenuPlane");
+	mPlanesParentObj = SceneManager::FindObject<Object3D>("Planes");
 
 	// メインメニューの項目のオブジェクト設定
 	mMenuUIObj[GUID].planeObj = SceneManager::FindObject<Object3D>("GuidPlane");
@@ -193,10 +187,10 @@ void SuperUI::UIObj3DInit()
 	mMenuTabUIObj[SOUND].planeObj = SceneManager::FindObject<Object3D>("SoundTab");
 
 	// ガイドメニューのオブジェクト設定
-	mGuidParentObj.reset(SceneManager::FindObject<Object3D>("GuidMenu"));
+	mGuidParentObj = SceneManager::FindObject<Object3D>("GuidMenu");
 
 	// タイトルへ戻るオブジェクト設定
-	mQuitTitleParentObj.reset(SceneManager::FindObject<Object3D>("QuitTitleMenu"));
+	mQuitTitleParentObj = SceneManager::FindObject<Object3D>("QuitTitleMenu");
 	mQuitTextObjs.resize(2);
 	mQuitTextObjs[Yes].planeObj = SceneManager::FindObject<Object3D>("YesText");
 	mQuitTextObjs[No].planeObj = SceneManager::FindObject<Object3D>("NoText");

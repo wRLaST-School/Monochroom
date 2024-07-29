@@ -14,6 +14,8 @@ public:
 	virtual void Draw() {};
 	virtual void OnInspectorWindowDraw() {};
 
+	virtual ~IScriptObject() {};
+
 	virtual void Del() { delete this; };
 
 	IComponent* Parent();

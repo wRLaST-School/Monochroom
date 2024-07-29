@@ -125,17 +125,17 @@ private:
 	Object3D* mCameraObj;
 
 	// タイトルフォントオブジェクト
-	std::unique_ptr<Object3D> mTitleTextObj;
+	Object3D* mTitleTextObj;
 
 	// タイトルロゴオブジェクト
-	std::unique_ptr<Object3D> mTitleRogoObj;
+	Object3D* mTitleRogoObj;
 
 	// タイトル用のゴーグルオブジェクト
-	std::unique_ptr<Object3D> mGoggleObj;
+	Object3D* mGoggleObj;
 	Object3D* mLeftLensObj;
 
 	// カプセルのオブジェクト
-	std::unique_ptr<Object3D> mCapsuleObj;
+	Object3D* mCapsuleObj;
 
 	// ステージセレクト時に選択用のオブジェクト
 	std::vector<std::vector<StageButton>> mStageNum;
