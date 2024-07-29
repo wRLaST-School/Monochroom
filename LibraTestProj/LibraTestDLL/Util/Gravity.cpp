@@ -1,6 +1,6 @@
 #include "Gravity.h"
-float Gravity::sGravityAccel = 0.0049f;
-Vec3 Gravity::sLimitVelocity = Vec3(0.f, -6.f, 0.f);
+float Gravity::sGravityAccel = 0.0023f;
+Vec3 Gravity::sLimitVelocity = Vec3(0.f, -0.04f, 0.f);
 
 Gravity::Gravity()
 {

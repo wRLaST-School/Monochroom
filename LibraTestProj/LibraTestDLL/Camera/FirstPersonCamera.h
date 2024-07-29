@@ -17,10 +17,10 @@ private:
 
     float mTimer = 0;
 
-    const float kMoveWigglePosLength = 0.052f;
+    const float kMoveWigglePosLength = 0.057f;
     const float kMoveWigglePosSpeed = 0.365f;
     const float kMoveWiggleRotLength = PIf * 0.0009f;
-    const float kMoveWiggleRotSpeed = 0.35f;
+    const float kMoveWiggleRotSpeed = 0.23f;
 
     bool isSet = false;
 
