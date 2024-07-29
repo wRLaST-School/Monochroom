@@ -13,7 +13,7 @@ private:
 	std::unique_ptr<Gravity> mGravity;
 	GameManager* mGameManager;
 
-	const Vec3 JUMP_POWER = { 0,0.056f,0 };
+	const Vec3 JUMP_POWER = { 0,0.04f,0 };
 
 	bool isJump_ = false;
 	bool mIsPrepairingCamera = false;

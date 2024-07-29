@@ -23,7 +23,7 @@
                 "Name": "Camera",
                 "Position": {
                     "X": -13.95300006866455,
-                    "Y": 10.0,
+                    "Y": 9.38800048828125,
                     "Z": 22.032001495361328
                 },
                 "Rotation": {
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -0.03999999165534973,
-                    "Y": 3.542388677597046,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -87,6 +87,10 @@
                 },
                 "Tags": null,
                 "Texture": "white.png",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -150,6 +154,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -203,6 +211,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -256,6 +268,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -309,6 +325,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -362,6 +382,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -415,6 +439,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -468,6 +496,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -521,6 +553,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -574,6 +610,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -627,6 +667,10 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     }
@@ -660,6 +704,10 @@
                 },
                 "Tags": null,
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -713,6 +761,10 @@
                     "Glass"
                 ],
                 "Texture": "white.png",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -765,6 +817,10 @@
                         },
                         "Tags": null,
                         "Texture": "Goggles.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -809,6 +865,10 @@
                             "Player"
                         ],
                         "Texture": "",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -841,7 +901,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": -13.95300006866455,
-                    "Y": 10.0,
+                    "Y": 9.38800048828125,
                     "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
@@ -852,8 +912,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.03999999165534973,
-                    "Y": 3.542388439178467,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -866,6 +926,10 @@
                     "Stage"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -927,6 +991,10 @@
                     "Stage"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -979,6 +1047,10 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -1021,6 +1093,10 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -1072,6 +1148,10 @@
                     "Stage"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -1086,7 +1166,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -1134,6 +1214,10 @@
                                 },
                                 "Tags": null,
                                 "Texture": "black",
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
                             },
@@ -1196,6 +1280,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "white.png",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             },
@@ -1238,6 +1326,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "white.png",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             },
@@ -1280,6 +1372,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "white.png",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             }
@@ -1313,6 +1409,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     },
@@ -1365,6 +1465,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "white.png",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             },
@@ -1407,6 +1511,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "white.png",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             },
@@ -1449,6 +1557,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "white.png",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             },
@@ -1491,6 +1603,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "white.png",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             }
@@ -1524,6 +1640,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     }
@@ -1557,6 +1677,10 @@
                                 },
                                 "Tags": null,
                                 "Texture": "",
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
                             },
@@ -1608,6 +1732,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     }
@@ -1642,6 +1770,10 @@
                                 },
                                 "Tags": null,
                                 "Texture": "white.png",
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
                             },
@@ -1724,6 +1856,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "three",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -1766,6 +1902,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -1808,6 +1948,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -1842,6 +1986,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -1894,6 +2042,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "four",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -1936,6 +2088,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -1978,6 +2134,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -2012,6 +2172,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -2054,6 +2218,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -2106,6 +2274,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2148,6 +2320,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2190,6 +2366,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -2224,6 +2404,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -2276,6 +2460,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2318,6 +2506,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2360,6 +2552,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -2394,6 +2590,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -2436,6 +2636,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     }
@@ -2469,6 +2673,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             },
@@ -2531,6 +2739,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2573,6 +2785,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -2607,6 +2823,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -2659,6 +2879,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2701,6 +2925,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -2735,6 +2963,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     }
@@ -2768,6 +3000,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             },
@@ -2830,6 +3066,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "two",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2872,6 +3112,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -2914,6 +3158,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -2948,6 +3196,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -3000,6 +3252,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -3042,6 +3298,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -3084,6 +3344,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -3118,6 +3382,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     },
@@ -3170,6 +3438,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "one",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -3212,6 +3484,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             },
@@ -3254,6 +3530,10 @@
                                                                 },
                                                                 "Tags": null,
                                                                 "Texture": "white.png",
+                                                                "Tiling": {
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0
+                                                                },
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -3288,6 +3568,10 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
                                                         "Type": "Object3D",
                                                         "UseMyselfDissolveStrength": false
                                                     }
@@ -3321,6 +3605,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             }
@@ -3355,6 +3643,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     },
@@ -3397,6 +3689,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     },
@@ -3439,6 +3735,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     },
@@ -3481,6 +3781,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     }
@@ -3514,6 +3818,10 @@
                                 },
                                 "Tags": null,
                                 "Texture": "",
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
                             },
@@ -3576,6 +3884,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "guidTextTex",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             }
@@ -3610,6 +3922,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     },
@@ -3661,6 +3977,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             }
@@ -3695,6 +4015,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     },
@@ -3746,6 +4070,10 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
                                                 "Type": "Object3D",
                                                 "UseMyselfDissolveStrength": false
                                             }
@@ -3780,6 +4108,10 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
                                         "Type": "Object3D",
                                         "UseMyselfDissolveStrength": false
                                     }
@@ -3813,6 +4145,10 @@
                                 },
                                 "Tags": null,
                                 "Texture": "",
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
                             }
@@ -3846,6 +4182,10 @@
                         },
                         "Tags": null,
                         "Texture": "",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -3934,6 +4274,10 @@
                         },
                         "Tags": null,
                         "Texture": "",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     }
@@ -3967,6 +4311,10 @@
                 },
                 "Tags": null,
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4019,6 +4367,10 @@
                         },
                         "Tags": null,
                         "Texture": "DissolveMap.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -4061,6 +4413,10 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -4103,6 +4459,10 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -4154,6 +4514,10 @@
                     "Stage"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4215,6 +4579,10 @@
                     "Stage"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4266,6 +4634,10 @@
                 },
                 "Tags": null,
                 "Texture": "buttonBackTex",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4328,6 +4700,10 @@
                     "Goal"
                 ],
                 "Texture": "Goal.png",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4389,6 +4765,10 @@
                     "Stage"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4451,6 +4831,10 @@
                                 },
                                 "Tags": null,
                                 "Texture": "stage1_pipe.png",
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
                             },
@@ -4493,6 +4877,10 @@
                                 },
                                 "Tags": null,
                                 "Texture": "white.png",
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
                             }
@@ -4527,6 +4915,10 @@
                         },
                         "Tags": null,
                         "Texture": "stage1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -4569,6 +4961,10 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     }
@@ -4602,6 +4998,10 @@
                 },
                 "Tags": null,
                 "Texture": "stage1.png",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4654,6 +5054,10 @@
                         },
                         "Tags": null,
                         "Texture": "",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": true
                     },
@@ -4690,12 +5094,16 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 192.0,
-                            "Y": 108.0,
-                            "Z": 0.9999927878379822
+                            "X": 100.0,
+                            "Y": 100.0,
+                            "Z": 1.0
                         },
                         "Tags": null,
                         "Texture": "Plane.png",
+                        "Tiling": {
+                            "X": 10.0,
+                            "Y": 10.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -4715,8 +5123,8 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -124.90164184570313,
-                    "Y": 84.50888061523438,
+                    "X": 12.787368774414063,
+                    "Y": -10000.0,
                     "Z": 123.33818817138672
                 },
                 "RenderTarget": "",
@@ -4727,8 +5135,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.38999998569488525,
-                    "Y": 5.452388763427734,
+                    "X": 0.0,
+                    "Y": -1.5707963705062866,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4738,6 +5146,10 @@
                 },
                 "Tags": null,
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4924,6 +5336,10 @@
                     "Transparent"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             },
@@ -4976,6 +5392,10 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -5018,6 +5438,10 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -5070,6 +5494,10 @@
                     "Goggle"
                 ],
                 "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
             }

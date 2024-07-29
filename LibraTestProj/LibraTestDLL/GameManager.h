@@ -4,8 +4,8 @@
 #include <Camera.h>
 #include <StageGenerater.h>
 #include <vector>
-#include "SelectPanel.h"
-#include "SuperUI.h"
+#include <SuperUI.h>
+#include <SelectPanel.h>
 
 class GameManager :
 	public IScriptObject
@@ -33,7 +33,7 @@ public:
 	Object3D* GetPlayer();
 	Camera* GetCamera();
 	StageGenerater* GetStageGenerater();
-	
+
 	bool GetisStop();
 
 	// ゲーム一時停止の設定
