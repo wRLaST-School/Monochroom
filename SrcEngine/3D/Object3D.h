@@ -20,6 +20,7 @@ struct ConstBufferDataMisc {
 	Float3 padding;
 	float dissolveStrength;
 	Float3 padding2;
+	Vec2 tiling;
 };
 
 class Object3D : public IComponent
@@ -30,7 +31,7 @@ private:
 public:
 	ComponentFactoryRegister(Object3D)
 
-	DLLExport Object3D();
+		DLLExport Object3D();
 	void DLLExport UpdateMatrix();
 	void DLLExport DecomposeMatrix();
 
@@ -124,8 +125,11 @@ public:
 	std::unique_ptr<NormalCaster> normalCaster;
 	std::unique_ptr<Silhouette> silhouette;
 	std::unique_ptr<HolographicCaster> holographicCaster;
-	
+
 	DLLExport static float dissolveStrength;
 	bool isUseMyselfDissolveStrength;
+
+	Vec2 tiling;
+
 };
 

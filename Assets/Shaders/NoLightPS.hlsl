@@ -22,7 +22,8 @@ float4 main(VSOutput input) : SV_TARGET
     //float4 dissolvecolor = float4(disTex.Sample(smp, input.uv));
 	
     //clip(dissolvecolor.r - 0.00001f - dissolveStrength.r);
-    float4 texColor = tex.Sample(smp, input.uv);
+    float4 texColor = tex.Sample(smp, input.uv * tiling);
+    //float4 texColor = tex.Sample(smp, input.uv * float2(10,10));
     clip(texColor.a - 0.5f);
     return (texColor * brightness);
 }

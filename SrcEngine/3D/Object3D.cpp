@@ -19,6 +19,8 @@ Object3D::Object3D()
 	miscCB.contents->dissolveStrength = 1.25f;
 	isUseMyselfDissolveStrength = false;
 	dissolveTex = "Noice.png";
+	tiling = Vec2(1, 1);
+	miscCB.contents->tiling = Vec2(1, 1);
 
 	shadowCaster = std::make_unique<ShadowCaster>();
 	normalCaster = std::make_unique<NormalCaster>();
@@ -237,6 +239,7 @@ void Object3D::Draw()
 void Object3D::Draw(const TextureKey& key)
 {
 	transformCB.contents->mat = matWorld;
+	miscCB.contents->tiling = tiling;
 
 	//GetWDX()->cmdList->SetPipelineState(GPipeline::GetState("def"));
 	//GetWDX()->cmdList->SetGraphicsRootSignature(SpRootSignature::Get("3D")->rootsignature.Get());
@@ -555,6 +558,7 @@ void Object3D::OnInspectorWindowDraw()
 		{
 			texture = buf;
 		};
+		ImGui::DragFloat2("Tiling", &tiling.x);
 
 		static std::string input = dissolveTex;
 		if (SpImGui::InputText("Dissolve Tex Key", input))
