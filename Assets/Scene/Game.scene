@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.812388896942139,
+                    "X": -0.03999999165534973,
+                    "Y": 3.542388677597046,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -852,8 +852,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": -0.03999999165534973,
+                    "Y": 3.542388439178467,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1086,7 +1086,7 @@
                 },
                 "Children": [
                     {
-                        "Active": false,
+                        "Active": true,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -1723,7 +1723,91 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
-                                                                "Texture": "one",
+                                                                "Texture": "three",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow1",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow2",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 6.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
                                                                 "Type": "Object3D",
                                                                 "UseMyselfDissolveStrength": false
                                                             }
@@ -1770,6 +1854,134 @@
                                                             "Y": 0.9975700974464417,
                                                             "Z": 0.3706563711166382
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "four",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow2",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 6.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow1",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
                                                         "DissolveTex": "",
@@ -1854,9 +2066,137 @@
                                                             "Y": 1.0,
                                                             "Z": 0.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "one",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow1",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow2",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 6.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
-                                                        "DissolveTex": "",
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityX",
                                                         "NormalType": 0,
@@ -1896,9 +2236,137 @@
                                                             "Y": 0.9729729294776917,
                                                             "Z": 0.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "one",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow2",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 6.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow1",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
-                                                        "DissolveTex": "",
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityY",
                                                         "NormalType": 0,
@@ -2023,9 +2491,95 @@
                                                             "Y": 0.0,
                                                             "Z": 0.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "OnPlane",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 3.5,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.800000011920929,
+                                                                    "Y": 0.800000011920929,
+                                                                    "Z": 0.800000011920929
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "OffPlane",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.599999904632568,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
-                                                        "DissolveTex": "",
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PostProcess",
                                                         "NormalType": 0,
@@ -2065,6 +2619,92 @@
                                                             "Y": 0.0,
                                                             "Z": 0.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "OnPlane",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 3.5,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.800000011920929,
+                                                                    "Y": 0.800000011920929,
+                                                                    "Z": 0.800000011920929
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "OffPlane",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.599999904632568,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
                                                         "DissolveTex": "",
@@ -2150,9 +2790,137 @@
                                                             "Y": 1.0,
                                                             "Z": 1.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "two",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow1",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow2",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 6.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
-                                                        "DissolveTex": "",
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "BGMVolume",
                                                         "NormalType": 0,
@@ -2174,8 +2942,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "Scale": {
-                                                            "X": 0.8999999761581421,
-                                                            "Y": 0.6000000238418579,
+                                                            "X": 1.0,
+                                                            "Y": 0.800000011920929,
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
@@ -2192,9 +2960,137 @@
                                                             "Y": 1.0,
                                                             "Z": 1.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "one",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow1",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow2",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 6.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
-                                                        "DissolveTex": "",
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MastarVolume",
                                                         "NormalType": 0,
@@ -2234,9 +3130,137 @@
                                                             "Y": 1.0,
                                                             "Z": 1.0
                                                         },
+                                                        "Children": [
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "Num",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 5.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.5,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "one",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow1",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 4.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            },
+                                                            {
+                                                                "Active": true,
+                                                                "BlendMode": 4,
+                                                                "Brightness": {
+                                                                    "W": 1.0,
+                                                                    "X": 1.0,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "DisableDraw": false,
+                                                                "DissolveStrength": 1.25,
+                                                                "DissolveTex": "Noice.png",
+                                                                "Model": "Plane.obj",
+                                                                "Name": "arrow2",
+                                                                "NormalType": 0,
+                                                                "Position": {
+                                                                    "X": 6.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RenderTarget": "",
+                                                                "Rotation": {
+                                                                    "W": 1.0,
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "RotationEuler": {
+                                                                    "X": 0.0,
+                                                                    "Y": 0.0,
+                                                                    "Z": 0.0
+                                                                },
+                                                                "Scale": {
+                                                                    "X": 0.30000001192092896,
+                                                                    "Y": 1.0,
+                                                                    "Z": 1.0
+                                                                },
+                                                                "Tags": null,
+                                                                "Texture": "white.png",
+                                                                "Type": "Object3D",
+                                                                "UseMyselfDissolveStrength": false
+                                                            }
+                                                        ],
                                                         "DisableDraw": false,
                                                         "DissolveStrength": 1.25,
-                                                        "DissolveTex": "",
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "SEVolume",
                                                         "NormalType": 0,
@@ -2258,8 +3282,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "Scale": {
-                                                            "X": 1.0,
-                                                            "Y": 0.800000011920929,
+                                                            "X": 0.8999999761581421,
+                                                            "Y": 0.6000000238418579,
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
@@ -2848,6 +3872,70 @@
                         "posY": 540.0,
                         "scaleX": 1.0,
                         "scaleY": 1.0
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "CameraTabScript",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "CameraTab"
+                            },
+                            {
+                                "Active": true,
+                                "Name": "GraphicsTabScript",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "GraphicsTab"
+                            },
+                            {
+                                "Active": true,
+                                "Name": "SoundTabScript",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "SoundTab"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "",
+                        "Name": "TabsScripts",
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "",
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     }
                 ],
                 "DisableDraw": false,
@@ -3101,9 +4189,9 @@
                 "Name": "FlyBlock2",
                 "NormalType": 0,
                 "Position": {
-                    "X": -4.189398765563965,
+                    "X": -4.123282432556152,
                     "Y": 9.0,
-                    "Z": 20.7918643951416
+                    "Z": 20.934219360351563
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3183,7 +4271,7 @@
             },
             {
                 "Active": true,
-                "BlendMode": 0,
+                "BlendMode": 3,
                 "Brightness": {
                     "W": 1.0,
                     "X": 1.0,
@@ -3210,7 +4298,7 @@
                 ],
                 "DisableDraw": false,
                 "DissolveStrength": 1.25,
-                "DissolveTex": "",
+                "DissolveTex": "Noice.png",
                 "Model": "Goal.obj",
                 "Name": "Goal",
                 "NormalType": 1,
@@ -3276,7 +4364,7 @@
                 "NormalType": 0,
                 "Position": {
                     "X": 5.579809188842773,
-                    "Y": 10.997543334960938,
+                    "Y": 11.002443313598633,
                     "Z": 22.06081199645996
                 },
                 "RenderTarget": "",
@@ -3585,7 +4673,7 @@
                         "Name": "PlaneAlpha",
                         "NormalType": 0,
                         "Position": {
-                            "X": 1.9073486328125e-06,
+                            "X": 7.62939453125e-06,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -3599,15 +4687,15 @@
                         "RotationEuler": {
                             "X": -0.4363323152065277,
                             "Y": 0.0,
-                            "Z": 1.5707963705062866
+                            "Z": 0.0
                         },
                         "Scale": {
-                            "X": 100.0,
-                            "Y": 100.0,
-                            "Z": 1.0
+                            "X": 192.0,
+                            "Y": 108.0,
+                            "Z": 0.9999927878379822
                         },
                         "Tags": null,
-                        "Texture": "TestTex.png",
+                        "Texture": "Plane.png",
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
@@ -3627,9 +4715,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -74.7516098022461,
-                    "Y": 39.78730773925781,
-                    "Z": 22.032001495361328
+                    "X": -124.90164184570313,
+                    "Y": 84.50888061523438,
+                    "Z": 123.33818817138672
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3639,8 +4727,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": -0.38999998569488525,
+                    "Y": 5.452388763427734,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4064,6 +5152,7 @@
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "Noice.png": "Assets\\Images\\Noice.png",
+                "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",

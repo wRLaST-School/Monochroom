@@ -15,6 +15,9 @@ public:
     void Init()  override;
     void Update()  override;
     void Draw()  override;
+    void CopyComponent(IComponent* src) override;
+
+    void MenuUpdate()override;
 
     void OnUpdate()  override;
     void OffUpdate()  override;
@@ -35,11 +38,18 @@ private:
     int mGraphicsOptionNum;
 
     // グラフィックス項目の現在の項目番号
-    int mCurrentNum;
+    int mGraphicsCurrentNum;
 
-    std::unique_ptr<Object3D> mItemsParentObj;
+    Object3D* mItemsParentObj;
+
+    std::vector<Object3D*> mOnPlaneObj;
+    std::vector<Object3D*> mOffPlaneObj;
+
+    Color mSelectColor;
+    Color mDisabledColor;
+
 
     // グラフィックスメニューオブジェクト
     std::vector<UI3DTabItemStatus>mGraphicsUIObj;
 };
-
+RegisterScript(GraphicsTab);

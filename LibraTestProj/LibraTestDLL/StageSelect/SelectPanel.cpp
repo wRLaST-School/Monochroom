@@ -160,6 +160,12 @@ void SelectPanel::Init()
 
 	mEaseCapsule.SetEaseTimer(60 * 3);
 	mEaseAlpha.SetEaseTimer((int)(60 * 1.5f));
+
+	mButtonDisabledColor = { 160,55,55 };
+	mButtonSelectColor = { 255,80,80 };
+
+	mTextDisabledColor = { 200,130,130 };
+	mTextSelectColor = { 255,219,219 };
 }
 
 void SelectPanel::Update()
@@ -399,9 +405,20 @@ void SelectPanel::SelectStageUpdate()
 			{
 			case DISABLED:
 				mStageNum[i][j].buttonObj->scale = mDisabledPanelScale;
+
+				*mStageNum[i][j].buttonObj->brightnessCB.contents = mButtonDisabledColor;
+				*mStageNum[i][j].hyphenObj->brightnessCB.contents = mTextDisabledColor;
+				*mStageNum[i][j].stageBaseNumObj->brightnessCB.contents = mTextDisabledColor;
+				*mStageNum[i][j].stageSubNumObj->brightnessCB.contents = mTextDisabledColor;
+
 				break;
 			case SELECT:
 				mStageNum[i][j].buttonObj->scale = mSelectPanelScale;
+
+				*mStageNum[i][j].buttonObj->brightnessCB.contents = mButtonSelectColor;
+				*mStageNum[i][j].hyphenObj->brightnessCB.contents = mTextSelectColor;
+				*mStageNum[i][j].stageBaseNumObj->brightnessCB.contents = mTextSelectColor;
+				*mStageNum[i][j].stageSubNumObj->brightnessCB.contents = mTextSelectColor;
 
 				break;
 			case PRESSED:

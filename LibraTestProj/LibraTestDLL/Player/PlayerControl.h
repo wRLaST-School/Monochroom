@@ -4,6 +4,7 @@
 #include <Gravity.h>
 #include <GameManager.h>
 #include <memory>
+#include "CameraTab.h"
 
 class PlayerControl :
 	public IScriptObject
@@ -32,6 +33,8 @@ private:
 	Object3D* parent_ = nullptr;
 
 	Vec2 mMouseSensitivity;
+
+	CameraTab* mCameraTab;
 
 private:
 	void Jump();

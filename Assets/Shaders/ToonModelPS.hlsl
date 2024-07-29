@@ -50,9 +50,9 @@ float4 main(VSOutput input) : SV_TARGET
 
     float shadow = CalcShadowPFC(input.shadowpos);
     
-    float4 texCol = tex.Sample(smp, input.uv);
+    float4 texCol = tex.Sample(smp, input.uv * tiling);
+    //float4 texCol = tex.Sample(smp, input.uv * tiling);
     
-    float2 pixelSize = 1.0f / float2(1920.f, 1080.f);
     float2 blockSize = float2(64.f, 64.f);
     float2 blockUV = floor(input.uv * blockSize) / blockSize;
     

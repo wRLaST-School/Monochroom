@@ -23,6 +23,7 @@ void PlayerControl::Init()
 	DirectionUpdate();
 
 	mIsPrepairingCamera = false;
+	mCameraTab = SceneManager::FindObject<CameraTab>("CameraTabScript");
 }
 
 //-------------------------------------------
@@ -69,6 +70,17 @@ void PlayerControl::MoveUpdate()
 void PlayerControl::DirectionUpdate()
 {
 	Vec3 mouseMoveVec = AppOperationCommand::GetInstance()->PlayerAngleCommand();
+
+	if (mCameraTab != nullptr)
+	{
+		mMouseSensitivity = mCameraTab->GetMouseSensivity();
+		ConsoleWindow::Log(std::format("PlayerMouseSensivityXXX : {}", mMouseSensitivity.x));
+	}
+	else {
+		ConsoleWindow::Log("mCameraTab Null");
+	}
+
+	
 
 	parent_->rotationE.y += mouseMoveVec.x * MOUSE_ROT_SPEED * mMouseSensitivity.x;
 	parent_->rotationE.x += mouseMoveVec.y * MOUSE_ROT_SPEED * mMouseSensitivity.y;

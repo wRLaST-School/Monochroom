@@ -5,6 +5,7 @@
 #include <StageGenerater.h>
 #include <vector>
 #include "SelectPanel.h"
+#include "SuperUI.h"
 
 class GameManager :
 	public IScriptObject
@@ -14,6 +15,7 @@ private:
 	Camera* mCamera;
 	StageGenerater* mStageGenerater;
 	SelectPanel* mSelectPanel;
+	SuperUI* mUIScript;
 
 	bool isStop;
 	static bool mIsChangeScene;
