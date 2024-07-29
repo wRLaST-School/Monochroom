@@ -23,8 +23,10 @@ void TestScene::Init()
 
 void TestScene::Update()
 {
+#ifndef _DEBUG
 	SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Title.scene");
 	SceneManager::WaitForLoadAndTransition();
+#endif
 }
 
 void TestScene::DrawBack()
