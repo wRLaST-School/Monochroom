@@ -41,7 +41,7 @@ private:
     // サウンド項目の現在の項目番号
     int mSoundCurrentNum;
 
-    std::unique_ptr<Object3D> mItemsParentObj;
+    Object3D* mItemsParentObj;
 
     // サウンドメニューオブジェクト
     std::vector<UI3DTabItemStatus>mSoundUIObj;

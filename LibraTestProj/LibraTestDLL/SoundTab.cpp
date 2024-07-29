@@ -22,8 +22,7 @@ void SoundTab::Init()
 
 	mSoundUIObj.resize(mSoundOptionNum);
 
-	mItemsParentObj = std::make_unique<Object3D>();
-	mItemsParentObj.reset(SceneManager::FindObject<Object3D>("SoundTabItems"));
+	mItemsParentObj = SceneManager::FindObject<Object3D>("SoundTabItems");
 
 	// 音量項目のオブジェクト設定
 	mSoundUIObj[MASTER].planeObj = SceneManager::FindObject<Object3D>("MastarVolume");

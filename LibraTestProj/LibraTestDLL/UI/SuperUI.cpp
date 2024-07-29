@@ -7,6 +7,7 @@
 #include <Input.h>
 #include <ConsoleWindow.h>
 #include "GameManager.h"
+#include "PlayerControl.h"
 
 float DegreeToRadian(float angle)
 {
@@ -100,6 +101,11 @@ void SuperUI::CopyComponent(IComponent* src)
 
 }
 
+bool SuperUI::GetBackToTitle()
+{
+	return IsBackToTitle;
+}
+
 void SuperUI::UIObj3DInit()
 {
 
@@ -152,10 +158,13 @@ void SuperUI::UIObj3DInit()
 	//mCameraItem.Init();
 	//mGpraphicsItem.Init();
 	//mSoundItem.Init();
+	mCameraItem = SceneManager::FindObject<CameraTab>("CameraTabScript"); 
+	mGpraphicsItem = SceneManager::FindObject<GraphicsTab>("GraphicsTabScript");
+	mSoundItem = SceneManager::FindObject<SoundTab>("SoundTabScript");
 
-	mTabItems[CAMERA] = &mCameraItem;
-	mTabItems[GRAPHICS] = &mGpraphicsItem;
-	mTabItems[SOUND] = &mSoundItem;
+	mTabItems[CAMERA] = mCameraItem;
+	mTabItems[GRAPHICS] = mGpraphicsItem;
+	mTabItems[SOUND] = mSoundItem;
 
 	for (size_t i = 0; i < mNumOption; i++)
 	{
@@ -417,8 +426,6 @@ void SuperUI::UITabMenuUpdate()
 			mMenuTabUIObj[i].planeObj->Update();
 		}
 	}
-
-
 }
 
 void SuperUI::UITitleMenuUpdate()
