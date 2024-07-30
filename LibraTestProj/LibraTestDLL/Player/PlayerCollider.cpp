@@ -16,8 +16,8 @@ void PlayerCollider::Update()
 
 	// 重力判定用
 	Quaternion rot = Quaternion();
-	Vec3 scale = mObj->scale;
-	scale.y = 0.5f;
+	Vec3 scale = Vec3(mObj->scale) * 0.5f;
+	//scale.y = 0.5f;
 	Vec3 pos = Vec3(mObj->position) + Vec3(0.f, -1.75f - scale.y / 2.f, 0.f);
 	mDownCollider.Setting(pos, rot, scale);
 }
