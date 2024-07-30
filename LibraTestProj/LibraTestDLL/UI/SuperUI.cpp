@@ -59,6 +59,38 @@ void SuperUI::Init()
 
 void SuperUI::Update()
 {
+	if (!mCameraItem || !mGpraphicsItem || !mSoundItem ||
+		!mMainCameraObj || !mMenuParentObj || !mTabsParentObj ||
+		!mTabBoardObj || !mMenuPlaneObj || !mPlanesParentObj ||
+		!mGuidParentObj || !mQuitTitleParentObj)
+	{
+		return;
+	}
+
+	for (uint32_t i = 0; mMenuUIObj.size(); i++)
+	{
+		if (!mMenuUIObj[i].planeObj)
+		{
+			return;
+		}
+	}
+
+	for (uint32_t i = 0; mMenuTabUIObj.size(); i++)
+	{
+		if (!mMenuTabUIObj[i].planeObj)
+		{
+			return;
+		}
+	}
+
+	for (uint32_t i = 0; mQuitTextObjs.size(); i++)
+	{
+		if (!mQuitTextObjs[i].planeObj)
+		{
+			return;
+		}
+	}
+
 	// もしTABキーを押したらメニューを開け閉めする
 	if (Input::Key::Triggered(DIK_ESCAPE))
 	{
@@ -145,14 +177,14 @@ void SuperUI::UIObj3DInit()
 	mMenuUIObj.resize(mNumMenu);
 	mMenuTabUIObj.resize(mNumOption);
 	mTabItems.resize(mNumOption);
-	
+
 
 	// シーンに配置されているオブジェクトを走査して、代入
 
 	//mCameraItem.Init();
 	//mGpraphicsItem.Init();
 	//mSoundItem.Init();
-	mCameraItem = SceneManager::FindObject<CameraTab>("CameraTabScript"); 
+	mCameraItem = SceneManager::FindObject<CameraTab>("CameraTabScript");
 	mGpraphicsItem = SceneManager::FindObject<GraphicsTab>("GraphicsTabScript");
 	mSoundItem = SceneManager::FindObject<SoundTab>("SoundTabScript");
 
@@ -162,17 +194,30 @@ void SuperUI::UIObj3DInit()
 
 	for (size_t i = 0; i < mNumOption; i++)
 	{
+		if (!mTabItems[i])
+		{
+			continue;
+		}
+
 		mTabItems[i]->Init();
 	}
 
 	mMainCameraObj = SceneManager::FindObject<Object3D>("Camera");
+	if (!mMainCameraObj)
+	{
+		return;
+	}
 
 	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
+	if (!mMenuParentObj)
+	{
+		return;
+	}
 	mMenuParentObj->parent = mMainCameraObj;
 	mMenuParentObj->Deactivate();
 
-	mTabsParentObj=SceneManager::FindObject<Object3D>("Tabs");
-	mTabBoardObj=SceneManager::FindObject<Object3D>("Board");
+	mTabsParentObj = SceneManager::FindObject<Object3D>("Tabs");
+	mTabBoardObj = SceneManager::FindObject<Object3D>("Board");
 	mMenuPlaneObj = SceneManager::FindObject<Object3D>("MenuPlane");
 	mPlanesParentObj = SceneManager::FindObject<Object3D>("Planes");
 
@@ -199,7 +244,6 @@ void SuperUI::UIObj3DInit()
 
 void SuperUI::UIObj3DUpdate()
 {
-
 	UIMainMenuUpdate();
 
 	UITabMenuUpdate();
@@ -240,7 +284,7 @@ void SuperUI::UIMainMenuUpdate()
 					UIQuitTitleMenuOn();
 					break;
 				}
-				
+
 			}
 
 			// 項目のナンバーを変更
@@ -282,7 +326,7 @@ void SuperUI::UIMainMenuUpdate()
 					UIQuitTitleMenuOff();
 					break;
 				}
-				
+
 			}
 		}
 	}
@@ -463,8 +507,8 @@ void SuperUI::UITitleMenuUpdate()
 		{
 			mQuitTextObjs[i].planeObj->Update();
 		}
-		
-		
+
+
 	}
 }
 
