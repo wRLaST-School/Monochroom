@@ -18,6 +18,6 @@ float4 main(VSOutput input) : SV_TARGET
     
     float4 texCol = tex.Sample(smp, input.uv);
     
-    float4 result = texCol * mask;
+    float4 result = texCol/* * mask*/;
     return result;
 }
