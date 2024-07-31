@@ -11,7 +11,8 @@
 
 float DegreeToRadian(float angle)
 {
-	float radian = angle * (float)(PI / 180);
+	float PIPI = 3.141592f;
+	float radian = angle * PIPI / 180;
 
 	return radian;
 }
@@ -146,7 +147,7 @@ void SuperUI::UIObj3DInit()
 
 	mNumOption = 3;
 
-	mTabRotaAfter = 45;
+	mTabRotaAfter = 30;
 
 	mTabRotaBefore = 0;
 
@@ -154,7 +155,7 @@ void SuperUI::UIObj3DInit()
 
 	mTabBoardRotaBefore = 0;
 
-	mTabEaseTimeLimit = 30;
+	mTabEaseTimeLimit = 20;
 
 	IsUITabOn = false;
 
@@ -172,6 +173,8 @@ void SuperUI::UIObj3DInit()
 	mUITabEase.SetEaseTimer((int32_t)mTabEaseTimeLimit);
 
 	mUITabBoardEase.SetEaseTimer((int32_t)(mTabEaseTimeLimit * 1.5f));
+
+	mUITabAlphaEase.SetEaseTimer((int32_t)mTabEaseTimeLimit);
 
 	// メニューのリストをリサイズ
 	mMenuUIObj.resize(mNumMenu);
@@ -217,6 +220,7 @@ void SuperUI::UIObj3DInit()
 	mMenuParentObj->Deactivate();
 
 	mTabsParentObj=SceneManager::FindObject<Object3D>("Tabs");
+	mTabsPParentObj = SceneManager::FindObject<Object3D>("TabsParent");
 	mTabBoardParentObj= SceneManager::FindObject<Object3D>("BoardParent");
 	mTabBoardObj=SceneManager::FindObject<Object3D>("Board");
 	mMenuPlaneObj = SceneManager::FindObject<Object3D>("MenuPlane");
@@ -384,20 +388,22 @@ void SuperUI::UIMainMenuUpdate()
 	{
 		mUITabEase.Update();
 		mUITabBoardEase.Update();
-
-		mTabsParentObj->rotationE.y = mUITabEase.In(DegreeToRadian(mTabRotaAfter), DegreeToRadian(mTabRotaBefore));
-		mTabBoardParentObj->rotationE.y = mUITabBoardEase.In(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
-		mTabsParentObj->brightnessCB.contents->w = mUITabEase.In(0, 1);
+		mUITabAlphaEase.Update();
 
 		for (size_t i = 0; i < mNumOption; i++)
 		{
-			Color alphaColor; 
-			alphaColor.f4 = { 1, 1, 1, mUITabEase.In(0, 1) };
+			Color alphaColor;
+			alphaColor.f4 = { 1, 1, 1, mUITabAlphaEase.In(0, 1) };
 			*mMenuTabUIObj[i].planeObj->brightnessCB.contents = alphaColor;
 			mMenuTabUIObj[i].planeObj->Update();
 		}
 
-		mTabsParentObj->Update();
+		mTabsPParentObj->rotationE.y = mUITabEase.In(0.523f, 0);
+		mTabBoardParentObj->rotationE.y = mUITabBoardEase.In(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
+
+
+
+		mTabsPParentObj->Update();
 		mTabBoardParentObj->Update();
 
 		if (mUITabBoardEase.GetisEnd())
@@ -406,6 +412,7 @@ void SuperUI::UIMainMenuUpdate()
 			IsActiveOption = false;
 			mUITabEase.Reset();
 			mUITabBoardEase.Reset();
+			mUITabAlphaEase.Reset();
 		}
 	}
 }
