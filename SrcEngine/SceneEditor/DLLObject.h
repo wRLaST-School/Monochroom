@@ -18,6 +18,8 @@ namespace Libra {
 
 		void Free();
 
+		void DeleteComponent();
+
 	private:
 		HMODULE hModule_;
 

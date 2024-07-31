@@ -104,7 +104,12 @@ void ScriptComponent::CompileScript()
 
 	GetAllScriptCompsRecursive(scriptcomps, SceneManager::currentScene.get());
 
-	//スクリプトコンポーネントを全て保持してdllobjをfree
+	//スクリプトコンポーネントを全て保持して中身をdeleteしてからdllobjをfree
+	for (auto& c : scriptcomps)
+	{
+		c->dllobj_.DeleteComponent();
+	}
+
 	for (auto& c : scriptcomps) {
 		if (c->dllobj_.GetModule())
 			c->dllobj_.Free();
