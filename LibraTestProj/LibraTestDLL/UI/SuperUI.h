@@ -233,6 +233,10 @@ private:// メンバー変数
 
     Object3D* mTabsParentObj;
 
+    Object3D* mTabsPParentObj;
+
+    Object3D* mTabBoardParentObj;
+
     Object3D* mTabBoardObj;
 
     // UIのタブメニュー項目オブジェクト
@@ -264,6 +268,7 @@ private:// メンバー変数
     // UIのタブのイージング
     Easing mUITabEase;
     Easing mUITabBoardEase;
+    Easing mUITabAlphaEase;
 
     // UIイージングパラメータ
     float mTabRotaAfter;

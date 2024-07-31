@@ -1,14 +1,14 @@
 #include "ToonModel.hlsli"
 
 static const float _LightingCutoff = 0.1f;
-static const float _FalloffAmount = 0.1f;
+static const float _FalloffAmount = 0.5f;
 static const float _Smoothness = 75.f;
 static const float _FresnelSize = 1.0f;
 static const float _FresnelMin = 0.99999f;
 static const float _FresnelMax = 1.0f;
 static const float3 _FresnelColor = float3(1.0f, 1.0f, 1.0f);
 static const float3 _ShadowColor = float3(0.75f, 0.75f, 0.75f);
-static const float _ShadowBias = 0.0025f;
+static const float _ShadowBias = 0.0001f;
 
 Texture2D<float4> tex : register(t0);
 Texture2D<float4> dissolveTex : register(t1);
@@ -35,7 +35,7 @@ float4 main(VSOutput input) : SV_TARGET
     float NdotL = dot(N, L);
     float3 diffuse = 0.5f + NdotL * 0.5f;
     float3 dRate = smoothstep(_LightingCutoff, _LightingCutoff + _FalloffAmount, diffuse);
-    diffuse = dRate + (1 - dRate) * shadow.xxx;
+    diffuse = dRate + (1 - dRate) * _ShadowColor;
 	
 	// Specular
     float3 V = normalize(cameraPos - input.worldpos.xyz);
@@ -79,10 +79,10 @@ float4 main(VSOutput input) : SV_TARGET
     texCol.rgb = texCol.rgb * (1 - drate2) + (drate2 - drate) * float3(0.2f, 0.3f, 0.9f);
     
     float4 result = texCol * shadeCol * brightness;
-    if (dRate.r >= 0.9)
-    {
-        result.rgb *= shadow * dRate;
-    }
+    result.rgb *= shadow/* * dRate*/;
+    //if (dRate.r >= 0.9)
+    //{
+    //}
     
     return result;
 }
