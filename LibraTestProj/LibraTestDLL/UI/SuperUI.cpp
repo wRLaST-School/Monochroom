@@ -114,11 +114,11 @@ void SuperUI::UIObj3DInit()
 
 	mNumOption = 3;
 
-	mTabRotaAfter = -540;
+	mTabRotaAfter = 45;
 
 	mTabRotaBefore = 0;
 
-	mTabBoardRotaAfter = -545;
+	mTabBoardRotaAfter = -95;
 
 	mTabBoardRotaBefore = 0;
 
@@ -172,6 +172,7 @@ void SuperUI::UIObj3DInit()
 	mMenuParentObj->Deactivate();
 
 	mTabsParentObj=SceneManager::FindObject<Object3D>("Tabs");
+	mTabBoardParentObj= SceneManager::FindObject<Object3D>("BoardParent");
 	mTabBoardObj=SceneManager::FindObject<Object3D>("Board");
 	mMenuPlaneObj = SceneManager::FindObject<Object3D>("MenuPlane");
 	mPlanesParentObj = SceneManager::FindObject<Object3D>("Planes");
@@ -317,7 +318,7 @@ void SuperUI::UIMainMenuUpdate()
 				IsGuidOn = true;
 				break;
 			case OPTIONS:
-				IsUITabOn = true;
+				
 				break;
 			case QUIT_TITLE:
 				IsQuitTitleOn = true;
@@ -341,13 +342,23 @@ void SuperUI::UIMainMenuUpdate()
 		mUITabBoardEase.Update();
 
 		mTabsParentObj->rotationE.y = mUITabEase.In(DegreeToRadian(mTabRotaAfter), DegreeToRadian(mTabRotaBefore));
-		mTabBoardObj->rotationE.y = mUITabBoardEase.In(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
+		mTabBoardParentObj->rotationE.y = mUITabBoardEase.In(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
+		mTabsParentObj->brightnessCB.contents->w = mUITabEase.In(0, 1);
+
+		for (size_t i = 0; i < mNumOption; i++)
+		{
+			Color alphaColor; 
+			alphaColor.f4 = { 1, 1, 1, mUITabEase.In(0, 1) };
+			*mMenuTabUIObj[i].planeObj->brightnessCB.contents = alphaColor;
+			mMenuTabUIObj[i].planeObj->Update();
+		}
 
 		mTabsParentObj->Update();
-		mTabBoardObj->Update();
+		mTabBoardParentObj->Update();
 
 		if (mUITabBoardEase.GetisEnd())
 		{
+			IsUITabOn = true;
 			IsActiveOption = false;
 			mUITabEase.Reset();
 			mUITabBoardEase.Reset();

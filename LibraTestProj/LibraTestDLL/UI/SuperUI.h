@@ -233,6 +233,8 @@ private:// メンバー変数
 
     Object3D* mTabsParentObj;
 
+    Object3D* mTabBoardParentObj;
+
     Object3D* mTabBoardObj;
 
     // UIのタブメニュー項目オブジェクト
