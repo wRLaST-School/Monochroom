@@ -12,6 +12,7 @@
 #include <SceneRW.h>
 #include <SceneFromFile.h>
 #include <ScriptComponent.h>
+#include <InspectorWindow.h>
 
 void SceneManager::Init()
 {
@@ -168,6 +169,8 @@ void SceneManager::ConfirmTransition()
 	{
 		currentScene.reset(nullptr);
 		currentScene.swap(nextScene);
+
+		InspectorWindow::SelectObject(nullptr);
 
 		currentScene->Init();
 
