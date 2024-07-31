@@ -11,7 +11,10 @@ void GlassCollider::Update()
 	Vec3 pos = mObj->position;
 	Quaternion rot = Quaternion::EulerToQuaternion(mObj->rotationE);
 	Vec3 scale = mObj->scale;
-	scale.z *= 2;
+	if (scale.z <= 0.25f)
+	{
+		scale.z *= 2;
+	}
 	mBodyCollider.Setting(pos, rot, scale);
 }
 

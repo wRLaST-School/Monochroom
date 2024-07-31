@@ -290,6 +290,7 @@ void CollisionManager::PlayerHitButtons()
 void CollisionManager::PlayerHitGlasses()
 {
 	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
+	auto playerDownCollider = mPlayerCollider->GetDownCollider();
 
 	for (const auto& gc : mGlassColliders)
 	{
@@ -298,6 +299,22 @@ void CollisionManager::PlayerHitGlasses()
 		if (gc->GetBodyCollider().IsTrigger(&playerBodyCollider, &pushOut))
 		{
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+
+		// 重力
+		if (gc->GetBodyCollider().IsTrigger(&playerDownCollider))
+		{
+			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
+
+			if (playerControl->GetGravity()->GetVelocity().y <= 0.f)
+			{
+				float posY = gc->GetBodyCollider().pos.y;
+				float offsetY = gc->GetBodyCollider().scale.y + player->scale.y * 2;
+				player->position.y = posY + offsetY;
+
+				playerControl->GravityToZero();
+			}
 		}
 	}
 }
@@ -472,6 +489,7 @@ void CollisionManager::FlyBlocksHitGlasses()
 {
 	for (const auto& fbc : mFlyBlockColliders)
 	{
+		auto flyBlockDownCollider = fbc->GetDownCollider();
 		auto flyBlockMoveCollider = fbc->GetMoveCollider();
 
 		for (const auto& gc : mGlassColliders)
@@ -483,6 +501,23 @@ void CollisionManager::FlyBlocksHitGlasses()
 			if (gc->GetBodyCollider().IsTrigger(&flyBlockMoveCollider, &pushOut))
 			{
 				fbc->Parent()->CastTo<Object3D>()->position += pushOut;
+				flyblock->EndAttracting();
+			}
+
+			// 重力
+			if (gc->GetBodyCollider().IsTrigger(&flyBlockDownCollider) &&
+				!flyblock->GetIsAttracting())
+			{
+				if (flyblock->GetAttractVec().GetLength() == 0)
+				{
+					auto flyBlockObj3D = fbc->Parent()->CastTo<Object3D>();
+
+					float posY = gc->GetBodyCollider().pos.y;
+					float offsetY = gc->GetBodyCollider().scale.y + flyBlockObj3D->scale.y;
+					flyBlockObj3D->position.y = posY + offsetY;
+				}
+
+				flyblock->ZeroGravity();
 				flyblock->EndAttracting();
 			}
 		}
