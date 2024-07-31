@@ -17,6 +17,7 @@ void StageGenerater::Init()
 	mPlaneAlpha->scale = scale;
 	mPlane->scale = scale;
 	mPlane->miscCB.contents->dissolveStrength = 0.0f;
+	mPlaneAlpha->offset.y = 0.0f;
 
 	mIsStart = false;
 	mIsStarted = false;
@@ -39,6 +40,7 @@ void StageGenerater::Update()
 	{
 		mMoveSpeed = 0.5f;
 	}
+	mPlaneAlpha->offset.y -= 0.01f;
 
 	mObj->position += mMoveVec.Norm() * mMoveSpeed;
 
