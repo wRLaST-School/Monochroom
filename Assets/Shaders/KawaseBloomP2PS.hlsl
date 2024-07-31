@@ -54,8 +54,8 @@ float4 main(VSOutput input) : SV_TARGET
     const float loopNum = 5;
     
     float4 col = float4(0, 0, 0, 1);
-    col += GaussianBlur(tex0, input.uv, sigma*2, loopNum * 2) / 2;
-    col += GaussianBlur(tex1, input.uv, sigma / 2, loopNum) / 2;
+    col += GaussianBlur(tex0, input.uv, sigma * 2, loopNum * 2);
+    col += GaussianBlur(tex1, input.uv, sigma / 2, loopNum);
     col.a = 1;
     return col;
 }

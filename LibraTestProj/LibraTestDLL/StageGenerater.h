@@ -18,6 +18,7 @@ private:
 	float mMoveSpeed;
 	Easing mEase;
 
+	Vec3 mStart;
 	Vec3 mEnd;
 public:
 	void Init();

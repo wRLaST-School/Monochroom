@@ -119,21 +119,23 @@ void CollisionManager::RayHitFlyBlocks()
 		return;
 	}
 
-	//引き寄せ
-	if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
-	{
-		FlyBlock* flyBlock = nullptr;
-		auto rayCollider = mViewCollider->GetRayCollider();
-		float minDis = 99999.f;
+	float dis = 0;
+	float minDis = CheckRayHitOtherDis();
 
-		for (const auto& fbc : mFlyBlockColliders)
+	//引き寄せ
+	FlyBlock* flyBlock = nullptr;
+	auto rayCollider = mViewCollider->GetRayCollider();
+
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		// レイ
+		auto fbBodyCollider = fbc->GetBodyCollider();
+		if (rayCollider.IsTrigger(&fbBodyCollider))
 		{
-			// レイ
-			auto fbBodyCollider = fbc->GetBodyCollider();
-			if (rayCollider.IsTrigger(&fbBodyCollider))
+			dis = Vec3::Distance(fbBodyCollider.pos, rayCollider.r.origin);
+			if (dis < minDis)
 			{
-				float dis = Vec3::Distance(fbc->Parent()->CastTo<Object3D>()->position, rayCollider.r.origin);
-				if (dis < minDis)
+				if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 				{
 					flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
 				}
@@ -146,6 +148,10 @@ void CollisionManager::RayHitFlyBlocks()
 			flyBlock->BeginAttracting(mViewCollider->GetPos() + Vec3{ 0,2.0f,0 });
 		}
 	}
+
+
+	ConsoleWindow::Log(std::format("Dis : {}", dis));
+	ConsoleWindow::Log(std::format("Min Dis : {}", minDis));
 }
 
 void CollisionManager::RayHitGoggle()
@@ -631,6 +637,93 @@ void CollisionManager::FlyBlocksHitDoors()
 			}
 		}
 	}
+}
+
+float CollisionManager::CheckRayHitOtherDis()
+{
+	float minDis = 9999999.f;
+	float dis = 0.f;
+
+	auto rayCollider = mViewCollider->GetRayCollider();
+
+	// ブロックと
+	for (const auto& bc : mBlockColliders)
+	{
+		auto bodyCollider = bc->GetBodyCollider();
+
+		if (rayCollider.IsTrigger(&bodyCollider))
+		{
+			float dis = Vec3::Distance(bodyCollider.pos, rayCollider.r.origin);
+			if (dis < minDis)
+			{
+				minDis = dis;
+			}
+		}
+	}
+
+	// ボタンと
+	for (const auto& bc : mButtonColliders)
+	{
+		auto bodyCollider = bc->GetBodyCollider();
+		auto flameCollider = bc->GetFlameCollider();
+
+		if (rayCollider.IsTrigger(&bodyCollider))
+		{
+			dis = Vec3::Distance(bodyCollider.pos, rayCollider.r.origin);
+			if (dis < minDis)
+			{
+				minDis = dis;
+			}
+		}
+		else if (rayCollider.IsTrigger(&flameCollider))
+		{
+			dis = Vec3::Distance(flameCollider.pos, rayCollider.r.origin);
+			if (dis < minDis)
+			{
+				minDis = dis;
+			}
+		}
+	}
+
+	// ドアと
+	for (const auto& dc : mDoorColliders)
+	{
+		auto leftCollider = dc->GetLeftCollider();
+		auto rightCollider = dc->GetRightCollider();
+
+		if (rayCollider.IsTrigger(&leftCollider))
+		{
+			dis = Vec3::Distance(leftCollider.pos, rayCollider.r.origin);
+			if (dis < minDis)
+			{
+				minDis = dis;
+			}
+		}
+		else if (rayCollider.IsTrigger(&rightCollider))
+		{
+			dis = Vec3::Distance(rightCollider.pos, rayCollider.r.origin);
+			if (dis < minDis)
+			{
+				minDis = dis;
+			}
+		}
+	}
+
+	// ゴールと
+	for (const auto& gc : mGoalColliders)
+	{
+		auto bodyCollider = gc->GetBodyCollider();
+		if (rayCollider.IsTrigger(&bodyCollider))
+		{
+			dis = Vec3::Distance(bodyCollider.pos, rayCollider.r.origin);
+			if (dis < minDis)
+			{
+				minDis = dis;
+			}
+		}
+	}
+
+	return minDis;
 }
 
 RegisterScriptBody(CollisionManager);

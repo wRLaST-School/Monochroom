@@ -11,7 +11,7 @@ private:
 	IComponent* mParent = nullptr;
 	const Vec3 kNormalBodyPos = { 0,0,0 };
 	const Vec3 kPushedBodyPos = { 0,-0.61f,0 };
-	const int kPushingFrame = 25;
+	const int kPushingFrame = 15;
 	Vec3 mStartBodyPos;
 	Vec3 mEndBodyPos;
 	bool mIsPushedBody = false;

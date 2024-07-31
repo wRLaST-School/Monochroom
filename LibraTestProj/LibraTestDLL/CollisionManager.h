@@ -53,6 +53,8 @@ private:
 	void FlyBlocksHitGoals();
 	void FlyBlocksHitDoors();
 
+	float CheckRayHitOtherDis();
+
 public:
 	void Init();
 	void Update();
