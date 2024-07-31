@@ -13,7 +13,7 @@ void StageGenerater::Init()
 	mPlane = SceneManager::FindObject<Object3D>("Plane");
 	mStageObj = SceneManager::FindObject<Object3D>("StageObj");
 
-	Vec3 scale = Vec3(100, 100, 1);
+	Vec3 scale = Vec3(192, 108, 1);
 	mPlaneAlpha->scale = scale;
 	mPlane->scale = scale;
 	mPlane->miscCB.contents->dissolveStrength = 0.0f;
@@ -27,6 +27,7 @@ void StageGenerater::Init()
 	mMoveSpeed = 0.05f;
 
 	mEase.SetEaseTimer(120);
+	mEase.SetPowNum(3);
 }
 
 void StageGenerater::Update()
@@ -35,32 +36,24 @@ void StageGenerater::Update()
 	{
 		return;
 	}
-	mMoveSpeed += 0.0025f;
-	if (mMoveSpeed >= 0.5f)
-	{
-		mMoveSpeed = 0.5f;
-	}
-	mPlaneAlpha->offset.y -= 0.01f;
-
-	mObj->position += mMoveVec.Norm() * mMoveSpeed;
 
 	float dis = Vec3::Distance(mObj->position, mEnd);
-
 	if (dis <= 100.f)
 	{
 		mIsEnd = true;
-	}
-
-	if (dis <= mMoveSpeed * 1.1f)
-	{
-		mObj->position = mEnd;
-		mIsStart = false;
 	}
 
 	mEase.Update();
 	if (!mEase.GetisEnd())
 	{
 		Object3D::dissolveStrength = mEase.Lerp(0.0f, 1.25f);
+		mObj->position = mEase.In(mStart, mEnd);
+		mPlaneAlpha->offset.y -= 0.01f;
+	}
+	else
+	{
+		mObj->position = mEnd;
+		mIsStart = false;
 	}
 }
 
@@ -85,7 +78,8 @@ void StageGenerater::Start()
 	mObj->position = Vec3(player->position) + mMoveVec.Norm() * 0.25f;
 	mObj->rotationE = player->rotationE;
 
-	mEnd = mMoveVec * 200 + mObj->position;
+	mStart = mObj->position;
+	mEnd = mMoveVec * 250 + mObj->position;
 }
 
 bool StageGenerater::GetisEnd()

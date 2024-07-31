@@ -771,6 +771,14 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 		if (jsonObject.contains("NormalType"))
 		{
 			normalType = jsonObject["NormalType"];
+			if (normalType == 0)
+			{
+				model->MappingVertex();
+			}
+			else
+			{
+				model->MappingSmoothing();
+			}
 		}
 	}
 
