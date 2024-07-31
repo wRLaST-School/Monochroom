@@ -415,7 +415,8 @@ void IComponent::OnInspectorWindowDraw()
 void IComponent::CommonInspectorWindowDraw()
 {
 	ImGui::Checkbox("##", &active); ImGui::SameLine();
-	SpImGui::InputText("Name", &name_, ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
+	SpImGui::InputText("Name", name_);
+	//SpImGui::InputText("Name", &name_, ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
 }
 
 IComponent* IComponent::GetScriptBody()

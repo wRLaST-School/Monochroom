@@ -290,6 +290,7 @@ void CollisionManager::PlayerHitButtons()
 void CollisionManager::PlayerHitGlasses()
 {
 	auto playerBodyCollider = mPlayerCollider->GetBodyCollider();
+	auto playerDownCollider = mPlayerCollider->GetDownCollider();
 
 	for (const auto& gc : mGlassColliders)
 	{
@@ -298,6 +299,22 @@ void CollisionManager::PlayerHitGlasses()
 		if (gc->GetBodyCollider().IsTrigger(&playerBodyCollider, &pushOut))
 		{
 			mPlayerCollider->Parent()->CastTo<Object3D>()->position += pushOut;
+		}
+
+		// 重力
+		if (gc->GetBodyCollider().IsTrigger(&playerDownCollider))
+		{
+			auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
+			auto playerControl = SceneManager::FindChildObject<PlayerControl>("PlayerControl", player);
+
+			if (playerControl->GetGravity()->GetVelocity().y <= 0.f)
+			{
+				float posY = gc->GetBodyCollider().pos.y;
+				float offsetY = gc->GetBodyCollider().scale.y + player->scale.y * 2;
+				player->position.y = posY + offsetY;
+
+				playerControl->GravityToZero();
+			}
 		}
 	}
 }

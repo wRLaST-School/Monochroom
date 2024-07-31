@@ -8,7 +8,8 @@ const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
     //何か登録されてたら解放
     if (component_)
     {
-        delete component_;
+        component_ = nullptr;
+        //delete component_;
     }
 
     if (hModule_) { Free(); }
@@ -54,7 +55,8 @@ Libra::DLLObject::~DLLObject()
 {
     if (component_)
     {
-        delete component_;
+        component_ = nullptr;
+        //delete component_;
     }
 
     OutputDebugStringA(std::format("Deleting DLL Object Instance\n").c_str());
