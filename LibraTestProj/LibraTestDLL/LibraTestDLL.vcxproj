@@ -12,6 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="AttractParticle.h" />
+    <ClInclude Include="AttractParticleEmitter.h" />
+    <ClInclude Include="AttractParticleTmp.h" />
     <ClInclude Include="Gimmick\ButtonCollider.h" />
     <ClInclude Include="Gimmick\DoorCollider.h" />
     <ClInclude Include="Gimmick\FlyBlock.h" />
@@ -53,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
+    <ClCompile Include="AttractParticle.cpp" />
+    <ClCompile Include="AttractParticleTmp.cpp" />
     <ClCompile Include="Bases.cpp" />
     <ClCompile Include="CameraTab.cpp" />
     <ClCompile Include="Gimmick\ButtonCollider.cpp" />

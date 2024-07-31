@@ -5,7 +5,8 @@ class Gravity
 {
 public:
 	static float sGravityAccel;
-	static Vec3 sLimitVelocity;
+	static Vec3 sLimitVelocityMin;
+	static Vec3 sLimitVelocityMax;
 
 private:
 	Vec3 mGravityVec;

@@ -37,9 +37,7 @@ void PlayerControl::Jump()
 
 void PlayerControl::JumpUpdate()
 {
-	moveVec_ += mGravity->CalcGravity();
-
-	parent_->position += {0, moveVec_.y, 0};
+	parent_->position += mGravity->CalcGravity();
 }
 
 void PlayerControl::MoveUpdate()
