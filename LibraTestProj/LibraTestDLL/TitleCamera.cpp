@@ -2,6 +2,7 @@
 #include "TitleCamera.h"
 #include <Object3D.h>
 #include <ScriptComponent.h>
+#include <Camera.h>
 
 
 void TitleCamera::Init()
@@ -9,6 +10,7 @@ void TitleCamera::Init()
 	parent_ = This()->Parent()->CastTo<Object3D>();
 	templatePos_ = parent_->position;
 	parent_->rotMode = Object3D::RotMode::Quaternion;
+	Camera::Set(*(parent_)->CastTo<Camera>());
 }
 
 
