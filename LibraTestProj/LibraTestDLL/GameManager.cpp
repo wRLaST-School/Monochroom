@@ -60,7 +60,7 @@ void GameManager::Update()
 			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			//SceneManager::WaitForLoadAndTransition();
 
-			OutputDebugStringA("SceneChangeClick\n");
+			OutputDebugStringA("SceneChangeClickToGame\n");
 
 			if (!mIsChangeScene)
 			{
@@ -90,7 +90,7 @@ void GameManager::Update()
 			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			//SceneManager::WaitForLoadAndTransition();
 
-			OutputDebugStringA("SceneChangeClick\n");
+			OutputDebugStringA("SceneChangeClickSelectToGame\n");
 
 			if (!mIsChangeScene)
 			{
@@ -101,9 +101,11 @@ void GameManager::Update()
 
 		if (BlinkTransition::info.isInEnd)
 		{
+			OutputDebugStringA("LoadGameScene\n");
 			// シーンの切り替え処理
-			SceneManager::LoadScene<SceneFromFile>(mSelectPanel->GetStageName());
+			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			SceneManager::WaitForLoadAndTransition();
+
 		}
 	}
 	else
@@ -116,7 +118,7 @@ void GameManager::Update()
 		}
 		if (mUIScript->GetBackToTitle())
 		{
-			OutputDebugStringA("SceneChangeClick\n");
+			OutputDebugStringA("SceneChangeClickToSelectScene\n");
 
 			if (!mIsChangeScene)
 			{
