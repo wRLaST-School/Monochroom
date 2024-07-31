@@ -21,6 +21,7 @@ struct ConstBufferDataMisc {
 	float dissolveStrength;
 	Float3 padding2;
 	Vec2 tiling;
+	Vec2 offset;
 };
 
 class Object3D : public IComponent
@@ -130,6 +131,7 @@ public:
 	bool isUseMyselfDissolveStrength;
 
 	Vec2 tiling;
+	Vec2 offset;
 
 };
 
