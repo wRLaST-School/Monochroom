@@ -67,7 +67,7 @@ void SuperUI::Update()
 		return;
 	}
 
-	for (uint32_t i = 0; mMenuUIObj.size(); i++)
+	for (uint32_t i = 0; i < mMenuUIObj.size(); i++)
 	{
 		if (!mMenuUIObj[i].planeObj)
 		{
@@ -75,7 +75,7 @@ void SuperUI::Update()
 		}
 	}
 
-	for (uint32_t i = 0; mMenuTabUIObj.size(); i++)
+	for (uint32_t i = 0; i < mMenuTabUIObj.size(); i++)
 	{
 		if (!mMenuTabUIObj[i].planeObj)
 		{
@@ -83,7 +83,7 @@ void SuperUI::Update()
 		}
 	}
 
-	for (uint32_t i = 0; mQuitTextObjs.size(); i++)
+	for (uint32_t i = 0; i < mQuitTextObjs.size(); i++)
 	{
 		if (!mQuitTextObjs[i].planeObj)
 		{
