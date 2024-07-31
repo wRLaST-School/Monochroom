@@ -5,15 +5,6 @@
 
 const HMODULE& Libra::DLLObject::LoadDLL(const std::string& className)
 {
-    //何か登録されてたら解放
-    if (component_)
-    {
-        component_ = nullptr;
-        //delete component_;
-    }
-
-    if (hModule_) { Free(); }
-
 #ifdef _DEBUG
     //DLL読み込み
     hModule_ = LoadLibraryA("Resources/Compiled/ScriptsD.dll");
@@ -55,8 +46,8 @@ Libra::DLLObject::~DLLObject()
 {
     if (component_)
     {
-        component_ = nullptr;
-        //delete component_;
+        //component_ = nullptr;
+        delete component_;
     }
 
     OutputDebugStringA(std::format("Deleting DLL Object Instance\n").c_str());
@@ -71,5 +62,15 @@ void Libra::DLLObject::Del()
 
 void Libra::DLLObject::Free()
 {    
-    FreeLibrary(hModule_);
+    if (hModule_) {
+        FreeLibrary(hModule_);
+    }
+}
+
+void Libra::DLLObject::DeleteComponent()
+{
+    if (component_)
+    {
+        delete component_;
+    }
 }
