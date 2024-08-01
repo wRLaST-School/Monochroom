@@ -255,7 +255,6 @@ private:// メンバー変数
 
     // UIのタブボードのオブジェクト
     std::vector<Object3D*> mTabBoardObjs;
-    std::vector<Object3D*> mTabBoardNum;
 
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuTabUIObj;
