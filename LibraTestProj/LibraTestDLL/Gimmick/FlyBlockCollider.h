@@ -14,6 +14,7 @@ private:
     SphereCollider mMoveCollider;
     OBBCollider mBodyCollider;
     OBBCollider mDownCollider;
+    OBBCollider mTopCollider;
 
 public:
     void Init();
@@ -27,6 +28,7 @@ public:
     SphereCollider GetMoveCollider();
     OBBCollider GetBodyCollider();
     OBBCollider GetDownCollider();
+    OBBCollider GetTopCollider();
 
     Object3D* GetObj() { return mObj; }
 };

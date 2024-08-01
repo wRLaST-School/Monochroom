@@ -147,8 +147,10 @@ void CollisionManager::RayHitFlyBlocks()
 		if (flyBlock)
 		{
 			auto ePos = mViewCollider->GetPos() + Vec3{ 0,-0.5f,0 };
-
 			flyBlock->BeginAttracting(ePos);
+
+			// 再帰関数で上に乗せてるやつをチェックする
+			RecursiveAttracting(fbc, mFlyBlockColliders);
 
 			//引き寄せの演出
 			//始点と終点を決めて演出開始
@@ -454,13 +456,16 @@ void CollisionManager::FlyBlocksHitButtons()
 			{
 				// 飛ぶブロック
 				auto flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
-				if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
+				if (!flyBlock->GetIsAttracting())
 				{
-					float posY = buttonBodyCollider.pos.y;
-					float offsetY = (flyBlockDownCollider.scale.y * 2) + buttonBodyCollider.scale.y;
+					if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
+					{
+						float posY = buttonBodyCollider.pos.y;
+						float offsetY = (flyBlockDownCollider.scale.y * 2) + buttonBodyCollider.scale.y;
 
-					fbc->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
-					flyBlock->ZeroGravity();
+						fbc->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+						flyBlock->ZeroGravity();
+					}
 				}
 
 				// ボタン凹ませる
@@ -485,13 +490,16 @@ void CollisionManager::FlyBlocksHitButtons()
 			{
 				// 飛ぶブロック
 				auto flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
-				if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
+				if (!flyBlock->GetIsAttracting())
 				{
-					float posY = buttonFlameCollider.pos.y;
-					float offsetY = (flyBlockDownCollider.scale.y * 2) + buttonFlameCollider.scale.y;
+					if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
+					{
+						float posY = buttonFlameCollider.pos.y;
+						float offsetY = (flyBlockDownCollider.scale.y * 2) + buttonFlameCollider.scale.y;
 
-					fbc->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
-					flyBlock->ZeroGravity();
+						fbc->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+						flyBlock->ZeroGravity();
+					}
 				}
 
 				break;
@@ -554,48 +562,89 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 			auto flyBlockBodyCollider1 = fbc1->GetBodyCollider();
 			auto flyBlockMoveCollider1 = fbc1->GetMoveCollider();
 			auto flyBlockDownCollider1 = fbc1->GetDownCollider();
+			auto flyBlockTopCollider1 = fbc1->GetTopCollider();
 
 			// ブロック2
 			auto flyBlockBodyCollider2 = fbc2->GetBodyCollider();
 			auto flyBlockMoveCollider2 = fbc2->GetMoveCollider();
 			auto flyBlockDownCollider2 = fbc2->GetDownCollider();
+			auto flyBlockTopCollider2 = fbc2->GetTopCollider();
 
 			//自分
 			auto flyBlock1 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc1->Parent());
 			//相手
 			auto flyBlock2 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc2->Parent());
 
-			// 重力
-			if (flyBlockDownCollider1.IsTrigger(&flyBlockBodyCollider2))
+			// 自分が引き寄せられていない時
+			if (!flyBlock1->GetIsAttracting())
 			{
-				//下のブロックの引き寄せベクトルをこちらにも適用
-				flyBlock1->SetAttractVec(flyBlock2->GetAttractVec() * 1.01f);
-
-
-				if (flyBlock1->GetGravity()->GetVelocity().y <= 0.f)
+				// 重力関連
+				if (flyBlockTopCollider1.IsTrigger(&flyBlockDownCollider2))
 				{
-					flyBlock1->ZeroGravity();
-
-					if (!flyBlock2->GetIsAttracting())
+					if (flyBlock2->GetGravity()->GetVelocity().y <= 0.f)
 					{
-						float posY = flyBlockBodyCollider2.pos.y;
-						float offsetY = (flyBlockDownCollider1.scale.y * 2) + flyBlockBodyCollider2.scale.y;
+						flyBlock2->ZeroGravity();
 
-						fbc1->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+						// 位置補正
+						float posY = flyBlockTopCollider1.pos.y;
+						float offsetY = flyBlockDownCollider2.scale.y * 3.f;
+						fbc2->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
 					}
 				}
-			}
 
-			// 押し戻し
-			Vec3 pushOut = Vec3::zero;
-			if (flyBlockBodyCollider1.IsTrigger(&flyBlockBodyCollider2, &pushOut))
+				//// 押し戻し
+				//Vec3 pushOut = Vec3::zero;
+				//if (flyBlockBodyCollider1.IsTrigger(&flyBlockBodyCollider2, &pushOut))
+				//{
+				//	if (flyBlock1)
+				//	{
+				//		fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
+				//	}
+				//}
+			}
+			else
 			{
-				if (flyBlock1)
+				// 押し戻し
+				Vec3 pushOut = Vec3::zero;
+				if (flyBlockMoveCollider1.IsTrigger(&flyBlockBodyCollider2, &pushOut))
 				{
-					ConsoleWindow::Log("END!");
-					fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
+					if (flyBlock1)
+					{
+						//Vec3 offset = pushOut.Norm() * 0.0001f;
+						fbc1->Parent()->CastTo<Object3D>()->position += pushOut/* + offset*/;
+						flyBlock1->EndAttracting();
+					}
+
+					//if (flyBlock1->GetAttractedDir().Dot(-pushOut) > FlyBlock::skAttractedHittingNotEndDot)
+					//{
+					//}
 				}
 			}
+
+
+
+
+			//// 重力
+			//if (flyBlockDownCollider1.IsTrigger(&flyBlockBodyCollider2))
+			//{
+			//	////下のブロックの引き寄せベクトルをこちらにも適用
+			//	//flyBlock1->SetAttractVec(flyBlock2->GetAttractVec() * 1.01f);
+
+			//	if (flyBlock1->GetGravity()->GetVelocity().y <= 0.f)
+			//	{
+			//		flyBlock1->ZeroGravity();
+
+			//		if (!flyBlock2->GetIsAttracting())
+			//		{
+			//			float posY = flyBlockBodyCollider2.pos.y;
+			//			float offsetY = (flyBlockDownCollider1.scale.y * 2) + flyBlockBodyCollider2.scale.y;
+
+			//			fbc1->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
+			//		}
+			//	}
+			//}
+
+
 		}
 	}
 }
@@ -733,6 +782,42 @@ float CollisionManager::CheckRayHitOtherDis()
 	}
 
 	return minDis;
+}
+
+void CollisionManager::RecursiveAttracting(
+	FlyBlockCollider* current, const std::vector<FlyBlockCollider*>& colliders)
+{
+	std::vector<FlyBlockCollider*> check = colliders;
+	check.erase(std::remove(check.begin(), check.end(), current), check.end());
+
+	for (const auto& target : check)
+	{
+		// 同じなら
+		if (current == target)
+		{
+			continue;
+		}
+
+		// 現在移動させようとしてるやつ
+		auto currentTop = current->GetTopCollider();
+
+		// 上に乗ってるやつ
+		auto targetDown = target->GetDownCollider();
+
+		if (currentTop.IsTrigger(&targetDown))
+		{
+			auto currentFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", current->Parent());
+			auto targetFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", target->Parent());
+
+			Vec3 vec = currentFlyBlock->GetAttractedDir();
+			float dis = Vec3::Distance(currentFlyBlock->GetBeginPos(), currentFlyBlock->GetEndPos());
+
+			Vec3 ePos = Vec3(target->Parent()->CastTo<Object3D>()->position) + vec * dis;
+			targetFlyBlock->BeginAttracting(ePos);
+
+			RecursiveAttracting(target, check);
+		}
+	}
 }
 
 RegisterScriptBody(CollisionManager);
