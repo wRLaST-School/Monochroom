@@ -21,7 +21,6 @@ private:
 	AttractParticleManager* mAttractParticleManager;
 
 	bool isStop;
-	static bool mIsChangeScene;
 
 public:
 	void Awake();

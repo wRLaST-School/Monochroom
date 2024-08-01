@@ -62,7 +62,7 @@
                 "DissolveTex": "",
                 "Model": "cube.obj",
                 "Name": "yuka",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -0.6473812460899353,
                     "Y": -7.332832336425781,
@@ -127,7 +127,7 @@
                         "DissolveTex": "",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -11.0,
                             "Y": 8.0,
@@ -184,7 +184,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -11.0,
                             "Y": 8.0,
@@ -241,7 +241,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 25.0,
                             "Y": 8.0,
@@ -298,7 +298,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 7.0,
                             "Y": 8.0,
@@ -355,7 +355,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 7.0,
                             "Y": 8.0,
@@ -412,7 +412,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -12.0,
                             "Y": 8.0,
@@ -469,7 +469,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -16.0,
                             "Y": 14.5,
@@ -526,7 +526,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -20.0,
                             "Y": 8.0,
@@ -583,7 +583,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 25.0,
                             "Y": 9.5,
@@ -640,7 +640,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.9910001754760742,
                             "Y": 8.0,
@@ -697,7 +697,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.1080000251531601,
                             "Y": 8.0,
@@ -754,7 +754,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 14.5,
                             "Y": 8.0,
@@ -811,7 +811,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 20.30500030517578,
                             "Y": 8.0,
@@ -868,7 +868,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 14.5,
                             "Y": 8.0,
@@ -925,7 +925,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 16.5,
                             "Y": 8.0,
@@ -982,7 +982,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Cube",
                         "Name": "Glass",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 23.0,
                             "Y": 8.0,
@@ -1143,7 +1143,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 7.0,
                             "Y": 0.0,
@@ -1200,7 +1200,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 7.0,
                             "Y": 0.0,
@@ -1257,7 +1257,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 6.0,
                             "Y": 2.0,
@@ -1314,7 +1314,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -16.0,
                             "Y": 5.0,
@@ -1371,7 +1371,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -16.0,
                             "Y": 6.0,
@@ -1428,7 +1428,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 30.0,
                             "Y": 0.0,
@@ -1485,7 +1485,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -16.0,
                             "Y": 7.0,
@@ -1542,7 +1542,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 6.0,
                             "Y": 6.0,
@@ -1599,7 +1599,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 6.0,
                             "Y": 8.0,
@@ -1656,7 +1656,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 6.0,
                             "Y": 11.0,
@@ -1713,7 +1713,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 6.0,
                             "Y": 4.0,
@@ -1770,7 +1770,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -9.0,
                             "Y": 0.0,
@@ -1827,7 +1827,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -2.0,
                             "Y": 0.0,
@@ -1884,7 +1884,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -2.0,
                             "Y": 0.0,
@@ -1941,7 +1941,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 16.5,
                             "Y": 0.0,
@@ -1998,7 +1998,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 4.0,
                             "Y": 15.0,
@@ -2055,7 +2055,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 8.0,
                             "Y": 15.0,
@@ -2112,7 +2112,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 6.0,
                             "Y": 6.0,
@@ -2207,7 +2207,7 @@
                         "DissolveTex": "",
                         "Model": "Goggles.obj",
                         "Name": "Goggles",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -2253,7 +2253,7 @@
                         "DissolveTex": "",
                         "Model": "cube.obj",
                         "Name": "Debug Cube",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -2378,7 +2378,7 @@
                 "DissolveTex": "",
                 "Model": "cube.obj",
                 "Name": "FlyBlock",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -9.581012725830078,
                     "Y": 5.669000148773193,
@@ -2604,7 +2604,7 @@
                                 "DissolveTex": "",
                                 "Model": "Plane.obj",
                                 "Name": "BackBlack",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2670,7 +2670,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "Back",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -2716,7 +2716,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidBackText",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": -0.46000000834465027,
@@ -2762,7 +2762,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidTex",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.07000000029802322,
@@ -2855,7 +2855,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "Back",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -2901,7 +2901,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "Text1",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.20000000298023224,
@@ -2947,7 +2947,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "YesText",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.25,
                                                     "Y": -0.2199999988079071,
@@ -2993,7 +2993,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "NoText",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.25,
                                                     "Y": -0.2200002670288086,
@@ -3160,7 +3160,7 @@
                                 "DissolveTex": "",
                                 "Model": "Plane.obj",
                                 "Name": "MenuPlane",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.6000000238418579,
@@ -3246,7 +3246,7 @@
                                                                 "DissolveTex": "",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -3292,7 +3292,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -3338,7 +3338,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -3376,7 +3376,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityX",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -5.5,
@@ -3432,7 +3432,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -3478,7 +3478,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -3524,7 +3524,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -3562,7 +3562,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityY",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -8.5,
@@ -3608,7 +3608,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseText",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 0.4000000059604645,
                                                             "Y": -2.5,
@@ -3664,7 +3664,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -3710,7 +3710,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -3756,7 +3756,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -3794,7 +3794,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityX",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -15.0,
@@ -3850,7 +3850,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -3896,7 +3896,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -3942,7 +3942,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -3980,7 +3980,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityY",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -18.0,
@@ -4026,7 +4026,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadText",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 0.4000000059604645,
                                                             "Y": -12.0,
@@ -4129,7 +4129,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OnPlane",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 3.5,
                                                                     "Y": 0.0,
@@ -4175,7 +4175,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OffPlane",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.599999904632568,
                                                                     "Y": 0.0,
@@ -4213,7 +4213,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PostProcess",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -5.5,
@@ -4269,7 +4269,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OnPlane",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 3.5,
                                                                     "Y": 0.0,
@@ -4315,7 +4315,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OffPlane",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.599999904632568,
                                                                     "Y": 0.0,
@@ -4353,7 +4353,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "Shadow",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -10.0,
@@ -4456,7 +4456,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -4502,7 +4502,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -4548,7 +4548,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -4586,7 +4586,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "BGMVolume",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -8.5,
@@ -4642,7 +4642,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -4688,7 +4688,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -4734,7 +4734,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -4772,7 +4772,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MastarVolume",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -4.5,
@@ -4828,7 +4828,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -4874,7 +4874,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -4920,7 +4920,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 0,
+                                                                "NormalType": 1,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -4958,7 +4958,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "SEVolume",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -12.5,
@@ -5033,7 +5033,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "Board",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.10000000149011612,
@@ -5079,7 +5079,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "CameraTab",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": -0.7799999713897705,
                                             "Y": 0.5699999928474426,
@@ -5125,7 +5125,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "GraphicsTab",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": -0.3499999940395355,
                                             "Y": 0.5699999928474426,
@@ -5171,7 +5171,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "SoundTab",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.07999999821186066,
                                             "Y": 0.5699999928474426,
@@ -5274,7 +5274,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidText",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -5312,7 +5312,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "GuidPlane",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.3199999928474426,
@@ -5405,7 +5405,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "OptionPlane",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.05999999865889549,
@@ -5498,7 +5498,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "QuitTitlePlane",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.2199999988079071,
@@ -5757,7 +5757,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -5803,7 +5803,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Left",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -3.0,
                             "Y": 2.0,
@@ -5849,7 +5849,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Right",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 3.0,
                             "Y": 2.0,
@@ -5959,7 +5959,7 @@
                 "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
                 "Name": "SponePoint",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -16.184999465942383,
                     "Y": 9.38800048828125,
@@ -6137,7 +6137,7 @@
                                 "DissolveTex": "",
                                 "Model": "Plane.obj",
                                 "Name": "Plane",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 45.0,
@@ -6221,7 +6221,7 @@
                         "DissolveTex": "",
                         "Model": "skydome.obj",
                         "Name": "Skydome",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -6314,7 +6314,7 @@
                         "DissolveTex": "",
                         "Model": "Plane.obj",
                         "Name": "Plane",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -6360,7 +6360,7 @@
                         "DissolveTex": "",
                         "Model": "Plane.obj",
                         "Name": "PlaneAlpha",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 7.62939453125e-06,
                             "Y": 0.0,
@@ -6594,7 +6594,7 @@
                 "DissolveTex": "",
                 "Model": "Plane.obj",
                 "Name": "Transparent",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -32.93300247192383,
                     "Y": 13.0,
@@ -6652,7 +6652,7 @@
                         "DissolveTex": "",
                         "Model": "LensL.obj",
                         "Name": "LensL",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -6698,7 +6698,7 @@
                         "DissolveTex": "",
                         "Model": "LensR.obj",
                         "Name": "LensR",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -6752,7 +6752,7 @@
                 "DissolveTex": "",
                 "Model": "gogle.obj",
                 "Name": "Goggle",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -10.706071853637695,
                     "Y": 10.959108352661133,

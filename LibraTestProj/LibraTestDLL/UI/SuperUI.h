@@ -53,7 +53,18 @@ private:// クラス内構造体
         No,
     };
 
-
+    enum UIMainMenu
+    {
+        BackBlack,
+        MenuPlane,
+        MenuText,
+        GuidPlane,
+        GuidText,
+        OptionPlane,
+        OptionText,
+        QuitTitlePlane,
+        QuitTitleText,
+    };
 
     struct UI3DTabItemStatus
     {
@@ -135,6 +146,9 @@ private:
 
     // 親子関係の設定
     void LoadTexInit();
+
+    // UIの開いた瞬間の更新処理
+    void UIMainMenuMomentUpdate();
 
     // UIのメインメニューの更新処理
     void UIMainMenuUpdate();
@@ -228,6 +242,8 @@ private:// メンバー変数
 
     Object3D* mPlanesParentObj;
 
+    std::vector<Object3D*> mMainMenuObjs;
+
     // UIのメインメニューの項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuUIObj;
 
@@ -237,7 +253,9 @@ private:// メンバー変数
 
     Object3D* mTabBoardParentObj;
 
-    Object3D* mTabBoardObj;
+    // UIのタブボードのオブジェクト
+    std::vector<Object3D*> mTabBoardObjs;
+    std::vector<Object3D*> mTabBoardNum;
 
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuTabUIObj;
@@ -279,6 +297,8 @@ private:// メンバー変数
 
     float mTabEaseTimeLimit;
 
+    float mBackTitleLimit;
+
     // UIのタブのオンフラグ
     bool IsUITabOn;
 
@@ -293,6 +313,21 @@ private:// メンバー変数
 
     // プレイヤーコントロール(取得用)
     PlayerControl* mPlayerControl;
+
+    // UIの最初に現れるときのパラメータ
+    Easing mMainAlphaEase;
+    Color mBackBlackAlpha;
+    Color mMainMenuColor;
+    Color mMainMenuTextColor;
+
+    // UIタブ切り替え時の演出フラグ
+    bool mIsTabChange;
+    bool mIsTabSet;
+    bool mIsTabRight;
+    bool mIsTabLeft;
+    float mTabRotaFirst;
+    float mTabBoardParentRotaAfter;
+    Easing mTabChangeEase;
 };
 RegisterScript(SuperUI);
 

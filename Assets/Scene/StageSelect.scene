@@ -62,7 +62,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -103,7 +103,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -136,7 +136,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.090999960899353,
                             "Y": 2.0250000953674316,
@@ -185,7 +185,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -218,7 +218,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.687000036239624,
                             "Y": 0.0,
@@ -267,7 +267,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -308,7 +308,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -341,7 +341,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.1519999504089355,
                             "Y": 0.0,
@@ -390,7 +390,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -423,7 +423,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.321000099182129,
                             "Y": 2.1000001430511475,
@@ -472,7 +472,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -511,7 +511,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -544,7 +544,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.48100006580352783,
                             "Y": 2.0250000953674316,
@@ -633,7 +633,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -672,7 +672,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -703,7 +703,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -2.8350000381469727,
                             "Y": 1.808000087738037,
@@ -752,7 +752,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -783,7 +783,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -3.2779998779296875,
                             "Y": 0.0,
@@ -832,7 +832,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -871,7 +871,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -902,7 +902,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 1.9479999542236328,
                             "Y": 0.0,
@@ -951,7 +951,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -990,7 +990,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1021,7 +1021,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.430999994277954,
                             "Y": 2.1000001430511475,
@@ -1070,7 +1070,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1109,7 +1109,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1140,7 +1140,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.5400000214576721,
                             "Y": 2.0250000953674316,
@@ -1189,7 +1189,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1228,7 +1228,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1259,7 +1259,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.8580000400543213,
                             "Y": 0.0,
@@ -1308,7 +1308,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1347,7 +1347,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1378,7 +1378,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 4.4589996337890625,
                             "Y": 0.0,
@@ -1427,7 +1427,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1466,7 +1466,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1497,7 +1497,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 4.185999870300293,
                             "Y": 1.8329999446868896,
@@ -1546,7 +1546,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1585,7 +1585,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1616,7 +1616,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.282000184059143,
                             "Y": 2.0250000953674316,
@@ -1705,7 +1705,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1736,7 +1736,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.1089999675750732,
                             "Y": 2.0250000953674316,
@@ -1785,7 +1785,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1824,7 +1824,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1855,7 +1855,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.687000036239624,
                             "Y": 0.0,
@@ -1904,7 +1904,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1943,7 +1943,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1974,7 +1974,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.1519999504089355,
                             "Y": 0.0,
@@ -2023,7 +2023,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2054,7 +2054,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.321000099182129,
                             "Y": 2.1000001430511475,
@@ -2103,7 +2103,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2142,7 +2142,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2173,7 +2173,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.48100006580352783,
                             "Y": 2.0250000953674316,
@@ -2272,7 +2272,7 @@
                                         "DisableDraw": false,
                                         "Model": "LensR.obj",
                                         "Name": "LeftLens",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.7000007629394531,
@@ -2303,7 +2303,7 @@
                                 "DisableDraw": false,
                                 "Model": "Goggles.obj",
                                 "Name": "Goggle",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.5,
                                     "Y": 0.699999988079071,
@@ -2342,7 +2342,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "TitleText",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": -0.04167532920837402,
                                     "Y": 1.25,
@@ -2383,7 +2383,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "FirstScreen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": -0.10000000149011612,
                                     "Y": -0.10000000149011612,
@@ -2424,7 +2424,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "ScreenMain",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2465,7 +2465,7 @@
                                 "DisableDraw": false,
                                 "Model": "Plane.obj",
                                 "Name": "StartText",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": -0.25,
                                     "Y": 1.2000000476837158,
@@ -2496,7 +2496,7 @@
                         "DisableDraw": false,
                         "Model": "TVBlack.obj",
                         "Name": "TitleflyTVTex",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.7119998931884766,
                             "Y": 2.931999921798706,
@@ -2545,7 +2545,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2586,7 +2586,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2619,7 +2619,7 @@
                         "DisableDraw": false,
                         "Model": "TV2.obj",
                         "Name": "flyTVTex",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.3600001335144043,
                             "Y": 4.410000324249268,
@@ -2668,7 +2668,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2709,7 +2709,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2742,7 +2742,7 @@
                         "DisableDraw": false,
                         "Model": "TV2.obj",
                         "Name": "flyTVTex",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 5.6060004234313965,
                             "Y": 3.002000331878662,
@@ -2791,7 +2791,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2832,7 +2832,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -2865,7 +2865,7 @@
                         "DisableDraw": false,
                         "Model": "TV2.obj",
                         "Name": "flyTVTex",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 9.225000381469727,
                             "Y": 4.326000213623047,
@@ -2944,7 +2944,7 @@
                         "DisableDraw": false,
                         "Model": "Plane.obj",
                         "Name": "BackPanel",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 11.585000038146973,
                             "Y": -0.1230001449584961,
@@ -2993,7 +2993,7 @@
                                 "DisableDraw": false,
                                 "Model": "panel.obj",
                                 "Name": "PanelObj",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.902999997138977,
                                     "Y": 0.0,
@@ -3052,7 +3052,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "Hyphen",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.968999981880188,
@@ -3091,7 +3091,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "StageNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3130,7 +3130,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "SubNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3161,7 +3161,7 @@
                                         "DisableDraw": false,
                                         "Model": "button.obj",
                                         "Name": "Stage1-1",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.0,
@@ -3210,7 +3210,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "Hyphen",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.968999981880188,
@@ -3249,7 +3249,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "StageNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3288,7 +3288,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "SubNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3319,7 +3319,7 @@
                                         "DisableDraw": false,
                                         "Model": "button.obj",
                                         "Name": "Stage1-2",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 2.5,
                                             "Y": 0.0,
@@ -3368,7 +3368,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "Hyphen",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.968999981880188,
@@ -3407,7 +3407,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "StageNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3446,7 +3446,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "SubNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3477,7 +3477,7 @@
                                         "DisableDraw": false,
                                         "Model": "button.obj",
                                         "Name": "Stage1-3",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 5.0,
                                             "Y": 0.0,
@@ -3566,7 +3566,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "Hyphen",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.968999981880188,
@@ -3605,7 +3605,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "StageNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3644,7 +3644,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "SubNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3675,7 +3675,7 @@
                                         "DisableDraw": false,
                                         "Model": "button.obj",
                                         "Name": "Stage2-1",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.0,
@@ -3724,7 +3724,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "Hyphen",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.968999981880188,
@@ -3763,7 +3763,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "StageNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3802,7 +3802,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "SubNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3833,7 +3833,7 @@
                                         "DisableDraw": false,
                                         "Model": "button.obj",
                                         "Name": "Stage2-2",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 2.5,
                                             "Y": 0.0,
@@ -3882,7 +3882,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "Hyphen",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.968999981880188,
@@ -3921,7 +3921,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "StageNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3960,7 +3960,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "SubNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -3991,7 +3991,7 @@
                                         "DisableDraw": false,
                                         "Model": "button.obj",
                                         "Name": "Stage2-3",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 5.0,
                                             "Y": 0.0,
@@ -4040,7 +4040,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "Hyphen",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.968999981880188,
@@ -4079,7 +4079,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "StageNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": -0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -4118,7 +4118,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "SubNum",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.3499999940395355,
                                                     "Y": 0.9700000286102295,
@@ -4149,7 +4149,7 @@
                                         "DisableDraw": false,
                                         "Model": "button.obj",
                                         "Name": "Stage2-4",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 7.5,
                                             "Y": 0.0,
@@ -4248,7 +4248,7 @@
                         "DisableDraw": false,
                         "Model": "Plane.obj",
                         "Name": "BackPanel",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4287,7 +4287,7 @@
                         "DisableDraw": false,
                         "Model": "Plane.obj",
                         "Name": "BackPanel",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -11.550000190734863,
                             "Y": -0.1230001449584961,
@@ -4366,7 +4366,7 @@
                         "DisableDraw": false,
                         "Model": "door.obj",
                         "Name": "CapsuleDoor",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": -2.5999999046325684,
@@ -4405,7 +4405,7 @@
                         "DisableDraw": false,
                         "Model": "Goal.obj",
                         "Name": "Capsule",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4436,7 +4436,7 @@
                 "DisableDraw": false,
                 "Model": "Goal.obj",
                 "Name": "Capsule",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -4475,7 +4475,7 @@
                 "DisableDraw": false,
                 "Model": "Plane.obj",
                 "Name": "Floor",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": 0.0,
                     "Y": 0.0,
@@ -4534,7 +4534,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4573,7 +4573,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4604,7 +4604,7 @@
                         "DisableDraw": false,
                         "Model": "TV1.obj",
                         "Name": "flyTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -8.022001266479492,
                             "Y": 3.8529999256134033,
@@ -4653,7 +4653,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4692,7 +4692,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4723,7 +4723,7 @@
                         "DisableDraw": false,
                         "Model": "TV1.obj",
                         "Name": "flyTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 7.953000545501709,
                             "Y": 2.3509998321533203,
@@ -4772,7 +4772,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4811,7 +4811,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4842,7 +4842,7 @@
                         "DisableDraw": false,
                         "Model": "TV1.obj",
                         "Name": "flyTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 5.703999996185303,
                             "Y": 1.7979998588562012,
@@ -4891,7 +4891,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4930,7 +4930,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -4961,7 +4961,7 @@
                         "DisableDraw": false,
                         "Model": "TV1.obj",
                         "Name": "flyTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -7.0150017738342285,
                             "Y": 5.033999919891357,
@@ -5010,7 +5010,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5049,7 +5049,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5080,7 +5080,7 @@
                         "DisableDraw": false,
                         "Model": "TV1.obj",
                         "Name": "flyTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -7.07600212097168,
                             "Y": 2.691999912261963,
@@ -5207,7 +5207,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5246,7 +5246,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5277,7 +5277,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.1089999675750732,
                             "Y": 2.0250000953674316,
@@ -5326,7 +5326,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5357,7 +5357,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.687000036239624,
                             "Y": 0.0,
@@ -5406,7 +5406,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5445,7 +5445,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5476,7 +5476,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.1519999504089355,
                             "Y": 0.0,
@@ -5525,7 +5525,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5556,7 +5556,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.321000099182129,
                             "Y": 2.1000001430511475,
@@ -5605,7 +5605,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5644,7 +5644,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5675,7 +5675,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.48100006580352783,
                             "Y": 2.0250000953674316,
@@ -5764,7 +5764,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5803,7 +5803,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5834,7 +5834,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.1089999675750732,
                             "Y": 2.0250000953674316,
@@ -5883,7 +5883,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5922,7 +5922,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -5953,7 +5953,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.687000036239624,
                             "Y": 0.0,
@@ -6002,7 +6002,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -6041,7 +6041,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -6072,7 +6072,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.1519999504089355,
                             "Y": 0.0,
@@ -6121,7 +6121,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -6152,7 +6152,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.2820000648498535,
                             "Y": 2.1000001430511475,
@@ -6201,7 +6201,7 @@
                                 "DisableDraw": false,
                                 "Model": "TVScreen.obj",
                                 "Name": "Screen",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -6232,7 +6232,7 @@
                         "DisableDraw": false,
                         "Model": "TV3.obj",
                         "Name": "GoundTV",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.7150000929832458,
                             "Y": 2.0250000953674316,
