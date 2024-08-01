@@ -253,7 +253,9 @@ private:// メンバー変数
 
     Object3D* mTabBoardParentObj;
 
-    Object3D* mTabBoardObj;
+    // UIのタブボードのオブジェクト
+    std::vector<Object3D*> mTabBoardObjs;
+    std::vector<Object3D*> mTabBoardNum;
 
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuTabUIObj;
@@ -317,6 +319,15 @@ private:// メンバー変数
     Color mBackBlackAlpha;
     Color mMainMenuColor;
     Color mMainMenuTextColor;
+
+    // UIタブ切り替え時の演出フラグ
+    bool mIsTabChange;
+    bool mIsTabSet;
+    bool mIsTabRight;
+    bool mIsTabLeft;
+    float mTabRotaFirst;
+    float mTabBoardParentRotaAfter;
+    Easing mTabChangeEase;
 };
 RegisterScript(SuperUI);
 

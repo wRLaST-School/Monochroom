@@ -17,6 +17,25 @@ float DegreeToRadian(float angle)
 	return radian;
 }
 
+// 配列の要素を右にシフトする関数
+void shiftRight(std::vector<Object3D*> vec) {
+	if (vec.empty()) return;
+	Object3D* last = vec.back();
+	for (size_t i = 1; i < vec.size(); i++) {
+		vec[i] = vec[i - 1];
+	}
+	vec[0] = last;
+}
+
+// 配列の要素を左にシフトする関数
+void shiftLeft(std::vector<Object3D*> vec) {
+	if (vec.empty()) return;
+	Object3D* first = vec.front();
+	for (size_t i = 0; i < vec.size() - 1; i++) {
+		vec[i] = vec[i + 1];
+	}
+	vec.back() = first;
+}
 
 void SuperUI::Init()
 {
@@ -62,7 +81,7 @@ void SuperUI::Update()
 {
 	if (!mCameraItem || !mGpraphicsItem || !mSoundItem ||
 		!mMainCameraObj || !mMenuParentObj || !mTabsParentObj ||
-		!mTabBoardObj || !mMenuPlaneObj || !mPlanesParentObj ||
+		!mMenuPlaneObj || !mPlanesParentObj ||
 		!mGuidParentObj || !mQuitTitleParentObj)
 	{
 		return;
@@ -96,7 +115,7 @@ void SuperUI::Update()
 	if (Input::Key::Triggered(DIK_ESCAPE))
 	{
 		ConsoleWindow::Log("TAB押された。");
-		if (mIsDisplayUI)
+		if (mIsDisplayUI || mIsMomentOpenMenu)
 		{
 			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(false);
 			mIsDisplayUI = false;
@@ -107,7 +126,6 @@ void SuperUI::Update()
 		{
 			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(true);
 			mIsMomentOpenMenu = true;
-			//mIsDisplayUI = true;
 			UIMainMenuOnReset();
 
 			ConsoleWindow::Log("メニューを開いた");
@@ -230,7 +248,11 @@ void SuperUI::UIObj3DInit()
 	mTabsParentObj=SceneManager::FindObject<Object3D>("Tabs");
 	mTabsPParentObj = SceneManager::FindObject<Object3D>("TabsParent");
 	mTabBoardParentObj= SceneManager::FindObject<Object3D>("BoardParent");
-	mTabBoardObj=SceneManager::FindObject<Object3D>("Board");
+
+	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("CameraBoardParent"));
+	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("GraphicsBoardParent"));
+	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("SoundBoardParent"));
+
 	mMenuPlaneObj = SceneManager::FindObject<Object3D>("MenuPlane");
 	mPlanesParentObj = SceneManager::FindObject<Object3D>("Planes");
 
@@ -267,6 +289,23 @@ void SuperUI::UIObj3DInit()
 	mMainAlphaEase.SetEaseTimer(60);
 	mBackBlackAlpha = { 0,0,0,150 };
 	mMainMenuColor = { 0,0,0,255 };
+
+	mTabChangeEase.SetEaseTimer(20);
+	mTabChangeEase.SetPowNum(5);
+
+	// 回転用のベクター
+	for (size_t i = 0; i < mNumOption; i++)
+	{
+		mTabBoardNum.push_back(mTabBoardObjs[i]);
+	}
+	mTabBoardNum[0]->rotationE.y = DegreeToRadian(0);
+	mTabBoardNum[1]->rotationE.y = DegreeToRadian(240);
+	mTabBoardNum[2]->rotationE.y = DegreeToRadian(120);
+
+	for (size_t i = 0; i < mNumOption; i++)
+	{
+		mTabBoardNum[i]->Update();
+	}
 }
 
 void SuperUI::UIObj3DUpdate()
@@ -301,7 +340,7 @@ void SuperUI::UIMainMenuMomentUpdate()
 
 	for (size_t i = 0; i < mMainMenuObjs.size(); i++)
 	{
-		if (!BackBlack)
+		if (i != BackBlack)
 		{
 			mMainMenuObjs[i]->brightnessCB.contents->w = menuColor.f4.w;
 		}
@@ -452,7 +491,7 @@ void SuperUI::UIMainMenuUpdate()
 			mMenuTabUIObj[i].planeObj->Update();
 		}
 
-		mTabsPParentObj->rotationE.y = mUITabEase.Out(0.523f, 0);
+		mTabsPParentObj->rotationE.y = mUITabEase.Out(DegreeToRadian(mTabRotaAfter), DegreeToRadian(mTabRotaBefore));
 		mTabBoardParentObj->rotationE.y = mUITabBoardEase.Out(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
 
 
@@ -478,31 +517,107 @@ void SuperUI::UITabMenuUpdate()
 	{
 		mMenuTabUIObj[mCurrentTabNum].state = SELECT;
 		mTabItems[mCurrentTabNum]->MenuUpdate();
-		if (Input::Key::Triggered(DIK_Q))
-		{
-			mCurrentTabNum--;
 
-			if (mCurrentTabNum <= 0)
+
+		// タブの回転処理
+		if (mIsTabChange)
+		{
+			mTabChangeEase.Update();
+
+			if (mIsTabRight)
 			{
-				mCurrentTabNum = 0;
+				if (mIsTabSet)
+				{
+					mTabRotaFirst = mTabBoardParentObj->rotationE.y;
+					mTabBoardParentRotaAfter = mTabRotaFirst + DegreeToRadian(120);
+					mIsTabSet = false;
+
+					if (mTabRotaFirst >= DegreeToRadian(240))
+					{
+						mTabBoardParentRotaAfter = 240;
+						mTabChangeEase.Reset();
+						mIsTabRight = false;
+						mIsTabChange = false;
+					}
+				}
+				mTabBoardParentObj->rotationE.y = mTabChangeEase.Out(mTabRotaFirst, mTabBoardParentRotaAfter);
+				
+
+				if (mTabChangeEase.GetisEnd())
+				{
+					mTabChangeEase.Reset();
+					mIsTabRight = false;
+					mIsTabChange = false;
+				}
+			}
+			else if (mIsTabLeft)
+			{
+
+				if (mIsTabSet)
+				{
+					mTabRotaFirst = mTabBoardParentObj->rotationE.y;
+					mTabBoardParentRotaAfter = mTabRotaFirst - DegreeToRadian(120);
+					mIsTabSet = false;
+
+					if (mTabRotaFirst <= 0)
+					{
+						mTabBoardParentRotaAfter = 0;
+						mTabChangeEase.Reset();
+						mIsTabRight = false;
+						mIsTabChange = false;
+					}
+				}
+
+				mTabBoardParentObj->rotationE.y = mTabChangeEase.Out(mTabRotaFirst, mTabBoardParentRotaAfter);
+
+				if (mTabChangeEase.GetisEnd())
+				{
+					mTabChangeEase.Reset();
+					mIsTabLeft = false;
+					mIsTabChange = false;
+				}
 			}
 
-			mMenuTabUIObj[mCurrentTabNum].state = SELECT;
-			mTabItems[mCurrentTabNum]->OnUpdate();
-		}
-
-		if (Input::Key::Triggered(DIK_E))
-		{
-			mCurrentTabNum++;
-
-			if (mCurrentTabNum >= mNumOption - 1)
+			for (size_t i = 0; i < mNumOption; i++)
 			{
-				mCurrentTabNum = mNumOption - 1;
+				mTabBoardNum[i]->Update();
+			}
+		}
+		else 
+		{
+			if (Input::Key::Triggered(DIK_Q))
+			{
+				mCurrentTabNum--;
+
+				if (mCurrentTabNum <= 0)
+				{
+					mCurrentTabNum = 0;
+				}
+				mIsTabSet = true;
+				mIsTabLeft = true;
+				mIsTabChange = true;
+
+				mMenuTabUIObj[mCurrentTabNum].state = SELECT;
+				mTabItems[mCurrentTabNum]->OnUpdate();
 			}
 
-			mMenuTabUIObj[mCurrentTabNum].state = SELECT;
-			mTabItems[mCurrentTabNum]->OnUpdate();
+			if (Input::Key::Triggered(DIK_E))
+			{
+				mCurrentTabNum++;
+
+				if (mCurrentTabNum >= mNumOption - 1)
+				{
+					mCurrentTabNum = mNumOption - 1;
+				}
+				mIsTabSet = true;
+				mIsTabRight= true;
+				mIsTabChange = true;
+
+				mMenuTabUIObj[mCurrentTabNum].state = SELECT;
+				mTabItems[mCurrentTabNum]->OnUpdate();
+			}
 		}
+
 
 		for (size_t i = 0; i < mNumOption; i++)
 		{
@@ -602,16 +717,27 @@ void SuperUI::UIMainMenuOnReset()
 
 	IsUITabOn = false;
 	IsActiveOption = false;
+	
 
 	mUITabEase.Reset();
 	mUITabBoardEase.Reset();
 	mUITabAlphaEase.Reset();
 	mMainAlphaEase.Reset();
+
+	mTabChangeEase.Reset();
+	mIsTabLeft = false;
+	mIsTabRight = false;
+	mIsTabChange = false;
+
+	UIMainMenuUpdate();
 }
 
 void SuperUI::UIMainMenuOffReset()
 {
 	mMenuParentObj->Deactivate();
+	mIsDisplayUI = false;
+	mIsMomentOpenMenu = false;
+	mMainAlphaEase.Reset();
 
 	for (size_t i = 0; i < mNumMenu; i++)
 	{
@@ -654,6 +780,24 @@ void SuperUI::UITabMenuOff()
 	mMenuPlaneObj->Activate();
 	mPlanesParentObj->Activate();
 
+	// タブメニューの回転関連
+	mTabChangeEase.Reset();
+	mIsTabLeft = false;
+	mIsTabRight = false;
+	mIsTabChange = false;
+	for (size_t i = 0; i < mNumOption; i++)
+	{
+		mTabBoardNum[i] = mTabBoardObjs[i];
+	}
+
+	mTabBoardNum[0]->rotationE.y = DegreeToRadian(0);
+	mTabBoardNum[1]->rotationE.y = DegreeToRadian(240);
+	mTabBoardNum[2]->rotationE.y = DegreeToRadian(120);
+
+	for (size_t i = 0; i < mNumOption; i++)
+	{
+		mTabBoardNum[i]->Update();
+	}
 
 	// タブをオフ
 	mTabsParentObj->Deactivate();
