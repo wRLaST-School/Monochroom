@@ -8,7 +8,7 @@ class StageDoor :
     public IScriptObject
 {
 private:
-    const int kMoveTime = 60;
+    const int kMoveTime = 45;
     bool mIsMoving = false;
     bool mIsClosing = true;
 

@@ -1696,7 +1696,7 @@
                                 "Children": [
                                     {
                                         "Active": true,
-                                        "BlendMode": 0,
+                                        "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
                                             "X": 1.0,
@@ -1865,7 +1865,7 @@
                                                                             "Z": 1.0
                                                                         },
                                                                         "Tags": null,
-                                                                        "Texture": "two",
+                                                                        "Texture": "one",
                                                                         "Tiling": {
                                                                             "X": 1.0,
                                                                             "Y": 1.0
@@ -1990,8 +1990,8 @@
                                                                     "Z": 0.0
                                                                 },
                                                                 "Scale": {
-                                                                    "X": 1.0,
-                                                                    "Y": 0.800000011920929,
+                                                                    "X": 0.8999999761581421,
+                                                                    "Y": 0.6000000238418579,
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
@@ -2176,8 +2176,8 @@
                                                                     "Z": 0.0
                                                                 },
                                                                 "Scale": {
-                                                                    "X": 0.8999999761581421,
-                                                                    "Y": 0.6000000238418579,
+                                                                    "X": 1.0,
+                                                                    "Y": 0.800000011920929,
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
@@ -3716,6 +3716,54 @@
                                                     "Y": 1.0,
                                                     "Z": 1.0
                                                 },
+                                                "Children": [
+                                                    {
+                                                        "Active": true,
+                                                        "BlendMode": 4,
+                                                        "Brightness": {
+                                                            "W": 1.0,
+                                                            "X": 1.0,
+                                                            "Y": 1.0,
+                                                            "Z": 1.0
+                                                        },
+                                                        "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
+                                                        "Model": "Plane.obj",
+                                                        "Name": "CameraTabText",
+                                                        "NormalType": 0,
+                                                        "Position": {
+                                                            "X": -0.7799999713897705,
+                                                            "Y": 0.5699999928474426,
+                                                            "Z": 0.0
+                                                        },
+                                                        "RenderTarget": "",
+                                                        "Rotation": {
+                                                            "W": 1.0,
+                                                            "X": 0.0,
+                                                            "Y": 0.0,
+                                                            "Z": 0.0
+                                                        },
+                                                        "RotationEuler": {
+                                                            "X": 0.0,
+                                                            "Y": 0.0,
+                                                            "Z": 0.0
+                                                        },
+                                                        "Scale": {
+                                                            "X": 0.20000000298023224,
+                                                            "Y": 0.07000000029802322,
+                                                            "Z": 1.0
+                                                        },
+                                                        "Tags": null,
+                                                        "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
+                                                    }
+                                                ],
                                                 "DisableDraw": false,
                                                 "DissolveStrength": 1.25,
                                                 "DissolveTex": "",
@@ -3762,6 +3810,54 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "Children": [
+                                                    {
+                                                        "Active": true,
+                                                        "BlendMode": 4,
+                                                        "Brightness": {
+                                                            "W": 1.0,
+                                                            "X": 1.0,
+                                                            "Y": 1.0,
+                                                            "Z": 1.0
+                                                        },
+                                                        "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
+                                                        "Model": "Plane.obj",
+                                                        "Name": "GraphicsTabText",
+                                                        "NormalType": 0,
+                                                        "Position": {
+                                                            "X": -0.7799999713897705,
+                                                            "Y": 0.5699999928474426,
+                                                            "Z": 0.0
+                                                        },
+                                                        "RenderTarget": "",
+                                                        "Rotation": {
+                                                            "W": 1.0,
+                                                            "X": 0.0,
+                                                            "Y": 0.0,
+                                                            "Z": 0.0
+                                                        },
+                                                        "RotationEuler": {
+                                                            "X": 0.0,
+                                                            "Y": 0.0,
+                                                            "Z": 0.0
+                                                        },
+                                                        "Scale": {
+                                                            "X": 0.20000000298023224,
+                                                            "Y": 0.07000000029802322,
+                                                            "Z": 1.0
+                                                        },
+                                                        "Tags": null,
+                                                        "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
+                                                    }
+                                                ],
                                                 "DisableDraw": false,
                                                 "DissolveStrength": 1.25,
                                                 "DissolveTex": "",
@@ -3808,6 +3904,54 @@
                                                     "Y": 0.0,
                                                     "Z": 0.0
                                                 },
+                                                "Children": [
+                                                    {
+                                                        "Active": true,
+                                                        "BlendMode": 4,
+                                                        "Brightness": {
+                                                            "W": 1.0,
+                                                            "X": 1.0,
+                                                            "Y": 1.0,
+                                                            "Z": 1.0
+                                                        },
+                                                        "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
+                                                        "Model": "Plane.obj",
+                                                        "Name": "SoundTabText",
+                                                        "NormalType": 0,
+                                                        "Position": {
+                                                            "X": -0.7799999713897705,
+                                                            "Y": 0.5699999928474426,
+                                                            "Z": 0.0
+                                                        },
+                                                        "RenderTarget": "",
+                                                        "Rotation": {
+                                                            "W": 1.0,
+                                                            "X": 0.0,
+                                                            "Y": 0.0,
+                                                            "Z": 0.0
+                                                        },
+                                                        "RotationEuler": {
+                                                            "X": 0.0,
+                                                            "Y": 0.0,
+                                                            "Z": 0.0
+                                                        },
+                                                        "Scale": {
+                                                            "X": 0.20000000298023224,
+                                                            "Y": 0.07000000029802322,
+                                                            "Z": 1.0
+                                                        },
+                                                        "Tags": null,
+                                                        "Texture": "white.png",
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
+                                                    }
+                                                ],
                                                 "DisableDraw": false,
                                                 "DissolveStrength": 1.25,
                                                 "DissolveTex": "",
@@ -4035,7 +4179,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,
@@ -4128,7 +4272,7 @@
                                         "Children": [
                                             {
                                                 "Active": true,
-                                                "BlendMode": 0,
+                                                "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
                                                     "X": 1.0,

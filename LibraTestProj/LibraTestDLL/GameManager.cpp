@@ -59,7 +59,7 @@ void GameManager::Update()
 			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			//SceneManager::WaitForLoadAndTransition();
 
-			OutputDebugStringA("SceneChangeClick\n");
+			OutputDebugStringA("SceneChangeClickToGame\n");
 
 			if (!BlinkTransition::mIsChangeScene)
 			{
@@ -89,7 +89,7 @@ void GameManager::Update()
 			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			//SceneManager::WaitForLoadAndTransition();
 
-			OutputDebugStringA("SceneChangeClick\n");
+			OutputDebugStringA("SceneChangeClickSelectToGame\n");
 
 			if (!BlinkTransition::mIsChangeScene)
 			{
@@ -119,7 +119,7 @@ void GameManager::Update()
 		// UIでタイトルにもどる時
 		if (mUIScript->GetBackToTitle())
 		{
-			OutputDebugStringA("SceneChangeClick\n");
+			OutputDebugStringA("SceneChangeClickToSelectScene\n");
 
 			if (!BlinkTransition::mIsChangeScene)
 			{

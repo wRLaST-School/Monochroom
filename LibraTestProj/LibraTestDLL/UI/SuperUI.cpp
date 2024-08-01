@@ -107,13 +107,16 @@ void SuperUI::Update()
 		{
 			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(true);
 			mIsMomentOpenMenu = true;
-			mIsDisplayUI = true;
+			//mIsDisplayUI = true;
 			UIMainMenuOnReset();
 
 			ConsoleWindow::Log("メニューを開いた");
 		}
 	}
-
+	if (mIsMomentOpenMenu)
+	{
+		UIMainMenuMomentUpdate();
+	}
 	// メニューが開いた瞬間 
 
 	if (mIsDisplayUI)
@@ -155,7 +158,7 @@ void SuperUI::UIObj3DInit()
 
 	mTabBoardRotaBefore = 0;
 
-	mTabEaseTimeLimit = 20;
+	mTabEaseTimeLimit = 30;
 
 	IsUITabOn = false;
 
@@ -172,9 +175,14 @@ void SuperUI::UIObj3DInit()
 
 	mUITabEase.SetEaseTimer((int32_t)mTabEaseTimeLimit);
 
-	mUITabBoardEase.SetEaseTimer((int32_t)(mTabEaseTimeLimit * 1.5f));
+	mUITabBoardEase.SetEaseTimer((int32_t)(mTabEaseTimeLimit));
 
-	mUITabAlphaEase.SetEaseTimer((int32_t)mTabEaseTimeLimit);
+	mUITabAlphaEase.SetEaseTimer((int32_t)60);
+
+
+	mUITabEase.SetPowNum(5);
+	mUITabBoardEase.SetPowNum(5);
+	mUITabAlphaEase.SetPowNum(5);
 
 	// メニューのリストをリサイズ
 	mMenuUIObj.resize(mNumMenu);
@@ -245,6 +253,20 @@ void SuperUI::UIObj3DInit()
 	mQuitTextObjs[Yes].planeObj = SceneManager::FindObject<Object3D>("YesText");
 	mQuitTextObjs[No].planeObj = SceneManager::FindObject<Object3D>("NoText");
 
+
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("BackBlack"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("MenuPlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("MenuText"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("GuidPlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("GuidText"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("OptionPlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("OptionText"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitlePlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitleText"));
+
+	mMainAlphaEase.SetEaseTimer(60);
+	mBackBlackAlpha = { 0,0,0,150 };
+	mMainMenuColor = { 0,0,0,255 };
 }
 
 void SuperUI::UIObj3DUpdate()
@@ -264,6 +286,33 @@ void SuperUI::LoadTexInit()
 	SpTextureManager::LoadTexture("Assets/Images/MenuImages/GuidText.png", "guidTextTex");
 	SpTextureManager::LoadTexture("Assets/Images/MenuImages/QuitText.png", "quitTextTex");
 	SpTextureManager::LoadTexture("Assets/Images/MenuImages/MenuText.png", "menuTextTex");
+}
+
+void SuperUI::UIMainMenuMomentUpdate()
+{
+	mMainAlphaEase.Update();
+
+	Color backColor;
+	backColor.f4.w = mMainAlphaEase.In(0, mBackBlackAlpha.f4.w);
+	Color menuColor;
+	menuColor.f4.w = mMainAlphaEase.In(0, mMainMenuColor.f4.w);
+
+	mMainMenuObjs[BackBlack]->brightnessCB.contents->w = backColor.f4.w;
+
+	for (size_t i = 0; i < mMainMenuObjs.size(); i++)
+	{
+		if (!BackBlack)
+		{
+			mMainMenuObjs[i]->brightnessCB.contents->w = menuColor.f4.w;
+		}
+	}
+
+	if (mMainAlphaEase.GetisEnd())
+	{
+		mMainAlphaEase.Reset();
+		mIsMomentOpenMenu = false;
+		mIsDisplayUI = true;
+	}
 }
 
 void SuperUI::UIMainMenuUpdate()
@@ -392,21 +441,26 @@ void SuperUI::UIMainMenuUpdate()
 
 		for (size_t i = 0; i < mNumOption; i++)
 		{
-			Color alphaColor;
-			alphaColor.f4 = { 1, 1, 1, mUITabAlphaEase.In(0, 1) };
-			*mMenuTabUIObj[i].planeObj->brightnessCB.contents = alphaColor;
+			Color alphaColor,alphaColorRed;
+			alphaColorRed = mDesabledColor;
+			alphaColor.f4 = { 1, 1, 1, mUITabAlphaEase.Out(0, 1) };
+			alphaColorRed.f4.w = mUITabAlphaEase.Out(0, 1);
+
+			*mMenuTabUIObj[CAMERA].planeObj->brightnessCB.contents = alphaColor;
+			*mMenuTabUIObj[GRAPHICS].planeObj->brightnessCB.contents = alphaColorRed;
+			*mMenuTabUIObj[SOUND].planeObj->brightnessCB.contents = alphaColorRed;
 			mMenuTabUIObj[i].planeObj->Update();
 		}
 
-		mTabsPParentObj->rotationE.y = mUITabEase.In(0.523f, 0);
-		mTabBoardParentObj->rotationE.y = mUITabBoardEase.In(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
+		mTabsPParentObj->rotationE.y = mUITabEase.Out(0.523f, 0);
+		mTabBoardParentObj->rotationE.y = mUITabBoardEase.Out(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
 
 
 
 		mTabsPParentObj->Update();
 		mTabBoardParentObj->Update();
 
-		if (mUITabBoardEase.GetisEnd())
+		if (mUITabAlphaEase.GetisEnd())
 		{
 			IsUITabOn = true;
 			IsActiveOption = false;
@@ -507,14 +561,14 @@ void SuperUI::UITitleMenuUpdate()
 
 		if (mQuitTextObjs[Yes].state == SELECT)
 		{
-			if (Input::Key::Triggered(DIK_Z))
+			if (Input::Key::Released(DIK_Z))
 			{
 				IsBackToTitle = true;
 			}
 		}
 		if (mQuitTextObjs[No].state == SELECT)
 		{
-			if (Input::Key::Triggered(DIK_Z))
+			if (Input::Key::Released(DIK_Z))
 			{
 				IsBackToTitle = false;
 				UIQuitTitleMenuOff();
@@ -525,8 +579,6 @@ void SuperUI::UITitleMenuUpdate()
 		{
 			mQuitTextObjs[i].planeObj->Update();
 		}
-
-
 	}
 }
 
@@ -553,6 +605,8 @@ void SuperUI::UIMainMenuOnReset()
 
 	mUITabEase.Reset();
 	mUITabBoardEase.Reset();
+	mUITabAlphaEase.Reset();
+	mMainAlphaEase.Reset();
 }
 
 void SuperUI::UIMainMenuOffReset()
@@ -575,7 +629,7 @@ void SuperUI::UITabMenuOn()
 	mPlanesParentObj->Deactivate();
 	mUITabEase.Reset();
 	mUITabBoardEase.Reset();
-
+	mUITabAlphaEase.Reset();
 	// タブをオン
 	mTabsParentObj->Activate();
 
@@ -595,7 +649,7 @@ void SuperUI::UITabMenuOff()
 	mMenuUIObj[mUICurrentNum].textCurrentColor = mUITextBeforeColor;
 	mUITabEase.Reset();
 	mUITabBoardEase.Reset();
-
+	mUITabAlphaEase.Reset();
 	// メインメニュー関連をオフ
 	mMenuPlaneObj->Activate();
 	mPlanesParentObj->Activate();
