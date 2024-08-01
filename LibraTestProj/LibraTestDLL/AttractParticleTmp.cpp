@@ -16,7 +16,5 @@ void AttractParticleTmp::Update()
 	position += Vec3{ (float)Util::RNG(-10, 10), (float)Util::RNG(-10, 10), (float)Util::RNG(-10, 10) } *0.1f * scale;
 
 	IParticle::Update();
-
-	ConsoleWindow::Log("ParticleUPDATE!!!!!!!!!!!!!!!!!!");
 }
 

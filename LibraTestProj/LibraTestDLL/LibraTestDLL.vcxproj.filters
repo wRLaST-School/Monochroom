@@ -183,6 +183,12 @@
     <ClInclude Include="AttractParticleEmitter.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="AttractParticleEmitter2.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="AttractParticleTmp2.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -307,6 +313,12 @@
     </ClCompile>
     <ClCompile Include="AttractParticleEmitter.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="AttractParticleEmitter2.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="AttractParticleTmp2.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
