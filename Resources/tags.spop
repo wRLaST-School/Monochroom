@@ -14,5 +14,6 @@
     "Stage1",
     "Transparent",
     "StageGenerater",
-    "GoggleCollider"
+    "GoggleCollider",
+    "AttractParticleManager"
 ]

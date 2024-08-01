@@ -1166,7 +1166,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -5975,6 +5975,15 @@
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "Name": "AttractParticleManager",
+                "Tags": [
+                    "AttractParticleManager"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "AttractParticleManager"
             }
         ],
         "EfkEffects": [

@@ -6,6 +6,8 @@
 #include <vector>
 #include <SuperUI.h>
 #include <SelectPanel.h>
+#include <AttractParticleManager.h>
+
 
 class GameManager :
 	public IScriptObject
@@ -16,6 +18,7 @@ private:
 	StageGenerater* mStageGenerater;
 	SelectPanel* mSelectPanel;
 	SuperUI* mUIScript;
+	AttractParticleManager* mAttractParticleManager;
 
 	bool isStop;
 
@@ -32,6 +35,7 @@ public:
 	Object3D* GetPlayer();
 	Camera* GetCamera();
 	StageGenerater* GetStageGenerater();
+	AttractParticleManager* GetAttractParticleManager();
 
 	bool GetisStop();
 

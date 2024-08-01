@@ -11,6 +11,7 @@
 #include <GoggleScr.h>
 #include <PlayerGoggle.h>
 #include <StageGoal.h>
+#include <AttractParticleManager.h>
 
 void CollisionManager::Init()
 {
@@ -145,7 +146,15 @@ void CollisionManager::RayHitFlyBlocks()
 		// 一番近いFlyBlockのみ引き寄せる
 		if (flyBlock)
 		{
-			flyBlock->BeginAttracting(mViewCollider->GetPos() + Vec3{ 0,2.0f,0 });
+			auto ePos = mViewCollider->GetPos() + Vec3{ 0,-0.5f,0 };
+
+			flyBlock->BeginAttracting(ePos);
+
+			//引き寄せの演出
+			//始点と終点を決めて演出開始
+			GameManager::GetInstance()->GetAttractParticleManager()->
+				BeginAttractEffect(flyBlock,
+					flyBlock->Parent()->CastTo<Object3D>()->position, ePos);
 		}
 	}
 

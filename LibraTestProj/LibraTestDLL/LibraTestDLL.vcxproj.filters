@@ -174,13 +174,19 @@
     <ClInclude Include="PlayerGoggleState.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
-    <ClInclude Include="AttractParticle.h">
+    <ClInclude Include="AttractParticleManager.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
     <ClInclude Include="AttractParticleTmp.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
     <ClInclude Include="AttractParticleEmitter.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="AttractParticleEmitter2.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="AttractParticleTmp2.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
   </ItemGroup>
@@ -299,10 +305,19 @@
     <ClCompile Include="PlayerGoggleState.cpp">
       <Filter>ソース ファイル\Player</Filter>
     </ClCompile>
-    <ClCompile Include="AttractParticle.cpp">
+    <ClCompile Include="AttractParticleManager.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="AttractParticleTmp.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="AttractParticleEmitter.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="AttractParticleEmitter2.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="AttractParticleTmp2.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>

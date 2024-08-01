@@ -14,13 +14,13 @@
 class ParticleManager
 {
 public:
-	ParticleManager();
+	DLLExport ParticleManager();
 
 	/**
 	 * @brief パーティクルの描画を行う
 	 * 
 	 */
-	void Draw();
+	DLLExport void Draw();
 
 	~ParticleManager() {
 		// マップを解除
