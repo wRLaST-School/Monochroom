@@ -18,7 +18,6 @@ private:
 	SuperUI* mUIScript;
 
 	bool isStop;
-	static bool mIsChangeScene;
 
 public:
 	void Awake();

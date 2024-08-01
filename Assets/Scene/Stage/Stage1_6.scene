@@ -24,7 +24,7 @@
                         "DisableDraw": false,
                         "Model": "Plane.obj",
                         "Name": "Plane",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -63,7 +63,7 @@
                         "DisableDraw": false,
                         "Model": "Plane.obj",
                         "Name": "PlaneAlpha",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -187,7 +187,7 @@
                 "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "yuka",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -0.6473812460899353,
                     "Y": -7.332832336425781,
@@ -295,7 +295,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 9.0,
@@ -345,7 +345,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 6.0,
@@ -395,7 +395,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 5.0,
@@ -445,7 +445,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 21.766000747680664,
                             "Y": 6.0,
@@ -495,7 +495,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -18.976001739501953,
                             "Y": 6.0,
@@ -545,7 +545,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -15.227001190185547,
                             "Y": 7.0,
@@ -595,7 +595,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 14.429000854492188,
                             "Y": 7.0,
@@ -645,7 +645,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 8.596000671386719,
                             "Y": 10.0,
@@ -695,7 +695,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -7.718000411987305,
                             "Y": 4.0,
@@ -745,7 +745,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 4.0,
@@ -795,7 +795,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.44200003147125244,
                             "Y": 13.0,
@@ -845,7 +845,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.04300001263618469,
                             "Y": 12.0,
@@ -895,7 +895,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 1.0220000743865967,
                             "Y": 11.0,
@@ -945,7 +945,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -0.8840001225471497,
                             "Y": 17.1510009765625,
@@ -995,7 +995,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 13.0,
@@ -1045,7 +1045,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 12.0,
                             "Y": 12.0,
@@ -1095,7 +1095,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 12.0,
                             "Y": 11.0,
@@ -1145,7 +1145,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -4.0,
                             "Y": 20.0,
@@ -1195,7 +1195,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.0,
                             "Y": 20.0,
@@ -1245,7 +1245,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -8.0,
                             "Y": 23.5,
@@ -1295,7 +1295,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 13.5,
                             "Y": 23.5,
@@ -1345,7 +1345,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 8.0,
                             "Y": 26.25,
@@ -1395,7 +1395,7 @@
                         "DisableDraw": false,
                         "Model": "Block.obj",
                         "Name": "Block",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 2.0,
                             "Y": 23.5,
@@ -1475,7 +1475,7 @@
                 "DisableDraw": false,
                 "Model": "Cube",
                 "Name": "Glass",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": 0.0,
                     "Y": 16.25,
@@ -1526,7 +1526,7 @@
                         "DisableDraw": false,
                         "Model": "Goggles.obj",
                         "Name": "Goggles",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -1565,7 +1565,7 @@
                         "DisableDraw": false,
                         "Model": "cube.obj",
                         "Name": "Debug Cube",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -1676,7 +1676,7 @@
                 "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "FlyBlock",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -3.831240177154541,
                     "Y": 10.995100021362305,
@@ -1874,7 +1874,7 @@
                                 "DisableDraw": false,
                                 "Model": "Plane.obj",
                                 "Name": "BackBlack",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -1953,7 +1953,7 @@
                                 "DisableDraw": false,
                                 "Model": "Plane.obj",
                                 "Name": "MenuPlane",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.6000000238418579,
@@ -2022,7 +2022,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityX",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -5.5,
@@ -2061,7 +2061,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityY",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -8.5,
@@ -2100,7 +2100,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseText",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 0.4000000059604645,
                                                             "Y": -2.5,
@@ -2139,7 +2139,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityX",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -15.0,
@@ -2178,7 +2178,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityY",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -18.0,
@@ -2217,7 +2217,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "PadText",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 0.4000000059604645,
                                                             "Y": -12.0,
@@ -2296,7 +2296,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "PostProcess",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -5.5,
@@ -2335,7 +2335,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "Shadow",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -10.0,
@@ -2414,7 +2414,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "BGMVolume",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -8.5,
@@ -2453,7 +2453,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "MastarVolume",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -4.5,
@@ -2492,7 +2492,7 @@
                                                         "DisableDraw": false,
                                                         "Model": "Plane.obj",
                                                         "Name": "SEVolume",
-                                                        "NormalType": 0,
+                                                        "NormalType": 1,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -12.5,
@@ -2553,7 +2553,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "Board",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.10000000149011612,
@@ -2592,7 +2592,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "CameraTab",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": -0.7799999713897705,
                                             "Y": 0.5699999928474426,
@@ -2631,7 +2631,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "GraphicsTab",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": -0.3499999940395355,
                                             "Y": 0.5699999928474426,
@@ -2670,7 +2670,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "SoundTab",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.07999999821186066,
                                             "Y": 0.5699999928474426,
@@ -2759,7 +2759,7 @@
                                                 "DisableDraw": false,
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidText",
-                                                "NormalType": 0,
+                                                "NormalType": 1,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -2790,7 +2790,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "GuidPlane",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.3199999928474426,
@@ -2869,7 +2869,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "OptionPlane",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.05999999865889549,
@@ -2948,7 +2948,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "QuitTitlePlane",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.2199999988079071,
@@ -3027,7 +3027,7 @@
                                         "DisableDraw": false,
                                         "Model": "Plane.obj",
                                         "Name": "SelectPlane",
-                                        "NormalType": 0,
+                                        "NormalType": 1,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.5,
@@ -3190,7 +3190,7 @@
                         "DisableDraw": false,
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -3229,7 +3229,7 @@
                         "DisableDraw": false,
                         "Model": "cube",
                         "Name": "Left",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.0,
                             "Y": 2.0,
@@ -3268,7 +3268,7 @@
                         "DisableDraw": false,
                         "Model": "cube",
                         "Name": "Right",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 1.0,
                             "Y": 2.0,
@@ -3371,7 +3371,7 @@
                 "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "FlyBlock2",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": 21.84360122680664,
                     "Y": 12.893001556396484,
@@ -3422,7 +3422,7 @@
                 "DisableDraw": false,
                 "Model": "cube.obj",
                 "Name": "SponePoint",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -4.635000228881836,
                     "Y": 5.910000324249268,
@@ -3536,7 +3536,7 @@
                 "DisableDraw": false,
                 "Model": "Goggles.obj",
                 "Name": "Goggle",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -0.9350005984306335,
                     "Y": 18.312000274658203,
@@ -3636,7 +3636,7 @@
                                 "DisableDraw": false,
                                 "Model": "Plane.obj",
                                 "Name": "Plane",
-                                "NormalType": 0,
+                                "NormalType": 1,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 45.0,
@@ -3706,7 +3706,7 @@
                         "DisableDraw": false,
                         "Model": "skydome.obj",
                         "Name": "Skydome",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -3785,7 +3785,7 @@
                         "DisableDraw": false,
                         "Model": "Plane.obj",
                         "Name": "Plane",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -3824,7 +3824,7 @@
                         "DisableDraw": false,
                         "Model": "Plane.obj",
                         "Name": "PlaneAlpha",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4043,7 +4043,7 @@
                         "DisableDraw": false,
                         "Model": "ButtonBody.obj",
                         "Name": "Body",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4082,7 +4082,7 @@
                         "DisableDraw": false,
                         "Model": "ButtonFlame.obj",
                         "Name": "Flame",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4179,7 +4179,7 @@
                         "DisableDraw": false,
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4218,7 +4218,7 @@
                         "DisableDraw": false,
                         "Model": "cube",
                         "Name": "Left",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": -1.0,
                             "Y": 2.0,
@@ -4257,7 +4257,7 @@
                         "DisableDraw": false,
                         "Model": "cube",
                         "Name": "Right",
-                        "NormalType": 0,
+                        "NormalType": 1,
                         "Position": {
                             "X": 1.0,
                             "Y": 2.0,
@@ -4353,7 +4353,7 @@
                 "DisableDraw": false,
                 "Model": "Cube",
                 "Name": "Glass",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": 9.5,
                     "Y": 13.5,
@@ -4403,7 +4403,7 @@
                 "DisableDraw": false,
                 "Model": "Cube",
                 "Name": "Glass",
-                "NormalType": 0,
+                "NormalType": 1,
                 "Position": {
                     "X": -9.5,
                     "Y": 13.5,

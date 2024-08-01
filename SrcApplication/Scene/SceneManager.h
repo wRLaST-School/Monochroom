@@ -84,7 +84,7 @@ public:
 	}
 
 	template<class T>
-	inline static T* FindChildObject(const std::string& name, IComponent* root){
+	inline static T* FindChildObject(const std::string& name, IComponent* root) {
 		return FindObjectRecursive(name, root)->CastToScript<T>();
 	}
 
@@ -104,7 +104,7 @@ public:
 	inline static eastl::list<T*> FindObjectsWithTag(const std::string& tag)
 	{
 		eastl::list<T*> foundList;
-		
+
 		eastl::list<IComponent*> notCasted;
 
 		FindObjectsTagExport(tag, &notCasted);
@@ -142,8 +142,10 @@ private:
 	DLLExport static void SetLoadFinished();
 	inline static bool loadFinished;
 	static DLLExport void UpdateLoadState();
-	inline static bool transitionQueued;
 	inline static std::unique_ptr<DebugCamera> debugCamera;
+
+public:
+	DLLExport inline static bool transitionQueued;
 
 	//以下基本使用禁止
 public:
