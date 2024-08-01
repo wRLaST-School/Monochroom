@@ -7,8 +7,6 @@
 #include <BlinkTransition.h>
 #include <Input.h>
 
-bool GameManager::mIsChangeScene = false;
-
 void GameManager::Awake()
 {
 	mPlayer = SceneManager::FindObject<Object3D>("Player");
@@ -23,7 +21,7 @@ void GameManager::Awake()
 		SceneManager::GetCurrentScene()->GetName() == "StageSelect")
 	{
 		StageGenerating::info.isDraw = false;
-		mIsChangeScene = false;
+		//BlinkTransition::mIsChangeScene = false;
 		BlinkTransition::Reset();
 	}
 	else
@@ -56,16 +54,17 @@ void GameManager::Update()
 	{
 		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
 		{
+
 			//// シーンの切り替え処理
 			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
 			//SceneManager::WaitForLoadAndTransition();
 
 			OutputDebugStringA("SceneChangeClick\n");
 
-			if (!mIsChangeScene)
+			if (!BlinkTransition::mIsChangeScene)
 			{
 				BlinkTransition::Start();
-				mIsChangeScene = true;
+				BlinkTransition::mIsChangeScene = true;
 			}
 		}
 
@@ -92,18 +91,21 @@ void GameManager::Update()
 
 			OutputDebugStringA("SceneChangeClick\n");
 
-			if (!mIsChangeScene)
+			if (!BlinkTransition::mIsChangeScene)
 			{
 				BlinkTransition::Start();
-				mIsChangeScene = true;
+				BlinkTransition::mIsChangeScene = true;
 			}
 		}
 
-		if (BlinkTransition::info.isInEnd)
+		if (BlinkTransition::mIsChangeScene)
 		{
-			// シーンの切り替え処理
-			SceneManager::LoadScene<SceneFromFile>(mSelectPanel->GetStageName());
-			SceneManager::WaitForLoadAndTransition();
+			if (BlinkTransition::info.isInEnd)
+			{
+				// シーンの切り替え処理
+				SceneManager::LoadScene<SceneFromFile>(mSelectPanel->GetStageName());
+				SceneManager::WaitForLoadAndTransition();
+			}
 		}
 	}
 	else
@@ -114,22 +116,41 @@ void GameManager::Update()
 			ConsoleWindow::Log("UI is null");
 			return;
 		}
+		// UIでタイトルにもどる時
 		if (mUIScript->GetBackToTitle())
 		{
 			OutputDebugStringA("SceneChangeClick\n");
 
-			if (!mIsChangeScene)
+			if (!BlinkTransition::mIsChangeScene)
 			{
+				BlinkTransition::mToTitle = true;
 				BlinkTransition::Start();
-				mIsChangeScene = true;
+				BlinkTransition::mIsChangeScene = true;
 			}
 		}
 
-		if (BlinkTransition::info.isInEnd)
+		if (BlinkTransition::mIsChangeScene)
 		{
-			// シーンの切り替え処理
-			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/StageSelect.scene");
-			SceneManager::WaitForLoadAndTransition();
+			if (BlinkTransition::info.isInEnd)
+			{
+				if (BlinkTransition::mToTitle)
+				{
+					// シーンの切り替え処理
+					SceneManager::LoadScene<SceneFromFile>("Assets/Scene/StageSelect.scene");
+					SceneManager::WaitForLoadAndTransition();
+				}
+				else
+				{
+					// リセット
+					std::string sceneName = SceneManager::GetCurrentScene()->GetName();
+					if (AppOperationCommand::GetInstance()->ReStartCommand())
+					{
+						// シーンの切り替え処理
+						SceneManager::LoadScene<SceneFromFile>("Assets/Scene/" + sceneName + ".scene");
+						SceneManager::WaitForLoadAndTransition();
+					}
+				}
+			}
 		}
 
 		if (!mStageGenerater)
@@ -150,29 +171,26 @@ void GameManager::Update()
 
 		// ステージ生成
 		mStageGenerater->Start();
-
-		// リセット
-		std::string sceneName = SceneManager::GetCurrentScene()->GetName();
-		if (AppOperationCommand::GetInstance()->ReStartCommand())
-		{
-			// シーンの切り替え処理
-			SceneManager::LoadScene<SceneFromFile>("Assets/Scene/" + sceneName + ".scene");
-			SceneManager::WaitForLoadAndTransition();
-		}
 	}
 
 	ConsoleWindow::Log("GameManager: isActive");
 	BlinkTransition::TransitionIn();
-	if (SceneManager::GetLoadState() == SceneManager::LoadState::NotInProgress)
-	{
-		if (mIsChangeScene == true)
-		{
-			BlinkTransition::TransitionOut();
 
-			if (BlinkTransition::info.isOutEnd)
-			{
-				mIsChangeScene = false;
-			}
+	// ロード終わった
+	if (SceneManager::transitionQueued)
+	{
+		BlinkTransition::mIsLoaded = true;
+	}
+
+	if (BlinkTransition::mIsChangeScene &&
+		BlinkTransition::mIsLoaded)
+	{
+		BlinkTransition::TransitionOut();
+
+		if (BlinkTransition::info.isOutEnd)
+		{
+			BlinkTransition::mIsChangeScene = false;
+			BlinkTransition::mIsLoaded = false;
 		}
 	}
 }

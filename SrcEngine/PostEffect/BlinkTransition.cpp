@@ -3,6 +3,9 @@
 
 SpConstBuffer<BlinkTransitionCB> BlinkTransition::cb(true);
 BlinkTransitionInfo BlinkTransition::info;
+bool BlinkTransition::mIsChangeScene = false;
+bool BlinkTransition::mIsLoaded = false;
+bool BlinkTransition::mToTitle = false;
 
 void BlinkTransition::Init()
 {

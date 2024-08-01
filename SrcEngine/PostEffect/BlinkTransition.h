@@ -22,6 +22,11 @@ public:
 	DLLExport static BlinkTransitionInfo info;
 
 public:
+	DLLExport static bool mIsChangeScene;
+	DLLExport static bool mIsLoaded;
+	DLLExport static bool mToTitle;
+
+public:
 	static SpConstBuffer<BlinkTransitionCB> cb;
 	static void Init();
 	DLLExport static void Reset();
