@@ -9,7 +9,7 @@ class AttractParticleTmp :
 {
 public:
 	AttractParticleTmp(const Float3& sPos, const Float3& ePos) : IParticle(sPos, ePos) {
-		maxTime = Util::RNG(0, 50);
+		maxTime = Util::RNG(1, 35);
 		scale = 0.067f * (float)Util::RNG(1, 10) * 0.1f;
 		mEasing = std::make_unique<Easing>();
 		mEasing->SetEaseTimer(maxTime);
