@@ -3,7 +3,7 @@
  * @file   Emitter.h
  * @brief  パーティクルのエミッターテンプレートクラス
  * @details IParticleを継承したクラスをテンプレートに渡す
- * 
+ *
  * @author Wrelf
  *********************************************************************/
 #include "ParticleManager.h"
@@ -18,6 +18,9 @@ class Emitter : public ParticleManager
 public:
 	//エミッタの座標
 	Float3 position;
+
+	Float3 particleSPos = { 0,0,0 };
+	Float3 particleEPos = { 0,0,0 };
 
 	//出現範囲の半径、shapeがsphereならxのみ使用
 	Float3 radius;
@@ -57,14 +60,17 @@ public:
 
 	/**
 	 * @brief 更新処理
-	 * 
+	 *
 	 */
 	void Update() {
 		timer_++;
 		if (timer_ > timeBetweenEmit) {
 			timer_ = 0;
 
-			for (int32_t i = 0; i < quantity; i++) { Emit(); }
+			for (int32_t i = 0; i < quantity; i++)
+			{
+				Emit(particleSPos, particleEPos);
+			}
 
 			if (emitOnce) { active = false; }
 		}
@@ -92,7 +98,7 @@ public:
 
 	/**
 	 * @brief 発生範囲の描画
-	 * 
+	 *
 	 */
 	void DrawEmitArea()
 	{
@@ -111,16 +117,8 @@ public:
 	};
 
 private:
-	/**
-	 * @brief パーティクル発生処理
-	 * 
-	 */
-	void Emit() {
-		if (!active)
-		{
-			return;
-		}
-
+	Float3 CalcParticlePos(const Float3& posTmp = position)
+	{
 		Float3 particlePos = {};
 
 		switch (shape)
@@ -130,7 +128,7 @@ private:
 			particlePos.y = (float)Util::RNG(0, RAND_MAX) / RAND_MAX * radius.y * (Util::Chance(50) ? 1 : -1);
 			particlePos.z = (float)Util::RNG(0, RAND_MAX) / RAND_MAX * radius.z * (Util::Chance(50) ? 1 : -1);
 
-			particlePos = (Vec3)particlePos + position;
+			particlePos = (Vec3)particlePos + posTmp;
 			break;
 		case Shape::Sphere:
 			do {
@@ -141,13 +139,38 @@ private:
 				((Vec3)particlePos).GetSquaredLength() > radius.x * radius.x
 				);
 
-			particlePos = (Vec3)particlePos + position;
+			particlePos = (Vec3)particlePos + posTmp;
 			break;
 		default:
 			break;
 		}
 
-		particles_.emplace_back(particlePos);
+		return particlePos;
+	}
+
+	/**
+	 * @brief パーティクル発生処理
+	 *
+	 */
+	 //void Emit() {
+	 //	if (!active)
+	 //	{
+	 //		return;
+	 //	}
+
+	 //	particles_.emplace_back(CalcParticlePos(position));
+	 //}
+
+	void Emit(const Float3& sPos, const Float3& ePos) {
+		if (!active)
+		{
+			return;
+		}
+
+		auto spos = CalcParticlePos(sPos);
+		auto epos = CalcParticlePos(ePos);
+
+		particles_.emplace_back(spos, epos);
 	}
 
 	std::vector<ParticleType> particles_;

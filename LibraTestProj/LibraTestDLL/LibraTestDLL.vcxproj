@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
-    <ClInclude Include="AttractParticle.h" />
+    <ClInclude Include="AttractParticleManager.h" />
     <ClInclude Include="AttractParticleEmitter.h" />
     <ClInclude Include="AttractParticleTmp.h" />
     <ClInclude Include="Gimmick\ButtonCollider.h" />
@@ -56,7 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
-    <ClCompile Include="AttractParticle.cpp" />
+    <ClCompile Include="AttractParticleManager.cpp" />
+    <ClCompile Include="AttractParticleEmitter.cpp" />
     <ClCompile Include="AttractParticleTmp.cpp" />
     <ClCompile Include="Bases.cpp" />
     <ClCompile Include="CameraTab.cpp" />
@@ -177,7 +178,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\DirectXTex;$(ProjectDir)..\..\SrcExternal\EASTL\include;$(ProjectDir)..\..\SrcExternal\EASTL\test\packages\EABase\include\Common;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\Effekseer;$(ProjectDir)..\..\SrcExternal\Effekseer\Dev\Cpp\EffekseerRendererDX12;$(ProjectDir)..\..\SrcExternal\Cereal\include</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>

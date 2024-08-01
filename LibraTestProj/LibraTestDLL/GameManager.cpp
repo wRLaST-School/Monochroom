@@ -7,6 +7,7 @@
 #include <BlinkTransition.h>
 #include <Input.h>
 
+
 bool GameManager::mIsChangeScene = false;
 
 void GameManager::Awake()
@@ -16,6 +17,8 @@ void GameManager::Awake()
 	mStageGenerater = SceneManager::FindObjectWithTag<StageGenerater>("StageGenerater");
 	mSelectPanel = SceneManager::FindObject<SelectPanel>("SelectScript");
 	mUIScript = SceneManager::FindObject<SuperUI>("UIScript");
+	mAttractParticleManager = SceneManager::FindObjectWithTag<AttractParticleManager>("AttractParticleManager");
+
 
 	isStop = false;
 
@@ -200,6 +203,11 @@ Camera* GameManager::GetCamera()
 StageGenerater* GameManager::GetStageGenerater()
 {
 	return mStageGenerater;
+}
+
+AttractParticleManager* GameManager::GetAttractParticleManager()
+{
+	return mAttractParticleManager;
 }
 
 bool GameManager::GetisStop()

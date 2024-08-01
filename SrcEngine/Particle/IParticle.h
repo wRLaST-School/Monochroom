@@ -19,8 +19,10 @@ public:
 	 *  
 	 * @param pos 座標
 	 */
-	IParticle(const Float3& pos):position(pos)
-	{	};
+	IParticle(const Float3& pos, const Float3& pos2):position(pos)
+	{
+		pos2;
+	}
 
 	/**
 	 * @brief パーティクル発生時の処理
@@ -48,5 +50,5 @@ public:
 	int32_t maxTime = 120;
 	bool active = true;
 
-	static TextureKey sTexture;
+	inline static TextureKey sTexture = "white";
 };
