@@ -8,6 +8,7 @@ class DLLExport RayCollider :
 {
 public:
 	Ray r;
+	float disToInter;
 
 public:
 	RayCollider();

@@ -133,7 +133,7 @@ void CollisionManager::RayHitFlyBlocks()
 		auto fbBodyCollider = fbc->GetBodyCollider();
 		if (rayCollider.IsTrigger(&fbBodyCollider))
 		{
-			dis = Vec3::Distance(fbBodyCollider.pos, rayCollider.r.origin);
+			dis = rayCollider.disToInter;
 			if (dis < minDis)
 			{
 				if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
@@ -651,7 +651,7 @@ void CollisionManager::FlyBlocksHitDoors()
 float CollisionManager::CheckRayHitOtherDis()
 {
 	float minDis = 9999999.f;
-	float dis = 0.f;
+	//float dis = 0.f;
 
 	auto rayCollider = mViewCollider->GetRayCollider();
 
@@ -662,7 +662,7 @@ float CollisionManager::CheckRayHitOtherDis()
 
 		if (rayCollider.IsTrigger(&bodyCollider))
 		{
-			float dis = Vec3::Distance(bodyCollider.pos, rayCollider.r.origin);
+			float dis = rayCollider.disToInter;
 			if (dis < minDis)
 			{
 				minDis = dis;
@@ -678,7 +678,7 @@ float CollisionManager::CheckRayHitOtherDis()
 
 		if (rayCollider.IsTrigger(&bodyCollider))
 		{
-			dis = Vec3::Distance(bodyCollider.pos, rayCollider.r.origin);
+			float dis = rayCollider.disToInter;
 			if (dis < minDis)
 			{
 				minDis = dis;
@@ -686,7 +686,7 @@ float CollisionManager::CheckRayHitOtherDis()
 		}
 		else if (rayCollider.IsTrigger(&flameCollider))
 		{
-			dis = Vec3::Distance(flameCollider.pos, rayCollider.r.origin);
+			float dis = rayCollider.disToInter;
 			if (dis < minDis)
 			{
 				minDis = dis;
@@ -702,7 +702,7 @@ float CollisionManager::CheckRayHitOtherDis()
 
 		if (rayCollider.IsTrigger(&leftCollider))
 		{
-			dis = Vec3::Distance(leftCollider.pos, rayCollider.r.origin);
+			float dis = rayCollider.disToInter;
 			if (dis < minDis)
 			{
 				minDis = dis;
@@ -710,7 +710,7 @@ float CollisionManager::CheckRayHitOtherDis()
 		}
 		else if (rayCollider.IsTrigger(&rightCollider))
 		{
-			dis = Vec3::Distance(rightCollider.pos, rayCollider.r.origin);
+			float dis = rayCollider.disToInter;
 			if (dis < minDis)
 			{
 				minDis = dis;
@@ -724,7 +724,7 @@ float CollisionManager::CheckRayHitOtherDis()
 		auto bodyCollider = gc->GetBodyCollider();
 		if (rayCollider.IsTrigger(&bodyCollider))
 		{
-			dis = Vec3::Distance(bodyCollider.pos, rayCollider.r.origin);
+			float dis = rayCollider.disToInter;
 			if (dis < minDis)
 			{
 				minDis = dis;

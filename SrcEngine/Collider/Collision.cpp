@@ -218,6 +218,11 @@ bool Collision::OBBTriggerRay(OBBCollider* obb, RayCollider* ray)
 
 	obb->color = Color::Red;
 	ray->color = Color::Red;
+
+	// 交点を計算し、距離を求める
+	float distance = tMin * ray->r.origin.GetLength();
+	ray->disToInter = distance;
+
 	return true;
 }
 

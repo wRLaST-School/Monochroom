@@ -29,8 +29,8 @@ void FlyBlockCollider::Update()
 
 void FlyBlockCollider::Draw()
 {
-	mMoveCollider.DrawCollider();
-	mBodyCollider.DrawCollider();
+	//mMoveCollider.DrawCollider();
+	//mBodyCollider.DrawCollider();
 	mDownCollider.DrawCollider();
 }
 
