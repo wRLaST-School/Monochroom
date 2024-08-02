@@ -278,12 +278,11 @@ void CollisionManager::PlayerHitButtons()
 			//同じタグを持つドアがあれば開ける
 			for (auto& door : SceneManager::FindObjectsWithTag<Object3D>("StageDoor"))
 			{
-				std::string str = button->GetSameTag(*door->CastTo<IComponent>());
-
-				ConsoleWindow::Log("Door Open!!");
+				std::string str = button->GetSameTag(*door->CastTo<IComponent>(), "DB");
 
 				if (str.size())
 				{
+					ConsoleWindow::Log(str);
 					auto linkDoor = SceneManager::FindChildObject<StageDoor>("StageDoor", door);
 					linkDoor->OpenDoor();
 				}
@@ -475,11 +474,11 @@ void CollisionManager::FlyBlocksHitButtons()
 				//同じタグを持つドアがあれば開ける
 				for (auto& door : SceneManager::FindObjectsWithTag<Object3D>("StageDoor"))
 				{
-					std::string str = button->GetSameTag(*door->CastTo<IComponent>());
+					std::string str = button->GetSameTag(*door->CastTo<IComponent>(), "DB");
 
 					if (str.size())
 					{
-						ConsoleWindow::Log("Door Open!!");
+						ConsoleWindow::Log(str);
 						auto linkDoor = SceneManager::FindChildObject<StageDoor>("StageDoor", door);
 						linkDoor->OpenDoor();
 					}

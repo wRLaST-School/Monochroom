@@ -149,12 +149,22 @@ DLLExport bool IComponent::FindTag(const std::string& tag)
 	return false;
 }
 
-std::string IComponent::GetSameTag(const IComponent& component)
+std::string IComponent::GetSameTag(const IComponent& component, const std::string& str)
 {
 	for (auto& t : tags)
 	{
+		if (t.find(str) == std::string::npos)
+		{
+			continue;
+		}
+
 		for (auto& cTag : component.tags)
 		{
+			if (cTag.find(str) == std::string::npos)
+			{
+				continue;
+			}
+
 			if (cTag == t)
 			{
 				return t;
