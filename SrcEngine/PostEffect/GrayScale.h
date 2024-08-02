@@ -53,6 +53,7 @@ public:
 public:
 	DLLExport static void BeginGrayEffect(bool isEquip, int32_t effectTime);
 	DLLExport static bool GetIsEffect() { return mIsGrayEffect; }
+	DLLExport static bool GetIsGrayScale() { return mIsGrayScale; }
 
 private:
 	static void GrayEffectUpdate();
