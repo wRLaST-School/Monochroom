@@ -28,6 +28,11 @@ void AttractParticleManager::Init()
 
 void AttractParticleManager::Update()
 {
+	if (!mFlyBlockAndAttractEffect)
+	{
+		return;
+	}
+
 	for (auto itr = mFlyBlockAndAttractEffect->begin();
 		itr != mFlyBlockAndAttractEffect->end(); itr++)
 	{
@@ -39,7 +44,7 @@ void AttractParticleManager::Update()
 		}
 
 		//引き寄せられてなかったらエミッター無効に
-		if(emitter)
+		if (emitter)
 		{
 			if (fbc->GetIsAttracting())
 			{
@@ -52,6 +57,11 @@ void AttractParticleManager::Update()
 			emitter->Update();
 			emitter->ParticlesUpdate();
 		}
+	}
+
+	if (!mFlyBlockAndAttractEffect2)
+	{
+		return;
 	}
 
 	//ブロックの周りの
@@ -84,6 +94,11 @@ void AttractParticleManager::Update()
 
 void AttractParticleManager::Draw()
 {
+	if (!mFlyBlockAndAttractEffect)
+	{
+		return;
+	}
+
 	for (auto itr = mFlyBlockAndAttractEffect->begin();
 		itr != mFlyBlockAndAttractEffect->end(); itr++)
 	{
@@ -94,6 +109,11 @@ void AttractParticleManager::Draw()
 			emitter = itr->second.get();
 			emitter->Draw();
 		}
+	}
+
+	if (!mFlyBlockAndAttractEffect2)
+	{
+		return;
 	}
 
 	for (auto itr = mFlyBlockAndAttractEffect2->begin();
@@ -112,6 +132,15 @@ void AttractParticleManager::Draw()
 //--------------------------------------------------------------------------------------------------
 void AttractParticleManager::BeginAttractEffect(FlyBlock* fbc, const Vec3& sPos, const Vec3& ePos)
 {
+	if (!mFlyBlockAndAttractEffect)
+	{
+		return;
+	}
+	if (!mFlyBlockAndAttractEffect2)
+	{
+		return;
+	}
+
 	auto itr = mFlyBlockAndAttractEffect->find(fbc);
 
 	if (itr != mFlyBlockAndAttractEffect->end())

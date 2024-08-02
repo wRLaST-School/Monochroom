@@ -13,7 +13,7 @@ class FlyBlockCollider :
 private:
 	Object3D* mObj;
 	FlyBlock* mFlyBlock;
-	SphereCollider mMoveCollider;
+	OBBCollider mMoveCollider;
 	OBBCollider mBodyCollider;
 	OBBCollider mDownCollider;
 	OBBCollider mTopCollider;
@@ -30,7 +30,7 @@ public:
 	DefDel;
 
 public:
-	SphereCollider GetMoveCollider();
+	OBBCollider GetMoveCollider();
 	OBBCollider GetBodyCollider();
 	OBBCollider GetDownCollider();
 	OBBCollider GetTopCollider();
