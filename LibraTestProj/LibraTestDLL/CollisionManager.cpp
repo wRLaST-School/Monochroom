@@ -624,8 +624,16 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 						fbc1->Parent()->CastTo<Object3D>()->position += pushOut/* + offset*/;
 						flyBlock1->EndAttracting();
 
-						Vec3 hitPos = flyBlockBodyCollider1.pos - flyBlockBodyCollider2.pos; 
-						hitPos /= 2;
+						Vec3 hitPos =
+						{ (flyBlockBodyCollider2.pos.x + flyBlockBodyCollider1.pos.x) / 2,
+							(flyBlockBodyCollider2.pos.y + flyBlockBodyCollider1.pos.y) / 2 - 9,
+							(flyBlockBodyCollider2.pos.z + flyBlockBodyCollider1.pos.z) / 2 };
+
+						OutputDebugStringA("mBlockCollHit!!");
+						if (!mBlockCollEffect)
+						{
+							OutputDebugStringA("mBlockCollNull!!");
+						}
 						mBlockCollEffect->SetIsHit(true);
 						mBlockCollEffect->SetHitBlockPos(hitPos);
 

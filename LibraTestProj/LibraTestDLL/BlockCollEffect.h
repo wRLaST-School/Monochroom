@@ -18,19 +18,25 @@ public:
 
     void SetIsHit(bool IsHit);
 
+    void SetHitRota(Vec3 rota);
+
     DefDel;
 
 private:
 
     bool mIsHit;
 
-    Object3D* mBlockEffectPlane;
+    Object3D* mBlockEffectPlane; 
+    
+    Object3D* mCamera;
 
     Easing mBlockEffectEase;
 
     TextureKey mSquareTex;
 
     Vec3 mBlockPos;
+
+    Vec3 mRota;
 
     Vec3 mBlockNowScale;
 
