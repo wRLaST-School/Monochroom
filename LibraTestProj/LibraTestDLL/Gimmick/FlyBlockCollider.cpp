@@ -24,9 +24,9 @@ void FlyBlockCollider::Update()
 	}
 
 	// 移動用
-	float r = Vec3(mObj->scale).GetMaxElement() * 0.95f;
-	Vec3 moveVec = mFlyBlock->GetAttractVec()/* * r*/;
-	mMoveCollider.Setting(Vec3(mObj->position) + moveVec, r);
+	Vec3 moveVec = mFlyBlock->GetAttractedDir() / 2;
+	mMoveCollider.Setting(
+		Vec3(mObj->position) + moveVec, Quaternion::EulerToQuaternion(mObj->rotationE), Vec3(mObj->scale)* 0.9f);
 
 	// 押し戻し用
 	mBodyCollider.Setting(mObj->position, Quaternion::EulerToQuaternion(mObj->rotationE), mObj->scale);
@@ -53,11 +53,11 @@ void FlyBlockCollider::Draw()
 
 void FlyBlockCollider::IsMoveing()
 {
-	mMoveCollider.isActive = false;
+	//mMoveCollider.isActive = false;
 	mTimer.Reset();
 }
 
-SphereCollider FlyBlockCollider::GetMoveCollider()
+OBBCollider FlyBlockCollider::GetMoveCollider()
 {
 	return mMoveCollider;
 }

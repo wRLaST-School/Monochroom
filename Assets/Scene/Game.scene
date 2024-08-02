@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -19.904361724853516,
-                    "Y": -58.05998229980469,
-                    "Z": -0.3755348324775696
+                    "X": -13.95300006866455,
+                    "Y": 10.0,
+                    "Z": 22.032001495361328
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -0.09599992632865906,
-                    "Y": 3.6803903579711914,
+                    "X": 0.08100001513957977,
+                    "Y": 4.5023908615112305,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -738,7 +738,7 @@
                 "Position": {
                     "X": 3.129000186920166,
                     "Y": 9.04800033569336,
-                    "Z": 33.71800231933594
+                    "Z": 19.979000091552734
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -900,9 +900,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -19.905071258544922,
-                    "Y": -59.7199821472168,
-                    "Z": -0.37527915835380554
+                    "X": -13.95300006866455,
+                    "Y": 10.0,
+                    "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -912,8 +912,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.09599993377923965,
-                    "Y": 3.6803903579711914,
+                    "X": 0.08100000768899918,
+                    "Y": 4.5023908615112305,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -965,9 +965,9 @@
                 "Name": "FlyBlock",
                 "NormalType": 1,
                 "Position": {
-                    "X": -23.0,
+                    "X": 1.5020008087158203,
                     "Y": 9.0,
-                    "Z": 20.0
+                    "Z": 8.624999046325684
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -5651,9 +5651,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -236.40589904785156,
+                    "X": -179.09371948242188,
                     "Y": 121.3031997680664,
-                    "Z": -2.762195587158203
+                    "Z": -129.05934143066406
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -5663,8 +5663,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.017999999225139618,
-                    "Y": 4.601388931274414,
+                    "X": 0.020999999716877937,
+                    "Y": 3.971389055252075,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -6037,6 +6037,15 @@
                 ],
                 "Type": "ScriptComponent",
                 "filePath": "AttractParticleManager"
+            },
+            {
+                "Active": true,
+                "Name": "FlyBlockWhite",
+                "Tags": [
+                    "FlyBlockWhite"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "FlyBlockWhite"
             }
         ],
         "EfkEffects": [
@@ -6116,6 +6125,7 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "Noice": "Assets/Images/Noice.png",
                 "Noice.png": "Assets/Images/Noice.png",
                 "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",

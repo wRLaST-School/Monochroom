@@ -189,6 +189,15 @@
     <ClInclude Include="AttractParticleTmp2.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="AttractEndPointEffectManager.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="AttractEndPointEffect.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyBlockWhite.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
     <ClInclude Include="BlockCollEffect.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -321,6 +330,15 @@
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="AttractParticleTmp2.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="AttractEndPointEffectManager.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="AttractEndPointEffect.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyBlockWhite.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="BlockCollEffect.cpp">
