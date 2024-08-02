@@ -28,6 +28,7 @@ class Object3D : public IComponent
 {
 private:
 	int normalType = 0;
+	int texType = 0;
 
 public:
 	ComponentFactoryRegister(Object3D)
