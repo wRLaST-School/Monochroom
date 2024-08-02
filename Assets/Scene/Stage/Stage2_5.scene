@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -4.584340572357178,
-                    "Y": 10.0,
-                    "Z": 17.777965545654297
+                    "X": 0.0,
+                    "Y": 6.0,
+                    "Z": 0.0
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.3859100937843323,
-                    "Y": 5.503183841705322,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -388,7 +388,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": 0.0,
-                    "Y": 65.0,
+                    "Y": 6.0,
                     "Z": 0.0
                 },
                 "RenderTarget": "",
@@ -4358,8 +4358,8 @@
                                     "Z": 0.0
                                 },
                                 "Scale": {
-                                    "X": 100.0,
-                                    "Y": 100.0,
+                                    "X": 192.0,
+                                    "Y": 108.0,
                                     "Z": 1.0
                                 },
                                 "Tags": null,
@@ -4581,8 +4581,8 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 100.0,
-                            "Y": 100.0,
+                            "X": 192.0,
+                            "Y": 108.0,
                             "Z": 1.0
                         },
                         "Tags": null,
@@ -4987,6 +4987,15 @@
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "Name": "AttractParticleManager",
+                "Tags": [
+                    "AttractParticleManager"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "AttractParticleManager"
             }
         ],
         "EfkEffects": [
@@ -5066,7 +5075,7 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
-                "Noice.png": "Assets\\Images\\Noice.png",
+                "Noice.png": "Assets/Images/Noice.png",
                 "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
