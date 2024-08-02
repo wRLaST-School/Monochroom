@@ -46,8 +46,8 @@ protected:
 	Vec3 mOldAttractPos = { 0,0,0 };
 
 public:
-	void Init();
-	void Update();
+	virtual void Init();
+	virtual void Update();
 	void Draw();
 	void CopyComponent(IComponent* src) { src; }
 
@@ -66,6 +66,8 @@ public:
 
 	void SetIsUpdate(bool is) { mIsUpdate = is; }
 	bool GetIsUpdate() { return mIsUpdate; }
+
+	BlockType GetBlockType() { return type; }
 
 public:
 	void SetAttractVec(const Vec3& vec) { mAttractParentVec = vec; }

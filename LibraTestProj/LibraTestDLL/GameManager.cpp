@@ -6,6 +6,7 @@
 #include <StageGenerating.h>
 #include <BlinkTransition.h>
 #include <Input.h>
+#include <FlyBlockWhite.h>
 
 void GameManager::Awake()
 {
@@ -226,6 +227,18 @@ StageGenerater* GameManager::GetStageGenerater()
 AttractParticleManager* GameManager::GetAttractParticleManager()
 {
 	return mAttractParticleManager;
+}
+
+FlyBlock* GameManager::GetFlyBlock(IComponent* parentComp)
+{
+	auto fb = SceneManager::FindChildObject<FlyBlock>("FlyBlock", parentComp);
+
+	if (fb == nullptr)
+	{
+		fb = SceneManager::FindChildObject<FlyBlockWhite>("FlyBlockWhite", parentComp);
+	}
+
+	return fb;
 }
 
 bool GameManager::GetisStop()

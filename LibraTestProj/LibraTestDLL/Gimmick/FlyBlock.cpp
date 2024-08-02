@@ -26,6 +26,8 @@ void FlyBlock::Update()
 {
 	if (!mParent || !mIsUpdate)
 	{
+		EndAttracting();
+
 		return;
 	}
 

@@ -10,8 +10,8 @@ private:
 
 
 public:
-    void Init();
-    void Update();
+    void Init() override;
+    void Update() override;
     void Draw();
     void CopyComponent(IComponent* src) { src; }
 

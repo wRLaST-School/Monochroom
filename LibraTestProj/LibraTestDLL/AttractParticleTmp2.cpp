@@ -16,7 +16,5 @@ void AttractParticleTmp2::Update()
 		mPosTmp.z + Util::RNG(-10, 10) * 0.01f };
 
 	IParticle::Update();
-
-	ConsoleWindow::LogVec3("ParticlePos::", position);
 }
 
