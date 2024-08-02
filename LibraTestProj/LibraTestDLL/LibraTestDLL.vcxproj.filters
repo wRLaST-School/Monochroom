@@ -195,6 +195,9 @@
     <ClInclude Include="AttractEndPointEffect.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="FlyBlockWhite.h">
+      <Filter>ヘッダー ファイル\Gimmick</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -330,6 +333,9 @@
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="AttractEndPointEffect.cpp">
+      <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyBlockWhite.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>

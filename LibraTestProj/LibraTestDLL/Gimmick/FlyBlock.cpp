@@ -18,11 +18,13 @@ void FlyBlock::Init()
 
 	mEasing->SetEaseTimer(kAttractedFrameMax);
 	mEasing->SetPowNum(3.0f);
+
+	type = BlockType::NORMAL;
 }
 
 void FlyBlock::Update()
 {
-	if (!mParent)
+	if (!mParent || !mIsUpdate)
 	{
 		return;
 	}
@@ -46,8 +48,8 @@ void FlyBlock::Update()
 	{
 		mParent->position += mAttractParentVec;
 	}
-	
-	if(!mIsAttracted)
+
+	if (!mIsAttracted)
 	{
 		mParent->position += mGravity->CalcGravity();
 	}

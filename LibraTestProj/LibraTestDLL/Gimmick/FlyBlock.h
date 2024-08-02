@@ -9,11 +9,23 @@ class FlyBlock :
 	public IScriptObject
 {
 public:
+	enum BlockType
+	{
+		NORMAL,
+		WHITE,
+	};
+
+protected:
+	BlockType type;
+
+public:
 	static const float skAttractedHittingNotEndDot;
 
-private:
+protected:
 	Object3D* mParent = nullptr;
 	std::unique_ptr<Gravity> mGravity = nullptr;
+
+	bool mIsUpdate = true;
 
 	Vec3 mResponePos = { 0,0,0 };
 	Vec3 mResponeRot = { 0,0,0 };
@@ -51,6 +63,9 @@ public:
 
 	void ZeroGravity() { mGravity->ZeroVelocity(); }
 	Gravity* GetGravity() { return mGravity.get(); }
+
+	void SetIsUpdate(bool is) { mIsUpdate = is; }
+	bool GetIsUpdate() { return mIsUpdate; }
 
 public:
 	void SetAttractVec(const Vec3& vec) { mAttractParentVec = vec; }
