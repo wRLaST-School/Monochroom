@@ -94,6 +94,12 @@ void CollisionManager::Update()
 	FlyBlocksHitDoors();
 }
 
+void CollisionManager::Draw()
+{
+	coll.DrawCollider();
+	coll.color = Color::Green;
+}
+
 void CollisionManager::CameraInsideFlyBlocks()
 {
 	for (const auto& fbc : mFlyBlockColliders)
@@ -147,8 +153,17 @@ void CollisionManager::RayHitFlyBlocks()
 		if (flyBlock)
 		{
 			Vec3 dirVec = mViewCollider->GetRayCollider().r.ray;
+
+			// 仮に移動させて当たるがどうかをチェックする用
+			if (CheckHitOtherFlyBlock(fbc))
+			{
+				// 当たっていたら移動させない
+				continue;
+			}
+
 			auto ePos = mViewCollider->GetPos() + Vec3{ dirVec.x,0,dirVec.z }.GetNorm() * 2.0f + Vec3{ 0,-0.5f,0 };
 			flyBlock->BeginAttracting(ePos);
+			fbc->IsMoveing();
 
 			// 再帰関数で上に乗せてるやつをチェックする
 			RecursiveAttracting(fbc, mFlyBlockColliders);
@@ -158,9 +173,10 @@ void CollisionManager::RayHitFlyBlocks()
 			GameManager::GetInstance()->GetAttractParticleManager()->
 				BeginAttractEffect(flyBlock,
 					flyBlock->Parent()->CastTo<Object3D>()->position, ePos);
+
+			flyBlock = nullptr;
 		}
 	}
-
 
 	ConsoleWindow::Log(std::format("Dis : {}", dis));
 	ConsoleWindow::Log(std::format("Min Dis : {}", minDis));
@@ -587,20 +603,10 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 
 						// 位置補正
 						float posY = flyBlockTopCollider1.pos.y;
-						float offsetY = flyBlockDownCollider2.scale.y * 3.f;
+						float offsetY = flyBlockDownCollider2.scale.y * 5.f;
 						fbc2->Parent()->CastTo<Object3D>()->position.y = posY + offsetY;
 					}
 				}
-
-				//// 押し戻し
-				//Vec3 pushOut = Vec3::zero;
-				//if (flyBlockBodyCollider1.IsTrigger(&flyBlockBodyCollider2, &pushOut))
-				//{
-				//	if (flyBlock1)
-				//	{
-				//		fbc1->Parent()->CastTo<Object3D>()->position += pushOut;
-				//	}
-				//}
 			}
 			else
 			{
@@ -614,10 +620,6 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 						fbc1->Parent()->CastTo<Object3D>()->position += pushOut/* + offset*/;
 						flyBlock1->EndAttracting();
 					}
-
-					//if (flyBlock1->GetAttractedDir().Dot(-pushOut) > FlyBlock::skAttractedHittingNotEndDot)
-					//{
-					//}
 				}
 			}
 
@@ -815,9 +817,35 @@ void CollisionManager::RecursiveAttracting(
 			Vec3 ePos = Vec3(target->Parent()->CastTo<Object3D>()->position) + vec * dis;
 			targetFlyBlock->BeginAttracting(ePos);
 
+			target->IsMoveing();
+
 			RecursiveAttracting(target, check);
 		}
 	}
+}
+
+bool CollisionManager::CheckHitOtherFlyBlock(FlyBlockCollider* current)
+{
+	//SphereCollider coll;
+	Vec3 pos = current->Parent()->CastTo<Object3D>()->position;
+	float r = Vec3(current->Parent()->CastTo<Object3D>()->scale).GetMaxElement() * 0.5f;
+	Vec3 offset = -mViewCollider->GetRayCollider().r.ray.Norm() * r * 2.f;
+	coll.Setting(pos + offset, r);
+
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		if (current == fbc)
+		{
+			continue;
+		}
+
+		if (fbc->GetBodyCollider().IsTrigger(&coll))
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 RegisterScriptBody(CollisionManager);

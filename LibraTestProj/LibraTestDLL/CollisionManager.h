@@ -30,7 +30,7 @@ private:
 	std::vector<GoalCollider*> mGoalColliders;
 	std::vector<GoggleCollider*> mGoggleColliders;
 	std::vector<TransparentCollider*> mTransparentColliders;
-
+	SphereCollider coll;
 
 private:
 	template<typename T>
@@ -59,10 +59,11 @@ private:
 public:
 	void Init();
 	void Update();
-	void Draw() {}
+	void Draw();
 	void CopyComponent(IComponent* src) { src; }
 
-	void RecursiveAttracting(FlyBlockCollider* current,const  std::vector<FlyBlockCollider*>& colliders);
+	void RecursiveAttracting(FlyBlockCollider* current, const  std::vector<FlyBlockCollider*>& colliders);
+	bool CheckHitOtherFlyBlock(FlyBlockCollider* current);
 
 	DefDel;
 };

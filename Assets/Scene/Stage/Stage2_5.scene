@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 0.0,
-                    "Y": 6.0,
-                    "Z": 0.0
+                    "X": -13.95300006866455,
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -62,7 +62,7 @@
                 "DissolveTex": "",
                 "Model": "cube.obj",
                 "Name": "yuka",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
                     "X": -0.6473812460899353,
                     "Y": -7.332832336425781,
@@ -129,9 +129,9 @@
                         "Name": "Block",
                         "NormalType": 1,
                         "Position": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
+                            "X": -2.0,
+                            "Y": 8.0,
+                            "Z": 56.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -146,9 +146,522 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 20.0,
+                            "X": 12.0,
+                            "Y": 8.0,
+                            "Z": 2.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -20.0,
+                            "Y": 8.0,
+                            "Z": 56.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 6.0,
+                            "Y": 8.0,
+                            "Z": 2.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": 12.0,
+                            "Y": 8.0,
+                            "Z": 46.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 2.0,
+                            "Y": 8.0,
+                            "Z": 12.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -2.0,
                             "Y": 4.0,
                             "Z": 50.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 12.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -20.0,
+                            "Y": 4.0,
+                            "Z": 50.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 6.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 42.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 6.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -14.0,
+                            "Y": 4.0,
+                            "Z": 42.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 12.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -2.0,
+                            "Y": 4.0,
+                            "Z": 34.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 4.0,
+                            "Y": 4.0,
+                            "Z": 12.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -20.0,
+                            "Y": 4.0,
+                            "Z": 34.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 1.5707963705062866,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 3.9999992847442627,
+                            "Y": 3.9999992847442627,
+                            "Z": 5.999999523162842
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "Texture": "Block1.png",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 1,
+                        "Position": {
+                            "X": -28.0,
+                            "Y": 8.0,
+                            "Z": 46.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 2.0,
+                            "Y": 8.0,
+                            "Z": 12.0
                         },
                         "Tags": [
                             "Block"
@@ -221,11 +734,11 @@
                 "DissolveTex": "",
                 "Model": "Cube",
                 "Name": "Glass",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
-                    "X": 0.0,
-                    "Y": 4.0,
-                    "Z": 0.0
+                    "X": 3.129000186920166,
+                    "Y": 9.04800033569336,
+                    "Z": 33.71800231933594
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -240,9 +753,9 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 5.0,
-                    "Y": 0.009999999776482582,
-                    "Z": 5.0
+                    "X": 10.0,
+                    "Y": 10.0,
+                    "Z": 0.009999999776482582
                 },
                 "Tags": [
                     "Glass"
@@ -279,7 +792,7 @@
                         "DissolveTex": "",
                         "Model": "Goggles.obj",
                         "Name": "Goggles",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -325,7 +838,7 @@
                         "DissolveTex": "",
                         "Model": "cube.obj",
                         "Name": "Debug Cube",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -387,9 +900,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 0.0,
-                    "Y": 6.0,
-                    "Z": 0.0
+                    "X": -13.95300006866455,
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -450,9 +963,9 @@
                 "DissolveTex": "",
                 "Model": "cube.obj",
                 "Name": "FlyBlock",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
-                    "X": 3.5798091888427734,
+                    "X": 5.068127155303955,
                     "Y": 9.0,
                     "Z": 22.062511444091797
                 },
@@ -608,9 +1121,9 @@
                 "Model": "",
                 "Name": "Button",
                 "Position": {
-                    "X": 0.5340002775192261,
-                    "Y": 4.0,
-                    "Z": -14.855998992919922
+                    "X": -19.921001434326172,
+                    "Y": 8.038999557495117,
+                    "Z": 22.016002655029297
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -676,7 +1189,7 @@
                                 "DissolveTex": "",
                                 "Model": "Plane.obj",
                                 "Name": "BackBlack",
-                                "NormalType": 1,
+                                "NormalType": 0,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.0,
@@ -742,7 +1255,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "Back",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -788,7 +1301,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidBackText",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": -0.46000000834465027,
@@ -834,7 +1347,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidTex",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.07000000029802322,
@@ -927,7 +1440,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "Back",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -973,7 +1486,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "Text1",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.20000000298023224,
@@ -1019,7 +1532,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "YesText",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": -0.25,
                                                     "Y": -0.2199999988079071,
@@ -1065,7 +1578,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "NoText",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.25,
                                                     "Y": -0.2200002670288086,
@@ -1232,7 +1745,7 @@
                                 "DissolveTex": "",
                                 "Model": "Plane.obj",
                                 "Name": "MenuPlane",
-                                "NormalType": 1,
+                                "NormalType": 0,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 0.6000000238418579,
@@ -1318,7 +1831,7 @@
                                                                 "DissolveTex": "",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -1364,7 +1877,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -1410,7 +1923,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -1448,7 +1961,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityX",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -5.5,
@@ -1504,7 +2017,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -1550,7 +2063,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -1596,7 +2109,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -1634,7 +2147,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityY",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -8.5,
@@ -1680,7 +2193,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseText",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 0.4000000059604645,
                                                             "Y": -2.5,
@@ -1736,7 +2249,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -1782,7 +2295,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -1828,7 +2341,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -1866,7 +2379,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityX",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -15.0,
@@ -1922,7 +2435,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -1968,7 +2481,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -2014,7 +2527,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -2052,7 +2565,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityY",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -18.0,
@@ -2098,7 +2611,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadText",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 0.4000000059604645,
                                                             "Y": -12.0,
@@ -2201,7 +2714,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OnPlane",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 3.5,
                                                                     "Y": 0.0,
@@ -2247,7 +2760,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OffPlane",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.599999904632568,
                                                                     "Y": 0.0,
@@ -2285,7 +2798,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PostProcess",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -5.5,
@@ -2341,7 +2854,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OnPlane",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 3.5,
                                                                     "Y": 0.0,
@@ -2387,7 +2900,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "OffPlane",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.599999904632568,
                                                                     "Y": 0.0,
@@ -2425,7 +2938,7 @@
                                                         "DissolveTex": "",
                                                         "Model": "Plane.obj",
                                                         "Name": "Shadow",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.399999976158142,
                                                             "Y": -10.0,
@@ -2528,7 +3041,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -2574,7 +3087,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -2620,7 +3133,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -2658,7 +3171,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "BGMVolume",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -8.5,
@@ -2714,7 +3227,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -2760,7 +3273,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -2806,7 +3319,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -2844,7 +3357,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MastarVolume",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -4.5,
@@ -2900,7 +3413,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "Num",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 5.0,
                                                                     "Y": 0.0,
@@ -2946,7 +3459,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow1",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 4.0,
                                                                     "Y": 0.0,
@@ -2992,7 +3505,7 @@
                                                                 "DissolveTex": "Noice.png",
                                                                 "Model": "Plane.obj",
                                                                 "Name": "arrow2",
-                                                                "NormalType": 1,
+                                                                "NormalType": 0,
                                                                 "Position": {
                                                                     "X": 6.0,
                                                                     "Y": 0.0,
@@ -3030,7 +3543,7 @@
                                                         "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "SEVolume",
-                                                        "NormalType": 1,
+                                                        "NormalType": 0,
                                                         "Position": {
                                                             "X": 1.2000000476837158,
                                                             "Y": -12.5,
@@ -3105,7 +3618,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "Board",
-                                        "NormalType": 1,
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.10000000149011612,
@@ -3151,7 +3664,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "CameraTab",
-                                        "NormalType": 1,
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": -0.7799999713897705,
                                             "Y": 0.5699999928474426,
@@ -3197,7 +3710,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "GraphicsTab",
-                                        "NormalType": 1,
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": -0.3499999940395355,
                                             "Y": 0.5699999928474426,
@@ -3243,7 +3756,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "SoundTab",
-                                        "NormalType": 1,
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.07999999821186066,
                                             "Y": 0.5699999928474426,
@@ -3346,7 +3859,7 @@
                                                 "DissolveTex": "",
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidText",
-                                                "NormalType": 1,
+                                                "NormalType": 0,
                                                 "Position": {
                                                     "X": 0.0,
                                                     "Y": 0.0,
@@ -3384,7 +3897,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "GuidPlane",
-                                        "NormalType": 1,
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.3199999928474426,
@@ -3477,7 +3990,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "OptionPlane",
-                                        "NormalType": 1,
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": 0.05999999865889549,
@@ -3570,7 +4083,7 @@
                                         "DissolveTex": "",
                                         "Model": "Plane.obj",
                                         "Name": "QuitTitlePlane",
-                                        "NormalType": 1,
+                                        "NormalType": 0,
                                         "Position": {
                                             "X": 0.0,
                                             "Y": -0.2199999988079071,
@@ -3829,7 +4342,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -3875,7 +4388,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Left",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": -1.0,
                             "Y": 2.0,
@@ -3921,7 +4434,7 @@
                         "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Right",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 1.0,
                             "Y": 2.0,
@@ -3974,9 +4487,9 @@
                 "Model": "",
                 "Name": "Door",
                 "Position": {
-                    "X": 0.6059989929199219,
-                    "Y": 4.0,
-                    "Z": -34.45500183105469
+                    "X": -19.11400032043457,
+                    "Y": 7.990999221801758,
+                    "Z": 26.514001846313477
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4038,7 +4551,7 @@
                 "DissolveTex": "",
                 "Model": "cube.obj",
                 "Name": "FlyBlock2",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
                     "X": -4.123282432556152,
                     "Y": 9.0,
@@ -4096,11 +4609,11 @@
                 "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
                 "Name": "SponePoint",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
-                    "X": 0.0,
-                    "Y": 6.0,
-                    "Z": 0.0
+                    "X": -13.95300006866455,
+                    "Y": 9.38800048828125,
+                    "Z": 22.032001495361328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4224,10 +4737,10 @@
                 "DissolveTex": "",
                 "Model": "cube.obj",
                 "Name": "FlyBlock3",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
-                    "X": 7.068127155303955,
-                    "Y": 9.0,
+                    "X": 5.579809188842773,
+                    "Y": 11.002443313598633,
                     "Z": 22.06081199645996
                 },
                 "RenderTarget": "",
@@ -4339,7 +4852,7 @@
                                 "DissolveTex": "",
                                 "Model": "Plane.obj",
                                 "Name": "Plane",
-                                "NormalType": 1,
+                                "NormalType": 0,
                                 "Position": {
                                     "X": 0.0,
                                     "Y": 45.0,
@@ -4358,8 +4871,8 @@
                                     "Z": 0.0
                                 },
                                 "Scale": {
-                                    "X": 192.0,
-                                    "Y": 108.0,
+                                    "X": 100.0,
+                                    "Y": 100.0,
                                     "Z": 1.0
                                 },
                                 "Tags": null,
@@ -4423,7 +4936,7 @@
                         "DissolveTex": "",
                         "Model": "skydome.obj",
                         "Name": "Skydome",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4516,7 +5029,7 @@
                         "DissolveTex": "",
                         "Model": "Plane.obj",
                         "Name": "Plane",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4562,7 +5075,7 @@
                         "DissolveTex": "",
                         "Model": "Plane.obj",
                         "Name": "PlaneAlpha",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 7.62939453125e-06,
                             "Y": 0.0,
@@ -4581,8 +5094,8 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 192.0,
-                            "Y": 108.0,
+                            "X": 100.0,
+                            "Y": 100.0,
                             "Z": 1.0
                         },
                         "Tags": null,
@@ -4610,9 +5123,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -193.06204223632813,
+                    "X": 12.787368774414063,
                     "Y": -10000.0,
-                    "Z": 22.03200340270996
+                    "Z": 123.33818817138672
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4622,8 +5135,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.009999999776482582,
-                    "Y": 4.71238899230957,
+                    "X": 0.0,
+                    "Y": -1.5707963705062866,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4796,7 +5309,7 @@
                 "DissolveTex": "",
                 "Model": "Plane.obj",
                 "Name": "Transparent",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
                     "X": 0.0,
                     "Y": 13.0,
@@ -4854,7 +5367,7 @@
                         "DissolveTex": "",
                         "Model": "LensL.obj",
                         "Name": "LensL",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4900,7 +5413,7 @@
                         "DissolveTex": "",
                         "Model": "LensR.obj",
                         "Name": "LensR",
-                        "NormalType": 1,
+                        "NormalType": 0,
                         "Position": {
                             "X": 0.0,
                             "Y": 0.0,
@@ -4954,7 +5467,7 @@
                 "DissolveTex": "",
                 "Model": "gogle.obj",
                 "Name": "Goggle",
-                "NormalType": 1,
+                "NormalType": 0,
                 "Position": {
                     "X": -10.706071853637695,
                     "Y": 10.959108352661133,
@@ -4987,15 +5500,6 @@
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
-            },
-            {
-                "Active": true,
-                "Name": "AttractParticleManager",
-                "Tags": [
-                    "AttractParticleManager"
-                ],
-                "Type": "ScriptComponent",
-                "filePath": "AttractParticleManager"
             }
         ],
         "EfkEffects": [
@@ -5075,7 +5579,7 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
-                "Noice.png": "Assets/Images/Noice.png",
+                "Noice.png": "Assets\\Images\\Noice.png",
                 "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",

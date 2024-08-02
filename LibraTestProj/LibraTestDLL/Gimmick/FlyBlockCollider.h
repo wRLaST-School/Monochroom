@@ -3,34 +3,39 @@
 #include <Object3D.h>
 #include <SphereCollider.h>
 #include <OBBCollider.h>
+#include <OBBCollider.h>
 #include <FlyBlock.h>
+#include <Timer.h>
 
 class FlyBlockCollider :
-    public IScriptObject
+	public IScriptObject
 {
 private:
-    Object3D* mObj;
-    FlyBlock* mFlyBlock;
-    SphereCollider mMoveCollider;
-    OBBCollider mBodyCollider;
-    OBBCollider mDownCollider;
-    OBBCollider mTopCollider;
+	Object3D* mObj;
+	FlyBlock* mFlyBlock;
+	SphereCollider mMoveCollider;
+	OBBCollider mBodyCollider;
+	OBBCollider mDownCollider;
+	OBBCollider mTopCollider;
+	Timer mTimer;
 
 public:
-    void Init();
-    void Update();
-    void Draw();
-    void CopyComponent(IComponent* src) { src; }
+	void Init();
+	void Update();
+	void Draw();
+	void CopyComponent(IComponent* src) { src; }
 
-    DefDel;
+	void IsMoveing();
+
+	DefDel;
 
 public:
-    SphereCollider GetMoveCollider();
-    OBBCollider GetBodyCollider();
-    OBBCollider GetDownCollider();
-    OBBCollider GetTopCollider();
+	SphereCollider GetMoveCollider();
+	OBBCollider GetBodyCollider();
+	OBBCollider GetDownCollider();
+	OBBCollider GetTopCollider();
 
-    Object3D* GetObj() { return mObj; }
+	Object3D* GetObj() { return mObj; }
 };
 
 RegisterScript(FlyBlockCollider);
