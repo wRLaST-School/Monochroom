@@ -61,6 +61,8 @@ void SelectPanel::Init()
 	mCameraObj->rotationE = mTitleCameraFirstRota;
 	mCameraObj->Update();
 
+	Camera::Set(*mCameraObj->CastTo<Camera>());
+
 	// ゴーグルのセット
 	mGoggleObj = SceneManager::FindObject<Object3D>("Goggle");
 	mGoggleObj->brightnessCB.contents->w = 0;
@@ -384,6 +386,14 @@ void SelectPanel::SelectStageUpdate()
 		}
 	}
 
+	if (Input::Key::Triggered(DIK_W) ||
+		Input::Key::Triggered(DIK_A) ||
+		Input::Key::Triggered(DIK_S) ||
+		Input::Key::Triggered(DIK_D))
+	{
+		SoundManager::Play("Select");
+	}
+
 	if (mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state != PRESSED)
 	{
 		mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = SELECT;
@@ -391,6 +401,7 @@ void SelectPanel::SelectStageUpdate()
 		if (Input::Key::Triggered(DIK_Z))
 		{
 			mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = PRESSED;
+			SoundManager::Play("Decide");
 		}
 	}
 
@@ -464,6 +475,8 @@ void SelectPanel::MoveToCapcelUpdate()
 		mSceneChangeCameraTime = 0;
 		mSelectState = STAGECHAGE;
 		ConsoleWindow::Log("シーンチェンジカメラ移動終了");
+
+		SoundManager::Play("Blink");
 	}
 }
 

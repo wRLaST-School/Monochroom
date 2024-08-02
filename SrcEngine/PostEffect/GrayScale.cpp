@@ -11,6 +11,7 @@ int32_t GrayScale::mGrayEffectTime = 0;
 int32_t GrayScale::mGrayEffectTimeMax = 40;
 bool GrayScale::mIsEquip = false;
 bool GrayScale::mIsGrayEffect = false;
+bool GrayScale::mIsGrayScale = false;
 
 void GrayScale::Init()
 {
@@ -102,9 +103,21 @@ void GrayScale::BeginGrayEffect(bool isEquip, int32_t effectTime)
 
 void GrayScale::GrayEffectUpdate()
 {
+	if (info.offsetRatio == 0.0f)
+	{
+		mIsGrayScale = true;
+	}
+	else
+	{
+		mIsGrayScale = false;
+	}
+
+
 	if (mIsGrayEffect)
 	{
 		int32_t time = 0;
+
+		ConsoleWindow::Log("BAKA_AHO");
 
 		if (mIsEquip)
 		{

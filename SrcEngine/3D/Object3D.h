@@ -133,5 +133,7 @@ public:
 	Vec2 tiling;
 	Vec2 offset;
 
+	int texType = 0;
+
 };
 

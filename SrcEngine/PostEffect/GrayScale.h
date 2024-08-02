@@ -40,6 +40,7 @@ private:
 	static int32_t mGrayEffectTimeMax;
 	static bool mIsEquip;
 	static bool mIsGrayEffect;
+	static bool mIsGrayScale;
 
 public:
 	DLLExport static GrayScaleInfo info;
@@ -52,6 +53,7 @@ public:
 public:
 	DLLExport static void BeginGrayEffect(bool isEquip, int32_t effectTime);
 	DLLExport static bool GetIsEffect() { return mIsGrayEffect; }
+	DLLExport static bool GetIsGrayScale() { return mIsGrayScale; }
 
 private:
 	static void GrayEffectUpdate();

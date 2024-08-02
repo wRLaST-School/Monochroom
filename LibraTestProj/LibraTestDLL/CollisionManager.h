@@ -67,6 +67,7 @@ public:
 	void CopyComponent(IComponent* src) { src; }
 
 	float CheckRayHitOtherDis(FlyBlockCollider* current);
+	void CheckRayHitWhFlyBlockAndWhWall();
 	void RecursiveAttracting(FlyBlockCollider* current, const  std::vector<FlyBlockCollider*>& colliders);
 	bool CheckHitOther(FlyBlockCollider* current);
 
