@@ -2,15 +2,27 @@
 #include <ScriptComponent.h>
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
+#include <Timer.h>
 
 void FlyBlockCollider::Init()
 {
 	mObj = This()->Parent()->CastTo<Object3D>();
 	mFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", mObj);
+
+	const uint32_t maxTime = 60;
+	mTimer.SetLimitTimer(maxTime);
+	mTimer.SetTimer(maxTime);
+	mTimer.Reset();
 }
 
 void FlyBlockCollider::Update()
 {
+	mTimer.Update();
+	if (mTimer.GetisTimeOut())
+	{
+		mMoveCollider.isActive = true;
+	}
+
 	// 移動用
 	float r = Vec3(mObj->scale).GetMaxElement() * 0.95f;
 	Vec3 moveVec = mFlyBlock->GetAttractVec()/* * r*/;
@@ -37,6 +49,12 @@ void FlyBlockCollider::Draw()
 	//mBodyCollider.DrawCollider();
 	mTopCollider.DrawCollider();
 	mDownCollider.DrawCollider();
+}
+
+void FlyBlockCollider::IsMoveing()
+{
+	mMoveCollider.isActive = false;
+	mTimer.Reset();
 }
 
 SphereCollider FlyBlockCollider::GetMoveCollider()

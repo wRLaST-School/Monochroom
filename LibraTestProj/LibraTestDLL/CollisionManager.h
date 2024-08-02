@@ -32,6 +32,7 @@ private:
 	std::vector<GoalCollider*> mGoalColliders;
 	std::vector<GoggleCollider*> mGoggleColliders;
 	std::vector<TransparentCollider*> mTransparentColliders;
+	SphereCollider coll;
 
 	BlockCollEffect* mBlockCollEffect;
 
@@ -57,15 +58,16 @@ private:
 	void FlyBlocksHitGoals();
 	void FlyBlocksHitDoors();
 
-	float CheckRayHitOtherDis();
 
 public:
 	void Init();
 	void Update();
-	void Draw() {}
+	void Draw();
 	void CopyComponent(IComponent* src) { src; }
 
-	void RecursiveAttracting(FlyBlockCollider* current,const  std::vector<FlyBlockCollider*>& colliders);
+	float CheckRayHitOtherDis(FlyBlockCollider* current);
+	void RecursiveAttracting(FlyBlockCollider* current, const  std::vector<FlyBlockCollider*>& colliders);
+	bool CheckHitOtherFlyBlock(FlyBlockCollider* current);
 
 	DefDel;
 };

@@ -714,22 +714,35 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	{
 		renderTarget = jsonObject["RenderTarget"];
 	}
-	position.x = jsonObject["Position"]["X"];
-	position.y = jsonObject["Position"]["Y"];
-	position.z = jsonObject["Position"]["Z"];
 
-	scale.x = jsonObject["Scale"]["X"];
-	scale.y = jsonObject["Scale"]["Y"];
-	scale.z = jsonObject["Scale"]["Z"];
+	if (jsonObject.contains("Position"))
+	{
+		position.x = jsonObject["Position"]["X"];
+		position.y = jsonObject["Position"]["Y"];
+		position.z = jsonObject["Position"]["Z"];
+	}
 
-	rotation.v.x = jsonObject["Rotation"]["X"];
-	rotation.v.y = jsonObject["Rotation"]["Y"];
-	rotation.v.z = jsonObject["Rotation"]["Z"];
-	rotation.w = jsonObject["Rotation"]["W"];
+	if (jsonObject.contains("Scale"))
+	{
+		scale.x = jsonObject["Scale"]["X"];
+		scale.y = jsonObject["Scale"]["Y"];
+		scale.z = jsonObject["Scale"]["Z"];
+	}
 
-	rotationE.x = jsonObject["RotationEuler"]["X"];
-	rotationE.y = jsonObject["RotationEuler"]["Y"];
-	rotationE.z = jsonObject["RotationEuler"]["Z"];
+	if (jsonObject.contains("Rotation"))
+	{
+		rotation.v.x = jsonObject["Rotation"]["X"];
+		rotation.v.y = jsonObject["Rotation"]["Y"];
+		rotation.v.z = jsonObject["Rotation"]["Z"];
+		rotation.w = jsonObject["Rotation"]["W"];
+	}
+
+	if (jsonObject.contains("RotationEuler"))
+	{
+		rotationE.x = jsonObject["RotationEuler"]["X"];
+		rotationE.y = jsonObject["RotationEuler"]["Y"];
+		rotationE.z = jsonObject["RotationEuler"]["Z"];
+	}
 
 	if (jsonObject.contains("Brightness"))
 	{
@@ -759,13 +772,17 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 		}
 	}
 
-	std::string modelStr = jsonObject.At("Model");
+	model = nullptr;
+	if (jsonObject.contains("Model"))
+	{
+		std::string modelStr = jsonObject.At("Model");
+		model = ModelManager::GetModel(modelStr);
+	}
 
 	if (jsonObject.contains("BlendMode"))
 	{
 		blendMode = (BlendMode)jsonObject["BlendMode"];
 	}
-	model = ModelManager::GetModel(modelStr);
 	if (model)
 	{
 		if (jsonObject.contains("NormalType"))

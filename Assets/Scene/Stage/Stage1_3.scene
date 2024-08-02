@@ -22,6 +22,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Plane.obj",
                         "Name": "Plane",
                         "NormalType": 1,
@@ -43,13 +45,18 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 100.0,
-                            "Y": 100.0,
+                            "X": 192.0,
+                            "Y": 108.0,
                             "Z": 1.0
                         },
                         "Tags": null,
                         "Texture": "",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -61,6 +68,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Plane.obj",
                         "Name": "PlaneAlpha",
                         "NormalType": 1,
@@ -82,13 +91,18 @@
                             "Z": 1.5707963705062866
                         },
                         "Scale": {
-                            "X": 100.0,
-                            "Y": 100.0,
+                            "X": 192.0,
+                            "Y": 108.0,
                             "Z": 1.0
                         },
                         "Tags": null,
                         "Texture": "TestTex.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -101,6 +115,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
@@ -127,7 +143,12 @@
                 },
                 "Tags": null,
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -149,9 +170,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 6.848000526428223,
-                    "Y": 9.38800048828125,
-                    "Z": 22.032001495361328
+                    "X": 0.0,
+                    "Y": 5.670000076293945,
+                    "Z": -53.676002502441406
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -185,6 +206,8 @@
                     "Z": 1.0
                 },
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
                 "Name": "yuka",
                 "NormalType": 1,
@@ -212,7 +235,12 @@
                 },
                 "Tags": null,
                 "Texture": "white.png",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -243,6 +271,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -272,7 +302,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -293,6 +328,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -322,7 +359,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -343,6 +385,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -372,7 +416,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -393,6 +442,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -422,7 +473,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -443,6 +499,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -472,7 +530,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -493,6 +556,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -522,7 +587,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -543,6 +613,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -572,7 +644,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -593,6 +670,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -622,7 +701,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -643,6 +727,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -672,7 +758,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -693,6 +784,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -722,7 +815,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -743,6 +841,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -772,7 +872,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -793,6 +898,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -822,7 +929,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -843,6 +955,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -872,7 +986,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -893,6 +1012,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -922,7 +1043,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -943,6 +1069,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -972,7 +1100,12 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -993,6 +1126,8 @@
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Block.obj",
                         "Name": "Block",
                         "NormalType": 1,
@@ -1022,10 +1157,17 @@
                             "Block"
                         ],
                         "Texture": "Block1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "StageBlocks",
                 "Position": {
@@ -1052,7 +1194,12 @@
                 },
                 "Tags": null,
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -1073,6 +1220,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "Cube",
                 "Name": "Glass",
                 "NormalType": 1,
@@ -1102,7 +1251,12 @@
                     "Glass"
                 ],
                 "Texture": "white.png",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -1124,6 +1278,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Goggles.obj",
                         "Name": "Goggles",
                         "NormalType": 1,
@@ -1151,7 +1307,12 @@
                         },
                         "Tags": null,
                         "Texture": "Goggles.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": false,
@@ -1163,6 +1324,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "cube.obj",
                         "Name": "Debug Cube",
                         "NormalType": 1,
@@ -1192,7 +1355,12 @@
                             "Player"
                         ],
                         "Texture": "",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -1217,6 +1385,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "Player",
                 "Position": {
@@ -1246,7 +1416,12 @@
                     "Stage"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -1274,6 +1449,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
                 "Name": "FlyBlock",
                 "NormalType": 1,
@@ -1304,7 +1481,12 @@
                     "Stage"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -1326,6 +1508,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "ButtonBody.obj",
                         "Name": "Body",
                         "NormalType": 1,
@@ -1353,7 +1537,12 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -1365,6 +1554,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "ButtonFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
@@ -1392,7 +1583,12 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -1410,6 +1606,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "Button",
                 "Position": {
@@ -1440,7 +1638,12 @@
                     "Stage"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": false,
@@ -1472,6 +1675,8 @@
                                     "Z": 0.0
                                 },
                                 "DisableDraw": false,
+                                "DissolveStrength": 1.25,
+                                "DissolveTex": "Noice.png",
                                 "Model": "Plane.obj",
                                 "Name": "BackBlack",
                                 "NormalType": 1,
@@ -1499,7 +1704,12 @@
                                 },
                                 "Tags": null,
                                 "Texture": "black",
-                                "Type": "Object3D"
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
+                                "Type": "Object3D",
+                                "UseMyselfDissolveStrength": false
                             },
                             {
                                 "Active": true,
@@ -1521,6 +1731,8 @@
                                             "Z": 1.0
                                         },
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "",
                                         "Name": "MenuText",
                                         "Position": {
@@ -1547,10 +1759,17 @@
                                         },
                                         "Tags": null,
                                         "Texture": "",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     }
                                 ],
                                 "DisableDraw": false,
+                                "DissolveStrength": 1.25,
+                                "DissolveTex": "Noice.png",
                                 "Model": "Plane.obj",
                                 "Name": "MenuPlane",
                                 "NormalType": 1,
@@ -1578,7 +1797,12 @@
                                 },
                                 "Tags": null,
                                 "Texture": "white.png",
-                                "Type": "Object3D"
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
+                                "Type": "Object3D",
+                                "UseMyselfDissolveStrength": false
                             },
                             {
                                 "Active": false,
@@ -1620,6 +1844,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityX",
                                                         "NormalType": 1,
@@ -1647,7 +1873,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -1659,6 +1890,8 @@
                                                             "Z": 0.3706563711166382
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseSensitivityY",
                                                         "NormalType": 1,
@@ -1686,7 +1919,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -1698,6 +1936,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MouseText",
                                                         "NormalType": 1,
@@ -1725,7 +1965,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -1737,6 +1982,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityX",
                                                         "NormalType": 1,
@@ -1764,7 +2011,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -1776,6 +2028,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadSensitivityY",
                                                         "NormalType": 1,
@@ -1803,7 +2057,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -1815,6 +2074,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PadText",
                                                         "NormalType": 1,
@@ -1842,10 +2103,17 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     }
                                                 ],
                                                 "DisableDraw": false,
+                                                "DissolveStrength": 1.25,
+                                                "DissolveTex": "Noice.png",
                                                 "Model": "",
                                                 "Name": "CameraTabItems",
                                                 "Position": {
@@ -1872,7 +2140,12 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
-                                                "Type": "Object3D"
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
+                                                "Type": "Object3D",
+                                                "UseMyselfDissolveStrength": false
                                             },
                                             {
                                                 "Active": false,
@@ -1894,6 +2167,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "PostProcess",
                                                         "NormalType": 1,
@@ -1921,7 +2196,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -1933,6 +2213,8 @@
                                                             "Z": 0.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "Shadow",
                                                         "NormalType": 1,
@@ -1960,10 +2242,17 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     }
                                                 ],
                                                 "DisableDraw": false,
+                                                "DissolveStrength": 1.25,
+                                                "DissolveTex": "Noice.png",
                                                 "Model": "",
                                                 "Name": "GraphicsTabItems",
                                                 "Position": {
@@ -1990,7 +2279,12 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
-                                                "Type": "Object3D"
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
+                                                "Type": "Object3D",
+                                                "UseMyselfDissolveStrength": false
                                             },
                                             {
                                                 "Active": false,
@@ -2012,6 +2306,8 @@
                                                             "Z": 1.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "BGMVolume",
                                                         "NormalType": 1,
@@ -2039,7 +2335,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -2051,6 +2352,8 @@
                                                             "Z": 1.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "MastarVolume",
                                                         "NormalType": 1,
@@ -2078,7 +2381,12 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     },
                                                     {
                                                         "Active": true,
@@ -2090,6 +2398,8 @@
                                                             "Z": 1.0
                                                         },
                                                         "DisableDraw": false,
+                                                        "DissolveStrength": 1.25,
+                                                        "DissolveTex": "Noice.png",
                                                         "Model": "Plane.obj",
                                                         "Name": "SEVolume",
                                                         "NormalType": 1,
@@ -2117,10 +2427,17 @@
                                                         },
                                                         "Tags": null,
                                                         "Texture": "white.png",
-                                                        "Type": "Object3D"
+                                                        "Tiling": {
+                                                            "X": 1.0,
+                                                            "Y": 1.0
+                                                        },
+                                                        "Type": "Object3D",
+                                                        "UseMyselfDissolveStrength": false
                                                     }
                                                 ],
                                                 "DisableDraw": false,
+                                                "DissolveStrength": 1.25,
+                                                "DissolveTex": "Noice.png",
                                                 "Model": "",
                                                 "Name": "SoundTabItems",
                                                 "Position": {
@@ -2147,10 +2464,17 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
-                                                "Type": "Object3D"
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
+                                                "Type": "Object3D",
+                                                "UseMyselfDissolveStrength": false
                                             }
                                         ],
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "Board",
                                         "NormalType": 1,
@@ -2178,7 +2502,12 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     },
                                     {
                                         "Active": true,
@@ -2190,6 +2519,8 @@
                                             "Z": 1.0
                                         },
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "CameraTab",
                                         "NormalType": 1,
@@ -2217,7 +2548,12 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     },
                                     {
                                         "Active": true,
@@ -2229,6 +2565,8 @@
                                             "Z": 0.0
                                         },
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "GraphicsTab",
                                         "NormalType": 1,
@@ -2256,7 +2594,12 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     },
                                     {
                                         "Active": true,
@@ -2268,6 +2611,8 @@
                                             "Z": 0.0
                                         },
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "SoundTab",
                                         "NormalType": 1,
@@ -2295,10 +2640,17 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     }
                                 ],
                                 "DisableDraw": false,
+                                "DissolveStrength": 1.25,
+                                "DissolveTex": "Noice.png",
                                 "Model": "",
                                 "Name": "Tabs",
                                 "Position": {
@@ -2325,7 +2677,12 @@
                                 },
                                 "Tags": null,
                                 "Texture": "",
-                                "Type": "Object3D"
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
+                                "Type": "Object3D",
+                                "UseMyselfDissolveStrength": false
                             },
                             {
                                 "Active": true,
@@ -2357,6 +2714,8 @@
                                                     "Z": 1.0
                                                 },
                                                 "DisableDraw": false,
+                                                "DissolveStrength": 1.25,
+                                                "DissolveTex": "Noice.png",
                                                 "Model": "Plane.obj",
                                                 "Name": "GuidText",
                                                 "NormalType": 1,
@@ -2384,10 +2743,17 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "guidTextTex",
-                                                "Type": "Object3D"
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
+                                                "Type": "Object3D",
+                                                "UseMyselfDissolveStrength": false
                                             }
                                         ],
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "GuidPlane",
                                         "NormalType": 1,
@@ -2415,7 +2781,12 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     },
                                     {
                                         "Active": true,
@@ -2437,6 +2808,8 @@
                                                     "Z": 1.0
                                                 },
                                                 "DisableDraw": false,
+                                                "DissolveStrength": 1.25,
+                                                "DissolveTex": "Noice.png",
                                                 "Model": "",
                                                 "Name": "OptionText",
                                                 "Position": {
@@ -2463,10 +2836,17 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
-                                                "Type": "Object3D"
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
+                                                "Type": "Object3D",
+                                                "UseMyselfDissolveStrength": false
                                             }
                                         ],
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "OptionPlane",
                                         "NormalType": 1,
@@ -2494,7 +2874,12 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     },
                                     {
                                         "Active": true,
@@ -2516,6 +2901,8 @@
                                                     "Z": 1.0
                                                 },
                                                 "DisableDraw": false,
+                                                "DissolveStrength": 1.25,
+                                                "DissolveTex": "Noice.png",
                                                 "Model": "",
                                                 "Name": "QuitTitleText",
                                                 "Position": {
@@ -2542,10 +2929,17 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
-                                                "Type": "Object3D"
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
+                                                "Type": "Object3D",
+                                                "UseMyselfDissolveStrength": false
                                             }
                                         ],
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "QuitTitlePlane",
                                         "NormalType": 1,
@@ -2573,7 +2967,12 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     },
                                     {
                                         "Active": true,
@@ -2595,6 +2994,8 @@
                                                     "Z": 1.0
                                                 },
                                                 "DisableDraw": false,
+                                                "DissolveStrength": 1.25,
+                                                "DissolveTex": "Noice.png",
                                                 "Model": "",
                                                 "Name": "SelectText",
                                                 "Position": {
@@ -2621,10 +3022,17 @@
                                                 },
                                                 "Tags": null,
                                                 "Texture": "",
-                                                "Type": "Object3D"
+                                                "Tiling": {
+                                                    "X": 1.0,
+                                                    "Y": 1.0
+                                                },
+                                                "Type": "Object3D",
+                                                "UseMyselfDissolveStrength": false
                                             }
                                         ],
                                         "DisableDraw": false,
+                                        "DissolveStrength": 1.25,
+                                        "DissolveTex": "Noice.png",
                                         "Model": "Plane.obj",
                                         "Name": "SelectPlane",
                                         "NormalType": 1,
@@ -2652,10 +3060,17 @@
                                         },
                                         "Tags": null,
                                         "Texture": "white.png",
-                                        "Type": "Object3D"
+                                        "Tiling": {
+                                            "X": 1.0,
+                                            "Y": 1.0
+                                        },
+                                        "Type": "Object3D",
+                                        "UseMyselfDissolveStrength": false
                                     }
                                 ],
                                 "DisableDraw": false,
+                                "DissolveStrength": 1.25,
+                                "DissolveTex": "Noice.png",
                                 "Model": "",
                                 "Name": "Planes",
                                 "Position": {
@@ -2682,10 +3097,17 @@
                                 },
                                 "Tags": null,
                                 "Texture": "",
-                                "Type": "Object3D"
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
+                                "Type": "Object3D",
+                                "UseMyselfDissolveStrength": false
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "",
                         "Name": "UIParentObj",
                         "Position": {
@@ -2712,7 +3134,12 @@
                         },
                         "Tags": null,
                         "Texture": "",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -2740,6 +3167,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "UI",
                 "Position": {
@@ -2766,7 +3195,12 @@
                 },
                 "Tags": null,
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -2788,6 +3222,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
@@ -2815,7 +3251,12 @@
                         },
                         "Tags": null,
                         "Texture": "DissolveMap.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -2827,6 +3268,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Left",
                         "NormalType": 1,
@@ -2854,7 +3297,12 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -2866,6 +3314,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Right",
                         "NormalType": 1,
@@ -2893,7 +3343,12 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -2911,6 +3366,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "Door",
                 "Position": {
@@ -2941,7 +3398,12 @@
                     "DB1"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -2969,6 +3431,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
                 "Name": "FlyBlock2",
                 "NormalType": 1,
@@ -2999,7 +3463,12 @@
                     "Stage"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3020,6 +3489,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
                 "Name": "SponePoint",
                 "NormalType": 1,
@@ -3047,7 +3518,12 @@
                 },
                 "Tags": null,
                 "Texture": "buttonBackTex",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3077,6 +3553,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "Goal.obj",
                 "Name": "Goal",
                 "NormalType": 1,
@@ -3106,7 +3584,12 @@
                     "Goal"
                 ],
                 "Texture": "Goal.png",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3134,6 +3617,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "Goggles.obj",
                 "Name": "Goggle",
                 "NormalType": 1,
@@ -3163,7 +3648,12 @@
                     "Goggle"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3191,6 +3681,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
                 "Name": "FlyBlock3",
                 "NormalType": 1,
@@ -3221,7 +3713,12 @@
                     "Stage"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3253,6 +3750,8 @@
                                     "Z": 1.0
                                 },
                                 "DisableDraw": false,
+                                "DissolveStrength": 1.25,
+                                "DissolveTex": "Noice.png",
                                 "Model": "stage1_pipe.obj",
                                 "Name": "Pipe",
                                 "NormalType": 1,
@@ -3280,7 +3779,12 @@
                                 },
                                 "Tags": null,
                                 "Texture": "stage1_pipe.png",
-                                "Type": "Object3D"
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
+                                "Type": "Object3D",
+                                "UseMyselfDissolveStrength": false
                             },
                             {
                                 "Active": true,
@@ -3292,6 +3796,8 @@
                                     "Z": 1.0
                                 },
                                 "DisableDraw": false,
+                                "DissolveStrength": 1.25,
+                                "DissolveTex": "Noice.png",
                                 "Model": "Plane.obj",
                                 "Name": "Plane",
                                 "NormalType": 1,
@@ -3319,10 +3825,17 @@
                                 },
                                 "Tags": null,
                                 "Texture": "white.png",
-                                "Type": "Object3D"
+                                "Tiling": {
+                                    "X": 1.0,
+                                    "Y": 1.0
+                                },
+                                "Type": "Object3D",
+                                "UseMyselfDissolveStrength": false
                             }
                         ],
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "stage1.obj",
                         "Name": "StageObj",
                         "NormalType": 1,
@@ -3350,7 +3863,12 @@
                         },
                         "Tags": null,
                         "Texture": "stage1.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -3362,6 +3880,8 @@
                             "Z": 0.7915058135986328
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "skydome.obj",
                         "Name": "Skydome",
                         "NormalType": 1,
@@ -3389,10 +3909,17 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "BackGround",
                 "Position": {
@@ -3419,7 +3946,12 @@
                 },
                 "Tags": null,
                 "Texture": "stage1.png",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3441,6 +3973,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Plane.obj",
                         "Name": "Plane",
                         "NormalType": 1,
@@ -3468,7 +4002,12 @@
                         },
                         "Tags": null,
                         "Texture": "",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -3480,6 +4019,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "Plane.obj",
                         "Name": "PlaneAlpha",
                         "NormalType": 1,
@@ -3507,7 +4048,12 @@
                         },
                         "Tags": null,
                         "Texture": "TestTex.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -3518,6 +4064,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
@@ -3544,7 +4092,12 @@
                 },
                 "Tags": null,
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3699,6 +4252,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "ButtonBody.obj",
                         "Name": "Body",
                         "NormalType": 1,
@@ -3726,7 +4281,12 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -3738,6 +4298,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "ButtonFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
@@ -3765,7 +4327,12 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -3783,6 +4350,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "Button",
                 "Position": {
@@ -3813,7 +4382,12 @@
                     "DB2"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3835,6 +4409,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "ButtonBody.obj",
                         "Name": "Body",
                         "NormalType": 1,
@@ -3862,7 +4438,12 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -3874,6 +4455,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "ButtonFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
@@ -3901,7 +4484,12 @@
                         },
                         "Tags": null,
                         "Texture": "ButtonBody.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -3919,6 +4507,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "Button",
                 "Position": {
@@ -3949,7 +4539,12 @@
                     "DB3"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -3971,6 +4566,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
@@ -3998,7 +4595,12 @@
                         },
                         "Tags": null,
                         "Texture": "DissolveMap.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -4010,6 +4612,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Left",
                         "NormalType": 1,
@@ -4037,7 +4641,12 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -4049,6 +4658,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Right",
                         "NormalType": 1,
@@ -4076,7 +4687,12 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -4094,6 +4710,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "Door",
                 "Position": {
@@ -4124,7 +4742,12 @@
                     "DB2"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -4146,6 +4769,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "DoorFlame.obj",
                         "Name": "Flame",
                         "NormalType": 1,
@@ -4173,7 +4798,12 @@
                         },
                         "Tags": null,
                         "Texture": "DissolveMap.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -4185,6 +4815,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Left",
                         "NormalType": 1,
@@ -4212,7 +4844,12 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -4224,6 +4861,8 @@
                             "Z": 1.0
                         },
                         "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
                         "Model": "cube",
                         "Name": "Right",
                         "NormalType": 1,
@@ -4251,7 +4890,12 @@
                         },
                         "Tags": null,
                         "Texture": "white.png",
-                        "Type": "Object3D"
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
@@ -4269,6 +4913,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "",
                 "Name": "Door",
                 "Position": {
@@ -4299,7 +4945,12 @@
                     "DB3"
                 ],
                 "Texture": "",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -4320,6 +4971,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "Cube",
                 "Name": "Glass",
                 "NormalType": 1,
@@ -4349,7 +5002,12 @@
                     "Glass"
                 ],
                 "Texture": "white.png",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -4370,6 +5028,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "Cube",
                 "Name": "Glass",
                 "NormalType": 1,
@@ -4399,7 +5059,12 @@
                     "Glass"
                 ],
                 "Texture": "white.png",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -4420,6 +5085,8 @@
                     }
                 ],
                 "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
                 "Model": "Cube",
                 "Name": "Glass",
                 "NormalType": 1,
@@ -4449,7 +5116,21 @@
                     "Glass"
                 ],
                 "Texture": "white.png",
-                "Type": "Object3D"
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "Name": "AttractParticleManager",
+                "Tags": [
+                    "AttractParticleManager"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "AttractParticleManager"
             }
         ],
         "EfkEffects": [
@@ -4522,6 +5203,7 @@
         "Tags": null,
         "Textures": [
             {
+                "Plane.png": "Assets\\Images\\Plane.png",
                 "BasicParticle": "Assets/Images/circleParticle.png",
                 "Black": "Assets/Images/black.png",
                 "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
@@ -4529,6 +5211,7 @@
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "Noice.png": "Assets/Images/Noice.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",

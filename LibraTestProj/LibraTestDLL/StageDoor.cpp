@@ -10,9 +10,6 @@ void StageDoor::Init()
 	mEasing->SetEaseTimer(kMoveTime);
 	mEasing->SetEaseType(EaseType::Out);
 
-	mClosingPosLTmp = SceneManager::FindChildObject<Object3D>("Left", Parent())->position;
-	mClosingPosRTmp = SceneManager::FindChildObject<Object3D>("Right", Parent())->position;
-
 	mIsMoving = false;
 	mIsClosing = true;
 }
@@ -81,14 +78,14 @@ void StageDoor::OpenDoor()
 {
 	mCloseLimitTime = 0;
 
-	OpClDoorInternal(mClosingPosLTmp, mClosingPosLTmp + mClosingPosLTmp * kOpeningPosExtendL
-		, mClosingPosRTmp, mClosingPosRTmp + mClosingPosRTmp * kOpeningPosExtendR, false);
+	OpClDoorInternal(kClosingPosLTmp, kClosingPosLTmp + kClosingPosLTmp * kOpeningPosExtendL
+		, kClosingPosRTmp, kClosingPosRTmp + kClosingPosRTmp * kOpeningPosExtendR, false);
 }
 
 void StageDoor::CloseDoor()
 {
-	OpClDoorInternal(mClosingPosLTmp + mClosingPosLTmp * kOpeningPosExtendL, mClosingPosLTmp
-		, mClosingPosRTmp + mClosingPosRTmp * kOpeningPosExtendR, mClosingPosRTmp, true);
+	OpClDoorInternal(kClosingPosLTmp + kClosingPosLTmp * kOpeningPosExtendL, kClosingPosLTmp
+		, kClosingPosRTmp + kClosingPosRTmp * kOpeningPosExtendR, kClosingPosRTmp, true);
 }
 
 

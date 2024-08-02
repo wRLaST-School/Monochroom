@@ -83,7 +83,7 @@ public:
 	const DLLExport std::string& GetName();
 
 	DLLExport bool FindTag(const std::string& tag);
-	DLLExport std::string GetSameTag(const IComponent& component);
+	DLLExport std::string GetSameTag(const IComponent& component, const std::string& str);
 	DLLExport std::string FindStringTag(const std::string& tag);
 	DLLExport void AddTag(const std::string& tag);
 	DLLExport std::string GetTag(const uint32_t index);

@@ -17,6 +17,7 @@ void FlyBlock::Init()
 	mAttractParentVec = { 0,0,0 };
 
 	mEasing->SetEaseTimer(kAttractedFrameMax);
+	mEasing->SetPowNum(3.0f);
 }
 
 void FlyBlock::Update()
@@ -32,7 +33,7 @@ void FlyBlock::Update()
 
 		mOldAttractPos = mParent->position;
 
-		mParent->position = mEasing->Out(mBeginPos, mEndPos);
+		mParent->position = mEasing->InOut(mBeginPos, mEndPos);
 		mAttractParentVec = Vec3{ mParent->position.x,mParent->position.y,mParent->position.z } - mOldAttractPos;
 
 		if (mEasing->GetTimeRate() >= 1.0f)
