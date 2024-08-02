@@ -30,7 +30,8 @@ private:
 	std::vector<GoalCollider*> mGoalColliders;
 	std::vector<GoggleCollider*> mGoggleColliders;
 	std::vector<TransparentCollider*> mTransparentColliders;
-	SphereCollider coll;
+	SphereCollider coll1;
+	SphereCollider coll2;
 
 private:
 	template<typename T>
@@ -63,7 +64,7 @@ public:
 
 	float CheckRayHitOtherDis(FlyBlockCollider* current);
 	void RecursiveAttracting(FlyBlockCollider* current, const  std::vector<FlyBlockCollider*>& colliders);
-	bool CheckHitOtherFlyBlock(FlyBlockCollider* current);
+	bool CheckHitOther(FlyBlockCollider* current);
 
 	DefDel;
 };

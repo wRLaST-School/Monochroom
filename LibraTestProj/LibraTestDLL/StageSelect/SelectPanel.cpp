@@ -12,8 +12,8 @@ void SelectPanel::Init()
 	mSelectMaxNumY = 2;
 	mSelectMaxNumX.resize(mSelectMaxNumY);
 
-	mSelectMaxNumX[Stage1] = 3;
-	mSelectMaxNumX[Stage2] = 4;
+	mSelectMaxNumX[Stage1] = 5;
+	mSelectMaxNumX[Stage2] = 5;
 
 	mSelectCurrentNum = { 0,0 };
 

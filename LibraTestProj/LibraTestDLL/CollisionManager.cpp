@@ -96,8 +96,11 @@ void CollisionManager::Update()
 
 void CollisionManager::Draw()
 {
-	coll.DrawCollider();
-	coll.color = Color::Green;
+	Color col = Color::Green;
+	coll1.DrawCollider();
+	coll1.color = col;
+	coll2.DrawCollider();
+	coll2.color = col;
 }
 
 void CollisionManager::CameraInsideFlyBlocks()
@@ -157,9 +160,10 @@ void CollisionManager::RayHitFlyBlocks()
 			Vec3 dirVec = mViewCollider->GetRayCollider().r.ray;
 
 			// 仮に移動させて当たるがどうかをチェックする用
-			if (CheckHitOtherFlyBlock(fbc))
+			if (CheckHitOther(fbc))
 			{
 				// 当たっていたら移動させない
+				flyBlock = nullptr;
 				continue;
 			}
 
@@ -172,16 +176,17 @@ void CollisionManager::RayHitFlyBlocks()
 
 			//引き寄せの演出
 			//始点と終点を決めて演出開始
-			GameManager::GetInstance()->GetAttractParticleManager()->
-				BeginAttractEffect(flyBlock,
-					flyBlock->Parent()->CastTo<Object3D>()->position, ePos);
+			auto particleManager = GameManager::GetInstance()->GetAttractParticleManager();
+			if (particleManager)
+			{
+				particleManager->
+					BeginAttractEffect(flyBlock,
+						flyBlock->Parent()->CastTo<Object3D>()->position, ePos);
+			}
 
 			flyBlock = nullptr;
 		}
 	}
-
-	ConsoleWindow::Log(std::format("Dis : {}", dis));
-	ConsoleWindow::Log(std::format("Min Dis : {}", minDis));
 }
 
 void CollisionManager::RayHitGoggle()
@@ -821,6 +826,13 @@ void CollisionManager::RecursiveAttracting(
 			continue;
 		}
 
+		// 仮に移動させて当たるがどうかをチェックする用
+		if (CheckHitOther(target))
+		{
+			// 当たっていたら移動させない
+			break;
+		}
+
 		// 現在移動させようとしてるやつ
 		auto currentTop = current->GetTopCollider();
 
@@ -845,14 +857,23 @@ void CollisionManager::RecursiveAttracting(
 	}
 }
 
-bool CollisionManager::CheckHitOtherFlyBlock(FlyBlockCollider* current)
+bool CollisionManager::CheckHitOther(FlyBlockCollider* current)
 {
 	//SphereCollider coll;
 	Vec3 pos = current->Parent()->CastTo<Object3D>()->position;
 	float r = Vec3(current->Parent()->CastTo<Object3D>()->scale).GetMaxElement() * 0.5f;
-	Vec3 offset = -mViewCollider->GetRayCollider().r.ray.Norm() * r * 2.f;
-	coll.Setting(pos + offset, r);
 
+	Vec3 vec = -mViewCollider->GetRayCollider().r.ray.Norm() * r * 2.5f;
+
+	float radian = ConvertAngleToRadian(10);
+
+	Vec3 offset1 = Quaternion::AnyAxisRotation(vec, Vec3::up, radian);
+	coll1.Setting(pos + offset1, r);
+
+	Vec3 offset2 = Quaternion::AnyAxisRotation(vec, Vec3::up, -radian);
+	coll2.Setting(pos + offset2, r);
+
+	// 飛ぶブロック
 	for (const auto& fbc : mFlyBlockColliders)
 	{
 		if (current == fbc)
@@ -860,7 +881,18 @@ bool CollisionManager::CheckHitOtherFlyBlock(FlyBlockCollider* current)
 			continue;
 		}
 
-		if (fbc->GetBodyCollider().IsTrigger(&coll))
+		if (fbc->GetBodyCollider().IsTrigger(&coll1) ||
+			fbc->GetBodyCollider().IsTrigger(&coll2))
+		{
+			return true;
+		}
+	}
+
+	// ガラス
+	for (const auto& gc : mGlassColliders)
+	{
+		if (gc->GetBodyCollider().IsTrigger(&coll1) ||
+			gc->GetBodyCollider().IsTrigger(&coll2))
 		{
 			return true;
 		}

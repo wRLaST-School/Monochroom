@@ -16,6 +16,22 @@ float4 calcRim(GSOutput i, float4 color)
     return color;
 }
 
+float HeightFog(float4 wpos)
+{
+    float3 origin = float3(0, 0, 0);
+    
+    if (wpos.y >= 0)
+    {
+        return 0.f;
+    }
+    
+    const float maxDis = 50.f;
+    float dis = distance(wpos.y, origin.y) / maxDis;
+
+    float rate = smoothstep(0.f, 0.7f, dis);
+    return rate;
+}
+
 float4 main(GSOutput input) : SV_TARGET
 {
     float4 texcolor = float4(tex.Sample(smp, input.uv));
@@ -77,6 +93,9 @@ float4 main(GSOutput input) : SV_TARGET
 		
     }
 	
+    float rate = HeightFog(input.worldpos);
+    
     float4 ads = shadecolor * texcolor * brightness;
+    ads.rgb = ads.rgb * (1 - rate) + float3(0, 0, 0) * rate;
     return calcRim(input, ads);
 }

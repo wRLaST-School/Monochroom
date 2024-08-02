@@ -12,11 +12,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="AttractEndPointEffect.h" />
+    <ClInclude Include="AttractEndPointEffectManager.h" />
     <ClInclude Include="AttractParticleEmitter2.h" />
     <ClInclude Include="AttractParticleManager.h" />
     <ClInclude Include="AttractParticleEmitter.h" />
     <ClInclude Include="AttractParticleTmp.h" />
     <ClInclude Include="AttractParticleTmp2.h" />
+    <ClInclude Include="FlyBlockWhite.h" />
     <ClInclude Include="Gimmick\ButtonCollider.h" />
     <ClInclude Include="Gimmick\DoorCollider.h" />
     <ClInclude Include="Gimmick\FlyBlock.h" />
@@ -58,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
+    <ClCompile Include="AttractEndPointEffect.cpp" />
+    <ClCompile Include="AttractEndPointEffectManager.cpp" />
     <ClCompile Include="AttractParticleEmitter2.cpp" />
     <ClCompile Include="AttractParticleManager.cpp" />
     <ClCompile Include="AttractParticleEmitter.cpp" />
@@ -65,6 +70,7 @@
     <ClCompile Include="AttractParticleTmp2.cpp" />
     <ClCompile Include="Bases.cpp" />
     <ClCompile Include="CameraTab.cpp" />
+    <ClCompile Include="FlyBlockWhite.cpp" />
     <ClCompile Include="Gimmick\ButtonCollider.cpp" />
     <ClCompile Include="Gimmick\DoorCollider.cpp" />
     <ClCompile Include="Gimmick\FlyBlock.cpp" />
