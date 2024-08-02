@@ -121,7 +121,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": 222.2207489013672,
-                    "Y": 117.89320373535156,
+                    "Y": -10000.0,
                     "Z": -4.0492401123046875
                 },
                 "RenderTarget": "",
@@ -181,8 +181,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.10000002384185791,
-                    "Y": 3.120795965194702,
+                    "X": 0.10000001639127731,
+                    "Y": 3.1207962036132813,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1163,7 +1163,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": 0.0,
-                    "Y": 6.0,
+                    "Y": 5.977999687194824,
                     "Z": 22.746002197265625
                 },
                 "RenderTarget": "",
@@ -1174,8 +1174,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.10000001639127731,
-                    "Y": 3.1207962036132813,
+                    "X": 0.0,
+                    "Y": 3.1415927410125732,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3873,6 +3873,15 @@
                 "posY": 540.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
+            },
+            {
+                "Active": true,
+                "Name": "AttractParticleManager",
+                "Tags": [
+                    "AttractParticleManager"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "AttractParticleManager"
             }
         ],
         "EfkEffects": [
@@ -3954,6 +3963,7 @@
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "Noice": "Assets/Images/Noice.png",
+                "Noice.png": "Assets/Images/Noice.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",

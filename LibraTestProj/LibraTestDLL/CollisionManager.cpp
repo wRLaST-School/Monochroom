@@ -146,7 +146,8 @@ void CollisionManager::RayHitFlyBlocks()
 		// 一番近いFlyBlockのみ引き寄せる
 		if (flyBlock)
 		{
-			auto ePos = mViewCollider->GetPos() + Vec3{ 0,-0.5f,0 };
+			Vec3 dirVec = mViewCollider->GetRayCollider().r.ray;
+			auto ePos = mViewCollider->GetPos() + Vec3{ dirVec.x,0,dirVec.z }.GetNorm() * 2.0f + Vec3{ 0,-0.5f,0 };
 			flyBlock->BeginAttracting(ePos);
 			fbc->IsMoveing();
 
