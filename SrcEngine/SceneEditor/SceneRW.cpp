@@ -146,6 +146,13 @@ void SceneRW::LoadScene(IScene* scene, std::string filePath)
 		string componentType = object["Type"].get<string>();
 
 		auto child = ComponentFactory::AddChildComponent(current, componentType, componentType);
+
+		if (current->GetName() == "StageBlocks")
+		{
+			int hoge = 1;
+			hoge;
+		}
+
 		child->ReadParamJson(object);
 		child->ReadCommonParamJson(object);
 		if (componentType == "Object3D" || componentType == "Camera") {
