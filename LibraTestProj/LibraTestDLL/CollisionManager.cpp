@@ -12,6 +12,8 @@
 #include <PlayerGoggle.h>
 #include <StageGoal.h>
 #include <AttractParticleManager.h>
+#include <BlockWhite.h>
+#include <FlyBlockWhite.h>
 
 void CollisionManager::Init()
 {
@@ -23,6 +25,7 @@ void CollisionManager::Init()
 	mPlayerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
 
 	mBlockColliders = FindColliderList<BlockCollider>("Block", "BlockCollider");
+
 	mFlyBlockColliders = FindColliderList<FlyBlockCollider>("FlyBlock", "FlyBlockCollider");
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
@@ -810,6 +813,62 @@ float CollisionManager::CheckRayHitOtherDis(FlyBlockCollider* current)
 	}
 
 	return minDis;
+}
+
+void CollisionManager::CheckRayHitWhFlyBlockAndWhWall()
+{
+	std::vector<FlyBlock*> hitFB;
+	std::vector<BlockWhite*> hitB;
+
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		SceneManager::FindChildObject<FlyBlockWhite>("FlyBlockWhite", fbc->Parent())->SetIsUpdate(true);
+	}
+
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		auto fb = SceneManager::FindChildObject<FlyBlockWhite>("FlyBlockWhite", fbc->Parent());
+		
+		if (fb == nullptr)
+		{
+			continue;
+		}
+
+		auto bodyCollider = fbc->GetBodyCollider();
+
+		//白ブロックへのレイ
+		RayCollider ray(
+			bodyCollider.pos - mViewCollider->GetPos(), mViewCollider->GetPos()
+		);
+
+		//そのレイ上に白い壁もあるかどうか
+		for (const auto& bc : mBlockColliders)
+		{
+			auto bodyCollider = bc->GetBodyCollider();
+
+			if (ray.IsTrigger(&bodyCollider))
+			{
+				auto fbw = SceneManager::FindChildObject<FlyBlock>("FlyBlockWhite", bc->Parent());
+
+				//あったら
+				if (fbw)
+				{
+					fbw->SetIsUpdate(false);
+				}
+			}
+		}
+	}
+
+
+
+
+	if (hitB.size())
+	{
+		for (auto& bw : hitB)
+		{
+
+		}
+	}
 }
 
 void CollisionManager::RecursiveAttracting(
