@@ -9,7 +9,7 @@ void FlyBlockCollider::Init()
 	mObj = This()->Parent()->CastTo<Object3D>();
 	mFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", mObj);
 
-	const uint32_t maxTime = 30;
+	const uint32_t maxTime = 60;
 	mTimer.SetLimitTimer(maxTime);
 	mTimer.SetTimer(maxTime);
 	mTimer.Reset();
