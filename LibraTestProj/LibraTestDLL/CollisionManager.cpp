@@ -127,7 +127,7 @@ void CollisionManager::RayHitFlyBlocks()
 	}
 
 	float dis = 0;
-	float minDis = CheckRayHitOtherDis();
+	float minDis = 0;
 
 	//引き寄せ
 	FlyBlock* flyBlock = nullptr;
@@ -135,6 +135,8 @@ void CollisionManager::RayHitFlyBlocks()
 
 	for (const auto& fbc : mFlyBlockColliders)
 	{
+		minDis = CheckRayHitOtherDis(fbc);
+
 		// レイ
 		auto fbBodyCollider = fbc->GetBodyCollider();
 		if (rayCollider.IsTrigger(&fbBodyCollider))
@@ -700,7 +702,7 @@ void CollisionManager::FlyBlocksHitDoors()
 	}
 }
 
-float CollisionManager::CheckRayHitOtherDis()
+float CollisionManager::CheckRayHitOtherDis(FlyBlockCollider* current)
 {
 	float minDis = 9999999.f;
 	//float dis = 0.f;
@@ -774,6 +776,25 @@ float CollisionManager::CheckRayHitOtherDis()
 	for (const auto& gc : mGoalColliders)
 	{
 		auto bodyCollider = gc->GetBodyCollider();
+		if (rayCollider.IsTrigger(&bodyCollider))
+		{
+			float dis = rayCollider.disToInter;
+			if (dis < minDis)
+			{
+				minDis = dis;
+			}
+		}
+	}
+
+	// 他のブロック
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		if (fbc == current)
+		{
+			continue;
+		}
+
+		auto bodyCollider = fbc->GetBodyCollider();
 		if (rayCollider.IsTrigger(&bodyCollider))
 		{
 			float dis = rayCollider.disToInter;
