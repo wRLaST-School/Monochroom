@@ -28,7 +28,6 @@ class Object3D : public IComponent
 {
 private:
 	int normalType = 0;
-	int texType = 0;
 
 public:
 	ComponentFactoryRegister(Object3D)
@@ -133,6 +132,8 @@ public:
 
 	Vec2 tiling;
 	Vec2 offset;
+
+	int texType = 0;
 
 };
 
