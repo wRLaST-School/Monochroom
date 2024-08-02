@@ -3479,6 +3479,7 @@
         "Tags": null,
         "Textures": [
             {
+                "Plane.png": "Assets\\Images\\Plane.png",
                 "BasicParticle": "Assets/Images/circleParticle.png",
                 "Black": "Assets/Images/black.png",
                 "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",

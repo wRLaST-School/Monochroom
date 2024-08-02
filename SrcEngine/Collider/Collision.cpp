@@ -126,6 +126,11 @@ bool Collision::OBBTriggerOBB(OBBCollider* obb1, OBBCollider* obb2, Vec3* pushOu
 
 bool Collision::OBBTriggerSphere(OBBCollider* obb, SphereCollider* sphere, Vec3* pushOut)
 {
+	if (!obb->isActive || !sphere->isActive)
+	{
+		return false;
+	}
+
 	// OBBの中心から球の中心までのベクトル
 	Vec3 diff = sphere->pos - obb->pos;
 
