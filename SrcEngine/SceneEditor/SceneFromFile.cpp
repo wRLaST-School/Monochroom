@@ -17,6 +17,12 @@ SceneFromFile::SceneFromFile(std::string filePath)
 void SceneFromFile::LoadResources()
 {
 	SceneRW::LoadScene(this, filePath_);
+
+	SoundManager::LoadWave("Assets/Sounds/blink.wav", "Blink");
+	SoundManager::LoadWave("Assets/Sounds/decide.wav", "Decide");
+	SoundManager::LoadWave("Assets/Sounds/generate.wav", "Generate");
+	SoundManager::LoadWave("Assets/Sounds/select.wav", "Select");
+	SoundManager::LoadWave("Assets/Sounds/goal.wav", "Goal");
 }
 
 void SceneFromFile::Init()

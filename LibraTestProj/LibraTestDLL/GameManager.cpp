@@ -97,6 +97,7 @@ void GameManager::Update()
 			{
 				BlinkTransition::Start();
 				BlinkTransition::mIsChangeScene = true;
+				SoundManager::Play("Blink");
 			}
 		}
 

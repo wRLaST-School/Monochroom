@@ -28,6 +28,7 @@ void StageGenerater::Init()
 
 	mEase.SetEaseTimer(120);
 	mEase.SetPowNum(3);
+	SoundManager::Play("Generate");
 }
 
 void StageGenerater::Update()
