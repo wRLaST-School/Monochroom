@@ -12,6 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SrcEngine\Others\stdafx.h" />
+    <ClInclude Include="AttractEndPointEffect.h" />
+    <ClInclude Include="AttractEndPointEffectManager.h" />
     <ClInclude Include="AttractParticleEmitter2.h" />
     <ClInclude Include="AttractParticleManager.h" />
     <ClInclude Include="AttractParticleEmitter.h" />
@@ -58,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppOperationCommand.cpp" />
+    <ClCompile Include="AttractEndPointEffect.cpp" />
+    <ClCompile Include="AttractEndPointEffectManager.cpp" />
     <ClCompile Include="AttractParticleEmitter2.cpp" />
     <ClCompile Include="AttractParticleManager.cpp" />
     <ClCompile Include="AttractParticleEmitter.cpp" />
