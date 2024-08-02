@@ -17,6 +17,7 @@
     <ClInclude Include="AttractParticleEmitter.h" />
     <ClInclude Include="AttractParticleTmp.h" />
     <ClInclude Include="AttractParticleTmp2.h" />
+    <ClInclude Include="BlockCollEffect.h" />
     <ClInclude Include="Gimmick\ButtonCollider.h" />
     <ClInclude Include="Gimmick\DoorCollider.h" />
     <ClInclude Include="Gimmick\FlyBlock.h" />
@@ -64,6 +65,7 @@
     <ClCompile Include="AttractParticleTmp.cpp" />
     <ClCompile Include="AttractParticleTmp2.cpp" />
     <ClCompile Include="Bases.cpp" />
+    <ClCompile Include="BlockCollEffect.cpp" />
     <ClCompile Include="CameraTab.cpp" />
     <ClCompile Include="Gimmick\ButtonCollider.cpp" />
     <ClCompile Include="Gimmick\DoorCollider.cpp" />

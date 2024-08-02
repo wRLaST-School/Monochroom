@@ -285,22 +285,22 @@ void SuperUI::UIObj3DInit()
 	mQuitTextObjs[Yes].planeObj = SceneManager::FindObject<Object3D>("YesText");
 	mQuitTextObjs[No].planeObj = SceneManager::FindObject<Object3D>("NoText");
 
-	//mTabsPParentObj = SceneManager::FindObject<Object3D>("TabsParent");
-	//mTabBoardParentObj= SceneManager::FindObject<Object3D>("BoardParent");
+	mTabsPParentObj = SceneManager::FindObject<Object3D>("TabsParent");
+	mTabBoardParentObj= SceneManager::FindObject<Object3D>("BoardParent");
 	
-	//mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("CameraBoardParent"));
-	//mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("GraphicsBoardParent"));
-	//mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("SoundBoardParent"));
+	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("CameraBoardParent"));
+	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("GraphicsBoardParent"));
+	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("SoundBoardParent"));
 
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("BackBlack"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("MenuPlane"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("MenuText"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("GuidPlane"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("GuidText"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("OptionPlane"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("OptionText"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitlePlane"));
-	//mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitleText"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("BackBlack"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("MenuPlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("MenuText"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("GuidPlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("GuidText"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("OptionPlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("OptionText"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitlePlane"));
+	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitleText"));
 
 	mMainAlphaEase.SetEaseTimer(0);
 	mBackBlackAlpha = { 0,0,0,150 };
@@ -309,15 +309,15 @@ void SuperUI::UIObj3DInit()
 	mTabChangeEase.SetEaseTimer(20);
 	mTabChangeEase.SetPowNum(5);
 
-	//// 回転用のベクター
-	//mTabBoardObjs[0]->rotationE.y = DegreeToRadian(0);
-	//mTabBoardObjs[1]->rotationE.y = DegreeToRadian(240);
-	//mTabBoardObjs[2]->rotationE.y = DegreeToRadian(120);
+	// 回転用のベクター
+	mTabBoardObjs[0]->rotationE.y = DegreeToRadian(0);
+	mTabBoardObjs[1]->rotationE.y = DegreeToRadian(240);
+	mTabBoardObjs[2]->rotationE.y = DegreeToRadian(120);
 
-	//for (size_t i = 0; i < mNumOption; i++)
-	//{
-	//	mTabBoardObjs[i]->Update();
-	//}
+	for (size_t i = 0; i < mNumOption; i++)
+	{
+		mTabBoardObjs[i]->Update();
+	}
 }
 
 void SuperUI::UIObj3DUpdate()

@@ -30,6 +30,8 @@ void CollisionManager::Init()
 	mGoggleColliders = FindColliderList<GoggleCollider>("Goggle", "GoggleCollider");
 	mTransparentColliders = FindColliderList<TransparentCollider>("Transparent", "TransparentCollider");
 	mDoorColliders = FindColliderList<DoorCollider>("StageDoor", "DoorCollider");
+
+	mBlockCollEffect = SceneManager::FindObject<BlockCollEffect>("BlockEffectScript");
 }
 
 void CollisionManager::Update()
@@ -613,6 +615,13 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 						//Vec3 offset = pushOut.Norm() * 0.0001f;
 						fbc1->Parent()->CastTo<Object3D>()->position += pushOut/* + offset*/;
 						flyBlock1->EndAttracting();
+
+						Vec3 hitPos = flyBlockBodyCollider1.pos - flyBlockBodyCollider2.pos; 
+						hitPos /= 2;
+						mBlockCollEffect->SetIsHit(true);
+						mBlockCollEffect->SetHitBlockPos(hitPos);
+
+
 					}
 
 					//if (flyBlock1->GetAttractedDir().Dot(-pushOut) > FlyBlock::skAttractedHittingNotEndDot)

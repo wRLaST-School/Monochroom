@@ -3310,7 +3310,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 0.0,
-                                                    "Y": 0.0,
+                                                    "Y": 4.188789367675781,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -4010,7 +4010,7 @@
                                                 },
                                                 "RotationEuler": {
                                                     "X": 0.0,
-                                                    "Y": 0.0,
+                                                    "Y": 2.0943946838378906,
                                                     "Z": 0.0
                                                 },
                                                 "Scale": {
@@ -4879,6 +4879,59 @@
                         },
                         "Tags": null,
                         "Texture": "",
+                        "Tiling": {
+                            "X": 1.0,
+                            "Y": 1.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "Name": "BlockEffectScript",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "BlockCollEffect"
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 0,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Plane.obj",
+                        "Name": "BlockEffectPlane",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Tags": null,
+                        "Texture": "testTex",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
