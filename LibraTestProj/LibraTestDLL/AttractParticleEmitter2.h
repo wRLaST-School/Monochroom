@@ -7,7 +7,7 @@
 class AttractParticleEmitter2 : public Emitter<AttractParticleTmp2>
 {
 private:
-	const float kParticleLength = 2.0f;
+	const float kParticleLength = 1.2f;
 
 
 public:
