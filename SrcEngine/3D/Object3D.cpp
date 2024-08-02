@@ -127,6 +127,8 @@ void Object3D::Draw()
 		miscCB.contents->dissolveStrength = dissolveStrength;
 	}
 
+	miscCB.contents->tiling = tiling;
+
 	shadowCaster->Draw(model);
 	normalCaster->Draw(model);
 	holographicCaster->Draw(model, texture);

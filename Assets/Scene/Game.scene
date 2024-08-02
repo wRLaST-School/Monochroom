@@ -5984,6 +5984,15 @@
                 ],
                 "Type": "ScriptComponent",
                 "filePath": "AttractParticleManager"
+            },
+            {
+                "Active": true,
+                "Name": "FlyBlockWhite",
+                "Tags": [
+                    "FlyBlockWhite"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "FlyBlockWhite"
             }
         ],
         "EfkEffects": [

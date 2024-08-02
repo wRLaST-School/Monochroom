@@ -15,5 +15,6 @@
     "Transparent",
     "StageGenerater",
     "GoggleCollider",
-    "AttractParticleManager"
+    "AttractParticleManager",
+    "FlyBlockWhite"
 ]
