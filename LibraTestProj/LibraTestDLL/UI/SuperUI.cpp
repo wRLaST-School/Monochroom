@@ -287,7 +287,7 @@ void SuperUI::UIObj3DInit()
 
 	//mTabsPParentObj = SceneManager::FindObject<Object3D>("TabsParent");
 	//mTabBoardParentObj= SceneManager::FindObject<Object3D>("BoardParent");
-	
+	//
 	//mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("CameraBoardParent"));
 	//mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("GraphicsBoardParent"));
 	//mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("SoundBoardParent"));

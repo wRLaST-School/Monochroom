@@ -19,6 +19,8 @@ SamplerState smp : register(s0);
 // ソフトシャドウ
 float CalcShadowPFC(float4 spos);
 
+float HeightFog(float4 wpos);
+
 float4 main(VSOutput input) : SV_TARGET
 {
     float4 texCol = tex.Sample(smp, input.uv * tiling);
@@ -78,12 +80,13 @@ float4 main(VSOutput input) : SV_TARGET
     float drate2 = step(t - tsub, dissolveCol.r).xxxx;
     texCol.rgb = texCol.rgb * (1 - drate2) + (drate2 - drate) * float3(0.2f, 0.3f, 0.9f);
     
-    float4 result = texCol * shadeCol * brightness;
-    result.rgb *= shadow/* * dRate*/;
-    //if (dRate.r >= 0.9)
-    //{
-    //}
+    float rate = HeightFog(input.worldpos);
     
+    float4 result = texCol * shadeCol * brightness;
+    result.rgb *= shadow;
+
+    result.rgb = (1 - rate) * result.rgb + rate * float3(0, 0, 0);
+
     return result;
 }
 
@@ -130,4 +133,20 @@ float CalcShadowPFC(float4 spos)
     // サンプル数で割って正規化
     shadow = 1 - shadowFactor / count;
     return shadow;
+}
+
+float HeightFog(float4 wpos)
+{
+    float3 origin = float3(0, 0, 0);
+    
+    if(wpos.y >=0)
+    {
+        return 0.f;
+    }
+    
+    const float maxDis = 50.f;
+    float dis = distance(wpos.y, origin.y) / maxDis;
+
+    float rate = smoothstep(0.f, 0.7f, dis);
+    return rate;
 }
