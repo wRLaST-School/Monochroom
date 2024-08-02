@@ -54,7 +54,6 @@ private:
 	void FlyBlocksHitGoals();
 	void FlyBlocksHitDoors();
 
-	float CheckRayHitOtherDis();
 
 public:
 	void Init();
@@ -62,6 +61,7 @@ public:
 	void Draw();
 	void CopyComponent(IComponent* src) { src; }
 
+	float CheckRayHitOtherDis(FlyBlockCollider* current);
 	void RecursiveAttracting(FlyBlockCollider* current, const  std::vector<FlyBlockCollider*>& colliders);
 	bool CheckHitOtherFlyBlock(FlyBlockCollider* current);
 
