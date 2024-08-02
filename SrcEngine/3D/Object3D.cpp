@@ -127,6 +127,8 @@ void Object3D::Draw()
 		miscCB.contents->dissolveStrength = dissolveStrength;
 	}
 
+	miscCB.contents->tiling = tiling;
+
 	shadowCaster->Draw(model);
 	normalCaster->Draw(model);
 	holographicCaster->Draw(model, texture);
@@ -372,7 +374,20 @@ void Object3D::DrawToon(const TextureKey& key)
 {
 	transformCB.contents->mat = matWorld;
 	SpRenderer::DrawCommand([&] {
-		GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
+		if (texType == 0)
+		{
+			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
+		}
+		// 真っ白
+		else if (texType == 1)
+		{
+			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle("Block1.png"));
+		}
+		// 真っ黒
+		else if (texType == 2)
+		{
+			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle("Block2.png"));
+		}
 
 		if (model->materialCBs.size())
 			GetSpDX()->cmdList->SetGraphicsRootConstantBufferView(0, model->materialCBs.front().buffer->GetGPUVirtualAddress());
@@ -555,6 +570,10 @@ void Object3D::OnInspectorWindowDraw()
 
 	if (ImGui::CollapsingHeader("Texture"))
 	{
+		ImGui::RadioButton("None", &texType, 0);	ImGui::SameLine();
+		ImGui::RadioButton("Black", &texType, 1);	ImGui::SameLine();
+		ImGui::RadioButton("White", &texType, 2);	ImGui::Separator();
+
 		const size_t bufSize = 256;
 		static char buf[bufSize];
 		strncpy_s(buf, texture.c_str(), std::min(bufSize, texture.length()));
@@ -753,6 +772,10 @@ void Object3D::ReadParamJson(const nlohmann::json& jsonObject)
 	}
 
 	texture = jsonObject["Texture"];
+	if (jsonObject.contains("TexType"))
+	{
+		texType = jsonObject["TexType"];
+	}
 	if (jsonObject.contains("DissolveTex"))
 	{
 		if (jsonObject.contains("Tiling"))
@@ -833,6 +856,7 @@ void Object3D::WriteParamJson(nlohmann::json& jsonObject)
 	jsonObject["Brightness"]["W"] = brightnessCB.contents->w;
 
 	jsonObject["Texture"] = texture;
+	jsonObject["TexType"] = texType;
 	jsonObject["Tiling"]["X"] = tiling.x;
 	jsonObject["Tiling"]["Y"] = tiling.y;
 	jsonObject["DissolveTex"] = dissolveTex;
