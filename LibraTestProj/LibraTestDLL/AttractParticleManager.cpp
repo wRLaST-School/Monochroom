@@ -105,7 +105,6 @@ void AttractParticleManager::Draw()
 		{
 			emitter = itr->second.get();
 			emitter->Draw();
-			emitter->DrawEmitArea();
 		}
 	}
 }
