@@ -10,6 +10,7 @@ RayCollider::RayCollider()
 	type = ColliderType::Ray;
 	isActive = true;
 	color = Color::White;
+	disToInter = std::numeric_limits<float>::max();
 }
 
 void RayCollider::Setting(const Vec3 aPos, const Vec3 aDir, const float aLength)

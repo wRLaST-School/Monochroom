@@ -31,6 +31,7 @@ private:
 	std::vector<GoggleCollider*> mGoggleColliders;
 	std::vector<TransparentCollider*> mTransparentColliders;
 
+
 private:
 	template<typename T>
 	inline std::vector<T*> FindColliderList(const std::string& objectTag, const std::string& scriptTag);
@@ -60,6 +61,8 @@ public:
 	void Update();
 	void Draw() {}
 	void CopyComponent(IComponent* src) { src; }
+
+	void RecursiveAttracting(FlyBlockCollider* current,const  std::vector<FlyBlockCollider*>& colliders);
 
 	DefDel;
 };

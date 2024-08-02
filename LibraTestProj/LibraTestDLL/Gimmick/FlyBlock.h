@@ -46,6 +46,8 @@ public:
 	bool GetIsAttracting() { return mIsAttracted; }
 
 	Vec3 GetAttractedDir() { return (mEndPos - mBeginPos).GetNorm(); }
+	Vec3 GetBeginPos() { return mBeginPos; }
+	Vec3 GetEndPos() { return mEndPos; }
 
 	void ZeroGravity() { mGravity->ZeroVelocity(); }
 	Gravity* GetGravity() { return mGravity.get(); }
