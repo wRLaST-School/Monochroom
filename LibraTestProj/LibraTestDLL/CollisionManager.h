@@ -13,6 +13,8 @@
 #include <PlayerGoggle.h>
 #include <DoorCollider.h>
 
+#include "BlockCollEffect.h"
+
 class CollisionManager :
 	public IScriptObject
 {
@@ -32,6 +34,8 @@ private:
 	std::vector<TransparentCollider*> mTransparentColliders;
 	SphereCollider coll1;
 	SphereCollider coll2;
+
+	BlockCollEffect* mBlockCollEffect;
 
 private:
 	template<typename T>

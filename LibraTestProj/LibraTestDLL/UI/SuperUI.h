@@ -7,7 +7,7 @@
 #include "CameraTab.h"
 #include "GraphicsTab.h"
 #include "SoundTab.h"
-
+#include "Timer.h"
 class PlayerControl;
 
 class SuperUI :
@@ -29,7 +29,6 @@ private:// クラス内構造体
     enum UIOptionNum
     {
         CAMERA,     // カメラ
-        GRAPHICS,   // グラフィックス
         SOUND,      // サウンド
     };
 
@@ -259,6 +258,8 @@ private:// メンバー変数
     // UIのタブメニュー項目オブジェクト
     std::vector<UI3DTabItemStatus>mMenuTabUIObj;
 
+    std::vector<Object3D*>mMenuTabTextObj;
+
     // UIタブ項目内のオブジェクト
     std::vector<IUITab*> mTabItems;
 
@@ -327,6 +328,8 @@ private:// メンバー変数
     float mTabRotaFirst;
     float mTabBoardParentRotaAfter;
     Easing mTabChangeEase;
+
+    Timer mQuitTimer;
 };
 RegisterScript(SuperUI);
 

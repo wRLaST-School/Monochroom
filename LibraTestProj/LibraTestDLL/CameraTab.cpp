@@ -26,8 +26,8 @@ void CameraTab::Init()
 		"eight",
 		"nine"
 	};
-	mCameraNoneSelectScale = { 0.9f,0.6f,1 };
-	mCameraSelectScale = { 1,0.8f,1 };
+	mCameraNoneSelectScale = { 0.98f,0.98f,1 };
+	mCameraSelectScale = { 1,1,1 };
 
 	mCameraDefuValue = 1;
 	mCameraMaxValue = 5;
@@ -37,10 +37,10 @@ void CameraTab::Init()
 	mItemsParentObj = SceneManager::FindObject<Object3D>("CameraTabItems");
 
 	// カメラ項目のオブジェクト設定
-	mCameraUIObj[MOUSESENSITIVITY_X].planeObj = SceneManager::FindObject<Object3D>("MouseSensitivityX");
-	mCameraUIObj[MOUSESENSITIVITY_Y].planeObj = SceneManager::FindObject<Object3D>("MouseSensitivityY");
-	mCameraUIObj[PADSENSITIVITY_X].planeObj = SceneManager::FindObject<Object3D>("PadSensitivityX");
-	mCameraUIObj[PADSENSITIVITY_Y].planeObj = SceneManager::FindObject<Object3D>("PadSensitivityY");
+	mCameraUIObj[MOUSESENSITIVITY_X].planeObj = SceneManager::FindObject<Object3D>("MouseXParent");
+	mCameraUIObj[MOUSESENSITIVITY_Y].planeObj = SceneManager::FindObject<Object3D>("MouseYParent");
+	mCameraUIObj[PADSENSITIVITY_X].planeObj = SceneManager::FindObject<Object3D>("PadXParent");
+	mCameraUIObj[PADSENSITIVITY_Y].planeObj = SceneManager::FindObject<Object3D>("PadYParent");
 
 	SpTextureManager::LoadDiv("Assets/Images/numbers1.png", (int)320, (int)320, 10, 1, mNumberTex);
 

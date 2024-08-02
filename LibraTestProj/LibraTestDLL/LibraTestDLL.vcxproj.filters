@@ -201,6 +201,9 @@
     <ClInclude Include="BlockWhite.h">
       <Filter>ヘッダー ファイル\Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="BlockCollEffect.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestPlayer.cpp">
@@ -343,6 +346,9 @@
     </ClCompile>
     <ClCompile Include="BlockWhite.cpp">
       <Filter>ソース ファイル\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockCollEffect.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
