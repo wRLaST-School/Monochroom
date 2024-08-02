@@ -107,8 +107,8 @@ void ResourceWindow::DrawTextureList()
 
 			if (ImGui::BeginDragDropSource())
 			{
-				const char* texKey = c.first.c_str();
-				ImGui::SetDragDropPayload("RES_WINDOW_ITEM_TEXTURE", texKey, strlen(texKey) * sizeof(char), ImGuiCond_Once);
+				const std::string* texKey = &c.first;
+				ImGui::SetDragDropPayload("RES_WINDOW_ITEM_TEXTURE", &texKey, sizeof(std::string**), ImGuiCond_Once);
 				ImGui::EndDragDropSource();
 			}
 

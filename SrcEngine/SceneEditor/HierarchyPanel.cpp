@@ -152,20 +152,20 @@ void HierarchyPanel::DDTargetTexture(IComponent* current)
 	const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("RES_WINDOW_ITEM_TEXTURE");
 
 	if (payload) {
-		const char* texKey = reinterpret_cast<const char*>(payload->Data);
+		const std::string** texKey = reinterpret_cast<const std::string**>(payload->Data);
 
 		Object3D* obj = dynamic_cast<Object3D*>(current);
 
 		if (obj)
 		{
-			obj->texture = texKey;
+			obj->texture = **texKey;
 		}
 
 		SpriteObject* spr = dynamic_cast<SpriteObject*>(current);
 
 		if (spr)
 		{
-			spr->tex = texKey;
+			spr->tex = **texKey;
 		}
 	}
 }
