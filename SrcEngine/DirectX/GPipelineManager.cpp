@@ -251,7 +251,7 @@ void GPipelineManager::CreateAll()
 	UIPlaneModelDesc.Depth.DepthStencilState.StencilEnable = false;
 	//UIPlaneModelDesc.Depth.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ZERO;
 
-	UIPlaneModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_BACK;
+	UIPlaneModelDesc.Render.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
 
 	GPipeline::Create(UIPlaneModelDesc, "UIPlaneModel");
 #pragma endregion

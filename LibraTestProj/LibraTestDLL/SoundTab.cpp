@@ -14,8 +14,8 @@ void SoundTab::Init()
 
 	mSoundSensivity.resize(mSoundOptionNum);
 
-	mSoundNoneSelectScale = { 0.9f,0.6f,1 };
-	mSoundSelectScale = { 1,0.8f,1 };
+	mSoundNoneSelectScale = { 0.98f,0.98f,1 };
+	mSoundSelectScale = { 1,1,1 };
 
 	mSoundDefuValue = 1;
 	mSoundMaxValue = 5;
@@ -25,9 +25,9 @@ void SoundTab::Init()
 	mItemsParentObj = SceneManager::FindObject<Object3D>("SoundTabItems");
 
 	// 音量項目のオブジェクト設定
-	mSoundUIObj[MASTER].planeObj = SceneManager::FindObject<Object3D>("MastarVolume");
-	mSoundUIObj[BGM].planeObj = SceneManager::FindObject<Object3D>("BGMVolume");
-	mSoundUIObj[SE].planeObj = SceneManager::FindObject<Object3D>("SEVolume");
+	mSoundUIObj[MASTER].planeObj = SceneManager::FindObject<Object3D>("MasterParent");
+	mSoundUIObj[BGM].planeObj = SceneManager::FindObject<Object3D>("BGMParent");
+	mSoundUIObj[SE].planeObj = SceneManager::FindObject<Object3D>("SEParent");
 
 	mNumberTex.resize(10);
 	mNumberTex = {

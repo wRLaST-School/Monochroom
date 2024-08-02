@@ -50,10 +50,10 @@ void SuperUI::Init()
 
 	mUICurrentNum = 0;
 
-	mUIDesabledScale = { 0.6f ,0.1f };
-	mUISelectScale = { 0.7f ,0.12f };
+	mUIDesabledScale = { 0.4f ,0.1f };
+	mUISelectScale = { 0.5f ,0.12f };
 
-	mDesabledColor = { 200,0,0 };
+	mDesabledColor = { 180,180,180 };
 	mSelectColor = { 255,255,255 };
 	mPressedColor = { 150,225,255 };
 
@@ -131,14 +131,15 @@ void SuperUI::Update()
 	if (Input::Key::Triggered(DIK_ESCAPE))
 	{
 		ConsoleWindow::Log("TAB押された。");
-		if (mIsDisplayUI || mIsMomentOpenMenu)
+		if ((mIsDisplayUI || mIsMomentOpenMenu)&& 
+			mMenuUIObj[mUICurrentNum].state != PRESSED)
 		{
 			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(false);
 			mIsDisplayUI = false;
 			UIMainMenuOffReset();
 			ConsoleWindow::Log("メニューを閉じた");
 		}
-		else
+		else if (mMenuUIObj[mUICurrentNum].state != PRESSED)
 		{
 			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(true);
 			mIsMomentOpenMenu = true;
@@ -182,7 +183,7 @@ void SuperUI::UIObj3DInit()
 	// 項目数の初期化
 	mNumMenu = 3;
 
-	mNumOption = 3;
+	mNumOption = 2;
 
 	mTabRotaAfter = 30;
 
@@ -204,8 +205,8 @@ void SuperUI::UIObj3DInit()
 
 	mCurrentTabNum = 0;
 
-	mQuitTitleSelectScale = { 0.16f,0.06f,1 };
-	mQuitTitleDisabledScale = { 0.15f,0.05f,1 };
+	mQuitTitleSelectScale = { 0.1f,0.06f,1 };
+	mQuitTitleDisabledScale = { 0.09f,0.05f,1 };
 
 	mUITabEase.SetEaseTimer((int32_t)mTabEaseTimeLimit);
 
@@ -234,7 +235,6 @@ void SuperUI::UIObj3DInit()
 	mSoundItem = SceneManager::FindObject<SoundTab>("SoundTabScript");
 
 	mTabItems[CAMERA] = mCameraItem;
-	mTabItems[GRAPHICS] = mGpraphicsItem;
 	mTabItems[SOUND] = mSoundItem;
 
 	for (size_t i = 0; i < mNumOption; i++)
@@ -273,8 +273,10 @@ void SuperUI::UIObj3DInit()
 
 	// オプションメニューの項目のオブジェクト設定
 	mMenuTabUIObj[CAMERA].planeObj = SceneManager::FindObject<Object3D>("CameraTab");
-	mMenuTabUIObj[GRAPHICS].planeObj = SceneManager::FindObject<Object3D>("GraphicsTab");
 	mMenuTabUIObj[SOUND].planeObj = SceneManager::FindObject<Object3D>("SoundTab");
+
+	mMenuTabTextObj.push_back(SceneManager::FindObject<Object3D>("CameraTabText"));
+	mMenuTabTextObj.push_back(SceneManager::FindObject<Object3D>("SoundTabText"));
 
 	// ガイドメニューのオブジェクト設定
 	mGuidParentObj = SceneManager::FindObject<Object3D>("GuidMenu");
@@ -289,7 +291,6 @@ void SuperUI::UIObj3DInit()
 	mTabBoardParentObj= SceneManager::FindObject<Object3D>("BoardParent");
 	
 	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("CameraBoardParent"));
-	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("GraphicsBoardParent"));
 	mTabBoardObjs.push_back(SceneManager::FindObject<Object3D>("SoundBoardParent"));
 
 	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("BackBlack"));
@@ -302,7 +303,7 @@ void SuperUI::UIObj3DInit()
 	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitlePlane"));
 	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitleText"));
 
-	mMainAlphaEase.SetEaseTimer(0);
+	mMainAlphaEase.SetEaseTimer(20);
 	mBackBlackAlpha = { 0,0,0,150 };
 	mMainMenuColor = { 0,0,0,255 };
 
@@ -312,12 +313,13 @@ void SuperUI::UIObj3DInit()
 	// 回転用のベクター
 	mTabBoardObjs[0]->rotationE.y = DegreeToRadian(0);
 	mTabBoardObjs[1]->rotationE.y = DegreeToRadian(240);
-	mTabBoardObjs[2]->rotationE.y = DegreeToRadian(120);
 
 	for (size_t i = 0; i < mNumOption; i++)
 	{
 		mTabBoardObjs[i]->Update();
 	}
+
+	mQuitTimer.SetLimitTimer(60 * 2);
 }
 
 void SuperUI::UIObj3DUpdate()
@@ -341,6 +343,8 @@ void SuperUI::LoadTexInit()
 
 void SuperUI::UIMainMenuMomentUpdate()
 {
+	OutputDebugStringA("UIMomentUpdate---");
+
 	mMainAlphaEase.Update();
 
 	Color backColor;
@@ -356,6 +360,7 @@ void SuperUI::UIMainMenuMomentUpdate()
 		{
 			mMainMenuObjs[i]->brightnessCB.contents->w = menuColor.f4.w;
 		}
+		mMainMenuObjs[i]->Update();
 	}
 
 	if (mMainAlphaEase.GetisEnd())
@@ -417,7 +422,7 @@ void SuperUI::UIMainMenuUpdate()
 		}
 		else
 		{
-			if (Input::Key::Triggered(DIK_X))
+			if (Input::Key::Triggered(DIK_ESCAPE))
 			{
 				switch (mUICurrentNum)
 				{
@@ -498,8 +503,9 @@ void SuperUI::UIMainMenuUpdate()
 			alphaColorRed.f4.w = mUITabAlphaEase.Out(0, 1);
 
 			*mMenuTabUIObj[CAMERA].planeObj->brightnessCB.contents = alphaColor;
-			*mMenuTabUIObj[GRAPHICS].planeObj->brightnessCB.contents = alphaColorRed;
 			*mMenuTabUIObj[SOUND].planeObj->brightnessCB.contents = alphaColorRed;
+			*mMenuTabTextObj[CAMERA]->brightnessCB.contents = alphaColor;
+			*mMenuTabTextObj[SOUND]->brightnessCB.contents = alphaColorRed;
 			mMenuTabUIObj[i].planeObj->Update();
 		}
 
@@ -544,9 +550,9 @@ void SuperUI::UITabMenuUpdate()
 					mTabBoardParentRotaAfter = mTabRotaFirst + DegreeToRadian(120);
 					mIsTabSet = false;
 
-					if (mTabRotaFirst >= DegreeToRadian(240))
+					if (mTabRotaFirst >= DegreeToRadian(120))
 					{
-						mTabBoardParentRotaAfter = 240;
+						mTabBoardParentRotaAfter = 120;
 						mTabChangeEase.Reset();
 						mIsTabRight = false;
 						mIsTabChange = false;
@@ -648,11 +654,17 @@ void SuperUI::UITabMenuUpdate()
 				mMenuTabUIObj[i].scaleChangeValue = mUIDesabledScale;
 				mMenuTabUIObj[i].buttonColor = mDesabledColor;
 				mMenuTabUIObj[i].IsActive = false;
+
+				*mMenuTabTextObj[i]->brightnessCB.contents = mDesabledColor;
+
 				break;
 			case SELECT:
 				mMenuTabUIObj[i].scaleChangeValue = mUISelectScale;
 				mMenuTabUIObj[i].buttonColor = mSelectColor;
 				mMenuTabUIObj[i].IsActive = true;
+
+				*mMenuTabTextObj[i]->brightnessCB.contents = mSelectColor;
+
 				break;
 			default:
 				break;
@@ -669,42 +681,47 @@ void SuperUI::UITitleMenuUpdate()
 {
 	if (IsQuitTitleOn)
 	{
-		if (Input::Key::Triggered(DIK_A))
-		{
-			mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
-			mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
+		mQuitTimer.Update();
 
-			mQuitTextObjs[Yes].state = SELECT;
-			mQuitTextObjs[No].state = DISABLED;
-		}
-		if (Input::Key::Triggered(DIK_D))
+		if (mQuitTimer.GetisTimeOut())
 		{
-			mQuitTextObjs[Yes].planeObj->scale = mQuitTitleDisabledScale;
-			mQuitTextObjs[No].planeObj->scale = mQuitTitleSelectScale;
-
-			mQuitTextObjs[Yes].state = DISABLED;
-			mQuitTextObjs[No].state = SELECT;
-		}
-
-		if (mQuitTextObjs[Yes].state == SELECT)
-		{
-			if (Input::Key::Released(DIK_Z))
+			if (Input::Key::Triggered(DIK_A))
 			{
-				IsBackToTitle = true;
-			}
-		}
-		if (mQuitTextObjs[No].state == SELECT)
-		{
-			if (Input::Key::Released(DIK_Z))
-			{
-				IsBackToTitle = false;
-				UIQuitTitleMenuOff();
-			}
-		}
+				mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
+				mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
 
-		for (size_t i = 0; i < 2; i++)
-		{
-			mQuitTextObjs[i].planeObj->Update();
+				mQuitTextObjs[Yes].state = SELECT;
+				mQuitTextObjs[No].state = DISABLED;
+			}
+			if (Input::Key::Triggered(DIK_D))
+			{
+				mQuitTextObjs[Yes].planeObj->scale = mQuitTitleDisabledScale;
+				mQuitTextObjs[No].planeObj->scale = mQuitTitleSelectScale;
+
+				mQuitTextObjs[Yes].state = DISABLED;
+				mQuitTextObjs[No].state = SELECT;
+			}
+
+			if (mQuitTextObjs[Yes].state == SELECT)
+			{
+				if (Input::Key::Triggered(DIK_Z))
+				{
+					IsBackToTitle = true;
+				}
+			}
+			if (mQuitTextObjs[No].state == SELECT)
+			{
+				if (Input::Key::Triggered(DIK_Z))
+				{
+					IsBackToTitle = false;
+					UIQuitTitleMenuOff();
+				}
+			}
+
+			for (size_t i = 0; i < 2; i++)
+			{
+				mQuitTextObjs[i].planeObj->Update();
+			}
 		}
 	}
 }
@@ -800,7 +817,6 @@ void SuperUI::UITabMenuOff()
 
 	mTabBoardObjs[0]->rotationE.y = DegreeToRadian(0);
 	mTabBoardObjs[1]->rotationE.y = DegreeToRadian(240);
-	mTabBoardObjs[2]->rotationE.y = DegreeToRadian(120);
 
 	for (size_t i = 0; i < mNumOption; i++)
 	{
@@ -846,8 +862,9 @@ void SuperUI::UIQuitTitleMenuOn()
 	mQuitTitleParentObj->Activate();
 	mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
 	mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
-	mQuitTextObjs[Yes].state = SELECT;
-	mQuitTextObjs[No].state = DISABLED;
+	mQuitTextObjs[Yes].state = DISABLED;
+	mQuitTextObjs[No].state = SELECT;
+	mQuitTimer.Reset();
 }
 
 void SuperUI::UIQuitTitleMenuOff()
@@ -860,8 +877,9 @@ void SuperUI::UIQuitTitleMenuOff()
 	mPlanesParentObj->Activate();
 
 	mQuitTitleParentObj->Deactivate();
-	mQuitTextObjs[Yes].state = SELECT;
-	mQuitTextObjs[No].state = DISABLED;
+	mQuitTextObjs[Yes].state = DISABLED;
+	mQuitTextObjs[No].state = SELECT;
+	mQuitTimer.Reset();
 }
 
 RegisterScriptBody(SuperUI);
