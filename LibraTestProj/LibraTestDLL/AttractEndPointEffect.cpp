@@ -11,5 +11,5 @@ void AttractEndPointEffect::Update()
 
 void AttractEndPointEffect::Draw()
 {
-	LineDrawer::DrawLine(mPosition);
+	//LineDrawer::DrawLine(mPosition);
 }
