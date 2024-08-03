@@ -41,123 +41,123 @@ void shiftLeft(std::vector<Object3D*> vec) {
 void SuperUI::Init()
 {
 
-	//testObj = SceneManager::FindObject<Object3D>("Object3D");
+	////testObj = SceneManager::FindObject<Object3D>("Object3D");
 
-	// フラグ関連の初期化
-	mIsOpenUIMenu = false;
+	//// フラグ関連の初期化
+	//mIsOpenUIMenu = false;
 
-	// テクスチャのロード
-	//LoadTexInit();
+	//// テクスチャのロード
+	////LoadTexInit();
 
-	mUICurrentNum = 0;
+	//mUICurrentNum = 0;
 
-	mUIDesabledScale = { 0.4f ,0.1f };
-	mUISelectScale = { 0.5f ,0.12f };
+	//mUIDesabledScale = { 0.4f ,0.1f };
+	//mUISelectScale = { 0.5f ,0.12f };
 
-	mDesabledColor = { 180,180,180 };
-	mSelectColor = { 255,255,255 };
-	mPressedColor = { 150,225,255 };
+	//mDesabledColor = { 180,180,180 };
+	//mSelectColor = { 255,255,255 };
+	//mPressedColor = { 150,225,255 };
 
-	mDesabledTextColor = { 215,215,215 };
-	mSelectTextColor = { 255,255,255 };
-	mPressedTextColor = { 255,255,255 };
+	//mDesabledTextColor = { 215,215,215 };
+	//mSelectTextColor = { 255,255,255 };
+	//mPressedTextColor = { 255,255,255 };
 
-	mUITextBeforeColor = { 215,215,215,0 };
-	mUITextAfterColor = { 245,245,245,255 };
+	//mUITextBeforeColor = { 215,215,215,0 };
+	//mUITextAfterColor = { 245,245,245,255 };
 
-	mUIMenuTextPos = { 160,360 };
-	mUIMenuTexScale = { 0.5f,0.4f };
+	//mUIMenuTextPos = { 160,360 };
+	//mUIMenuTexScale = { 0.5f,0.4f };
 
-	mUIBoardPos = { 940,400 };
-	mUIBoardScale = { 2.4f,4.4f };
-	mUIBoardCurrentColor = mDesabledColor;
+	//mUIBoardPos = { 940,400 };
+	//mUIBoardScale = { 2.4f,4.4f };
+	//mUIBoardCurrentColor = mDesabledColor;
 
-	UIObj3DInit();
-	//Input::Mouse::HideCursor();
+	//UIObj3DInit();
+	////Input::Mouse::HideCursor();
 }
 
 void SuperUI::Update()
 {
-	if (!mCameraItem || !mSoundItem ||
-		!mMainCameraObj || !mMenuParentObj || !mTabsParentObj ||
-		!mMenuPlaneObj || !mPlanesParentObj ||
-		!mGuidParentObj || !mQuitTitleParentObj || !mTabsPParentObj || !mTabBoardParentObj)
-	{
-		return;
-	}
+	//if (!mCameraItem || !mSoundItem ||
+	//	!mMainCameraObj || !mMenuParentObj || !mTabsParentObj ||
+	//	!mMenuPlaneObj || !mPlanesParentObj ||
+	//	!mGuidParentObj || !mQuitTitleParentObj || !mTabsPParentObj || !mTabBoardParentObj)
+	//{
+	//	return;
+	//}
 
-	for (uint32_t i = 0; i < mMenuUIObj.size(); i++)
-	{
-		if (!mMenuUIObj[i].planeObj)
-		{
-			return;
-		}
-	}
+	//for (uint32_t i = 0; i < mMenuUIObj.size(); i++)
+	//{
+	//	if (!mMenuUIObj[i].planeObj)
+	//	{
+	//		return;
+	//	}
+	//}
 
-	for (uint32_t i = 0; i < mMenuTabUIObj.size(); i++)
-	{
-		if (!mMenuTabUIObj[i].planeObj)
-		{
-			return;
-		}
-	}
+	//for (uint32_t i = 0; i < mMenuTabUIObj.size(); i++)
+	//{
+	//	if (!mMenuTabUIObj[i].planeObj)
+	//	{
+	//		return;
+	//	}
+	//}
 
-	for (uint32_t i = 0; i < mQuitTextObjs.size(); i++)
-	{
-		if (!mQuitTextObjs[i].planeObj)
-		{
-			return;
-		}
-	}
+	//for (uint32_t i = 0; i < mQuitTextObjs.size(); i++)
+	//{
+	//	if (!mQuitTextObjs[i].planeObj)
+	//	{
+	//		return;
+	//	}
+	//}
 
-	for (size_t i = 0; i < mMainMenuObjs.size(); i++)
-	{
-		if (!mMainMenuObjs[i])
-		{
-			return;
-		}
-	}
+	//for (size_t i = 0; i < mMainMenuObjs.size(); i++)
+	//{
+	//	if (!mMainMenuObjs[i])
+	//	{
+	//		return;
+	//	}
+	//}
 
-	for (size_t i = 0; i < mTabBoardObjs.size(); i++)
-	{
-		if (!mTabBoardObjs[i])
-		{
-			return;
-		}
-	}
+	//for (size_t i = 0; i < mTabBoardObjs.size(); i++)
+	//{
+	//	if (!mTabBoardObjs[i])
+	//	{
+	//		return;
+	//	}
+	//}
 
-	// もしTABキーを押したらメニューを開け閉めする
-	if (AppOperationCommand::GetInstance()->UIBackCommand())
-	{
-		OutputDebugStringA("menuOpen");
-		if ((mIsDisplayUI || mIsMomentOpenMenu) &&
-			mMenuUIObj[mUICurrentNum].state != PRESSED)
-		{
-			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(false);
-			mIsDisplayUI = false;
-			UIMainMenuOffReset();
-			ConsoleWindow::Log("メニューを閉じた");
-		}
-		else if (mMenuUIObj[mUICurrentNum].state != PRESSED)
-		{
-			SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(true);
-			mIsMomentOpenMenu = true;
-			UIMainMenuOnReset();
+	//// もしTABキーを押したらメニューを開け閉めする
+	//if (AppOperationCommand::GetInstance()->UIBackCommand())
+	//{
+	//	OutputDebugStringA("menuOpen");
+	//	if ((mIsDisplayUI || mIsMomentOpenMenu) &&
+	//		mMenuUIObj[mUICurrentNum].state != PRESSED)
+	//	{
+	//		SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(false);
+	//		mIsDisplayUI = false;
+	//		UIMainMenuOffReset();
+	//		ConsoleWindow::Log("メニューを閉じた");
+	//	}
+	//	else if (mMenuUIObj[mUICurrentNum].state != PRESSED)
+	//	{
+	//		SceneManager::FindObject<GameManager>("GameManager")->SetIsStop(true);
+	//		mIsMomentOpenMenu = true;
+	//		UIMainMenuOnReset();
 
-			ConsoleWindow::Log("メニューを開いた");
-		}
-	}
-	if (mIsMomentOpenMenu)
-	{
-		UIMainMenuMomentUpdate();
-	}
-	// メニューが開いた瞬間 
+	//		ConsoleWindow::Log("メニューを開いた");
+	//	}
+	//}
+	//if (mIsMomentOpenMenu)
+	//{
+	//	UIMainMenuMomentUpdate();
+	//}
+	//// メニューが開いた瞬間 
 
-	if (mIsDisplayUI)
-	{
-		UIObj3DUpdate();
-		ConsoleWindow::Log("メニューを開いた");
-	}
+	//if (mIsDisplayUI)
+	//{
+	//	UIObj3DUpdate();
+	//	ConsoleWindow::Log("メニューを開いた");
+	//}
 
 }
 
