@@ -123,7 +123,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": 15.432025909423828,
-                    "Y": 117.89320373535156,
+                    "Y": -10000.0,
                     "Z": -200.55178833007813
                 },
                 "RenderTarget": "",
@@ -1115,9 +1115,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -2.472114324569702,
-                    "Y": 10.0,
-                    "Z": -30.38544273376465
+                    "X": 0.0,
+                    "Y": 5.977999687194824,
+                    "Z": 22.746002197265625
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1127,8 +1127,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.39091041684150696,
-                    "Y": 2.2271862030029297,
+                    "X": 0.0,
+                    "Y": 3.1415927410125732,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1181,9 +1181,9 @@
                 "Name": "FlyBlock",
                 "NormalType": 1,
                 "Position": {
-                    "X": -0.008107185363769531,
-                    "Y": 5.25,
-                    "Z": -1.1897578239440918
+                    "X": 12.0,
+                    "Y": 11.0,
+                    "Z": 6.0
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1242,7 +1242,7 @@
                         "NormalType": 1,
                         "Position": {
                             "X": 0.0,
-                            "Y": -0.6100000143051147,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -1341,7 +1341,7 @@
                 "Name": "Button",
                 "Position": {
                     "X": 0.0,
-                    "Y": 4.25,
+                    "Y": 4.199999809265137,
                     "Z": 0.0
                 },
                 "RenderTarget": "",
@@ -3038,7 +3038,7 @@
                         "Name": "Left",
                         "NormalType": 1,
                         "Position": {
-                            "X": -3.0,
+                            "X": -1.0,
                             "Y": 2.0,
                             "Z": 0.0
                         },
@@ -3085,7 +3085,7 @@
                         "Name": "Right",
                         "NormalType": 1,
                         "Position": {
-                            "X": 3.0,
+                            "X": 1.0,
                             "Y": 2.0,
                             "Z": 0.0
                         },
@@ -3756,6 +3756,7 @@
                 "Block1.png": "Assets/Models/Stage/Block/Block1.png",
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
                 "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
+                "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",

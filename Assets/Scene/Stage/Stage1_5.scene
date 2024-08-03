@@ -40,7 +40,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": -0.4363323152065277,
+                            "X": 0.0,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -87,9 +87,9 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": -0.4363323152065277,
+                            "X": 0.0,
                             "Y": 0.0,
-                            "Z": 1.5707963705062866
+                            "Z": 0.0
                         },
                         "Scale": {
                             "X": 192.0,
@@ -98,7 +98,7 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "TestTex.png",
+                        "Texture": "Plane.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -135,7 +135,7 @@
                 },
                 "RotationEuler": {
                     "X": -0.12600000202655792,
-                    "Y": 4.943388938903809,
+                    "Y": 4.943389415740967,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -173,9 +173,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -5.284999847412109,
-                    "Y": 6.0,
-                    "Z": -60.92232131958008
+                    "X": -4.635000228881836,
+                    "Y": 5.910000324249268,
+                    "Z": -54.30399703979492
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -184,8 +184,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.15899991989135742,
-                    "Y": 2.088000535964966,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1832,7 +1832,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": -4.635000228881836,
-                    "Y": 6.0,
+                    "Y": 5.910000324249268,
                     "Z": -54.30399703979492
                 },
                 "RenderTarget": "",
@@ -4134,7 +4134,7 @@
                     "Goggle"
                 ],
                 "TexType": 0,
-                "Texture": "",
+                "Texture": "Goggles.png",
                 "Tiling": {
                     "X": 1.0,
                     "Y": 1.0
@@ -5115,7 +5115,8 @@
                 "panel.obj": "Assets\\Models\\panel\\panel.obj",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
                 "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
-                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj"
+                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj",
+                "stage2.obj": "Assets\\Models\\stage2\\stage2.obj"
             }
         ],
         "Name": "Game",
@@ -5132,6 +5133,7 @@
         "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",
+                "BgmVolume.png": "Assets\\Images\\UI\\BgmVolume.png",
                 "Black": "Assets/Images/black.png",
                 "Block.png": "Assets\\Models\\Stage\\Block\\Block.png",
                 "Block1.png": "Assets/Models/Stage/Block/Block1.png",
@@ -5143,10 +5145,12 @@
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "MouseText.png": "Assets\\Images\\UI\\MouseText.png",
                 "Noice": "Assets/Images/Noice.png",
                 "Noice.png": "Assets/Images/Noice.png",
                 "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
+                "SeVolume.png": "Assets\\Images\\UI\\SeVolume.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
@@ -5154,6 +5158,7 @@
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
@@ -5168,18 +5173,38 @@
                 "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
+                "asmptex:Assets\\Models\\stage2stage2.png": "Assets\\Models\\stage2/stage2.png",
+                "back.png": "Assets\\Images\\UI\\back.png",
                 "black": "Assets/Images/black.png",
                 "button.png": "Assets\\Models\\button\\button.png",
+                "cameraText.png": "Assets\\Images\\UI\\cameraText.png",
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
                 "door.png": "Assets\\Models\\door\\door.png",
                 "goal.png": "Assets\\Models\\Goal\\goal.png",
                 "goggle.png": "Assets\\Images\\goggle.png",
+                "guide.png": "Assets\\Images\\UI\\guide.png",
                 "hyphen": "Assets/Images/hyphen.png",
+                "keyboardG.png": "Assets\\Images\\UI\\keyboardG.png",
+                "mainmenu.png": "Assets\\Images\\UI\\mainmenu.png",
+                "masterVolume.png": "Assets\\Images\\UI\\masterVolume.png",
+                "no.png": "Assets\\Images\\UI\\no.png",
+                "option.png": "Assets\\Images\\UI\\option.png",
+                "padG.png": "Assets\\Images\\UI\\padG.png",
+                "padText.png": "Assets\\Images\\UI\\padText.png",
                 "panel.png": "Assets\\Models\\panel\\panel.png",
+                "quitText.png": "Assets\\Images\\UI\\quitText.png",
+                "soundTabText.png": "Assets\\Images\\UI\\soundTabText.png",
                 "stage1.png": "Assets\\Models\\stage1\\stage1.png",
                 "stage1_pipe.png": "Assets\\Models\\stage1_pipe\\stage1_pipe.png",
+                "stage2.png": "Assets\\Models\\stage2\\stage2.png",
+                "tab1.png": "Assets\\Images\\UI\\tab1.png",
                 "testTex": "Assets/Images/circleParticle.png",
-                "white.png": "Assets\\Images\\white.png"
+                "title.png": "Assets\\Images\\UI\\title.png",
+                "uibackground.png": "Assets\\Images\\UI\\uibackground.png",
+                "white.png": "Assets\\Images\\white.png",
+                "xAxisText.png": "Assets\\Images\\UI\\xAxisText.png",
+                "yAxisText.png": "Assets\\Images\\UI\\yAxisText.png",
+                "yes.png": "Assets\\Images\\UI\\yes.png"
             }
         ],
         "Type": "IScene"
