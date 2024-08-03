@@ -3402,7 +3402,9 @@
                 "Select": "Assets/Sounds/select.wav"
             }
         ],
-        "Tags": null,
+        "Tags": [
+            "Stage1_2"
+        ],
         "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",
