@@ -908,8 +908,8 @@ void SuperUI::UIQuitTitleMenuOn()
 	mQuitTitleParentObj->Activate();
 	mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
 	mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
-	mQuitTextObjs[Yes].state = SELECT;
-	mQuitTextObjs[No].state = DISABLED;
+	mQuitTextObjs[Yes].state = DISABLED;
+	mQuitTextObjs[No].state = SELECT;
 	mQuitTimer.Reset();
 
 	mBackTitleEase.Reset();
