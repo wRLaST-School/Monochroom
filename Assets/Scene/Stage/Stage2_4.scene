@@ -23,7 +23,7 @@
                 "Name": "Camera",
                 "Position": {
                     "X": -9.57400131225586,
-                    "Y": 52.805992126464844,
+                    "Y": 52.807350158691406,
                     "Z": -0.9760003089904785
                 },
                 "Rotation": {
@@ -35,7 +35,7 @@
                 "RotationEuler": {
                     "X": 0.0,
                     "Y": 4.71238899230957,
-                    "Z": 0.0
+                    "Z": 4.308160350774415e-05
                 },
                 "Scale": {
                     "X": 1.0,
@@ -4091,7 +4091,7 @@
                 "DisableDraw": false,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "",
-                "Model": "cube.obj",
+                "Model": "Block.obj",
                 "Name": "FlyBlock",
                 "NormalType": 1,
                 "Position": {
@@ -4121,7 +4121,7 @@
                     "Stage"
                 ],
                 "TexType": 0,
-                "Texture": "",
+                "Texture": "FlyBlock.png",
                 "Tiling": {
                     "X": 1.0,
                     "Y": 1.0
@@ -4140,7 +4140,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -7584,7 +7584,7 @@
                         "filePath": "SponePoint"
                     }
                 ],
-                "DisableDraw": false,
+                "DisableDraw": true,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
