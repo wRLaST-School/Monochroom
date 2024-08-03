@@ -122,9 +122,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -162.758056640625,
-                    "Y": -10000.0,
-                    "Z": 107.10000610351563
+                    "X": 114.20843505859375,
+                    "Y": 120.9092025756836,
+                    "Z": -174.4315185546875
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -134,8 +134,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.17000000178813934,
-                    "Y": 5.282389163970947,
+                    "X": -0.006000000052154064,
+                    "Y": 2.542727470397949,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -173,9 +173,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -11.965999603271484,
-                    "Y": 8.994000434875488,
-                    "Z": 10.447000503540039
+                    "X": -9.465718269348145,
+                    "Y": 6.599999904632568,
+                    "Z": 7.392697334289551
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -184,8 +184,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": 0.16800028085708618,
+                    "Y": 2.4270005226135254,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -293,7 +293,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -364,10 +364,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 6.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -422,10 +422,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 10.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -480,10 +480,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 20.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -538,10 +538,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 12.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -596,10 +596,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 10.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -654,10 +654,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 5.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -712,10 +712,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 6.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -770,10 +770,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 6.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -828,10 +828,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 20.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -886,10 +886,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 6.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -944,10 +944,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 12.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1002,10 +1002,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 16.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1060,10 +1060,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 8.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1118,10 +1118,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 10.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1176,10 +1176,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 12.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1234,10 +1234,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
                             "X": 1.0,
-                            "Y": 1.0
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1292,10 +1292,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 10.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1350,10 +1350,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 20.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1408,10 +1408,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 24.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1466,10 +1466,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 16.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1524,10 +1524,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 10.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1582,10 +1582,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 20.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1640,10 +1640,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 9.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -2274,9 +2274,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -11.965999603271484,
-                    "Y": 8.994000434875488,
-                    "Z": 10.447000503540039
+                    "X": -9.465718269348145,
+                    "Y": 6.599999904632568,
+                    "Z": 7.392697334289551
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -2286,8 +2286,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": 0.16800028085708618,
+                    "Y": 2.4270005226135254,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2335,7 +2335,7 @@
                         "NormalType": 1,
                         "Position": {
                             "X": 0.0,
-                            "Y": 0.0,
+                            "Y": -0.6100000143051147,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -4558,7 +4558,7 @@
                         "Name": "Left",
                         "NormalType": 1,
                         "Position": {
-                            "X": -1.0,
+                            "X": -3.0,
                             "Y": 2.0,
                             "Z": 0.0
                         },
@@ -4605,7 +4605,7 @@
                         "Name": "Right",
                         "NormalType": 1,
                         "Position": {
-                            "X": 1.0,
+                            "X": 3.0,
                             "Y": 2.0,
                             "Z": 0.0
                         },
@@ -4710,7 +4710,7 @@
                         "filePath": "SponePoint"
                     }
                 ],
-                "DisableDraw": false,
+                "DisableDraw": true,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
@@ -4730,7 +4730,7 @@
                 },
                 "RotationEuler": {
                     "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "Y": 2.5307273864746094,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4769,7 +4769,7 @@
                         "Active": true,
                         "Name": "StageGoal",
                         "Tags": [
-                            "Stage1"
+                            "Stage2_2"
                         ],
                         "Type": "ScriptComponent",
                         "filePath": "StageGoal"
@@ -4848,7 +4848,7 @@
                 "NormalType": 1,
                 "Position": {
                     "X": 13.5,
-                    "Y": 8.0,
+                    "Y": 5.0,
                     "Z": -12.0
                 },
                 "RenderTarget": "",
@@ -5251,7 +5251,7 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.04999999701976776,
+                    "X": -0.04999999329447746,
                     "Y": 4.802389144897461,
                     "Z": 0.0
                 },
@@ -5331,7 +5331,7 @@
                 "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 539.0,
+                "posY": 500.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -5515,7 +5515,7 @@
                 "NormalType": 1,
                 "Position": {
                     "X": -10.706071853637695,
-                    "Y": 10.959108352661133,
+                    "Y": 1.9321088790893555,
                     "Z": 11.399971961975098
                 },
                 "RenderTarget": "",
@@ -5533,7 +5533,7 @@
                 "Scale": {
                     "X": 0.3499999940395355,
                     "Y": 0.3499999940395355,
-                    "Z": 0.3499999940395355
+                    "Z": 0.34999996423721313
                 },
                 "Tags": [
                     "Goggle"
@@ -5626,19 +5626,24 @@
         "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",
+                "BgmVolume.png": "Assets\\Images\\UI\\BgmVolume.png",
                 "Black": "Assets/Images/black.png",
                 "Block.png": "Assets\\Models\\Stage\\Block\\Block.png",
                 "Block1.png": "Assets/Models/Stage/Block/Block1.png",
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
+                "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
+                "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
+                "MouseText.png": "Assets\\Images\\UI\\MouseText.png",
                 "Noice": "Assets/Images/Noice.png",
                 "Noice.png": "Assets/Images/Noice.png",
                 "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
+                "SeVolume.png": "Assets\\Images\\UI\\SeVolume.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
@@ -5646,6 +5651,7 @@
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
@@ -5661,19 +5667,37 @@
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
                 "asmptex:Assets\\Models\\stage2stage2.png": "Assets\\Models\\stage2/stage2.png",
+                "back.png": "Assets\\Images\\UI\\back.png",
                 "black": "Assets/Images/black.png",
                 "button.png": "Assets\\Models\\button\\button.png",
+                "cameraText.png": "Assets\\Images\\UI\\cameraText.png",
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
                 "door.png": "Assets\\Models\\door\\door.png",
                 "goal.png": "Assets\\Models\\Goal\\goal.png",
                 "goggle.png": "Assets\\Images\\goggle.png",
+                "guide.png": "Assets\\Images\\UI\\guide.png",
                 "hyphen": "Assets/Images/hyphen.png",
+                "keyboardG.png": "Assets\\Images\\UI\\keyboardG.png",
+                "mainmenu.png": "Assets\\Images\\UI\\mainmenu.png",
+                "masterVolume.png": "Assets\\Images\\UI\\masterVolume.png",
+                "no.png": "Assets\\Images\\UI\\no.png",
+                "option.png": "Assets\\Images\\UI\\option.png",
+                "padG.png": "Assets\\Images\\UI\\padG.png",
+                "padText.png": "Assets\\Images\\UI\\padText.png",
                 "panel.png": "Assets\\Models\\panel\\panel.png",
+                "quitText.png": "Assets\\Images\\UI\\quitText.png",
+                "soundTabText.png": "Assets\\Images\\UI\\soundTabText.png",
                 "stage1.png": "Assets\\Models\\stage1\\stage1.png",
                 "stage1_pipe.png": "Assets\\Models\\stage1_pipe\\stage1_pipe.png",
                 "stage2.png": "Assets\\Models\\stage2\\stage2.png",
+                "tab1.png": "Assets\\Images\\UI\\tab1.png",
                 "testTex": "Assets/Images/circleParticle.png",
-                "white.png": "Assets\\Images\\white.png"
+                "title.png": "Assets\\Images\\UI\\title.png",
+                "uibackground.png": "Assets\\Images\\UI\\uibackground.png",
+                "white.png": "Assets\\Images\\white.png",
+                "xAxisText.png": "Assets\\Images\\UI\\xAxisText.png",
+                "yAxisText.png": "Assets\\Images\\UI\\yAxisText.png",
+                "yes.png": "Assets\\Images\\UI\\yes.png"
             }
         ],
         "Type": "IScene"

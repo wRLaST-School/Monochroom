@@ -155,6 +155,9 @@ private:
     // UIのタブメニューの更新処理
     void UITabMenuUpdate();
 
+    // ガイドメニューの更新処理
+    void UIGuideMenuUpdate();
+
     // UIのタイトルへ戻るメニューの更新処理
     void UITitleMenuUpdate();
 
@@ -331,6 +334,16 @@ private:// メンバー変数
     Easing mTabChangeEase;
 
     Timer mQuitTimer;
+
+    bool mIsBackTitleMoment;
+    bool mIsBackTitleOnOnOn;
+
+    Object3D* mGuideParent;
+    Object3D* mBackParent;
+
+    Easing mGuideEase;
+    Easing mBackTitleEase;
+
 };
 RegisterScript(SuperUI);
 

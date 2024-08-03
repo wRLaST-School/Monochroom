@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -14.522867202758789,
+                    "X": -14.8533353805542,
                     "Y": 6.0,
-                    "Z": -57.990291595458984
+                    "Z": -58.40178680419922
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.5700001120567322,
-                    "Y": 3.5300002098083496,
+                    "X": 0.3599998950958252,
+                    "Y": 6.244184494018555,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -86,6 +86,7 @@
                     "Z": 345.39251708984375
                 },
                 "Tags": null,
+                "TexType": 0,
                 "Texture": "white.png",
                 "Tiling": {
                     "X": 1.0,
@@ -153,6 +154,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -210,6 +212,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -267,6 +270,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -324,6 +328,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -381,6 +386,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -438,6 +444,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -495,6 +502,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -552,6 +560,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -609,6 +618,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -666,6 +676,7 @@
                         "Tags": [
                             "Glass"
                         ],
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -703,6 +714,7 @@
                     "Z": 1.0
                 },
                 "Tags": null,
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -758,7 +770,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -770,7 +782,8 @@
                         "Tags": [
                             "Block"
                         ],
-                        "Texture": "Block1.png",
+                        "TexType": 0,
+                        "Texture": "Block.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -815,7 +828,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -827,7 +840,8 @@
                         "Tags": [
                             "Block"
                         ],
-                        "Texture": "Block1.png",
+                        "TexType": 0,
+                        "Texture": "Block.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -872,7 +886,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -884,7 +898,8 @@
                         "Tags": [
                             "Block"
                         ],
-                        "Texture": "Block1.png",
+                        "TexType": 0,
+                        "Texture": "Block.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -929,7 +944,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -941,7 +956,8 @@
                         "Tags": [
                             "Block"
                         ],
-                        "Texture": "Block1.png",
+                        "TexType": 0,
+                        "Texture": "Block.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -986,7 +1002,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -998,7 +1014,8 @@
                         "Tags": [
                             "Block"
                         ],
-                        "Texture": "Block1.png",
+                        "TexType": 0,
+                        "Texture": "Block.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -1043,7 +1060,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -1055,7 +1072,8 @@
                         "Tags": [
                             "Block"
                         ],
-                        "Texture": "Block1.png",
+                        "TexType": 0,
+                        "Texture": "Block.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -1100,7 +1118,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 1.5707963705062866,
                             "Z": 0.0
                         },
@@ -1112,7 +1130,8 @@
                         "Tags": [
                             "Block"
                         ],
-                        "Texture": "Block1.png",
+                        "TexType": 0,
+                        "Texture": "Block.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -1149,6 +1168,7 @@
                     "Z": 1.0
                 },
                 "Tags": null,
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -1205,6 +1225,7 @@
                             "Z": 1.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "Goggles.png",
                         "Tiling": {
                             "X": 1.0,
@@ -1253,6 +1274,7 @@
                         "Tags": [
                             "Player"
                         ],
+                        "TexType": 0,
                         "Texture": "",
                         "Tiling": {
                             "X": 1.0,
@@ -1289,9 +1311,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -14.522867202758789,
+                    "X": -14.8533353805542,
                     "Y": 6.0,
-                    "Z": -57.990291595458984
+                    "Z": -58.40178680419922
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1301,8 +1323,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.5700001120567322,
-                    "Y": 3.5300002098083496,
+                    "X": 0.3599998950958252,
+                    "Y": 6.244184494018555,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1314,6 +1336,7 @@
                     "Player",
                     "Stage"
                 ],
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -1350,12 +1373,12 @@
                 "DisableDraw": false,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "",
-                "Model": "cube.obj",
+                "Model": "Block.obj",
                 "Name": "FlyBlock",
                 "NormalType": 1,
                 "Position": {
                     "X": -9.831012725830078,
-                    "Y": 5.74799919128418,
+                    "Y": 5.24799919128418,
                     "Z": -43.17020797729492
                 },
                 "RenderTarget": "",
@@ -1379,7 +1402,8 @@
                     "FlyBlock",
                     "Stage"
                 ],
-                "Texture": "",
+                "TexType": 0,
+                "Texture": "FlyBlock.png",
                 "Tiling": {
                     "X": 1.0,
                     "Y": 1.0
@@ -1435,6 +1459,7 @@
                             "Z": 1.5
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "ButtonBody.png",
                         "Tiling": {
                             "X": 1.0,
@@ -1481,6 +1506,7 @@
                             "Z": 1.5
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "ButtonBody.png",
                         "Tiling": {
                             "X": 1.0,
@@ -1536,6 +1562,7 @@
                     "DB1",
                     "Stage"
                 ],
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -1555,7 +1582,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -1602,6 +1629,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "TexType": 0,
                                 "Texture": "black",
                                 "Tiling": {
                                     "X": 1.0,
@@ -1668,6 +1696,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "white.png",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -1714,6 +1743,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "white.png",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -1760,6 +1790,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "white.png",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -1797,6 +1828,7 @@
                                             "Z": 1.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "",
                                         "Tiling": {
                                             "X": 1.0,
@@ -1853,6 +1885,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "white.png",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -1899,6 +1932,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "white.png",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -1945,6 +1979,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "white.png",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -1991,6 +2026,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "white.png",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -2028,6 +2064,7 @@
                                             "Z": 1.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "",
                                         "Tiling": {
                                             "X": 1.0,
@@ -2065,6 +2102,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "TexType": 0,
                                 "Texture": "",
                                 "Tiling": {
                                     "X": 1.0,
@@ -2120,6 +2158,7 @@
                                             "Z": 1.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "",
                                         "Tiling": {
                                             "X": 1.0,
@@ -2158,6 +2197,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "TexType": 0,
                                 "Texture": "white.png",
                                 "Tiling": {
                                     "X": 1.0,
@@ -2244,6 +2284,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "three",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2290,6 +2331,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2336,6 +2378,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2374,6 +2417,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -2430,6 +2474,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "four",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2476,6 +2521,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2522,6 +2568,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2560,6 +2607,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -2606,6 +2654,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -2662,6 +2711,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "one",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2708,6 +2758,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2754,6 +2805,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2792,6 +2844,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -2848,6 +2901,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "one",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2894,6 +2948,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2940,6 +2995,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -2978,6 +3034,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -3024,6 +3081,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -3061,6 +3119,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -3127,6 +3186,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3173,6 +3233,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3211,6 +3272,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -3267,6 +3329,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3313,6 +3376,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3351,6 +3415,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -3388,6 +3453,7 @@
                                                     "Z": 1.0000001192092896
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -3454,6 +3520,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "two",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3500,6 +3567,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3546,6 +3614,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3584,6 +3653,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -3640,6 +3710,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "one",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3686,6 +3757,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3732,6 +3804,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3770,6 +3843,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -3826,6 +3900,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "one",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3872,6 +3947,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3918,6 +3994,7 @@
                                                                     "Z": 1.0
                                                                 },
                                                                 "Tags": null,
+                                                                "TexType": 0,
                                                                 "Texture": "white.png",
                                                                 "Tiling": {
                                                                     "X": 1.0,
@@ -3956,6 +4033,7 @@
                                                             "Z": 1.0
                                                         },
                                                         "Tags": null,
+                                                        "TexType": 0,
                                                         "Texture": "white.png",
                                                         "Tiling": {
                                                             "X": 1.0,
@@ -3993,6 +4071,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -4031,6 +4110,7 @@
                                             "Z": 1.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "white.png",
                                         "Tiling": {
                                             "X": 1.0,
@@ -4077,6 +4157,7 @@
                                             "Z": 1.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "white.png",
                                         "Tiling": {
                                             "X": 1.0,
@@ -4123,6 +4204,7 @@
                                             "Z": 1.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "white.png",
                                         "Tiling": {
                                             "X": 1.0,
@@ -4169,6 +4251,7 @@
                                             "Z": 1.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "white.png",
                                         "Tiling": {
                                             "X": 1.0,
@@ -4206,6 +4289,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "TexType": 0,
                                 "Texture": "",
                                 "Tiling": {
                                     "X": 1.0,
@@ -4272,6 +4356,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "guidTextTex",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -4310,6 +4395,7 @@
                                             "Z": 0.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "white.png",
                                         "Tiling": {
                                             "X": 1.0,
@@ -4365,6 +4451,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -4403,6 +4490,7 @@
                                             "Z": 0.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "white.png",
                                         "Tiling": {
                                             "X": 1.0,
@@ -4458,6 +4546,7 @@
                                                     "Z": 1.0
                                                 },
                                                 "Tags": null,
+                                                "TexType": 0,
                                                 "Texture": "",
                                                 "Tiling": {
                                                     "X": 1.0,
@@ -4496,6 +4585,7 @@
                                             "Z": 0.0
                                         },
                                         "Tags": null,
+                                        "TexType": 0,
                                         "Texture": "white.png",
                                         "Tiling": {
                                             "X": 1.0,
@@ -4533,6 +4623,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "TexType": 0,
                                 "Texture": "",
                                 "Tiling": {
                                     "X": 1.0,
@@ -4570,6 +4661,7 @@
                             "Z": 1.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "",
                         "Tiling": {
                             "X": 1.0,
@@ -4662,6 +4754,7 @@
                             "Z": 1.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "",
                         "Tiling": {
                             "X": 1.0,
@@ -4699,6 +4792,7 @@
                     "Z": 1.0
                 },
                 "Tags": null,
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -4755,6 +4849,7 @@
                             "Z": 1.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "DissolveMap.png",
                         "Tiling": {
                             "X": 1.0,
@@ -4801,6 +4896,7 @@
                             "Z": 0.10000000149011612
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -4847,6 +4943,7 @@
                             "Z": 0.10000000149011612
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -4902,6 +4999,7 @@
                     "StageDoor",
                     "Stage"
                 ],
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -4928,7 +5026,7 @@
                         "filePath": "SponePoint"
                     }
                 ],
-                "DisableDraw": false,
+                "DisableDraw": true,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
@@ -4957,6 +5055,7 @@
                     "Z": 1.0
                 },
                 "Tags": null,
+                "TexType": 0,
                 "Texture": "buttonBackTex",
                 "Tiling": {
                     "X": 1.0,
@@ -4986,7 +5085,7 @@
                         "Active": true,
                         "Name": "StageGoal",
                         "Tags": [
-                            "Stage1"
+                            "Stage2_3"
                         ],
                         "Type": "ScriptComponent",
                         "filePath": "StageGoal"
@@ -5023,6 +5122,7 @@
                 "Tags": [
                     "Goal"
                 ],
+                "TexType": 0,
                 "Texture": "Goal.png",
                 "Tiling": {
                     "X": 1.0,
@@ -5089,6 +5189,7 @@
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "TexType": 0,
                                 "Texture": "stage1_pipe.png",
                                 "Tiling": {
                                     "X": 1.0,
@@ -5130,11 +5231,12 @@
                                     "Z": 0.0
                                 },
                                 "Scale": {
-                                    "X": 100.0,
-                                    "Y": 100.0,
+                                    "X": 192.0,
+                                    "Y": 108.0,
                                     "Z": 1.0
                                 },
                                 "Tags": null,
+                                "TexType": 0,
                                 "Texture": "white.png",
                                 "Tiling": {
                                     "X": 1.0,
@@ -5147,7 +5249,7 @@
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
                         "DissolveTex": "Noice.png",
-                        "Model": "stage1.obj",
+                        "Model": "stage2.obj",
                         "Name": "StageObj",
                         "NormalType": 1,
                         "Position": {
@@ -5173,7 +5275,8 @@
                             "Z": 1.0
                         },
                         "Tags": null,
-                        "Texture": "stage1.png",
+                        "TexType": 0,
+                        "Texture": "stage2.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -5219,6 +5322,7 @@
                             "Z": 3.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -5256,6 +5360,7 @@
                     "Z": 1.0
                 },
                 "Tags": null,
+                "TexType": 0,
                 "Texture": "stage1.png",
                 "Tiling": {
                     "X": 1.0,
@@ -5312,6 +5417,7 @@
                             "Z": 0.9999952912330627
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "",
                         "Tiling": {
                             "X": 1.0,
@@ -5353,11 +5459,12 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 100.0,
-                            "Y": 100.0,
+                            "X": 192.0,
+                            "Y": 108.0,
                             "Z": 1.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "Plane.png",
                         "Tiling": {
                             "X": 10.0,
@@ -5382,9 +5489,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -16.184999465942383,
-                    "Y": 98.94252014160156,
-                    "Z": 117.70903778076172
+                    "X": -9.47109317779541,
+                    "Y": 121.3031997680664,
+                    "Z": 162.32968139648438
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -5394,8 +5501,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
+                    "X": 0.003000000026077032,
+                    "Y": 0.030000001192092896,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -5404,6 +5511,7 @@
                     "Z": 1.0
                 },
                 "Tags": null,
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -5473,7 +5581,7 @@
                 "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 539.0,
+                "posY": 500.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -5594,6 +5702,7 @@
                 "Tags": [
                     "Transparent"
                 ],
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -5650,6 +5759,7 @@
                             "Z": 1.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -5696,6 +5806,7 @@
                             "Z": 1.0
                         },
                         "Tags": null,
+                        "TexType": 0,
                         "Texture": "white.png",
                         "Tiling": {
                             "X": 1.0,
@@ -5728,8 +5839,8 @@
                 "Name": "Goggle",
                 "NormalType": 1,
                 "Position": {
-                    "X": -10.706071853637695,
-                    "Y": 10.959108352661133,
+                    "X": -17.426071166992188,
+                    "Y": 8.219107627868652,
                     "Z": 11.399971961975098
                 },
                 "RenderTarget": "",
@@ -5747,11 +5858,12 @@
                 "Scale": {
                     "X": 0.3499999940395355,
                     "Y": 0.3499999940395355,
-                    "Z": 0.3499999940395355
+                    "Z": 0.34999996423721313
                 },
                 "Tags": [
                     "Goggle"
                 ],
+                "TexType": 0,
                 "Texture": "",
                 "Tiling": {
                     "X": 1.0,
@@ -5821,38 +5933,55 @@
                 "panel.obj": "Assets\\Models\\panel\\panel.obj",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
                 "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
-                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj"
+                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj",
+                "stage2.obj": "Assets\\Models\\stage2\\stage2.obj"
             }
         ],
         "Name": "Game",
         "Sounds": [
-            {}
+            {
+                "Blink": "Assets/Sounds/blink.wav",
+                "Decide": "Assets/Sounds/decide.wav",
+                "Generate": "Assets/Sounds/generate.wav",
+                "Goal": "Assets/Sounds/goal.wav",
+                "Select": "Assets/Sounds/select.wav"
+            }
         ],
         "Tags": null,
         "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",
+                "BgmVolume.png": "Assets\\Images\\UI\\BgmVolume.png",
                 "Black": "Assets/Images/black.png",
-                "Block1.png": "Assets\\Models\\Stage\\Block\\Block1.png",
+                "Block.png": "Assets\\Models\\Stage\\Block\\Block.png",
+                "Block1.png": "Assets/Models/Stage/Block/Block1.png",
+                "Block2.png": "Assets/Models/Stage/Block/Block2.png",
+                "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
+                "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
+                "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
-                "Noice.png": "Assets\\Images\\Noice.png",
+                "MouseText.png": "Assets\\Images\\UI\\MouseText.png",
+                "Noice": "Assets/Images/Noice.png",
+                "Noice.png": "Assets/Images/Noice.png",
                 "Plane.png": "Assets\\Images\\Plane.png",
                 "PressSpace.png": "Assets\\Images\\Title\\PressSpace.png",
+                "SeVolume.png": "Assets\\Images\\UI\\SeVolume.png",
                 "SpicavirSky.png": "Assets\\Models\\skydome\\SpicavirSky.png",
                 "Stars.png": "Assets\\Models\\skydome\\Stars.png",
                 "TV1.png": "Assets\\Models\\TV1\\TV1.png",
                 "TV2Black.png": "Assets\\Models\\TVBlack\\TV2Black.png",
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
-                "TestTex.png": "Assets\\Images\\TestTex.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
                 "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
+                "asmptex:Assets\\Models\\Stage\\BlockBlock.png": "Assets\\Models\\Stage\\Block/Block.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonBodyButtonBody.png": "Assets\\Models\\Stage\\ButtonBody/ButtonBody.png",
                 "asmptex:Assets\\Models\\Stage\\ButtonFlameButtonFlame.png": "Assets\\Models\\Stage\\ButtonFlame/ButtonFlame.png",
                 "asmptex:Assets\\Models\\TV1TV1.png": "Assets\\Models\\TV1/TV1.png",
@@ -5862,23 +5991,38 @@
                 "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
+                "asmptex:Assets\\Models\\stage2stage2.png": "Assets\\Models\\stage2/stage2.png",
+                "back.png": "Assets\\Images\\UI\\back.png",
                 "black": "Assets/Images/black.png",
                 "button.png": "Assets\\Models\\button\\button.png",
-                "buttonBackTex": "Assets/Images/MenuImages/ButtonBack.png",
-                "cameraTextTex": "Assets/Images/MenuImages/CameraText.png",
+                "cameraText.png": "Assets\\Images\\UI\\cameraText.png",
                 "circleParticle.png": "Assets\\Images\\circleParticle.png",
                 "door.png": "Assets\\Models\\door\\door.png",
                 "goal.png": "Assets\\Models\\Goal\\goal.png",
                 "goggle.png": "Assets\\Images\\goggle.png",
-                "guidTextTex": "Assets/Images/MenuImages/GuidText.png",
+                "guide.png": "Assets\\Images\\UI\\guide.png",
                 "hyphen": "Assets/Images/hyphen.png",
-                "menuTextTex": "Assets/Images/MenuImages/MenuText.png",
+                "keyboardG.png": "Assets\\Images\\UI\\keyboardG.png",
+                "mainmenu.png": "Assets\\Images\\UI\\mainmenu.png",
+                "masterVolume.png": "Assets\\Images\\UI\\masterVolume.png",
+                "no.png": "Assets\\Images\\UI\\no.png",
+                "option.png": "Assets\\Images\\UI\\option.png",
+                "padG.png": "Assets\\Images\\UI\\padG.png",
+                "padText.png": "Assets\\Images\\UI\\padText.png",
                 "panel.png": "Assets\\Models\\panel\\panel.png",
-                "quitTextTex": "Assets/Images/MenuImages/QuitText.png",
+                "quitText.png": "Assets\\Images\\UI\\quitText.png",
+                "soundTabText.png": "Assets\\Images\\UI\\soundTabText.png",
                 "stage1.png": "Assets\\Models\\stage1\\stage1.png",
                 "stage1_pipe.png": "Assets\\Models\\stage1_pipe\\stage1_pipe.png",
+                "stage2.png": "Assets\\Models\\stage2\\stage2.png",
+                "tab1.png": "Assets\\Images\\UI\\tab1.png",
                 "testTex": "Assets/Images/circleParticle.png",
-                "white.png": "Assets\\Images\\white.png"
+                "title.png": "Assets\\Images\\UI\\title.png",
+                "uibackground.png": "Assets\\Images\\UI\\uibackground.png",
+                "white.png": "Assets\\Images\\white.png",
+                "xAxisText.png": "Assets\\Images\\UI\\xAxisText.png",
+                "yAxisText.png": "Assets\\Images\\UI\\yAxisText.png",
+                "yes.png": "Assets\\Images\\UI\\yes.png"
             }
         ],
         "Type": "IScene"

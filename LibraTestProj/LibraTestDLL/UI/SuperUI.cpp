@@ -301,6 +301,9 @@ void SuperUI::UIObj3DInit()
 	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitlePlane"));
 	mMainMenuObjs.push_back(SceneManager::FindObject<Object3D>("QuitTitleText"));
 
+	mGuideParent = SceneManager::FindObject<Object3D>("GuidMenu");
+	mBackParent = SceneManager::FindObject<Object3D>("QuitTitleMenu");
+
 	mMainAlphaEase.SetEaseTimer(20);
 	mBackBlackAlpha = { 0,0,0,150 };
 	mMainMenuColor = { 0,0,0,255 };
@@ -321,6 +324,11 @@ void SuperUI::UIObj3DInit()
 
 	mGuideKeyTexObj = SceneManager::FindObject<Object3D>("KeyGuidTex");
 	mGuidePadTexObj = SceneManager::FindObject<Object3D>("PadGuidTex");
+
+	mGuideEase.SetEaseTimer(20);
+	mGuideEase.SetPowNum(5);
+	mBackTitleEase.SetEaseTimer(20);
+	mBackTitleEase.SetPowNum(5);
 }
 
 void SuperUI::UIObj3DUpdate()
@@ -328,6 +336,8 @@ void SuperUI::UIObj3DUpdate()
 	UIMainMenuUpdate();
 
 	UITabMenuUpdate();
+
+	UIGuideMenuUpdate();
 
 	UITitleMenuUpdate();
 }
@@ -479,8 +489,6 @@ void SuperUI::UIMainMenuUpdate()
 				break;
 			}
 
-
-
 			break;
 		}
 		mMenuUIObj[i].planeObj->scale = mMenuUIObj[i].scaleChangeValue;
@@ -512,8 +520,6 @@ void SuperUI::UIMainMenuUpdate()
 
 		mTabsPParentObj->rotationE.y = mUITabEase.Out(DegreeToRadian(mTabRotaAfter), DegreeToRadian(mTabRotaBefore));
 		mTabBoardParentObj->rotationE.y = mUITabBoardEase.Out(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
-
-
 
 		mTabsPParentObj->Update();
 		mTabBoardParentObj->Update();
@@ -678,50 +684,68 @@ void SuperUI::UITabMenuUpdate()
 	}
 }
 
+void SuperUI::UIGuideMenuUpdate()
+{
+	if (IsGuidOn)
+	{
+		mGuideEase.Update();
+
+		mGuideParent->rotationE.y = mGuideEase.Out(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
+		mGuideParent->Update();
+	}
+}
+
 void SuperUI::UITitleMenuUpdate()
 {
 	if (IsQuitTitleOn)
 	{
-		mQuitTimer.Update();
+		mBackTitleEase.Update();
+		mBackParent->rotationE.y = mBackTitleEase.Out(DegreeToRadian(mTabBoardRotaAfter), DegreeToRadian(mTabBoardRotaBefore));
+		mBackParent->Update();
 
-		if (mQuitTimer.GetisTimeOut())
+		if (mBackTitleEase.GetisEnd())
 		{
-			if (AppOperationCommand::GetInstance()->UISelectLeftCommand())
-			{
-				mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
-				mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
+			mQuitTimer.Update();
 
-				mQuitTextObjs[Yes].state = SELECT;
-				mQuitTextObjs[No].state = DISABLED;
-			}
-			if (AppOperationCommand::GetInstance()->UISelectRightCommand())
+			if (mQuitTimer.GetisTimeOut())
 			{
-				mQuitTextObjs[Yes].planeObj->scale = mQuitTitleDisabledScale;
-				mQuitTextObjs[No].planeObj->scale = mQuitTitleSelectScale;
-
-				mQuitTextObjs[Yes].state = DISABLED;
-				mQuitTextObjs[No].state = SELECT;
-			}
-
-			if (mQuitTextObjs[Yes].state == SELECT)
-			{
-				if (AppOperationCommand::GetInstance()->UIDicisionCommand())
+				if (AppOperationCommand::GetInstance()->UISelectLeftCommand())
 				{
-					IsBackToTitle = true;
-				}
-			}
-			if (mQuitTextObjs[No].state == SELECT)
-			{
-				if (AppOperationCommand::GetInstance()->UIDicisionCommand())
-				{
-					IsBackToTitle = false;
-					UIQuitTitleMenuOff();
-				}
-			}
+					mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
+					mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
 
-			for (size_t i = 0; i < 2; i++)
-			{
-				mQuitTextObjs[i].planeObj->Update();
+					mQuitTextObjs[Yes].state = SELECT;
+					mQuitTextObjs[No].state = DISABLED;
+				}
+				if (AppOperationCommand::GetInstance()->UISelectRightCommand())
+				{
+					mQuitTextObjs[Yes].planeObj->scale = mQuitTitleDisabledScale;
+					mQuitTextObjs[No].planeObj->scale = mQuitTitleSelectScale;
+
+					mQuitTextObjs[Yes].state = DISABLED;
+					mQuitTextObjs[No].state = SELECT;
+				}
+
+				if (mQuitTextObjs[Yes].state == SELECT)
+				{
+					if (AppOperationCommand::GetInstance()->UIDicisionCommand())
+					{
+						IsBackToTitle = true;
+					}
+				}
+				if (mQuitTextObjs[No].state == SELECT)
+				{
+					if (AppOperationCommand::GetInstance()->UIDicisionCommand())
+					{
+						IsBackToTitle = false;
+						UIQuitTitleMenuOff();
+					}
+				}
+
+				for (size_t i = 0; i < 2; i++)
+				{
+					mQuitTextObjs[i].planeObj->Update();
+				}
 			}
 		}
 	}
@@ -847,17 +871,21 @@ void SuperUI::UIGuidMenuOn()
 		mGuideKeyTexObj->Activate();
 		mGuidePadTexObj->Deactivate();
 	}
+
+	mGuideEase.Reset();
 }
 
 void SuperUI::UIGuidMenuOff()
 {
 	mMenuUIObj[mUICurrentNum].state = SELECT;
+	IsGuidOn = false;
 
 	// メインメニュー関連をオン
 	mMenuPlaneObj->Activate();
 	mPlanesParentObj->Activate();
 
 	mGuidParentObj->Deactivate();
+	mGuideEase.Reset();
 }
 
 void SuperUI::UIQuitTitleMenuOn()
@@ -872,9 +900,11 @@ void SuperUI::UIQuitTitleMenuOn()
 	mQuitTitleParentObj->Activate();
 	mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
 	mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
-	mQuitTextObjs[Yes].state = DISABLED;
-	mQuitTextObjs[No].state = SELECT;
+	mQuitTextObjs[Yes].state = SELECT;
+	mQuitTextObjs[No].state = DISABLED;
 	mQuitTimer.Reset();
+
+	mBackTitleEase.Reset();
 }
 
 void SuperUI::UIQuitTitleMenuOff()
@@ -890,6 +920,8 @@ void SuperUI::UIQuitTitleMenuOff()
 	mQuitTextObjs[Yes].state = DISABLED;
 	mQuitTextObjs[No].state = SELECT;
 	mQuitTimer.Reset();
+
+	mBackTitleEase.Reset();
 }
 
 RegisterScriptBody(SuperUI);

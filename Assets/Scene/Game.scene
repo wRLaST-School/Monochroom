@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -3.3579955101013184,
+                    "X": -14.719527244567871,
                     "Y": 10.0,
-                    "Z": 10.761000633239746
+                    "Z": 21.299606323242188
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.1860000193119049,
-                    "Y": 5.545185565948486,
+                    "X": 0.11400045454502106,
+                    "Y": 4.86118745803833,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -915,9 +915,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -3.3579955101013184,
+                    "X": -14.719527244567871,
                     "Y": 10.0,
-                    "Z": 10.761000633239746
+                    "Z": 21.299606323242188
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -927,8 +927,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.1860000193119049,
-                    "Y": 5.545185089111328,
+                    "X": 0.11400045454502106,
+                    "Y": 4.86118745803833,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1047,9 +1047,9 @@
                 "Name": "FlyBlock2",
                 "NormalType": 1,
                 "Position": {
-                    "X": -23.0,
+                    "X": -22.9999942779541,
                     "Y": 9.0,
-                    "Z": 20.0
+                    "Z": 19.999996185302734
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1113,9 +1113,9 @@
                 "Name": "FlyBlock3",
                 "NormalType": 0,
                 "Position": {
-                    "X": -22.999954223632813,
+                    "X": -22.157421112060547,
                     "Y": 10.979999542236328,
-                    "Z": 20.000003814697266
+                    "Z": 19.344989776611328
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1489,7 +1489,7 @@
                                                 "UseMyselfDissolveStrength": false
                                             },
                                             {
-                                                "Active": true,
+                                                "Active": false,
                                                 "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
@@ -1536,7 +1536,7 @@
                                                 "UseMyselfDissolveStrength": false
                                             },
                                             {
-                                                "Active": false,
+                                                "Active": true,
                                                 "BlendMode": 4,
                                                 "Brightness": {
                                                     "W": 1.0,
@@ -4903,9 +4903,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 0.7058823704719543,
-                                            "Y": 0.7058823704719543,
-                                            "Z": 0.7058823704719543
+                                            "X": 1.0,
+                                            "Y": 1.0,
+                                            "Z": 1.0
                                         },
                                         "Children": [
                                             {
@@ -4980,8 +4980,8 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 0.4000000059604645,
-                                            "Y": 0.10000000149011612,
+                                            "X": 0.5,
+                                            "Y": 0.11999999731779099,
                                             "Z": 0.0
                                         },
                                         "Tags": null,
@@ -4999,9 +4999,9 @@
                                         "BlendMode": 4,
                                         "Brightness": {
                                             "W": 1.0,
-                                            "X": 1.0,
-                                            "Y": 1.0,
-                                            "Z": 1.0
+                                            "X": 0.7058823704719543,
+                                            "Y": 0.7058823704719543,
+                                            "Z": 0.7058823704719543
                                         },
                                         "Children": [
                                             {
@@ -5075,8 +5075,8 @@
                                             "Z": 0.0
                                         },
                                         "Scale": {
-                                            "X": 0.5,
-                                            "Y": 0.11999999731779099,
+                                            "X": 0.4000000059604645,
+                                            "Y": 0.10000000149011612,
                                             "Z": 0.0
                                         },
                                         "Tags": null,
@@ -5376,9 +5376,9 @@
                         "Name": "BlockEffectPlane",
                         "NormalType": 0,
                         "Position": {
-                            "X": -22.999977111816406,
+                            "X": -22.57870864868164,
                             "Y": 0.9699974060058594,
-                            "Z": 20.000001907348633
+                            "Z": 19.67249298095703
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -5389,7 +5389,7 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": -1.653937578201294,
+                            "Y": -0.909995973110199,
                             "Z": 0.0
                         },
                         "Scale": {
@@ -6133,9 +6133,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -237.75820922851563,
+                    "X": -183.1125030517578,
                     "Y": 121.3031997680664,
-                    "Z": 18.674705505371094
+                    "Z": -124.5460205078125
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -6145,8 +6145,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.015000000596046448,
-                    "Y": 4.697389125823975,
+                    "X": 0.15000000596046448,
+                    "Y": 3.9983890056610107,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -6225,7 +6225,7 @@
                 "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 539.0,
+                "posY": 500.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -6652,7 +6652,8 @@
                 "panel.obj": "Assets\\Models\\panel\\panel.obj",
                 "skydome.obj": "Assets\\Models\\skydome\\skydome.obj",
                 "stage1.obj": "Assets\\Models\\stage1\\stage1.obj",
-                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj"
+                "stage1_pipe.obj": "Assets\\Models\\stage1_pipe\\stage1_pipe.obj",
+                "stage2.obj": "Assets\\Models\\stage2\\stage2.obj"
             }
         ],
         "Name": "Game",
@@ -6674,8 +6675,11 @@
                 "Block.png": "Assets\\Models\\Stage\\Block\\Block.png",
                 "Block1.png": "Assets/Models/Stage/Block/Block1.png",
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
+                "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
+                "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
+                "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
                 "Goal.png": "Assets\\Models\\Goal\\Goal.png",
                 "Goggles.png": "Assets\\Models\\Goggles\\Goggles.png",
                 "MouseText.png": "Assets\\Images\\UI\\MouseText.png",
@@ -6706,6 +6710,7 @@
                 "asmptex:Assets\\Models\\doordoor.png": "Assets\\Models\\door/door.png",
                 "asmptex:Assets\\Models\\panelpanel.png": "Assets\\Models\\panel/panel.png",
                 "asmptex:Assets\\Models\\skydomeStars.png": "Assets\\Models\\skydome/Stars.png",
+                "asmptex:Assets\\Models\\stage2stage2.png": "Assets\\Models\\stage2/stage2.png",
                 "back.png": "Assets\\Images\\UI\\back.png",
                 "black": "Assets/Images/black.png",
                 "button.png": "Assets\\Models\\button\\button.png",
@@ -6728,6 +6733,7 @@
                 "soundTabText.png": "Assets\\Images\\UI\\soundTabText.png",
                 "stage1.png": "Assets\\Models\\stage1\\stage1.png",
                 "stage1_pipe.png": "Assets\\Models\\stage1_pipe\\stage1_pipe.png",
+                "stage2.png": "Assets\\Models\\stage2\\stage2.png",
                 "tab1.png": "Assets\\Images\\UI\\tab1.png",
                 "testTex": "Assets/Images/circleParticle.png",
                 "title.png": "Assets\\Images\\UI\\title.png",
