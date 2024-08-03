@@ -8,6 +8,8 @@
 #include "GraphicsTab.h"
 #include "SoundTab.h"
 #include "Timer.h"
+#include "SpriteObject.h"
+
 class PlayerControl;
 
 class SuperUI :
@@ -344,6 +346,10 @@ private:// メンバー変数
     Easing mGuideEase;
     Easing mBackTitleEase;
 
+    Easing mJoJoEase;
+    bool mIsJoJo;
+
+    SpriteObject* mCursorImage;
 };
 RegisterScript(SuperUI);
 

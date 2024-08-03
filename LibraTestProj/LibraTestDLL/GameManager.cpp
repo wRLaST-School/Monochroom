@@ -144,6 +144,15 @@ void GameManager::Update()
 			}
 		}
 
+		// リセット
+		std::string sceneName = SceneManager::GetCurrentScene()->GetTag(0);
+		if (AppOperationCommand::GetInstance()->ReStartCommand())
+		{
+			BlinkTransition::mReset = true;
+			BlinkTransition::Start();
+			BlinkTransition::mIsChangeScene = true;
+		}
+
 		if (BlinkTransition::mIsChangeScene)
 		{
 			if (BlinkTransition::info.isInEnd)
@@ -155,19 +164,17 @@ void GameManager::Update()
 					SceneManager::WaitForLoadAndTransition();
 					BlinkTransition::mToTitle = false;
 				}
-				else
+				else if (BlinkTransition::mReset)
 				{
-					// リセット
-					std::string sceneName = SceneManager::GetCurrentScene()->GetName();
-					if (AppOperationCommand::GetInstance()->ReStartCommand())
-					{
-						// シーンの切り替え処理
-						SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Stage/" + sceneName + ".scene");
-						SceneManager::WaitForLoadAndTransition();
-					}
+					// シーンの切り替え処理
+					SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Stage/" + sceneName + ".scene");
+					SceneManager::WaitForLoadAndTransition();
+					BlinkTransition::mReset = false;
 				}
 			}
 		}
+
+
 
 		if (!mStageGenerater)
 		{

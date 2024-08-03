@@ -5631,8 +5631,9 @@
                 "Select": "Assets/Sounds/select.wav"
             }
         ],
-        "Tags": null,
-        "Textures": [
+        "Tags": [
+            "Stage2_1"
+        ],        "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",
                 "BgmVolume.png": "Assets\\Images\\UI\\BgmVolume.png",

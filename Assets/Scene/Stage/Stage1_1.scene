@@ -173,9 +173,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -2.472114324569702,
-                    "Y": 10.0,
-                    "Z": -30.38544273376465
+                    "X": 0.0,
+                    "Y": 5.977999687194824,
+                    "Z": 22.746002197265625
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -184,8 +184,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.39091041684150696,
-                    "Y": 2.2271862030029297,
+                    "X": 0.0,
+                    "Y": 3.1415927410125732,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3747,7 +3747,9 @@
                 "Select": "Assets/Sounds/select.wav"
             }
         ],
-        "Tags": null,
+        "Tags": [
+            "Stage1_1"
+        ],
         "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",

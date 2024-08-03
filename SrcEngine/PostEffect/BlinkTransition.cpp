@@ -6,6 +6,7 @@ BlinkTransitionInfo BlinkTransition::info;
 bool BlinkTransition::mIsChangeScene = false;
 bool BlinkTransition::mIsLoaded = false;
 bool BlinkTransition::mToTitle = false;
+bool BlinkTransition::mReset = false;
 
 void BlinkTransition::Init()
 {
