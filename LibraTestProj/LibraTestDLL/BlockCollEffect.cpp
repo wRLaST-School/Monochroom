@@ -14,6 +14,11 @@ void BlockCollEffect::Init()
 
 void BlockCollEffect::Update()
 {
+	if (!mBlockEffectPlane)
+	{
+		return;
+	}
+
 	if (mIsHit)
 	{
 		Vec3 zero = { 0,0,0 };
@@ -23,10 +28,10 @@ void BlockCollEffect::Update()
 
 		mBlockEffectPlane->scale = mBlockEffectEase.In(zero, mBlockAfterScale);
 		mBlockEffectPlane->brightnessCB.contents->w = mBlockEffectEase.In(1, 0);
-
-		mRota.x = mBlockEffectPlane->position.x - mCamera->position.x;
-		mRota.y = mBlockEffectPlane->position.y - mCamera->position.y;
-		mRota.z = mBlockEffectPlane->position.z - mCamera->position.z;
+		
+		//mRota.x = mBlockEffectPlane->position.x - mCamera->position.x;
+		//mRota.y = mBlockEffectPlane->position.y - mCamera->position.y;
+		//mRota.z = mBlockEffectPlane->position.z - mCamera->position.z;
 
 		mRota.y = atan2f(mRota.x, mRota.z);
 		mBlockEffectPlane->rotationE.y = mRota.y;
@@ -65,7 +70,7 @@ void BlockCollEffect::SetIsHit(bool IsHit)
 
 void BlockCollEffect::SetHitRota(Vec3 rota)
 {
-
+	mRota = rota;
 }
 
 RegisterScriptBody(BlockCollEffect);
