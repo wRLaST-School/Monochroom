@@ -32,7 +32,7 @@ void GameManager::Awake()
 	auto grayScale = SceneManager::FindObject<SpriteObject>("GrayScale");
 	if (grayScale)
 	{
-		grayScale->SetPosition({ 960.0f,500.0f });
+		grayScale->SetPosition({ 960.0f,540.0f });
 	}
 
 	isStop = false;
