@@ -40,7 +40,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": -0.4363323152065277,
+                            "X": 0.0,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -87,7 +87,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": -0.4363323152065277,
+                            "X": 0.0,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -122,9 +122,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -12.751426696777344,
-                    "Y": -10000.0,
-                    "Z": -200.72088623046875
+                    "X": 130.78097534179688,
+                    "Y": 117.89320373535156,
+                    "Z": -158.903076171875
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -134,8 +134,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.04800000041723251,
-                    "Y": 3.1985926628112793,
+                    "X": -0.06000000238418579,
+                    "Y": 2.517592668533325,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -173,9 +173,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -4.125798225402832,
+                    "X": 0.0,
                     "Y": 6.0,
-                    "Z": 9.812562942504883
+                    "Z": 22.746002197265625
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -184,8 +184,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.06300000101327896,
-                    "Y": 2.553591728210449,
+                    "X": -0.06000000238418579,
+                    "Y": 2.517592668533325,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1116,7 +1116,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": 0.0,
-                    "Y": 5.977999687194824,
+                    "Y": 6.0,
                     "Z": 22.746002197265625
                 },
                 "RenderTarget": "",
@@ -1127,8 +1127,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 3.1415927410125732,
+                    "X": -0.06000000238418579,
+                    "Y": 2.517592668533325,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -3591,155 +3591,6 @@
                 "Tags": null,
                 "TexType": 0,
                 "Texture": "stage1.png",
-                "Tiling": {
-                    "X": 1.0,
-                    "Y": 1.0
-                },
-                "Type": "Object3D",
-                "UseMyselfDissolveStrength": false
-            },
-            {
-                "Active": true,
-                "BlendMode": 0,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Children": [
-                    {
-                        "Active": true,
-                        "BlendMode": 0,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "DisableDraw": false,
-                        "DissolveStrength": 1.25,
-                        "DissolveTex": "Noice.png",
-                        "Model": "Plane.obj",
-                        "Name": "Plane",
-                        "NormalType": 1,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0010000000474974513
-                        },
-                        "RenderTarget": "Plane",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": -0.2617993950843811,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 1000.0,
-                            "Y": 1000.0,
-                            "Z": 1.0
-                        },
-                        "Tags": null,
-                        "TexType": 0,
-                        "Texture": "",
-                        "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
-                        },
-                        "Type": "Object3D",
-                        "UseMyselfDissolveStrength": false
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 2,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "DisableDraw": false,
-                        "DissolveStrength": 1.25,
-                        "DissolveTex": "Noice.png",
-                        "Model": "Plane.obj",
-                        "Name": "PlaneAlpha",
-                        "NormalType": 1,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 20.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 1.5707963705062866
-                        },
-                        "Scale": {
-                            "X": 100.0,
-                            "Y": 100.0,
-                            "Z": 1.0
-                        },
-                        "Tags": null,
-                        "TexType": 0,
-                        "Texture": "TestTex.png",
-                        "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
-                        },
-                        "Type": "Object3D",
-                        "UseMyselfDissolveStrength": false
-                    },
-                    {
-                        "Active": true,
-                        "Name": "Script",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "StageGenerating"
-                    }
-                ],
-                "DisableDraw": false,
-                "DissolveStrength": 1.25,
-                "DissolveTex": "Noice.png",
-                "Model": "",
-                "Name": "PlaneGroup",
-                "Position": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 330.0
-                },
-                "RenderTarget": "",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Tags": null,
-                "TexType": 0,
-                "Texture": "",
                 "Tiling": {
                     "X": 1.0,
                     "Y": 1.0

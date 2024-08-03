@@ -3555,7 +3555,7 @@
                         "filePath": "SponePoint"
                     }
                 ],
-                "DisableDraw": false,
+                "DisableDraw": true,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
@@ -3614,7 +3614,7 @@
                         "Active": true,
                         "Name": "StageGoal",
                         "Tags": [
-                            "Stage1"
+                            "Stage1_4"
                         ],
                         "Type": "ScriptComponent",
                         "filePath": "StageGoal"
@@ -5310,6 +5310,7 @@
                 "Block.png": "Assets\\Models\\Stage\\Block\\Block.png",
                 "Block1.png": "Assets/Models/Stage/Block/Block1.png",
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
+                "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
