@@ -118,7 +118,8 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 void PlayerControl::Update()
 {
 	//デバッグ画面なら
-	if (GameManager::GetInstance()->GetisStop())
+	if (GameManager::GetInstance()->GetisStop() || 
+		GameManager::GetInstance()->isCantControl)
 	{
 		return;
 	}

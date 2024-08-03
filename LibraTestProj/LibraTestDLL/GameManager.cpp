@@ -20,6 +20,7 @@ void GameManager::Awake()
 	mSelectPanel = SceneManager::FindObject<SelectPanel>("SelectScript");
 	mUIScript = SceneManager::FindObject<SuperUI>("UIScript");
 	mAttractParticleManager = SceneManager::FindObjectWithTag<AttractParticleManager>("AttractParticleManager");
+	isCantControl = false;
 
 	//プレイヤーがすでにゴーグル取ってたら
 	if (PlayerGoggle::GetIsHavingGoggle())
