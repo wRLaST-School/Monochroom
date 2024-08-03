@@ -7,6 +7,7 @@
 #include <Input.h>
 #include <ConsoleWindow.h>
 #include "GameManager.h"
+#include "AppOperationCommand.h"
 
 void SoundTab::Init()
 {
@@ -69,7 +70,7 @@ void SoundTab::MenuUpdate()
 {
 	mSoundUIObj[mSoundCurrentNum].state = SELECT;
 
-	if (Input::Key::Triggered(DIK_W))
+	if (AppOperationCommand::GetInstance()->UISelectUpCommand())
 	{
 		mSoundCurrentNum--;
 		if (mSoundCurrentNum <= 0)
@@ -78,7 +79,7 @@ void SoundTab::MenuUpdate()
 		}
 		mSoundUIObj[mSoundCurrentNum].state = SELECT;
 	}
-	if (Input::Key::Triggered(DIK_S))
+	if (AppOperationCommand::GetInstance()->UISelectDownCommand())
 	{
 		mSoundCurrentNum++;
 		if (mSoundCurrentNum >= mSoundOptionNum - 1)
@@ -88,7 +89,7 @@ void SoundTab::MenuUpdate()
 		mSoundUIObj[mSoundCurrentNum].state = SELECT;
 	}
 
-	if (Input::Key::Triggered(DIK_A))
+	if (AppOperationCommand::GetInstance()->UISelectLeftCommand())
 	{
 		if (mSoundSensivity[mSoundCurrentNum] > mSoundDefuValue)
 		{
@@ -96,7 +97,7 @@ void SoundTab::MenuUpdate()
 		}
 	}
 
-	if (Input::Key::Triggered(DIK_D))
+	if (AppOperationCommand::GetInstance()->UISelectRightCommand())
 	{
 		if (mSoundSensivity[mSoundCurrentNum] < mSoundMaxValue)
 		{

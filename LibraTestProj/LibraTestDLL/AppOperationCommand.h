@@ -21,6 +21,19 @@ public:
 
 	bool UserDebugStopGameCommand();
 
+	// UIのコマンド
+	bool UISelectUpCommand();
+
+	bool UISelectDownCommand();
+	bool UISelectLeftCommand();
+	bool UISelectRightCommand();
+
+	bool UIDicisionCommand();
+
+	bool UITabLeftCommand();
+	bool UITabRightCommand();
+
+	bool UIBackCommand();
 
 public:
 	static AppOperationCommand* GetInstance();

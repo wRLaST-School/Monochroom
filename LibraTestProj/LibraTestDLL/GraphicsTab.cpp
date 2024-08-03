@@ -7,7 +7,7 @@
 #include <Input.h>
 #include <ConsoleWindow.h>
 #include "GameManager.h"
-
+#include "AppOperationCommand.h"
 
 void GraphicsTab::Init()
 {
@@ -65,7 +65,7 @@ void GraphicsTab::MenuUpdate()
 {
 	mGraphicsUIObj[mGraphicsCurrentNum].state = SELECT;
 
-	if (Input::Key::Triggered(DIK_W))
+	if (AppOperationCommand::GetInstance()->UISelectUpCommand())
 	{
 		mGraphicsCurrentNum--;
 		if (mGraphicsCurrentNum <= 0)
@@ -74,7 +74,7 @@ void GraphicsTab::MenuUpdate()
 		}
 		mGraphicsUIObj[mGraphicsCurrentNum].state = SELECT;
 	}
-	if (Input::Key::Triggered(DIK_S))
+	if (AppOperationCommand::GetInstance()->UISelectDownCommand())
 	{
 		mGraphicsCurrentNum++;
 		if (mGraphicsCurrentNum >= mGraphicsOptionNum - 1)
@@ -85,14 +85,14 @@ void GraphicsTab::MenuUpdate()
 	}
 
 	// フラグのオンオフ
-	if (Input::Key::Triggered(DIK_A))
+	if (AppOperationCommand::GetInstance()->UISelectLeftCommand())
 	{
 		mGraphicsFlags[mGraphicsCurrentNum] = true;
 
 
 	}
 
-	if (Input::Key::Triggered(DIK_D))
+	if (AppOperationCommand::GetInstance()->UISelectRightCommand())
 	{
 		mGraphicsFlags[mGraphicsCurrentNum] = false;
 

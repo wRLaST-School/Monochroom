@@ -58,6 +58,46 @@ bool AppOperationCommand::UserDebugStopGameCommand()
 	return Key::Triggered(DIK_F5);
 }
 
+bool AppOperationCommand::UISelectUpCommand()
+{
+	return Key::Triggered(DIK_W);
+}
+
+bool AppOperationCommand::UISelectDownCommand()
+{
+	return Key::Triggered(DIK_S);
+}
+
+bool AppOperationCommand::UISelectLeftCommand()
+{
+	return Key::Triggered(DIK_A);
+}
+
+bool AppOperationCommand::UISelectRightCommand()
+{
+	return Key::Triggered(DIK_D);
+}
+
+bool AppOperationCommand::UIDicisionCommand()
+{
+	return Key::Triggered(DIK_SPACE);
+}
+
+bool AppOperationCommand::UITabLeftCommand()
+{
+	return Key::Triggered(DIK_Q);
+}
+
+bool AppOperationCommand::UITabRightCommand()
+{
+	return Key::Triggered(DIK_E);
+}
+
+bool AppOperationCommand::UIBackCommand()
+{
+	return Key::Triggered(DIK_ESCAPE);
+}
+
 AppOperationCommand* AppOperationCommand::GetInstance()
 {
 	static AppOperationCommand instance;

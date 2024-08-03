@@ -8,6 +8,7 @@
 #include <ConsoleWindow.h>
 #include "GameManager.h"
 #include "PlayerControl.h"
+#include "AppOperationCommand.h"
 
 float DegreeToRadian(float angle)
 {
@@ -320,6 +321,9 @@ void SuperUI::UIObj3DInit()
 	}
 
 	mQuitTimer.SetLimitTimer(60 * 2);
+
+	mGuideKeyTexObj = SceneManager::FindObject<Object3D>("KeyGuidTex");
+	mGuidePadTexObj = SceneManager::FindObject<Object3D>("PadGuidTex");
 }
 
 void SuperUI::UIObj3DUpdate()
@@ -380,7 +384,7 @@ void SuperUI::UIMainMenuUpdate()
 			mMenuUIObj[mUICurrentNum].state = SELECT;
 			ConsoleWindow::Log(std::format("今のメニュー番号:{}\n", mUICurrentNum));
 
-			if (Input::Key::Triggered(DIK_Z))
+			if (AppOperationCommand::GetInstance()->UIDicisionCommand())
 			{
 				switch (mUICurrentNum)
 				{
@@ -398,7 +402,7 @@ void SuperUI::UIMainMenuUpdate()
 			}
 
 			// 項目のナンバーを変更
-			if (Input::Key::Triggered(DIK_W))
+			if (AppOperationCommand::GetInstance()->UISelectUpCommand())
 			{
 				mUICurrentNum--;
 				if (mUICurrentNum <= 0)
@@ -409,7 +413,7 @@ void SuperUI::UIMainMenuUpdate()
 
 				break;
 			}
-			if (Input::Key::Triggered(DIK_S))
+			if (AppOperationCommand::GetInstance()->UISelectDownCommand())
 			{
 				mUICurrentNum++;
 				if (mUICurrentNum >= mNumMenu - 1)
@@ -422,7 +426,7 @@ void SuperUI::UIMainMenuUpdate()
 		}
 		else
 		{
-			if (Input::Key::Triggered(DIK_ESCAPE))
+			if (AppOperationCommand::GetInstance()->UIBackCommand())
 			{
 				switch (mUICurrentNum)
 				{
@@ -603,7 +607,7 @@ void SuperUI::UITabMenuUpdate()
 		}
 		else 
 		{
-			if (Input::Key::Triggered(DIK_Q))
+			if (AppOperationCommand::GetInstance()->UITabLeftCommand())
 			{
 				mCurrentTabNum--;
 
@@ -619,7 +623,7 @@ void SuperUI::UITabMenuUpdate()
 				mTabItems[mCurrentTabNum]->OnUpdate();
 			}
 
-			if (Input::Key::Triggered(DIK_E))
+			if (AppOperationCommand::GetInstance()->UITabRightCommand())
 			{
 				mCurrentTabNum++;
 
@@ -685,7 +689,7 @@ void SuperUI::UITitleMenuUpdate()
 
 		if (mQuitTimer.GetisTimeOut())
 		{
-			if (Input::Key::Triggered(DIK_A))
+			if (AppOperationCommand::GetInstance()->UISelectLeftCommand())
 			{
 				mQuitTextObjs[Yes].planeObj->scale = mQuitTitleSelectScale;
 				mQuitTextObjs[No].planeObj->scale = mQuitTitleDisabledScale;
@@ -693,7 +697,7 @@ void SuperUI::UITitleMenuUpdate()
 				mQuitTextObjs[Yes].state = SELECT;
 				mQuitTextObjs[No].state = DISABLED;
 			}
-			if (Input::Key::Triggered(DIK_D))
+			if (AppOperationCommand::GetInstance()->UISelectRightCommand())
 			{
 				mQuitTextObjs[Yes].planeObj->scale = mQuitTitleDisabledScale;
 				mQuitTextObjs[No].planeObj->scale = mQuitTitleSelectScale;
@@ -704,14 +708,14 @@ void SuperUI::UITitleMenuUpdate()
 
 			if (mQuitTextObjs[Yes].state == SELECT)
 			{
-				if (Input::Key::Triggered(DIK_Z))
+				if (AppOperationCommand::GetInstance()->UIDicisionCommand())
 				{
 					IsBackToTitle = true;
 				}
 			}
 			if (mQuitTextObjs[No].state == SELECT)
 			{
-				if (Input::Key::Triggered(DIK_Z))
+				if (AppOperationCommand::GetInstance()->UIDicisionCommand())
 				{
 					IsBackToTitle = false;
 					UIQuitTitleMenuOff();
@@ -836,6 +840,7 @@ void SuperUI::UIGuidMenuOn()
 	mPlanesParentObj->Deactivate();
 
 	mGuidParentObj->Activate();
+
 
 }
 

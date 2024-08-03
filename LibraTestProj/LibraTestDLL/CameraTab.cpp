@@ -7,6 +7,7 @@
 #include <Input.h>
 #include <ConsoleWindow.h>
 #include "GameManager.h"
+#include "AppOperationCommand.h"
 
 void CameraTab::Init()
 {
@@ -70,7 +71,7 @@ void CameraTab::MenuUpdate()
 {
 	mCameraUIObj[mCameraCurrentNum].state = SELECT;
 
-	if (Input::Key::Triggered(DIK_W))
+	if (AppOperationCommand::GetInstance()->UISelectUpCommand())
 	{
 		mCameraCurrentNum--;
 		if (mCameraCurrentNum <= 0)
@@ -79,7 +80,7 @@ void CameraTab::MenuUpdate()
 		}
 		mCameraUIObj[mCameraCurrentNum].state = SELECT;
 	}
-	if (Input::Key::Triggered(DIK_S))
+	if (AppOperationCommand::GetInstance()->UISelectDownCommand())
 	{
 		mCameraCurrentNum++;
 		if (mCameraCurrentNum >= mCameraOptionNum - 1)
@@ -89,7 +90,7 @@ void CameraTab::MenuUpdate()
 		mCameraUIObj[mCameraCurrentNum].state = SELECT;
 	}
 
-	if (Input::Key::Triggered(DIK_A))
+	if (AppOperationCommand::GetInstance()->UISelectLeftCommand())
 	{
 		if (mCameraSensivity[mCameraCurrentNum] > mCameraDefuValue)
 		{
@@ -97,7 +98,7 @@ void CameraTab::MenuUpdate()
 		}
 	}
 
-	if (Input::Key::Triggered(DIK_D))
+	if (AppOperationCommand::GetInstance()->UISelectRightCommand())
 	{
 		if (mCameraSensivity[mCameraCurrentNum] < mCameraMaxValue)
 		{

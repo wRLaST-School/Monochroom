@@ -269,7 +269,8 @@ private:// メンバー変数
 
     // UIガイド関連オブジェ
     Object3D* mGuidParentObj;
-
+    Object3D* mGuideKeyTexObj;
+    Object3D* mGuidePadTexObj;
 
     // UIタイトルへ戻る関連オブジェ
     Object3D* mQuitTitleParentObj;
