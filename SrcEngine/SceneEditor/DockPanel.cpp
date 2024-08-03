@@ -95,25 +95,28 @@ void DockPanel::EnableScreenDock()
 			ImGui::EndMenuBar();
 		}
 
-		if (Input::Key::Down(DIK_LCONTROL) || Input::Key::Down(DIK_RCONTROL))
+		if (GameManager::sShowDebug)
 		{
-			bool pushLShift = Input::Key::Down(DIK_LSHIFT);
-
-			if (pushLShift)
+			if (Input::Key::Down(DIK_LCONTROL) || Input::Key::Down(DIK_RCONTROL))
 			{
-				if (Input::Key::Triggered(DIK_S))
+				bool pushLShift = Input::Key::Down(DIK_LSHIFT);
+
+				if (pushLShift)
 				{
-					showSaveDialog = true;
+					if (Input::Key::Triggered(DIK_S))
+					{
+						showSaveDialog = true;
+					}
 				}
-			}
-			else
-			{
-				if (Input::Key::Triggered(DIK_S))
+				else
 				{
-					if (lastSavePath == "") showSaveDialog = true;
-					else {
+					if (Input::Key::Triggered(DIK_S))
+					{
+						if (lastSavePath == "") showSaveDialog = true;
+						else {
 
-						SceneRW::SaveScene(SceneManager::currentScene.get(), lastSavePath);
+							SceneRW::SaveScene(SceneManager::currentScene.get(), lastSavePath);
+						}
 					}
 				}
 			}

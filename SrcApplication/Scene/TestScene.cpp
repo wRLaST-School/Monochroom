@@ -24,7 +24,7 @@ void TestScene::Init()
 void TestScene::Update()
 {
 #ifndef _DEBUG
-	SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Title.scene");
+	SceneManager::LoadScene<SceneFromFile>("Assets/Scene/StageSelect.scene");
 	SceneManager::WaitForLoadAndTransition();
 #endif
 }
