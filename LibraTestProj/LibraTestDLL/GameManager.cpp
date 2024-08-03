@@ -150,7 +150,7 @@ void GameManager::Update()
 					if (AppOperationCommand::GetInstance()->ReStartCommand())
 					{
 						// シーンの切り替え処理
-						SceneManager::LoadScene<SceneFromFile>("Assets/Scene/" + sceneName + ".scene");
+						SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Stage/" + sceneName + ".scene");
 						SceneManager::WaitForLoadAndTransition();
 					}
 				}
