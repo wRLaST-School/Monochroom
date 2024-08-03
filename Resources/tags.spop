@@ -11,10 +11,14 @@
     "Stage",
     "Goal",
     "Goggle",
-    "Stage1",
+    "Stage1_2",
     "Transparent",
     "StageGenerater",
     "GoggleCollider",
     "AttractParticleManager",
-    "FlyBlockWhite"
+    "FlyBlockWhite",
+    "Stage1_4",
+    "Stage1_3",
+    "Stage1_5",
+    "Stage2_1"
 ]

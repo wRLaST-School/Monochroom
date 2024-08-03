@@ -398,7 +398,7 @@ void SelectPanel::SelectStageUpdate()
 	{
 		mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = SELECT;
 
-		if (Input::Key::Triggered(DIK_Z))
+		if (Input::Key::Triggered(DIK_SPACE))
 		{
 			mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = PRESSED;
 			SoundManager::Play("Decide");

@@ -72,15 +72,13 @@ void SuperUI::Init()
 	mUIBoardScale = { 2.4f,4.4f };
 	mUIBoardCurrentColor = mDesabledColor;
 
-
-
-	//UIObj3DInit();
+	UIObj3DInit();
 	//Input::Mouse::HideCursor();
 }
 
 void SuperUI::Update()
 {
-	if (!mCameraItem || !mGpraphicsItem || !mSoundItem ||
+	if (!mCameraItem || !mSoundItem ||
 		!mMainCameraObj || !mMenuParentObj || !mTabsParentObj ||
 		!mMenuPlaneObj || !mPlanesParentObj ||
 		!mGuidParentObj || !mQuitTitleParentObj || !mTabsPParentObj || !mTabBoardParentObj)
@@ -129,9 +127,9 @@ void SuperUI::Update()
 	}
 
 	// もしTABキーを押したらメニューを開け閉めする
-	if (Input::Key::Triggered(DIK_ESCAPE))
+	if (AppOperationCommand::GetInstance()->UIBackCommand())
 	{
-		ConsoleWindow::Log("TAB押された。");
+		OutputDebugStringA("menuOpen");
 		if ((mIsDisplayUI || mIsMomentOpenMenu)&& 
 			mMenuUIObj[mUICurrentNum].state != PRESSED)
 		{
@@ -232,7 +230,6 @@ void SuperUI::UIObj3DInit()
 	//mGpraphicsItem.Init();
 	//mSoundItem.Init();
 	mCameraItem = SceneManager::FindObject<CameraTab>("CameraTabScript");
-	mGpraphicsItem = SceneManager::FindObject<GraphicsTab>("GraphicsTabScript");
 	mSoundItem = SceneManager::FindObject<SoundTab>("SoundTabScript");
 
 	mTabItems[CAMERA] = mCameraItem;
@@ -841,7 +838,15 @@ void SuperUI::UIGuidMenuOn()
 
 	mGuidParentObj->Activate();
 
-
+	if (Input::Pad::IsConnected())
+	{
+		mGuideKeyTexObj->Deactivate();
+		mGuidePadTexObj->Activate();
+	}
+	else {
+		mGuideKeyTexObj->Activate();
+		mGuidePadTexObj->Deactivate();
+	}
 }
 
 void SuperUI::UIGuidMenuOff()

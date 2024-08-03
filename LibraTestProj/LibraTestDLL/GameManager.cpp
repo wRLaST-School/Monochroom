@@ -7,6 +7,10 @@
 #include <BlinkTransition.h>
 #include <Input.h>
 #include <FlyBlockWhite.h>
+#include <GoggleScr.h>
+#include <PlayerGoggle.h>
+#include <GrayScale.h>
+#include <SpriteObject.h>
 
 void GameManager::Awake()
 {
@@ -17,6 +21,19 @@ void GameManager::Awake()
 	mUIScript = SceneManager::FindObject<SuperUI>("UIScript");
 	mAttractParticleManager = SceneManager::FindObjectWithTag<AttractParticleManager>("AttractParticleManager");
 
+	//プレイヤーがすでにゴーグル取ってたら
+	if (PlayerGoggle::GetIsHavingGoggle())
+	{
+		auto goggle = SceneManager::FindObject<Object3D>("Goggle");
+		auto goggleScr = SceneManager::FindChildObject<GoggleScr>("GoggleScr", goggle);
+		PlayerGettedGoggle(mPlayer, goggleScr);
+	}
+
+	auto grayScale = SceneManager::FindObject<SpriteObject>("GrayScale");
+	if (grayScale)
+	{
+		grayScale->SetPosition({ 960.0f,500.0f });
+	}
 
 	isStop = false;
 
@@ -150,7 +167,7 @@ void GameManager::Update()
 					if (AppOperationCommand::GetInstance()->ReStartCommand())
 					{
 						// シーンの切り替え処理
-						SceneManager::LoadScene<SceneFromFile>("Assets/Scene/" + sceneName + ".scene");
+						SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Stage/" + sceneName + ".scene");
 						SceneManager::WaitForLoadAndTransition();
 					}
 				}
@@ -239,6 +256,24 @@ FlyBlock* GameManager::GetFlyBlock(IComponent* parentComp)
 	}
 
 	return fb;
+}
+
+void GameManager::PlayerGettedGoggle(Object3D* player, GoggleScr* goggle)
+{
+	if (goggle)
+	{
+		auto grayScale = SceneManager::FindObject<SpriteObject>("GrayScale");
+		if (grayScale)
+		{
+			grayScale->Activate();
+			grayScale->SetPosition({ 960.0f,500.0f });
+		}
+		goggle->GettedPlayer(player);
+
+		auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
+		if (playerGoggle)
+			playerGoggle->GettedGoggle();
+	}
 }
 
 bool GameManager::GetisStop()

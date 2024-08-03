@@ -3,6 +3,7 @@
 #include <LineDrawer.h>
 #include <GameManager.h>
 #include <Util.h>
+#include <DirectXCollision.h>
 
 //sepは正規化されていること
 float GetSeparateAxisLength(const Vec3& sep, const Vec3& e1, const Vec3& e2, const Vec3& e3 = Vec3(0, 0, 0))

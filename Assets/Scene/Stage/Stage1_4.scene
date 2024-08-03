@@ -293,7 +293,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -339,9 +339,9 @@
                         "Name": "Block",
                         "NormalType": 1,
                         "Position": {
-                            "X": -3.0170013904571533,
+                            "X": -4.0,
                             "Y": 0.0,
-                            "Z": -38.55799865722656
+                            "Z": -38.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -351,7 +351,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -409,7 +409,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -455,7 +455,7 @@
                         "Name": "Block",
                         "NormalType": 1,
                         "Position": {
-                            "X": -3.0,
+                            "X": -4.0,
                             "Y": 0.0,
                             "Z": 7.0
                         },
@@ -467,7 +467,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -513,9 +513,9 @@
                         "Name": "Block",
                         "NormalType": 1,
                         "Position": {
-                            "X": -6.3040008544921875,
+                            "X": -6.300000190734863,
                             "Y": 4.0,
-                            "Z": -33.5
+                            "Z": -33.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -525,7 +525,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -2910,7 +2910,7 @@
                         "Active": true,
                         "Name": "StageGoal",
                         "Tags": [
-                            "Stage1"
+                            "Stage1_5"
                         ],
                         "Type": "ScriptComponent",
                         "filePath": "StageGoal"
@@ -3355,20 +3355,22 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "TestTex.png",
+                        "Texture": "Plane.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 5.0,
+                            "Y": 5.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
-                        "Name": "Script",
-                        "Tags": null,
+                        "Name": "StageGenerater",
+                        "Tags": [
+                            "StageGenerater"
+                        ],
                         "Type": "ScriptComponent",
-                        "filePath": "StageGenerating"
+                        "filePath": "StageGenerater"
                     }
                 ],
                 "DisableDraw": false,
@@ -3378,7 +3380,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": 0.0,
-                    "Y": 0.0,
+                    "Y": -10000.0,
                     "Z": 330.0
                 },
                 "RenderTarget": "",
@@ -3423,23 +3425,6 @@
                 "filePath": "CollisionManager"
             },
             {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "ShadowMap",
-                "Tags": null,
-                "Texture": "ShadowMap_depth_",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 530.0,
-                "scaleX": 0.5,
-                "scaleY": 0.5
-            },
-            {
                 "Active": true,
                 "Brightness": {
                     "W": 1.0,
@@ -3455,91 +3440,6 @@
                 "posY": 530.5,
                 "scaleX": 10.0,
                 "scaleY": 10.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "GrayScale",
-                "Tags": null,
-                "Texture": "GrayScale",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 539.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "KawaseBloomP3",
-                "Tags": null,
-                "Texture": "KawaseBloomP3",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "SSAO",
-                "Tags": null,
-                "Texture": "SSAOF",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 534.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "BlinkTransition",
-                "Tags": null,
-                "Texture": "BlinkTransition",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "StageGenerating",
-                "Tags": null,
-                "Texture": "StageGenerating",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
             },
             {
                 "Active": true,
@@ -4096,6 +3996,7 @@
                 "Block.png": "Assets\\Models\\Stage\\Block\\Block.png",
                 "Block1.png": "Assets/Models/Stage/Block/Block1.png",
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
+                "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",

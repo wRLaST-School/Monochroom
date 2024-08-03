@@ -27,6 +27,8 @@ public:
 
     void CopyComponent(IComponent* src) override;
 
+    void SetPosition(const Float2& pos) { position = pos; }
+
     TextureKey tex;
 private:
     Float2 position = { (float)Util::GetWinWidth() / 2, (float)Util::GetWinHeight() / 2 };

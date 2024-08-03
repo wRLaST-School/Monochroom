@@ -50,7 +50,7 @@ bool AppOperationCommand::PlayerConfirmCommand()
 
 bool AppOperationCommand::ReStartCommand()
 {
-	return Key::Triggered(DIK_R);
+	return Key::Triggered(DIK_R)||Pad::Triggered(Button::Back);
 }
 
 bool AppOperationCommand::UserDebugStopGameCommand()
@@ -60,42 +60,42 @@ bool AppOperationCommand::UserDebugStopGameCommand()
 
 bool AppOperationCommand::UISelectUpCommand()
 {
-	return Key::Triggered(DIK_W);
+	return Key::Triggered(DIK_W) || Pad::Triggered(Button::Up);
 }
 
 bool AppOperationCommand::UISelectDownCommand()
 {
-	return Key::Triggered(DIK_S);
+	return Key::Triggered(DIK_S) || Pad::Triggered(Button::Down);
 }
 
 bool AppOperationCommand::UISelectLeftCommand()
 {
-	return Key::Triggered(DIK_A);
+	return Key::Triggered(DIK_A) || Pad::Triggered(Button::Left);
 }
 
 bool AppOperationCommand::UISelectRightCommand()
 {
-	return Key::Triggered(DIK_D);
+	return Key::Triggered(DIK_D) || Pad::Triggered(Button::Right);
 }
 
 bool AppOperationCommand::UIDicisionCommand()
 {
-	return Key::Triggered(DIK_SPACE);
+	return Key::Triggered(DIK_SPACE) || Pad::Triggered(Button::A);
 }
 
 bool AppOperationCommand::UITabLeftCommand()
 {
-	return Key::Triggered(DIK_Q);
+	return Key::Triggered(DIK_Q) || Pad::Triggered(Button::L);
 }
 
 bool AppOperationCommand::UITabRightCommand()
 {
-	return Key::Triggered(DIK_E);
+	return Key::Triggered(DIK_E) || Pad::Triggered(Button::R);
 }
 
 bool AppOperationCommand::UIBackCommand()
 {
-	return Key::Triggered(DIK_ESCAPE);
+	return Key::Triggered(DIK_ESCAPE) || Pad::Triggered(Button::Start);
 }
 
 AppOperationCommand* AppOperationCommand::GetInstance()

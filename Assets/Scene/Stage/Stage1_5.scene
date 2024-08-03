@@ -122,9 +122,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -192.48919677734375,
+                    "X": -222.52000427246094,
                     "Y": -10000.0,
-                    "Z": 7.718572616577148
+                    "Z": -3.0577964782714844
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -134,8 +134,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.632389068603516,
+                    "X": -0.12600000202655792,
+                    "Y": 4.943388938903809,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -173,9 +173,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -4.635000228881836,
-                    "Y": 5.910000324249268,
-                    "Z": -54.30399703979492
+                    "X": -5.284999847412109,
+                    "Y": 6.0,
+                    "Z": -60.92232131958008
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -184,8 +184,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": 0.15899991989135742,
+                    "Y": 2.088000535964966,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -198,53 +198,6 @@
                 ],
                 "Type": "Camera",
                 "UseQuaternionRot": 0
-            },
-            {
-                "Active": false,
-                "BlendMode": 0,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "DisableDraw": false,
-                "DissolveStrength": 1.25,
-                "DissolveTex": "Noice.png",
-                "Model": "cube.obj",
-                "Name": "yuka",
-                "NormalType": 1,
-                "Position": {
-                    "X": -0.6473812460899353,
-                    "Y": -7.332832336425781,
-                    "Z": 0.0
-                },
-                "RenderTarget": "",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 171.59519958496094,
-                    "Y": 1.340000033378601,
-                    "Z": 345.39251708984375
-                },
-                "Tags": null,
-                "TexType": 0,
-                "Texture": "white.png",
-                "Tiling": {
-                    "X": 1.0,
-                    "Y": 1.0
-                },
-                "Type": "Object3D",
-                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -293,7 +246,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -364,65 +317,7 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
-                        "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
-                        },
-                        "Type": "Object3D",
-                        "UseMyselfDissolveStrength": false
-                    },
-                    {
-                        "Active": true,
-                        "BlendMode": 3,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Children": [
-                            {
-                                "Active": true,
-                                "Name": "BlockCollider",
-                                "Tags": null,
-                                "Type": "ScriptComponent",
-                                "filePath": "BlockCollider"
-                            }
-                        ],
-                        "DisableDraw": false,
-                        "DissolveStrength": 1.25,
-                        "DissolveTex": "Noice.png",
-                        "Model": "Block.obj",
-                        "Name": "Block",
-                        "NormalType": 1,
-                        "Position": {
-                            "X": 0.0,
-                            "Y": 6.0,
-                            "Z": -43.0
-                        },
-                        "RenderTarget": "",
-                        "Rotation": {
-                            "W": 1.0,
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "RotationEuler": {
-                            "X": 0.0,
-                            "Y": 0.0,
-                            "Z": 0.0
-                        },
-                        "Scale": {
-                            "X": 4.0,
-                            "Y": 2.0,
-                            "Z": 3.0
-                        },
-                        "Tags": [
-                            "Block"
-                        ],
-                        "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block4.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -467,20 +362,20 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
                         "Scale": {
                             "X": 6.0,
-                            "Y": 1.0,
+                            "Y": 1.5,
                             "Z": 3.0
                         },
                         "Tags": [
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block4.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -583,7 +478,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -641,7 +536,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -699,7 +594,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -757,7 +652,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -815,7 +710,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -873,7 +768,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -931,7 +826,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -989,7 +884,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": -0.22689281404018402,
                             "Z": 0.0
                         },
@@ -1047,7 +942,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": -0.5585053563117981,
                             "Z": 0.0
                         },
@@ -1105,7 +1000,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -1163,7 +1058,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -1221,12 +1116,12 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 2.0,
+                            "X": 4.0,
                             "Y": 2.0,
                             "Z": 2.0
                         },
@@ -1279,12 +1174,12 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 2.0,
+                            "X": 4.0,
                             "Y": 1.0,
                             "Z": 2.0
                         },
@@ -1337,7 +1232,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -1395,7 +1290,7 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 0.0,
+                            "X": 3.1415927410125732,
                             "Y": 0.0,
                             "Z": 0.0
                         },
@@ -1466,10 +1361,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 8.0,
+                            "Y": 5.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1501,7 +1396,7 @@
                         "Position": {
                             "X": 13.5,
                             "Y": 23.5,
-                            "Z": 36.0
+                            "Z": 37.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -1524,10 +1419,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 3.0,
+                            "Y": 6.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1558,8 +1453,8 @@
                         "NormalType": 1,
                         "Position": {
                             "X": 8.0,
-                            "Y": 26.25,
-                            "Z": 36.0
+                            "Y": 26.299999237060547,
+                            "Z": 37.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -1574,7 +1469,7 @@
                             "Z": 0.0
                         },
                         "Scale": {
-                            "X": 3.5,
+                            "X": 3.0,
                             "Y": 5.199999809265137,
                             "Z": 1.0
                         },
@@ -1582,10 +1477,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 3.0,
+                            "Y": 4.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -1617,7 +1512,7 @@
                         "Position": {
                             "X": 2.0,
                             "Y": 23.5,
-                            "Z": 36.0
+                            "Z": 37.0
                         },
                         "RenderTarget": "",
                         "Rotation": {
@@ -1640,7 +1535,65 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block.png",
+                        "Texture": "Block3.png",
+                        "Tiling": {
+                            "X": 3.0,
+                            "Y": 6.0
+                        },
+                        "Type": "Object3D",
+                        "UseMyselfDissolveStrength": false
+                    },
+                    {
+                        "Active": true,
+                        "BlendMode": 3,
+                        "Brightness": {
+                            "W": 1.0,
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        },
+                        "Children": [
+                            {
+                                "Active": true,
+                                "Name": "BlockCollider",
+                                "Tags": null,
+                                "Type": "ScriptComponent",
+                                "filePath": "BlockCollider"
+                            }
+                        ],
+                        "DisableDraw": false,
+                        "DissolveStrength": 1.25,
+                        "DissolveTex": "Noice.png",
+                        "Model": "Block.obj",
+                        "Name": "Block",
+                        "NormalType": 0,
+                        "Position": {
+                            "X": 0.0,
+                            "Y": 7.25,
+                            "Z": -43.0
+                        },
+                        "RenderTarget": "",
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "RotationEuler": {
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 2.0,
+                            "Y": 0.75,
+                            "Z": 3.0
+                        },
+                        "Tags": [
+                            "Block"
+                        ],
+                        "TexType": 0,
+                        "Texture": "Block4.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -1879,7 +1832,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": -4.635000228881836,
-                    "Y": 5.910000324249268,
+                    "Y": 6.0,
                     "Z": -54.30399703979492
                 },
                 "RenderTarget": "",
@@ -1944,9 +1897,9 @@
                 "Name": "FlyBlock",
                 "NormalType": 1,
                 "Position": {
-                    "X": -3.831240177154541,
-                    "Y": 10.995100021362305,
-                    "Z": 21.408416748046875
+                    "X": -1.0,
+                    "Y": 17.0,
+                    "Z": -6.0
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -3968,7 +3921,7 @@
                 "NormalType": 1,
                 "Position": {
                     "X": 21.84360122680664,
-                    "Y": 12.893001556396484,
+                    "Y": 13.0,
                     "Z": -59.805137634277344
                 },
                 "RenderTarget": "",
@@ -4078,7 +4031,7 @@
                         "Active": true,
                         "Name": "StageGoal",
                         "Tags": [
-                            "Stage1"
+                            "Stage2_1"
                         ],
                         "Type": "ScriptComponent",
                         "filePath": "StageGoal"
@@ -4514,7 +4467,7 @@
                         "RotationEuler": {
                             "X": 0.0,
                             "Y": 0.0,
-                            "Z": 1.5707963705062866
+                            "Z": 0.0
                         },
                         "Scale": {
                             "X": 100.0,
@@ -4523,20 +4476,22 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "TestTex.png",
+                        "Texture": "Plane.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 5.0,
+                            "Y": 5.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
-                        "Name": "Script",
-                        "Tags": null,
+                        "Name": "StageGenerater",
+                        "Tags": [
+                            "StageGenerater"
+                        ],
                         "Type": "ScriptComponent",
-                        "filePath": "StageGenerating"
+                        "filePath": "StageGenerater"
                     }
                 ],
                 "DisableDraw": false,
@@ -4546,7 +4501,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": 0.0,
-                    "Y": 0.0,
+                    "Y": -10000.0,
                     "Z": 330.0
                 },
                 "RenderTarget": "",
@@ -4591,23 +4546,6 @@
                 "filePath": "CollisionManager"
             },
             {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "ShadowMap",
-                "Tags": null,
-                "Texture": "ShadowMap_depth_",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 530.0,
-                "scaleX": 0.5,
-                "scaleY": 0.5
-            },
-            {
                 "Active": true,
                 "Brightness": {
                     "W": 1.0,
@@ -4623,91 +4561,6 @@
                 "posY": 530.5,
                 "scaleX": 10.0,
                 "scaleY": 10.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "GrayScale",
-                "Tags": null,
-                "Texture": "GrayScale",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 539.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "KawaseBloomP3",
-                "Tags": null,
-                "Texture": "KawaseBloomP3",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "SSAO",
-                "Tags": null,
-                "Texture": "SSAOF",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 534.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "BlinkTransition",
-                "Tags": null,
-                "Texture": "BlinkTransition",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "StageGenerating",
-                "Tags": null,
-                "Texture": "StageGenerating",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
             },
             {
                 "Active": true,
@@ -5283,6 +5136,8 @@
                 "Block.png": "Assets\\Models\\Stage\\Block\\Block.png",
                 "Block1.png": "Assets/Models/Stage/Block/Block1.png",
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
+                "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
+                "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
