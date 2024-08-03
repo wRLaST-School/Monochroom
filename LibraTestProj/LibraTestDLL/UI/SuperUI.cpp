@@ -325,7 +325,7 @@ void SuperUI::UIObj3DInit()
 		mTabBoardObjs[i]->Update();
 	}
 
-	mQuitTimer.SetLimitTimer(60 * 2);
+	mQuitTimer.SetLimitTimer(5);
 
 	mGuideKeyTexObj = SceneManager::FindObject<Object3D>("KeyGuidTex");
 	mGuidePadTexObj = SceneManager::FindObject<Object3D>("PadGuidTex");
