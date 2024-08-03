@@ -13,8 +13,6 @@ class PlayerGoggle :
 private:
 	std::unique_ptr<IPlayerGoggleState> mState = nullptr;
 
-	static bool sIsHavingGoggle;
-
 	const int32_t kEquipGrayEffectTime = 14;
 	const int32_t kTakeOffGrayEffectTime = 8;
 
@@ -43,8 +41,6 @@ public:
 	bool GetFinishedTakingOffGoggle();
 	//グレースケールの演出が終わったか
 	bool GetIsFinishedGrayScaleEffect();
-
-	static bool GetIsHavingGoggle() { return sIsHavingGoggle; }
 
 private:
 	GoggleScr* GetGoggleScr();

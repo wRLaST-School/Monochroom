@@ -6,6 +6,11 @@
 
 void GoggleScr::Init()
 {
+	if (mEasing != nullptr)
+	{
+		return;
+	}
+
 	mParent = This()->Parent()->CastTo<Object3D>();
 	mLensL = SceneManager::FindChildObject<Object3D>("LensL", mParent);
 	mLensR = SceneManager::FindChildObject<Object3D>("LensR", mParent);
@@ -87,6 +92,11 @@ void GoggleScr::Draw()
 
 void GoggleScr::GettedPlayer(Object3D* owner)
 {
+	if (mEasing == nullptr)
+	{
+		Init();
+	}
+
 	mOwner = owner;
 
 	mEasing->Reset();

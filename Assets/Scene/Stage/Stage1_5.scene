@@ -122,9 +122,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -222.52000427246094,
+                    "X": -273.1759033203125,
                     "Y": -10000.0,
-                    "Z": -3.0577964782714844
+                    "Z": -51.887107849121094
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -134,8 +134,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.12600000202655792,
-                    "Y": 4.943389415740967,
+                    "X": 0.0,
+                    "Y": 4.721388816833496,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4382,6 +4382,54 @@
             },
             {
                 "Active": true,
+                "Name": "GameManager",
+                "Tags": null,
+                "Type": "ScriptComponent",
+                "filePath": "GameManager"
+            },
+            {
+                "Active": true,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "GrayScale",
+                "Tags": null,
+                "Texture": "GrayScale",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 500.0,
+                "scaleX": 1.0,
+                "scaleY": 1.0
+            },
+            {
+                "Active": true,
+                "Name": "CollisionManager",
+                "Tags": null,
+                "Type": "ScriptComponent",
+                "filePath": "CollisionManager"
+            },
+            {
+                "Active": true,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "Cursor",
+                "Tags": null,
+                "Texture": "white.png",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 530.5,
+                "scaleX": 10.0,
+                "scaleY": 10.0
+            },
+            {
+                "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -4530,37 +4578,6 @@
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
-            },
-            {
-                "Active": true,
-                "Name": "GameManager",
-                "Tags": null,
-                "Type": "ScriptComponent",
-                "filePath": "GameManager"
-            },
-            {
-                "Active": true,
-                "Name": "CollisionManager",
-                "Tags": null,
-                "Type": "ScriptComponent",
-                "filePath": "CollisionManager"
-            },
-            {
-                "Active": true,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "Cursor",
-                "Tags": null,
-                "Texture": "white.png",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 530.5,
-                "scaleX": 10.0,
-                "scaleY": 10.0
             },
             {
                 "Active": true,

@@ -122,9 +122,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": 176.1099090576172,
-                    "Y": -10000.0,
-                    "Z": -181.24935913085938
+                    "X": 205.98739624023438,
+                    "Y": 143.26988220214844,
+                    "Z": -146.44903564453125
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -134,8 +134,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.020999999716877937,
-                    "Y": 2.365727424621582,
+                    "X": 0.09600000083446503,
+                    "Y": 2.1947274208068848,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -173,9 +173,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -12.786413192749023,
+                    "X": -11.965999603271484,
                     "Y": 6.0,
-                    "Z": 9.954955101013184
+                    "Z": 10.447000503540039
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -184,8 +184,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.09599999338388443,
-                    "Y": 2.1347267627716064,
+                    "X": 0.13200001418590546,
+                    "Y": 2.0567266941070557,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -2275,7 +2275,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": -11.965999603271484,
-                    "Y": 8.994000434875488,
+                    "Y": 6.0,
                     "Z": 10.447000503540039
                 },
                 "RenderTarget": "",
@@ -2286,8 +2286,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 2.5307273864746094,
+                    "X": 0.13200001418590546,
+                    "Y": 2.0567266941070557,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -5309,14 +5309,14 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Name": "Cursor",
+                "Name": "GrayScale",
                 "Tags": null,
-                "Texture": "white.png",
+                "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 530.5,
-                "scaleX": 10.0,
-                "scaleY": 10.0
+                "posY": 500.0,
+                "scaleX": 1.0,
+                "scaleY": 1.0
             },
             {
                 "Active": true,
@@ -5326,14 +5326,14 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Name": "GrayScale",
+                "Name": "Cursor",
                 "Tags": null,
-                "Texture": "GrayScale",
+                "Texture": "white.png",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
+                "posY": 530.5,
+                "scaleX": 10.0,
+                "scaleY": 10.0
             },
             {
                 "Active": false,
@@ -5546,6 +5546,15 @@
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "Name": "AttractParticleManager",
+                "Tags": [
+                    "AttractParticleManager"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "AttractParticleManager"
             }
         ],
         "EfkEffects": [

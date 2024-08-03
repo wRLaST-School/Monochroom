@@ -22,9 +22,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -15.818044662475586,
+                    "X": -9.56090259552002,
                     "Y": 6.0,
-                    "Z": -30.589387893676758
+                    "Z": -58.18778610229492
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0480000376701355,
-                    "Y": 2.1720023155212402,
+                    "X": 0.060000352561473846,
+                    "Y": 0.2580038607120514,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1311,9 +1311,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -15.818044662475586,
+                    "X": -9.56090259552002,
                     "Y": 6.0,
-                    "Z": -30.589387893676758
+                    "Z": -58.18778610229492
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -1323,8 +1323,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.048000041395425797,
-                    "Y": 2.1720023155212402,
+                    "X": 0.060000352561473846,
+                    "Y": 0.2580038607120514,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -5501,7 +5501,7 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.31199997663497925,
+                    "X": 0.15600000321865082,
                     "Y": 6.2831854820251465,
                     "Z": 0.0
                 },
@@ -5581,7 +5581,7 @@
                 "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 540.0,
+                "posY": 500.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -5871,6 +5871,15 @@
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "Name": "AttractParticleManager",
+                "Tags": [
+                    "AttractParticleManager"
+                ],
+                "Type": "ScriptComponent",
+                "filePath": "AttractParticleManager"
             }
         ],
         "EfkEffects": [
