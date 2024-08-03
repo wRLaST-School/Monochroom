@@ -20,6 +20,7 @@ void GameManager::Awake()
 	mSelectPanel = SceneManager::FindObject<SelectPanel>("SelectScript");
 	mUIScript = SceneManager::FindObject<SuperUI>("UIScript");
 	mAttractParticleManager = SceneManager::FindObjectWithTag<AttractParticleManager>("AttractParticleManager");
+	isCantControl = false;
 
 	//プレイヤーがすでにゴーグル取ってたら
 	if (PlayerGoggle::GetIsHavingGoggle())
@@ -32,7 +33,7 @@ void GameManager::Awake()
 	auto grayScale = SceneManager::FindObject<SpriteObject>("GrayScale");
 	if (grayScale)
 	{
-		grayScale->SetPosition({ 960.0f,500.0f });
+		grayScale->SetPosition({ 960.0f,540.0f });
 	}
 
 	isStop = false;
@@ -74,11 +75,6 @@ void GameManager::Update()
 	{
 		if (AppOperationCommand::GetInstance()->PlayerConfirmCommand())
 		{
-
-			//// シーンの切り替え処理
-			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
-			//SceneManager::WaitForLoadAndTransition();
-
 			OutputDebugStringA("SceneChangeClickToGame\n");
 
 			if (!BlinkTransition::mIsChangeScene)
@@ -105,12 +101,6 @@ void GameManager::Update()
 		}
 		if (mSelectPanel->GetIsChangeScene())
 		{
-			//// シーンの切り替え処理
-			//SceneManager::LoadScene<SceneFromFile>("Assets/Scene/Game.scene");
-			//SceneManager::WaitForLoadAndTransition();
-
-			OutputDebugStringA("SceneChangeClickSelectToGame\n");
-
 			if (!BlinkTransition::mIsChangeScene)
 			{
 				BlinkTransition::Start();
@@ -159,6 +149,7 @@ void GameManager::Update()
 					// シーンの切り替え処理
 					SceneManager::LoadScene<SceneFromFile>("Assets/Scene/StageSelect.scene");
 					SceneManager::WaitForLoadAndTransition();
+					BlinkTransition::mToTitle = false;
 				}
 				else
 				{
@@ -203,15 +194,28 @@ void GameManager::Update()
 		BlinkTransition::mIsLoaded = true;
 	}
 
-	if (BlinkTransition::mIsChangeScene &&
-		BlinkTransition::mIsLoaded)
+	if (SceneManager::GetCurrentScene()->GetName() == "StageSelect")
 	{
-		BlinkTransition::TransitionOut();
-
-		if (BlinkTransition::info.isOutEnd)
+		if (BlinkTransition::mIsChangeScene &&
+			BlinkTransition::mIsLoaded)
 		{
 			BlinkTransition::mIsChangeScene = false;
 			BlinkTransition::mIsLoaded = false;
+			BlinkTransition::Reset();
+		}
+	}
+	else
+	{
+		if (BlinkTransition::mIsChangeScene &&
+			BlinkTransition::mIsLoaded)
+		{
+			BlinkTransition::TransitionOut();
+
+			if (BlinkTransition::info.isOutEnd)
+			{
+				BlinkTransition::mIsChangeScene = false;
+				BlinkTransition::mIsLoaded = false;
+			}
 		}
 	}
 }

@@ -29,6 +29,7 @@ void SceneManager::Update()
 	UpdateLoadState();
 	Transition::Update();
 
+#ifdef _DEBUG
 	//デバッグ用シーン変更
 	if (Input::Key::Down(DIK_LSHIFT) || Input::Key::Down(DIK_RSHIFT))
 	{
@@ -37,6 +38,7 @@ void SceneManager::Update()
 			GameManager::sShowDebug = !GameManager::sShowDebug;
 		}
 	}
+#endif
 
 	if (!GameManager::sDebugTimeStop)
 	{

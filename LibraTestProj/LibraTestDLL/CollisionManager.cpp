@@ -385,6 +385,7 @@ void CollisionManager::PlayerHitGoals()
 			if (stageGoal->clearState == StageGoal::None)
 			{
 				stageGoal->clearState = StageGoal::ChangeScene;
+				GameManager::GetInstance()->isCantControl = true;
 			}
 			ConsoleWindow::Log("Hit Goal");
 
@@ -871,15 +872,37 @@ void CollisionManager::CheckRayHitWhFlyBlockAndWhWall()
 		auto fbObj = fbc->Parent()->CastTo<Object3D>();
 		Vec3 pos = { fbObj->position.x,fbObj->position.y,fbObj->position.z };
 
-		//白ブロックへのレイ
-		RayCollider ray;
-		ray.Setting(mViewCollider->GetPos(),
-			(pos - (mViewCollider->GetPos() + Vec3{ 0, -1.0f, 0 })).GetNorm(), 9999.0f
-		);
-		/*= mViewCollider->GetRayCollider();*/
+		//白ブロックへのレイ（モデルとスケールで-1.0fとかが変わるので注意）
+		std::vector<RayCollider> rays;
+		RayCollider ray1; ray1.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ -1.0f,1.0f,-1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+		RayCollider ray2; ray2.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ 1.0f,-1.0f,1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+		RayCollider ray3; ray3.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ 1.0f,1.0f,1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+		RayCollider ray4; ray4.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ 1.0f,-1.0f,-1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+
+		RayCollider ray5; ray5.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ -1.0f,-1.0f,-1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+		RayCollider ray6; ray6.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ -1.0f,-1.0f,1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+		RayCollider ray7; ray7.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ -1.0f,1.0f,1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+		RayCollider ray8; ray8.Setting(mViewCollider->GetPos(),
+			(pos + Vec3{ 1.0f,1.0f,-1.0f } - mViewCollider->GetPos()).GetNorm(), 9999.0f);
+
+		rays.push_back(ray1);
+		rays.push_back(ray2);
+		rays.push_back(ray3);
+		rays.push_back(ray4);
+		rays.push_back(ray5);
+		rays.push_back(ray6);
+		rays.push_back(ray7);
+		rays.push_back(ray8);
 
 
-	//そのレイ上に白い壁もあるかどうか
+		//そのレイ上に白い壁もあるかどうか
 		for (const auto& bc : mBlockColliders)
 		{
 			//白い壁じゃなければ
@@ -892,11 +915,16 @@ void CollisionManager::CheckRayHitWhFlyBlockAndWhWall()
 
 			auto bBodyCollider = bc->GetBodyCollider();
 
-			if (ray.IsTrigger(&bBodyCollider))
+			for (auto& ray : rays)
 			{
-				fb->SetIsUpdate(false);
+				if (ray.IsTrigger(&bBodyCollider))
+				{
+					fb->SetIsUpdate(false);
 
-				ConsoleWindow::Log("BAKAKAKAKAKKAKAKA");
+					ConsoleWindow::Log("BAKAKAKAKAKKAKAKA");
+
+					break;
+				}
 			}
 		}
 	}
