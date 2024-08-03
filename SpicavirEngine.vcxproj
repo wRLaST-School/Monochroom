@@ -187,7 +187,7 @@ COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(
     </Link>
     <PostBuildEvent>
       <Command>COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(SolutionDir)x64\$(Configuration)\
-</Command>
+COPY $(SolutionDir)Resources\Compiled\$(Configuration)\SpicavirEngineGame.dll $(SolutionDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
