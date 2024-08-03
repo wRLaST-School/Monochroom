@@ -7,6 +7,7 @@
 #include <SuperUI.h>
 #include <SelectPanel.h>
 #include <AttractParticleManager.h>
+#include <GoggleScr.h>
 
 
 class GameManager :
@@ -38,6 +39,7 @@ public:
 	AttractParticleManager* GetAttractParticleManager();
 
 	FlyBlock* GetFlyBlock(IComponent* parentComp);
+	void PlayerGettedGoggle(Object3D* player, GoggleScr* goggle);
 
 	bool GetisStop();
 

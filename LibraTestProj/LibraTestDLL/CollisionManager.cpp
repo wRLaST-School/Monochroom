@@ -15,6 +15,7 @@
 #include <BlockWhite.h>
 #include <FlyBlockWhite.h>
 #include <GrayScale.h>
+#include <SpriteObject.h>
 
 void CollisionManager::Init()
 {
@@ -155,7 +156,7 @@ void CollisionManager::RayHitFlyBlocks()
 		if (rayCollider.IsTrigger(&fbBodyCollider))
 		{
 			dis = rayCollider.disToInter;
-			if (dis < minDis)
+			if (dis < minDis || GrayScale::GetIsGrayScale())
 			{
 				if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 				{
@@ -170,7 +171,7 @@ void CollisionManager::RayHitFlyBlocks()
 			Vec3 dirVec = mViewCollider->GetRayCollider().r.ray;
 
 			// 仮に移動させて当たるがどうかをチェックする用
-			if (CheckHitOther(fbc))
+			if (CheckHitOther(fbc) && !GrayScale::GetIsGrayScale())
 			{
 				// 当たっていたら移動させない
 				flyBlock = nullptr;
@@ -241,9 +242,7 @@ void CollisionManager::RayHitGoggle()
 		// ゴーグルをプレイヤーと紐づけ(親子関係
 		if (goggleScr)
 		{
-			goggleScr->GettedPlayer(player);
-
-			playerGoggle->GettedGoggle();
+			GameManager::GetInstance()->PlayerGettedGoggle(player, goggleScr);
 		}
 	}
 }
@@ -873,7 +872,7 @@ void CollisionManager::CheckRayHitWhFlyBlockAndWhWall()
 		//白ブロックへのレイ
 		RayCollider ray;
 		ray.Setting(mViewCollider->GetPos(),
-			(pos - (mViewCollider->GetPos()  + Vec3{0, -1.0f, 0} )).GetNorm(), 9999.0f
+			(pos - (mViewCollider->GetPos() + Vec3{ 0, -1.0f, 0 })).GetNorm(), 9999.0f
 		);
 		/*= mViewCollider->GetRayCollider();*/
 
