@@ -213,7 +213,7 @@ void CollisionManager::RayHitGoggle()
 		auto player = mPlayerCollider->Parent()->CastTo<Object3D>();
 		auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
 
-		if (playerGoggle->GetIsHavingGoggle())
+		if (GrayScale::mIsHavingGoggle)
 		{
 			return;
 		}

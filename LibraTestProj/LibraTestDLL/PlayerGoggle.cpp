@@ -9,11 +9,13 @@
 #include <PlayerGoggleState.h>
 
 
-bool PlayerGoggle::sIsHavingGoggle = false;
-
-
 void PlayerGoggle::Init()
 {
+	if (mState != nullptr)
+	{
+		return;
+	}
+
 	ChangeState(std::make_unique<PlayerGoggleStateNone>());
 }
 
@@ -30,7 +32,7 @@ void PlayerGoggle::Draw()
 //-----------------------------------------------------------------------------------------
 void PlayerGoggle::GettedGoggle()
 {
-	sIsHavingGoggle = true;
+	GrayScale::mIsHavingGoggle = true;
 	ChangeState(std::make_unique<PlayerGoggleStateHaving>());
 }
 

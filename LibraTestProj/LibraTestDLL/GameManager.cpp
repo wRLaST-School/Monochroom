@@ -23,17 +23,21 @@ void GameManager::Awake()
 	isCantControl = false;
 
 	//プレイヤーがすでにゴーグル取ってたら
-	if (PlayerGoggle::GetIsHavingGoggle())
+	if (GrayScale::mIsHavingGoggle)
 	{
 		auto goggle = SceneManager::FindObject<Object3D>("Goggle");
-		auto goggleScr = SceneManager::FindChildObject<GoggleScr>("GoggleScr", goggle);
-		PlayerGettedGoggle(mPlayer, goggleScr);
+		if (goggle) 
+		{
+			auto goggleScr = SceneManager::FindChildObject<GoggleScr>("GoggleScr", goggle);
+			if (goggleScr)
+				PlayerGettedGoggle(mPlayer, goggleScr);
+		}
 	}
 
 	auto grayScale = SceneManager::FindObject<SpriteObject>("GrayScale");
 	if (grayScale)
 	{
-		grayScale->SetPosition({ 960.0f,540.0f });
+		grayScale->SetPosition({ 960.0f,500.0f });
 	}
 
 	isStop = false;
@@ -269,17 +273,19 @@ FlyBlock* GameManager::GetFlyBlock(IComponent* parentComp)
 	return fb;
 }
 
-void GameManager::PlayerGettedGoggle(Object3D* player, GoggleScr* goggle)
+void GameManager::PlayerGettedGoggle(Object3D* player, GoggleScr* goggleScr)
 {
-	if (goggle)
+	if (goggleScr && player)
 	{
 		auto grayScale = SceneManager::FindObject<SpriteObject>("GrayScale");
 		if (grayScale)
 		{
 			grayScale->Activate();
-			grayScale->SetPosition({ 960.0f,500.0f });
+			//grayScale->SetPosition({ 960.0f,500.0f });
 		}
-		goggle->GettedPlayer(player);
+		GrayScale::EffectInit();
+
+		goggleScr->GettedPlayer(player);
 
 		auto playerGoggle = SceneManager::FindChildObject<PlayerGoggle>("PlayerGoggle", player);
 		if (playerGoggle)

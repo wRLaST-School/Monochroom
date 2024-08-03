@@ -18,7 +18,6 @@ struct GrayScaleInfo
 public:
 	void Init()
 	{
-		isDraw = false;
 		offsetRatio = 0;
 		grayEffectRatio = 0;
 	}
@@ -50,6 +49,8 @@ public:
 public:
 	static void Init();
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
+
+	static void EffectInit() { info.grayEffectRatio = 0; info.offsetRatio = 0; info.isDraw = true; }
 
 public:
 	DLLExport static void BeginGrayEffect(bool isEquip, int32_t effectTime);

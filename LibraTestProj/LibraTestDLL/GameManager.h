@@ -42,7 +42,7 @@ public:
 	AttractParticleManager* GetAttractParticleManager();
 
 	FlyBlock* GetFlyBlock(IComponent* parentComp);
-	void PlayerGettedGoggle(Object3D* player, GoggleScr* goggle);
+	void PlayerGettedGoggle(Object3D* player, GoggleScr* goggleScr);
 
 	bool GetisStop();
 
