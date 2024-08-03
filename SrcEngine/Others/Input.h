@@ -169,6 +169,8 @@ namespace Input {
 		static void SetDeadZone(float range);
 		static float GetDeadZone();
 
+		static bool IsConnected();
+
 		int32_t gamepadIndex = 0;
 	private:
 		XINPUT_STATE padState_;
@@ -176,6 +178,8 @@ namespace Input {
 
 		bool triggerState_[2] = { false, false };
 		bool lastTriggerState_[2] = { false, false };
+
+		bool connected = false;
 
 		float deadZone_ = 50;
 	};

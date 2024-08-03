@@ -115,7 +115,7 @@ void Input::Pad::Update()
 	instance->lastTriggerState_[0] = instance->triggerState_[0];
 	instance->lastTriggerState_[1] = instance->triggerState_[1];
 
-	XInputGetState(instance->gamepadIndex, &instance->padState_);
+	instance->connected = XInputGetState(instance->gamepadIndex, &instance->padState_) == ERROR_SUCCESS;
 	instance->triggerState_[0] = instance->padState_.Gamepad.bLeftTrigger > XINPUT_GAMEPAD_TRIGGER_THRESHOLD;
 	instance->triggerState_[1] = instance->padState_.Gamepad.bRightTrigger > XINPUT_GAMEPAD_TRIGGER_THRESHOLD;
 }
@@ -193,6 +193,11 @@ void Input::Pad::SetDeadZone(float range)
 float Input::Pad::GetDeadZone()
 {
 	return GetInstance()->deadZone_;
+}
+
+bool Input::Pad::IsConnected()
+{
+	return GetInstance()->connected;
 }
 
 void Input::Mouse::Init()
