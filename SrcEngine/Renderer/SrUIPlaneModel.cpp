@@ -4,6 +4,9 @@
 #include <Camera.h>
 #include <RTVManager.h>
 #include <LineDrawer.h>
+#include <SceneManager.h>
+#include <BlinkTransition.h>
+#include <NoEffect.h>
 
 void SrUIPlaneModel::Init()
 {
@@ -40,7 +43,17 @@ void SrUIPlaneModel::PreDraw()
 	Light::Use();
 	Camera::UseCurrent();
 
-	RTVManager::SetRenderTargetToTexture("RenderTexture", false);
+	if (SceneManager::currentScene->GetName() == "Title" ||
+		SceneManager::currentScene->GetName() == "StageSelect")
+	{
+		RTVManager::SetRenderTargetToTexture("RGBShiftF", false);
+
+	}
+	else
+	{
+		RTVManager::SetRenderTargetToTexture("KawaseBloomP3", false);
+
+	}
 
 	//RTVManager::SetRenderTargetToTexture("BloomBefore");
 
@@ -50,6 +63,20 @@ void SrUIPlaneModel::PreDraw()
 
 void SrUIPlaneModel::PostDraw()
 {
+	if (SceneManager::currentScene->GetName() == "Title" ||
+		SceneManager::currentScene->GetName() == "StageSelect")
+	{
+		BlinkTransition::Effect("RGBShiftF", "BlinkTransition");
+
+	}
+	else
+	{
+		// 最後
+		BlinkTransition::Effect("KawaseBloomP3", "BlinkTransition");
+
+	}
+
+	NoEffect::Effect("BlinkTransition", "RenderTexture");
 }
 
 void SrUIPlaneModel::Render()

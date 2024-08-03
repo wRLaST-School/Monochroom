@@ -25,7 +25,7 @@ void SoundTab::Init()
 
 	mItemsParentObj = SceneManager::FindObject<Object3D>("SoundTabItems");
 
-	// 音量項目のオブジェクト設定
+	 //音量項目のオブジェクト設定
 	mSoundUIObj[MASTER].planeObj = SceneManager::FindObject<Object3D>("MasterParent");
 	mSoundUIObj[BGM].planeObj = SceneManager::FindObject<Object3D>("BGMParent");
 	mSoundUIObj[SE].planeObj = SceneManager::FindObject<Object3D>("SEParent");

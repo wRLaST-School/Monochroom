@@ -643,6 +643,8 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 							(flyBlockBodyCollider2.pos.y + flyBlockBodyCollider1.pos.y) / 2 - 9,
 							(flyBlockBodyCollider2.pos.z + flyBlockBodyCollider1.pos.z) / 2 };
 
+						Vec3 rotaVel = flyBlockBodyCollider2.pos - flyBlockBodyCollider1.pos;
+
 						OutputDebugStringA("mBlockCollHit!!");
 						if (!mBlockCollEffect)
 						{
@@ -650,7 +652,7 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 						}
 						mBlockCollEffect->SetIsHit(true);
 						mBlockCollEffect->SetHitBlockPos(hitPos);
-
+						mBlockCollEffect->SetHitRota(rotaVel.GetNorm());
 
 					}
 				}
