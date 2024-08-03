@@ -9,6 +9,7 @@
 #include <Input.h>
 #include <DockPanel.h>
 #include <RTVManager.h>
+#include <GrayScale.h>
 
 float Object3D::dissolveStrength = 1.25f;
 
@@ -374,19 +375,27 @@ void Object3D::DrawToon(const TextureKey& key)
 {
 	transformCB.contents->mat = matWorld;
 	SpRenderer::DrawCommand([&] {
-		if (texType == 0)
+
+		if (GrayScale::GetIsGrayScale())
+		{
+			if (texType == 0)
+			{
+				GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
+			}
+			// 真っ白
+			else if (texType == 1)
+			{
+				GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle("Block1.png"));
+			}
+			// 真っ黒
+			else if (texType == 2)
+			{
+				GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle("Block2.png"));
+			}
+		}
+		else
 		{
 			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle(key));
-		}
-		// 真っ白
-		else if (texType == 1)
-		{
-			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle("Block1.png"));
-		}
-		// 真っ黒
-		else if (texType == 2)
-		{
-			GetSpDX()->cmdList->SetGraphicsRootDescriptorTable(1, SpTextureManager::GetGPUDescHandle("Block2.png"));
 		}
 
 		if (model->materialCBs.size())

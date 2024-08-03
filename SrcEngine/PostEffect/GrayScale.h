@@ -45,6 +45,7 @@ private:
 public:
 	DLLExport static GrayScaleInfo info;
 	static SpConstBuffer<GraySclaeCB> cb;
+	DLLExport static bool mIsHavingGoggle;
 
 public:
 	static void Init();
