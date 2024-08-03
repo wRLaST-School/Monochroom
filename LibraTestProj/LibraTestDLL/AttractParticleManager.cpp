@@ -1,5 +1,6 @@
 #include <AttractParticleManager.h>
 #include <SceneManager.h>
+#include <GameManager.h>
 #include <ConsoleWindow.h>
 
 
@@ -13,7 +14,7 @@ void AttractParticleManager::Init()
 	//flyBlockに変更
 	for (auto& bObj : blockObjs)
 	{
-		auto fbScr = SceneManager::FindChildObject<FlyBlock>("FlyBlock", bObj);
+		auto fbScr = GameManager::GetInstance()->GetFlyBlock(bObj);
 
 		//エミッターはまだ空で登録
 		mFlyBlockAndAttractEffect->insert(

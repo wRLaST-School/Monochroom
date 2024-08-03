@@ -1,5 +1,6 @@
 #include "AttractEndPointEffectManager.h"
 #include <SceneManager.h>
+#include <GameManager.h>
 
 
 
@@ -12,7 +13,7 @@ void AttractEndPointEffectManager::Init()
 	//flyBlockに変更
 	for (auto& bObj : blockObjs)
 	{
-		auto fbScr = SceneManager::FindChildObject<FlyBlock>("FlyBlock", bObj);
+		auto fbScr = GameManager::GetInstance()->GetFlyBlock(bObj);
 
 		//エフェクトのインスタンスはまだ空で登録
 		mAttractEndPointEffects->insert(

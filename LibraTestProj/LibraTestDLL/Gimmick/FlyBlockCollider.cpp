@@ -3,11 +3,13 @@
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
 #include <Timer.h>
+#include "FlyBlockWhite.h"
+#include <GameManager.h>
 
 void FlyBlockCollider::Init()
 {
 	mObj = This()->Parent()->CastTo<Object3D>();
-	mFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", mObj);
+	mFlyBlock = GameManager::GetInstance()->GetFlyBlock(mObj);
 
 	const uint32_t maxTime = 60;
 	mTimer.SetLimitTimer(maxTime);

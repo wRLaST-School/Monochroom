@@ -37,6 +37,8 @@ public:
 	StageGenerater* GetStageGenerater();
 	AttractParticleManager* GetAttractParticleManager();
 
+	FlyBlock* GetFlyBlock(IComponent* parentComp);
+
 	bool GetisStop();
 
 	// ゲーム一時停止の設定

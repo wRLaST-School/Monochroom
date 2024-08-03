@@ -12,6 +12,7 @@ int32_t GrayScale::mGrayEffectTimeMax = 40;
 bool GrayScale::mIsEquip = false;
 bool GrayScale::mIsGrayEffect = false;
 bool GrayScale::mIsGrayScale = false;
+bool GrayScale::mIsHavingGoggle = false;
 
 void GrayScale::Init()
 {

@@ -14,6 +14,7 @@
 #include <AttractParticleManager.h>
 #include <BlockWhite.h>
 #include <FlyBlockWhite.h>
+#include <GrayScale.h>
 
 void CollisionManager::Init()
 {
@@ -27,6 +28,7 @@ void CollisionManager::Init()
 	mBlockColliders = FindColliderList<BlockCollider>("Block", "BlockCollider");
 
 	mFlyBlockColliders = FindColliderList<FlyBlockCollider>("FlyBlock", "FlyBlockCollider");
+
 	mButtonColliders = FindColliderList<ButtonCollider>("Button", "ButtonCollider");
 	mGlassColliders = FindColliderList<GlassCollider>("Glass", "GlassCollider");
 	mGoalColliders = FindColliderList<GoalCollider>("Goal", "GoalCollider");
@@ -97,6 +99,9 @@ void CollisionManager::Update()
 
 	// 飛ぶブロックトドアの当たり判定
 	FlyBlocksHitDoors();
+
+	//白いブロックと白い壁
+	CheckRayHitWhFlyBlockAndWhWall();
 }
 
 void CollisionManager::Draw()
@@ -112,7 +117,7 @@ void CollisionManager::CameraInsideFlyBlocks()
 {
 	for (const auto& fbc : mFlyBlockColliders)
 	{
-		auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+		auto flyblock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
 
 		if (flyblock->GetIsAttracting())
 		{
@@ -154,7 +159,7 @@ void CollisionManager::RayHitFlyBlocks()
 			{
 				if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 				{
-					flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+					flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
 				}
 			}
 		}
@@ -431,7 +436,7 @@ void CollisionManager::FlyBlocksHitBlocks()
 
 		for (const auto& bc : mBlockColliders)
 		{
-			auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+			auto flyblock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
 
 			// 押し出し
 			Vec3 pushOut = Vec3::zero;
@@ -483,7 +488,8 @@ void CollisionManager::FlyBlocksHitButtons()
 			if (flyBlockDownCollider.IsTrigger(&buttonBodyCollider))
 			{
 				// 飛ぶブロック
-				auto flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+				auto flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
+
 				if (!flyBlock->GetIsAttracting())
 				{
 					if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
@@ -517,7 +523,8 @@ void CollisionManager::FlyBlocksHitButtons()
 			else if (flyBlockDownCollider.IsTrigger(&buttonFlameCollider))
 			{
 				// 飛ぶブロック
-				auto flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+				auto flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
+
 				if (!flyBlock->GetIsAttracting())
 				{
 					if (flyBlock->GetGravity()->GetVelocity().y <= 0.f)
@@ -545,7 +552,7 @@ void CollisionManager::FlyBlocksHitGlasses()
 
 		for (const auto& gc : mGlassColliders)
 		{
-			auto flyblock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+			auto flyblock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
 
 			// 押し出し
 			Vec3 pushOut = Vec3::zero;
@@ -599,9 +606,9 @@ void CollisionManager::FlyBlocksHitFlyBlocks()
 			auto flyBlockTopCollider2 = fbc2->GetTopCollider();
 
 			//自分
-			auto flyBlock1 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc1->Parent());
+			auto flyBlock1 = GameManager::GetInstance()->GetFlyBlock(fbc1->Parent());
 			//相手
-			auto flyBlock2 = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc2->Parent());
+			auto flyBlock2 = GameManager::GetInstance()->GetFlyBlock(fbc2->Parent());
 
 			// 自分が引き寄せられていない時
 			if (!flyBlock1->GetIsAttracting())
@@ -690,7 +697,8 @@ void CollisionManager::FlyBlocksHitGoals()
 			auto goalBodyCollider = gc->GetBodyCollider();
 			if (fbc->GetBodyCollider().IsTrigger(&goalBodyCollider, &pushOut))
 			{
-				FlyBlock* flyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", fbc->Parent());
+				FlyBlock* flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
+
 				if (flyBlock)
 				{
 					if (flyBlock->GetAttractVec().GetSquaredLength() != 0)
@@ -725,6 +733,7 @@ void CollisionManager::FlyBlocksHitDoors()
 		}
 	}
 }
+
 
 float CollisionManager::CheckRayHitOtherDis(FlyBlockCollider* current)
 {
@@ -834,56 +843,60 @@ float CollisionManager::CheckRayHitOtherDis(FlyBlockCollider* current)
 
 void CollisionManager::CheckRayHitWhFlyBlockAndWhWall()
 {
-	std::vector<FlyBlock*> hitFB;
-	std::vector<BlockWhite*> hitB;
-
-	for (const auto& fbc : mFlyBlockColliders)
+	if (!GrayScale::GetIsGrayScale())
 	{
-		SceneManager::FindChildObject<FlyBlockWhite>("FlyBlockWhite", fbc->Parent())->SetIsUpdate(true);
+		return;
 	}
 
 	for (const auto& fbc : mFlyBlockColliders)
 	{
-		auto fb = SceneManager::FindChildObject<FlyBlockWhite>("FlyBlockWhite", fbc->Parent());
-		
-		if (fb == nullptr)
+		auto fb = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
+
+		if (fb)
+		{
+			fb->SetIsUpdate(true);
+		}
+	}
+
+	for (const auto& fbc : mFlyBlockColliders)
+	{
+		auto fb = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
+
+		/*if (fb->GetBlockType() == FlyBlock::BlockType::NORMAL)
 		{
 			continue;
-		}
+		}*/
 
-		auto bodyCollider = fbc->GetBodyCollider();
+		auto fbObj = fbc->Parent()->CastTo<Object3D>();
+		Vec3 pos = { fbObj->position.x,fbObj->position.y,fbObj->position.z };
 
 		//白ブロックへのレイ
-		RayCollider ray(
-			bodyCollider.pos - mViewCollider->GetPos(), mViewCollider->GetPos()
+		RayCollider ray;
+		ray.Setting(mViewCollider->GetPos(),
+			(pos - (mViewCollider->GetPos()  + Vec3{0, -1.0f, 0} )).GetNorm(), 9999.0f
 		);
+		/*= mViewCollider->GetRayCollider();*/
 
-		//そのレイ上に白い壁もあるかどうか
+
+	//そのレイ上に白い壁もあるかどうか
 		for (const auto& bc : mBlockColliders)
 		{
-			auto bodyCollider = bc->GetBodyCollider();
-
-			if (ray.IsTrigger(&bodyCollider))
+			//白い壁じゃなければ
+			if (bc->Parent()->CastTo<Object3D>()->texType != 2)
 			{
-				auto fbw = SceneManager::FindChildObject<FlyBlock>("FlyBlockWhite", bc->Parent());
-
-				//あったら
-				if (fbw)
-				{
-					fbw->SetIsUpdate(false);
-				}
+				continue;
 			}
-		}
-	}
 
+			ConsoleWindow::Log("WHITE");
 
+			auto bBodyCollider = bc->GetBodyCollider();
 
+			if (ray.IsTrigger(&bBodyCollider))
+			{
+				fb->SetIsUpdate(false);
 
-	if (hitB.size())
-	{
-		for (auto& bw : hitB)
-		{
-
+				ConsoleWindow::Log("BAKAKAKAKAKKAKAKA");
+			}
 		}
 	}
 }
@@ -917,8 +930,8 @@ void CollisionManager::RecursiveAttracting(
 
 		if (currentTop.IsTrigger(&targetDown))
 		{
-			auto currentFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", current->Parent());
-			auto targetFlyBlock = SceneManager::FindChildObject<FlyBlock>("FlyBlock", target->Parent());
+			auto currentFlyBlock = GameManager::GetInstance()->GetFlyBlock(current->Parent());
+			auto targetFlyBlock = GameManager::GetInstance()->GetFlyBlock(target->Parent());
 
 			Vec3 vec = currentFlyBlock->GetAttractedDir();
 			float dis = Vec3::Distance(currentFlyBlock->GetBeginPos(), currentFlyBlock->GetEndPos());

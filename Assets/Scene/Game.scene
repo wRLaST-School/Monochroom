@@ -23,7 +23,7 @@
                 "Name": "Camera",
                 "Position": {
                     "X": -13.95300006866455,
-                    "Y": 10.0,
+                    "Y": 9.38800048828125,
                     "Z": 22.032001495361328
                 },
                 "Rotation": {
@@ -6527,12 +6527,69 @@
             },
             {
                 "Active": true,
-                "Name": "FlyBlockWhite",
-                "Tags": [
-                    "FlyBlockWhite"
+                "BlendMode": 0,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "Name": "FlyBlockCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlockCollider"
+                    },
+                    {
+                        "Active": true,
+                        "Name": "FlyBlockWhite",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "FlyBlockWhite"
+                    }
                 ],
-                "Type": "ScriptComponent",
-                "filePath": "FlyBlockWhite"
+                "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
+                "Model": "cube.obj",
+                "Name": "FlyBlockWhite",
+                "NormalType": 0,
+                "Position": {
+                    "X": -4.609999656677246,
+                    "Y": 9.463000297546387,
+                    "Z": 8.624999046325684
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Tags": [
+                    "FlyBlock",
+                    "Stage"
+                ],
+                "TexType": 0,
+                "Texture": "",
+                "Tiling": {
+                    "X": 1.0,
+                    "Y": 1.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             }
         ],
         "EfkEffects": [
