@@ -23,7 +23,7 @@
                 "Name": "Camera",
                 "Position": {
                     "X": -0.18899965286254883,
-                    "Y": 6.0,
+                    "Y": 5.87600040435791,
                     "Z": -30.382999420166016
                 },
                 "Rotation": {
@@ -33,8 +33,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.11099998652935028,
-                    "Y": 6.244184494018555,
+                    "X": 0.0,
+                    "Y": 0.0,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -582,7 +582,7 @@
                 "DisableDraw": false,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "Noice.png",
-                "Model": "cube.obj",
+                "Model": "Block.obj",
                 "Name": "FlyBlock",
                 "NormalType": 1,
                 "Position": {
@@ -3433,6 +3433,7 @@
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "Wall.png": "Assets\\Images\\Wall.png",
                 "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",

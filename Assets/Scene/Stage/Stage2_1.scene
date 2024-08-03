@@ -173,9 +173,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -12.786413192749023,
-                    "Y": 6.0,
-                    "Z": 9.954955101013184
+                    "X": -11.965999603271484,
+                    "Y": 8.994000434875488,
+                    "Z": 10.447000503540039
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -184,8 +184,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.09599999338388443,
-                    "Y": 2.1347267627716064,
+                    "X": 0.0,
+                    "Y": 2.5307273864746094,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -1804,7 +1804,7 @@
                 "Children": [
                     {
                         "Active": true,
-                        "BlendMode": 0,
+                        "BlendMode": 6,
                         "Brightness": {
                             "W": 1.0,
                             "X": 1.0,
@@ -1869,17 +1869,17 @@
                             "Transparent"
                         ],
                         "TexType": 0,
-                        "Texture": "",
+                        "Texture": "Wall.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 12.0,
+                            "Y": 4.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
-                        "BlendMode": 0,
+                        "BlendMode": 6,
                         "Brightness": {
                             "W": 1.0,
                             "X": 1.0,
@@ -1944,17 +1944,17 @@
                             "Transparent"
                         ],
                         "TexType": 0,
-                        "Texture": "",
+                        "Texture": "Wall.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 12.0,
+                            "Y": 4.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
-                        "BlendMode": 0,
+                        "BlendMode": 6,
                         "Brightness": {
                             "W": 1.0,
                             "X": 1.0,
@@ -2019,17 +2019,17 @@
                             "Transparent"
                         ],
                         "TexType": 0,
-                        "Texture": "",
+                        "Texture": "Wall.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 6.0,
+                            "Y": 4.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
                     },
                     {
                         "Active": true,
-                        "BlendMode": 0,
+                        "BlendMode": 6,
                         "Brightness": {
                             "W": 1.0,
                             "X": 1.0,
@@ -2094,10 +2094,10 @@
                             "Transparent"
                         ],
                         "TexType": 0,
-                        "Texture": "",
+                        "Texture": "Wall.png",
                         "Tiling": {
-                            "X": 1.0,
-                            "Y": 1.0
+                            "X": 6.0,
+                            "Y": 4.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -5336,57 +5336,6 @@
                 "scaleY": 1.0
             },
             {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "KawaseBloomP3",
-                "Tags": null,
-                "Texture": "KawaseBloomP3",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "SSAO",
-                "Tags": null,
-                "Texture": "SSAOF",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 534.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "BlinkTransition",
-                "Tags": null,
-                "Texture": "BlinkTransition",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
                 "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
@@ -5624,7 +5573,8 @@
         ],
         "Tags": [
             "Stage2_1"
-        ],        "Textures": [
+        ],
+        "Textures": [
             {
                 "BasicParticle": "Assets/Images/circleParticle.png",
                 "BgmVolume.png": "Assets\\Images\\UI\\BgmVolume.png",
@@ -5652,6 +5602,7 @@
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "Wall.png": "Assets\\Images\\Wall.png",
                 "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",

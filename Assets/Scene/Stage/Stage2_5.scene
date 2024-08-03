@@ -5092,7 +5092,7 @@
                         "filePath": "SponePoint"
                     }
                 ],
-                "DisableDraw": false,
+                "DisableDraw": true,
                 "DissolveStrength": 1.25,
                 "DissolveTex": "Noice.png",
                 "Model": "cube.obj",
@@ -5721,64 +5721,6 @@
             },
             {
                 "Active": true,
-                "BlendMode": 6,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Children": [
-                    {
-                        "Active": true,
-                        "Name": "TransparentCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "TransparentCollider"
-                    }
-                ],
-                "DisableDraw": false,
-                "DissolveStrength": 1.25,
-                "DissolveTex": "",
-                "Model": "Plane.obj",
-                "Name": "Transparent",
-                "NormalType": 1,
-                "Position": {
-                    "X": -32.93300247192383,
-                    "Y": 13.0,
-                    "Z": -76.3030014038086
-                },
-                "RenderTarget": "",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 10.0,
-                    "Y": 10.0,
-                    "Z": 0.10000000149011612
-                },
-                "Tags": [
-                    "Transparent"
-                ],
-                "TexType": 0,
-                "Texture": "",
-                "Tiling": {
-                    "X": 1.0,
-                    "Y": 1.0
-                },
-                "Type": "Object3D",
-                "UseMyselfDissolveStrength": false
-            },
-            {
-                "Active": true,
                 "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
@@ -6044,6 +5986,7 @@
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "Wall.png": "Assets\\Images\\Wall.png",
                 "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
