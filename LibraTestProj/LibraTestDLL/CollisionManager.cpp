@@ -385,6 +385,7 @@ void CollisionManager::PlayerHitGoals()
 			if (stageGoal->clearState == StageGoal::None)
 			{
 				stageGoal->clearState = StageGoal::ChangeScene;
+				GameManager::GetInstance()->isCantControl = true;
 			}
 			ConsoleWindow::Log("Hit Goal");
 
@@ -921,7 +922,7 @@ void CollisionManager::CheckRayHitWhFlyBlockAndWhWall()
 					fb->SetIsUpdate(false);
 
 					ConsoleWindow::Log("BAKAKAKAKAKKAKAKA");
-				
+
 					break;
 				}
 			}

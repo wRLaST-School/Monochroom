@@ -24,6 +24,9 @@ private:
 	bool isStop;
 
 public:
+	bool isCantControl;
+
+public:
 	void Awake();
 	void Init();
 	void Update();
