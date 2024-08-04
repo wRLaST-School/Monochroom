@@ -13,7 +13,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -4160,9 +4160,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -9.57400131225586,
+                    "X": -8.89465618133545,
                     "Y": 52.0,
-                    "Z": -0.9760003089904785
+                    "Z": -0.2072770893573761
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -4171,8 +4171,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.688388824462891,
+                    "X": 0.8429998755455017,
+                    "Y": 1.1393887996673584,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -8167,9 +8167,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -9.57400131225586,
+                    "X": -8.894737243652344,
                     "Y": 52.0,
-                    "Z": -0.9760003089904785
+                    "Z": -0.20713362097740173
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -8179,8 +8179,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.688388824462891,
+                    "X": 0.8429998755455017,
+                    "Y": 1.1393886804580688,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -12185,9 +12185,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -278.0484619140625,
-                    "Y": 187.08189392089844,
-                    "Z": -7.420666694641113
+                    "X": -277.8539123535156,
+                    "Y": 187.08187866210938,
+                    "Z": 11.104774475097656
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -12197,8 +12197,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.688388824462891,
+                    "X": -0.06300000101327896,
+                    "Y": 4.757389068603516,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -12280,132 +12280,6 @@
                 "posY": 500.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "KawaseBloomP3",
-                "Tags": null,
-                "Texture": "KawaseBloomP3",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "SSAO",
-                "Tags": null,
-                "Texture": "SSAOF",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 534.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "BlinkTransition",
-                "Tags": null,
-                "Texture": "BlinkTransition",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Name": "StageGenerating",
-                "Tags": null,
-                "Texture": "StageGenerating",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 540.0,
-                "scaleX": 1.0,
-                "scaleY": 1.0
-            },
-            {
-                "Active": false,
-                "BlendMode": 6,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Children": [
-                    {
-                        "Active": true,
-                        "Name": "TransparentCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "TransparentCollider"
-                    }
-                ],
-                "DisableDraw": false,
-                "DissolveStrength": 1.25,
-                "DissolveTex": "",
-                "Model": "Plane.obj",
-                "Name": "Transparent",
-                "NormalType": 1,
-                "Position": {
-                    "X": 0.0,
-                    "Y": 13.0,
-                    "Z": 4.611999988555908
-                },
-                "RenderTarget": "",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 10.0,
-                    "Y": 10.0,
-                    "Z": 0.10000000149011612
-                },
-                "Tags": [
-                    "Transparent"
-                ],
-                "TexType": 0,
-                "Texture": "",
-                "Tiling": {
-                    "X": 1.0,
-                    "Y": 1.0
-                },
-                "Type": "Object3D",
-                "UseMyselfDissolveStrength": false
             },
             {
                 "Active": true,
@@ -12536,7 +12410,7 @@
                 "NormalType": 1,
                 "Position": {
                     "X": 10.594928741455078,
-                    "Y": -6.4178924560546875,
+                    "Y": -10000.0,
                     "Z": 24.82697296142578
                 },
                 "RenderTarget": "",
@@ -12688,8 +12562,8 @@
                         "Name": "Right",
                         "NormalType": 1,
                         "Position": {
-                            "X": 9.0,
-                            "Y": 1.0,
+                            "X": 1.0,
+                            "Y": 2.0,
                             "Z": 0.0
                         },
                         "RenderTarget": "",
@@ -12758,7 +12632,7 @@
                 },
                 "Scale": {
                     "X": 1.0,
-                    "Y": 1.0,
+                    "Y": 1.5,
                     "Z": 1.0
                 },
                 "Tags": [
@@ -12965,7 +12839,7 @@
                 },
                 "Scale": {
                     "X": 1.0,
-                    "Y": 1.0,
+                    "Y": 1.5,
                     "Z": 1.0
                 },
                 "Tags": [
@@ -13270,6 +13144,10 @@
                 "Decide": "Assets/Sounds/decide.wav",
                 "Generate": "Assets/Sounds/generate.wav",
                 "Goal": "Assets/Sounds/goal.wav",
+                "Goggle": "Assets/Sounds/goggle.wav",
+                "Jump": "Assets/Sounds/jump.wav",
+                "Kinesis": "Assets/Sounds/kinesis.wav",
+                "PresPlate": "Assets/Sounds/presplate.wav",
                 "Select": "Assets/Sounds/select.wav"
             }
         ],
