@@ -116,6 +116,7 @@ void SoundManager::Play(const SoundKey& key)
     buf.Flags = XAUDIO2_END_OF_STREAM;
 
     pSourceVoice->SubmitSourceBuffer(&buf);
+    pSourceVoice->SetVolume(volSE);
     pSourceVoice->Start();
     pSnd->sound = pSourceVoice;
 }
@@ -146,6 +147,8 @@ SoundData* SoundManager::PlayBGM(const SoundKey& key, bool loopFlag)
     pSourceVoice->SubmitSourceBuffer(&buf);
     pSourceVoice->Start();
 
+    pSourceVoice->SetVolume(0.5f * volBGM);
+
     pSnd->sound = pSourceVoice;
 
     return pSnd;
@@ -173,6 +176,26 @@ void SoundManager::StopBGM(const SoundKey& key)
     if (pSnd->sound == nullptr) return;
 
     pSnd->sound->Stop();
+}
+
+void SoundManager::SetBGMVolume(float volume)
+{
+    volBGM = volume;
+}
+
+void SoundManager::SetSEVolume(float volume)
+{
+    volSE = volume;
+}
+
+float SoundManager::GetBGMVolume()
+{
+    return volBGM;
+}
+
+float SoundManager::GetSEVolume()
+{
+    return volSE;
 }
 
 void SoundManager::ReleaseAllSounds()
