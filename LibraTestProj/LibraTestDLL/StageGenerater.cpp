@@ -63,15 +63,12 @@ void StageGenerater::Draw()
 
 }
 
-void StageGenerater::Start()
+void StageGenerater::PositionSetting()
 {
 	if (mIsStarted)
 	{
 		return;
 	}
-
-	mIsStart = true;
-	mIsStarted = true;
 
 	Object3D* player = GameManager::GetInstance()->GetPlayer();
 
@@ -81,6 +78,17 @@ void StageGenerater::Start()
 
 	mStart = mObj->position;
 	mEnd = mMoveVec * 300.f + mObj->position;
+}
+
+void StageGenerater::Start()
+{
+	if (mIsStarted)
+	{
+		return;
+	}
+
+	mIsStart = true;
+	mIsStarted = true;
 }
 
 bool StageGenerater::GetisEnd()

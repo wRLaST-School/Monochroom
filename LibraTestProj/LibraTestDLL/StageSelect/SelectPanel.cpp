@@ -168,6 +168,13 @@ void SelectPanel::Init()
 
 	mTextDisabledColor = { 200,130,130 };
 	mTextSelectColor = { 255,219,219 };
+
+#ifdef _DEBUG
+	mEaseCapsule.SetEaseTimer(30);
+	mEaseAlpha.SetEaseTimer((int)(30));
+	mTitleMoveTimeMax = 30;
+	mSceneChangeCameraTimeMax = 30;
+#endif
 }
 
 void SelectPanel::Update()

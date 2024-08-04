@@ -49,6 +49,12 @@ void GoggleScr::Init()
 
 void GoggleScr::Update()
 {
+	if (mIsEquip)
+	{
+		ConsoleWindow::Log("Equip!!!!!!!!!!!!!");
+	}
+
+
 	if (mOwner)
 	{
 		mParent->brightnessCB.contents->w = 0;

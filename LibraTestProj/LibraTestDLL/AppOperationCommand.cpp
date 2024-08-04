@@ -46,7 +46,7 @@ bool AppOperationCommand::PlayerGetGoggleCommand()
 
 bool AppOperationCommand::PlayerEquipGoggleCommand()
 {
-	return Mouse::Triggered(Click::Middle) /*||*/;
+	return Mouse::Triggered(Click::Middle) || Pad::Triggered(Button::R);
 }
 
 bool AppOperationCommand::PlayerConfirmCommand()

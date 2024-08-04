@@ -12,6 +12,20 @@ void StageDoor::Init()
 
 	mIsMoving = false;
 	mIsClosing = true;
+
+	mObj = SceneManager::FindChildObject<Object3D>("Flame", This()->Parent());
+	mObj->texture = "White.png";
+	mObj->normalType = 1;
+	mObj->brightnessCB.contents->x = 111.f / 255.f;
+	mObj->brightnessCB.contents->y = 160.f / 255.f;
+	mObj->brightnessCB.contents->z = 246.f / 255.f;
+	mObj->brightnessCB.contents->w = 1.f;
+
+	auto leftD = SceneManager::FindChildObject<Object3D>("Left", This()->Parent());
+	auto rightD = SceneManager::FindChildObject<Object3D>("Right", This()->Parent());
+
+	leftD->normalType = 1;
+	rightD->normalType = 1;
 }
 
 void StageDoor::Update()
@@ -52,7 +66,7 @@ void StageDoor::OpClDoorInternal(const Vec3& sPosL, const Vec3& ePosL,
 	const Vec3& sPosR, const Vec3& ePosR, bool isClosing)
 {
 	if ((mIsClosing == isClosing && mIsMoving) ||
-		(!mIsMoving && mIsClosing == isClosing)||
+		(!mIsMoving && mIsClosing == isClosing) ||
 		mIsMoving)
 	{
 		return;
