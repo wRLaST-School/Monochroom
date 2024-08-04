@@ -7,7 +7,7 @@ SamplerState smp : register(s0);
 static const float4 kGoggleFrameColor = { 0, 0, 0, 1 };
 static const float4 kGoggleLensColor = { 0.2125f, 0.7154f, 0.0721f, 1 };
 
-static const float kPerliningNearLength= 0.09f;
+static const float kPerliningNearLength= 0.1f;
 
 float4 main(VSOutput input) : SV_TARGET
 {
@@ -28,7 +28,6 @@ float4 main(VSOutput input) : SV_TARGET
     //1.0超えてたら0になるように
     lengthA = max(lengthF - max(lengthA - lengthF,0) ,0);
     lengthA = (lengthA != 0.0f) * 1.0f - lengthA;
-    lengthA= pow(lengthA,1.2f);
     
     
     float4 color = tex.Sample(smp, input.uv);
@@ -38,7 +37,7 @@ float4 main(VSOutput input) : SV_TARGET
     float goggleLensRate = texMask.Sample(smp, maskPos).b;
     
     //ノイズ
-    float4 noise = ( /*pow(mainImage(maskPos, 0.7f), 0.3f) * */lengthA.xxxx);
+    float4 noise = (/*(mainImage(maskPos, 0.7f)) * */pow(lengthA, 1.1f));
     
     //ゴーグルの色（レンズかフレームか）
     //グレースケールの色
