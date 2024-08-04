@@ -89,9 +89,8 @@ void GameManager::Update()
 			{
 #ifdef _NDEBUG
 				// ステージ生成
-				mStageGenerater->Start();
 #endif
-
+				mStageGenerater->Start();
 				BlinkTransition::mIsChangeScene = false;
 				BlinkTransition::mIsLoaded = false;
 			}
@@ -201,15 +200,15 @@ void GameManager::Update()
 		{
 			Input::Mouse::ShowCursorM();
 		}
-#ifdef _NDEBUG
 		mStageGenerater->PositionSetting();
+#ifdef _NDEBUG
 #endif
 
-#ifdef _DEBUG
-		// ステージ生成
-		mStageGenerater->PositionSetting();
-		mStageGenerater->Start();
-#endif
+//#ifdef _DEBUG
+//		// ステージ生成
+//		mStageGenerater->PositionSetting();
+//		mStageGenerater->Start();
+//#endif
 
 	}
 
