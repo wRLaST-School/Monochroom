@@ -4260,9 +4260,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": 205.98739624023438,
-                    "Y": -10000.0,
-                    "Z": -146.44903564453125
+                    "X": 142.72824096679688,
+                    "Y": 143.26988220214844,
+                    "Z": -209.07461547851563
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4272,8 +4272,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.11100000143051147,
-                    "Y": 2.5157272815704346,
+                    "X": -0.003000000026077032,
+                    "Y": 2.5277273654937744,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4311,9 +4311,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -18.346099853515625,
+                    "X": -15.504039764404297,
                     "Y": 6.0,
-                    "Z": 10.522696495056152
+                    "Z": 11.832077980041504
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -4322,8 +4322,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -0.07799998670816422,
-                    "Y": 1.7717254161834717,
+                    "X": 0.008999999612569809,
+                    "Y": 1.7207261323928833,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -5835,7 +5835,7 @@
                 },
                 "Children": [
                     {
-                        "Active": false,
+                        "Active": true,
                         "BlendMode": 2,
                         "Brightness": {
                             "W": 0.4117647111415863,
@@ -6412,9 +6412,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -11.965999603271484,
-                    "Y": 8.994000434875488,
-                    "Z": 10.447000503540039
+                    "X": -15.504039764404297,
+                    "Y": 6.0,
+                    "Z": 11.832077980041504
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -6424,8 +6424,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 2.5307273864746094,
+                    "X": 0.008999999612569809,
+                    "Y": 1.7207261323928833,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -8638,9 +8638,9 @@
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 0.43529412150382996,
-                            "Y": 0.6274510025978088,
-                            "Z": 0.9647058844566345
+                            "X": 0.07058823853731155,
+                            "Y": 0.3019607961177826,
+                            "Z": 0.30980393290519714
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -8872,9 +8872,9 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
                 },
                 "Tags": null,
                 "TexType": 0,
@@ -9452,7 +9452,7 @@
                 "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 540.0,
+                "posY": 500.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -9601,9 +9601,9 @@
                 "Name": "Goggle",
                 "NormalType": 1,
                 "Position": {
-                    "X": -17.91289520263672,
-                    "Y": 5.733638763427734,
-                    "Z": 10.434462547302246
+                    "X": -15.0789794921875,
+                    "Y": 7.096175670623779,
+                    "Z": 11.767867088317871
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -9613,8 +9613,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.07799998670816422,
-                    "Y": 4.913318157196045,
+                    "X": -0.008999999612569809,
+                    "Y": 4.862318992614746,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -9675,7 +9675,7 @@
         "Models": [
             {
                 "Block.obj": "Assets\\Models\\Stage\\Block\\Block.obj",
-                "Boss": "Assets/Models/Boss/boss.glb",
+                "Boss": "",
                 "ButtonBody.obj": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.obj",
                 "ButtonFlame.obj": "Assets\\Models\\Stage\\ButtonFlame\\ButtonFlame.obj",
                 "ButtonFrame.obj": "",
@@ -9759,7 +9759,6 @@
                 "Wall.png": "Assets\\Images\\Wall.png",
                 "White.png": "Assets/Images/White.png",
                 "arrow.png": "Assets\\Images\\UI\\arrow.png",
-                "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
                 "asmptex:Assets\\Models\\GoalGoal.png": "Assets\\Models\\Goal/Goal.png",
                 "asmptex:Assets\\Models\\GogglesGoggles.png": "Assets\\Models\\Goggles/Goggles.png",
