@@ -7176,9 +7176,9 @@
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 0.43529412150382996,
-                            "Y": 0.6274510025978088,
-                            "Z": 0.9647058844566345
+                            "X": 0.07058823853731155,
+                            "Y": 0.3019607961177826,
+                            "Z": 0.30980393290519714
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -7868,78 +7868,6 @@
                 "posY": 540.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
-            },
-            {
-                "Active": true,
-                "BlendMode": 0,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Children": [
-                    {
-                        "Active": true,
-                        "Name": "TransparentCollider",
-                        "Tags": null,
-                        "Type": "ScriptComponent",
-                        "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
-                    }
-                ],
-                "DisableDraw": false,
-                "DissolveStrength": 1.25,
-                "DissolveTex": "Noice.png",
-                "Model": "",
-                "Name": "TransparentWall",
-                "Position": {
-                    "X": -42.66600036621094,
-                    "Y": 9.680000305175781,
-                    "Z": 0.0
-                },
-                "RenderTarget": "Wall.png",
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
-                "Tags": null,
-                "TexType": 0,
-                "Texture": "Wall.pg",
-                "Tiling": {
-                    "X": 1.0,
-                    "Y": 1.0
-                },
-                "Type": "Object3D",
-                "UseMyselfDissolveStrength": false
             }
         ],
         "EfkEffects": [

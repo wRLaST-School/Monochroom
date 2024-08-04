@@ -18,23 +18,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -4236,7 +4219,7 @@
                 "Name": "Camera",
                 "Position": {
                     "X": 7.409000396728516,
-                    "Y": 62.0,
+                    "Y": 59.56599807739258,
                     "Z": 0.15999889373779297
                 },
                 "Rotation": {
@@ -4246,8 +4229,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.32399997115135193,
-                    "Y": 4.6643900871276855,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -8243,7 +8226,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": 7.409000396728516,
-                    "Y": 62.0,
+                    "Y": 59.56599807739258,
                     "Z": 0.15999889373779297
                 },
                 "RenderTarget": "",
@@ -8254,8 +8237,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.32399997115135193,
-                    "Y": 4.6643900871276855,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -8357,9 +8340,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 0.43529412150382996,
-                            "Y": 0.6274510025978088,
-                            "Z": 0.9647058844566345
+                            "X": 0.07058823853731155,
+                            "Y": 0.3019607961177826,
+                            "Z": 0.30980393290519714
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -9031,7 +9014,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": -261.14276123046875,
-                    "Y": 193.84188842773438,
+                    "Y": -10000.0,
                     "Z": 0.16000209748744965
                 },
                 "RenderTarget": "",
@@ -9302,9 +9285,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 0.43529412150382996,
-                            "Y": 0.6274510025978088,
-                            "Z": 0.9647058844566345
+                            "X": 0.07058823853731155,
+                            "Y": 0.3019607961177826,
+                            "Z": 0.30980393290519714
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -9509,9 +9492,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 0.43529412150382996,
-                            "Y": 0.6274510025978088,
-                            "Z": 0.9647058844566345
+                            "X": 0.07058823853731155,
+                            "Y": 0.3019607961177826,
+                            "Z": 0.30980393290519714
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -9716,9 +9699,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 0.43529412150382996,
-                            "Y": 0.6274510025978088,
-                            "Z": 0.9647058844566345
+                            "X": 0.07058823853731155,
+                            "Y": 0.3019607961177826,
+                            "Z": 0.30980393290519714
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -9933,23 +9916,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -10008,23 +9974,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -10083,23 +10032,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -10158,23 +10090,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -10233,23 +10148,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -10308,23 +10206,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -10383,23 +10264,6 @@
                         "Tags": null,
                         "Type": "ScriptComponent",
                         "filePath": "TransparentCollider"
-                    },
-                    {
-                        "Active": true,
-                        "Brightness": {
-                            "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
-                        },
-                        "Name": "SpriteObject",
-                        "Tags": null,
-                        "Texture": "StageGenerating",
-                        "Type": "SpriteObject",
-                        "posX": 960.0,
-                        "posY": 540.0,
-                        "scaleX": 1.0,
-                        "scaleY": 1.0
                     }
                 ],
                 "DisableDraw": false,
@@ -10524,7 +10388,7 @@
             }
         ],
         "Tags": [
-            "Stage2_4"
+            "Stage1_1"
         ],
         "Textures": [
             {
