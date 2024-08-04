@@ -16,9 +16,9 @@ void StageDoor::Init()
 	mObj = SceneManager::FindChildObject<Object3D>("Flame", This()->Parent());
 	mObj->texture = "White.png";
 	mObj->normalType = 1;
-	mObj->brightnessCB.contents->x = 111.f / 255.f;
-	mObj->brightnessCB.contents->y = 160.f / 255.f;
-	mObj->brightnessCB.contents->z = 246.f / 255.f;
+	mObj->brightnessCB.contents->x = 18.f / 255.f;
+	mObj->brightnessCB.contents->y = 77.f / 255.f;
+	mObj->brightnessCB.contents->z = 79.f / 255.f;
 	mObj->brightnessCB.contents->w = 1.f;
 
 	auto leftD = SceneManager::FindChildObject<Object3D>("Left", This()->Parent());

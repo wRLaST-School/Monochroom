@@ -4160,9 +4160,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -4.235156059265137,
+                    "X": -4.2440290451049805,
                     "Y": 6.0,
-                    "Z": -56.0054817199707
+                    "Z": -56.02000045776367
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -4171,7 +4171,7 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.09900002181529999,
+                    "X": 0.10200001299381256,
                     "Y": 5.5721869468688965,
                     "Z": 0.0
                 },
@@ -6446,9 +6446,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -4.2440290451049805,
-                    "Y": 6.0,
-                    "Z": -56.02000045776367
+                    "X": -16.184999465942383,
+                    "Y": 9.38800048828125,
+                    "Z": -61.40000534057617
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -6458,8 +6458,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.10200001299381256,
-                    "Y": 5.5721869468688965,
+                    "X": 0.0,
+                    "Y": 0.0,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -9951,9 +9951,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.43529412150382996,
+                            "Y": 0.6274510025978088,
+                            "Z": 0.9647058844566345
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -9985,7 +9985,7 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "DissolveMap.png",
+                        "Texture": "White.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -10625,7 +10625,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": -16.184951782226563,
-                    "Y": 143.66387939453125,
+                    "Y": -10000.0,
                     "Z": 207.15176391601563
                 },
                 "RenderTarget": "",
@@ -11023,8 +11023,10 @@
                 "Goggle": "Assets/Sounds/goggle.wav",
                 "Jump": "Assets/Sounds/jump.wav",
                 "Kinesis": "Assets/Sounds/kinesis.wav",
+                "PlayBGM": "Assets/Sounds/playBGM.wav",
                 "PresPlate": "Assets/Sounds/presplate.wav",
-                "Select": "Assets/Sounds/select.wav"
+                "Select": "Assets/Sounds/select.wav",
+                "SelectBGM": "Assets/Sounds/selectBGM.wav"
             }
         ],
         "Tags": [
@@ -11040,6 +11042,7 @@
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
                 "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
                 "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
+                "Block5.png": "Assets\\Models\\Stage\\Block\\Block5.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
@@ -11058,6 +11061,8 @@
                 "TV3.png": "Assets\\Models\\TV3\\TV3.png",
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
+                "Wall.png": "Assets\\Images\\Wall.png",
+                "White.png": "Assets/Images/White.png",
                 "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
