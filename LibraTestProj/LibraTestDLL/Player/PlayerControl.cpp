@@ -33,6 +33,7 @@ void PlayerControl::Jump()
 	isJump_ = true;
 	mGravity->AddForce(JUMP_POWER);
 	mGravity->SetUseGravity(true);
+	SoundManager::Play("Jump");
 }
 
 void PlayerControl::JumpUpdate()

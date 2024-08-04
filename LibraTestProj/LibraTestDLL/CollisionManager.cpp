@@ -162,7 +162,8 @@ void CollisionManager::RayHitFlyBlocks()
 			{
 				if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 				{
-					flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
+					flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent()); 
+					SoundManager::Play("Kinesis"); // 引き寄せるとき
 				}
 			}
 		}
