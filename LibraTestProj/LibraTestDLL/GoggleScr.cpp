@@ -109,6 +109,8 @@ void GoggleScr::TakeOnOff(bool isEquip)
 	EaseType eType = EaseType::Lerp;
 	int eTimer = 0;
 
+	SoundManager::Play("Goggle");
+
 	if (isEquip)
 	{
 		mStartPos = kNormalPos;

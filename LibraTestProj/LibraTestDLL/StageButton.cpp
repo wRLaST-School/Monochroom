@@ -75,6 +75,8 @@ void StageButton::BeginPushingButton()
 		return;
 	}
 
+	SoundManager::Play("PresPlate");
+
 	mIsPushedBody = true;
 
 	BeginPushingButtonInter(kNormalBodyPos, kPushedBodyPos);

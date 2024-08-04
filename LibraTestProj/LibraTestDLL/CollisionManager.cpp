@@ -38,6 +38,8 @@ void CollisionManager::Init()
 	mDoorColliders = FindColliderList<DoorCollider>("StageDoor", "DoorCollider");
 
 	mBlockCollEffect = SceneManager::FindObject<BlockCollEffect>("BlockEffectScript");
+
+	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
 }
 
 void CollisionManager::Update()
@@ -160,13 +162,14 @@ void CollisionManager::RayHitFlyBlocks()
 			{
 				if (AppOperationCommand::GetInstance()->PlayerAttractBlockCommand())
 				{
-					flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent());
+					flyBlock = GameManager::GetInstance()->GetFlyBlock(fbc->Parent()); 
+					SoundManager::Play("Kinesis"); // 引き寄せるとき
 				}
 			}
 		}
 
 		// 一番近いFlyBlockのみ引き寄せる
-		if (flyBlock)
+		if (flyBlock && mMenuParentObj->IsActive() == false)
 		{
 			Vec3 dirVec = mViewCollider->GetRayCollider().r.ray;
 

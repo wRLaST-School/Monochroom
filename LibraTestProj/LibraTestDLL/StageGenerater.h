@@ -29,6 +29,7 @@ public:
 	DefDel;
 
 public:
+	void PositionSetting();
 	void Start();
 	bool GetisEnd();
 };

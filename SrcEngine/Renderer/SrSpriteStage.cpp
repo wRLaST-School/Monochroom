@@ -4,6 +4,8 @@
 #include <SpDS.h>
 #include <DockPanel.h>
 #include <NoEffect.h>
+#include <SceneManager.h>
+#include <RTVManager.h>
 
 void SrSpriteStage::DrawCommands(std::function<void(void)> cmd, TextureKey rt)
 {
@@ -18,7 +20,17 @@ void SrSpriteStage::Init()
 
 void SrSpriteStage::PreDraw()
 {
-	Sprite::PreSpriteDraw();
+	Sprite::PreSpriteDraw();	
+	if (SceneManager::currentScene->GetName() == "Title" ||
+		SceneManager::currentScene->GetName() == "StageSelect")
+	{
+		RTVManager::SetRenderTargetToTexture("RGBShiftF", false);
+
+	}
+	else
+	{
+		RTVManager::SetRenderTargetToTexture("KawaseBloomP3", false);
+	}
 }
 
 void SrSpriteStage::PostDraw()

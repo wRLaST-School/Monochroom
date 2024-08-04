@@ -40,8 +40,8 @@ public:
 		Particle,
 		PostEffect,
 		PostRender,
-		UIPlane,
 		Sprite,
+		UIPlane,
 		ImGui,
 		StageNumMax
 	};
@@ -62,8 +62,8 @@ private:
 		std::make_unique<SrParticleStage>(),
 		std::make_unique<SrPostEffectStage>(),
 		std::make_unique<SrPostRenderStage>(),
-		std::make_unique<SrUIPlaneModel>(),
 		std::make_unique<SrSpriteStage>(),
+		std::make_unique<SrUIPlaneModel>(),
 		std::make_unique<SrImGuiStage>(),
 	};
 };
