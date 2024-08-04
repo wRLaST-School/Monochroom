@@ -10185,7 +10185,7 @@
                 "Texture": "Wall.png",
                 "Tiling": {
                     "X": 5.0,
-                    "Y": 10.0
+                    "Y": 15.0
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
@@ -10243,7 +10243,7 @@
                 "Texture": "Wall.png",
                 "Tiling": {
                     "X": 5.0,
-                    "Y": 10.0
+                    "Y": 16.0
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
