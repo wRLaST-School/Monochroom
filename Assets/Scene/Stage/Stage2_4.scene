@@ -8242,9 +8242,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -9.574975967407227,
-                    "Y": 52.0,
-                    "Z": -1.6326508522033691
+                    "X": -9.57400131225586,
+                    "Y": 52.805992126464844,
+                    "Z": -0.9760003089904785
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -8254,8 +8254,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.10200000554323196,
-                    "Y": 0.05400000140070915,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -11804,9 +11804,9 @@
                 "Name": "SponePoint",
                 "NormalType": 1,
                 "Position": {
-                    "X": -9.57400131225586,
-                    "Y": 52.805992126464844,
-                    "Z": -0.9760003089904785
+                    "X": 7.409000396728516,
+                    "Y": 59.56599807739258,
+                    "Z": 0.15999889373779297
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -12261,7 +12261,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": -278.1257629394531,
-                    "Y": 187.08187866210938,
+                    "Y": -10000.0,
                     "Z": -0.9759970903396606
                 },
                 "RenderTarget": "",
@@ -12358,9 +12358,9 @@
             },
             {
                 "Active": true,
-                "BlendMode": 2,
+                "BlendMode": 0,
                 "Brightness": {
-                    "W": 0.0,
+                    "W": 1.0,
                     "X": 1.0,
                     "Y": 1.0,
                     "Z": 1.0
@@ -12370,7 +12370,7 @@
                         "Active": true,
                         "BlendMode": 2,
                         "Brightness": {
-                            "W": 0.0,
+                            "W": 1.0,
                             "X": 0.30000001192092896,
                             "Y": 0.30000001192092896,
                             "Z": 0.30000001192092896
@@ -12417,7 +12417,7 @@
                         "Active": true,
                         "BlendMode": 2,
                         "Brightness": {
-                            "W": 0.0,
+                            "W": 1.0,
                             "X": 0.30000001192092896,
                             "Y": 0.30000001192092896,
                             "Z": 0.30000001192092896
@@ -13372,8 +13372,10 @@
                 "Goggle": "Assets/Sounds/goggle.wav",
                 "Jump": "Assets/Sounds/jump.wav",
                 "Kinesis": "Assets/Sounds/kinesis.wav",
+                "PlayBGM": "Assets/Sounds/playBGM.wav",
                 "PresPlate": "Assets/Sounds/presplate.wav",
-                "Select": "Assets/Sounds/select.wav"
+                "Select": "Assets/Sounds/select.wav",
+                "SelectBGM": "Assets/Sounds/selectBGM.wav"
             }
         ],
         "Tags": [

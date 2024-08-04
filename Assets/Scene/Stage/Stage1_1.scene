@@ -4260,9 +4260,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": 15.432025909423828,
-                    "Y": -10000.0,
-                    "Z": -200.55178833007813
+                    "X": -2.3477541617467068e-05,
+                    "Y": 140.25387573242188,
+                    "Z": -245.80575561523438
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -4272,8 +4272,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.015000000596046448,
-                    "Y": 3.0725927352905273,
+                    "X": -0.008999999612569809,
+                    "Y": 3.1415927410125732,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4312,7 +4312,7 @@
                 "Name": "Camera",
                 "Position": {
                     "X": 0.0,
-                    "Y": 5.977999687194824,
+                    "Y": 6.0,
                     "Z": 22.746002197265625
                 },
                 "Rotation": {
@@ -4322,8 +4322,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 3.1415927410125732,
+                    "X": -0.17699992656707764,
+                    "Y": 3.015592336654663,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4513,7 +4513,7 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block5.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -4571,7 +4571,7 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block5.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -4745,10 +4745,10 @@
                                     "Block"
                                 ],
                                 "TexType": 0,
-                                "Texture": "Block3.png",
+                                "Texture": "Block5.png",
                                 "Tiling": {
-                                    "X": 6.0,
-                                    "Y": 2.0
+                                    "X": 1.0,
+                                    "Y": 1.0
                                 },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
@@ -4803,10 +4803,10 @@
                                     "Block"
                                 ],
                                 "TexType": 0,
-                                "Texture": "Block3.png",
+                                "Texture": "Block5.png",
                                 "Tiling": {
-                                    "X": 10.0,
-                                    "Y": 2.0
+                                    "X": 1.0,
+                                    "Y": 1.0
                                 },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
@@ -4861,10 +4861,10 @@
                                     "Block"
                                 ],
                                 "TexType": 0,
-                                "Texture": "Block3.png",
+                                "Texture": "Block5.png",
                                 "Tiling": {
-                                    "X": 2.0,
-                                    "Y": 0.7200000286102295
+                                    "X": 1.0,
+                                    "Y": 1.0
                                 },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
@@ -4919,10 +4919,10 @@
                                     "Block"
                                 ],
                                 "TexType": 0,
-                                "Texture": "Block3.png",
+                                "Texture": "Block5.png",
                                 "Tiling": {
-                                    "X": 14.0,
-                                    "Y": 2.0
+                                    "X": 1.0,
+                                    "Y": 1.0
                                 },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
@@ -4977,10 +4977,10 @@
                                     "Block"
                                 ],
                                 "TexType": 0,
-                                "Texture": "Block3.png",
+                                "Texture": "Block5.png",
                                 "Tiling": {
-                                    "X": 6.0,
-                                    "Y": 2.0
+                                    "X": 1.0,
+                                    "Y": 1.0
                                 },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
@@ -5035,10 +5035,10 @@
                                     "Block"
                                 ],
                                 "TexType": 0,
-                                "Texture": "Block3.png",
+                                "Texture": "Block5.png",
                                 "Tiling": {
-                                    "X": 10.0,
-                                    "Y": 2.0
+                                    "X": 1.0,
+                                    "Y": 1.0
                                 },
                                 "Type": "Object3D",
                                 "UseMyselfDissolveStrength": false
@@ -5254,7 +5254,7 @@
                 "Name": "Player",
                 "Position": {
                     "X": 0.0,
-                    "Y": 5.977999687194824,
+                    "Y": 6.0,
                     "Z": 22.746002197265625
                 },
                 "RenderTarget": "",
@@ -5265,8 +5265,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 3.1415927410125732,
+                    "X": -0.17699994146823883,
+                    "Y": 3.015592336654663,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -7118,9 +7118,9 @@
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.06917010992765427,
+                            "Y": 0.3005506694316864,
+                            "Z": 0.3088803291320801
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -7152,7 +7152,7 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "DissolveMap.png",
+                        "Texture": "White.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -7886,8 +7886,10 @@
                 "Goggle": "Assets/Sounds/goggle.wav",
                 "Jump": "Assets/Sounds/jump.wav",
                 "Kinesis": "Assets/Sounds/kinesis.wav",
+                "PlayBGM": "Assets/Sounds/playBGM.wav",
                 "PresPlate": "Assets/Sounds/presplate.wav",
-                "Select": "Assets/Sounds/select.wav"
+                "Select": "Assets/Sounds/select.wav",
+                "SelectBGM": "Assets/Sounds/selectBGM.wav"
             }
         ],
         "Tags": [
@@ -7903,6 +7905,7 @@
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
                 "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
                 "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
+                "Block5.png": "Assets\\Models\\Stage\\Block\\Block5.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",
@@ -7922,6 +7925,7 @@
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "Wall.png": "Assets\\Images\\Wall.png",
+                "White.png": "Assets/Images/White.png",
                 "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",
