@@ -13,7 +13,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -4261,7 +4261,7 @@
                 "Name": "PlaneGroup",
                 "Position": {
                     "X": -218.41236877441406,
-                    "Y": 139.9458770751953,
+                    "Y": -10000.0,
                     "Z": -209.9324493408203
                 },
                 "RenderTarget": "",
@@ -4311,9 +4311,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": 0.7662650942802429,
+                    "X": 0.756669282913208,
                     "Y": 6.0,
-                    "Z": -37.00849151611328
+                    "Z": -36.98482131958008
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -4323,7 +4323,7 @@
                 },
                 "RotationEuler": {
                     "X": -0.015000198036432266,
-                    "Y": 5.898000717163086,
+                    "Y": 5.901000499725342,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -4733,7 +4733,7 @@
                         },
                         "RotationEuler": {
                             "X": 0.0,
-                            "Y": 0.3839724659919739,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "Scale": {
@@ -5215,9 +5215,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": 0.756669282913208,
-                    "Y": 6.0,
-                    "Z": -36.98482131958008
+                    "X": 0.0,
+                    "Y": 5.670000076293945,
+                    "Z": -53.676002502441406
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -5227,8 +5227,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.015000198036432266,
-                    "Y": 5.901000499725342,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -8308,7 +8308,7 @@
                 },
                 "RotationEuler": {
                     "X": 0.0,
-                    "Y": 0.3839724659919739,
+                    "Y": 0.0,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -8999,6 +8999,10 @@
                 "Decide": "Assets/Sounds/decide.wav",
                 "Generate": "Assets/Sounds/generate.wav",
                 "Goal": "Assets/Sounds/goal.wav",
+                "Goggle": "Assets/Sounds/goggle.wav",
+                "Jump": "Assets/Sounds/jump.wav",
+                "Kinesis": "Assets/Sounds/kinesis.wav",
+                "PresPlate": "Assets/Sounds/presplate.wav",
                 "Select": "Assets/Sounds/select.wav"
             }
         ],

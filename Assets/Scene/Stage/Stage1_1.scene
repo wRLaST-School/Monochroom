@@ -13,7 +13,7 @@
                 },
                 "Children": [
                     {
-                        "Active": true,
+                        "Active": false,
                         "BlendMode": 0,
                         "Brightness": {
                             "W": 1.0,
@@ -4500,8 +4500,8 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 3.1415927410125732,
-                            "Y": 1.2566370964050293,
+                            "X": 0.0,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "Scale": {
@@ -4558,8 +4558,8 @@
                             "Z": 0.0
                         },
                         "RotationEuler": {
-                            "X": 3.1415927410125732,
-                            "Y": 0.36651915311813354,
+                            "X": 0.0,
+                            "Y": 0.0,
                             "Z": 0.0
                         },
                         "Scale": {
@@ -7781,7 +7781,7 @@
                 "Texture": "GrayScale",
                 "Type": "SpriteObject",
                 "posX": 960.0,
-                "posY": 540.0,
+                "posY": 500.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0
             },
@@ -7883,6 +7883,10 @@
                 "Decide": "Assets/Sounds/decide.wav",
                 "Generate": "Assets/Sounds/generate.wav",
                 "Goal": "Assets/Sounds/goal.wav",
+                "Goggle": "Assets/Sounds/goggle.wav",
+                "Jump": "Assets/Sounds/jump.wav",
+                "Kinesis": "Assets/Sounds/kinesis.wav",
+                "PresPlate": "Assets/Sounds/presplate.wav",
                 "Select": "Assets/Sounds/select.wav"
             }
         ],
