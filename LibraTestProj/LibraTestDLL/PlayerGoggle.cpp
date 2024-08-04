@@ -22,6 +22,8 @@ void PlayerGoggle::Init()
 void PlayerGoggle::Update()
 {
 	mState->Update();
+
+	ConsoleWindow::LogVec3("GoggleMRatio:", { GetGoggleScr()->GetPosRatio() ,0,0 });
 }
 
 void PlayerGoggle::Draw()
