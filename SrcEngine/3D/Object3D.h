@@ -26,9 +26,6 @@ struct ConstBufferDataMisc {
 
 class Object3D : public IComponent
 {
-private:
-	int normalType = 0;
-
 public:
 	ComponentFactoryRegister(Object3D)
 
@@ -134,6 +131,8 @@ public:
 	Vec2 offset;
 
 	int texType = 0;
+	int normalType = 0;
+
 
 };
 
