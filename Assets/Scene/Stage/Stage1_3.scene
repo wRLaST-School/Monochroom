@@ -3,7 +3,7 @@
         "Active": true,
         "Children": [
             {
-                "Active": false,
+                "Active": true,
                 "BlendMode": 6,
                 "Brightness": {
                     "W": 1.0,
@@ -22,14 +22,14 @@
                 ],
                 "DisableDraw": false,
                 "DissolveStrength": 1.25,
-                "DissolveTex": "",
+                "DissolveTex": "Noice.png",
                 "Model": "Plane.obj",
                 "Name": "Transparent",
                 "NormalType": 1,
                 "Position": {
                     "X": 0.0,
                     "Y": 13.0,
-                    "Z": 4.611999988555908
+                    "Z": -63.0
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -44,7 +44,7 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 10.0,
+                    "X": 20.0,
                     "Y": 10.0,
                     "Z": 0.10000000149011612
                 },
@@ -52,10 +52,10 @@
                     "Transparent"
                 ],
                 "TexType": 0,
-                "Texture": "",
+                "Texture": "Wall.png",
                 "Tiling": {
-                    "X": 1.0,
-                    "Y": 1.0
+                    "X": 3.0,
+                    "Y": 2.0
                 },
                 "Type": "Object3D",
                 "UseMyselfDissolveStrength": false
@@ -7394,6 +7394,238 @@
                 ],
                 "Type": "ScriptComponent",
                 "filePath": "AttractParticleManager"
+            },
+            {
+                "Active": true,
+                "BlendMode": 6,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "Name": "TransparentCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "TransparentCollider"
+                    }
+                ],
+                "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
+                "Model": "Plane.obj",
+                "Name": "Transparent",
+                "NormalType": 0,
+                "Position": {
+                    "X": 0.0,
+                    "Y": 13.0,
+                    "Z": 31.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 20.0,
+                    "Y": 10.0,
+                    "Z": 0.10000000149011612
+                },
+                "Tags": [
+                    "Transparent"
+                ],
+                "TexType": 0,
+                "Texture": "Wall.png",
+                "Tiling": {
+                    "X": 3.0,
+                    "Y": 2.0
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "BlendMode": 6,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "Name": "TransparentCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "TransparentCollider"
+                    }
+                ],
+                "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
+                "Model": "Plane.obj",
+                "Name": "Transparent",
+                "NormalType": 0,
+                "Position": {
+                    "X": 20.0,
+                    "Y": 13.0,
+                    "Z": -17.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 1.5707963705062866,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 47.0,
+                    "Y": 10.0,
+                    "Z": 0.10000000149011612
+                },
+                "Tags": [
+                    "Transparent"
+                ],
+                "TexType": 0,
+                "Texture": "Wall.png",
+                "Tiling": {
+                    "X": 5.0,
+                    "Y": 1.5
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "BlendMode": 6,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "Name": "TransparentCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "TransparentCollider"
+                    }
+                ],
+                "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
+                "Model": "Plane.obj",
+                "Name": "Transparent",
+                "NormalType": 0,
+                "Position": {
+                    "X": -20.0,
+                    "Y": 13.0,
+                    "Z": -17.0
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 1.5707963705062866,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 47.0,
+                    "Y": 10.0,
+                    "Z": 0.10000000149011612
+                },
+                "Tags": [
+                    "Transparent"
+                ],
+                "TexType": 0,
+                "Texture": "Wall.png",
+                "Tiling": {
+                    "X": 5.0,
+                    "Y": 1.5
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
+            },
+            {
+                "Active": true,
+                "BlendMode": 6,
+                "Brightness": {
+                    "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Children": [
+                    {
+                        "Active": true,
+                        "Name": "TransparentCollider",
+                        "Tags": null,
+                        "Type": "ScriptComponent",
+                        "filePath": "TransparentCollider"
+                    }
+                ],
+                "DisableDraw": false,
+                "DissolveStrength": 1.25,
+                "DissolveTex": "Noice.png",
+                "Model": "Plane.obj",
+                "Name": "Transparent",
+                "NormalType": 0,
+                "Position": {
+                    "X": -2.542999744415283,
+                    "Y": 13.0,
+                    "Z": 20.974002838134766
+                },
+                "RenderTarget": "",
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "RotationEuler": {
+                    "X": 0.0,
+                    "Y": 1.5707963705062866,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 10.0,
+                    "Y": 10.0,
+                    "Z": 0.10000000149011612
+                },
+                "Tags": [
+                    "Transparent"
+                ],
+                "TexType": 0,
+                "Texture": "Wall.png",
+                "Tiling": {
+                    "X": 1.5,
+                    "Y": 1.5
+                },
+                "Type": "Object3D",
+                "UseMyselfDissolveStrength": false
             }
         ],
         "EfkEffects": [
