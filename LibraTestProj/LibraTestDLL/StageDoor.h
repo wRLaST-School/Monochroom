@@ -26,6 +26,7 @@ private:
 	int mCloseLimitTime = 0;
 
 	std::unique_ptr<Easing>mEasing;
+	Object3D mObj;
 
 
 private:
