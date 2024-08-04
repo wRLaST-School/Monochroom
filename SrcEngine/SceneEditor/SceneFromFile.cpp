@@ -27,6 +27,7 @@ void SceneFromFile::LoadResources()
 	SoundManager::LoadWave("Assets/Sounds/kinesis.wav", "Kinesis"); // 引き寄せるとき
 	SoundManager::LoadWave("Assets/Sounds/presplate.wav", "PresPlate"); // ステージのボタンに乗った時
 	SoundManager::LoadWave("Assets/Sounds/jump.wav", "Jump"); // ジャンプ時
+}
 
 void SceneFromFile::Init()
 {
