@@ -23,7 +23,7 @@ void GameManager::Awake()
 	isCantControl = false;
 
 	//プレイヤーがすでにゴーグル取ってたら
-	if (GrayScale::mIsHavingGoggle)
+	if (GrayScale::mIsHavingGoggle || GetCanUseGoggle())
 	{
 		auto goggle = SceneManager::FindObject<Object3D>("Goggle");
 		if (goggle)
@@ -293,6 +293,25 @@ GameManager* GameManager::GetInstance()
 {
 	GameManager* instance = SceneManager::FindObject<GameManager>("GameManager");
 	return instance;
+}
+
+bool GameManager::GetCanUseGoggle()
+{
+	const std::string kStageSceneStr = "Stage";
+	const int8_t kCanUseGoggleStageNum = 2;
+
+	auto sceneName = SceneManager::GetCurrentScene()->GetTag(0);
+	auto sPos = sceneName.find(kStageSceneStr);
+	if (sPos != std::string::npos)
+	{
+		std::string stageNumStr = "";
+		stageNumStr += sceneName[sPos + kStageSceneStr.size()];
+
+		//ステージが2以上なら
+		return std::stoi(stageNumStr) >= kCanUseGoggleStageNum;
+	}
+
+	return false;
 }
 
 RegisterScriptBody(GameManager);
