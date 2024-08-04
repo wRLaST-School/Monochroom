@@ -180,10 +180,10 @@ void SelectPanel::Init()
 
 void SelectPanel::Update()
 {
-	if (Input::Key::Triggered(DIK_R))
-	{
-		Reset();
-	}
+	//if (Input::Key::Triggered(DIK_R))
+	//{
+	//	Reset();
+	//}
 
 	//mTitleSinTimer++;
 	//if (mTitleSinTimer >= mTitleSinTimeMax)
