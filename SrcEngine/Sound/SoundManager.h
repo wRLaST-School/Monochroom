@@ -86,6 +86,12 @@ public:
 	static DLLExport SoundData* GetSoundData(const SoundKey& key);
 	static DLLExport void StopBGM(const SoundKey& key);
 
+	static DLLExport void SetBGMVolume(float volume);
+	static DLLExport void SetSEVolume(float volume);
+
+	static DLLExport float GetBGMVolume();
+	static DLLExport float GetSEVolume();
+
 	static void ReleaseAllSounds();
 	static void ReleasePerSceneSounds();
 	static DLLExport void PreLoadNewScene();
@@ -98,5 +104,8 @@ private:
 private:
 	static std::list<SoundKey> sPerSceneSounds[2];
 	static int32_t sCurrentSceneResIndex;
+
+	inline static float volBGM = 1.f;
+	inline static float volSE = 1.f;
 
 };
