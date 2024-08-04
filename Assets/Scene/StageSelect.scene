@@ -5334,7 +5334,7 @@
                                         "UseMyselfDissolveStrength": false
                                     },
                                     {
-                                        "Active": true,
+                                        "Active": false,
                                         "BlendMode": 3,
                                         "Brightness": {
                                             "W": 1.0,
