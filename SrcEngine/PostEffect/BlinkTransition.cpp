@@ -84,7 +84,7 @@ void BlinkTransition::TransitionOut()
 	}
 
 	cb.contents->effectTime -= info.speed;
-	if (cb.contents->effectTime <= 0.1f)
+	if (cb.contents->effectTime <= 0.2f)
 	{
 		info.isInEnd = false;
 		info.isOutEnd = true;

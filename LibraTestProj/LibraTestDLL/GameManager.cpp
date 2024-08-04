@@ -87,8 +87,10 @@ void GameManager::Update()
 
 			if (BlinkTransition::info.isOutEnd)
 			{
+#ifdef _NDEBUG
 				// ステージ生成
 				mStageGenerater->Start();
+#endif
 
 				BlinkTransition::mIsChangeScene = false;
 				BlinkTransition::mIsLoaded = false;
@@ -199,21 +201,16 @@ void GameManager::Update()
 		{
 			Input::Mouse::ShowCursorM();
 		}
-
+#ifdef _NDEBUG
 		mStageGenerater->PositionSetting();
+#endif
 
 #ifdef _DEBUG
-		//// ステージ生成
-		//mStageGenerater->Start();
+		// ステージ生成
+		mStageGenerater->PositionSetting();
+		mStageGenerater->Start();
 #endif
 
-#ifdef _NDEBUG
-		if (BlinkTransition::info.isOutEnd)
-		{
-			// ステージ生成
-			mStageGenerater->Start();
-		}
-#endif
 	}
 
 	//ConsoleWindow::Log("GameManager: isActive");
