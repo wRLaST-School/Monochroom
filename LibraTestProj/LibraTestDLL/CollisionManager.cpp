@@ -38,6 +38,8 @@ void CollisionManager::Init()
 	mDoorColliders = FindColliderList<DoorCollider>("StageDoor", "DoorCollider");
 
 	mBlockCollEffect = SceneManager::FindObject<BlockCollEffect>("BlockEffectScript");
+
+	mMenuParentObj = SceneManager::FindObject<Object3D>("UIParentObj");
 }
 
 void CollisionManager::Update()
@@ -166,7 +168,7 @@ void CollisionManager::RayHitFlyBlocks()
 		}
 
 		// 一番近いFlyBlockのみ引き寄せる
-		if (flyBlock)
+		if (flyBlock && mMenuParentObj->IsActive() == false)
 		{
 			Vec3 dirVec = mViewCollider->GetRayCollider().r.ray;
 

@@ -37,6 +37,8 @@ private:
 
 	BlockCollEffect* mBlockCollEffect;
 
+	Object3D* mMenuParentObj;
+
 private:
 	template<typename T>
 	inline std::vector<T*> FindColliderList(const std::string& objectTag, const std::string& scriptTag);
