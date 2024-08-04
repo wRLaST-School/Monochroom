@@ -50,7 +50,7 @@ void SpFramework::Init()
 	//ウィンドウを生成
 	{
 		SpWindow wwnd;
-		wwnd.Create(L"DirectX", 1920, 1080);
+		wwnd.Create(L"Monochroom", 1920, 1080);
 		RegisterSpWindow(wwnd, "Default");
 	}
 

@@ -77,7 +77,7 @@ void StageGenerater::PositionSetting()
 	mObj->rotationE = player->rotationE;
 
 	mStart = mObj->position;
-	mEnd = mMoveVec * 300.f + mObj->position;
+	mEnd = mMoveVec * 500.f + mObj->position;
 }
 
 void StageGenerater::Start()

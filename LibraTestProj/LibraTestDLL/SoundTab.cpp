@@ -135,14 +135,16 @@ void SoundTab::MenuUpdate()
 
 void SoundTab::OnUpdate()
 {
-	mItemsParentObj->Activate();
+	if(mItemsParentObj)
+		mItemsParentObj->Activate();
 	mSoundCurrentNum = 0;
 	MenuUpdate();
 }
 
 void SoundTab::OffUpdate()
 {
-	mItemsParentObj->Deactivate();
+	if(mItemsParentObj)
+		mItemsParentObj->Deactivate();
 
 }
 RegisterScriptBody(SoundTab);

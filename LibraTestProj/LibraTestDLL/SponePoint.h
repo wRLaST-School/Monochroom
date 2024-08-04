@@ -11,7 +11,7 @@ private:
 
     const float kResponeYMin = -70.0f;
 
-    const int16_t kErasedTimeMax = 100;
+    const int16_t kErasedTimeMax = 240;
     std::unique_ptr<Easing> mEasing = nullptr;
 
 public:
