@@ -4571,10 +4571,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block5.png",
                         "Tiling": {
-                            "X": 8.0,
-                            "Y": 5.0
+                            "X": 1.0,
+                            "Y": 1.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -4629,10 +4629,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block5.png",
                         "Tiling": {
-                            "X": 8.0,
-                            "Y": 5.0
+                            "X": 1.0,
+                            "Y": 1.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -4687,10 +4687,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block4.png",
                         "Tiling": {
-                            "X": 4.0,
-                            "Y": 2.0
+                            "X": 1.0,
+                            "Y": 1.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -4745,10 +4745,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block.png",
                         "Tiling": {
-                            "X": 4.0,
-                            "Y": 2.0
+                            "X": 1.0,
+                            "Y": 1.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -4803,10 +4803,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block4.png",
                         "Tiling": {
-                            "X": 6.0,
-                            "Y": 3.0
+                            "X": 1.0,
+                            "Y": 1.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -4861,10 +4861,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block5.png",
                         "Tiling": {
-                            "X": 4.0,
-                            "Y": 8.0
+                            "X": 1.0,
+                            "Y": 1.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -4977,10 +4977,10 @@
                             "Block"
                         ],
                         "TexType": 0,
-                        "Texture": "Block3.png",
+                        "Texture": "Block5.png",
                         "Tiling": {
-                            "X": 4.0,
-                            "Y": 8.0
+                            "X": 1.0,
+                            "Y": 1.0
                         },
                         "Type": "Object3D",
                         "UseMyselfDissolveStrength": false
@@ -7431,6 +7431,7 @@
                 "Block2.png": "Assets/Models/Stage/Block/Block2.png",
                 "Block3.png": "Assets\\Models\\Stage\\Block\\Block3.png",
                 "Block4.png": "Assets\\Models\\Stage\\Block\\Block4.png",
+                "Block5.png": "Assets\\Models\\Stage\\Block\\Block5.png",
                 "ButtonBody.png": "Assets\\Models\\Stage\\ButtonBody\\ButtonBody.png",
                 "DissolveMap.png": "Assets\\Images\\DissolveMap.png",
                 "FlyBlock.png": "Assets\\Models\\Stage\\Block\\FlyBlock.png",

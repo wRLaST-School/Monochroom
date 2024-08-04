@@ -13,8 +13,8 @@ class PlayerGoggle :
 private:
 	std::unique_ptr<IPlayerGoggleState> mState = nullptr;
 
-	const int32_t kEquipGrayEffectTime = 14;
-	const int32_t kTakeOffGrayEffectTime = 8;
+	const int32_t kEquipGrayEffectTime = 32;
+	const int32_t kTakeOffGrayEffectTime = 13;
 
 public:
 	void Init();
