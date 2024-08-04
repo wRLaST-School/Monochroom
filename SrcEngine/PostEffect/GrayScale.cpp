@@ -72,6 +72,8 @@ void GrayScale::Effect(const TextureKey& baseTex, const TextureKey& targetTex)
 
 	if (info.isDraw)
 	{
+		ConsoleWindow::LogVec3("GrayOffset:", { info.offsetRatio ,0,0});
+
 		GraySclaeCB cbdata;
 		cbdata.offset = info.kOffsetUV * info.offsetRatio;
 		cbdata.time = info.time++;
@@ -117,8 +119,6 @@ void GrayScale::GrayEffectUpdate()
 	if (mIsGrayEffect)
 	{
 		int32_t time = 0;
-
-		ConsoleWindow::Log("BAKA_AHO");
 
 		if (mIsEquip)
 		{

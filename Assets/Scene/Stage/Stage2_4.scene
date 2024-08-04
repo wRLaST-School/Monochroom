@@ -4235,9 +4235,9 @@
                 ],
                 "Name": "Camera",
                 "Position": {
-                    "X": -12.658041000366211,
-                    "Y": 28.0,
-                    "Z": -6.498936653137207
+                    "X": -9.574975967407227,
+                    "Y": 52.0,
+                    "Z": -1.6326508522033691
                 },
                 "Rotation": {
                     "W": 1.0,
@@ -4246,8 +4246,8 @@
                     "Z": 11.079998016357422
                 },
                 "RotationEuler": {
-                    "X": -1.3659099340438843,
-                    "Y": 1.5989985466003418,
+                    "X": 0.10200000554323196,
+                    "Y": 0.05400000140070915,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -8242,9 +8242,9 @@
                 "Model": "",
                 "Name": "Player",
                 "Position": {
-                    "X": -9.57400131225586,
-                    "Y": 52.805992126464844,
-                    "Z": -0.9760003089904785
+                    "X": -9.574975967407227,
+                    "Y": 52.0,
+                    "Z": -1.6326508522033691
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -8254,8 +8254,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": 0.0,
-                    "Y": 4.71238899230957,
+                    "X": 0.10200000554323196,
+                    "Y": 0.05400000140070915,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -11587,9 +11587,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.43529412150382996,
+                            "Y": 0.6274510025978088,
+                            "Z": 0.9647058844566345
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -11621,7 +11621,7 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "DissolveMap.png",
+                        "Texture": "White.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -12260,9 +12260,9 @@
                 "Model": "",
                 "Name": "PlaneGroup",
                 "Position": {
-                    "X": -278.0278625488281,
-                    "Y": -10000.0,
-                    "Z": 6.274006366729736
+                    "X": -278.1257629394531,
+                    "Y": 187.08187866210938,
+                    "Z": -0.9759970903396606
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -12272,8 +12272,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.04800000041723251,
-                    "Y": 4.739388465881348,
+                    "X": 0.0,
+                    "Y": 4.71238899230957,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -12330,23 +12330,6 @@
                     "Y": 1.0,
                     "Z": 1.0
                 },
-                "Name": "Cursor",
-                "Tags": null,
-                "Texture": "white.png",
-                "Type": "SpriteObject",
-                "posX": 960.0,
-                "posY": 530.5,
-                "scaleX": 10.0,
-                "scaleY": 10.0
-            },
-            {
-                "Active": true,
-                "Brightness": {
-                    "W": 1.0,
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                },
                 "Name": "GrayScale",
                 "Tags": null,
                 "Texture": "GrayScale",
@@ -12358,9 +12341,26 @@
             },
             {
                 "Active": true,
-                "BlendMode": 0,
                 "Brightness": {
                     "W": 1.0,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                },
+                "Name": "Cursor",
+                "Tags": null,
+                "Texture": "white.png",
+                "Type": "SpriteObject",
+                "posX": 960.0,
+                "posY": 530.5,
+                "scaleX": 10.0,
+                "scaleY": 10.0
+            },
+            {
+                "Active": true,
+                "BlendMode": 2,
+                "Brightness": {
+                    "W": 0.0,
                     "X": 1.0,
                     "Y": 1.0,
                     "Z": 1.0
@@ -12370,7 +12370,7 @@
                         "Active": true,
                         "BlendMode": 2,
                         "Brightness": {
-                            "W": 1.0,
+                            "W": 0.0,
                             "X": 0.30000001192092896,
                             "Y": 0.30000001192092896,
                             "Z": 0.30000001192092896
@@ -12417,7 +12417,7 @@
                         "Active": true,
                         "BlendMode": 2,
                         "Brightness": {
-                            "W": 1.0,
+                            "W": 0.0,
                             "X": 0.30000001192092896,
                             "Y": 0.30000001192092896,
                             "Z": 0.30000001192092896
@@ -12484,9 +12484,9 @@
                 "Name": "Goggle",
                 "NormalType": 1,
                 "Position": {
-                    "X": 10.594928741455078,
-                    "Y": -10000.0,
-                    "Z": 24.82697296142578
+                    "X": -9.546379089355469,
+                    "Y": 53.051517486572266,
+                    "Z": -1.1036005020141602
                 },
                 "RenderTarget": "",
                 "Rotation": {
@@ -12496,8 +12496,8 @@
                     "Z": 0.0
                 },
                 "RotationEuler": {
-                    "X": -0.2540901005268097,
-                    "Y": 6.811592102050781,
+                    "X": -0.10200000554323196,
+                    "Y": 3.1955926418304443,
                     "Z": 0.0
                 },
                 "Scale": {
@@ -12532,9 +12532,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.43529412150382996,
+                            "Y": 0.6274510025978088,
+                            "Z": 0.9647058844566345
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -12566,7 +12566,7 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "DissolveMap.png",
+                        "Texture": "White.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -12739,9 +12739,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.43529412150382996,
+                            "Y": 0.6274510025978088,
+                            "Z": 0.9647058844566345
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -12773,7 +12773,7 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "DissolveMap.png",
+                        "Texture": "White.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -12946,9 +12946,9 @@
                         "BlendMode": 3,
                         "Brightness": {
                             "W": 1.0,
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 1.0
+                            "X": 0.43529412150382996,
+                            "Y": 0.6274510025978088,
+                            "Z": 0.9647058844566345
                         },
                         "DisableDraw": false,
                         "DissolveStrength": 1.25,
@@ -12980,7 +12980,7 @@
                         },
                         "Tags": null,
                         "TexType": 0,
-                        "Texture": "DissolveMap.png",
+                        "Texture": "White.png",
                         "Tiling": {
                             "X": 1.0,
                             "Y": 1.0
@@ -13408,6 +13408,7 @@
                 "TVScreen.png": "Assets\\Models\\TVScreen\\TVScreen.png",
                 "TitleName.png": "Assets\\Images\\Title\\TitleName.png",
                 "Wall.png": "Assets\\Images\\Wall.png",
+                "White.png": "Assets/Images/White.png",
                 "arrow.png": "Assets\\Images\\UI\\arrow.png",
                 "asmptex:Assets/Models/PlayerSkin.png": "Assets/Models/Player/Skin.png",
                 "asmptex:Assets/Models/skydomeStars.png": "Assets/Models/skydome/Stars.png",

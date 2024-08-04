@@ -7,7 +7,7 @@ struct GrayScaleInfo
 {
 	bool isDraw = false;
 	const Vec2 kOffsetUV = { 0,-1.0f };
-	float offsetRatio = 0;
+	float offsetRatio = 1.0f;
 	float grayEffectRatio = 0;
 	const Vec2 kGrayWindowSize = { 1280.0f,720.0f };
 	const Vec2 kGrayPoint1 = { 230 / kGrayWindowSize.x,340 / kGrayWindowSize.y };
@@ -18,7 +18,7 @@ struct GrayScaleInfo
 public:
 	void Init()
 	{
-		offsetRatio = 0;
+		offsetRatio = 1.0f;
 		grayEffectRatio = 0;
 	}
 };
@@ -50,7 +50,7 @@ public:
 	static void Init();
 	static void Effect(const TextureKey& baseTex, const TextureKey& targetTex);
 
-	static void EffectInit() { info.grayEffectRatio = 0; info.offsetRatio = 0; info.isDraw = true; }
+	static void EffectInit() { info.grayEffectRatio = 0; info.offsetRatio = 1.0f; info.isDraw = true; }
 
 public:
 	DLLExport static void BeginGrayEffect(bool isEquip, int32_t effectTime);

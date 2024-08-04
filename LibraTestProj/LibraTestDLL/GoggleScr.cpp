@@ -6,6 +6,9 @@
 
 void GoggleScr::Init()
 {
+	mIsEquip = false;
+	mLocalPos = kNormalPos;
+
 	if (mEasing != nullptr)
 	{
 		return;
@@ -35,7 +38,6 @@ void GoggleScr::Init()
 	}
 
 	mIsMoving = false;
-	mIsEquip = false;
 
 	mParent->brightnessCB.contents->w = 1.0f;
 
@@ -43,13 +45,11 @@ void GoggleScr::Init()
 
 	mEasing = std::make_unique<Easing>();
 	mEasing->SetEaseType(EaseType::InOut);
-
-	mLocalPos = kNormalPos;
 }
 
 void GoggleScr::Update()
 {
-	if (mIsEquip)
+	if (GetIsEquip() && !GetIsMoving())
 	{
 		ConsoleWindow::Log("Equip!!!!!!!!!!!!!");
 	}
@@ -156,6 +156,10 @@ float GoggleScr::GetPosRatio()
 	if (mIsEquip)
 	{
 		ratio = 1.0f - ratio;
+	}
+	else if (!mIsEquip && mEasing->GetTimeRate() == 0)
+	{
+		ratio = 1.0f;
 	}
 
 
