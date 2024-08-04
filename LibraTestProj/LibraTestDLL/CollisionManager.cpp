@@ -436,7 +436,7 @@ void CollisionManager::FlyBlocksHitBlocks()
 	for (const auto& fbc : mFlyBlockColliders)
 	{
 		auto flyBlockBodyCollider = fbc->GetBodyCollider();
-		auto flyBlockMoveCollider = fbc->GetMoveCollider();
+		//auto flyBlockMoveCollider = fbc->GetMoveCollider();
 		auto flyBlockDownCollider = fbc->GetDownCollider();
 
 		for (const auto& bc : mBlockColliders)
@@ -449,16 +449,16 @@ void CollisionManager::FlyBlocksHitBlocks()
 			{
 				fbc->Parent()->CastTo<Object3D>()->position += pushOut;
 
-				//if (flyblock->GetAttractedDir().Dot(-pushOut) > FlyBlock::skAttractedHittingNotEndDot)
-				//{
-				//	flyblock->EndAttracting();
-				//}
+				if (flyblock->GetAttractedDir().Dot(-pushOut) > FlyBlock::skAttractedHittingNotEndDot)
+				{
+					flyblock->EndAttracting();
+				}
 			}
 
-			if (bc->GetBodyCollider().IsTrigger(&flyBlockMoveCollider))
-			{
-				flyblock->EndAttracting();
-			}
+			//if (bc->GetBodyCollider().IsTrigger(&flyBlockMoveCollider))
+			//{
+			//	flyblock->EndAttracting();
+			//}
 
 			// 重力
 			if (bc->GetBodyCollider().IsTrigger(&flyBlockDownCollider) &&
