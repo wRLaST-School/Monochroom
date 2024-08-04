@@ -982,7 +982,7 @@ bool CollisionManager::CheckHitOther(FlyBlockCollider* current)
 {
 	//SphereCollider coll;
 	Vec3 pos = current->Parent()->CastTo<Object3D>()->position;
-	float r = Vec3(current->Parent()->CastTo<Object3D>()->scale).GetMaxElement() * 0.75f;
+	float r = Vec3(current->Parent()->CastTo<Object3D>()->scale).GetMaxElement() * 0.5f;
 
 	Vec3 vec = -mViewCollider->GetRayCollider().r.ray.Norm() * r * 2.5f;
 
