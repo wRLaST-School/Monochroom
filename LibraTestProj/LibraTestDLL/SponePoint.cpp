@@ -12,6 +12,10 @@ void SponePoint::Init()
 	mParent = This()->Parent()->CastTo<Object3D>();
 
 	SponePlayer();
+
+	mEasing = std::make_unique<Easing>();
+	mEasing->SetEaseTimer(kErasedTimeMax);
+	mEasing->SetPowNum(1.5f);
 }
 
 void SponePoint::Update()
@@ -35,6 +39,14 @@ void SponePoint::Update()
 	{
 		ConsoleWindow::Log("SPONE_PLAYER");
 		SponePlayer();
+	}
+
+
+	if (mEasing->GetTimeRate() < 1.0f)
+	{
+		mEasing->Update();
+
+		Parent()->CastTo<Object3D>()->scale = mEasing->InBack({ 1.0f,1.0f,1.0f }, { 0,0,0 });
 	}
 }
 

@@ -389,6 +389,7 @@ void CollisionManager::PlayerHitGoals()
 			{
 				stageGoal->clearState = StageGoal::ChangeScene;
 				GameManager::GetInstance()->isCantControl = true;
+				SoundManager::Play("Blink");
 			}
 			ConsoleWindow::Log("Hit Goal");
 

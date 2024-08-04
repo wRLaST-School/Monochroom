@@ -139,8 +139,6 @@ void SuperUI::Update()
 			mMenuUIObj[mUICurrentNum].state != PRESSED)
 		{
 			mIsJoJo = true;
-
-
 		}
 		else if (mMenuUIObj[mUICurrentNum].state != PRESSED)
 		{
@@ -460,6 +458,7 @@ void SuperUI::UIMainMenuUpdate()
 			// 項目のナンバーを変更
 			if (AppOperationCommand::GetInstance()->UISelectUpCommand())
 			{
+				SoundManager::Play("Select");
 				mUICurrentNum--;
 				if (mUICurrentNum <= 0)
 				{
@@ -471,6 +470,7 @@ void SuperUI::UIMainMenuUpdate()
 			}
 			if (AppOperationCommand::GetInstance()->UISelectDownCommand())
 			{
+				SoundManager::Play("Select");
 				mUICurrentNum++;
 				if (mUICurrentNum >= mNumMenu - 1)
 				{
@@ -484,6 +484,7 @@ void SuperUI::UIMainMenuUpdate()
 		{
 			if (AppOperationCommand::GetInstance()->UIBackCommand())
 			{
+				SoundManager::Play("Select");
 				switch (mUICurrentNum)
 				{
 				case GUID:

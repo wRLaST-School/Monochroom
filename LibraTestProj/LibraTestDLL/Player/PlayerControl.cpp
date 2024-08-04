@@ -118,10 +118,15 @@ Vec3 PlayerControl::MinLengthVec3(const Vec3& vec, float maxLength)
 //-------------------------------------------
 void PlayerControl::Update()
 {
+	OutputDebugStringA("PLAYER_UPDATE\n");
 	//デバッグ画面なら
 	if (GameManager::GetInstance()->GetisStop() || 
 		GameManager::GetInstance()->isCantControl)
 	{
+		//OutputDebugStringA(std::format("IS STOP : {}, CANT CTRL : {}\n", 
+		//	GameManager::GetInstance()->GetisStop(),
+		//	GameManager::GetInstance()->isCantControl
+		//	).c_str());
 		return;
 	}
 	else if (!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
@@ -137,10 +142,12 @@ void PlayerControl::Update()
 	//ステージ演出中なら
 	if (!GameManager::GetInstance()->GetStageGenerater()->GetisEnd())
 	{
+		OutputDebugStringA("PLAYER_CANT_MOVE\n");
 		return;
 	}
 
 	ConsoleWindow::Log("PLAYER_CAN_MOVE_");
+	OutputDebugStringA("PLAYER_CAN_MOVE\n");
 
 	//ジャンプ
 	if (AppOperationCommand::GetInstance()->PlayerJumpCommand() && !isJump_)
