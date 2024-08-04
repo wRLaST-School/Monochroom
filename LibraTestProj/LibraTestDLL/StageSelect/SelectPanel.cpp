@@ -156,10 +156,10 @@ void SelectPanel::Init()
 	mTitleState = ROGO;
 
 	mTitleMoveTime = 0;
-	mTitleMoveTimeMax = 60 * 6;
+	mTitleMoveTimeMax = 60 * 5;
 
 	mSceneChangeCameraTime = 0;
-	mSceneChangeCameraTimeMax = 60 * 5;
+	mSceneChangeCameraTimeMax = 60 * 4;
 
 	mEaseCapsule.SetEaseTimer(60 * 3);
 	mEaseAlpha.SetEaseTimer((int)(60 * 1.5f));

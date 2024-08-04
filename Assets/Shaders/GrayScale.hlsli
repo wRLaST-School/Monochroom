@@ -40,7 +40,7 @@ float2 GetDirToNearEffectPos(float2 uv, float maxLength)
     float2 result = nearEffectPos - uv;
     
     // 楕円形のスケーリングファクタ
-    float2 ellipseScale = float2(0.8f, 2.4f); // 横に1.5倍、縦にそのまま
+    float2 ellipseScale = float2(2.0f, 1.2f); // 横に1.5倍、縦にそのまま
 
     // 距離を楕円形のスケールに基づいて調整
     float2 adjustedResult = result * (ellipseScale + ellipseScale * maxLength);
