@@ -16,8 +16,8 @@ float4 main(VSOutput input) : SV_TARGET
     float dis = distance(input.worldpos.xyz, cameraPos);
     float mask = 1 - smoothstep(_DefDis, _MaxDis, dis * _RadiusRate);
     
-    float4 texCol = tex.Sample(smp, input.uv);
+    float4 texCol = tex.Sample(smp, input.uv * tiling);
     
-    float4 result = texCol/* * mask*/;
+    float4 result = texCol * mask;
     return result;
 }
