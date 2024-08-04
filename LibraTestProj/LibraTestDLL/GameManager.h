@@ -50,6 +50,10 @@ public:
 	void SetIsStop(bool IsStop);
 
 	static GameManager* GetInstance();
+
+
+private:
+	bool GetCanUseGoggle();
 };
 
 RegisterScript(GameManager);
