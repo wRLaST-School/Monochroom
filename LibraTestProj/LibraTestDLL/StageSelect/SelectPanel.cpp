@@ -6,6 +6,7 @@
 #include <SceneManager.h>
 #include <ConsoleWindow.h>
 #include <SpTextureManager.h>
+#include "AppOperationCommand.h"
 
 void SelectPanel::Init()
 {
@@ -320,7 +321,7 @@ void SelectPanel::TitleUpdate()
 			}
 		}
 
-		if (Input::Key::Triggered(DIK_SPACE))
+		if (AppOperationCommand::GetInstance()->UIDicisionCommand())
 		{
 			IsTitleToSelect = true;
 
@@ -359,14 +360,14 @@ void SelectPanel::TitleUpdate()
 
 void SelectPanel::SelectStageUpdate()
 {
-	if (Input::Key::Triggered(DIK_A))
+	if (AppOperationCommand::GetInstance()->UISelectLeftCommand())
 	{
 		if (mSelectCurrentNum.x > 0)
 		{
 			mSelectCurrentNum.x--;
 		}
 	}
-	if (Input::Key::Triggered(DIK_D))
+	if (AppOperationCommand::GetInstance()->UISelectRightCommand())
 	{
 		if (mSelectCurrentNum.x < mSelectMaxNumX[(int)mSelectCurrentNum.y] - 1)
 		{
@@ -374,7 +375,7 @@ void SelectPanel::SelectStageUpdate()
 		}
 	}
 
-	if (Input::Key::Triggered(DIK_W))
+	if (AppOperationCommand::GetInstance()->UISelectUpCommand())
 	{
 		if (mSelectCurrentNum.y > 0)
 		{
@@ -383,7 +384,7 @@ void SelectPanel::SelectStageUpdate()
 			CheckNumOver();
 		}
 	}
-	if (Input::Key::Triggered(DIK_S))
+	if (AppOperationCommand::GetInstance()->UISelectDownCommand())
 	{
 		if (mSelectCurrentNum.y < mSelectMaxNumY - 1)
 		{
@@ -393,10 +394,10 @@ void SelectPanel::SelectStageUpdate()
 		}
 	}
 
-	if (Input::Key::Triggered(DIK_W) ||
-		Input::Key::Triggered(DIK_A) ||
-		Input::Key::Triggered(DIK_S) ||
-		Input::Key::Triggered(DIK_D))
+	if (AppOperationCommand::GetInstance()->UISelectDownCommand() ||
+		AppOperationCommand::GetInstance()->UISelectUpCommand() ||
+		AppOperationCommand::GetInstance()->UISelectLeftCommand() ||
+		AppOperationCommand::GetInstance()->UISelectRightCommand())
 	{
 		SoundManager::Play("Select");
 	}
@@ -405,7 +406,7 @@ void SelectPanel::SelectStageUpdate()
 	{
 		mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = SELECT;
 
-		if (Input::Key::Triggered(DIK_SPACE))
+		if (AppOperationCommand::GetInstance()->UIDicisionCommand())
 		{
 			mStageNum[(int32_t)mSelectCurrentNum.y][(int32_t)mSelectCurrentNum.x].state = PRESSED;
 			SoundManager::Play("Decide");
