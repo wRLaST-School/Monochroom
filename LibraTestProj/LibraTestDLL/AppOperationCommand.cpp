@@ -25,7 +25,13 @@ Vec3 AppOperationCommand::PlayerAngleCommand()
 {
 	Vec2 mouseMove = Mouse::GetInstance()->GetVel();
 
-	return Vec3(mouseMove.x, mouseMove.y,0);
+	if (Vec2(Pad::GetRStick()).GetLength())
+	{
+		Pad::Stick rStick = Pad::GetRStick();
+		mouseMove = Vec2{ rStick.x,-rStick.y }*15.0f;
+	}
+
+	return Vec3(mouseMove.x, mouseMove.y, 0);
 }
 
 bool AppOperationCommand::PlayerAttractBlockCommand()
@@ -50,7 +56,7 @@ bool AppOperationCommand::PlayerConfirmCommand()
 
 bool AppOperationCommand::ReStartCommand()
 {
-	return Key::Triggered(DIK_R)||Pad::Triggered(Button::Back);
+	return Key::Triggered(DIK_R) || Pad::Triggered(Button::Back);
 }
 
 bool AppOperationCommand::UserDebugStopGameCommand()
